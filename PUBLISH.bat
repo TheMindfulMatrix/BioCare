@@ -3,11 +3,9 @@ REM ============================================================
 REM  Publishes the Mindful Matrix link hub to GitHub Pages.
 REM  Live at: https://eddiebpc.github.io/matrix
 REM
-REM  Uses --force because this folder and the GitHub repo were
-REM  started as two separate histories (the repo was made by
-REM  uploading index.html through the GitHub website). Verified
-REM  2026-08-15: GitHub holds ONLY index.html and it is identical
-REM  to the local one, so nothing is lost by overwriting it.
+REM  The two histories (local folder vs the GitHub web upload)
+REM  were merged 2026-08-15, so a plain push works now. No
+REM  --force needed, and it should never be needed again.
 REM ============================================================
 cd /d "%~dp0"
 
@@ -17,8 +15,8 @@ echo   =========================================================
 echo.
 
 git add -A
-git commit -m "Fit all tiles on screen, add artwork and BioLimitless logo"
-git push --force origin main
+git commit -m "Update link hub"
+git push origin main
 set PUSHRESULT=%errorlevel%
 
 echo.
