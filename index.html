@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mindful Matrix</title>
+<meta name="description" content="Balance tests, omega supplements and BioLimitless — Gavin Reidel, Zinzino Independent Partner.">
+<meta property="og:title" content="The Mindful Matrix">
+<meta property="og:description" content="Balance tests, omega supplements and BioLimitless.">
+<meta name="theme-color" content="#0B1412">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230B1412'/><circle cx='16' cy='16' r='7' fill='%23E0A33C'/></svg>">
+</head>
+<body>
+
+<!--
+  ============================================================
+  EDIT HERE — everything you'd want to change is in this block
+  ============================================================
+  Handle .......... line with class="handle"
+  Zinzino links ... any href starting https://www.zinzino.com/shop/2021428066/...
+                    (partner ID 2021428066 must stay in the path or you lose credit)
+  BioLimitless .... https://biolimitless.com/me/matrix/
+  Socials ......... the <nav class="social"> block near the bottom
+  Add a link ...... copy one whole <a class="row"> ... </a> and change the text
+  ============================================================
+-->
+
+<style>
+  :root {
+    --ground:   #0B1412;
+    --surface:  #111C19;
+    --bone:     #E8E4D9;
+    --muted:    #8B9791;
+    --hairline: rgba(232, 228, 217, 0.13);
+    --amber:    #E0A33C;
+    --amber-dim: rgba(224, 163, 60, 0.16);
+
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--ground);
+    color: var(--bone);
+    font-family: var(--ui);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 56px 22px 72px;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ---------- header ---------- */
+
+  .head { display: flex; flex-direction: column; gap: 18px; }
+
+  .mark {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--amber);
+  }
+
+  .brand {
+    font-family: var(--display);
+    font-size: clamp(34px, 11vw, 46px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .brand em { font-style: italic; color: var(--amber); }
+
+  .handle {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .ratio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .ratio .bar {
+    height: 3px;
+    flex: 1;
+    background: var(--hairline);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ratio .bar::after {
+    content: "";
+    position: absolute;
+    inset: 0 60% 0 0;
+    background: var(--amber);
+  }
+
+  .ratio span {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ---------- link groups ---------- */
+
+  .group { display: flex; flex-direction: column; gap: 2px; }
+
+  .group-label {
+    font-family: var(--ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 6px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 17px 14px 17px 0;
+    border-bottom: 1px solid var(--hairline);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: padding-left 260ms cubic-bezier(.2,.7,.3,1),
+                background-color 260ms ease;
+  }
+
+  .row::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--amber);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 260ms cubic-bezier(.2,.7,.3,1);
+  }
+
+  .row:hover,
+  .row:focus-visible {
+    padding-left: 14px;
+    background-color: var(--surface);
+    outline: none;
+  }
+
+  .row:hover::before,
+  .row:focus-visible::before { transform: scaleY(1); }
+
+  .row:focus-visible { box-shadow: 0 0 0 1px var(--amber-dim); }
+
+  .row .title {
+    font-family: var(--display);
+    font-size: 19px;
+    line-height: 1.25;
+    display: block;
+  }
+
+  .row .sub {
+    display: block;
+    margin-top: 5px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .row .meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--amber);
+    white-space: nowrap;
+  }
+
+  .row .arrow { color: var(--muted); font-size: 15px; }
+
+  /* ---------- footer ---------- */
+
+  .social {
+    display: flex;
+    gap: 22px;
+    padding-top: 4px;
+  }
+
+  .social a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: color 200ms ease, border-color 200ms ease;
+  }
+
+  .social a:hover,
+  .social a:focus-visible {
+    color: var(--bone);
+    border-bottom-color: var(--amber);
+    outline: none;
+  }
+
+  .fine {
+    font-size: 10.5px;
+    line-height: 1.6;
+    color: var(--muted);
+    opacity: 0.72;
+    margin: 0;
+    max-width: 42ch;
+  }
+
+  /* ---------- entrance ---------- */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 620ms cubic-bezier(.2,.7,.3,1) forwards;
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+    .row, .row::before, .social a { transition: none; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="head reveal" style="animation-delay: 0ms">
+    <div class="mark">INDEPENDENT PARTNER</div>
+    <h1 class="brand">The Mindful <em>Matrix</em></h1>
+    <p class="handle">@the_mindful.matrix</p>
+    <div class="ratio">
+      <span>OMEGA 6</span>
+      <div class="bar"></div>
+      <span>3</span>
+    </div>
+  </header>
+
+  <section class="group reveal" style="animation-delay: 90ms">
+    <div class="group-label">Start here</div>
+
+    <a class="row" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="noopener">
+      <span>
+        <span class="title">Balance Test Basic Kit</span>
+        <span class="sub">BalanceTest + BalanceOil+, with the monthly subscription</span>
+      </span>
+      <span class="meta">$127</span>
+    </a>
+
+    <a class="row" href="https://biolimitless.com/me/matrix/" target="_blank" rel="noopener">
+      <span>
+        <span class="title">BioLimitless</span>
+        <span class="sub">Academy, library and formulas — my partner page</span>
+      </span>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </section>
+
+  <section class="group reveal" style="animation-delay: 170ms">
+    <div class="group-label">Zinzino, everything else</div>
+
+    <a class="row" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits" target="_blank" rel="noopener">
+      <span>
+        <span class="title">All omega kits</span>
+        <span class="sub">Premium, AquaX, Vegan and Essent+ options</span>
+      </span>
+      <span class="arrow">&rarr;</span>
+    </a>
+
+    <a class="row" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests" target="_blank" rel="noopener">
+      <span>
+        <span class="title">Home health tests</span>
+        <span class="sub">Test first, then choose — dried blood spot, done at home</span>
+      </span>
+      <span class="arrow">&rarr;</span>
+    </a>
+
+    <a class="row" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="noopener">
+      <span>
+        <span class="title">Full shop</span>
+        <span class="sub">Gut, immune, skin, weight management</span>
+      </span>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </section>
+
+  <footer class="group reveal" style="animation-delay: 250ms">
+    <nav class="social">
+      <a href="https://www.instagram.com/the_mindful.matrix/" target="_blank" rel="noopener">Instagram</a>
+      <!-- TikTok: paste your profile URL between the quotes below, then delete this comment
+      <a href="PASTE_TIKTOK_URL_HERE" target="_blank" rel="noopener">TikTok</a>
+      -->
+    </nav>
+    <p class="fine" style="margin-top: 24px">
+      Gavin Reidel — Zinzino Independent Partner. Purchases are made on Zinzino's
+      own site at their listed retail price. BalanceTest is not available in New York.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
