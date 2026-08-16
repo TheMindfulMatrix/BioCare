@@ -1,0 +1,25 @@
+{
+  "product_name": "Balance Test Basic Kit",
+  "sku": "910465",
+  "official_product_page_url": "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465",
+  "source_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/910465.png",
+  "page_display_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/large/910465.png",
+  "downloaded_filename": "balance-test-basic-kit-910465-main.png",
+  "pixel_dimensions": {
+    "width": 650,
+    "height": 650
+  },
+  "file_type": "PNG",
+  "mime_type": "image/png",
+  "file_size_bytes": 184469,
+  "sha256": "b0cf5653d294e964b849076667f554bab71e01a64733ec1ab6544e0f381cb5e1",
+  "download_date": "2026-08-16",
+  "downloaded_at_utc": "2026-08-16T19:30:42Z",
+  "direct_from_zinzino": true,
+  "source_host": "zinzinowebstorage.blob.core.windows.net",
+  "source_discovery": "The official SKU 910465 page names the product Balance Test Basic Kit and displays /productimages/large/910465.png. Its own click-to-enlarge handler removes the /large/ path segment and loads /productimages/910465.png, the downloaded 650 x 650 original.",
+  "visual_verification": "The image shows a Zinzino BalanceTest box and regular Zinzino BalanceOil+ Orange Lemon Mint bottle. No Premium Edition marking is present.",
+  "premium_edition": false,
+  "alteration": "None. The source PNG was downloaded byte-for-byte and was not redrawn, regenerated, upscaled, converted, or otherwise modified.",
+  "uncertainty_or_caveat": "The official page exposed one SKU-specific product photograph and no alternate views. The 650 x 650 enlargement is the highest-resolution asset requested by the page; the page and its Open Graph metadata use a 560 x 560 /large/ derivative."
+}
