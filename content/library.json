@@ -1,0 +1,7 @@
+{
+  "articles": [],
+  "schema": {
+    "required": ["id", "title", "summary", "published", "topics", "href"],
+    "optional": ["updated", "image", "readingTime", "featured"]
+  }
+}

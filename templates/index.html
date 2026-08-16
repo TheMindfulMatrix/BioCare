@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{SITE_NAME}}</title>
+  <meta name="description" content="{{SITE_DESCRIPTION}}">
+  <link rel="canonical" href="https://themindfulmatrix.github.io/BioCare/">
+  <meta property="og:title" content="{{SITE_NAME}}">
+  <meta property="og:description" content="{{SITE_DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://themindfulmatrix.github.io/BioCare/">
+  <meta name="theme-color" content="#151814">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=JetBrains+Mono:wght@500&family=Manrope:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/enhancements.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header section-dark">
+    <nav class="nav-shell container-wide" aria-label="Primary navigation">
+      <a class="brand-link" href="#top" aria-label="The Mindful Matrix home"><img src="assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links"><span class="visually-hidden">Open navigation</span><span class="nav-toggle__lines" aria-hidden="true"></span></button>
+      <ul id="primary-links" class="nav-links">
+        <li><a href="#choose-path">Start here</a></li><li><a href="#library">The Library</a></li><li><a href="#shelf">The Shelf</a></li><li><a href="#story">Our story</a></li><li><a class="button button-primary" href="#choose-path">Start here →</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
+      <div class="home-hero__grid container-wide">
+        <div class="home-hero__content" data-reveal>
+          <p class="section-kicker">{{PHILOSOPHY}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__support">{{HERO_SUPPORT}}</p><p class="home-hero__copy">{{HERO_COPY}}</p>
+          <div class="button-row"><a class="button button-primary" href="#choose-path">Start your journey →</a><a class="button button-secondary" href="#matrix">Explore the Matrix ↓</a></div>
+        </div>
+        <div class="home-hero__visual" aria-hidden="true" data-reveal>
+          <span class="matrix-orbit matrix-orbit--outer"></span><span class="matrix-orbit matrix-orbit--inner"></span><span class="matrix-orbit matrix-orbit--trace"></span>
+          <svg class="matrix-path" viewBox="0 0 600 600"><path class="matrix-path__ambient" d="M-54 450C95 142 351 42 664 182"/><path class="path-draw" d="M44 378C137 94 448 90 550 292S376 563 123 494"/><circle class="matrix-path__node" cx="44" cy="378" r="8"/><circle class="matrix-path__node matrix-path__node--bio" cx="550" cy="292" r="8"/><circle class="matrix-path__node" cx="123" cy="494" r="8"/><circle class="matrix-path__marker" cx="355" cy="95" r="4"/><circle class="matrix-path__marker matrix-path__marker--bio" cx="418" cy="527" r="4"/></svg>
+          <img class="hero-mark" src="assets/brand/mark-dark.svg" width="64" height="64" alt=""><span class="hero-data hero-data--one">Information / 01</span><span class="hero-data hero-data--two">Education / 02</span><span class="hero-data hero-data--three">Action / 03</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">
+      <div class="container"><div class="problem__grid"><div data-reveal><p class="section-kicker">The problem</p><h2 id="problem-title" class="problem__title">{{PROBLEM_HEADLINE}}</h2></div><div class="problem__body" data-reveal><p class="section-copy problem__copy">{{PROBLEM_COPY}}</p><ul class="problem__themes">{{PROBLEM_THEMES}}</ul></div></div><p class="problem__conclusion" data-reveal>{{PROBLEM_CONCLUSION}}</p></div>
+    </section>
+
+    <section id="matrix" class="matrix-section section-dark section-pad" aria-labelledby="matrix-title">
+      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">{{MATRIX_HEADING}}</h2><p class="section-copy">{{MATRIX_INTRO}}</p></div><div class="matrix-sequence"><div class="matrix-spine" aria-hidden="true"><span></span><span></span><span></span></div>{{MATRIX_STAGES}}</div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>{{MATRIX_CONCLUSION}}</h3><p>{{MATRIX_CONCLUSION_COPY}}</p></div></div></div>
+    </section>
+
+    <section id="choose-path" class="choose-path section-warm section-pad" aria-labelledby="choose-title">
+      <div class="container"><p class="section-kicker">Choose your path</p><h2 id="choose-title" class="section-title">{{CHOOSE_HEADING}}</h2><div class="journey-grid" data-reveal>{{PATH_CARDS}}</div></div>
+    </section>
+
+    <section id="story" class="founder section-light section-pad" aria-labelledby="story-title">
+      <div class="container founder__grid"><div class="founder__heading" data-reveal><p class="section-kicker">{{FOUNDER_LABEL}}</p><h2 id="story-title" class="section-title">{{FOUNDER_HEADING}}</h2><blockquote>{{FOUNDER_STATEMENT}}</blockquote><div class="founder-media" data-media-status="awaiting-original-photography" aria-hidden="true"><span class="founder-media__orbit"></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span class="founder-media__label">Information → Education → Action</span></div></div><div class="founder__copy" data-reveal>{{FOUNDER_PARAGRAPHS}}<div class="founder__philosophy"><strong>{{FOUNDER_PHILOSOPHY}}</strong><small>{{FOUNDER_CONTEXT}}</small></div><p class="founder__transition">{{FOUNDER_TRANSITION}}</p><a class="button button-tertiary" href="#library">Explore the Library →</a></div></div>
+    </section>
+
+    <section id="testing" class="testing section-dark section-pad" aria-labelledby="testing-title">
+      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title" class="section-title">{{TESTING_HEADING}}</h2></div><p class="section-copy">{{TESTING_COPY}}</p></div>{{TESTING_PRODUCT}}</div>
+    </section>
+
+    <section id="library" class="library-section section-light section-pad" aria-labelledby="library-title">
+      <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{LIBRARY_LABEL}}</p><h2 id="library-title" class="section-title">{{LIBRARY_HEADING}}</h2></div><p class="section-copy">{{LIBRARY_COPY}}</p></div>{{LIBRARY_BODY}}<div class="library-transition" data-reveal><p>{{LIBRARY_TRANSITION}}</p><a class="button button-primary" href="#shelf">Visit the Shelf →</a></div></div>
+    </section>
+
+    <section id="shelf" class="shelf section-dark section-pad" aria-labelledby="shelf-title">
+      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><p class="section-copy">{{SHELF_COPY}}</p></div><div class="shelf-grid">{{SHELF_CARDS}}</div></div>
+    </section>
+
+    <section id="standards" class="standards section-warm section-pad" aria-labelledby="standards-title">
+      <div class="container"><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">{{STANDARDS_HEADING}}</h2><ol class="standards-list" data-reveal>{{STANDARDS_LIST}}</ol><p class="standards-statement" data-reveal>{{STANDARDS_STATEMENT}}</p></div>
+    </section>
+
+    <section id="transparency" class="transparency section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
+      <div class="container-reading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">{{TRANSPARENCY_HEADING}}</h2><p class="transparency__disclosure">{{DISCLOSURE}}</p><p class="transparency__standard">{{TRANSPARENCY_COPY}}</p></div>
+    </section>
+
+    <section id="start" class="final-cta section-dark" aria-labelledby="final-title">
+      <div class="final-cta__path" aria-hidden="true"></div><div class="container final-cta__grid"><img src="assets/brand/mark-dark.svg" width="64" height="64" alt="" data-reveal><div data-reveal><p class="section-kicker">{{PHILOSOPHY}}</p><h2 id="final-title">{{FINAL_HEADLINE}}</h2><p class="final-cta__response">{{FINAL_RESPONSE}}</p><a class="button button-primary" href="#choose-path">Start your journey →</a><p class="final-cta__philosophy">{{FINAL_PHILOSOPHY}}</p></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-dark">
+    <div class="footer-grid container-wide"><div><img class="footer-lockup" src="assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"><p class="footer-philosophy">{{PHILOSOPHY}}</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="#choose-path">Start here</a><a href="#library">The Library</a><a href="#shelf">The Shelf</a><a href="#story">Our story</a><a href="#transparency">Transparency</a></nav><div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></nav><p class="fine">{{DISCLOSURE}}</p><p class="copyright">© 2026 The Mindful Matrix</p></div></div>
+  </footer>
+</body>
+</html>

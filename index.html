@@ -1,720 +1,225 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Mindful Matrix</title>
-<meta name="description" content="Balance tests, omega supplements and BioLimitless — Gavin Reidel, Zinzino Independent Partner.">
-<meta property="og:title" content="The Mindful Matrix">
-<meta property="og:description" content="Balance tests, omega supplements and BioLimitless.">
-<meta name="theme-color" content="#07100F">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307100F'/><circle cx='16' cy='16' r='7' fill='none' stroke='%23E9A13B' stroke-width='3'/></svg>">
-
-<!-- Real type. This is the single biggest difference between "template" and "brand". -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-<!--
-  ============================================================
-  EDIT HERE
-  ============================================================
-  ADD YOUR OWN PHOTOS to the top row:
-      each tile is  <a class="tile" style="--img: url('YOUR-IMAGE-URL')" ...>
-      right now they use generated artwork as a stand-in.
-      Drop image files into this same folder and use  url('photo1.jpg')
-
-  ZINZINO LINKS ... any href containing /shop/2021428066/
-                    that partner ID MUST stay in the path or you lose sales credit
-  BIOLIMITLESS .... https://biolimitless.com/me/matrix/
-  ADD A LINK ...... copy a whole <a class="band"> block and change the words
-  TIKTOK .......... search for "TIKTOK" below and uncomment that line
-  ============================================================
--->
-
-<style>
-  :root {
-    --ground:  #07100F;
-    --raised:  #0E1A18;
-    --panel:   #0B1614;
-    --bone:    #F2EEE4;
-    --muted:   #7E8C87;
-    --rule:    rgba(242, 238, 228, 0.14);
-    --amber:   #E9A13B;
-    --amber-soft: rgba(233, 161, 59, 0.14);
-
-    --sans: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --mono: "Space Mono", ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
-
-    --shell: 30px;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-
-  body {
-    margin: 0;
-    background: var(--ground);
-    color: var(--bone);
-    font-family: var(--sans);
-    overflow-x: hidden;
-  }
-
-  /* Film grain, fixed over everything. Kills the flat-CSS look. */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-    opacity: 0.5;
-    background:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
-  }
-
-  /* Slow-drifting aurora. Three amber/teal blooms on long offset loops so the
-     background never quite repeats — reads as depth, costs nothing. */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: -30%;
-    pointer-events: none;
-    z-index: 0;
-    background:
-      radial-gradient(38% 32% at 78% 12%, rgba(233, 161, 59, 0.22), transparent 62%),
-      radial-gradient(34% 30% at 18% 34%, rgba(58, 168, 150, 0.16), transparent 64%),
-      radial-gradient(44% 36% at 52% 88%, rgba(233, 161, 59, 0.10), transparent 66%);
-    filter: blur(28px);
-    animation: drift 34s ease-in-out infinite alternate;
-    will-change: transform;
-  }
-
-  @keyframes drift {
-    0%   { transform: translate3d(0, 0, 0) scale(1); }
-    33%  { transform: translate3d(2.5%, -2%, 0) scale(1.06); }
-    66%  { transform: translate3d(-2%, 2.5%, 0) scale(1.03); }
-    100% { transform: translate3d(1.5%, 1.5%, 0) scale(1.08); }
-  }
-
-  .layer { position: relative; z-index: 1; }
-
-  .shell {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 var(--shell) 64px;
-  }
-
-  /* ================= top image rail ================= */
-
-  .rail {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 0 0 22px;
-    scrollbar-width: none;
-  }
-
-  .rail::-webkit-scrollbar { display: none; }
-
-  .tile {
-    scroll-snap-align: start;
-    flex: 0 0 auto;
-    width: clamp(260px, 42vw, 380px);
-    height: clamp(190px, 27vw, 250px);
-    border: 1px solid var(--rule);
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    color: var(--bone);
-    display: flex;
-    align-items: flex-end;
-    background-color: var(--raised);
-    background-image: var(--img, none), var(--art);
-    /* Every image hangs from the SAME fixed offset below the top edge, so the
-       tops line up across the rail no matter what shape the artwork is. Sized
-       by height, which keeps all six 560x560 product shots identical. */
-    background-size: auto 54%, cover;
-    background-position: center 18px, center;
-    background-repeat: no-repeat, no-repeat;
-    transition: border-color 300ms ease,
-                background-size 520ms cubic-bezier(.16,.84,.34,1);
-  }
-
-  .tile:hover,
-  .tile:focus-visible {
-    border-color: var(--amber);
-    background-size: auto 60%, cover;
-    outline: none;
-  }
-
-  /* Brand logos, not product shots. BioLimitless is 1024x529 — nearly 2:1 —
-     so at the product height it would sit twice as wide as everything else
-     and read far heavier. Shorter height, same top offset, same alignment. */
-  .tile.logo {
-    background-size: min(58%, 190px) auto, cover;
-  }
-
-  .tile.logo:hover,
-  .tile.logo:focus-visible {
-    background-size: min(64%, 210px) auto, cover;
-  }
-
-  /* On a wide screen, fit EVERY tile across the page instead of letting the
-     last one hang off the right edge. Narrow screens keep the swipe rail.
-     Must come AFTER the .tile rules above — a media query adds no specificity,
-     so source order is what decides the winner. */
-  @media (min-width: 1180px) {
-    .rail {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
-      overflow-x: visible;
-      scroll-snap-type: none;
-    }
-
-    .tile {
-      width: auto;
-      height: auto;
-      aspect-ratio: 3 / 2;
-    }
-  }
-
-  /* Light sweeps across the tile on hover. One pseudo-element, no JS. */
-  .tile::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(105deg, transparent 38%,
-                rgba(242, 238, 228, 0.10) 48%, rgba(233, 161, 59, 0.13) 52%, transparent 62%);
-    transform: translateX(-130%);
-    transition: transform 780ms cubic-bezier(.22,.7,.3,1);
-  }
-
-  .tile:hover::after,
-  .tile:focus-visible::after { transform: translateX(130%); }
-
-  .tile figcaption {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 13px 13px 14px;
-    background: linear-gradient(to top, rgba(7, 16, 15, 0.94) 30%, transparent);
-  }
-
-  .tile .kicker {
-    display: block;
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    color: var(--amber);
-    margin-bottom: 6px;
-  }
-
-  .tile .name {
-    display: block;
-    font-size: 14px;
-    font-weight: 620;
-    line-height: 1.22;
-    letter-spacing: -0.015em;
-  }
-
-  /* generated stand-in artwork, one per tile */
-  .art1 { --art: conic-gradient(from 210deg at 30% 20%, #17322b, #0a1614 40%, #3d2a10 70%, #17322b); }
-  .art2 { --art: radial-gradient(90% 70% at 20% 10%, #4a3312, transparent 60%), linear-gradient(160deg, #0d1f1b, #071110); }
-  .art3 { --art: repeating-linear-gradient(115deg, #0c1a17 0 12px, #112420 12px 24px), radial-gradient(70% 50% at 80% 90%, rgba(233,161,59,.35), transparent); }
-  .art4 { --art: radial-gradient(60% 60% at 70% 25%, rgba(233,161,59,.5), transparent 65%), linear-gradient(200deg, #10221d, #08110F); }
-  .art5 { --art: conic-gradient(from 40deg at 70% 80%, #0b1a17, #2b1f0c 35%, #0f221d 70%, #0b1a17); }
-  .art6 { --art: radial-gradient(75% 55% at 25% 80%, #35240e, transparent 65%), linear-gradient(20deg, #0a1917, #0e211c); }
-
-  /* ================= hero ================= */
-
-  .hero { padding: 30px 0 8px; }
-
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.26em;
-    color: var(--amber);
-    margin-bottom: 24px;
-  }
-
-  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
-
-  .wordmark {
-    margin: 0;
-    font-size: clamp(46px, 15vw, 96px);
-    font-weight: 900;
-    line-height: 0.82;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-  }
-
-  .wordmark span { display: block; }
-
-  /* The solid line gets a soft top-down sheen so it isn't flat bone. */
-  .wordmark .solid {
-    background: linear-gradient(176deg, #FFFDF7 12%, var(--bone) 46%, #A8B3AE 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .wordmark .thin {
-    font-weight: 300;
-    font-size: 0.42em;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--muted);
-    margin-bottom: 0.16em;
-  }
-
-  .wordmark .hollow {
-    color: transparent;
-    -webkit-text-stroke: 1.5px var(--amber);
-    text-stroke: 1.5px var(--amber);
-  }
-
-  .lede {
-    margin: 26px 0 0;
-    max-width: 34ch;
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--muted);
-  }
-
-  .handle {
-    display: inline-block;
-    margin-top: 18px;
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    color: var(--bone);
-    text-decoration: none;
-    border-bottom: 1px solid var(--amber);
-    padding-bottom: 3px;
-  }
-
-  /* ================= panels ================= */
-
-  .panel {
-    margin-top: 42px;
-    padding: 28px 22px 24px;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    background:
-      linear-gradient(180deg, var(--amber-soft), transparent 42%),
-      var(--panel);
-  }
-
-  .panel-head {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 6px;
-  }
-
-  .panel-head::before,
-  .panel-head::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  .panel-head h2 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 650;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .panel-sub {
-    margin: 0 0 22px;
-    text-align: center;
-    font-size: 12.5px;
-    color: var(--muted);
-  }
-
-  /* featured card */
-
-  .feature {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    overflow: hidden;
-    background-color: #070f0e;
-    background-image:
-      url("img/kit.png"),
-      radial-gradient(85% 120% at 88% 12%, rgba(233,161,59,.32), transparent 62%),
-      linear-gradient(150deg, #10231e, #070f0e);
-    background-size: 42% auto, cover, cover;
-    background-position: 112% 60%, center, center;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    padding: 30px 24px 28px;
-    transition: border-color 300ms ease, background-position 520ms cubic-bezier(.16,.84,.34,1);
-  }
-
-  .feature:hover,
-  .feature:focus-visible { background-position: 104% 60%, center, center; }
-
-  .feature:hover,
-  .feature:focus-visible { border-color: var(--amber); outline: none; }
-
-  .feature .kicker {
-    display: block;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    color: var(--amber);
-    margin-bottom: 14px;
-  }
-
-  .feature h3 {
-    margin: 0;
-    font-size: clamp(24px, 6.6vw, 33px);
-    font-weight: 750;
-    line-height: 1.05;
-    letter-spacing: -0.035em;
-    text-transform: uppercase;
-    text-wrap: balance;
-  }
-
-  .feature p {
-    margin: 14px 0 0;
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: var(--muted);
-    max-width: 40ch;
-  }
-
-  .feature .cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-top: 22px;
-    padding: 11px 20px;
-    border: 1px solid var(--amber);
-    border-radius: 2px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--amber);
-    transition: background-color 260ms ease, color 260ms ease;
-  }
-
-  .feature:hover .cta,
-  .feature:focus-visible .cta { background: var(--amber); color: var(--ground); }
-
-  /* link bands */
-
-  .band {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 19px 0;
-    border-bottom: 1px solid var(--rule);
-    color: inherit;
-    text-decoration: none;
-    position: relative;
-    isolation: isolate;
-  }
-
-  .band:first-of-type { border-top: 1px solid var(--rule); }
-
-  .band::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 0 -14px;
-    background: var(--raised);
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 340ms cubic-bezier(.16,.84,.34,1);
-  }
-
-  .band:hover::after,
-  .band:focus-visible::after { transform: scaleX(1); }
-
-  .band:focus-visible { outline: 1px solid var(--amber); outline-offset: 5px; }
-
-  .band-text { min-width: 0; }
-
-  .band-title {
-    display: block;
-    font-size: clamp(18px, 4.6vw, 22px);
-    font-weight: 640;
-    letter-spacing: -0.022em;
-    line-height: 1.15;
-    transition: transform 340ms cubic-bezier(.16,.84,.34,1);
-  }
-
-  .band-note {
-    display: block;
-    margin-top: 6px;
-    font-size: 12.5px;
-    line-height: 1.45;
-    color: var(--muted);
-    transition: transform 340ms cubic-bezier(.16,.84,.34,1) 40ms;
-  }
-
-  .band:hover .band-title,
-  .band:focus-visible .band-title,
-  .band:hover .band-note,
-  .band:focus-visible .band-note { transform: translateX(9px); }
-
-  .band-tag {
-    flex: none;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    font-variant-numeric: tabular-nums;
-    color: var(--muted);
-    transition: color 200ms ease;
-  }
-
-  .band:hover .band-tag,
-  .band:focus-visible .band-tag { color: var(--amber); }
-
-  /* ================= footer ================= */
-
-  .foot {
-    margin-top: 46px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .socials { display: flex; flex-wrap: wrap; gap: 24px; }
-
-  .socials a {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 200ms ease;
-  }
-
-  .socials a:hover,
-  .socials a:focus-visible { color: var(--amber); outline: none; }
-
-  .fine {
-    margin: 0;
-    font-size: 11px;
-    line-height: 1.65;
-    color: var(--muted);
-    opacity: 0.65;
-    max-width: 46ch;
-  }
-
-  /* ================= scroll reveal ================= */
-  /* Only applied once JS confirms it can run, so with JS off nothing hides. */
-
-  .js-reveal .reveal {
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity 760ms cubic-bezier(.16,.84,.34,1),
-                transform 760ms cubic-bezier(.16,.84,.34,1);
-  }
-
-  .js-reveal .reveal.seen { opacity: 1; transform: none; }
-
-  /* Each band comes in behind the one above it. */
-  .js-reveal .band { transition-delay: calc(var(--i, 0) * 70ms); }
-
-  @media (prefers-reduced-motion: reduce) {
-    body::after { animation: none; }
-    .tile::after { display: none; }
-    .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
-  }
-
-  /* ================= motion ================= */
-
-  .rise {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: rise 720ms cubic-bezier(.16,.84,.34,1) forwards;
-  }
-
-  @keyframes rise { to { opacity: 1; transform: none; } }
-
-  @media (prefers-reduced-motion: reduce) {
-    .rise { animation: none; opacity: 1; transform: none; }
-    .tile, .band::after, .band-title, .band-note, .band-tag,
-    .socials a, .feature, .feature .cta { transition: none; }
-    .rail { scroll-snap-type: none; }
-  }
-
-  /* on narrow screens the product shot would sit under the headline */
-  @media (max-width: 560px) {
-    .feature { background-size: 46% auto, cover, cover; background-position: 128% 88%, center, center; }
-    .feature:hover, .feature:focus-visible { background-position: 122% 88%, center, center; }
-  }
-
-  @media (max-width: 420px) {
-    :root { --shell: 20px; }
-    .panel { padding: 24px 16px 20px; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Mindful Matrix</title>
+  <meta name="description" content="Balance tests, omega supplements and BioLimitless — Gavin Reidel, Zinzino Independent Partner.">
+  <link rel="canonical" href="https://themindfulmatrix.github.io/BioCare/">
+  <meta property="og:title" content="The Mindful Matrix">
+  <meta property="og:description" content="Balance tests, omega supplements and BioLimitless — Gavin Reidel, Zinzino Independent Partner.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://themindfulmatrix.github.io/BioCare/">
+  <meta name="theme-color" content="#151814">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=JetBrains+Mono:wght@500&family=Manrope:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/enhancements.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header section-dark">
+    <nav class="nav-shell container-wide" aria-label="Primary navigation">
+      <a class="brand-link" href="#top" aria-label="The Mindful Matrix home"><img src="assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links"><span class="visually-hidden">Open navigation</span><span class="nav-toggle__lines" aria-hidden="true"></span></button>
+      <ul id="primary-links" class="nav-links">
+        <li><a href="#choose-path">Start here</a></li><li><a href="#library">The Library</a></li><li><a href="#shelf">The Shelf</a></li><li><a href="#story">Our story</a></li><li><a class="button button-primary" href="#choose-path">Start here →</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="layer">
-
-  <!-- ============ top image rail ============ -->
-  <div class="rail rise" role="list" aria-label="Featured">
-
-    <a class="tile art1" style="--img: url('img/kit.png')" role="listitem" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">START HERE</span><span class="name">Balance Test Basic Kit</span></figcaption>
-    </a>
-
-    <a class="tile art2" style="--img: url('img/test.png')" role="listitem" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">TEST</span><span class="name">Home Health Tests</span></figcaption>
-    </a>
-
-    <a class="tile art4" style="--img: url('img/omega.png')" role="listitem" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">OMEGA</span><span class="name">All Omega Kits</span></figcaption>
-    </a>
-
-    <a class="tile art5" style="--img: url('img/gut.png')" role="listitem" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">GUT</span><span class="name">Gut Health</span></figcaption>
-    </a>
-
-    <a class="tile art6" style="--img: url('img/gold.png')" role="listitem" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">TURMERIC</span><span class="name">X Gold+</span></figcaption>
-    </a>
-
-    <a class="tile art3" style="--img: url('img/revoo.png')" role="listitem" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">ALL</span><span class="name">The Full Shop</span></figcaption>
-    </a>
-
-    <a class="tile logo art2" style="--img: url('img/biolimitless.webp')" role="listitem" href="https://biolimitless.com/me/matrix/" target="_blank" rel="noopener">
-      <figcaption><span class="kicker">LIBRARY</span><span class="name">BioLimitless Academy</span></figcaption>
-    </a>
-
-  </div>
-
-  <main class="shell">
-
-    <!-- ============ hero ============ -->
-    <header class="hero rise" style="animation-delay: 80ms">
-      <div class="eyebrow">ZINZINO INDEPENDENT PARTNER</div>
-      <h1 class="wordmark">
-        <span class="thin">The</span>
-        <span class="solid">Mindful</span>
-        <span class="hollow">Matrix</span>
-      </h1>
-      <p class="lede">Test first. Then choose. Everything I use and recommend, in one place.</p>
-      <a class="handle" href="https://www.instagram.com/the_mindful.matrix/" target="_blank" rel="noopener">@the_mindful.matrix</a>
-    </header>
-
-    <!-- ============ featured ============ -->
-    <section class="panel rise" style="animation-delay: 160ms">
-      <div class="panel-head"><h2>Start Here</h2></div>
-      <p class="panel-sub">The one most people begin with</p>
-
-      <a class="feature" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="noopener">
-        <span class="kicker">BESTSELLER · $127</span>
-        <h3>Balance Test Basic Kit</h3>
-        <p>The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.</p>
-        <span class="cta">Get the kit &rarr;</span>
-      </a>
+  <main id="main-content" tabindex="-1">
+    <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
+      <div class="home-hero__grid container-wide">
+        <div class="home-hero__content" data-reveal>
+          <p class="section-kicker">Information → Education → Action</p><h1 id="hero-title"><span>You know you can</span><span>feel better.</span></h1><p class="home-hero__support">You just need somewhere to start.</p><p class="home-hero__copy">The Mindful Matrix helps you get informed about your situation, educate yourself on what it means, and take action toward better wellness.</p>
+          <div class="button-row"><a class="button button-primary" href="#choose-path">Start your journey →</a><a class="button button-secondary" href="#matrix">Explore the Matrix ↓</a></div>
+        </div>
+        <div class="home-hero__visual" aria-hidden="true" data-reveal>
+          <span class="matrix-orbit matrix-orbit--outer"></span><span class="matrix-orbit matrix-orbit--inner"></span><span class="matrix-orbit matrix-orbit--trace"></span>
+          <svg class="matrix-path" viewBox="0 0 600 600"><path class="matrix-path__ambient" d="M-54 450C95 142 351 42 664 182"/><path class="path-draw" d="M44 378C137 94 448 90 550 292S376 563 123 494"/><circle class="matrix-path__node" cx="44" cy="378" r="8"/><circle class="matrix-path__node matrix-path__node--bio" cx="550" cy="292" r="8"/><circle class="matrix-path__node" cx="123" cy="494" r="8"/><circle class="matrix-path__marker" cx="355" cy="95" r="4"/><circle class="matrix-path__marker matrix-path__marker--bio" cx="418" cy="527" r="4"/></svg>
+          <img class="hero-mark" src="assets/brand/mark-dark.svg" width="64" height="64" alt=""><span class="hero-data hero-data--one">Information / 01</span><span class="hero-data hero-data--two">Education / 02</span><span class="hero-data hero-data--three">Action / 03</span>
+        </div>
+      </div>
     </section>
 
-    <!-- ============ everything else ============ -->
-    <section class="panel rise" style="animation-delay: 230ms">
-      <div class="panel-head"><h2>The Shelf</h2></div>
-      <p class="panel-sub">Everything else, straight to the page</p>
-
-      <a class="band" href="https://biolimitless.com/me/matrix/" target="_blank" rel="noopener">
-        <span class="band-text">
-          <span class="band-title">BioLimitless</span>
-          <span class="band-note">Academy, library and formulas — my partner page</span>
-        </span>
-        <span class="band-tag">Visit</span>
-      </a>
-
-      <a class="band" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits" target="_blank" rel="noopener">
-        <span class="band-text">
-          <span class="band-title">All omega kits</span>
-          <span class="band-note">Premium, AquaX, Vegan and Essent+ options</span>
-        </span>
-        <span class="band-tag">Browse</span>
-      </a>
-
-      <a class="band" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests" target="_blank" rel="noopener">
-        <span class="band-text">
-          <span class="band-title">Home health tests</span>
-          <span class="band-note">Dried blood spot, taken at home, posted to the lab</span>
-        </span>
-        <span class="band-tag">Browse</span>
-      </a>
-
-      <a class="band" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="noopener">
-        <span class="band-text">
-          <span class="band-title">Full shop</span>
-          <span class="band-note">Gut, immune, skin and weight management</span>
-        </span>
-        <span class="band-tag">Browse</span>
-      </a>
+    <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">
+      <div class="container"><div class="problem__grid"><div data-reveal><p class="section-kicker">The problem</p><h2 id="problem-title" class="problem__title"><span>More information than ever.</span><span>Less clarity than ever.</span></h2></div><div class="problem__body" data-reveal><p class="section-copy problem__copy">People are surrounded by health advice, supplements, diets, studies, opinions, and trends. Knowing what to actually do with that information can be difficult.</p><ul class="problem__themes"><li>Conflicting information</li><li>Passive waiting</li><li>Not knowing where to begin</li></ul></div></div><p class="problem__conclusion" data-reveal>The answer isn't more noise. It's knowing where to begin.</p></div>
     </section>
 
-    <!-- ============ footer ============ -->
-    <footer class="foot rise" style="animation-delay: 300ms">
-      <nav class="socials">
-        <a href="https://www.instagram.com/the_mindful.matrix/" target="_blank" rel="noopener">Instagram</a>
-        <!-- TIKTOK — paste your URL, then remove the two comment markers around this line
-        <a href="PASTE_TIKTOK_URL_HERE" target="_blank" rel="noopener">TikTok</a>
-        -->
-      </nav>
-      <p class="fine">
-        Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's
-        own site at their listed retail price. BalanceTest is not available in New York.
-      </p>
-    </footer>
+    <section id="matrix" class="matrix-section section-dark section-pad" aria-labelledby="matrix-title">
+      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">A better way to move forward.</h2><p class="section-copy">You don't need every answer today. You need a process for finding your next one.</p></div><div class="matrix-sequence"><div class="matrix-spine" aria-hidden="true"><span></span><span></span><span></span></div><article class="matrix-stage" data-matrix-stage="information" data-reveal>
+          <div class="matrix-stage__node" aria-hidden="true"><span>01</span></div>
+          <div class="matrix-stage__content">
+            <p class="interface-label">Information / 01</p>
+            <h3>Get informed about your situation.</h3>
+            <p>Understand what you're working with before deciding what to change.</p>
+            <ul class="matrix-labels" aria-label="Related areas"><li>Testing</li><li>Habits</li><li>Nutrition</li><li>Sleep</li><li>Performance</li><li>Questions</li></ul>
+            <strong class="matrix-question">Where am I?</strong>
+          </div>
+        </article>
+        <article class="matrix-stage" data-matrix-stage="education" data-reveal>
+          <div class="matrix-stage__node" aria-hidden="true"><span>02</span></div>
+          <div class="matrix-stage__content">
+            <p class="interface-label">Education / 02</p>
+            <h3>Don't just collect information. Understand it.</h3>
+            <p>Information without understanding can create more confusion. Learn what it means, explore credible sources, and understand your options.</p>
+            <ul class="matrix-labels" aria-label="Related areas"><li>Context</li><li>Credible sources</li><li>Questions</li><li>Options</li></ul>
+            <strong class="matrix-question">What does this mean?</strong>
+          </div>
+        </article>
+        <article class="matrix-stage" data-matrix-stage="action" data-reveal>
+          <div class="matrix-stage__node" aria-hidden="true"><span>03</span></div>
+          <div class="matrix-stage__content">
+            <p class="interface-label">Action / 03</p>
+            <h3>Knowledge only matters when you use it.</h3>
+            <p>Take what you've learned and decide what your next meaningful step looks like.</p>
+            <ul class="matrix-labels" aria-label="Related areas"><li>Nutrition</li><li>Movement</li><li>Sleep</li><li>Routines</li><li>Questions for your doctor</li><li>Tools</li><li>Products</li></ul>
+            <strong class="matrix-question">What can I do next?</strong>
+          </div>
+        </article></div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>That's the Matrix.</h3><p>A framework for taking a more informed, intentional role in your wellness.</p></div></div></div>
+    </section>
 
+    <section id="choose-path" class="choose-path section-warm section-pad" aria-labelledby="choose-title">
+      <div class="container"><p class="section-kicker">Choose your path</p><h2 id="choose-title" class="section-title">Where are you right now?</h2><div class="journey-grid" data-reveal><article class="journey-card">
+          <span class="journey-card__index">01 / get-informed</span>
+          <span class="node" aria-hidden="true"></span>
+          <h3>Get informed</h3><p>I want to understand my situation.</p>
+          <a href="#testing">Start here →</a>
+        </article>
+        <article class="journey-card">
+          <span class="journey-card__index">02 / get-educated</span>
+          <span class="node" aria-hidden="true"></span>
+          <h3>Get educated</h3><p>I want to understand more.</p>
+          <a href="#library">Enter the Library →</a>
+        </article>
+        <article class="journey-card">
+          <span class="journey-card__index">03 / take-action</span>
+          <span class="node" aria-hidden="true"></span>
+          <h3>Take action</h3><p>I'm ready to make changes.</p>
+          <a href="#shelf">Explore your options →</a>
+        </article></div></div>
+    </section>
+
+    <section id="story" class="founder section-light section-pad" aria-labelledby="story-title">
+      <div class="container founder__grid"><div class="founder__heading" data-reveal><p class="section-kicker">Why I built this</p><h2 id="story-title" class="section-title">I got tired of waiting.</h2><blockquote>Nobody is coming to save me but me.</blockquote><div class="founder-media" data-media-status="awaiting-original-photography" aria-hidden="true"><span class="founder-media__orbit"></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span class="founder-media__label">Information → Education → Action</span></div></div><div class="founder__copy" data-reveal><p>I got tired of relying on other people to make me feel better.</p><p>So I decided to get informed about my situation. I started educating myself about what I found, asking better questions, and looking for credible information.</p><p>Then came the most important part: taking action.</p><p>The Mindful Matrix didn't come from having all the answers. It came from realizing that I didn't have to wait around for them.</p><p>I could learn. I could ask questions. I could make changes. I could take the next step.</p><div class="founder__philosophy"><strong>Self-care is the real healthcare.</strong><small>A personal philosophy about agency—not a replacement for professional healthcare.</small></div><p class="founder__transition">Now you can too.</p><a class="button button-tertiary" href="#library">Explore the Library →</a></div></div>
+    </section>
+
+    <section id="testing" class="testing section-dark section-pad" aria-labelledby="testing-title">
+      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">Get informed</p><h2 id="testing-title" class="section-title">Start with what you can measure.</h2></div><p class="section-copy">Testing is one possible way to become more informed. It is a starting point for asking better questions—not the entire Mindful Matrix philosophy.</p></div><article class="testing-card" data-reveal>
+        <div class="testing-card__visual"><picture><source type="image/webp" srcset="img/responsive/kit-280.webp 280w, img/responsive/kit-560.webp 560w" sizes="(max-width: 48rem) 90vw, 48vw"><img src="img/kit.png" alt="Balance Test Basic Kit packaging" width="560" height="560" loading="eager" decoding="async" fetchpriority="high"></picture></div>
+        <div class="testing-card__content">
+          <p class="interface-label">Start here / Existing product data</p>
+          <h3>Balance Test Basic Kit</h3>
+          <p>The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.</p>
+          <div class="testing-card__why"><span>Why it’s here</span><strong>The one most people begin with.</strong></div>
+          <div class="button-row">
+            <a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="noopener noreferrer">See what it measures ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="button button-secondary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="noopener noreferrer">Product details ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+          </div>
+        </div>
+      </article></div>
+    </section>
+
+    <section id="library" class="library-section section-light section-pad" aria-labelledby="library-title">
+      <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">The Library</p><h2 id="library-title" class="section-title">Understand before you act.</h2></div><p class="section-copy">Learn the why behind the choices you're making.</p></div><div class="library-layout" data-library-state="empty">
+        <article class="library-status-card" data-reveal>
+          <div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div>
+          <div class="library-status-card__content"><h3>The Library is being built.</h3><p>We're creating practical wellness guides grounded in credible sources—not more noise.</p></div>
+        </article>
+        <div class="library-categories" data-reveal><p class="component-label">Coming to the Library</p><span>Foundations</span><span>Omega-3</span><span>Testing</span><span>Gut Health</span><span>Performance</span><span>Research</span></div>
+      </div><div class="library-transition" data-reveal><p>You understand the why. Now explore the tools.</p><a class="button button-primary" href="#shelf">Visit the Shelf →</a></div></div>
+    </section>
+
+    <section id="shelf" class="shelf section-dark section-pad" aria-labelledby="shelf-title">
+      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">Action</p><h2 id="shelf-title" class="section-title">Tools with a reason for being here.</h2></div><p class="section-copy">We don't believe in taking something just because someone on the internet said you should.</p></div><div class="shelf-grid"><article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/kit-280.webp 280w, img/responsive/kit-560.webp 560w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/kit.png" alt="Balance Test Basic Kit packaging" width="560" height="560" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">Start here</p>
+          <h3>Balance Test Basic Kit</h3><p>The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>The one most people begin with.</p></details>
+          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="noopener noreferrer">Get the kit ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article>
+        <article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/test-280.webp 280w, img/responsive/test-560.webp 560w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/test.png" alt="Zinzino home health test packaging" width="560" height="560" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">Test</p>
+          <h3>Home health tests</h3><p>Dried blood spot, taken at home, posted to the lab</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>A direct path to the current home health tests collection.</p></details>
+          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests" target="_blank" rel="noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article>
+        <article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/omega-280.webp 280w, img/responsive/omega-560.webp 560w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/omega.png" alt="Selection of Zinzino omega products" width="560" height="560" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">Omega</p>
+          <h3>All omega kits</h3><p>Premium, AquaX, Vegan and Essent+ options</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>A direct path to the current omega kit collection.</p></details>
+          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits" target="_blank" rel="noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article>
+        <article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/gut-280.webp 280w, img/responsive/gut-560.webp 560w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/gut.png" alt="Selection of Zinzino gut health products" width="560" height="560" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">Gut</p>
+          <h3>Gut Health</h3><p>Gut health products in the Zinzino shop</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>A direct path to the current gut health collection.</p></details>
+          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements" target="_blank" rel="noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article>
+        <article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/gold-280.webp 280w, img/responsive/gold-560.webp 560w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/gold.png" alt="Zinzino X Gold+ packaging" width="560" height="560" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">Turmeric</p>
+          <h3>X Gold+</h3><p>X Gold+ in the Zinzino shop</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>A direct path to the current product destination.</p></details>
+          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article>
+        <article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/revoo-280.webp 280w, img/responsive/revoo-560.webp 560w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/revoo.png" alt="Selection of products available from the Zinzino shop" width="560" height="560" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">All</p>
+          <h3>Full shop</h3><p>Gut, immune, skin and weight management</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>The broadest path to the current Zinzino shop.</p></details>
+          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article>
+        <article class="shelf-card" data-reveal>
+        <div class="shelf-card__visual"><span class="shelf-card__artwork" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/biolimitless-512.webp 512w, img/responsive/biolimitless-1024.webp 1024w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/biolimitless.webp" alt="BioLimitless" width="1024" height="529" loading="lazy" decoding="async"></picture></div></div>
+        <div class="shelf-card__content">
+          <p class="interface-label">Library</p>
+          <h3>BioLimitless</h3><p>Academy, library and formulas — my partner page</p>
+          <details class="why-details"><summary>Why it’s here</summary><p>The current destination for the BioLimitless partner resource.</p></details>
+          <a class="shelf-card__link" href="https://biolimitless.com/me/matrix/" target="_blank" rel="noopener noreferrer">Visit ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </div>
+      </article></div></div>
+    </section>
+
+    <section id="standards" class="standards section-warm section-pad" aria-labelledby="standards-title">
+      <div class="container"><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">You deserve to know why.</h2><ol class="standards-list" data-reveal><li><span>01</span><div><h3>We explain our reasoning</h3><p>If we recommend something, we tell you why.</p></div></li>
+        <li><span>02</span><div><h3>We show our sources</h3><p>Whenever possible, education should link back to credible evidence.</p></div></li>
+        <li><span>03</span><div><h3>We separate evidence from opinion</h3><p>What research suggests and what we personally think should not be presented as the same thing.</p></div></li>
+        <li><span>04</span><div><h3>We disclose our partnerships</h3><p>If we can financially benefit from something, visitors should know.</p></div></li>
+        <li><span>05</span><div><h3>We tell you when we don't know</h3><p>Uncertainty should not be hidden.</p></div></li></ol><p class="standards-statement" data-reveal><span>Trust isn't something we claim.</span><span>It's something we earn.</span></p></div>
+    </section>
+
+    <section id="transparency" class="transparency section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
+      <div class="container-reading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">Transparency</h2><p class="transparency__disclosure">Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York.</p><p class="transparency__standard">That relationship doesn't change our standard: understand first, decide second.</p></div>
+    </section>
+
+    <section id="start" class="final-cta section-dark" aria-labelledby="final-title">
+      <div class="final-cta__path" aria-hidden="true"></div><div class="container final-cta__grid"><img src="assets/brand/mark-dark.svg" width="64" height="64" alt="" data-reveal><div data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="final-title"><span>Stop waiting for someone</span><span>to tell you what's wrong.</span></h2><p class="final-cta__response"><span>Start figuring out what's right.</span></p><a class="button button-primary" href="#choose-path">Start your journey →</a><p class="final-cta__philosophy">Self-care is the real healthcare.</p></div></div>
+    </section>
   </main>
-</div>
 
-<script>
-/* Scroll reveal. Sections and link bands fade up as they come into view.
-   The .js-reveal class is added by JS, so if JS is off or fails, every
-   element just stays visible instead of being stuck hidden. */
-(function () {
-  var motionOff = window.matchMedia &&
-                  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (motionOff || !('IntersectionObserver' in window)) return;
-
-  document.documentElement.classList.add('js-reveal');
-
-  var targets = document.querySelectorAll('.panel, .foot, .band');
-  document.querySelectorAll('.band').forEach(function (b, i) {
-    b.style.setProperty('--i', i % 5);
-  });
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
-
-  targets.forEach(function (t) { t.classList.add('reveal'); io.observe(t); });
-})();
-</script>
+  <footer class="site-footer section-dark">
+    <div class="footer-grid container-wide"><div><img class="footer-lockup" src="assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"><p class="footer-philosophy">Information → Education → Action</p></div><nav class="footer-nav" aria-label="Footer navigation"><a href="#choose-path">Start here</a><a href="#library">The Library</a><a href="#shelf">The Shelf</a><a href="#story">Our story</a><a href="#transparency">Transparency</a></nav><div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="https://www.instagram.com/the_mindful.matrix/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></nav><p class="fine">Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York.</p><p class="copyright">© 2026 The Mindful Matrix</p></div></div>
+  </footer>
 </body>
 </html>

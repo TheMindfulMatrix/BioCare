@@ -1,0 +1,82 @@
+:root {
+  /* Brand */
+  --charcoal-950: #0f120f;
+  --charcoal-900: #151814;
+  --charcoal-850: #1b201b;
+  --charcoal-800: #242a24;
+  --ivory-100: #f8f4ec;
+  --ivory-200: #f4efe5;
+  --ivory-300: #e8e0d2;
+  --warm-200: #ead9bd;
+  --warm-300: #ddc399;
+  --gold-400: #dfbb78;
+  --gold-500: #d3a85c;
+  --gold-700: #8a6429;
+  --bio-green-400: #70aa8c;
+  --bio-green-600: #2f7255;
+
+  /* Contrast-safe roles */
+  --dark-bg: var(--charcoal-900);
+  --dark-surface: var(--charcoal-850);
+  --dark-surface-raised: var(--charcoal-800);
+  --dark-text: var(--ivory-100);
+  --dark-text-muted: #bbbdb4;
+  --dark-border: rgba(248, 244, 236, 0.18);
+  --dark-gold: var(--gold-400);
+  --dark-green: #88bea0;
+
+  --light-bg: var(--ivory-100);
+  --light-surface: #fffdf8;
+  --light-text: #20241f;
+  --light-text-muted: #595f58;
+  --light-border: rgba(32, 36, 31, 0.18);
+  --light-gold: var(--gold-700);
+  --light-green: var(--bio-green-600);
+
+  --warm-bg: #efe2cc;
+  --warm-surface: #f7eddd;
+  --warm-text: #292720;
+  --warm-text-muted: #625e54;
+  --warm-border: rgba(41, 39, 32, 0.2);
+
+  /* Typography */
+  --font-display: "Manrope", "Avenir Next", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-data: "JetBrains Mono", "Cascadia Mono", ui-monospace, monospace;
+  --text-xs: clamp(0.72rem, 0.7rem + 0.08vw, 0.78rem);
+  --text-sm: clamp(0.86rem, 0.82rem + 0.12vw, 0.94rem);
+  --text-body: clamp(1rem, 0.96rem + 0.14vw, 1.08rem);
+  --text-lede: clamp(1.12rem, 1rem + 0.45vw, 1.38rem);
+  --text-h3: clamp(1.35rem, 1.12rem + 0.9vw, 2rem);
+  --text-h2: clamp(2rem, 1.45rem + 2.2vw, 4rem);
+  --text-display: clamp(3.4rem, 1.5rem + 8vw, 9.5rem);
+
+  /* Spacing and layout */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+  --space-section: clamp(4.5rem, 9vw, 9rem);
+  --container-wide: 90rem;
+  --container: 76rem;
+  --container-reading: 46rem;
+  --gutter: clamp(1.1rem, 3.4vw, 3.5rem);
+
+  /* Shape, focus and motion */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.25rem;
+  --touch-target: 2.75rem;
+  --focus-color: #ffd688;
+  --focus-ring: 0 0 0 3px var(--charcoal-950), 0 0 0 6px var(--focus-color);
+  --ease-standard: cubic-bezier(0.2, 0.75, 0.25, 1);
+  --ease-emphasized: cubic-bezier(0.16, 0.84, 0.34, 1);
+  --motion-fast: 160ms;
+  --motion-standard: 300ms;
+  --motion-reveal: 650ms;
+}
