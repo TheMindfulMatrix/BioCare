@@ -10,6 +10,11 @@
 <meta name="theme-color" content="#07100F">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2307100F'/><circle cx='16' cy='16' r='7' fill='none' stroke='%23E9A13B' stroke-width='3'/></svg>">
 
+<!-- Real type. This is the single biggest difference between "template" and "brand". -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <!--
   ============================================================
   EDIT HERE
@@ -38,8 +43,8 @@
     --amber:   #E9A13B;
     --amber-soft: rgba(233, 161, 59, 0.14);
 
-    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    --sans: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "Space Mono", ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
 
     --shell: 30px;
   }
@@ -55,15 +60,40 @@
     overflow-x: hidden;
   }
 
+  /* Film grain, fixed over everything. Kills the flat-CSS look. */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
+    z-index: 2;
+    opacity: 0.5;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  }
+
+  /* Slow-drifting aurora. Three amber/teal blooms on long offset loops so the
+     background never quite repeats — reads as depth, costs nothing. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(120% 60% at 80% -10%, rgba(233, 161, 59, 0.13), transparent 60%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      radial-gradient(38% 32% at 78% 12%, rgba(233, 161, 59, 0.22), transparent 62%),
+      radial-gradient(34% 30% at 18% 34%, rgba(58, 168, 150, 0.16), transparent 64%),
+      radial-gradient(44% 36% at 52% 88%, rgba(233, 161, 59, 0.10), transparent 66%);
+    filter: blur(28px);
+    animation: drift 34s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  @keyframes drift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    33%  { transform: translate3d(2.5%, -2%, 0) scale(1.06); }
+    66%  { transform: translate3d(-2%, 2.5%, 0) scale(1.03); }
+    100% { transform: translate3d(1.5%, 1.5%, 0) scale(1.08); }
   }
 
   .layer { position: relative; z-index: 1; }
@@ -151,7 +181,24 @@
     }
   }
 
+  /* Light sweeps across the tile on hover. One pseudo-element, no JS. */
+  .tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 38%,
+                rgba(242, 238, 228, 0.10) 48%, rgba(233, 161, 59, 0.13) 52%, transparent 62%);
+    transform: translateX(-130%);
+    transition: transform 780ms cubic-bezier(.22,.7,.3,1);
+  }
+
+  .tile:hover::after,
+  .tile:focus-visible::after { transform: translateX(130%); }
+
   .tile figcaption {
+    position: relative;
+    z-index: 1;
     width: 100%;
     padding: 13px 13px 14px;
     background: linear-gradient(to top, rgba(7, 16, 15, 0.94) 30%, transparent);
@@ -201,14 +248,22 @@
 
   .wordmark {
     margin: 0;
-    font-size: clamp(46px, 15vw, 88px);
-    font-weight: 800;
-    line-height: 0.85;
-    letter-spacing: -0.045em;
+    font-size: clamp(46px, 15vw, 96px);
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -0.05em;
     text-transform: uppercase;
   }
 
   .wordmark span { display: block; }
+
+  /* The solid line gets a soft top-down sheen so it isn't flat bone. */
+  .wordmark .solid {
+    background: linear-gradient(176deg, #FFFDF7 12%, var(--bone) 46%, #A8B3AE 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
   .wordmark .thin {
     font-weight: 300;
@@ -467,6 +522,27 @@
     max-width: 46ch;
   }
 
+  /* ================= scroll reveal ================= */
+  /* Only applied once JS confirms it can run, so with JS off nothing hides. */
+
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 760ms cubic-bezier(.16,.84,.34,1),
+                transform 760ms cubic-bezier(.16,.84,.34,1);
+  }
+
+  .js-reveal .reveal.seen { opacity: 1; transform: none; }
+
+  /* Each band comes in behind the one above it. */
+  .js-reveal .band { transition-delay: calc(var(--i, 0) * 70ms); }
+
+  @media (prefers-reduced-motion: reduce) {
+    body::after { animation: none; }
+    .tile::after { display: none; }
+    .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
   /* ================= motion ================= */
 
   .rise {
@@ -540,7 +616,7 @@
       <div class="eyebrow">ZINZINO INDEPENDENT PARTNER</div>
       <h1 class="wordmark">
         <span class="thin">The</span>
-        <span>Mindful</span>
+        <span class="solid">Mindful</span>
         <span class="hollow">Matrix</span>
       </h1>
       <p class="lede">Test first. Then choose. Everything I use and recommend, in one place.</p>
@@ -615,5 +691,30 @@
   </main>
 </div>
 
+<script>
+/* Scroll reveal. Sections and link bands fade up as they come into view.
+   The .js-reveal class is added by JS, so if JS is off or fails, every
+   element just stays visible instead of being stuck hidden. */
+(function () {
+  var motionOff = window.matchMedia &&
+                  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (motionOff || !('IntersectionObserver' in window)) return;
+
+  document.documentElement.classList.add('js-reveal');
+
+  var targets = document.querySelectorAll('.panel, .foot, .band');
+  document.querySelectorAll('.band').forEach(function (b, i) {
+    b.style.setProperty('--i', i % 5);
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+
+  targets.forEach(function (t) { t.classList.add('reveal'); io.observe(t); });
+})();
+</script>
 </body>
 </html>
