@@ -20,7 +20,7 @@ jobs:
         run: python scripts/build.py
       - name: Verify committed output and site structure
         run: |
-          git diff --exit-code -- index.html
+          git diff --exit-code -- index.html library.html start.html library/
           python scripts/validate.py
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4
@@ -28,5 +28,8 @@ jobs:
           name: biocare-static-preview
           path: |
             index.html
+            library.html
+            start.html
+            library/
             assets/
             img/

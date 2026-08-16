@@ -2,6 +2,27 @@
   "site": {
     "name": "The Mindful Matrix",
     "description": "Balance tests, omega supplements and BioLimitless — Gavin Reidel, Zinzino Independent Partner.",
+    "copyrightYear": 2026,
+    "metadata": {
+      "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
+      "articleTitleSuffix": " | The Mindful Matrix",
+      "pages": {
+        "home": {
+          "path": "",
+          "title": "The Mindful Matrix"
+        },
+        "library": {
+          "path": "library.html",
+          "title": "The Library | The Mindful Matrix",
+          "description": "Practical wellness education built around credible sources, context, and useful next steps."
+        },
+        "start": {
+          "path": "start.html",
+          "title": "Start Here | The Mindful Matrix",
+          "description": "A clear orientation to getting informed, understanding what information means, and choosing a reasonable next step."
+        }
+      }
+    },
     "eyebrow": "ZINZINO INDEPENDENT PARTNER",
     "lede": "Test first. Then choose. Everything I use and recommend, in one place.",
     "instagram": {
@@ -89,9 +110,9 @@
     "choosePath": {
       "heading": "Where are you right now?",
       "paths": [
-        { "id": "get-informed", "index": "01", "name": "Get informed", "copy": "I want to understand my situation.", "cta": "Start here", "href": "#testing" },
-        { "id": "get-educated", "index": "02", "name": "Get educated", "copy": "I want to understand more.", "cta": "Enter the Library", "href": "#library" },
-        { "id": "take-action", "index": "03", "name": "Take action", "copy": "I'm ready to make changes.", "cta": "Explore your options", "href": "#shelf" }
+        { "id": "get-informed", "index": "01", "name": "Get informed", "copy": "I want to understand my situation.", "cta": "Start here", "href": "start.html#information" },
+        { "id": "get-educated", "index": "02", "name": "Get educated", "copy": "I want to understand more.", "cta": "Enter the Library", "href": "library.html" },
+        { "id": "take-action", "index": "03", "name": "Take action", "copy": "I'm ready to make changes.", "cta": "Explore your options", "href": "start.html#action" }
       ]
     },
     "founder": {
@@ -123,7 +144,6 @@
       "status": "The Library is being built.",
       "statusCopy": "We're creating practical wellness guides grounded in credible sources—not more noise.",
       "categoriesLabel": "Coming to the Library",
-      "categories": ["Foundations", "Omega-3", "Testing", "Gut Health", "Performance", "Research"],
       "transition": "You understand the why. Now explore the tools."
     },
     "shelf": {
@@ -170,7 +190,18 @@
       "cta": "Get the kit",
       "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
       "image": { "src": "img/kit.png", "alt": "Balance Test Basic Kit packaging", "width": 560, "height": 560 },
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+        "width": 560,
+        "height": 560,
+        "sourceAsset": "assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png"
+      },
+      "artwork": {
+        "src": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+        "width": 1024,
+        "height": 1536,
+        "status": "approved Mindful Matrix cinematic background"
+      },
       "showInShelf": false
     },
     {

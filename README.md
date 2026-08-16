@@ -6,12 +6,27 @@ This repository is a dependency-free static site published under the GitHub Page
 
 - `content/site.json` is the source of truth for site copy, disclosures, product metadata, images, and verified destinations.
 - Each product's `artwork` object reserves a stable Shelf background slot. Keep `src` null until approved original editorial artwork, dimensions, and crops are supplied; the existing product image remains the foreground fallback.
-- `content/library.json` establishes the article collection and schema. An empty collection renders the visitor-facing coming-soon state; valid article records automatically replace it with the article grid.
-- `templates/index.html` contains document structure only.
-- `scripts/build.py` produces the deployable root `index.html` using only Python's standard library.
+- `content/library.json` is the single source of truth for Library categories, the article schema, publication status, and article records. An empty collection renders the visitor-facing coming-soon state.
+- `templates/index.html`, `templates/library.html`, `templates/start.html`, and `templates/article.html` contain page structure only. Shared navigation, footer, and metadata markup are generated centrally.
+- `scripts/build.py` produces `index.html`, `library.html`, `start.html`, and published-only `library/<slug>.html` files using only Python's standard library. Draft records are never emitted as public pages.
 - `img/responsive/` contains optimized WebP derivatives; the original `img/` files remain fallbacks and source assets.
 
-Do not edit generated product content in `index.html`. Change the content model or template, then regenerate it.
+Do not edit generated page content in root HTML files. Change the content model or templates, then regenerate the site.
+
+## Library publishing
+
+Add reviewed article records to the `articles` array in `content/library.json`. A record must use a configured category and a URL-safe unique slug. Keep work in progress set to `"status": "draft"`; only records explicitly set to `"status": "published"` generate `library/<slug>.html`.
+
+The article model supports body sections, plain paragraphs, subheadings, lists, quotations, callouts, key takeaways, evidence notes, limitations, HTTPS sources, related published articles, and explicitly approved product connections. Article hero images are optional, but any configured hero must include dimensions and deliberate alt behavior.
+
+A local fixture can be rendered without adding it to public content:
+
+```text
+python scripts/build.py --preview-article <path-to-non-public-fixture.json>
+python scripts/validate.py --preview _preview/article-preview.html
+```
+
+The preview receives `noindex, nofollow`, no canonical URL, and a visible non-public banner. Keep fixture files and `_preview/` output out of commits and deployment artifacts.
 
 ## Local validation
 
@@ -25,9 +40,28 @@ Open `http://localhost:8000/BioCare/` to test the same subpath shape used by Git
 
 Pull requests run the same generator and validation checks and provide a downloadable static preview artifact. GitHub Pages remains compatible with its current branch-root configuration because the generated `index.html` is committed.
 
+## Official product cutouts
+
+Immutable manufacturer downloads belong in `assets/source-products/`. Normalized transparent foregrounds belong in `assets/product-cutouts/`; never write processed files back into the source folder.
+
+The reusable cutout tool accepts separate input and output folders and defaults to a 560 × 560 transparent PNG with a 6% margin:
+
+```text
+pip install "rembg[cpu]" pillow
+python scripts/cutout.py assets/source-products/manufacturer/product assets/product-cutouts/manufacturer
+```
+
+The tool keeps an existing alpha channel by default and only trims, proportionally resizes, and centers those pixels. Inspect transparent sources before processing: use `--skip-rembg` when the alpha is already clean, or `--force-rembg` when an otherwise transparent file still contains a background surface. Opaque sources automatically use `isnet-general-use` with the approved alpha-matting settings. Use `--canvas-size` for another square size and `--output-name` to name a single generated PNG explicitly.
+
+Example for the verified Balance Test Basic Kit source, whose transparent file still contains a presentation background:
+
+```text
+python scripts/cutout.py assets/source-products/zinzino/balance-test-basic-kit assets/product-cutouts/zinzino --force-rembg --output-name balance-test-basic-kit-910465.png
+```
+
 ## Design system
 
 - `assets/css/tokens.css` defines contrast-safe dark, light, and warm environments; display, body, and data typography; layout; spacing; shape; focus; and motion roles.
 - `assets/brand/` contains replaceable SVG lockups, standalone mark variants, a single-color gold mark, and the favicon.
 - `assets/css/site.css` contains reusable navigation, button, journey, data, product, Library, pathway, and destination patterns.
-- The generated page is the production homepage. Library articles remain intentionally empty until reviewed content is approved.
+- The generated root pages are the production homepage, Library landing page, and Start Here orientation. Library articles remain intentionally empty until reviewed content is approved.

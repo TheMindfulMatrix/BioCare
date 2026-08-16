@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Validate content, generated output, and GitHub Pages subpath assumptions."""
+"""Validate content, multipage output, and GitHub Pages subpath assumptions."""
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 errors: list[str] = []
@@ -17,23 +18,44 @@ errors: list[str] = []
 class DocumentParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
-        self.ids: set[str] = set()
+        self.ids: list[str] = []
         self.references: list[tuple[str, str]] = []
         self.h1_count = 0
         self.images: list[dict[str, str | None]] = []
+        self.canonicals: list[str] = []
+        self.titles: list[str] = []
+        self.descriptions: list[str] = []
+        self._in_title = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
         if values.get("id"):
-            self.ids.add(str(values["id"]))
+            self.ids.append(str(values["id"]))
         if tag == "h1":
             self.h1_count += 1
         if tag == "img":
             self.images.append(values)
+        if tag == "title":
+            self._in_title = True
+        if tag == "meta" and values.get("name") == "description" and values.get("content"):
+            self.descriptions.append(str(values["content"]))
+        if tag == "link" and values.get("rel") == "canonical" and values.get("href"):
+            self.canonicals.append(str(values["href"]))
         for attribute in ("href", "src"):
             value = values.get(attribute)
             if value:
-                self.references.append((attribute, value))
+                self.references.append((attribute, str(value)))
+        if values.get("srcset"):
+            for candidate in str(values["srcset"]).split(","):
+                self.references.append(("srcset", candidate.strip().split()[0]))
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "title":
+            self._in_title = False
+
+    def handle_data(self, data: str) -> None:
+        if self._in_title:
+            self.titles.append(data.strip())
 
 
 def check(condition: bool, message: str) -> None:
@@ -41,104 +63,228 @@ def check(condition: bool, message: str) -> None:
         errors.append(message)
 
 
-def main() -> None:
-    site = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
-    library = json.loads((ROOT / "content" / "library.json").read_text(encoding="utf-8"))
+def is_external(reference: str) -> bool:
+    return reference.startswith(("https://", "http://", "mailto:", "tel:", "data:"))
+
+
+def resolve_local_reference(page: Path, reference: str) -> tuple[Path, str]:
+    path_part, _, fragment = reference.partition("#")
+    path_part = path_part.split("?", 1)[0]
+    target = page if not path_part else (page.parent / unquote(path_part)).resolve()
+    return target, fragment
+
+
+def validate_content(site: dict, library: dict) -> None:
     products = site.get("products", [])
     ids = [product.get("id") for product in products]
-
     check(bool(products), "content/site.json must contain products")
     check(len(ids) == len(set(ids)), "Product IDs must be unique")
     check(site.get("featuredProductId") in ids, "featuredProductId must reference a product")
+
+    metadata = site.get("site", {}).get("metadata", {})
+    check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrix.github.io/BioCare/", "Canonical base must preserve the verified /BioCare/ GitHub Pages URL")
+    check(set(metadata.get("pages", {})) == {"home", "library", "start"}, "Home, Library and Start metadata are required")
+    check("categories" not in site.get("homepage", {}).get("library", {}), "Library categories must have one source of truth in content/library.json")
+
+    categories = library.get("categories", [])
+    category_ids = [category.get("id") for category in categories]
+    check(len(category_ids) == 6 and len(category_ids) == len(set(category_ids)), "Library requires six unique categories")
+    check(all(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", str(value or "")) for value in category_ids), "Library category IDs must be URL-safe")
     check(isinstance(library.get("articles"), list), "content/library.json articles must be a list")
-    article_schema = library.get("schema", {})
-    required_article_fields = article_schema.get("required", [])
-    article_ids = [article.get("id") for article in library.get("articles", [])]
-    check(len(article_ids) == len(set(article_ids)), "Library article IDs must be unique")
+    schema = library.get("schema", {})
+    required = schema.get("required", [])
+    published_required = schema.get("publishedRequired", [])
+    statuses = set(schema.get("statusValues", []))
+    slugs = [article.get("slug") for article in library.get("articles", [])]
+    check(len(slugs) == len(set(slugs)), "Library article slugs must be unique")
     for article in library.get("articles", []):
-        for field in required_article_fields:
-            check(bool(article.get(field)), f'{article.get("id", "unknown article")}: missing {field}')
-        check(isinstance(article.get("topics"), list) and bool(article.get("topics")), f'{article.get("id")}: topics must be a non-empty list')
-        href = article.get("href", "")
-        check(href.startswith(("https://", "articles/")), f'{article.get("id")}: unsupported article href')
-        article_image = article.get("image")
-        if article_image:
-            check((ROOT / article_image.get("src", "missing")).is_file(), f'{article.get("id")}: missing article image')
-            check(bool(article_image.get("width") and article_image.get("height")), f'{article.get("id")}: article image dimensions required')
+        label = article.get("slug", "unknown article")
+        for field in required:
+            check(bool(article.get(field)), f"{label}: missing {field}")
+        check(bool(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", str(article.get("slug", "")))), f"{label}: slug must be URL-safe")
+        check(article.get("status") in statuses, f"{label}: unsupported article status")
+        check(article.get("category") in category_ids, f"{label}: unknown category")
+        body_sections = article.get("bodySections", [])
+        check(isinstance(body_sections, list) and bool(body_sections), f"{label}: bodySections must be a non-empty list")
+        section_ids = [section.get("id") for section in body_sections]
+        check(len(section_ids) == len(set(section_ids)), f"{label}: body section IDs must be unique")
+        for section in body_sections:
+            check(bool(section.get("id") and section.get("heading")), f"{label}: body section requires id and heading")
+            check(isinstance(section.get("blocks"), list) and bool(section.get("blocks")), f"{label}: body section requires blocks")
+            for block in section.get("blocks", []):
+                check(block.get("type", "paragraph") in {"paragraph", "subheading", "list", "quote", "callout"}, f"{label}: unsupported body block")
+        if article.get("status") == "published":
+            for field in published_required:
+                check(bool(article.get(field)), f"{label}: published article missing {field}")
+        for source in article.get("sources", []):
+            check(urlparse(source.get("url", "")).scheme == "https", f"{label}: source URLs must use HTTPS")
+            check(bool(source.get("title")), f"{label}: source title required")
+        hero = article.get("hero")
+        if hero:
+            check((ROOT / hero.get("src", "missing")).is_file(), f"{label}: missing hero image")
+            check(hero.get("alt") is not None, f"{label}: hero image alt behavior required")
+            check(bool(hero.get("width") and hero.get("height")), f"{label}: hero dimensions required")
 
     partner_id = site.get("affiliate", {}).get("zinzinoPartnerId")
     for product in products:
+        label = product.get("id", "unknown")
         for field in ("id", "name", "category", "description", "whyItsHere", "cta", "destination", "image", "artwork"):
-            check(bool(product.get(field)), f'{product.get("id", "unknown")}: missing {field}')
+            check(bool(product.get(field)), f"{label}: missing {field}")
         destination = product.get("destination", "")
-        check(urlparse(destination).scheme == "https", f'{product.get("id")}: destination must use HTTPS')
+        check(urlparse(destination).scheme == "https", f"{label}: destination must use HTTPS")
         if "zinzino.com" in destination:
-            check(f"/shop/{partner_id}/" in destination, f'{product.get("id")}: Zinzino partner ID mismatch')
+            check(f"/shop/{partner_id}/" in destination, f"{label}: Zinzino partner ID mismatch")
         image = product.get("image", {})
-        path = ROOT / image.get("src", "missing")
-        check(path.is_file(), f'{product.get("id")}: missing image {image.get("src")}')
+        check((ROOT / image.get("src", "missing")).is_file(), f"{label}: missing image {image.get('src')}")
         source = Path(image.get("src", "missing"))
         widths = [280, 560] if image.get("width") == 560 else [512, 1024]
         for width in widths:
             responsive = ROOT / "img" / "responsive" / f"{source.stem}-{width}.webp"
-            check(responsive.is_file(), f'{product.get("id")}: missing responsive image {responsive.relative_to(ROOT)}')
-        check(bool(image.get("alt")), f'{product.get("id")}: product image requires alt text')
-        check(bool(image.get("width") and image.get("height")), f'{product.get("id")}: image dimensions required')
+            check(responsive.is_file(), f"{label}: missing responsive image {responsive.relative_to(ROOT)}")
+        check(bool(image.get("alt")), f"{label}: product image requires alt text")
+        check(bool(image.get("width") and image.get("height")), f"{label}: image dimensions required")
+        cutout = product.get("cutout")
+        if cutout:
+            check((ROOT / cutout.get("src", "missing")).is_file(), f"{label}: missing product cutout")
+            check(bool(cutout.get("width") and cutout.get("height")), f"{label}: cutout dimensions required")
+            check((ROOT / cutout.get("sourceAsset", "missing")).is_file(), f"{label}: missing immutable cutout source")
         artwork = product.get("artwork", {})
-        check(bool(artwork.get("status")), f'{product.get("id")}: artwork status is required')
+        check(bool(artwork.get("status")), f"{label}: artwork status is required")
         if artwork.get("src"):
-            check((ROOT / artwork["src"]).is_file(), f'{product.get("id")}: missing editorial artwork {artwork["src"]}')
-            check(bool(artwork.get("width") and artwork.get("height")), f'{product.get("id")}: artwork dimensions required')
+            check((ROOT / artwork["src"]).is_file(), f"{label}: missing editorial artwork {artwork['src']}")
+            check(bool(artwork.get("width") and artwork.get("height")), f"{label}: artwork dimensions required")
 
+
+def public_pages(library: dict) -> list[Path]:
+    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html"]
+    pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
+    return pages
+
+
+def validate_page(page: Path, *, preview: bool = False) -> DocumentParser:
+    label = page.relative_to(ROOT) if ROOT in page.parents else page
+    check(page.is_file(), f"Missing generated page: {label}")
+    if not page.is_file():
+        return DocumentParser()
+    generated = page.read_text(encoding="utf-8")
     parser = DocumentParser()
-    generated = (ROOT / "index.html").read_text(encoding="utf-8")
     parser.feed(generated)
-    check(parser.h1_count == 1, "Generated page must contain exactly one h1")
-    check('href="#main-content"' in generated, "Generated page must contain a skip link")
-    check("{{" not in generated and "}}" not in generated, "Generated page contains unresolved tokens")
-
-    for image in parser.images:
-        check(image.get("alt") is not None, f'Image {image.get("src")} has no alt attribute')
-        check(bool(image.get("width") and image.get("height")), f'Image {image.get("src")} lacks dimensions')
-    check(generated.count("<picture>") == len(products) + 1, "Testing and Shelf product images must use responsive picture markup")
-    check(generated.count("data-artwork-state=") == len(products), "Every Shelf product requires a stable editorial artwork slot")
-    check(generated.count("data-library-article") == len(library["articles"]), "Generated Library article count must match content")
-    if library["articles"]:
-        check('data-library-state="published"' in generated, "Published Library state is required when articles exist")
+    check(parser.h1_count == 1, f"{label}: must contain exactly one h1")
+    check(len(parser.ids) == len(set(parser.ids)), f"{label}: contains duplicate IDs")
+    check('class="skip-link"' in generated, f"{label}: skip link required")
+    check("{{" not in generated and "}}" not in generated, f"{label}: unresolved template token")
+    check(len(parser.titles) == 1 and bool(parser.titles[0]), f"{label}: unique title required")
+    check(len(parser.descriptions) == 1 and bool(parser.descriptions[0]), f"{label}: unique description required")
+    check('aria-controls="primary-links"' in generated, f"{label}: mobile navigation control required")
+    check('meta name="generator" content="The Mindful Matrix static builder"' in generated, f"{label}: builder marker required")
+    if preview:
+        check('name="robots" content="noindex, nofollow"' in generated, f"{label}: preview must be noindex")
+        check(not parser.canonicals, f"{label}: preview must not have a canonical URL")
+        check("Non-public article template preview" in generated, f"{label}: preview banner required")
     else:
-        check('data-library-state="empty"' in generated, "Visitor-facing Library empty state is required")
-        check("The Library is being built." in generated, "Approved Library empty-state heading is required")
-        check("content model is ready" not in generated.lower(), "Developer-facing Library language must not be published")
-        check("Coming to the Library" in generated, "Library category preview label is required")
-    check('aria-controls="primary-links"' in generated, "Mobile navigation control is required")
-    check("assets/brand/lockup-dark.svg" in generated, "Primary brand lockup is required")
-    check(">BioCare<" not in generated and "BioCare —" not in generated, "Repository name must not appear as public-facing text")
-    check("$127" not in generated, "Unverified legacy price must not be rendered")
-    check('data-media-status="awaiting-original-photography"' in generated, "Founder media placeholder is required until original photography is supplied")
-    check("<span>Trust isn't something we claim.</span><span>It's something we earn.</span>" in generated, "Standards payoff must preserve its two-part editorial emphasis")
-    for section_id in ("top", "problem", "matrix", "choose-path", "story", "testing", "library", "shelf", "standards", "transparency", "start"):
-        check(f'id="{section_id}"' in generated, f"Missing production section: {section_id}")
-    for product in products:
-        check(product["destination"] in generated, f'{product["id"]}: destination missing from generated homepage')
-    check(bool(site.get("homepage", {}).get("transparency", {}).get("approvalStatus")), "Transparency review status must remain maintainable in content")
-    for brand_asset in ("mark-dark.svg", "mark-light.svg", "mark-gold.svg", "lockup-dark.svg", "lockup-light.svg", "favicon.svg"):
-        check((ROOT / "assets" / "brand" / brand_asset).is_file(), f"Missing brand asset: {brand_asset}")
+        check(len(parser.canonicals) == 1, f"{label}: one canonical URL required")
+        if parser.canonicals:
+            check(parser.canonicals[0].startswith("https://themindfulmatrix.github.io/BioCare/"), f"{label}: canonical must preserve /BioCare/")
+    for image in parser.images:
+        check(image.get("alt") is not None, f"{label}: image {image.get('src')} has no alt attribute")
+        check(bool(image.get("width") and image.get("height")), f"{label}: image {image.get('src')} lacks dimensions")
+    return parser
 
+
+def validate_references(page: Path, parser: DocumentParser, parsers: dict[Path, DocumentParser]) -> None:
+    label = page.relative_to(ROOT) if ROOT in page.parents else page
     for attribute, reference in parser.references:
-        if reference.startswith(("https://", "http://", "data:", "#")):
-            if reference.startswith("#"):
-                check(reference[1:] in parser.ids, f"Missing fragment target: {reference}")
+        if is_external(reference):
             continue
-        check(not reference.startswith("/"), f"Root-relative path breaks /BioCare/: {reference}")
-        clean = re.split(r"[?#]", reference, maxsplit=1)[0]
-        check((ROOT / clean).is_file(), f"Missing relative {attribute}: {reference}")
+        check(not reference.startswith("/"), f"{label}: root-relative path breaks /BioCare/: {reference}")
+        target, fragment = resolve_local_reference(page, reference)
+        check(ROOT.resolve() == target or ROOT.resolve() in target.parents, f"{label}: reference escapes repository: {reference}")
+        check(target.is_file(), f"{label}: missing relative {attribute}: {reference}")
+        if fragment and target.is_file() and target.suffix.lower() == ".html":
+            target_parser = parsers.get(target)
+            if target_parser is None:
+                target_parser = validate_page(target)
+                parsers[target] = target_parser
+            check(fragment in target_parser.ids, f"{label}: missing fragment target: {reference}")
 
+
+def validate_public_output(site: dict, library: dict, preview_path: Path | None) -> None:
+    pages = public_pages(library)
+    parsers: dict[Path, DocumentParser] = {}
+    for page in pages:
+        parsers[page.resolve()] = validate_page(page.resolve())
+    if preview_path:
+        preview = preview_path.resolve()
+        parsers[preview] = validate_page(preview, preview=True)
+    for page, parser in list(parsers.items()):
+        validate_references(page, parser, parsers)
+
+    public_parsers = [parsers[page.resolve()] for page in pages if page.resolve() in parsers]
+    titles = [parser.titles[0] for parser in public_parsers if parser.titles]
+    canonicals = [parser.canonicals[0] for parser in public_parsers if parser.canonicals]
+    check(len(titles) == len(set(titles)), "Public pages must have unique titles")
+    check(len(canonicals) == len(set(canonicals)), "Public pages must have unique canonical URLs")
+
+    article_dir = ROOT / "library"
+    actual_article_pages = set(article_dir.glob("*.html")) if article_dir.exists() else set()
+    expected_article_pages = {ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published"}
+    check(actual_article_pages == expected_article_pages, "Public article output must exactly match published article records")
+    for article in library["articles"]:
+        if article.get("status") != "published":
+            check(not (article_dir / f'{article["slug"]}.html').exists(), f"Draft article generated publicly: {article['slug']}")
+
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    check(home.count("<picture>") == len(site["products"]), "Testing and fallback Shelf images must use responsive picture markup")
+    cutout_count = sum(1 for product in site["products"] if product.get("cutout"))
+    check(home.count('data-image-role="official-product-cutout"') == cutout_count, "Every configured Shelf cutout must render as a separate foreground image")
+    check(home.count('class="shelf-card__visual artwork-stage"') == len(site["products"]), "Every Shelf card requires separate artwork and product layers")
+    check(home.count("data-artwork-state=") == len(site["products"]), "Every Shelf product requires a stable editorial artwork slot")
+    check(home.count("data-library-article") == len([article for article in library["articles"] if article.get("status") == "published"]), "Homepage Library count must match published content")
+    check('data-library-state="empty"' in home if not any(article.get("status") == "published" for article in library["articles"]) else 'data-library-state="published"' in home, "Homepage Library state mismatch")
+    check("content model is ready" not in home.lower(), "Developer-facing Library language must not be published")
+    check('data-media-status="awaiting-original-photography"' in home, "Founder media placeholder must remain")
+    check("<span>Trust isn't something we claim.</span><span>It's something we earn.</span>" in home, "Standards payoff must remain")
+    check("$127" not in home, "Unverified legacy price must not be rendered")
+    check('assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png' in home, "Verified Balance cutout must remain the rendered foreground")
+    check('assets/artwork/shelf/balance-test-basic-kit-cinematic.webp' in home, "Approved Balance artwork must remain")
+    for product in site["products"]:
+        check(product["destination"] in home, f"{product['id']}: destination missing from homepage")
+    css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    check("overflow-x: hidden" not in css, "Horizontal overflow must not be concealed in CSS")
+    base_css = (ROOT / "assets" / "css" / "base.css").read_text(encoding="utf-8")
+    enhancements = (ROOT / "assets" / "js" / "enhancements.js").read_text(encoding="utf-8")
+    check("@media (prefers-reduced-motion: reduce)" in base_css and "@media (prefers-reduced-motion: reduce)" in css, "Reduced-motion CSS fallbacks are required")
+    check("prefers-reduced-motion: reduce" in enhancements, "Interaction enhancement must respect reduced motion")
+    library_page = (ROOT / "library.html").read_text(encoding="utf-8")
+    for category in library["categories"]:
+        check(category["name"] in library_page, f"Library landing page missing category: {category['name']}")
+    if not any(article.get("status") == "published" for article in library["articles"]):
+        check("The Library is being built." in library_page, "Library landing page requires the approved empty state when no articles are published")
+    start_page = (ROOT / "start.html").read_text(encoding="utf-8")
+    for stage_id in ("information", "education", "action"):
+        check(f'id="{stage_id}"' in start_page, f"Start Here missing orientation stage: {stage_id}")
+    check("This page is an orientation, not a diagnostic." in start_page, "Start Here must state its non-diagnostic scope")
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--preview", type=Path, help="Also validate a non-public article preview")
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    site = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
+    library = json.loads((ROOT / "content" / "library.json").read_text(encoding="utf-8"))
+    validate_content(site, library)
+    validate_public_output(site, library, args.preview)
     if errors:
         print("Validation failed:")
         for error in errors:
             print(f"- {error}")
         sys.exit(1)
-    print(f"Validation passed: {len(products)} products, {len(library['articles'])} library articles, /BioCare/ paths safe")
+    published_count = sum(1 for article in library["articles"] if article.get("status") == "published")
+    print(f"Validation passed: 3 core pages, {published_count} published articles, {len(site['products'])} products, /BioCare/ paths safe")
 
 
 if __name__ == "__main__":

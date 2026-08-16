@@ -1,7 +1,32 @@
 {
+  "categories": [
+    { "id": "foundations", "name": "Foundations" },
+    { "id": "omega-3", "name": "Omega-3" },
+    { "id": "testing", "name": "Testing" },
+    { "id": "gut-health", "name": "Gut Health" },
+    { "id": "performance", "name": "Performance" },
+    { "id": "research", "name": "Research" }
+  ],
   "articles": [],
   "schema": {
-    "required": ["id", "title", "summary", "published", "topics", "href"],
-    "optional": ["updated", "image", "readingTime", "featured"]
+    "statusValues": ["draft", "published"],
+    "required": ["slug", "title", "summary", "category", "status", "author", "readingTime", "bodySections"],
+    "publishedRequired": ["published", "sources"],
+    "optional": [
+      "dek",
+      "updated",
+      "reviewer",
+      "hero",
+      "keyTakeaways",
+      "evidenceNotes",
+      "limitations",
+      "relatedProducts",
+      "relatedArticles",
+      "featured"
+    ]
+  },
+  "editorialUpdatePrinciple": {
+    "name": "We update our material",
+    "copy": "When better information becomes available, the material should change with it."
   }
 }
