@@ -85,6 +85,16 @@ def validate_content(site: dict, library: dict) -> None:
     check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrix.github.io/BioCare/", "Canonical base must preserve the verified /BioCare/ GitHub Pages URL")
     check(set(metadata.get("pages", {})) == {"home", "library", "start"}, "Home, Library and Start metadata are required")
     check("categories" not in site.get("homepage", {}).get("library", {}), "Library categories must have one source of truth in content/library.json")
+    start_here = site.get("homepage", {}).get("startHere", {})
+    start_stages = start_here.get("stages", [])
+    check([stage.get("id") for stage in start_stages] == ["information", "education", "action"], "Start Here must preserve the Information, Education, Action sequence")
+    start_pathways = start_here.get("pathways", {}).get("items", [])
+    check(len(start_pathways) == 4, "Start Here requires four visitor-intent pathways")
+    for pathway in start_pathways:
+        check(bool(pathway.get("heading") and pathway.get("copy") and pathway.get("cta") and pathway.get("href")), "Start Here pathways require heading, copy, CTA and destination")
+        check(not str(pathway.get("href", "")).startswith("/"), "Start Here pathways must preserve /BioCare/ relative paths")
+    testing_education = site.get("homepage", {}).get("testing", {}).get("education", {})
+    check(bool(testing_education.get("heading") and testing_education.get("copy") and testing_education.get("cta") and testing_education.get("href")), "Testing requires an education-first pathway")
 
     categories = library.get("categories", [])
     category_ids = [category.get("id") for category in categories]
@@ -146,6 +156,8 @@ def validate_content(site: dict, library: dict) -> None:
         for related_slug in article.get("relatedArticles", []):
             check(related_slug != label, f"{label}: article cannot link to itself")
             check(related_slug in published_slugs, f"{label}: related article must reference a published slug")
+        if article.get("relatedArticles"):
+            check(bool(article.get("relatedReadingHeading") and article.get("relatedReadingIntro")), f"{label}: related reading requires contextual heading and introduction")
         optional_action = article.get("optionalAction")
         if optional_action:
             check(bool(optional_action.get("label") and optional_action.get("heading") and optional_action.get("copy")), f"{label}: optional action requires label, heading and copy")
@@ -291,6 +303,12 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     check("$127" not in home, "Unverified legacy price must not be rendered")
     check('assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png' in home, "Verified Balance cutout must remain the rendered foreground")
     check('assets/artwork/shelf/balance-test-basic-kit-cinematic.webp' in home, "Approved Balance artwork must remain")
+    testing_guide = 'href="library/should-you-test-your-omega-3-levels.html"'
+    featured_destination = next(product["destination"] for product in site["products"] if product["id"] == site["featuredProductId"])
+    check(testing_guide in home, "Testing section must link to the testing education guide")
+    check(home.find(testing_guide) < home.find(featured_destination), "Testing education must appear before the commercial destination")
+    check(home.count('class="shelf-card__why"') == len(site["products"]), "Every Shelf item must show why it is included before its commercial link")
+    check('href="start.html#pathways">Find your path' in home, "Primary navigation must distinguish Start Here from the pathway shortcut")
     for product in site["products"]:
         check(product["destination"] in home, f"{product['id']}: destination missing from homepage")
     css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -313,6 +331,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
             check('id="what-we-know"' in article_page, f"{article['slug']}: missing evidence summary")
         if article.get("optionalAction"):
             check('id="optional-action"' in article_page, f"{article['slug']}: optional action must remain structurally separate")
+        check('id="article-journey"' in article_page, f"{article['slug']}: missing standardized end-of-article journey")
+        check("Keep learning" in article_page and "Understand your next step" in article_page, f"{article['slug']}: end-of-article journey choices are incomplete")
         for related_slug in article.get("relatedArticles", []):
             check(f'href="{related_slug}.html"' in article_page, f"{article['slug']}: missing related-article link to {related_slug}")
         if not article.get("reviewer"):
@@ -320,6 +340,7 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     start_page = (ROOT / "start.html").read_text(encoding="utf-8")
     for stage_id in ("information", "education", "action"):
         check(f'id="{stage_id}"' in start_page, f"Start Here missing orientation stage: {stage_id}")
+    check(start_page.count("data-start-pathway=") == 4, "Start Here must render four visitor-intent pathways")
     check("This page is an orientation, not a diagnostic." in start_page, "Start Here must state its non-diagnostic scope")
 
 

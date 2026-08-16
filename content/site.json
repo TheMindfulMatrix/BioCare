@@ -110,10 +110,81 @@
     "choosePath": {
       "heading": "Where are you right now?",
       "paths": [
-        { "id": "get-informed", "index": "01", "name": "Get informed", "copy": "I want to understand my situation.", "cta": "Start here", "href": "start.html#information" },
-        { "id": "get-educated", "index": "02", "name": "Get educated", "copy": "I want to understand more.", "cta": "Enter the Library", "href": "library.html" },
-        { "id": "take-action", "index": "03", "name": "Take action", "copy": "I'm ready to make changes.", "cta": "Explore your options", "href": "start.html#action" }
+        { "id": "understand-topic", "index": "01", "name": "Understand something", "copy": "I want a credible place to learn about a topic.", "cta": "Explore the Library", "href": "library.html" },
+        { "id": "understand-numbers", "index": "02", "name": "Understand my numbers", "copy": "I want to know what a measurement can—and can’t—tell me.", "cta": "Read the testing guide", "href": "library/should-you-test-your-omega-3-levels.html" },
+        { "id": "not-sure", "index": "03", "name": "Not sure yet", "copy": "I want a simple way to decide where to begin.", "cta": "Start here", "href": "start.html" }
       ]
+    },
+    "startHere": {
+      "heroCopy": "The Mindful Matrix helps you understand your situation, learn what it means, and decide what—if anything—to do next.",
+      "heading": "A simple way forward.",
+      "copy": "You do not need every answer today. Begin with the stage that best matches where you are now.",
+      "stages": [
+        {
+          "id": "information",
+          "index": "01",
+          "name": "Information",
+          "heading": "Understand your situation.",
+          "copy": "Start with the question, pattern, or measurement you actually have.",
+          "question": "What do I know right now?"
+        },
+        {
+          "id": "education",
+          "index": "02",
+          "name": "Education",
+          "heading": "Learn what it means.",
+          "copy": "Use credible sources, context, and limitations to separate what is known from what remains uncertain.",
+          "question": "What does this information support?"
+        },
+        {
+          "id": "action",
+          "index": "03",
+          "name": "Action",
+          "heading": "Decide what—if anything—to do next.",
+          "copy": "Action might mean learning more, changing a habit, asking a better question, discussing it with a healthcare professional, measuring when appropriate, doing nothing yet, or considering a tool for a clear reason.",
+          "question": "What is the next useful step?"
+        }
+      ],
+      "note": "Action does not automatically mean buying something. A tool or product is only one possible option when there is a clear reason for it.",
+      "pathways": {
+        "label": "Where do I start?",
+        "heading": "What do you need right now?",
+        "copy": "Each path begins with understanding. Tools remain optional.",
+        "items": [
+          {
+            "id": "understand-topic",
+            "index": "01",
+            "heading": "I want to understand something.",
+            "copy": "Browse practical guides that show sources, evidence, and uncertainty.",
+            "cta": "Explore the Library",
+            "href": "library.html"
+          },
+          {
+            "id": "understand-numbers",
+            "index": "02",
+            "heading": "I want to understand my numbers.",
+            "copy": "Start with what omega-3 blood testing can—and can’t—tell you.",
+            "cta": "Read the testing guide",
+            "href": "library/should-you-test-your-omega-3-levels.html"
+          },
+          {
+            "id": "see-tools",
+            "index": "03",
+            "heading": "I want to see the tools.",
+            "copy": "Visit the Shelf to see why each optional tool is included before following a commercial link.",
+            "cta": "View the Shelf",
+            "href": "index.html#shelf"
+          },
+          {
+            "id": "not-sure",
+            "index": "04",
+            "heading": "I’m not sure yet.",
+            "copy": "Begin with Information. You can learn more or do nothing yet.",
+            "cta": "Start with Information",
+            "href": "#information"
+          }
+        ]
+      }
     },
     "founder": {
       "label": "Why I built this",
@@ -134,6 +205,13 @@
       "label": "Get informed",
       "heading": "Start with what you can measure.",
       "copy": "Testing is one possible way to become more informed. It is a starting point for asking better questions—not the entire Mindful Matrix philosophy.",
+      "education": {
+        "label": "Understand before you test",
+        "heading": "Learn what an omega-3 blood test can—and can’t—tell you.",
+        "copy": "The testing guide explains what is measured, what can affect a result, and where interpretation stops.",
+        "cta": "Read the testing guide",
+        "href": "library/should-you-test-your-omega-3-levels.html"
+      },
       "why": "The one most people begin with.",
       "measureLinkLabel": "See what it measures"
     },
@@ -144,12 +222,12 @@
       "status": "The Library is being built.",
       "statusCopy": "We're creating practical wellness guides grounded in credible sources—not more noise.",
       "categoriesLabel": "Coming to the Library",
-      "transition": "You understand the why. Now explore the tools."
+      "transition": "Keep learning—or explore tools only when there is a clear reason."
     },
     "shelf": {
       "label": "Action",
       "heading": "Tools with a reason for being here.",
-      "copy": "We don't believe in taking something just because someone on the internet said you should."
+      "copy": "The Shelf collects optional tools selected for a specific reason. Read why an item is here before deciding whether it belongs in your next step."
     },
     "standards": {
       "heading": "You deserve to know why.",

@@ -405,8 +405,10 @@
       "relatedArticles": [
         "should-you-test-your-omega-3-levels"
       ],
+      "relatedReadingHeading": "Understand measurement",
+      "relatedReadingIntro": "If testing is one of your questions, this companion guide explains what a blood result can—and can’t—tell you.",
       "optionalAction": {
-        "label": "Optional next step",
+        "label": "Optional tools",
         "heading": "Want to explore your fatty-acid profile?",
         "copy": "We've collected testing and omega-3 tools on The Shelf. Learn what they measure before deciding whether they're right for you.",
         "ctas": [
@@ -831,8 +833,10 @@
       "relatedArticles": [
         "omega-3-what-the-numbers-mean"
       ],
+      "relatedReadingHeading": "Understand the subject",
+      "relatedReadingIntro": "For the broader foundation, begin with what omega-3 is, what can be measured, and how common numbers differ.",
       "optionalAction": {
-        "label": "Optional next step",
+        "label": "Optional tools",
         "heading": "Still considering an omega-3 test?",
         "copy": "If testing still seems useful after understanding its limits, the Testing and Shelf sections collect the available pathways. Review what each option measures before deciding whether it fits your question.",
         "ctas": [
@@ -871,6 +875,8 @@
       "optionalAction",
       "relatedProducts",
       "relatedArticles",
+      "relatedReadingHeading",
+      "relatedReadingIntro",
       "featured"
     ]
   },

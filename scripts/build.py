@@ -121,7 +121,7 @@ def shared_header_markup(*, prefix: str, current: str) -> str:
         <li><a href="{prefix}library.html"{library_current}>The Library</a></li>
         <li><a href="{home}#shelf">The Shelf</a></li>
         <li><a href="{home}#story">Our story</a></li>
-        <li><a class="button button-primary" href="{prefix}start.html">Start here →</a></li>
+        <li><a class="button button-primary" href="{prefix}start.html#pathways">Find your path →</a></li>
       </ul>
     </nav>
   </header>'''
@@ -184,7 +184,7 @@ def testing_product_markup(product: dict, testing: dict) -> str:
     return f'''<article class="testing-card" data-reveal>
         <div class="testing-card__visual">{image_markup(product, eager=True, sizes="(max-width: 48rem) 90vw, 48vw")}</div>
         <div class="testing-card__content">
-          <p class="interface-label">{esc(product["category"])} / Existing product data</p>
+          <p class="interface-label">{esc(product["category"])} / Optional tool</p>
           <h3>{esc(product["name"])}</h3>
           <p>{esc(product["description"])}</p>
           <div class="testing-card__why"><span>Why it’s here</span><strong>{esc(testing["why"])}</strong></div>
@@ -194,6 +194,14 @@ def testing_product_markup(product: dict, testing: dict) -> str:
           </div>
         </div>
       </article>'''
+
+
+def testing_education_markup(testing: dict) -> str:
+    education = testing["education"]
+    return f'''<section class="testing-education" aria-labelledby="testing-education-title" data-reveal>
+        <div><p class="interface-label">{esc(education["label"])}</p><h3 id="testing-education-title">{esc(education["heading"])}</h3><p>{esc(education["copy"])}</p></div>
+        <a class="button button-tertiary" href="{esc(education["href"], attribute=True)}">{esc(education["cta"])} →</a>
+      </section>'''
 
 
 def product_artwork_markup(product: dict) -> str:
@@ -226,7 +234,7 @@ def shelf_card_markup(product: dict) -> str:
         <div class="shelf-card__content">
           <p class="interface-label">{esc(product["category"])}</p>
           <h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>
-          <details class="why-details"><summary>Why it’s here</summary><p>{esc(product["whyItsHere"])}</p></details>
+          <div class="shelf-card__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>
           <a class="shelf-card__link" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>
         </div>
       </article>'''
@@ -290,8 +298,11 @@ def library_body_markup(library: dict, library_home: dict) -> str:
 
 def library_category_markup(category: dict, count: int) -> str:
     availability = f'{count} published guide' + ("" if count == 1 else "s") if count else "Coming soon"
-    href = f'#category-{esc(category["id"], attribute=True)}' if count else "#articles"
-    return f'''<a class="category-card" href="{href}" data-reveal><span class="category-card__index">{esc(category["id"])}</span><strong>{esc(category["name"])}</strong><small>{availability}</small><span aria-hidden="true">→</span></a>'''
+    content = f'''<span class="category-card__index">{esc(category["id"])}</span><strong>{esc(category["name"])}</strong><small>{availability}</small><span aria-hidden="true">{"→" if count else "—"}</span>'''
+    if count:
+        href = f'#category-{esc(category["id"], attribute=True)}'
+        return f'''<a class="category-card" href="{href}" data-reveal>{content}</a>'''
+    return f'''<div class="category-card" data-availability="coming-soon" data-reveal>{content}</div>'''
 
 
 def library_index_markup(library: dict, home: dict) -> str:
@@ -323,17 +334,17 @@ def editorial_principles_markup(site_data: dict, library: dict) -> str:
 
 
 def orientation_stage_markup(stage: dict) -> str:
-    destinations = {
-        "information": ("See the testing starting point", "index.html#testing"),
-        "education": ("Explore the Library", "library.html"),
-        "action": ("Explore the Shelf", "index.html#shelf"),
-    }
-    cta, href = destinations[stage["id"]]
-    labels = "".join(f"<li>{esc(label)}</li>" for label in stage["labels"])
     return f'''<li id="{esc(stage["id"], attribute=True)}" class="orientation-stage" data-reveal>
       <div class="orientation-stage__node" aria-hidden="true">{esc(stage["index"])}</div>
-      <div class="orientation-stage__body"><p class="interface-label">{esc(stage["name"])}</p><h3>{esc(stage["heading"])}</h3><p>{esc(stage["copy"])}</p><ul aria-label="Related areas">{labels}</ul><strong>{esc(stage["question"])}</strong><a class="button button-tertiary" href="{href}">{cta} →</a></div>
+      <div class="orientation-stage__body"><p class="interface-label">{esc(stage["name"])}</p><h3>{esc(stage["heading"])}</h3><p>{esc(stage["copy"])}</p><strong>{esc(stage["question"])}</strong></div>
     </li>'''
+
+
+def start_pathway_markup(pathway: dict) -> str:
+    return f'''<article class="start-pathway" data-start-pathway="{esc(pathway["id"], attribute=True)}" data-reveal>
+      <p class="interface-label">{esc(pathway["index"])} / Choose a path</p><h3>{esc(pathway["heading"])}</h3><p>{esc(pathway["copy"])}</p>
+      <a class="button button-tertiary" href="{esc(pathway["href"], attribute=True)}">{esc(pathway["cta"])} →</a>
+    </article>'''
 
 
 def article_block_markup(block: dict) -> str:
@@ -378,8 +389,8 @@ def article_toc_markup(article: dict) -> str:
     for key, label in (("evidenceNotes", "Evidence notes"), ("limitations", "Limitations"), ("sources", "Sources")):
         if article.get(key):
             links += f'<li><a href="#{key.replace("Notes", "-notes")}">{label}</a></li>'
-    if article.get("optionalAction"):
-        links += '<li><a href="#optional-action">Optional next step</a></li>'
+    if article.get("relatedArticles") or article.get("optionalAction"):
+        links += '<li><a href="#article-journey">Where to go next</a></li>'
     return f'<p class="interface-label">On this page</p><ol>{links}</ol>'
 
 
@@ -431,25 +442,30 @@ def article_optional_action_markup(action: dict | None) -> str:
         f'<a class="button {"button-primary" if index == 0 else "button-secondary"}" href="{esc(cta["href"], attribute=True)}">{esc(cta["label"])} →</a>'
         for index, cta in enumerate(action["ctas"])
     )
-    return f'''<aside id="optional-action" class="article-action" aria-labelledby="optional-action-title"><p class="interface-label">{esc(action["label"])}</p><h2 id="optional-action-title">{esc(action["heading"])}</h2><p>{esc(action["copy"])}</p><div class="button-row">{buttons}</div></aside>'''
+    return f'''<aside id="optional-action" class="article-action" aria-labelledby="optional-action-title" data-journey-choice="tools"><p class="interface-label">{esc(action["label"])}</p><h3 id="optional-action-title">{esc(action["heading"])}</h3><p>{esc(action["copy"])}</p><div class="button-row">{buttons}</div></aside>'''
 
 
-def article_related_markup(article: dict, published_by_slug: dict[str, dict], products_by_id: dict[str, dict]) -> str:
+def article_related_markup(article: dict, published_by_slug: dict[str, dict]) -> str:
     article_links: list[str] = []
     for slug in article.get("relatedArticles", []):
         related = published_by_slug.get(slug)
         if related:
-            article_links.append(f'<li><span>Library</span><a href="{esc(slug, attribute=True)}.html">{esc(related["title"])} →</a></li>')
-    product_links: list[str] = []
-    for product_id in article.get("relatedProducts", []):
-        product = products_by_id.get(product_id)
-        if product:
-            product_links.append(f'<li><span>The Shelf</span><a href="../index.html#shelf">{esc(product["name"])} →</a></li>')
-    links = article_links + product_links
-    if not links:
+            article_links.append(f'<li><a href="{esc(slug, attribute=True)}.html">{esc(related["title"])} →</a></li>')
+    if not article_links:
         return ""
-    heading = "Related reading" if article_links and not product_links else "Related next steps"
-    return f'''<section class="article-related"><h2>{heading}</h2><ul>{"".join(links)}</ul></section>'''
+    heading = article.get("relatedReadingHeading", "Related reading")
+    intro = f'<p class="article-journey__copy">{esc(article["relatedReadingIntro"])}</p>' if article.get("relatedReadingIntro") else ""
+    return f'''<section class="article-related" data-journey-choice="learning"><p class="interface-label">Keep learning</p><h3>{esc(heading)}</h3>{intro}<ul>{"".join(article_links)}</ul></section>'''
+
+
+def article_journey_markup(article: dict, published_by_slug: dict[str, dict]) -> str:
+    related = article_related_markup(article, published_by_slug)
+    orientation = '''<section class="article-orientation" data-journey-choice="orientation"><p class="interface-label">Understand your next step</p><h3>Return to the Matrix</h3><p class="article-journey__copy">Use Information → Education → Action to decide what—if anything—comes next.</p><a class="button button-tertiary" href="../start.html">Review the process →</a></section>'''
+    optional = article_optional_action_markup(article.get("optionalAction"))
+    choices = related + orientation + optional
+    if not choices:
+        return ""
+    return f'''<section id="article-journey" class="article-journey" aria-labelledby="article-journey-title"><p class="interface-label">Where to go next</p><h2 id="article-journey-title">Choose the next useful step.</h2><p class="article-journey__intro">Keep learning, return to the process, or consider an optional tool only when it answers a clear question.</p><div class="article-journey__grid">{choices}</div></section>'''
 
 
 def article_replacements(
@@ -485,7 +501,6 @@ def article_replacements(
         hero_markup = '<div class="article-hero__placeholder" aria-hidden="true"><span></span><img src="../assets/brand/mark-gold.svg" width="64" height="64" alt=""></div>'
     takeaways = article_list_section("key-takeaways", "Key takeaways", article.get("keyTakeaways", []), "article-takeaways")
     published_by_slug = {item["slug"]: item for item in published_articles(library)}
-    products_by_id = {product["id"]: product for product in data["products"]}
     preview_banner = '<div class="preview-banner" role="status">Non-public article template preview · fixture content only · not for publication</div>' if preview else ""
     return {
         "{{DOCUMENT_HEAD}}": document_head_markup(
@@ -517,8 +532,7 @@ def article_replacements(
         "{{ARTICLE_EVIDENCE}}": article_list_section("evidence-notes", "Evidence notes", article.get("evidenceNotes", [])),
         "{{ARTICLE_LIMITATIONS}}": article_list_section("limitations", "Limitations", article.get("limitations", [])),
         "{{ARTICLE_SOURCES}}": article_sources_markup(article.get("sources", [])),
-        "{{ARTICLE_ACTION}}": article_optional_action_markup(article.get("optionalAction")),
-        "{{ARTICLE_RELATED}}": article_related_markup(article, published_by_slug, products_by_id),
+        "{{ARTICLE_JOURNEY}}": article_journey_markup(article, published_by_slug),
     }
 
 
@@ -560,6 +574,7 @@ def build_home(data: dict, library: dict) -> None:
         "{{TESTING_LABEL}}": esc(home["testing"]["label"]),
         "{{TESTING_HEADING}}": esc(home["testing"]["heading"]),
         "{{TESTING_COPY}}": esc(home["testing"]["copy"]),
+        "{{TESTING_EDUCATION}}": testing_education_markup(home["testing"]),
         "{{TESTING_PRODUCT}}": testing_product_markup(featured, home["testing"]),
         "{{LIBRARY_LABEL}}": esc(home["library"]["label"]),
         "{{LIBRARY_HEADING}}": esc(home["library"]["heading"]),
@@ -603,11 +618,21 @@ def build_library(data: dict, library: dict) -> None:
 def build_start(data: dict) -> None:
     metadata = data["site"]["metadata"]
     page = metadata["pages"]["start"]
+    start = data["homepage"]["startHere"]
+    pathways = start["pathways"]
     replacements = {
         "{{DOCUMENT_HEAD}}": document_head_markup(metadata, prefix="", title=page["title"], description=page["description"], path=page["path"]),
         "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="start"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
-        "{{ORIENTATION_STAGES}}": "".join(orientation_stage_markup(stage) for stage in data["homepage"]["matrix"]["stages"]),
+        "{{START_HERO_COPY}}": esc(start["heroCopy"]),
+        "{{START_HEADING}}": esc(start["heading"]),
+        "{{START_COPY}}": esc(start["copy"]),
+        "{{ORIENTATION_STAGES}}": "".join(orientation_stage_markup(stage) for stage in start["stages"]),
+        "{{START_NOTE}}": esc(start["note"]),
+        "{{PATHWAYS_LABEL}}": esc(pathways["label"]),
+        "{{PATHWAYS_HEADING}}": esc(pathways["heading"]),
+        "{{PATHWAYS_COPY}}": esc(pathways["copy"]),
+        "{{START_PATHWAYS}}": "".join(start_pathway_markup(pathway) for pathway in pathways["items"]),
     }
     write_output(ROOT / "start.html", render_template("start.html", replacements))
 
