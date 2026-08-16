@@ -97,6 +97,7 @@ def validate_content(site: dict, library: dict) -> None:
     statuses = set(schema.get("statusValues", []))
     slugs = [article.get("slug") for article in library.get("articles", [])]
     check(len(slugs) == len(set(slugs)), "Library article slugs must be unique")
+    published_slugs = {article.get("slug") for article in library.get("articles", []) if article.get("status") == "published"}
     for article in library.get("articles", []):
         label = article.get("slug", "unknown article")
         for field in required:
@@ -142,6 +143,9 @@ def validate_content(site: dict, library: dict) -> None:
             check(bool(source.get("citation")), f"{label}: source citation required")
             check(bool(source.get("title")), f"{label}: source title required")
             check(bool(source.get("detail")), f"{label}: source-use explanation required")
+        for related_slug in article.get("relatedArticles", []):
+            check(related_slug != label, f"{label}: article cannot link to itself")
+            check(related_slug in published_slugs, f"{label}: related article must reference a published slug")
         optional_action = article.get("optionalAction")
         if optional_action:
             check(bool(optional_action.get("label") and optional_action.get("heading") and optional_action.get("copy")), f"{label}: optional action requires label, heading and copy")
@@ -309,6 +313,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
             check('id="what-we-know"' in article_page, f"{article['slug']}: missing evidence summary")
         if article.get("optionalAction"):
             check('id="optional-action"' in article_page, f"{article['slug']}: optional action must remain structurally separate")
+        for related_slug in article.get("relatedArticles", []):
+            check(f'href="{related_slug}.html"' in article_page, f"{article['slug']}: missing related-article link to {related_slug}")
         if not article.get("reviewer"):
             check("Reviewed by" not in article_page, f"{article['slug']}: unapproved reviewer rendered")
     start_page = (ROOT / "start.html").read_text(encoding="utf-8")

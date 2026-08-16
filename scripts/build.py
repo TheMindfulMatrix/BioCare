@@ -435,18 +435,21 @@ def article_optional_action_markup(action: dict | None) -> str:
 
 
 def article_related_markup(article: dict, published_by_slug: dict[str, dict], products_by_id: dict[str, dict]) -> str:
-    links: list[str] = []
+    article_links: list[str] = []
     for slug in article.get("relatedArticles", []):
         related = published_by_slug.get(slug)
         if related:
-            links.append(f'<li><span>Library</span><a href="{esc(slug, attribute=True)}.html">{esc(related["title"])} →</a></li>')
+            article_links.append(f'<li><span>Library</span><a href="{esc(slug, attribute=True)}.html">{esc(related["title"])} →</a></li>')
+    product_links: list[str] = []
     for product_id in article.get("relatedProducts", []):
         product = products_by_id.get(product_id)
         if product:
-            links.append(f'<li><span>The Shelf</span><a href="../index.html#shelf">{esc(product["name"])} →</a></li>')
+            product_links.append(f'<li><span>The Shelf</span><a href="../index.html#shelf">{esc(product["name"])} →</a></li>')
+    links = article_links + product_links
     if not links:
         return ""
-    return f'''<section class="article-related"><h2>Related next steps</h2><ul>{"".join(links)}</ul></section>'''
+    heading = "Related reading" if article_links and not product_links else "Related next steps"
+    return f'''<section class="article-related"><h2>{heading}</h2><ul>{"".join(links)}</ul></section>'''
 
 
 def article_replacements(
