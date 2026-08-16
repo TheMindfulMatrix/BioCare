@@ -1,0 +1,21 @@
+{
+  "product_name": "BalanceTest",
+  "sku": "309000",
+  "shelf_role": "Representative official product image for the Home health tests collection",
+  "official_product_page_url": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/309000",
+  "source_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/309000.png",
+  "page_display_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/small/309000.png",
+  "downloaded_filename": "balance-test-309000-main.png",
+  "production_filename": "assets/product-cutouts/zinzino/balance-test-309000.png",
+  "pixel_dimensions": { "width": 650, "height": 650 },
+  "file_type": "PNG",
+  "mime_type": "image/png",
+  "sha256": "492c9ab03e55d411b56a8ca3481a647183824e66a984c5780f495aeedffb7f60",
+  "download_date": "2026-08-16",
+  "direct_from_zinzino": true,
+  "source_host": "zinzinowebstorage.blob.core.windows.net",
+  "source_discovery": "The official Zinzino BalanceTest page identifies SKU 309000 and references the /productimages/small/309000.png derivative. The downloaded asset is the corresponding original without the /small/ path segment.",
+  "transparency": "The official original already contains clean transparency; background removal was not run.",
+  "alteration": "None. The production file is a byte-for-byte copy of the official source asset.",
+  "uncertainty_or_caveat": "The Shelf entry is a collection destination. BalanceTest is shown only as a clearly described representative item, not as the complete collection."
+}

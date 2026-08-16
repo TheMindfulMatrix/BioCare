@@ -1,0 +1,21 @@
+{
+  "product_name": "ZinoBiotic+",
+  "sku": "301390",
+  "shelf_role": "Representative official product image for the Gut Health collection",
+  "official_product_page_url": "https://www.zinzino.com/shop/site/US/en-US/products/shop/gut-health-supplements/301390",
+  "source_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/301390.png",
+  "page_display_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/small/301390.png",
+  "downloaded_filename": "zinobiotic-plus-301390-main.png",
+  "production_filename": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+  "pixel_dimensions": { "width": 650, "height": 650 },
+  "file_type": "PNG",
+  "mime_type": "image/png",
+  "sha256": "93b93f1bab6427458e0086eb2f895f62b1b0ca1c19301eeb76961eaba0a208c0",
+  "download_date": "2026-08-16",
+  "direct_from_zinzino": true,
+  "source_host": "zinzinowebstorage.blob.core.windows.net",
+  "source_discovery": "The official Zinzino Gut Health page and product page identify ZinoBiotic+ as SKU 301390 and reference the /productimages/small/301390.png derivative. The downloaded asset is the corresponding original without the /small/ path segment.",
+  "transparency": "The official original already contains clean transparency; background removal was not run.",
+  "alteration": "None. The production file is a byte-for-byte copy of the official source asset.",
+  "uncertainty_or_caveat": "The Shelf entry is a collection destination. ZinoBiotic+ is shown only as a representative item alongside collection-level copy."
+}

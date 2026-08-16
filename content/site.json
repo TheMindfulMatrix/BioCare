@@ -1,11 +1,17 @@
 {
   "site": {
     "name": "The Mindful Matrix",
-    "description": "Balance tests, omega supplements and BioLimitless — Gavin Reidel, Zinzino Independent Partner.",
+    "description": "Evidence-aware wellness education, clearer questions, and transparent optional tools—organized from information to action.",
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
       "articleTitleSuffix": " | The Mindful Matrix",
+      "socialImage": {
+        "src": "assets/brand/social-preview.png",
+        "alt": "The Mindful Matrix — Information, Education, Action",
+        "width": 1200,
+        "height": 630
+      },
       "pages": {
         "home": {
           "path": "",
@@ -268,6 +274,7 @@
       "cta": "Get the kit",
       "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
       "image": { "src": "img/kit.png", "alt": "Balance Test Basic Kit packaging", "width": 560, "height": 560 },
+      "environment": "balance",
       "cutout": {
         "src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
         "width": 560,
@@ -290,7 +297,14 @@
       "whyItsHere": "A direct path to the current home health tests collection.",
       "cta": "Browse",
       "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests",
-      "image": { "src": "img/test.png", "alt": "Zinzino home health test packaging", "width": 560, "height": 560 },
+      "image": { "src": "img/test.png", "alt": "Representative BalanceTest packaging from the Zinzino home health tests collection", "width": 560, "height": 560 },
+      "environment": "test",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balance-test-309000.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/balance-test/balance-test-309000-main.png"
+      },
       "artwork": { "src": null, "status": "awaiting original editorial artwork" },
       "showInShelf": true
     },
@@ -302,7 +316,14 @@
       "whyItsHere": "A direct path to the current omega kit collection.",
       "cta": "Browse",
       "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits",
-      "image": { "src": "img/omega.png", "alt": "Selection of Zinzino omega products", "width": 560, "height": 560 },
+      "image": { "src": "img/omega.png", "alt": "Representative BalanceOil+ Premium x2 Kit with Test from the Zinzino omega kits collection", "width": 560, "height": 560 },
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-premium-x2-kit-with-test-910886.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/omega-kits/balanceoil-premium-x2-kit-with-test-910886.png"
+      },
       "artwork": { "src": null, "status": "awaiting original editorial artwork" },
       "showInShelf": true
     },
@@ -314,7 +335,14 @@
       "whyItsHere": "A direct path to the current gut health collection.",
       "cta": "Browse",
       "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements",
-      "image": { "src": "img/gut.png", "alt": "Selection of Zinzino gut health products", "width": 560, "height": 560 },
+      "image": { "src": "img/gut.png", "alt": "Representative ZinoBiotic+ packaging from the Zinzino gut health collection", "width": 560, "height": 560 },
+      "environment": "gut",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png"
+      },
       "artwork": { "src": null, "status": "awaiting original editorial artwork" },
       "showInShelf": false
     },
@@ -325,8 +353,15 @@
       "description": "X Gold+ in the Zinzino shop",
       "whyItsHere": "A direct path to the current product destination.",
       "cta": "Browse",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop",
-      "image": { "src": "img/gold.png", "alt": "Zinzino X Gold+ packaging", "width": 560, "height": 560 },
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790",
+      "image": { "src": "img/gold.png", "alt": "Zinzino X Gold+ 250 ml packaging", "width": 560, "height": 560 },
+      "environment": "gold",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png"
+      },
       "artwork": { "src": null, "status": "awaiting original editorial artwork" },
       "showInShelf": false
     },
@@ -338,7 +373,14 @@
       "whyItsHere": "The broadest path to the current Zinzino shop.",
       "cta": "Browse",
       "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop",
-      "image": { "src": "img/revoo.png", "alt": "Selection of products available from the Zinzino shop", "width": 560, "height": 560 },
+      "image": { "src": "img/revoo.png", "alt": "Representative R.E.V.O.O bottles from the Zinzino shop", "width": 560, "height": 560 },
+      "environment": "shop",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/revoo-302401.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/full-shop/revoo-302401-main.png"
+      },
       "artwork": { "src": null, "status": "awaiting original editorial artwork" },
       "showInShelf": true
     },
@@ -351,6 +393,7 @@
       "cta": "Visit",
       "destination": "https://biolimitless.com/me/matrix/",
       "image": { "src": "img/biolimitless.webp", "alt": "BioLimitless", "width": 1024, "height": 529 },
+      "environment": "partner",
       "artwork": { "src": null, "status": "awaiting original editorial artwork" },
       "showInShelf": true
     }

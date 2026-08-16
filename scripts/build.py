@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -25,8 +26,8 @@ def render_template(name: str, replacements: dict[str, str]) -> str:
     output = (ROOT / "templates" / name).read_text(encoding="utf-8")
     for token, value in replacements.items():
         output = output.replace(token, value)
-    if "{{" in output or "}}" in output:
-        unresolved = sorted({part.split("}}", 1)[0] for part in output.split("{{")[1:]})
+    unresolved = sorted(set(re.findall(r"{{([A-Z0-9_]+)}}", output)))
+    if unresolved:
         raise RuntimeError(f"Unresolved template token in {name}: {', '.join(unresolved)}")
     return output
 
@@ -48,6 +49,79 @@ def page_url(metadata: dict, path: str) -> str:
     return urljoin(metadata["canonicalBaseUrl"], path)
 
 
+def json_ld_markup(records: list[dict]) -> str:
+    if not records:
+        return ""
+    payload = records[0] if len(records) == 1 else {"@context": "https://schema.org", "@graph": records}
+    if "@context" not in payload:
+        payload = {"@context": "https://schema.org", **payload}
+    serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    return f'  <script type="application/ld+json">{serialized}</script>'
+
+
+def organization_schema(metadata: dict) -> dict:
+    return {
+        "@type": "Organization",
+        "@id": page_url(metadata, "#organization"),
+        "name": "The Mindful Matrix",
+        "url": metadata["canonicalBaseUrl"],
+        "logo": page_url(metadata, "assets/brand/lockup-dark.svg"),
+    }
+
+
+def website_schema(metadata: dict) -> dict:
+    return {
+        "@type": "WebSite",
+        "@id": page_url(metadata, "#website"),
+        "name": "The Mindful Matrix",
+        "url": metadata["canonicalBaseUrl"],
+        "publisher": {"@id": page_url(metadata, "#organization")},
+    }
+
+
+def breadcrumb_schema(metadata: dict, items: list[tuple[str, str]]) -> dict:
+    return {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": position,
+                "name": name,
+                "item": page_url(metadata, path),
+            }
+            for position, (name, path) in enumerate(items, start=1)
+        ],
+    }
+
+
+def article_schema(metadata: dict, article: dict, description: str, category: str) -> dict:
+    canonical = page_url(metadata, f'library/{article["slug"]}.html')
+    image = article.get("hero") or metadata.get("socialImage")
+    record: dict[str, object] = {
+        "@type": "Article",
+        "@id": canonical + "#article",
+        "headline": article["title"],
+        "description": description,
+        "mainEntityOfPage": canonical,
+        "author": {"@type": "Organization", "name": article["author"]},
+        "publisher": {"@id": page_url(metadata, "#organization")},
+        "isPartOf": {"@id": page_url(metadata, "#website")},
+        "articleSection": category,
+    }
+    if image and image.get("src"):
+        record["image"] = {
+            "@type": "ImageObject",
+            "url": page_url(metadata, image["src"]),
+            "width": int(image["width"]),
+            "height": int(image["height"]),
+        }
+    if article.get("publishedIso"):
+        record["datePublished"] = article["publishedIso"]
+    if article.get("updatedIso"):
+        record["dateModified"] = article["updatedIso"]
+    return record
+
+
 def document_head_markup(
     metadata: dict,
     *,
@@ -60,8 +134,10 @@ def document_head_markup(
     published: str | None = None,
     updated: str | None = None,
     noindex: bool = False,
+    structured_data: list[dict] | None = None,
 ) -> str:
     canonical = page_url(metadata, path) if path is not None else ""
+    social_image = image or metadata.get("socialImage")
     tags = [
         '  <meta charset="utf-8">',
         '  <meta name="viewport" content="width=device-width, initial-scale=1">',
@@ -71,6 +147,8 @@ def document_head_markup(
     ]
     if noindex:
         tags.append('  <meta name="robots" content="noindex, nofollow">')
+    else:
+        tags.append('  <meta name="robots" content="index, follow">')
     if canonical:
         tags.append(f'  <link rel="canonical" href="{esc(canonical, attribute=True)}">')
     tags.extend(
@@ -78,15 +156,25 @@ def document_head_markup(
             f'  <meta property="og:title" content="{esc(title, attribute=True)}">',
             f'  <meta property="og:description" content="{esc(description, attribute=True)}">',
             f'  <meta property="og:type" content="{esc(page_type, attribute=True)}">',
+            '  <meta property="og:site_name" content="The Mindful Matrix">',
+            '  <meta property="og:locale" content="en_US">',
+            '  <meta name="twitter:card" content="summary_large_image">',
+            f'  <meta name="twitter:title" content="{esc(title, attribute=True)}">',
+            f'  <meta name="twitter:description" content="{esc(description, attribute=True)}">',
         ]
     )
     if canonical:
         tags.append(f'  <meta property="og:url" content="{esc(canonical, attribute=True)}">')
-    if image and image.get("src"):
-        image_url = page_url(metadata, image["src"])
+    if social_image and social_image.get("src"):
+        image_url = page_url(metadata, social_image["src"])
         tags.append(f'  <meta property="og:image" content="{esc(image_url, attribute=True)}">')
-        if image.get("alt"):
-            tags.append(f'  <meta property="og:image:alt" content="{esc(image["alt"], attribute=True)}">')
+        tags.append(f'  <meta name="twitter:image" content="{esc(image_url, attribute=True)}">')
+        if social_image.get("alt"):
+            tags.append(f'  <meta property="og:image:alt" content="{esc(social_image["alt"], attribute=True)}">')
+            tags.append(f'  <meta name="twitter:image:alt" content="{esc(social_image["alt"], attribute=True)}">')
+        if social_image.get("width") and social_image.get("height"):
+            tags.append(f'  <meta property="og:image:width" content="{int(social_image["width"])}">')
+            tags.append(f'  <meta property="og:image:height" content="{int(social_image["height"])}">')
     if page_type == "article":
         if published:
             tags.append(f'  <meta property="article:published_time" content="{esc(published, attribute=True)}">')
@@ -98,13 +186,15 @@ def document_head_markup(
             f'  <link rel="icon" href="{prefix}assets/brand/favicon.svg" type="image/svg+xml">',
             '  <link rel="preconnect" href="https://fonts.googleapis.com">',
             '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-            '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=JetBrains+Mono:wght@500&family=Manrope:wght@500..800&display=swap" rel="stylesheet">',
+            '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@500..800&amp;display=swap" rel="stylesheet">',
             f'  <link rel="stylesheet" href="{prefix}assets/css/tokens.css">',
             f'  <link rel="stylesheet" href="{prefix}assets/css/base.css">',
             f'  <link rel="stylesheet" href="{prefix}assets/css/site.css">',
             f'  <script defer src="{prefix}assets/js/enhancements.js"></script>',
         ]
     )
+    if structured_data and not noindex:
+        tags.append(json_ld_markup(structured_data))
     return "\n".join(tags)
 
 
@@ -182,15 +272,15 @@ def path_card_markup(path: dict) -> str:
 def testing_product_markup(product: dict, testing: dict) -> str:
     url = esc(product["destination"], attribute=True)
     return f'''<article class="testing-card" data-reveal>
-        <div class="testing-card__visual">{image_markup(product, eager=True, sizes="(max-width: 48rem) 90vw, 48vw")}</div>
+        <div class="testing-card__visual">{shelf_product_markup(product, eager=True)}</div>
         <div class="testing-card__content">
           <p class="interface-label">{esc(product["category"])} / Optional tool</p>
           <h3>{esc(product["name"])}</h3>
           <p>{esc(product["description"])}</p>
           <div class="testing-card__why"><span>Why it’s here</span><strong>{esc(testing["why"])}</strong></div>
           <div class="button-row">
-            <a class="button button-primary" href="{url}" target="_blank" rel="noopener noreferrer">{esc(testing["measureLinkLabel"])} ↗{external_note()}</a>
-            <a class="button button-secondary" href="{url}" target="_blank" rel="noopener noreferrer">Product details ↗{external_note()}</a>
+            <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">{esc(testing["measureLinkLabel"])} ↗{external_note()}</a>
+            <a class="button button-secondary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">Product details ↗{external_note()}</a>
           </div>
         </div>
       </article>'''
@@ -216,26 +306,29 @@ def product_artwork_markup(product: dict) -> str:
     )
 
 
-def shelf_product_markup(product: dict) -> str:
+def shelf_product_markup(product: dict, *, eager: bool = False) -> str:
     cutout = product.get("cutout")
     if not cutout:
-        return image_markup(product)
+        return image_markup(product, eager=eager)
+    loading = "eager" if eager else "lazy"
+    priority = ' fetchpriority="high"' if eager else ""
     return (
         f'<img class="shelf-card__cutout" src="{esc(cutout["src"], attribute=True)}" '
         f'alt="{esc(product["image"]["alt"], attribute=True)}" '
         f'width="{int(cutout["width"])}" height="{int(cutout["height"])}" '
-        'loading="lazy" decoding="async" data-image-role="official-product-cutout">'
+        f'loading="{loading}" decoding="async"{priority} data-image-role="official-product-cutout">'
     )
 
 
 def shelf_card_markup(product: dict) -> str:
-    return f'''<article class="shelf-card" data-product-id="{esc(product["id"], attribute=True)}" data-reveal>
+    environment = esc(product.get("environment", "neutral"), attribute=True)
+    return f'''<article class="shelf-card" data-product-id="{esc(product["id"], attribute=True)}" data-environment="{environment}" data-reveal>
         <div class="shelf-card__visual artwork-stage">{product_artwork_markup(product)}<div class="shelf-card__product">{shelf_product_markup(product)}</div></div>
         <div class="shelf-card__content">
           <p class="interface-label">{esc(product["category"])}</p>
           <h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>
           <div class="shelf-card__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>
-          <a class="shelf-card__link" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>
+          <a class="shelf-card__link" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>
         </div>
       </article>'''
 
@@ -481,6 +574,7 @@ def article_replacements(
     description = article.get("seoDescription") or article.get("dek") or article["summary"]
     display_dek = article.get("dek") or article["summary"]
     canonical_path = None if preview else f'library/{article["slug"]}.html'
+    category = category_name(library, article["category"])
     byline = [f'By {esc(article["author"])}', f'<span>{esc(article["readingTime"])}</span>']
     if article.get("reviewer"):
         byline.append(f'<span>Reviewed by {esc(article["reviewer"])}</span>')
@@ -514,11 +608,21 @@ def article_replacements(
             published=article.get("publishedIso"),
             updated=article.get("updatedIso"),
             noindex=preview,
+            structured_data=[] if preview else [
+                organization_schema(metadata),
+                website_schema(metadata),
+                article_schema(metadata, article, description, category),
+                breadcrumb_schema(metadata, [
+                    ("Home", ""),
+                    ("The Library", "library.html"),
+                    (article["title"], canonical_path),
+                ]),
+            ],
         ),
         "{{SHARED_HEADER}}": shared_header_markup(prefix=prefix, current="article"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=prefix),
         "{{PREVIEW_BANNER}}": preview_banner,
-        "{{ARTICLE_CATEGORY}}": esc(category_name(library, article["category"])),
+        "{{ARTICLE_CATEGORY}}": esc(category),
         "{{ARTICLE_TITLE}}": esc(article["title"]),
         "{{ARTICLE_DEK}}": esc(display_dek),
         "{{ARTICLE_BYLINE}}": " · ".join(byline),
@@ -546,7 +650,14 @@ def build_home(data: dict, library: dict) -> None:
     home = data["homepage"]
     page = metadata["pages"]["home"]
     replacements = {
-        "{{DOCUMENT_HEAD}}": document_head_markup(metadata, prefix="", title=page["title"], description=site["description"], path=page["path"]),
+        "{{DOCUMENT_HEAD}}": document_head_markup(
+            metadata,
+            prefix="",
+            title=page["title"],
+            description=site["description"],
+            path=page["path"],
+            structured_data=[organization_schema(metadata), website_schema(metadata)],
+        ),
         "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="home"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{PHILOSOPHY}}": esc(brand["philosophy"]),
@@ -605,7 +716,18 @@ def build_library(data: dict, library: dict) -> None:
     for article in published_articles(library):
         counts[article["category"]] += 1
     replacements = {
-        "{{DOCUMENT_HEAD}}": document_head_markup(metadata, prefix="", title=page["title"], description=page["description"], path=page["path"]),
+        "{{DOCUMENT_HEAD}}": document_head_markup(
+            metadata,
+            prefix="",
+            title=page["title"],
+            description=page["description"],
+            path=page["path"],
+            structured_data=[
+                organization_schema(metadata),
+                website_schema(metadata),
+                breadcrumb_schema(metadata, [("Home", ""), ("The Library", page["path"])]),
+            ],
+        ),
         "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="library"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{LIBRARY_CATEGORIES}}": "".join(library_category_markup(category, counts[category["id"]]) for category in library["categories"]),
@@ -621,7 +743,18 @@ def build_start(data: dict) -> None:
     start = data["homepage"]["startHere"]
     pathways = start["pathways"]
     replacements = {
-        "{{DOCUMENT_HEAD}}": document_head_markup(metadata, prefix="", title=page["title"], description=page["description"], path=page["path"]),
+        "{{DOCUMENT_HEAD}}": document_head_markup(
+            metadata,
+            prefix="",
+            title=page["title"],
+            description=page["description"],
+            path=page["path"],
+            structured_data=[
+                organization_schema(metadata),
+                website_schema(metadata),
+                breadcrumb_schema(metadata, [("Home", ""), ("Start Here", page["path"])]),
+            ],
+        ),
         "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="start"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{START_HERO_COPY}}": esc(start["heroCopy"]),
@@ -657,6 +790,25 @@ def build_articles(data: dict, library: dict) -> None:
     clean_generated_articles(expected)
 
 
+def build_crawl_files(data: dict, library: dict) -> None:
+    metadata = data["site"]["metadata"]
+    paths = ["", "start.html", "library.html"]
+    paths.extend(f'library/{article["slug"]}.html' for article in published_articles(library))
+    urls = "\n".join(f"  <url><loc>{esc(page_url(metadata, path))}</loc></url>" for path in paths)
+    sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{urls}
+</urlset>
+'''
+    write_output(ROOT / "sitemap.xml", sitemap)
+    robots = f'''User-agent: *
+Allow: /
+
+Sitemap: {page_url(metadata, "sitemap.xml")}
+'''
+    write_output(ROOT / "robots.txt", robots)
+
+
 def build_preview(data: dict, library: dict, fixture_path: Path, output_path: Path) -> None:
     fixture = load_json(fixture_path)
     article = fixture.get("article", fixture)
@@ -681,6 +833,7 @@ def main() -> None:
     build_library(data, library)
     build_start(data)
     build_articles(data, library)
+    build_crawl_files(data, library)
     if args.preview_article:
         build_preview(data, library, args.preview_article.resolve(), args.preview_output)
 

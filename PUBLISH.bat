@@ -16,7 +16,7 @@ echo.
 echo Review the files above. This will commit and push the current branch.
 choice /M "Continue"
 if errorlevel 2 exit /b 1
-git add index.html library.html start.html assets content templates scripts .github .gitignore README.md PUBLISH.bat img
+git add index.html library.html start.html robots.txt sitemap.xml assets content templates scripts .github .gitignore README.md PUBLISH.bat img
 if exist library git add library
 git commit -m "Update static site" || goto :failed
 git push origin HEAD || goto :failed
