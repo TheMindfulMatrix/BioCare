@@ -7,19 +7,439 @@
     { "id": "performance", "name": "Performance" },
     { "id": "research", "name": "Research" }
   ],
-  "articles": [],
+  "articles": [
+    {
+      "slug": "omega-3-what-the-numbers-mean",
+      "title": "Omega-3: What It Is, What You Can Measure, and What the Numbers Actually Mean",
+      "seoTitle": "Omega-3: What the Numbers Actually Mean | The Mindful Matrix",
+      "summary": "Understand ALA, EPA, DHA, the Omega-3 Index, fatty-acid ratios and what blood measurements can—and cannot—tell you.",
+      "seoDescription": "Understand ALA, EPA, DHA, the Omega-3 Index, fatty-acid ratios and what blood measurements can—and cannot—tell you.",
+      "dek": "Omega-3 gets talked about everywhere—from fish and supplements to blood tests and ratios. But understanding what the numbers actually measure is more useful than chasing a single ‘perfect’ score.",
+      "category": "omega-3",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "readingTime": "~9 minutes",
+      "featured": true,
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established nutrition and physiology evidence.",
+          "items": [
+            "ALA, EPA and DHA are distinct omega-3 fatty acids.",
+            "EPA and DHA status can be measured.",
+            "Red-blood-cell fatty-acid measurements reflect a longer period of intake than plasma or serum measurements.",
+            "The American Heart Association recommends two servings of fish per week, particularly fatty fish."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but interpretation depends on context.",
+          "items": [
+            "The Omega-3 Index provides information about erythrocyte EPA and DHA status.",
+            "The Omega-3 Index is used in omega-3 research."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Research exists, but important uncertainty or disagreement remains.",
+          "items": [
+            "Universal optimal omega-3 status thresholds.",
+            "The best PUFA biomarker for every context.",
+            "Clinical interpretation of omega-6:omega-3 and AA/EPA ratios."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable practical next step supported by the preceding evidence.",
+          "items": [
+            "Begin with food-first omega-3 intake.",
+            "Understand supplementation before assuming it is necessary.",
+            "Understand what a test measures before acting on the number."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "introduction",
+          "heading": "Know your numbers. But know what they mean.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Making informed decisions about your health doesn't mean obsessing over every number on a report."
+            },
+            {
+              "type": "paragraph",
+              "text": "It means understanding what you're looking at."
+            },
+            {
+              "type": "paragraph",
+              "text": "Omega-3 is a perfect example. You might hear about EPA, DHA, ALA, the Omega-3 Index, omega-6:omega-3 balance, AA/EPA ratios, fish oil and blood testing as though they're interchangeable."
+            },
+            {
+              "type": "paragraph",
+              "text": "They're not. Some are nutrients. Some are measurements. Some are ratios. And none of them, by themselves, provide a complete picture of your health."
+            },
+            {
+              "type": "paragraph",
+              "text": "So before deciding what to change, start by understanding what can actually be measured."
+            },
+            {
+              "type": "callout",
+              "label": "Editorial principle",
+              "text": "The evidence determines the article. The product does not determine the evidence."
+            }
+          ]
+        },
+        {
+          "id": "what-omega-3-is",
+          "heading": "Information — What omega-3 is",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "First: omega-3 isn't one thing."
+            },
+            {
+              "type": "paragraph",
+              "text": "Omega-3 fatty acids are a family of fats. Three you'll hear about most often are ALA, EPA and DHA."
+            },
+            {
+              "type": "termList",
+              "items": [
+                {
+                  "term": "ALA — alpha-linolenic acid",
+                  "definition": "Found primarily in plant foods such as flaxseed, chia seeds, walnuts, and certain plant oils."
+                },
+                {
+                  "term": "EPA — eicosapentaenoic acid",
+                  "definition": "Found primarily in seafood, especially fatty fish, and in certain supplements."
+                },
+                {
+                  "term": "DHA — docosahexaenoic acid",
+                  "definition": "Also concentrated in seafood and certain supplements."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "ALA is an essential fatty acid, meaning we need to obtain it through the diet. The body can convert some ALA into EPA and then DHA, but NIH describes that conversion as very limited. Consuming EPA and DHA directly is therefore the practical way to increase their levels in the body."
+            },
+            {
+              "type": "paragraph",
+              "text": "That distinction matters. Eating walnuts and consuming EPA or DHA aren't necessarily doing exactly the same thing simply because both involve omega-3."
+            }
+          ]
+        },
+        {
+          "id": "what-can-be-measured",
+          "heading": "Information — What can be measured",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Instead of estimating omega-3 intake from diet alone, laboratories can measure fatty acids in biological samples. But where the measurement comes from matters."
+            },
+            {
+              "type": "paragraph",
+              "text": "Plasma and serum fatty-acid values can vary substantially based on a person's most recent meal. Red-blood-cell fatty-acid measurements reflect a longer period of intake than plasma or serum measurements."
+            },
+            {
+              "type": "paragraph",
+              "text": "That doesn't mean one blood test tells you everything about your health. It means the test can provide another piece of information."
+            },
+            {
+              "type": "paragraph",
+              "text": "Different laboratories may use different samples, methods, indices and reporting systems. Measurement method and sample type matter, and there isn't universal agreement about one single best PUFA biomarker for every purpose."
+            },
+            {
+              "type": "callout",
+              "label": "Mindful Matrix principle",
+              "text": "Measure—but understand what you're measuring."
+            }
+          ]
+        },
+        {
+          "id": "omega-3-index",
+          "heading": "Education — The Omega-3 Index",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The Omega-3 Index is commonly defined as the amount of EPA plus DHA in erythrocyte membranes, expressed as a percentage of total erythrocyte fatty acids."
+            },
+            {
+              "type": "callout",
+              "label": "In simple terms",
+              "text": "EPA plus DHA in your red blood cells, expressed as a percentage."
+            },
+            {
+              "type": "paragraph",
+              "text": "The Omega-3 Index provides information about erythrocyte EPA and DHA status and is a biomarker used in omega-3 research."
+            },
+            {
+              "type": "paragraph",
+              "text": "But a biomarker is not automatically a diagnosis. A number can provide information without independently telling you whether you're healthy, unhealthy, or whether you have a disease."
+            },
+            {
+              "type": "paragraph",
+              "text": "NIH notes that experts have not established normal ranges for omega-3 status. That is why context matters and why this article does not present a universal optimal cutoff."
+            }
+          ]
+        },
+        {
+          "id": "omega-6-omega-3-ratio",
+          "heading": "Education — The omega-6:omega-3 ratio",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Omega-6 and omega-3 fatty acids are both families of polyunsaturated fats, and comparing them as a ratio has attracted considerable research interest."
+            },
+            {
+              "type": "paragraph",
+              "text": "But there is no universally established optimal omega-6:omega-3 ratio. NIH notes that the optimal ratio—if one exists—has not been defined, and that a ratio can be too nonspecific because it can hide the actual amounts of individual fatty acids."
+            },
+            {
+              "type": "paragraph",
+              "text": "Two people could have similar ratios while having very different fatty-acid profiles: one person could have low omega-6 and very low omega-3, while another could have higher omega-6 and much higher omega-3."
+            },
+            {
+              "type": "callout",
+              "label": "Why context matters",
+              "text": "A ratio can describe a relationship between numbers. It does not automatically explain why that relationship exists—or what it means for your health."
+            },
+            {
+              "type": "quote",
+              "text": "Don't ignore the ratio. Don't worship it either.",
+              "attribution": "The Mindful Matrix takeaway"
+            },
+            {
+              "type": "paragraph",
+              "text": "Treat the ratio as one piece of a larger fatty-acid profile."
+            }
+          ]
+        },
+        {
+          "id": "aa-epa",
+          "heading": "Education — The AA/EPA ratio",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "AA stands for arachidonic acid, an omega-6 fatty acid. EPA stands for eicosapentaenoic acid, one of the omega-3 fatty acids discussed earlier."
+            },
+            {
+              "type": "paragraph",
+              "text": "The AA/EPA ratio compares the relative amounts of those two specific fatty acids. It is studied as a biomarker or index."
+            },
+            {
+              "type": "paragraph",
+              "text": "Reviews emphasize ongoing controversy over how well AA/EPA, the omega-6:omega-3 ratio and the Omega-3 Index predict clinical outcomes and which measures are most useful. Clinical interpretation remains contextual and debated."
+            },
+            {
+              "type": "paragraph",
+              "text": "AA/EPA is not a standalone diagnosis, and one result should not become a sweeping conclusion about someone's health."
+            }
+          ]
+        },
+        {
+          "id": "reasonable-next-steps",
+          "heading": "Action — Reasonable next steps",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Start with food."
+            },
+            {
+              "type": "paragraph",
+              "text": "The American Heart Association recommends eating two servings of fish per week, particularly fatty fish. Examples include salmon, sardines, mackerel and herring."
+            },
+            {
+              "type": "paragraph",
+              "text": "Plant foods such as flaxseed, chia, walnuts and certain plant oils provide ALA. That is a reasonable food-first foundation."
+            },
+            {
+              "type": "subheading",
+              "text": "Understand supplementation before assuming you need it."
+            },
+            {
+              "type": "paragraph",
+              "text": "EPA and DHA supplements may increase omega-3 intake, but more isn't automatically better, and supplements should not be treated as universal disease-prevention products."
+            },
+            {
+              "type": "paragraph",
+              "text": "For certain qualified health claims about combined EPA and DHA consumption and the risk of hypertension and coronary heart disease, FDA determined that the evidence met the “credible evidence” standard for a qualified health claim but did not meet the “significant scientific agreement” standard required for an authorized health claim. FDA states that these qualified claims must include a disclaimer or other qualifying language that accurately describes the level of scientific evidence supporting them."
+            },
+            {
+              "type": "callout",
+              "label": "Editorial principle",
+              "text": "We don't turn ‘may’ into ‘will.’"
+            },
+            {
+              "type": "subheading",
+              "text": "Treat testing as information—not a verdict."
+            },
+            {
+              "type": "paragraph",
+              "text": "A fatty-acid blood test can help you understand aspects of your current fatty-acid profile. If you test, the useful question isn't simply whether a number is good or bad. Ask instead:"
+            },
+            {
+              "type": "list",
+              "items": [
+                "What exactly was measured?",
+                "What sample was used?",
+                "What does this number represent?",
+                "What can reasonably influence it?",
+                "What does the evidence actually support?"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "That turns a number into information you can use thoughtfully."
+            }
+          ]
+        },
+        {
+          "id": "information-education-action",
+          "heading": "Information → Education → Action",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "You don't need every answer before making informed health-related choices. But you should understand the question you're trying to answer."
+            },
+            {
+              "type": "termList",
+              "items": [
+                {
+                  "term": "Get informed",
+                  "definition": "Understand what you're measuring."
+                },
+                {
+                  "term": "Educate yourself",
+                  "definition": "Understand what that measurement can—and cannot—tell you."
+                },
+                {
+                  "term": "Take action",
+                  "definition": "Use the evidence, your circumstances and reasonable next steps."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "That's the Matrix."
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What we know — and what we don't",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Well supported",
+            "items": [
+              "ALA, EPA and DHA are distinct omega-3 fatty acids.",
+              "EPA and DHA status can be measured.",
+              "Red-blood-cell fatty-acid measurements reflect a longer period of intake than plasma or serum measurements.",
+              "The American Heart Association recommends two servings of fish per week, particularly fatty fish."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported, but contextual",
+            "items": [
+              "The Omega-3 Index provides information about erythrocyte EPA and DHA status and is used in omega-3 research."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Still debated",
+            "items": [
+              "The best PUFA biomarker for every situation.",
+              "A universally optimal omega-3 status or omega-6:omega-3 ratio.",
+              "How individual fatty-acid indices should be translated into clinical decisions across different populations."
+            ]
+          }
+        ],
+        "statement": "Knowing where the evidence ends is part of being informed."
+      },
+      "sources": [
+        {
+          "organization": "NIH Office of Dietary Supplements",
+          "citation": "Fact Sheet for Health Professionals",
+          "title": "Omega-3 Fatty Acids",
+          "detail": "Used for nutrient definitions, metabolism, blood measurement, Omega-3 Index context, and biomarker limitations.",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        },
+        {
+          "organization": "American Heart Association",
+          "citation": "Public dietary guidance",
+          "title": "Fish and Omega-3 Fatty Acids",
+          "detail": "Used for food-based fish-consumption guidance.",
+          "url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fish-and-omega-3-fatty-acids"
+        },
+        {
+          "organization": "U.S. Food and Drug Administration",
+          "citation": "Qualified health-claim announcement",
+          "title": "EPA and DHA Omega-3 Consumption and the Risk of Hypertension and Coronary Heart Disease",
+          "detail": "Used to show the distinction between credible evidence and the stronger significant-scientific-agreement standard for certain cardiovascular claims.",
+          "url": "https://www.fda.gov/food/hfp-constituent-updates/fda-announces-new-qualified-health-claims-epa-and-dha-omega-3-consumption-and-risk-hypertension-and"
+        },
+        {
+          "organization": "Peer-reviewed review",
+          "citation": "Davinelli et al. (2021) · PMID 32056443",
+          "title": "Metabolic indices of polyunsaturated fatty acids: current evidence, research controversies, and clinical utility",
+          "detail": "Used for PUFA biomarkers, metabolic indices, research controversies, and clinical utility.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32056443/"
+        },
+        {
+          "organization": "Peer-reviewed critical appraisal",
+          "citation": "Harris (2018) · PMID 29599053",
+          "title": "The Omega-6:Omega-3 ratio: A critical appraisal and possible successor",
+          "detail": "Used for limitations of relying on the omega-6:omega-3 ratio and the case for considering direct EPA and DHA status.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29599053/"
+        }
+      ],
+      "optionalAction": {
+        "label": "Optional next step",
+        "heading": "Want to explore your fatty-acid profile?",
+        "copy": "We've collected testing and omega-3 tools on The Shelf. Learn what they measure before deciding whether they're right for you.",
+        "ctas": [
+          {
+            "label": "Explore testing",
+            "href": "../index.html#testing"
+          },
+          {
+            "label": "Explore omega-3 tools",
+            "href": "../index.html#shelf"
+          }
+        ]
+      }
+    }
+  ],
   "schema": {
     "statusValues": ["draft", "published"],
     "required": ["slug", "title", "summary", "category", "status", "author", "readingTime", "bodySections"],
-    "publishedRequired": ["published", "sources"],
+    "publishedRequired": ["evidenceReviewed", "updated", "sources"],
     "optional": [
       "dek",
+      "seoTitle",
+      "seoDescription",
+      "published",
+      "publishedIso",
       "updated",
+      "updatedIso",
       "reviewer",
       "hero",
       "keyTakeaways",
+      "educationDisclosure",
+      "evidenceLabels",
+      "evidenceSummary",
       "evidenceNotes",
       "limitations",
+      "optionalAction",
       "relatedProducts",
       "relatedArticles",
       "featured"

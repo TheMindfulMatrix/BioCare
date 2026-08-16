@@ -112,13 +112,53 @@ def validate_content(site: dict, library: dict) -> None:
             check(bool(section.get("id") and section.get("heading")), f"{label}: body section requires id and heading")
             check(isinstance(section.get("blocks"), list) and bool(section.get("blocks")), f"{label}: body section requires blocks")
             for block in section.get("blocks", []):
-                check(block.get("type", "paragraph") in {"paragraph", "subheading", "list", "quote", "callout"}, f"{label}: unsupported body block")
+                block_type = block.get("type", "paragraph")
+                check(block_type in {"paragraph", "subheading", "list", "termList", "quote", "callout"}, f"{label}: unsupported body block")
+                if block_type == "termList":
+                    check(isinstance(block.get("items"), list) and bool(block.get("items")), f"{label}: termList requires items")
+                    for item in block.get("items", []):
+                        check(bool(item.get("term") and item.get("definition")), f"{label}: termList items require term and definition")
         if article.get("status") == "published":
             for field in published_required:
                 check(bool(article.get(field)), f"{label}: published article missing {field}")
+        evidence_labels = article.get("evidenceLabels", [])
+        if evidence_labels:
+            levels = [item.get("level") for item in evidence_labels]
+            check(levels == ["established", "supported", "debated", "action"], f"{label}: evidence labels must use the established, supported, debated, action sequence")
+            for item in evidence_labels:
+                check(bool(item.get("label") and item.get("meaning")), f"{label}: evidence labels require visible label and meaning")
+                check(isinstance(item.get("items"), list) and bool(item.get("items")), f"{label}: evidence labels require scannable items")
+        evidence_summary = article.get("evidenceSummary")
+        if evidence_summary:
+            check(bool(evidence_summary.get("heading") and evidence_summary.get("statement")), f"{label}: evidence summary requires heading and closing statement")
+            groups = evidence_summary.get("groups", [])
+            check([group.get("level") for group in groups] == ["established", "supported", "debated"], f"{label}: evidence summary requires established, supported and debated groups")
+            for group in groups:
+                check(bool(group.get("label")), f"{label}: evidence summary groups require visible labels")
+                check(isinstance(group.get("items"), list) and bool(group.get("items")), f"{label}: evidence summary groups require items")
         for source in article.get("sources", []):
             check(urlparse(source.get("url", "")).scheme == "https", f"{label}: source URLs must use HTTPS")
+            check(bool(source.get("organization")), f"{label}: source organization required")
+            check(bool(source.get("citation")), f"{label}: source citation required")
             check(bool(source.get("title")), f"{label}: source title required")
+            check(bool(source.get("detail")), f"{label}: source-use explanation required")
+        optional_action = article.get("optionalAction")
+        if optional_action:
+            check(bool(optional_action.get("label") and optional_action.get("heading") and optional_action.get("copy")), f"{label}: optional action requires label, heading and copy")
+            check(isinstance(optional_action.get("ctas"), list) and bool(optional_action.get("ctas")), f"{label}: optional action requires CTAs")
+            for cta in optional_action.get("ctas", []):
+                check(bool(cta.get("label") and cta.get("href")), f"{label}: optional action CTA requires label and href")
+                check(not str(cta.get("href", "")).startswith("/"), f"{label}: optional action CTA must preserve /BioCare/ relative paths")
+        educational_content = json.dumps(
+            {
+                "bodySections": article.get("bodySections", []),
+                "evidenceLabels": evidence_labels,
+                "evidenceSummary": evidence_summary,
+            },
+            ensure_ascii=False,
+        ).lower()
+        for product_term in ("balanceoil", "balancetest"):
+            check(product_term not in educational_content, f"{label}: direct product promotion appears inside educational content")
         hero = article.get("hero")
         if hero:
             check((ROOT / hero.get("src", "missing")).is_file(), f"{label}: missing hero image")
@@ -260,6 +300,17 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
         check(category["name"] in library_page, f"Library landing page missing category: {category['name']}")
     if not any(article.get("status") == "published" for article in library["articles"]):
         check("The Library is being built." in library_page, "Library landing page requires the approved empty state when no articles are published")
+    for article in (item for item in library["articles"] if item.get("status") == "published"):
+        article_page = (ROOT / "library" / f'{article["slug"]}.html').read_text(encoding="utf-8")
+        if article.get("evidenceLabels"):
+            for evidence in article["evidenceLabels"]:
+                check(f'data-evidence-level="{evidence["level"]}"' in article_page, f"{article['slug']}: missing visible {evidence['label']} evidence label")
+        if article.get("evidenceSummary"):
+            check('id="what-we-know"' in article_page, f"{article['slug']}: missing evidence summary")
+        if article.get("optionalAction"):
+            check('id="optional-action"' in article_page, f"{article['slug']}: optional action must remain structurally separate")
+        if not article.get("reviewer"):
+            check("Reviewed by" not in article_page, f"{article['slug']}: unapproved reviewer rendered")
     start_page = (ROOT / "start.html").read_text(encoding="utf-8")
     for stage_id in ("information", "education", "action"):
         check(f'id="{stage_id}"' in start_page, f"Start Here missing orientation stage: {stage_id}")

@@ -250,12 +250,20 @@ def library_article_markup(article: dict, library: dict) -> str:
         )
     else:
         visual = '<div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div>'
-    updated = f'<span>Updated {esc(article["updated"])}</span>' if article.get("updated") else ""
+    metadata: list[str] = []
+    if article.get("published"):
+        datetime = article.get("publishedIso") or article["published"]
+        metadata.append(f'<time datetime="{esc(datetime, attribute=True)}">Published {esc(article["published"])}</time>')
+    metadata.append(f'<span>{esc(article["readingTime"])}</span>')
+    if article.get("evidenceReviewed"):
+        metadata.append(f'<span>Evidence reviewed {esc(article["evidenceReviewed"])}</span>')
+    if article.get("updated"):
+        metadata.append(f'<span>Updated {esc(article["updated"])}</span>')
     return f'''<article class="library-article" data-library-article data-reveal>
         <div class="library-article__visual">{visual}</div>
         <div class="library-article__content">
           <p class="interface-label">{esc(category_name(library, article["category"]))}</p><h3>{esc(article["title"])}</h3><p>{esc(article["summary"])}</p>
-          <div class="library-article__meta"><time datetime="{esc(article["published"], attribute=True)}">{esc(article["published"])}</time><span>{esc(article["readingTime"])}</span>{updated}</div>
+          <div class="library-article__meta">{"".join(metadata)}</div>
           <a class="button button-tertiary" href="library/{esc(article["slug"], attribute=True)}.html">Read the guide →</a>
         </div>
       </article>'''
@@ -338,6 +346,12 @@ def article_block_markup(block: dict) -> str:
         items = "".join(f"<li>{esc(item)}</li>" for item in block["items"])
         ordered = block.get("ordered", False)
         return f'<{"ol" if ordered else "ul"}>{items}</{"ol" if ordered else "ul"}>'
+    if block_type == "termList":
+        items = "".join(
+            f'<div><dt>{esc(item["term"])}</dt><dd>{esc(item["definition"])}</dd></div>'
+            for item in block["items"]
+        )
+        return f'<dl class="article-term-list">{items}</dl>'
     if block_type == "quote":
         attribution = f'<cite>{esc(block["attribution"])}</cite>' if block.get("attribution") else ""
         return f'<blockquote><p>{esc(block["text"])}</p>{attribution}</blockquote>'
@@ -357,10 +371,15 @@ def article_body_markup(article: dict) -> str:
 
 
 def article_toc_markup(article: dict) -> str:
-    links = "".join(f'<li><a href="#{esc(section["id"], attribute=True)}">{esc(section["heading"])}</a></li>' for section in article["bodySections"])
+    links = '<li><a href="#evidence-map">Evidence map</a></li>' if article.get("evidenceLabels") else ""
+    links += "".join(f'<li><a href="#{esc(section["id"], attribute=True)}">{esc(section["heading"])}</a></li>' for section in article["bodySections"])
+    if article.get("evidenceSummary"):
+        links += '<li><a href="#what-we-know">What we know</a></li>'
     for key, label in (("evidenceNotes", "Evidence notes"), ("limitations", "Limitations"), ("sources", "Sources")):
         if article.get(key):
             links += f'<li><a href="#{key.replace("Notes", "-notes")}">{label}</a></li>'
+    if article.get("optionalAction"):
+        links += '<li><a href="#optional-action">Optional next step</a></li>'
     return f'<p class="interface-label">On this page</p><ol>{links}</ol>'
 
 
@@ -375,9 +394,44 @@ def article_sources_markup(sources: list[dict]) -> str:
         return ""
     items = []
     for source in sources:
-        detail = f'<span>{esc(source["detail"])}</span>' if source.get("detail") else ""
-        items.append(f'''<li><a href="{esc(source["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(source["title"])} ↗{external_note()}</a>{detail}</li>''')
+        citation = f'<span>{esc(source["citation"])}</span>' if source.get("citation") else ""
+        detail = f'<p>{esc(source["detail"])}</p>' if source.get("detail") else ""
+        items.append(f'''<li><div class="article-source__identity"><strong>{esc(source["organization"])}</strong>{citation}</div><a href="{esc(source["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(source["title"])} ↗{external_note()}</a>{detail}</li>''')
     return f'''<section id="sources" class="article-sources"><h2>Sources</h2><ol>{"".join(items)}</ol></section>'''
+
+
+def article_evidence_map_markup(labels: list[dict]) -> str:
+    if not labels:
+        return ""
+    cards = []
+    for index, label in enumerate(labels, start=1):
+        items = "".join(f'<li>{esc(item)}</li>' for item in label["items"])
+        cards.append(
+            f'''<section class="evidence-card" data-evidence-level="{esc(label["level"], attribute=True)}" aria-labelledby="evidence-{esc(label["level"], attribute=True)}-title"><div class="evidence-card__label"><span aria-hidden="true">{index:02d}</span><h3 id="evidence-{esc(label["level"], attribute=True)}-title">{esc(label["label"])}</h3></div><p>{esc(label["meaning"])}</p><ul>{items}</ul></section>'''
+        )
+    return f'''<section id="evidence-map" class="article-evidence-map" aria-labelledby="evidence-map-title"><p class="interface-label">How to read the evidence</p><h2 id="evidence-map-title">Evidence map</h2><div class="evidence-grid">{"".join(cards)}</div></section>'''
+
+
+def article_evidence_summary_markup(summary: dict | None) -> str:
+    if not summary:
+        return ""
+    groups = []
+    for index, group in enumerate(summary["groups"], start=1):
+        items = "".join(f'<li>{esc(item)}</li>' for item in group["items"])
+        groups.append(
+            f'''<section class="evidence-summary__group" data-evidence-level="{esc(group["level"], attribute=True)}"><p class="evidence-summary__label"><span aria-hidden="true">{index:02d}</span>{esc(group["label"])}</p><ul>{items}</ul></section>'''
+        )
+    return f'''<section id="what-we-know" class="article-evidence-summary" aria-labelledby="what-we-know-title"><p class="interface-label">Evidence in context</p><h2 id="what-we-know-title">{esc(summary["heading"])}</h2><div class="evidence-summary__grid">{"".join(groups)}</div><p class="evidence-summary__statement">{esc(summary["statement"])}</p></section>'''
+
+
+def article_optional_action_markup(action: dict | None) -> str:
+    if not action:
+        return ""
+    buttons = "".join(
+        f'<a class="button {"button-primary" if index == 0 else "button-secondary"}" href="{esc(cta["href"], attribute=True)}">{esc(cta["label"])} →</a>'
+        for index, cta in enumerate(action["ctas"])
+    )
+    return f'''<aside id="optional-action" class="article-action" aria-labelledby="optional-action-title"><p class="interface-label">{esc(action["label"])}</p><h2 id="optional-action-title">{esc(action["heading"])}</h2><p>{esc(action["copy"])}</p><div class="button-row">{buttons}</div></aside>'''
 
 
 def article_related_markup(article: dict, published_by_slug: dict[str, dict], products_by_id: dict[str, dict]) -> str:
@@ -404,16 +458,23 @@ def article_replacements(
 ) -> dict[str, str]:
     metadata = data["site"]["metadata"]
     prefix = "../"
-    title = article["title"] + metadata["articleTitleSuffix"]
-    description = article.get("dek") or article["summary"]
+    title = article.get("seoTitle") or article["title"] + metadata["articleTitleSuffix"]
+    description = article.get("seoDescription") or article.get("dek") or article["summary"]
+    display_dek = article.get("dek") or article["summary"]
     canonical_path = None if preview else f'library/{article["slug"]}.html'
     byline = [f'By {esc(article["author"])}', f'<span>{esc(article["readingTime"])}</span>']
     if article.get("reviewer"):
         byline.append(f'<span>Reviewed by {esc(article["reviewer"])}</span>')
     if article.get("published"):
-        byline.append(f'<time datetime="{esc(article["published"], attribute=True)}">Published {esc(article["published"])}</time>')
+        datetime = article.get("publishedIso") or article["published"]
+        byline.append(f'<time datetime="{esc(datetime, attribute=True)}">Published {esc(article["published"])}</time>')
+    if article.get("evidenceReviewed"):
+        byline.append(f'<span>Evidence reviewed {esc(article["evidenceReviewed"])}</span>')
     if article.get("updated"):
-        byline.append(f'<time datetime="{esc(article["updated"], attribute=True)}">Updated {esc(article["updated"])}</time>')
+        if article.get("updatedIso"):
+            byline.append(f'<time datetime="{esc(article["updatedIso"], attribute=True)}">Updated {esc(article["updated"])}</time>')
+        else:
+            byline.append(f'<span>Updated {esc(article["updated"])}</span>')
     hero = article.get("hero")
     if hero and hero.get("src"):
         hero_markup = f'''<figure class="article-hero__media"><img src="../{esc(hero["src"], attribute=True)}" alt="{esc(hero.get("alt", ""), attribute=True)}" width="{int(hero["width"])}" height="{int(hero["height"])}" decoding="async"></figure>'''
@@ -432,8 +493,8 @@ def article_replacements(
             path=canonical_path,
             page_type="article",
             image=hero,
-            published=article.get("published"),
-            updated=article.get("updated"),
+            published=article.get("publishedIso"),
+            updated=article.get("updatedIso"),
             noindex=preview,
         ),
         "{{SHARED_HEADER}}": shared_header_markup(prefix=prefix, current="article"),
@@ -441,15 +502,19 @@ def article_replacements(
         "{{PREVIEW_BANNER}}": preview_banner,
         "{{ARTICLE_CATEGORY}}": esc(category_name(library, article["category"])),
         "{{ARTICLE_TITLE}}": esc(article["title"]),
-        "{{ARTICLE_DEK}}": esc(description),
+        "{{ARTICLE_DEK}}": esc(display_dek),
         "{{ARTICLE_BYLINE}}": " · ".join(byline),
+        "{{ARTICLE_DISCLOSURE}}": f'<p class="article-disclosure" role="note">{esc(article["educationDisclosure"])}</p>' if article.get("educationDisclosure") else "",
         "{{ARTICLE_HERO}}": hero_markup,
         "{{ARTICLE_TOC}}": article_toc_markup(article),
         "{{ARTICLE_TAKEAWAYS}}": takeaways,
+        "{{ARTICLE_EVIDENCE_MAP}}": article_evidence_map_markup(article.get("evidenceLabels", [])),
         "{{ARTICLE_BODY}}": article_body_markup(article),
+        "{{ARTICLE_EVIDENCE_SUMMARY}}": article_evidence_summary_markup(article.get("evidenceSummary")),
         "{{ARTICLE_EVIDENCE}}": article_list_section("evidence-notes", "Evidence notes", article.get("evidenceNotes", [])),
         "{{ARTICLE_LIMITATIONS}}": article_list_section("limitations", "Limitations", article.get("limitations", [])),
         "{{ARTICLE_SOURCES}}": article_sources_markup(article.get("sources", [])),
+        "{{ARTICLE_ACTION}}": article_optional_action_markup(article.get("optionalAction")),
         "{{ARTICLE_RELATED}}": article_related_markup(article, published_by_slug, products_by_id),
     }
 
