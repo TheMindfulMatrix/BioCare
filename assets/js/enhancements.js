@@ -76,6 +76,141 @@
 
   document.querySelectorAll("[data-product-explorer]").forEach(initProductExplorer);
 
+  function initProductUniverse(root) {
+    var intentButtons = Array.prototype.slice.call(root.querySelectorAll("[data-universe-intent]"));
+    var products = Array.prototype.slice.call(root.querySelectorAll("[data-universe-product]"));
+    var rosterButtons = Array.prototype.slice.call(root.querySelectorAll("[data-universe-select]"));
+    var stepButtons = Array.prototype.slice.call(root.querySelectorAll("[data-universe-step]"));
+    var intentIndex = root.querySelector("[data-universe-intent-index]");
+    var intentName = root.querySelector("[data-universe-intent-name]");
+    var intentDescription = root.querySelector("[data-universe-intent-description]");
+    var position = root.querySelector("[data-universe-position]");
+    var total = root.querySelector("[data-universe-total]");
+    var stage = root.querySelector(".product-universe__stage");
+    if (!intentButtons.length || !products.length || !rosterButtons.length) return;
+
+    var activeIntent = intentButtons[0].dataset.universeIntent;
+    var activeProduct = products.find(function (product) { return product.hasAttribute("data-active"); }) || products[0];
+    var touchStartX = 0;
+    root.dataset.enhanced = "true";
+
+    function productsForIntent(intent) {
+      return products.filter(function (product) { return product.dataset.productIntent === intent; });
+    }
+
+    function intentButton(intent) {
+      return intentButtons.find(function (button) { return button.dataset.universeIntent === intent; });
+    }
+
+    function updateIntent(intent) {
+      var button = intentButton(intent);
+      if (!button) return;
+      activeIntent = intent;
+      root.dataset.activeIntent = intent;
+      root.dataset.activeEnvironment = button.dataset.intentEnvironment || "signal";
+      intentButtons.forEach(function (item) {
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+      if (intentIndex) intentIndex.textContent = button.dataset.intentIndex || "";
+      if (intentName) intentName.textContent = button.dataset.intentName || "";
+      if (intentDescription) intentDescription.textContent = button.dataset.intentDescription || "";
+      rosterButtons.forEach(function (item) {
+        item.hidden = item.dataset.productIntent !== intent;
+      });
+    }
+
+    function activateProduct(productId, announce) {
+      var next = products.find(function (product) { return product.dataset.universeProduct === productId; });
+      if (!next) return;
+      if (next.dataset.productIntent !== activeIntent) updateIntent(next.dataset.productIntent);
+      activeProduct = next;
+      products.forEach(function (product) {
+        var active = product === next;
+        product.toggleAttribute("data-active", active);
+        product.setAttribute("aria-hidden", String(!active));
+        product.inert = !active;
+      });
+      rosterButtons.forEach(function (button) {
+        button.setAttribute("aria-pressed", String(button.dataset.universeSelect === productId));
+      });
+      var intentProducts = productsForIntent(activeIntent);
+      var localIndex = intentProducts.indexOf(next);
+      if (position) position.textContent = String(localIndex + 1).padStart(2, "0");
+      if (total) total.textContent = String(intentProducts.length).padStart(2, "0");
+      if (announce && !reduceMotion) next.animate(
+        [{ opacity: .55, transform: "translateY(10px) scale(.985)" }, { opacity: 1, transform: "translateY(0) scale(1)" }],
+        { duration: 360, easing: "cubic-bezier(.2,.75,.25,1)" }
+      );
+    }
+
+    function activateIntent(button, moveFocus) {
+      updateIntent(button.dataset.universeIntent);
+      activateProduct(button.dataset.intentFeatured || productsForIntent(activeIntent)[0].dataset.universeProduct, true);
+      if (moveFocus) button.focus();
+    }
+
+    function stepProduct(direction) {
+      var intentProducts = productsForIntent(activeIntent);
+      var index = intentProducts.indexOf(activeProduct);
+      var nextIndex = (index + direction + intentProducts.length) % intentProducts.length;
+      activateProduct(intentProducts[nextIndex].dataset.universeProduct, true);
+    }
+
+    intentButtons.forEach(function (button, index) {
+      button.addEventListener("click", function () { activateIntent(button, false); });
+      button.addEventListener("keydown", function (event) {
+        var nextIndex = null;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % intentButtons.length;
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + intentButtons.length) % intentButtons.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = intentButtons.length - 1;
+        if (nextIndex === null) return;
+        event.preventDefault();
+        activateIntent(intentButtons[nextIndex], true);
+      });
+    });
+
+    rosterButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        activateProduct(button.dataset.universeSelect, true);
+      });
+    });
+
+    stepButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        stepProduct(Number(button.dataset.universeStep));
+      });
+    });
+
+    if (stage) {
+      stage.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+      stage.addEventListener("touchend", function (event) {
+        var distance = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(distance) > 48) stepProduct(distance < 0 ? 1 : -1);
+      }, { passive: true });
+      if (!reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        stage.addEventListener("pointermove", function (event) {
+          var bounds = stage.getBoundingClientRect();
+          var x = ((event.clientX - bounds.left) / bounds.width - .5) * 2;
+          var y = ((event.clientY - bounds.top) / bounds.height - .5) * 2;
+          stage.style.setProperty("--universe-tilt-x", (y * -2.2).toFixed(2) + "deg");
+          stage.style.setProperty("--universe-tilt-y", (x * 3).toFixed(2) + "deg");
+        }, { passive: true });
+        stage.addEventListener("pointerleave", function () {
+          stage.style.setProperty("--universe-tilt-x", "0deg");
+          stage.style.setProperty("--universe-tilt-y", "0deg");
+        }, { passive: true });
+      }
+    }
+
+    updateIntent(activeProduct.dataset.productIntent);
+    activateProduct(activeProduct.dataset.universeProduct, false);
+  }
+
+  document.querySelectorAll("[data-product-universe]").forEach(initProductUniverse);
+
   function initHeroParallax(hero) {
     if (reduceMotion || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     var layers = Array.prototype.slice.call(hero.querySelectorAll("[data-parallax-depth]"));

@@ -26,8 +26,35 @@
       <div class="hero-system-bridge" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><defs><linearGradient id="hero-bridge-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".52" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="hero-system-bridge__ghost" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><path class="hero-system-bridge__live" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><circle cx="1095" cy="82" r="5"/><circle cx="1265" cy="138" r="4"/></svg></div>
     </section>
 
-    <section id="shelf" class="shelf shelf--launch section-dark section-pad" aria-labelledby="shelf-title">
-      <div class="container-wide"><div class="shelf-launch__heading" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><div class="shelf-launch__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div></div><div class="solution-explorer" data-product-explorer data-active-environment="balance"><div class="solution-explorer__rail-wrap"><p class="interface-label">Choose a route</p><nav class="shelf-index solution-explorer__rail" aria-label="Explore Shelf destinations" data-reveal>{{SHELF_INDEX}}</nav><p class="solution-explorer__hint" aria-hidden="true">Move through the signals →</p></div><div class="solution-explorer__viewport" data-reveal><div class="solution-explorer__field" aria-hidden="true"><span></span><span></span><span></span></div><div class="shelf-grid solution-explorer__panels">{{SHELF_CARDS}}</div><div class="solution-explorer__telemetry" aria-hidden="true"><span>Verified route</span><span>Official imagery</span><span>External destination</span></div></div></div></div>
+    <section id="shelf" class="product-universe-section section-dark section-pad" aria-labelledby="shelf-title">
+      <div class="universe-entry-path" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container-wide">
+        <div class="product-universe__heading" data-reveal>
+          <div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div>
+          <div class="product-universe__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div>
+        </div>
+        <div class="product-universe" data-product-universe data-active-intent="test-measure" data-active-environment="signal">
+          <svg class="product-universe__pathways" viewBox="0 0 1200 760" aria-hidden="true"><defs><linearGradient id="universe-path-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path d="M84 118 C280 80 350 260 600 378 S930 680 1112 622"/><path d="M82 632 C278 684 370 502 600 378 S930 80 1114 132"/><circle cx="600" cy="378" r="208"/><circle cx="600" cy="378" r="286"/></svg>
+          <nav class="product-universe__intents" aria-label="Choose a product intent" data-reveal>{{UNIVERSE_INTENTS}}</nav>
+          <div class="product-universe__stage" data-reveal>
+            <div class="product-universe__field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="product-universe__products" aria-live="polite">{{UNIVERSE_PRODUCTS}}</div>
+            <div class="product-universe__controls">
+              <button type="button" data-universe-step="-1" aria-label="Previous product">←</button>
+              <p><span data-universe-position>01</span><i aria-hidden="true">/</i><span data-universe-total>01</span></p>
+              <button type="button" data-universe-step="1" aria-label="Next product">→</button>
+            </div>
+          </div>
+          <aside class="product-universe__console" data-reveal>
+            <p class="interface-label">Active intent / <span data-universe-intent-index>01</span></p>
+            <h3 data-universe-intent-name>Test &amp; Measure</h3>
+            <p data-universe-intent-description>Start with a measurement you can inspect and discuss in context.</p>
+            <div class="product-universe__roster" data-universe-roster>{{UNIVERSE_ROSTER}}</div>
+            <a class="button button-secondary product-universe__shop-link" href="shop.html">Explore all {{PRODUCT_COUNT}} products →</a>
+          </aside>
+          <div class="product-universe__telemetry" aria-hidden="true"><span>Official imagery</span><span>{{PRODUCT_COUNT}} verified SKUs</span><span>Partner-coded routes</span><span>No generated packaging</span></div>
+        </div>
+      </div>
     </section>
 
     <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">

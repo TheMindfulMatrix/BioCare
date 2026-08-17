@@ -5,7 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "experience-v2-2-visual",
+      "assetVersion": "experience-v2-3-product-universe",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -27,6 +27,11 @@
           "path": "start.html",
           "title": "Start Here | The Mindful Matrix",
           "description": "A clear orientation to getting informed, understanding what information means, and choosing a reasonable next step."
+        },
+        "shop": {
+          "path": "shop.html",
+          "title": "Product Universe | The Mindful Matrix",
+          "description": "Explore verified products by visitor intent, with official manufacturer imagery, transparent partner links, and no invented pricing."
         }
       }
     },
@@ -37,11 +42,6 @@
       "url": "https://www.instagram.com/the_mindful.matrix/"
     },
     "disclosure": "Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York."
-  },
-  "affiliate": {
-    "zinzinoPartnerId": "2021428066",
-    "market": "us/en-us",
-    "bioLimitlessPartnerUrl": "https://biolimitless.com/me/matrix/"
   },
   "brand": {
     "philosophy": "Information → Education → Action",
@@ -69,14 +69,24 @@
   },
   "homepage": {
     "hero": {
-      "headline": ["Test first.", "Then choose."],
+      "headline": [
+        "Test first.",
+        "Then choose."
+      ],
       "supportingLine": "Your featured starting point is right here.",
       "copy": "Go straight to the kit, browse every verified Shelf destination, or use the Matrix when you want more context. Education is here to support the decision—not stand between you and it."
     },
     "problem": {
-      "headline": ["More information than ever.", "Less clarity than ever."],
+      "headline": [
+        "More information than ever.",
+        "Less clarity than ever."
+      ],
       "copy": "People are surrounded by health advice, supplements, diets, studies, opinions, and trends. Knowing what to actually do with that information can be difficult.",
-      "themes": ["Conflicting information", "Passive waiting", "Not knowing where to begin"],
+      "themes": [
+        "Conflicting information",
+        "Passive waiting",
+        "Not knowing where to begin"
+      ],
       "conclusion": "The answer isn't more noise. It's knowing where to begin."
     },
     "matrix": {
@@ -91,7 +101,14 @@
           "name": "Information",
           "heading": "Get informed about your situation.",
           "copy": "Understand what you're working with before deciding what to change.",
-          "labels": ["Testing", "Habits", "Nutrition", "Sleep", "Performance", "Questions"],
+          "labels": [
+            "Testing",
+            "Habits",
+            "Nutrition",
+            "Sleep",
+            "Performance",
+            "Questions"
+          ],
           "question": "Where am I?"
         },
         {
@@ -100,7 +117,12 @@
           "name": "Education",
           "heading": "Don't just collect information. Understand it.",
           "copy": "Information without understanding can create more confusion. Learn what it means, explore credible sources, and understand your options.",
-          "labels": ["Context", "Credible sources", "Questions", "Options"],
+          "labels": [
+            "Context",
+            "Credible sources",
+            "Questions",
+            "Options"
+          ],
           "question": "What does this mean?"
         },
         {
@@ -109,7 +131,15 @@
           "name": "Action",
           "heading": "Knowledge only matters when you use it.",
           "copy": "Take what you've learned and decide what your next meaningful step looks like.",
-          "labels": ["Nutrition", "Movement", "Sleep", "Routines", "Questions for your doctor", "Tools", "Products"],
+          "labels": [
+            "Nutrition",
+            "Movement",
+            "Sleep",
+            "Routines",
+            "Questions for your doctor",
+            "Tools",
+            "Products"
+          ],
           "question": "What can I do next?"
         }
       ]
@@ -117,9 +147,30 @@
     "choosePath": {
       "heading": "Where are you right now?",
       "paths": [
-        { "id": "understand-topic", "index": "01", "name": "Understand something", "copy": "I want a credible place to learn about a topic.", "cta": "Explore the Library", "href": "library.html" },
-        { "id": "understand-numbers", "index": "02", "name": "Understand my numbers", "copy": "I want to know what a measurement can—and can’t—tell me.", "cta": "Read the testing guide", "href": "library/should-you-test-your-omega-3-levels.html" },
-        { "id": "not-sure", "index": "03", "name": "Not sure yet", "copy": "I want a simple way to decide where to begin.", "cta": "Start here", "href": "start.html" }
+        {
+          "id": "understand-topic",
+          "index": "01",
+          "name": "Understand something",
+          "copy": "I want a credible place to learn about a topic.",
+          "cta": "Explore the Library",
+          "href": "library.html"
+        },
+        {
+          "id": "understand-numbers",
+          "index": "02",
+          "name": "Understand my numbers",
+          "copy": "I want to know what a measurement can—and can’t—tell me.",
+          "cta": "Read the testing guide",
+          "href": "library/should-you-test-your-omega-3-levels.html"
+        },
+        {
+          "id": "not-sure",
+          "index": "03",
+          "name": "Not sure yet",
+          "copy": "I want a simple way to decide where to begin.",
+          "cta": "Start here",
+          "href": "start.html"
+        }
       ]
     },
     "startHere": {
@@ -232,9 +283,9 @@
       "transition": "Keep learning—or explore tools only when there is a clear reason."
     },
     "shelf": {
-      "label": "Shop directly",
-      "heading": "The full Shelf. No maze.",
-      "copy": "Seven clear routes to the exact product, collection, shop, or partner destination already verified for this site. Representative imagery is labeled where a card links to a broader collection."
+      "label": "The Product Universe",
+      "heading": "Find the right starting point.",
+      "copy": "Move by intent, inspect every verified product, or open the full catalog. Official product imagery stays separate from the interactive environment."
     },
     "standards": {
       "heading": "You deserve to know why.",
@@ -243,11 +294,31 @@
         "It's something we earn."
       ],
       "principles": [
-        { "index": "01", "name": "We explain our reasoning", "copy": "If we recommend something, we tell you why." },
-        { "index": "02", "name": "We show our sources", "copy": "Whenever possible, education should link back to credible evidence." },
-        { "index": "03", "name": "We separate evidence from opinion", "copy": "What research suggests and what we personally think should not be presented as the same thing." },
-        { "index": "04", "name": "We disclose our partnerships", "copy": "If we can financially benefit from something, visitors should know." },
-        { "index": "05", "name": "We tell you when we don't know", "copy": "Uncertainty should not be hidden." }
+        {
+          "index": "01",
+          "name": "We explain our reasoning",
+          "copy": "If we recommend something, we tell you why."
+        },
+        {
+          "index": "02",
+          "name": "We show our sources",
+          "copy": "Whenever possible, education should link back to credible evidence."
+        },
+        {
+          "index": "03",
+          "name": "We separate evidence from opinion",
+          "copy": "What research suggests and what we personally think should not be presented as the same thing."
+        },
+        {
+          "index": "04",
+          "name": "We disclose our partnerships",
+          "copy": "If we can financially benefit from something, visitors should know."
+        },
+        {
+          "index": "05",
+          "name": "We tell you when we don't know",
+          "copy": "Uncertainty should not be hidden."
+        }
       ]
     },
     "transparency": {
@@ -256,168 +327,14 @@
       "approvalStatus": "Any expanded compensation language requires business/legal approval before publication."
     },
     "finalCta": {
-      "headline": ["Stop waiting for someone", "to tell you what's wrong."],
-      "response": ["Start figuring out what's right."],
+      "headline": [
+        "Stop waiting for someone",
+        "to tell you what's wrong."
+      ],
+      "response": [
+        "Start figuring out what's right."
+      ],
       "philosophy": "Self-care is the real healthcare."
     }
-  },
-  "featuredProductId": "balance-basic-kit",
-  "products": [
-    {
-      "id": "balance-basic-kit",
-      "name": "Balance Test Basic Kit",
-      "category": "Start here",
-      "explorerIntent": "Testing / Start here",
-      "destinationType": "Exact product / SKU 910465",
-      "visualLabel": "Official Balance Test Basic Kit",
-      "description": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
-      "note": "The one most people begin with",
-      "priceLabel": "$127",
-      "priceStatus": "pending business verification",
-      "whyItsHere": "The one most people begin with.",
-      "cta": "Get the kit",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
-      "image": { "src": "img/kit.png", "alt": "Balance Test Basic Kit packaging", "width": 560, "height": 560 },
-      "environment": "balance",
-      "cutout": {
-        "src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
-        "width": 560,
-        "height": 560,
-        "sourceAsset": "assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png"
-      },
-      "artwork": {
-        "src": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
-        "width": 1024,
-        "height": 1536,
-        "status": "approved Mindful Matrix cinematic background"
-      },
-      "showInShelf": false
-    },
-    {
-      "id": "home-health-tests",
-      "name": "Home health tests",
-      "category": "Test",
-      "explorerIntent": "Testing",
-      "destinationType": "Collection",
-      "visualLabel": "Pictured: BalanceTest",
-      "description": "Dried blood spot, taken at home, posted to the lab",
-      "whyItsHere": "A direct path to the current home health tests collection.",
-      "cta": "Browse",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests",
-      "image": { "src": "img/test.png", "alt": "Representative BalanceTest packaging from the Zinzino home health tests collection", "width": 560, "height": 560 },
-      "environment": "test",
-      "cutout": {
-        "src": "assets/product-cutouts/zinzino/balance-test-309000.png",
-        "width": 650,
-        "height": 650,
-        "sourceAsset": "assets/source-products/zinzino/balance-test/balance-test-309000-main.png"
-      },
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
-      "showInShelf": true
-    },
-    {
-      "id": "omega-kits",
-      "name": "All omega kits",
-      "category": "Omega",
-      "explorerIntent": "Omega",
-      "destinationType": "Collection",
-      "visualLabel": "Pictured: BalanceOil+ Premium x2 Kit with Test",
-      "description": "Premium, AquaX, Vegan and Essent+ options",
-      "whyItsHere": "A direct path to the current omega kit collection.",
-      "cta": "Browse",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits",
-      "image": { "src": "img/omega.png", "alt": "Representative BalanceOil+ Premium x2 Kit with Test from the Zinzino omega kits collection", "width": 560, "height": 560 },
-      "environment": "omega",
-      "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-premium-x2-kit-with-test-910886.png",
-        "width": 650,
-        "height": 650,
-        "sourceAsset": "assets/source-products/zinzino/omega-kits/balanceoil-premium-x2-kit-with-test-910886.png"
-      },
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
-      "showInShelf": true
-    },
-    {
-      "id": "gut-health",
-      "name": "Gut Health",
-      "category": "Gut",
-      "explorerIntent": "Gut",
-      "destinationType": "Collection",
-      "visualLabel": "Pictured: ZinoBiotic+",
-      "description": "Gut health products in the Zinzino shop",
-      "whyItsHere": "A direct path to the current gut health collection.",
-      "cta": "Browse",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements",
-      "image": { "src": "img/gut.png", "alt": "Representative ZinoBiotic+ packaging from the Zinzino gut health collection", "width": 560, "height": 560 },
-      "environment": "gut",
-      "cutout": {
-        "src": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
-        "width": 650,
-        "height": 650,
-        "sourceAsset": "assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png"
-      },
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
-      "showInShelf": false
-    },
-    {
-      "id": "x-gold",
-      "name": "X Gold+",
-      "category": "Turmeric",
-      "explorerIntent": "Nutrition / wellness",
-      "destinationType": "Exact product / SKU 302790",
-      "visualLabel": "Official X Gold+ 250 ml",
-      "description": "X Gold+ in the Zinzino shop",
-      "whyItsHere": "A direct path to the current product destination.",
-      "cta": "Browse",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790",
-      "image": { "src": "img/gold.png", "alt": "Zinzino X Gold+ 250 ml packaging", "width": 560, "height": 560 },
-      "environment": "gold",
-      "cutout": {
-        "src": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
-        "width": 650,
-        "height": 650,
-        "sourceAsset": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png"
-      },
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
-      "showInShelf": false
-    },
-    {
-      "id": "full-shop",
-      "name": "Full shop",
-      "category": "All",
-      "explorerIntent": "Shop all",
-      "destinationType": "Complete shop",
-      "visualLabel": "Pictured: R.E.V.O.O",
-      "description": "Gut, immune, skin and weight management",
-      "whyItsHere": "The broadest path to the current Zinzino shop.",
-      "cta": "Browse",
-      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop",
-      "image": { "src": "img/revoo.png", "alt": "Representative R.E.V.O.O bottles from the Zinzino shop", "width": 560, "height": 560 },
-      "environment": "shop",
-      "cutout": {
-        "src": "assets/product-cutouts/zinzino/revoo-302401.png",
-        "width": 650,
-        "height": 650,
-        "sourceAsset": "assets/source-products/zinzino/full-shop/revoo-302401-main.png"
-      },
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
-      "showInShelf": true
-    },
-    {
-      "id": "biolimitless",
-      "name": "BioLimitless",
-      "category": "Library",
-      "explorerIntent": "Education",
-      "destinationType": "Partner destination",
-      "visualLabel": "BioLimitless partner resource",
-      "description": "Academy, library and formulas — my partner page",
-      "whyItsHere": "The current destination for the BioLimitless partner resource.",
-      "cta": "Visit",
-      "destination": "https://biolimitless.com/me/matrix/",
-      "image": { "src": "img/biolimitless.webp", "alt": "BioLimitless", "width": 1024, "height": 529 },
-      "environment": "partner",
-      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
-      "showInShelf": true
-    }
-  ]
+  }
 }

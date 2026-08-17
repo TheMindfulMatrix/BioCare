@@ -1,0 +1,1351 @@
+{
+  "schemaVersion": "2.3",
+  "verifiedDate": "2026-08-16",
+  "scope": "Current public United States Zinzino core shop plus the previously verified Balance Test Basic Kit and BioLimitless relationship.",
+  "affiliate": {
+    "zinzinoPartnerId": "2021428066",
+    "market": "us/en-us"
+  },
+  "featuredProductId": "balance-basic-kit",
+  "intents": [
+    {
+      "id": "test-measure",
+      "index": "01",
+      "name": "Test & Measure",
+      "shortName": "Measure",
+      "description": "Start with a measurement you can inspect and discuss in context.",
+      "environment": "signal",
+      "featuredProductId": "balance-basic-kit"
+    },
+    {
+      "id": "omega-nutrition",
+      "index": "02",
+      "name": "Omega & Nutrition",
+      "shortName": "Omega",
+      "description": "Explore verified omega and nutrition formats in the current US catalog.",
+      "environment": "omega",
+      "featuredProductId": "balanceoil-plus-300ml"
+    },
+    {
+      "id": "gut-digestion",
+      "index": "03",
+      "name": "Gut & Digestion",
+      "shortName": "Gut",
+      "description": "Explore the current fiber and turmeric-root formats grouped here.",
+      "environment": "biotic",
+      "featuredProductId": "zinobiotic-plus"
+    },
+    {
+      "id": "daily-wellness",
+      "index": "04",
+      "name": "Daily Wellness",
+      "shortName": "Daily",
+      "description": "Browse verified daily supplement formats from the current catalog.",
+      "environment": "daily",
+      "featuredProductId": "xtend-plus"
+    },
+    {
+      "id": "performance-recovery",
+      "index": "05",
+      "name": "Performance & Recovery",
+      "shortName": "Performance",
+      "description": "Explore verified shake, food, accessory, and spirulina formats.",
+      "environment": "performance",
+      "featuredProductId": "phycosci-plus-x20"
+    },
+    {
+      "id": "healthy-aging",
+      "index": "06",
+      "name": "Healthy Aging / Longevity",
+      "shortName": "Longevity",
+      "description": "Explore verified collagen and skin-care formats without outcome promises.",
+      "environment": "longevity",
+      "featuredProductId": "collagen-boozt"
+    }
+  ],
+  "products": [
+    {
+      "id": "balance-basic-kit",
+      "name": "Balance Test Basic Kit",
+      "manufacturer": "Zinzino",
+      "sku": "910465",
+      "intent": "test-measure",
+      "category": "Start here",
+      "productKind": "kit",
+      "purchaseModel": "Premier subscription kit",
+      "whyItsHere": "The featured test-first starting point already approved for this site.",
+      "variantGroup": "Balance Test kit",
+      "variantLabel": "standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
+      "cta": "Get the kit",
+      "visualLabel": "Official Balance Test Basic Kit",
+      "environment": "balance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+        "alt": "Balance Test Basic Kit official Zinzino product packaging",
+        "width": 560,
+        "height": 560,
+        "sourceAsset": "assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/910465.png",
+        "provenance": "assets/source-products/zinzino/balance-test-basic-kit/provenance.json"
+      },
+      "artwork": {
+        "src": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+        "width": 1024,
+        "height": 1536,
+        "status": "approved Mindful Matrix cinematic background"
+      },
+      "relatedEducation": {
+        "label": "Read the testing guide",
+        "href": "library/should-you-test-your-omega-3-levels.html"
+      },
+      "description": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "descriptionSource": "Previously approved Mindful Matrix site summary"
+    },
+    {
+      "id": "balance-test",
+      "name": "BalanceTest",
+      "manufacturer": "Zinzino",
+      "sku": "309000",
+      "intent": "test-measure",
+      "category": "Home health test",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified individual at-home test in the current US catalog.",
+      "variantGroup": "BalanceTest",
+      "variantLabel": "standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/309000",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309000",
+      "cta": "View product",
+      "visualLabel": "Official BalanceTest",
+      "environment": "signal",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balance-test-309000.png",
+        "alt": "BalanceTest official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/balance-test/balance-test-309000-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309000.png",
+        "provenance": "assets/source-products/zinzino/balance-test/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the testing guide",
+        "href": "library/should-you-test-your-omega-3-levels.html"
+      },
+      "description": "Track your fatty acid profile from home",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "gut-health-test",
+      "name": "Gut Health Test",
+      "manufacturer": "Zinzino",
+      "sku": "309070",
+      "intent": "test-measure",
+      "category": "Home health test",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified individual at-home test in the current US catalog.",
+      "variantGroup": "Gut Health Test",
+      "variantLabel": "standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/309070",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309070",
+      "cta": "View product",
+      "visualLabel": "Official Gut Health Test",
+      "environment": "signal",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/gut-health-test-309070.png",
+        "alt": "Gut Health Test official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/gut-health-test-309070-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309070.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Home health blood spot test to track gut and metabolic markers",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "gut-health-test-x2",
+      "name": "Gut Health Test x2",
+      "manufacturer": "Zinzino",
+      "sku": "309080",
+      "intent": "test-measure",
+      "category": "Home health test",
+      "productKind": "multipack",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified two-test format for visitors comparing available test quantities.",
+      "variantGroup": "Gut Health Test x2",
+      "variantLabel": "x2",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/309080",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309080",
+      "cta": "View product",
+      "visualLabel": "Official Gut Health Test x2",
+      "environment": "signal",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+        "alt": "Gut Health Test x2 official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/gut-health-test-x2-309080-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309080.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Home health blood spot test to track gut and metabolic markers",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "vitamin-d-test",
+      "name": "Vitamin D Test",
+      "manufacturer": "Zinzino",
+      "sku": "309049",
+      "intent": "test-measure",
+      "category": "Home health test",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified individual at-home test in the current US catalog.",
+      "variantGroup": "Vitamin D Test",
+      "variantLabel": "standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/309049",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309049",
+      "cta": "View product",
+      "visualLabel": "Official Vitamin D Test",
+      "environment": "signal",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+        "alt": "Vitamin D Test official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/vitamin-d-test-309049-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309049.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Monitor your vitamin D levels",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "hba1c-test",
+      "name": "HbA1c Test",
+      "manufacturer": "Zinzino",
+      "sku": "309060",
+      "intent": "test-measure",
+      "category": "Home health test",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified individual at-home test in the current US catalog.",
+      "variantGroup": "HbA1c Test",
+      "variantLabel": "standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/309060",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309060",
+      "cta": "View product",
+      "visualLabel": "Official HbA1c Test",
+      "environment": "signal",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/hba1c-test-309060.png",
+        "alt": "HbA1c Test official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/hba1c-test-309060-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309060.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Track your long-term blood sugar levels",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-plus-300ml",
+      "name": "BalanceOil+, 300 ml",
+      "manufacturer": "Zinzino",
+      "sku": "300000",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The standard 300 ml format in the verified omega assortment.",
+      "variantGroup": "BalanceOil+",
+      "variantLabel": "300 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300000",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300000",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil+, 300 ml",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+        "alt": "BalanceOil+, 300 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-300ml-300000-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300000.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-plus-100ml",
+      "name": "BalanceOil+ Orange Lemon Mint, 100 ml",
+      "manufacturer": "Zinzino",
+      "sku": "300430",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified smaller 100 ml format in the omega assortment.",
+      "variantGroup": "BalanceOil+",
+      "variantLabel": "100 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300430",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300430",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil+ Orange Lemon Mint, 100 ml",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+        "alt": "BalanceOil+ Orange Lemon Mint, 100 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-100ml-300430-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300430.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-plus-100ml-6pcs",
+      "name": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs",
+      "manufacturer": "Zinzino",
+      "sku": "300481",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "multipack",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified six-piece 100 ml format in the omega assortment.",
+      "variantGroup": "BalanceOil+",
+      "variantLabel": "6 × 100 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300481",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300481",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+        "alt": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-100ml-6pcs-300481-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300481.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-plus-premium",
+      "name": "BalanceOil+ Premium, 300 ml",
+      "manufacturer": "Zinzino",
+      "sku": "700000",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified Premium 300 ml variant in the omega assortment.",
+      "variantGroup": "BalanceOil+",
+      "variantLabel": "Premium 300 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/700000",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/700000",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil+ Premium, 300 ml",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+        "alt": "BalanceOil+ Premium, 300 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-premium-300ml-700000-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/700000.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Omega-3 food supplement with EPA, DHA and polyphenols from extra virgin olive oil",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-plus-aquax",
+      "name": "BalanceOil+ AquaX, 300 ml",
+      "manufacturer": "Zinzino",
+      "sku": "300700",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified AquaX format in the omega assortment.",
+      "variantGroup": "BalanceOil+",
+      "variantLabel": "AquaX 300 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300700",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300700",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil+ AquaX, 300 ml",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+        "alt": "BalanceOil+ AquaX, 300 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-aquax-300ml-300700-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300700.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Water-soluble formula - Lemon flavor",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-plus-vegan",
+      "name": "BalanceOil+ Vegan",
+      "manufacturer": "Zinzino",
+      "sku": "400000",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified vegan format in the omega assortment.",
+      "variantGroup": "BalanceOil+",
+      "variantLabel": "Vegan",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/400000",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/400000",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil+ Vegan",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+        "alt": "BalanceOil+ Vegan official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-vegan-400000-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/400000.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "With marine micro-algae oil and vegan vitamin D3",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "balanceoil-tutti-frutti",
+      "name": "BalanceOil Tutti Frutti, 300 ml",
+      "manufacturer": "Zinzino",
+      "sku": "301799",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified Tutti Frutti flavor format in the omega assortment.",
+      "variantGroup": "BalanceOil",
+      "variantLabel": "Tutti Frutti 300 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/301799",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301799",
+      "cta": "View product",
+      "visualLabel": "Official BalanceOil Tutti Frutti, 300 ml",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+        "alt": "BalanceOil Tutti Frutti, 300 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-tutti-frutti-300ml-301799-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301799.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Omega-3 food supplement with EPA, DHA, polyphenols, and a kid-friendly taste",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "essent-plus-premium",
+      "name": "Essent+ Premium",
+      "manufacturer": "Zinzino",
+      "sku": "300310",
+      "intent": "omega-nutrition",
+      "category": "Omega supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified softgel format in the omega assortment.",
+      "variantGroup": "Essent+",
+      "variantLabel": "Premium",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300310",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300310",
+      "cta": "View product",
+      "visualLabel": "Official Essent+ Premium",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+        "alt": "Essent+ Premium official Zinzino product packaging",
+        "width": 960,
+        "height": 960,
+        "sourceAsset": "assets/source-products/zinzino/catalog/essent-plus-premium-300310-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300310.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "relatedEducation": {
+        "label": "Read the omega-3 guide",
+        "href": "library/omega-3-what-the-numbers-mean.html"
+      },
+      "description": "Polyphenol omega balance supplement",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "revoo",
+      "name": "R.E.V.O.O",
+      "manufacturer": "Zinzino",
+      "sku": "302401",
+      "intent": "omega-nutrition",
+      "category": "Olive oil",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified olive-oil product in the current omega assortment.",
+      "variantGroup": "R.E.V.O.O",
+      "variantLabel": "250 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302401",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302401",
+      "cta": "View product",
+      "visualLabel": "Official R.E.V.O.O",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/revoo-302401.png",
+        "alt": "R.E.V.O.O official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/full-shop/revoo-302401-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302401.png",
+        "provenance": "assets/source-products/zinzino/full-shop/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Extra virgin olive oil",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "dosage-cups",
+      "name": "Dosage Cups, 10 pc",
+      "manufacturer": "Zinzino",
+      "sku": "600508",
+      "intent": "omega-nutrition",
+      "category": "Accessory",
+      "productKind": "accessory",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified accessory for measuring liquid formats.",
+      "variantGroup": "Dosage Cups",
+      "variantLabel": "10 pc",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/600508",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/600508",
+      "cta": "View product",
+      "visualLabel": "Official Dosage Cups, 10 pc",
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+        "alt": "Dosage Cups, 10 pc official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/dosage-cups-10pc-600508-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/600508.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Exact measuring caps in dishwasher-safe plastic",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "zinobiotic-plus",
+      "name": "ZinoBiotic+",
+      "manufacturer": "Zinzino",
+      "sku": "301390",
+      "intent": "gut-digestion",
+      "category": "Fiber supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified fiber format in the current gut-health assortment.",
+      "variantGroup": "ZinoBiotic+",
+      "variantLabel": "180 g",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/301390",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301390",
+      "cta": "View product",
+      "visualLabel": "Official ZinoBiotic+",
+      "environment": "biotic",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+        "alt": "ZinoBiotic+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301390.png",
+        "provenance": "assets/source-products/zinzino/gut-health/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "A tailored blend of eight natural sources of dietary fibers",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "x-gold-plus",
+      "name": "X Gold+ 250 ml",
+      "manufacturer": "Zinzino",
+      "sku": "302790",
+      "intent": "gut-digestion",
+      "category": "Turmeric format",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified liquid turmeric-root format in the current gut-health assortment.",
+      "variantGroup": "X Gold+",
+      "variantLabel": "250 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302790",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790",
+      "cta": "View product",
+      "visualLabel": "Official X Gold+ 250 ml",
+      "environment": "biotic",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+        "alt": "X Gold+ 250 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302790-001.png",
+        "provenance": "assets/source-products/zinzino/x-gold/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Liquid turmeric root extract and piperine from black pepper",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "zinogene-plus",
+      "name": "ZinoGene+",
+      "manufacturer": "Zinzino",
+      "sku": "302500",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified daily supplement format in the current US catalog.",
+      "variantGroup": "ZinoGene+",
+      "variantLabel": "30 tablets",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302500",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302500",
+      "cta": "View product",
+      "visualLabel": "Official ZinoGene+",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+        "alt": "ZinoGene+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/zinogene-plus-302500-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302500.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With seaweed fucoidans, curcumin, vitamin C, and zinc",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "viva-plus",
+      "name": "Viva+",
+      "manufacturer": "Zinzino",
+      "sku": "300800",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified single-pack Viva+ format in the current catalog.",
+      "variantGroup": "Viva+",
+      "variantLabel": "60 tablets",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300800",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300800",
+      "cta": "View product",
+      "visualLabel": "Official Viva+",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/viva-plus-300800.png",
+        "alt": "Viva+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/viva-plus-300800-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300800.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With saffron stigmas, magnesium, iodine, and vitamin C",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "viva-plus-x2",
+      "name": "Viva+ x2",
+      "manufacturer": "Zinzino",
+      "sku": "300811",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "multipack",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified two-pack Viva+ format in the current catalog.",
+      "variantGroup": "Viva+",
+      "variantLabel": "x2",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300811",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300811",
+      "cta": "View product",
+      "visualLabel": "Official Viva+ x2",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+        "alt": "Viva+ x2 official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/viva-plus-x2-300811-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300811.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With saffron stigmas, magnesium, iodine, and vitamin C",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "zinoshine-plus",
+      "name": "ZinoShine+",
+      "manufacturer": "Zinzino",
+      "sku": "302600",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified daily supplement format in the current US catalog.",
+      "variantGroup": "ZinoShine+",
+      "variantLabel": "60 tablets",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302600",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302600",
+      "cta": "View product",
+      "visualLabel": "Official ZinoShine+",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+        "alt": "ZinoShine+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/zinoshine-plus-302600-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302600.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With vitamin D and broad-spectrum magnesium",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "xtend-plus",
+      "name": "Xtend+",
+      "manufacturer": "Zinzino",
+      "sku": "302200",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified Xtend+ capsule format in the current catalog.",
+      "variantGroup": "Xtend",
+      "variantLabel": "Plus",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302200",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302200",
+      "cta": "View product",
+      "visualLabel": "Official Xtend+",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/xtend-plus-302200.png",
+        "alt": "Xtend+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/xtend-plus-302200-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302200.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "xtend",
+      "name": "Xtend",
+      "manufacturer": "Zinzino",
+      "sku": "300520",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified Xtend tablet format in the current catalog.",
+      "variantGroup": "Xtend",
+      "variantLabel": "Standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300520",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300520",
+      "cta": "View product",
+      "visualLabel": "Official Xtend",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/xtend-300520.png",
+        "alt": "Xtend official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/xtend-300520-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300520.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With 23 essential vitamins and minerals",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "protect-plus",
+      "name": "Protect+",
+      "manufacturer": "Zinzino",
+      "sku": "300600",
+      "intent": "daily-wellness",
+      "category": "Daily supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified daily supplement format in the current US catalog.",
+      "variantGroup": "Protect+",
+      "variantLabel": "60 capsules",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/300600",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300600",
+      "cta": "View product",
+      "visualLabel": "Official Protect+",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/protect-plus-300600.png",
+        "alt": "Protect+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/protect-plus-300600-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300600.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With vegan beta-glucans and naturally derived vitamin C and D3",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "spirumax-plus",
+      "name": "SpiruMax+",
+      "manufacturer": "Zinzino",
+      "sku": "302699",
+      "intent": "daily-wellness",
+      "category": "Spirulina supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified tablet format in the current spirulina assortment.",
+      "variantGroup": "SpiruMax+",
+      "variantLabel": "80 tablets",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302699",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302699",
+      "cta": "View product",
+      "visualLabel": "Official SpiruMax+",
+      "environment": "daily",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+        "alt": "SpiruMax+ official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/spirumax-plus-302699-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302699.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Food supplement with naturally derived spirulina maxima",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "phycosci-plus-x20",
+      "name": "PhycoSci+ X20",
+      "manufacturer": "Zinzino",
+      "sku": "302770",
+      "intent": "performance-recovery",
+      "category": "Spirulina supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified liquid spirulina format in the current US catalog.",
+      "variantGroup": "PhycoSci+",
+      "variantLabel": "X20",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302770",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302770",
+      "cta": "View product",
+      "visualLabel": "Official PhycoSci+ X20",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+        "alt": "PhycoSci+ X20 official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/phycosci-plus-x20-302770-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302770.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Naturally derived spirulina extract food supplement",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "leanshake-chocolate",
+      "name": "LeanShake Chocolate, portion pack",
+      "manufacturer": "Zinzino",
+      "sku": "301331",
+      "intent": "performance-recovery",
+      "category": "Meal replacement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified chocolate flavor in the current LeanShake assortment.",
+      "variantGroup": "LeanShake",
+      "variantLabel": "Chocolate",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/301331",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301331",
+      "cta": "View product",
+      "visualLabel": "Official LeanShake Chocolate, portion pack",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+        "alt": "LeanShake Chocolate, portion pack official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-chocolate-301331-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301331.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Meal replacement with whey proteins, collagen peptides, and dietary fibers, chocolate flavor",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "leanshake-strawberry",
+      "name": "LeanShake Strawberry, portion pack",
+      "manufacturer": "Zinzino",
+      "sku": "301531",
+      "intent": "performance-recovery",
+      "category": "Meal replacement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified strawberry flavor in the current LeanShake assortment.",
+      "variantGroup": "LeanShake",
+      "variantLabel": "Strawberry",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/301531",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301531",
+      "cta": "View product",
+      "visualLabel": "Official LeanShake Strawberry, portion pack",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+        "alt": "LeanShake Strawberry, portion pack official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-strawberry-301531-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301531.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Meal replacement with whey proteins, collagen peptides, and dietary fibers, strawberry flavor",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "leanshake-vanilla",
+      "name": "LeanShake Vanilla, portion pack",
+      "manufacturer": "Zinzino",
+      "sku": "301581",
+      "intent": "performance-recovery",
+      "category": "Meal replacement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified vanilla flavor in the current LeanShake assortment.",
+      "variantGroup": "LeanShake",
+      "variantLabel": "Vanilla",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/301581",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301581",
+      "cta": "View product",
+      "visualLabel": "Official LeanShake Vanilla, portion pack",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+        "alt": "LeanShake Vanilla, portion pack official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-vanilla-301581-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301581.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Meal replacement with vegetarian pea and oat proteins and dietary fibers, vanilla flavor",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "leanshake-berry",
+      "name": "LeanShake Berry, portion pack",
+      "manufacturer": "Zinzino",
+      "sku": "301381",
+      "intent": "performance-recovery",
+      "category": "Meal replacement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "The verified berry flavor in the current LeanShake assortment.",
+      "variantGroup": "LeanShake",
+      "variantLabel": "Berry",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/301381",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301381",
+      "cta": "View product",
+      "visualLabel": "Official LeanShake Berry, portion pack",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+        "alt": "LeanShake Berry, portion pack official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-berry-301381-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301381.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Meal replacement with vegetarian pea and oat proteins and dietary fibers, berry flavor",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "shake-bottle",
+      "name": "Shake Bottle",
+      "manufacturer": "Zinzino",
+      "sku": "600509",
+      "intent": "performance-recovery",
+      "category": "Accessory",
+      "productKind": "accessory",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified accessory for the current shake assortment.",
+      "variantGroup": "Shake Bottle",
+      "variantLabel": "Standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/600509",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/600509",
+      "cta": "View product",
+      "visualLabel": "Official Shake Bottle",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/shake-bottle-600509.png",
+        "alt": "Shake Bottle official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/shake-bottle-600509-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/600509.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "On-the-go, dishwasher safe with a leak-proof lid",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "energy-bar-nut-seed",
+      "name": "Energy Bar Nut & Seed",
+      "manufacturer": "Zinzino",
+      "sku": "302011",
+      "intent": "performance-recovery",
+      "category": "Food",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified food format in the current US catalog.",
+      "variantGroup": "Energy Bar",
+      "variantLabel": "Nut & Seed",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302011",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302011",
+      "cta": "View product",
+      "visualLabel": "Official Energy Bar Nut & Seed",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+        "alt": "Energy Bar Nut & Seed official Zinzino product packaging",
+        "width": 960,
+        "height": 960,
+        "sourceAsset": "assets/source-products/zinzino/catalog/energy-bar-nut-seed-302011-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302011.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Vegan, high-fiber energy bar with almonds, dates, and super seeds",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "measuring-tape",
+      "name": "Measuring Tape",
+      "manufacturer": "Zinzino",
+      "sku": "600211",
+      "intent": "performance-recovery",
+      "category": "Accessory",
+      "productKind": "accessory",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified measurement accessory in the current US catalog.",
+      "variantGroup": "Measuring Tape",
+      "variantLabel": "Standard",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/600211",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/600211",
+      "cta": "View product",
+      "visualLabel": "Official Measuring Tape",
+      "environment": "performance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/measuring-tape-600211.png",
+        "alt": "Measuring Tape official Zinzino product packaging",
+        "width": 330,
+        "height": 330,
+        "sourceAsset": "assets/source-products/zinzino/catalog/measuring-tape-600211-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/600211.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "With metric and imperial measures, and a BMI Calculator.",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "collagen-boozt",
+      "name": "Collagen Boozt",
+      "manufacturer": "Zinzino",
+      "sku": "302800",
+      "intent": "healthy-aging",
+      "category": "Collagen supplement",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified collagen format in the current skin-nutrition assortment.",
+      "variantGroup": "Collagen Boozt",
+      "variantLabel": "10 × 46 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/302800",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302800",
+      "cta": "View product",
+      "visualLabel": "Official Collagen Boozt",
+      "environment": "longevity",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+        "alt": "Collagen Boozt official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/collagen-boozt-302800-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302800.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "Food supplement with liquid marine collagen and hyaluronic acid",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    },
+    {
+      "id": "skin-serum",
+      "name": "Skin Serum, 50 ml",
+      "manufacturer": "Zinzino",
+      "sku": "800150",
+      "intent": "healthy-aging",
+      "category": "Skin care",
+      "productKind": "individual product",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A verified topical skin-care format in the current US catalog.",
+      "variantGroup": "Skin Serum",
+      "variantLabel": "50 ml",
+      "officialProductPage": "https://www.zinzino.com/shop/site/US/en-US/products/shop/800150",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/800150",
+      "cta": "View product",
+      "visualLabel": "Official Skin Serum, 50 ml",
+      "environment": "longevity",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+        "alt": "Skin Serum, 50 ml official Zinzino product packaging",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/catalog/skin-serum-50ml-800150-main.png",
+        "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/800150.png",
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "environment generated from the design-token system; official product remains a separate foreground image"
+      },
+      "description": "24-hour deep skincare formula for face and neck",
+      "descriptionSource": "Official current Zinzino US catalog card"
+    }
+  ],
+  "fallbackDestinations": [
+    {
+      "id": "home-health-tests",
+      "name": "All home health tests",
+      "type": "collection",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests",
+      "description": "Browse the current home health tests collection on Zinzino."
+    },
+    {
+      "id": "omega-kits",
+      "name": "All omega kits",
+      "type": "collection",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits",
+      "description": "Browse current omega Premier Kit options on Zinzino."
+    },
+    {
+      "id": "gut-health",
+      "name": "Gut Health collection",
+      "type": "collection",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements",
+      "description": "Browse the current gut health collection on Zinzino."
+    },
+    {
+      "id": "full-shop",
+      "name": "Full Zinzino shop",
+      "type": "collection",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop",
+      "description": "Open the complete current Zinzino shop."
+    },
+    {
+      "id": "biolimitless",
+      "name": "BioLimitless",
+      "type": "partner destination",
+      "destination": "https://biolimitless.com/me/matrix/",
+      "description": "Open the verified Mindful Matrix BioLimitless partner destination."
+    }
+  ],
+  "deferredCatalog": [
+    {
+      "scope": "Additional Premier Kits beyond SKU 910465",
+      "reason": "Not added until each kit receives item-level SKU, destination, image, and provenance verification."
+    },
+    {
+      "scope": "Acquired-brand catalog sections (Valentus, Zurvita, Truvy, Bodē Pro, Sanki, It Works!)",
+      "reason": "Not added because V2.3 verification was limited to the current core Zinzino US shop and exact item-level provenance has not been completed."
+    }
+  ],
+  "researchSources": [
+    "https://www.zinzino.com/shop/site/US/en-US/products/shop",
+    "https://www.zinzino.com/shop/site/US/en-US/products/shop/home-health-tests",
+    "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465"
+  ],
+  "contentPolicy": "Core product descriptions use the manufacturer’s current public US catalog-card wording without added claims. The Balance Test Basic Kit preserves the previously approved site summary. Prices are intentionally excluded."
+}
