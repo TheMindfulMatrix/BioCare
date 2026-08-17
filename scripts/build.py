@@ -232,7 +232,7 @@ def shared_footer_markup(data: dict, *, prefix: str) -> str:
     <div class="footer-grid container-wide">
       <div><a href="{home}" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">{esc(philosophy)}</p></div>
       <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{home}#shelf">Product Universe</a><a href="{prefix}shop.html">All products</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
-      <div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="{esc(instagram["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">Instagram{external_note()}</a></nav><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
+      <div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="{esc(instagram["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">Instagram{external_note()}</a></nav><p class="fine" data-fda-disclaimer>{esc(site["fdaDisclaimer"])}</p><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
     </div>
   </footer>'''
 
@@ -846,6 +846,7 @@ def build_home(data: dict, library: dict) -> None:
         "{{SHELF_LABEL}}": esc(home["shelf"]["label"]),
         "{{SHELF_HEADING}}": esc(home["shelf"]["heading"]),
         "{{SHELF_COPY}}": esc(home["shelf"]["copy"]),
+        "{{AFFILIATE_DISCLOSURE}}": esc(site["affiliateDisclosure"]),
         "{{SHELF_COUNT}}": f'{len(products):02d} verified products',
         "{{PRODUCT_COUNT}}": str(len(products)),
         "{{UNIVERSE_INTENTS}}": universe_intents_markup(catalog),
@@ -952,6 +953,7 @@ def build_shop(data: dict) -> None:
         "{{SHOP_INTENT_NAV}}": shop_intent_nav_markup(catalog["intents"], catalog["products"]),
         "{{SHOP_GROUPS}}": shop_groups_markup(catalog),
         "{{SHOP_FALLBACKS}}": shop_fallbacks_markup(catalog["fallbackDestinations"]),
+        "{{AFFILIATE_DISCLOSURE}}": esc(data["site"]["affiliateDisclosure"]),
         "{{DISCLOSURE}}": esc(data["site"]["disclosure"]),
     }
     write_output(ROOT / "shop.html", render_template("shop.html", replacements))
