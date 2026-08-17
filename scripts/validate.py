@@ -232,7 +232,7 @@ def validate_content(site: dict, library: dict) -> None:
     partner_id = site.get("affiliate", {}).get("zinzinoPartnerId")
     for product in products:
         label = product.get("id", "unknown")
-        for field in ("id", "name", "category", "description", "whyItsHere", "cta", "destination", "image", "artwork"):
+        for field in ("id", "name", "category", "destinationType", "visualLabel", "description", "whyItsHere", "cta", "destination", "image", "artwork"):
             check(bool(product.get(field)), f"{label}: missing {field}")
         check(bool(product.get("environment")), f"{label}: decorative Shelf environment is required")
         destination = product.get("destination", "")
@@ -422,7 +422,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     cutout_count = sum(1 for product in site["products"] if product.get("cutout"))
     featured = next(product for product in site["products"] if product["id"] == site["featuredProductId"])
     testing_cutout_count = 1 if featured.get("cutout") else 0
-    check(home.count('data-image-role="official-product-cutout"') == cutout_count + testing_cutout_count, "Every configured Shelf cutout must render as a separate foreground image")
+    hero_cutout_count = 1 if featured.get("cutout") else 0
+    check(home.count('data-image-role="official-product-cutout"') == cutout_count + testing_cutout_count + hero_cutout_count, "Every configured Shelf, testing, and hero cutout must render as a separate foreground image")
     check(home.count('class="shelf-card__visual artwork-stage"') == len(site["products"]), "Every Shelf card requires separate artwork and product layers")
     check(home.count("data-artwork-state=") == len(site["products"]), "Every Shelf product requires a stable editorial artwork slot")
     check(home.count("data-environment=") == len(site["products"]), "Every Shelf product requires a decorative environment identifier")
@@ -437,9 +438,12 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     testing_guide = 'href="library/should-you-test-your-omega-3-levels.html"'
     featured_destination = next(product["destination"] for product in site["products"] if product["id"] == site["featuredProductId"])
     check(testing_guide in home, "Testing section must link to the testing education guide")
-    check(home.find(testing_guide) < home.find(featured_destination), "Testing education must appear before the commercial destination")
+    check('data-matrix-field' in home, "Homepage must include the progressively enhanced Matrix field")
+    check(home.find('<section id="shelf"') < home.find('<section id="problem"'), "The complete Shelf must follow the hero without an educational gate")
+    check(home.count(f'href="{featured_destination}"') >= 3, "Featured product must be directly reachable from navigation, hero, and product content")
+    check(f'Shop all {len(site["products"])} options' in home, "Hero must expose the complete Shelf count")
     check(home.count('class="shelf-card__why"') == len(site["products"]), "Every Shelf item must show why it is included before its commercial link")
-    check('href="start.html#pathways">Find your path' in home, "Primary navigation must distinguish Start Here from the pathway shortcut")
+    check(f'href="{featured_destination}" target="_blank" rel="sponsored noopener noreferrer">{featured["cta"]}' in home, "Primary navigation must provide a direct sponsored route to the featured product")
     for product in site["products"]:
         check(product["destination"] in home, f"{product['id']}: destination missing from homepage")
         escaped_destination = re.escape(product["destination"])

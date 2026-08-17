@@ -138,6 +138,8 @@ def document_head_markup(
 ) -> str:
     canonical = page_url(metadata, path) if path is not None else ""
     social_image = image or metadata.get("socialImage")
+    asset_version = esc(metadata.get("assetVersion", "1"), attribute=True)
+    asset_suffix = f"?v={asset_version}"
     tags = [
         '  <meta charset="utf-8">',
         '  <meta name="viewport" content="width=device-width, initial-scale=1">',
@@ -187,10 +189,10 @@ def document_head_markup(
             '  <link rel="preconnect" href="https://fonts.googleapis.com">',
             '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
             '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@500..800&amp;display=swap" rel="stylesheet">',
-            f'  <link rel="stylesheet" href="{prefix}assets/css/tokens.css">',
-            f'  <link rel="stylesheet" href="{prefix}assets/css/base.css">',
-            f'  <link rel="stylesheet" href="{prefix}assets/css/site.css">',
-            f'  <script defer src="{prefix}assets/js/enhancements.js"></script>',
+            f'  <link rel="stylesheet" href="{prefix}assets/css/tokens.css{asset_suffix}">',
+            f'  <link rel="stylesheet" href="{prefix}assets/css/base.css{asset_suffix}">',
+            f'  <link rel="stylesheet" href="{prefix}assets/css/site.css{asset_suffix}">',
+            f'  <script defer src="{prefix}assets/js/enhancements.js{asset_suffix}"></script>',
         ]
     )
     if structured_data and not noindex:
@@ -198,10 +200,13 @@ def document_head_markup(
     return "\n".join(tags)
 
 
-def shared_header_markup(*, prefix: str, current: str) -> str:
+def shared_header_markup(data: dict, *, prefix: str, current: str) -> str:
     home = f"{prefix}index.html"
     start_current = ' aria-current="page"' if current == "start" else ""
     library_current = ' aria-current="page"' if current in {"library", "article"} else ""
+    products_by_id = {product["id"]: product for product in data["products"]}
+    featured = products_by_id[data["featuredProductId"]]
+    featured_url = esc(featured["destination"], attribute=True)
     return f'''<header class="site-header section-dark">
     <nav class="nav-shell container-wide" aria-label="Primary navigation">
       <a class="brand-link" href="{home}" aria-label="The Mindful Matrix home"><img src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a>
@@ -209,9 +214,9 @@ def shared_header_markup(*, prefix: str, current: str) -> str:
       <ul id="primary-links" class="nav-links">
         <li><a href="{prefix}start.html"{start_current}>Start here</a></li>
         <li><a href="{prefix}library.html"{library_current}>The Library</a></li>
-        <li><a href="{home}#shelf">The Shelf</a></li>
+        <li><a href="{home}#shelf">Shop the Shelf</a></li>
         <li><a href="{home}#story">Our story</a></li>
-        <li><a class="button button-primary" href="{prefix}start.html#pathways">Find your path →</a></li>
+        <li><a class="button button-primary" href="{featured_url}" target="_blank" rel="sponsored noopener noreferrer">{esc(featured["cta"])} ↗{external_note()}</a></li>
       </ul>
     </nav>
   </header>'''
@@ -286,6 +291,46 @@ def testing_product_markup(product: dict, testing: dict) -> str:
       </article>'''
 
 
+def hero_actions_markup(product: dict, product_count: int) -> str:
+    url = esc(product["destination"], attribute=True)
+    return f'''<div class="hero-actions button-row">
+            <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">View {esc(product["name"])} ↗{external_note()}</a>
+            <a class="button button-secondary" href="#shelf">Shop all {product_count} options ↓</a>
+          </div>
+          <div class="hero-context"><span>Official product imagery</span><span>External Zinzino checkout</span><a href="#matrix">Want context first? Enter the Matrix ↓</a></div>'''
+
+
+def hero_product_markup(product: dict) -> str:
+    artwork = product.get("artwork", {})
+    artwork_markup = ""
+    if artwork.get("src"):
+        artwork_markup = (
+            f'<img class="hero-product__background" src="{esc(artwork["src"], attribute=True)}" alt="" '
+            f'width="{int(artwork["width"])}" height="{int(artwork["height"])}" '
+            'loading="eager" decoding="async">'
+        )
+    url = esc(product["destination"], attribute=True)
+    return f'''<div class="hero-product" data-product-id="{esc(product["id"], attribute=True)}">
+            <a class="hero-product__stage" href="{url}" target="_blank" rel="sponsored noopener noreferrer" aria-label="View {esc(product["name"], attribute=True)} on Zinzino (opens in a new tab)">
+              {artwork_markup}
+              <span class="hero-product__pedestal" aria-hidden="true"></span>
+              <div class="hero-product__cutout">{shelf_product_markup(product, eager=True)}</div>
+              <div class="hero-product__signal hero-product__signal--one" aria-hidden="true"><span>01</span> Test</div>
+              <div class="hero-product__signal hero-product__signal--two" aria-hidden="true"><span>02</span> Learn</div>
+              <div class="hero-product__signal hero-product__signal--three" aria-hidden="true"><span>03</span> Choose</div>
+              <span class="hero-product__tap">View the kit ↗</span>
+            </a>
+            <div class="hero-product__caption"><span>Featured starting point</span><strong>{esc(product["name"])}</strong><small>{esc(product["destinationType"])}</small></div>
+          </div>'''
+
+
+def shelf_index_markup(products: list[dict]) -> str:
+    return "".join(
+        f'''<a href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer"><span>{index:02d}</span><strong>{esc(product["name"])}</strong><small>{esc(product["destinationType"])}</small></a>'''
+        for index, product in enumerate(products, start=1)
+    )
+
+
 def testing_education_markup(testing: dict) -> str:
     education = testing["education"]
     return f'''<section class="testing-education" aria-labelledby="testing-education-title" data-reveal>
@@ -323,9 +368,9 @@ def shelf_product_markup(product: dict, *, eager: bool = False) -> str:
 def shelf_card_markup(product: dict) -> str:
     environment = esc(product.get("environment", "neutral"), attribute=True)
     return f'''<article class="shelf-card" data-product-id="{esc(product["id"], attribute=True)}" data-environment="{environment}" data-reveal>
-        <div class="shelf-card__visual artwork-stage">{product_artwork_markup(product)}<div class="shelf-card__product">{shelf_product_markup(product)}</div></div>
+        <div class="shelf-card__visual artwork-stage">{product_artwork_markup(product)}<div class="shelf-card__product">{shelf_product_markup(product)}</div><span class="shelf-card__visual-label">{esc(product["visualLabel"])}</span></div>
         <div class="shelf-card__content">
-          <p class="interface-label">{esc(product["category"])}</p>
+          <p class="interface-label">{esc(product["category"])} / {esc(product["destinationType"])}</p>
           <h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>
           <div class="shelf-card__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>
           <a class="shelf-card__link" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>
@@ -619,7 +664,7 @@ def article_replacements(
                 ]),
             ],
         ),
-        "{{SHARED_HEADER}}": shared_header_markup(prefix=prefix, current="article"),
+        "{{SHARED_HEADER}}": shared_header_markup(data, prefix=prefix, current="article"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=prefix),
         "{{PREVIEW_BANNER}}": preview_banner,
         "{{ARTICLE_CATEGORY}}": esc(category),
@@ -658,12 +703,14 @@ def build_home(data: dict, library: dict) -> None:
             path=page["path"],
             structured_data=[organization_schema(metadata), website_schema(metadata)],
         ),
-        "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="home"),
+        "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current="home"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{PHILOSOPHY}}": esc(brand["philosophy"]),
         "{{HERO_HEADLINE}}": line_markup(home["hero"]["headline"]),
         "{{HERO_SUPPORT}}": esc(home["hero"]["supportingLine"]),
         "{{HERO_COPY}}": esc(home["hero"]["copy"]),
+        "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(products)),
+        "{{HERO_PRODUCT}}": hero_product_markup(featured),
         "{{PROBLEM_HEADLINE}}": line_markup(home["problem"]["headline"]),
         "{{PROBLEM_COPY}}": esc(home["problem"]["copy"]),
         "{{PROBLEM_THEMES}}": "".join(f"<li>{esc(theme)}</li>" for theme in home["problem"]["themes"]),
@@ -695,6 +742,8 @@ def build_home(data: dict, library: dict) -> None:
         "{{SHELF_LABEL}}": esc(home["shelf"]["label"]),
         "{{SHELF_HEADING}}": esc(home["shelf"]["heading"]),
         "{{SHELF_COPY}}": esc(home["shelf"]["copy"]),
+        "{{SHELF_COUNT}}": f'{len(products):02d} verified destinations',
+        "{{SHELF_INDEX}}": shelf_index_markup(products),
         "{{SHELF_CARDS}}": "\n        ".join(shelf_card_markup(product) for product in products),
         "{{STANDARDS_HEADING}}": esc(home["standards"]["heading"]),
         "{{STANDARDS_LIST}}": "\n        ".join(standard_markup(item) for item in home["standards"]["principles"]),
@@ -728,7 +777,7 @@ def build_library(data: dict, library: dict) -> None:
                 breadcrumb_schema(metadata, [("Home", ""), ("The Library", page["path"])]),
             ],
         ),
-        "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="library"),
+        "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current="library"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{LIBRARY_CATEGORIES}}": "".join(library_category_markup(category, counts[category["id"]]) for category in library["categories"]),
         "{{LIBRARY_INDEX}}": library_index_markup(library, data["homepage"]),
@@ -755,7 +804,7 @@ def build_start(data: dict) -> None:
                 breadcrumb_schema(metadata, [("Home", ""), ("Start Here", page["path"])]),
             ],
         ),
-        "{{SHARED_HEADER}}": shared_header_markup(prefix="", current="start"),
+        "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current="start"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{START_HERO_COPY}}": esc(start["heroCopy"]),
         "{{START_HEADING}}": esc(start["heading"]),

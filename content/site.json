@@ -5,6 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
+      "assetVersion": "experience-v2-3",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -68,9 +69,9 @@
   },
   "homepage": {
     "hero": {
-      "headline": ["You know you can", "feel better."],
-      "supportingLine": "You just need somewhere to start.",
-      "copy": "The Mindful Matrix helps you get informed about your situation, educate yourself on what it means, and take action toward better wellness."
+      "headline": ["Test first.", "Then choose."],
+      "supportingLine": "Your featured starting point is right here.",
+      "copy": "Go straight to the kit, browse every verified Shelf destination, or use the Matrix when you want more context. Education is here to support the decision—not stand between you and it."
     },
     "problem": {
       "headline": ["More information than ever.", "Less clarity than ever."],
@@ -231,9 +232,9 @@
       "transition": "Keep learning—or explore tools only when there is a clear reason."
     },
     "shelf": {
-      "label": "Action",
-      "heading": "Tools with a reason for being here.",
-      "copy": "The Shelf collects optional tools selected for a specific reason. Read why an item is here before deciding whether it belongs in your next step."
+      "label": "Shop directly",
+      "heading": "The full Shelf. No maze.",
+      "copy": "Seven clear routes to the exact product, collection, shop, or partner destination already verified for this site. Representative imagery is labeled where a card links to a broader collection."
     },
     "standards": {
       "heading": "You deserve to know why.",
@@ -266,6 +267,8 @@
       "id": "balance-basic-kit",
       "name": "Balance Test Basic Kit",
       "category": "Start here",
+      "destinationType": "Exact product / SKU 910465",
+      "visualLabel": "Official Balance Test Basic Kit",
       "description": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
       "note": "The one most people begin with",
       "priceLabel": "$127",
@@ -293,6 +296,8 @@
       "id": "home-health-tests",
       "name": "Home health tests",
       "category": "Test",
+      "destinationType": "Collection",
+      "visualLabel": "Pictured: BalanceTest",
       "description": "Dried blood spot, taken at home, posted to the lab",
       "whyItsHere": "A direct path to the current home health tests collection.",
       "cta": "Browse",
@@ -312,6 +317,8 @@
       "id": "omega-kits",
       "name": "All omega kits",
       "category": "Omega",
+      "destinationType": "Collection",
+      "visualLabel": "Pictured: BalanceOil+ Premium x2 Kit with Test",
       "description": "Premium, AquaX, Vegan and Essent+ options",
       "whyItsHere": "A direct path to the current omega kit collection.",
       "cta": "Browse",
@@ -331,6 +338,8 @@
       "id": "gut-health",
       "name": "Gut Health",
       "category": "Gut",
+      "destinationType": "Collection",
+      "visualLabel": "Pictured: ZinoBiotic+",
       "description": "Gut health products in the Zinzino shop",
       "whyItsHere": "A direct path to the current gut health collection.",
       "cta": "Browse",
@@ -350,6 +359,8 @@
       "id": "x-gold",
       "name": "X Gold+",
       "category": "Turmeric",
+      "destinationType": "Exact product / SKU 302790",
+      "visualLabel": "Official X Gold+ 250 ml",
       "description": "X Gold+ in the Zinzino shop",
       "whyItsHere": "A direct path to the current product destination.",
       "cta": "Browse",
@@ -369,6 +380,8 @@
       "id": "full-shop",
       "name": "Full shop",
       "category": "All",
+      "destinationType": "Complete shop",
+      "visualLabel": "Pictured: R.E.V.O.O",
       "description": "Gut, immune, skin and weight management",
       "whyItsHere": "The broadest path to the current Zinzino shop.",
       "cta": "Browse",
@@ -388,6 +401,8 @@
       "id": "biolimitless",
       "name": "BioLimitless",
       "category": "Library",
+      "destinationType": "Partner destination",
+      "visualLabel": "BioLimitless partner resource",
       "description": "Academy, library and formulas — my partner page",
       "whyItsHere": "The current destination for the BioLimitless partner resource.",
       "cta": "Visit",

@@ -9,17 +9,23 @@
 
   <main id="main-content" tabindex="-1">
     <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
+      <canvas class="matrix-field" data-matrix-field aria-hidden="true"></canvas>
       <div class="home-hero__grid container-wide">
         <div class="home-hero__content" data-reveal>
           <p class="section-kicker">{{PHILOSOPHY}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__support">{{HERO_SUPPORT}}</p><p class="home-hero__copy">{{HERO_COPY}}</p>
-          <div class="button-row"><a class="button button-primary" href="start.html">Start your journey →</a><a class="button button-secondary" href="#matrix">Explore the Matrix ↓</a></div>
+          {{HERO_ACTIONS}}
         </div>
-        <div class="home-hero__visual" aria-hidden="true" data-reveal>
-          <span class="matrix-orbit matrix-orbit--outer"></span><span class="matrix-orbit matrix-orbit--inner"></span><span class="matrix-orbit matrix-orbit--trace"></span>
-          <svg class="matrix-path" viewBox="0 0 600 600"><path class="matrix-path__ambient" d="M-54 450C95 142 351 42 664 182"/><path class="path-draw" d="M44 378C137 94 448 90 550 292S376 563 123 494"/><circle class="matrix-path__node" cx="44" cy="378" r="8"/><circle class="matrix-path__node matrix-path__node--bio" cx="550" cy="292" r="8"/><circle class="matrix-path__node" cx="123" cy="494" r="8"/><circle class="matrix-path__marker" cx="355" cy="95" r="4"/><circle class="matrix-path__marker matrix-path__marker--bio" cx="418" cy="527" r="4"/></svg>
-          <img class="hero-mark" src="assets/brand/mark-dark.svg" width="64" height="64" alt=""><span class="hero-data hero-data--one">Information / 01</span><span class="hero-data hero-data--two">Education / 02</span><span class="hero-data hero-data--three">Action / 03</span>
+        <div class="home-hero__visual" data-reveal>
+          <div class="matrix-volume" aria-hidden="true"><span></span><span></span><span></span></div>
+          {{HERO_PRODUCT}}
+          <span class="hero-data hero-data--one" aria-hidden="true">Input / Personal data</span><span class="hero-data hero-data--two" aria-hidden="true">Signal / Context</span><span class="hero-data hero-data--three" aria-hidden="true">Output / Next step</span>
         </div>
       </div>
+      <div class="hero-status" aria-hidden="true"><span>Live matrix</span><span>Pointer reactive</span><span>Information → Education → Action</span></div>
+    </section>
+
+    <section id="shelf" class="shelf shelf--launch section-dark section-pad" aria-labelledby="shelf-title">
+      <div class="container-wide"><div class="shelf-launch__heading" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><div class="shelf-launch__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div></div><nav class="shelf-index" aria-label="Direct Shelf destinations" data-reveal>{{SHELF_INDEX}}</nav><div class="shelf-grid">{{SHELF_CARDS}}</div></div>
     </section>
 
     <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">
@@ -44,10 +50,6 @@
 
     <section id="library" class="library-section section-light section-pad" aria-labelledby="library-title">
       <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{LIBRARY_LABEL}}</p><h2 id="library-title" class="section-title">{{LIBRARY_HEADING}}</h2></div><p class="section-copy">{{LIBRARY_COPY}}</p></div>{{LIBRARY_BODY}}<div class="library-transition" data-reveal><p>{{LIBRARY_TRANSITION}}</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
-    </section>
-
-    <section id="shelf" class="shelf section-dark section-pad" aria-labelledby="shelf-title">
-      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><p class="section-copy">{{SHELF_COPY}}</p></div><div class="shelf-grid">{{SHELF_CARDS}}</div></div>
     </section>
 
     <section id="standards" class="standards section-warm section-pad" aria-labelledby="standards-title">

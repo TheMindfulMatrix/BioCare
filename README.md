@@ -5,6 +5,7 @@ This repository is a dependency-free static site published under the GitHub Page
 ## Content model
 
 - `content/site.json` is the source of truth for site copy, disclosures, product metadata, images, and verified destinations.
+- Product records also declare `destinationType` and `visualLabel` so exact-product, collection, full-shop, and representative-image states remain explicit anywhere the Shelf is rendered.
 - Each product's `artwork` object reserves a stable Shelf background slot. Its `environment` selects a low-cost decorative treatment, while a verified `cutout` remains a separate foreground image. Keep `artwork.src` null until approved original editorial artwork, dimensions, and crops are supplied.
 - `content/library.json` is the single source of truth for Library categories, the article schema, publication status, and article records. An empty collection renders the visitor-facing coming-soon state.
 - `templates/index.html`, `templates/library.html`, `templates/start.html`, and `templates/article.html` contain page structure only. Shared navigation, footer, and metadata markup are generated centrally.
@@ -66,4 +67,6 @@ python scripts/cutout.py assets/source-products/zinzino/balance-test-basic-kit a
 - `assets/css/tokens.css` defines contrast-safe dark, light, and warm environments; display, body, and data typography; layout; spacing; shape; focus; and motion roles.
 - `assets/brand/` contains replaceable SVG lockups, standalone mark variants, a single-color gold mark, and the favicon.
 - `assets/css/site.css` contains reusable navigation, button, journey, data, product, Library, pathway, and destination patterns.
+- The homepage Matrix field is progressively enhanced by `assets/js/enhancements.js` using a dependency-free projected 3D canvas. It is decorative, pointer-reactive, pauses when offscreen or hidden, and renders a static frame when reduced motion is requested.
+- `site.metadata.assetVersion` provides deterministic cache-busting for CSS and JavaScript releases on GitHub Pages.
 - The generated root pages are the homepage, Library landing page, and Start Here orientation. Published Library records are generated as evidence-forward guides; draft records remain private to the content model and preview workflow.
