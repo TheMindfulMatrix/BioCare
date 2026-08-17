@@ -10,6 +10,7 @@
   <main id="main-content" tabindex="-1">
     <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
       <canvas class="matrix-field" data-matrix-field aria-hidden="true"></canvas>
+      <div class="hero-biome" aria-hidden="true"><span class="hero-biome__plane hero-biome__plane--one" data-parallax-depth="0.35"></span><span class="hero-biome__plane hero-biome__plane--two" data-parallax-depth="0.7"></span><span class="hero-biome__signal hero-biome__signal--one" data-parallax-depth="1.1"></span><span class="hero-biome__signal hero-biome__signal--two" data-parallax-depth="0.55"></span></div>
       <div class="home-hero__grid container-wide">
         <div class="home-hero__content" data-reveal>
           <p class="section-kicker">{{PHILOSOPHY}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__support">{{HERO_SUPPORT}}</p><p class="home-hero__copy">{{HERO_COPY}}</p>
@@ -22,10 +23,11 @@
         </div>
       </div>
       <div class="hero-status" aria-hidden="true"><span>Live matrix</span><span>Pointer reactive</span><span>Information → Education → Action</span></div>
+      <div class="hero-system-bridge" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><defs><linearGradient id="hero-bridge-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".52" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="hero-system-bridge__ghost" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><path class="hero-system-bridge__live" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><circle cx="1095" cy="82" r="5"/><circle cx="1265" cy="138" r="4"/></svg></div>
     </section>
 
     <section id="shelf" class="shelf shelf--launch section-dark section-pad" aria-labelledby="shelf-title">
-      <div class="container-wide"><div class="shelf-launch__heading" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><div class="shelf-launch__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div></div><nav class="shelf-index" aria-label="Direct Shelf destinations" data-reveal>{{SHELF_INDEX}}</nav><div class="shelf-grid">{{SHELF_CARDS}}</div></div>
+      <div class="container-wide"><div class="shelf-launch__heading" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><div class="shelf-launch__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div></div><div class="solution-explorer" data-product-explorer data-active-environment="balance"><div class="solution-explorer__rail-wrap"><p class="interface-label">Choose a route</p><nav class="shelf-index solution-explorer__rail" aria-label="Explore Shelf destinations" data-reveal>{{SHELF_INDEX}}</nav><p class="solution-explorer__hint" aria-hidden="true">Move through the signals →</p></div><div class="solution-explorer__viewport" data-reveal><div class="solution-explorer__field" aria-hidden="true"><span></span><span></span><span></span></div><div class="shelf-grid solution-explorer__panels">{{SHELF_CARDS}}</div><div class="solution-explorer__telemetry" aria-hidden="true"><span>Verified route</span><span>Official imagery</span><span>External destination</span></div></div></div></div>
     </section>
 
     <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">
@@ -33,7 +35,7 @@
     </section>
 
     <section id="matrix" class="matrix-section section-dark section-pad" aria-labelledby="matrix-title">
-      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">{{MATRIX_HEADING}}</h2><p class="section-copy">{{MATRIX_INTRO}}</p></div><div class="matrix-sequence"><div class="matrix-spine" aria-hidden="true"><span></span><span></span><span></span></div>{{MATRIX_STAGES}}</div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>{{MATRIX_CONCLUSION}}</h3><p>{{MATRIX_CONCLUSION_COPY}}</p></div></div></div>
+      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">{{MATRIX_HEADING}}</h2><p class="section-copy">{{MATRIX_INTRO}}</p></div><div class="matrix-sequence" data-matrix-sequence><svg class="matrix-pathway" viewBox="0 0 260 1200" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="matrix-path-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="matrix-pathway__base" d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/><path class="matrix-pathway__progress" data-matrix-path-progress d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/></svg>{{MATRIX_STAGES}}</div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>{{MATRIX_CONCLUSION}}</h3><p>{{MATRIX_CONCLUSION_COPY}}</p></div></div></div>
     </section>
 
     <section id="choose-path" class="choose-path section-warm section-pad" aria-labelledby="choose-title">

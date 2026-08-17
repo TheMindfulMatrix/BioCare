@@ -29,6 +29,95 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function initProductExplorer(root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll("[data-explorer-target]"));
+    var panels = Array.prototype.slice.call(root.querySelectorAll("[data-explorer-panel]"));
+    if (!tabs.length || !panels.length) return;
+
+    function activate(productId, moveFocus) {
+      var activePanel = null;
+      tabs.forEach(function (tab) {
+        var active = tab.dataset.explorerTarget === productId;
+        tab.setAttribute("aria-selected", String(active));
+        tab.setAttribute("tabindex", active ? "0" : "-1");
+        if (active && moveFocus) tab.focus();
+      });
+      panels.forEach(function (panel) {
+        var active = panel.dataset.productId === productId;
+        panel.toggleAttribute("data-active", active);
+        panel.setAttribute("aria-hidden", String(!active));
+        panel.inert = !active;
+        if (active) activePanel = panel;
+      });
+      if (activePanel) root.dataset.activeEnvironment = activePanel.dataset.environment || "neutral";
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function (event) {
+        event.preventDefault();
+        activate(tab.dataset.explorerTarget, false);
+      });
+      tab.addEventListener("keydown", function (event) {
+        var nextIndex = null;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = tabs.length - 1;
+        if (nextIndex === null) return;
+        event.preventDefault();
+        activate(tabs[nextIndex].dataset.explorerTarget, true);
+        if (!reduceMotion) tabs[nextIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      });
+    });
+
+    var selected = tabs.find(function (tab) { return tab.getAttribute("aria-selected") === "true"; }) || tabs[0];
+    activate(selected.dataset.explorerTarget, false);
+  }
+
+  document.querySelectorAll("[data-product-explorer]").forEach(initProductExplorer);
+
+  function initHeroParallax(hero) {
+    if (reduceMotion || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    var layers = Array.prototype.slice.call(hero.querySelectorAll("[data-parallax-depth]"));
+    if (!layers.length) return;
+    var targetX = 0;
+    var targetY = 0;
+    var currentX = 0;
+    var currentY = 0;
+    var frame = 0;
+
+    function render() {
+      currentX += (targetX - currentX) * .12;
+      currentY += (targetY - currentY) * .12;
+      layers.forEach(function (layer) {
+        var depth = Number(layer.dataset.parallaxDepth || 1);
+        layer.style.setProperty("--parallax-x", (currentX * depth * 10).toFixed(2) + "px");
+        layer.style.setProperty("--parallax-y", (currentY * depth * 7).toFixed(2) + "px");
+      });
+      if (Math.abs(targetX - currentX) > .003 || Math.abs(targetY - currentY) > .003) frame = window.requestAnimationFrame(render);
+      else frame = 0;
+    }
+
+    function requestRender() {
+      if (!frame) frame = window.requestAnimationFrame(render);
+    }
+
+    hero.addEventListener("pointermove", function (event) {
+      var bounds = hero.getBoundingClientRect();
+      targetX = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - .5) * 2));
+      targetY = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - .5) * 2));
+      requestRender();
+    }, { passive: true });
+    hero.addEventListener("pointerleave", function () {
+      targetX = 0;
+      targetY = 0;
+      requestRender();
+    }, { passive: true });
+  }
+
+  var homeHero = document.querySelector(".home-hero");
+  if (homeHero) initHeroParallax(homeHero);
+
   function initMatrixField(canvas, staticMode) {
     var hero = canvas.closest(".home-hero");
     var context = canvas.getContext("2d");
@@ -232,14 +321,37 @@
   });
 
   var stages = Array.prototype.slice.call(document.querySelectorAll("[data-matrix-stage]"));
-  var segments = Array.prototype.slice.call(document.querySelectorAll(".matrix-spine span"));
+  var matrixSequence = document.querySelector("[data-matrix-sequence]");
+  var matrixProgressPath = document.querySelector("[data-matrix-path-progress]");
+  var matrixProgressFrame = 0;
+
+  function updateMatrixProgress() {
+    matrixProgressFrame = 0;
+    if (!matrixSequence || !matrixProgressPath) return;
+    var bounds = matrixSequence.getBoundingClientRect();
+    var startLine = window.innerHeight * .72;
+    var travel = Math.max(1, bounds.height - window.innerHeight * .46);
+    var progress = Math.max(0, Math.min(1, (startLine - bounds.top) / travel));
+    matrixProgressPath.style.strokeDashoffset = String(1 - progress);
+  }
+
+  function requestMatrixProgress() {
+    if (!matrixProgressFrame) matrixProgressFrame = window.requestAnimationFrame(updateMatrixProgress);
+  }
+
+  if (matrixSequence && matrixProgressPath) {
+    window.addEventListener("scroll", requestMatrixProgress, { passive: true });
+    window.addEventListener("resize", requestMatrixProgress, { passive: true });
+    updateMatrixProgress();
+  }
+
+  if (stages[0]) stages[0].classList.add("is-active");
   var matrixObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var index = stages.indexOf(entry.target);
-      entry.target.classList.add("is-active");
-      if (segments[index]) segments[index].classList.add("is-active");
-    });
+    var visibleEntries = entries.filter(function (entry) { return entry.isIntersecting; }).sort(function (left, right) { return right.intersectionRatio - left.intersectionRatio; });
+    if (!visibleEntries.length) return;
+    var activeStage = visibleEntries[0].target;
+    stages.forEach(function (stage) { stage.classList.toggle("is-active", stage === activeStage); });
+    if (matrixSequence) matrixSequence.dataset.activeStage = activeStage.dataset.matrixStage;
   }, { rootMargin: "-20% 0px -38%", threshold: 0.2 });
 
   stages.forEach(function (stage) { matrixObserver.observe(stage); });

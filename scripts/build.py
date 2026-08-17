@@ -253,7 +253,7 @@ def image_markup(product: dict, *, eager: bool = False, sizes: str = "(max-width
 
 def matrix_stage_markup(stage: dict) -> str:
     labels = "".join(f"<li>{esc(label)}</li>" for label in stage["labels"])
-    return f'''<article class="matrix-stage" data-matrix-stage="{esc(stage["id"], attribute=True)}" data-reveal>
+    return f'''<article class="matrix-stage" data-matrix-stage="{esc(stage["id"], attribute=True)}" data-matrix-index="{esc(stage["index"], attribute=True)}" data-reveal>
           <div class="matrix-stage__node" aria-hidden="true"><span>{esc(stage["index"])}</span></div>
           <div class="matrix-stage__content">
             <p class="interface-label">{esc(stage["name"])} / {esc(stage["index"])}</p>
@@ -305,28 +305,32 @@ def hero_product_markup(product: dict) -> str:
     artwork_markup = ""
     if artwork.get("src"):
         artwork_markup = (
-            f'<img class="hero-product__background" src="{esc(artwork["src"], attribute=True)}" alt="" '
+            f'<img class="hero-product__background" src="{esc(artwork["src"], attribute=True)}" alt="" data-parallax-depth="0.55" '
             f'width="{int(artwork["width"])}" height="{int(artwork["height"])}" '
             'loading="eager" decoding="async">'
         )
     url = esc(product["destination"], attribute=True)
     return f'''<div class="hero-product" data-product-id="{esc(product["id"], attribute=True)}">
+            <span class="hero-product__orbit hero-product__orbit--outer" data-parallax-depth="0.35" aria-hidden="true"></span>
+            <span class="hero-product__orbit hero-product__orbit--inner" data-parallax-depth="0.8" aria-hidden="true"></span>
+            <span class="hero-product__channel hero-product__channel--gold" data-parallax-depth="1.1" aria-hidden="true"></span>
+            <span class="hero-product__channel hero-product__channel--green" data-parallax-depth="0.65" aria-hidden="true"></span>
             <a class="hero-product__stage" href="{url}" target="_blank" rel="sponsored noopener noreferrer" aria-label="View {esc(product["name"], attribute=True)} on Zinzino (opens in a new tab)">
               {artwork_markup}
-              <span class="hero-product__pedestal" aria-hidden="true"></span>
-              <div class="hero-product__cutout">{shelf_product_markup(product, eager=True)}</div>
-              <div class="hero-product__signal hero-product__signal--one" aria-hidden="true"><span>01</span> Test</div>
-              <div class="hero-product__signal hero-product__signal--two" aria-hidden="true"><span>02</span> Learn</div>
-              <div class="hero-product__signal hero-product__signal--three" aria-hidden="true"><span>03</span> Choose</div>
+              <span class="hero-product__pedestal" data-parallax-depth="0.5" aria-hidden="true"></span>
+              <div class="hero-product__cutout" data-parallax-depth="0.22">{shelf_product_markup(product, eager=True)}</div>
+              <div class="hero-product__signal hero-product__signal--one" data-parallax-depth="1.15" aria-hidden="true"><span>01</span> Test</div>
+              <div class="hero-product__signal hero-product__signal--two" data-parallax-depth="0.8" aria-hidden="true"><span>02</span> Learn</div>
+              <div class="hero-product__signal hero-product__signal--three" data-parallax-depth="1.35" aria-hidden="true"><span>03</span> Choose</div>
               <span class="hero-product__tap">View the kit ↗</span>
             </a>
-            <div class="hero-product__caption"><span>Featured starting point</span><strong>{esc(product["name"])}</strong><small>{esc(product["destinationType"])}</small></div>
+            <div class="hero-product__caption" data-parallax-depth="0.9"><span>Featured starting point</span><strong>{esc(product["name"])}</strong><small>{esc(product["destinationType"])}</small></div>
           </div>'''
 
 
 def shelf_index_markup(products: list[dict]) -> str:
     return "".join(
-        f'''<a href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer"><span>{index:02d}</span><strong>{esc(product["name"])}</strong><small>{esc(product["destinationType"])}</small></a>'''
+        f'''<a id="explorer-tab-{esc(product["id"], attribute=True)}" class="solution-explorer__tab" href="#explorer-panel-{esc(product["id"], attribute=True)}" role="tab" aria-controls="explorer-panel-{esc(product["id"], attribute=True)}" aria-selected="{'true' if index == 1 else 'false'}" tabindex="{'0' if index == 1 else '-1'}" data-explorer-target="{esc(product["id"], attribute=True)}"><span>{index:02d}</span><small>{esc(product.get("explorerIntent", product["category"]))}</small><strong>{esc(product["name"])}</strong></a>'''
         for index, product in enumerate(products, start=1)
     )
 
@@ -365,12 +369,13 @@ def shelf_product_markup(product: dict, *, eager: bool = False) -> str:
     )
 
 
-def shelf_card_markup(product: dict) -> str:
+def shelf_card_markup(product: dict, *, index: int, active: bool = False) -> str:
     environment = esc(product.get("environment", "neutral"), attribute=True)
-    return f'''<article class="shelf-card" data-product-id="{esc(product["id"], attribute=True)}" data-environment="{environment}" data-reveal>
-        <div class="shelf-card__visual artwork-stage">{product_artwork_markup(product)}<div class="shelf-card__product">{shelf_product_markup(product)}</div><span class="shelf-card__visual-label">{esc(product["visualLabel"])}</span></div>
+    active_attribute = ' data-active="true"' if active else ""
+    return f'''<article id="explorer-panel-{esc(product["id"], attribute=True)}" class="shelf-card solution-panel" role="tabpanel" aria-labelledby="explorer-tab-{esc(product["id"], attribute=True)}" data-product-id="{esc(product["id"], attribute=True)}" data-environment="{environment}" data-explorer-panel{active_attribute}>
+        <div class="shelf-card__visual artwork-stage">{product_artwork_markup(product)}<span class="solution-panel__orbit" aria-hidden="true"></span><span class="solution-panel__axis" aria-hidden="true"></span><div class="shelf-card__product">{shelf_product_markup(product)}</div><span class="shelf-card__visual-label">{esc(product["visualLabel"])}</span><span class="solution-panel__number" aria-hidden="true">{index:02d}</span></div>
         <div class="shelf-card__content">
-          <p class="interface-label">{esc(product["category"])} / {esc(product["destinationType"])}</p>
+          <p class="interface-label">{esc(product.get("explorerIntent", product["category"]))} / {esc(product["destinationType"])}</p>
           <h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>
           <div class="shelf-card__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>
           <a class="shelf-card__link" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>
@@ -744,7 +749,10 @@ def build_home(data: dict, library: dict) -> None:
         "{{SHELF_COPY}}": esc(home["shelf"]["copy"]),
         "{{SHELF_COUNT}}": f'{len(products):02d} verified destinations',
         "{{SHELF_INDEX}}": shelf_index_markup(products),
-        "{{SHELF_CARDS}}": "\n        ".join(shelf_card_markup(product) for product in products),
+        "{{SHELF_CARDS}}": "\n        ".join(
+            shelf_card_markup(product, index=index, active=product["id"] == data["featuredProductId"])
+            for index, product in enumerate(products, start=1)
+        ),
         "{{STANDARDS_HEADING}}": esc(home["standards"]["heading"]),
         "{{STANDARDS_LIST}}": "\n        ".join(standard_markup(item) for item in home["standards"]["principles"]),
         "{{STANDARDS_STATEMENT}}": line_markup(home["standards"]["statement"]),
