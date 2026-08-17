@@ -1,0 +1,21 @@
+{
+  "product_name": "X Gold+ 250 ml",
+  "sku": "302790",
+  "shelf_role": "Exact product image for the X Gold+ Shelf entry",
+  "official_product_page_url": "https://www.zinzino.com/shop/site/US/en-US/products/shop/gut-health-supplements/302790",
+  "source_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/302790-001.png",
+  "page_display_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/small/302790-001.png",
+  "downloaded_filename": "x-gold-plus-302790-main.png",
+  "production_filename": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+  "pixel_dimensions": { "width": 650, "height": 650 },
+  "file_type": "PNG",
+  "mime_type": "image/png",
+  "sha256": "0477e44493f23dcd1c6a1047086de9a837bd055d38b86d99a0f803a90fcbcc84",
+  "download_date": "2026-08-16",
+  "direct_from_zinzino": true,
+  "source_host": "zinzinowebstorage.blob.core.windows.net",
+  "source_discovery": "The official Zinzino X Gold+ page identifies SKU 302790 and references the /productimages/small/302790-001.png derivative. The downloaded asset is the corresponding original without the /small/ path segment.",
+  "transparency": "The official original already contains clean transparency; background removal was not run.",
+  "alteration": "None. The production file is a byte-for-byte copy of the official source asset.",
+  "uncertainty_or_caveat": "No visual-identity uncertainty. The affiliate destination was corrected from the broad shop page to this verified SKU-specific path while preserving affiliate identifier 2021428066."
+}

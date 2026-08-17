@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{DOCUMENT_HEAD}}
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#article-content">Skip to article</a>
+  {{SHARED_HEADER}}
+{{PREVIEW_BANNER}}
+  <main id="article-content" tabindex="-1">
+    <article>
+      <header class="article-hero section-light">
+        <div class="container-reading" data-reveal><a class="article-back" href="../library.html">← The Library</a><p class="section-kicker">{{ARTICLE_CATEGORY}}</p><h1>{{ARTICLE_TITLE}}</h1><p class="article-dek">{{ARTICLE_DEK}}</p><div class="article-byline">{{ARTICLE_BYLINE}}</div>{{ARTICLE_DISCLOSURE}}{{ARTICLE_HERO}}</div>
+      </header>
+      <div class="article-layout section-light">
+        <div class="container article-layout__grid">
+          <aside class="article-rail" aria-label="On this page">{{ARTICLE_TOC}}</aside>
+          <div class="article-copy">
+{{ARTICLE_TAKEAWAYS}}
+            {{ARTICLE_EVIDENCE_MAP}}
+            {{ARTICLE_BODY}}
+            {{ARTICLE_EVIDENCE_SUMMARY}}
+{{ARTICLE_EVIDENCE}}
+{{ARTICLE_LIMITATIONS}}
+            {{ARTICLE_SOURCES}}
+{{ARTICLE_JOURNEY}}
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  {{SHARED_FOOTER}}
+</body>
+</html>

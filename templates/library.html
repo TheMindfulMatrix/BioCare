@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{DOCUMENT_HEAD}}
+</head>
+<body class="library-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {{SHARED_HEADER}}
+  <main id="main-content" tabindex="-1">
+    <section class="page-hero page-hero--library section-dark" aria-labelledby="library-page-title">
+      <div class="container page-hero__grid">
+        <div data-reveal><p class="section-kicker">The Library</p><h1 id="library-page-title">Understand before you act.</h1><p class="page-hero__copy">Practical wellness education built around credible sources, useful context, and clearer next steps.</p></div>
+        <div class="page-hero__signal" aria-hidden="true" data-reveal><span></span><span></span><span></span><img src="assets/brand/mark-dark.svg" width="64" height="64" alt=""></div>
+      </div>
+    </section>
+
+    <section id="categories" class="library-catalog section-light section-pad" aria-labelledby="library-categories-title">
+      <div class="container">
+        <div class="section-heading-grid" data-reveal><div><p class="section-kicker">Browse by subject</p><h2 id="library-categories-title" class="section-title">Categories</h2></div><p class="section-copy">A clear home for each subject as the Library grows.</p></div>
+        <nav class="category-grid" aria-label="Library categories">{{LIBRARY_CATEGORIES}}</nav>
+      </div>
+    </section>
+
+    <section id="articles" class="library-index section-warm section-pad" aria-labelledby="library-index-title">
+      <div class="container">
+        <div class="section-heading-grid" data-reveal><div><p class="section-kicker">Read and understand</p><h2 id="library-index-title" class="section-title">The latest from the Library</h2></div><p class="section-copy">Each published guide will show its sources, limits, and review information.</p></div>
+        {{LIBRARY_INDEX}}
+      </div>
+    </section>
+
+    <section class="editorial-standards section-light section-pad" aria-labelledby="editorial-standards-title">
+      <div class="container">
+        <div class="section-heading-grid"><div data-reveal><p class="section-kicker">Editorial standards</p><h2 id="editorial-standards-title" class="section-title">How we earn your trust.</h2></div><p class="section-copy" data-reveal>Our editorial system is designed to keep evidence, opinion, uncertainty, and partnerships visible.</p></div>
+        <ol class="editorial-principles" data-reveal>{{EDITORIAL_PRINCIPLES}}</ol>
+      </div>
+    </section>
+
+    <section class="page-next section-dark section-pad" aria-labelledby="library-next-title">
+      <div class="container page-next__grid" data-reveal><div><p class="section-kicker">Not sure where to begin?</p><h2 id="library-next-title">Start with your situation.</h2></div><a class="button button-primary" href="start.html">Start here →</a></div>
+    </section>
+  </main>
+  {{SHARED_FOOTER}}
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://themindfulmatrix.github.io/BioCare/sitemap.xml

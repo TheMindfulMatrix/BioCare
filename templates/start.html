@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{DOCUMENT_HEAD}}
+</head>
+<body class="start-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {{SHARED_HEADER}}
+  <main id="main-content" tabindex="-1">
+    <section class="page-hero page-hero--start section-dark" aria-labelledby="start-page-title">
+      <div class="container page-hero__grid">
+        <div data-reveal><p class="section-kicker">Start here</p><h1 id="start-page-title">Start with your situation.</h1><p class="page-hero__copy">{{START_HERO_COPY}}</p></div>
+        <div class="start-map" aria-hidden="true" data-reveal><span>01</span><i></i><span>02</span><i></i><span>03</span></div>
+      </div>
+    </section>
+
+    <section class="orientation section-light section-pad" aria-labelledby="orientation-title">
+      <div class="container"><div class="orientation-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="orientation-title" class="section-title">{{START_HEADING}}</h2><p class="section-copy">{{START_COPY}}</p></div><ol class="orientation-list">{{ORIENTATION_STAGES}}</ol><div class="orientation-note"><strong>{{START_NOTE}}</strong><span>This page is an orientation, not a diagnostic.</span></div></div>
+    </section>
+
+    <section id="pathways" class="start-pathways section-warm section-pad" aria-labelledby="pathways-title">
+      <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{PATHWAYS_LABEL}}</p><h2 id="pathways-title" class="section-title">{{PATHWAYS_HEADING}}</h2></div><p class="section-copy">{{PATHWAYS_COPY}}</p></div><div class="start-pathways__grid">{{START_PATHWAYS}}</div></div>
+    </section>
+
+  </main>
+  {{SHARED_FOOTER}}
+</body>
+</html>

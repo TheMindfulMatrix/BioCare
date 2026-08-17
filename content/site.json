@@ -1,0 +1,401 @@
+{
+  "site": {
+    "name": "The Mindful Matrix",
+    "description": "Evidence-aware wellness education, clearer questions, and transparent optional tools—organized from information to action.",
+    "copyrightYear": 2026,
+    "metadata": {
+      "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
+      "articleTitleSuffix": " | The Mindful Matrix",
+      "socialImage": {
+        "src": "assets/brand/social-preview.png",
+        "alt": "The Mindful Matrix — Information, Education, Action",
+        "width": 1200,
+        "height": 630
+      },
+      "pages": {
+        "home": {
+          "path": "",
+          "title": "The Mindful Matrix"
+        },
+        "library": {
+          "path": "library.html",
+          "title": "The Library | The Mindful Matrix",
+          "description": "Practical wellness education built around credible sources, context, and useful next steps."
+        },
+        "start": {
+          "path": "start.html",
+          "title": "Start Here | The Mindful Matrix",
+          "description": "A clear orientation to getting informed, understanding what information means, and choosing a reasonable next step."
+        }
+      }
+    },
+    "eyebrow": "ZINZINO INDEPENDENT PARTNER",
+    "lede": "Test first. Then choose. Everything I use and recommend, in one place.",
+    "instagram": {
+      "label": "@the_mindful.matrix",
+      "url": "https://www.instagram.com/the_mindful.matrix/"
+    },
+    "disclosure": "Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York."
+  },
+  "affiliate": {
+    "zinzinoPartnerId": "2021428066",
+    "market": "us/en-us",
+    "bioLimitlessPartnerUrl": "https://biolimitless.com/me/matrix/"
+  },
+  "brand": {
+    "philosophy": "Information → Education → Action",
+    "positioning": "Human on the surface. Scientific underneath.",
+    "journey": [
+      {
+        "id": "information",
+        "index": "01",
+        "name": "Information",
+        "description": "Get informed about your situation."
+      },
+      {
+        "id": "education",
+        "index": "02",
+        "name": "Education",
+        "description": "Educate yourself on what that information means."
+      },
+      {
+        "id": "action",
+        "index": "03",
+        "name": "Action",
+        "description": "Take intentional steps to better your situation."
+      }
+    ]
+  },
+  "homepage": {
+    "hero": {
+      "headline": ["You know you can", "feel better."],
+      "supportingLine": "You just need somewhere to start.",
+      "copy": "The Mindful Matrix helps you get informed about your situation, educate yourself on what it means, and take action toward better wellness."
+    },
+    "problem": {
+      "headline": ["More information than ever.", "Less clarity than ever."],
+      "copy": "People are surrounded by health advice, supplements, diets, studies, opinions, and trends. Knowing what to actually do with that information can be difficult.",
+      "themes": ["Conflicting information", "Passive waiting", "Not knowing where to begin"],
+      "conclusion": "The answer isn't more noise. It's knowing where to begin."
+    },
+    "matrix": {
+      "heading": "A better way to move forward.",
+      "introduction": "You don't need every answer today. You need a process for finding your next one.",
+      "conclusion": "That's the Matrix.",
+      "conclusionCopy": "A framework for taking a more informed, intentional role in your wellness.",
+      "stages": [
+        {
+          "id": "information",
+          "index": "01",
+          "name": "Information",
+          "heading": "Get informed about your situation.",
+          "copy": "Understand what you're working with before deciding what to change.",
+          "labels": ["Testing", "Habits", "Nutrition", "Sleep", "Performance", "Questions"],
+          "question": "Where am I?"
+        },
+        {
+          "id": "education",
+          "index": "02",
+          "name": "Education",
+          "heading": "Don't just collect information. Understand it.",
+          "copy": "Information without understanding can create more confusion. Learn what it means, explore credible sources, and understand your options.",
+          "labels": ["Context", "Credible sources", "Questions", "Options"],
+          "question": "What does this mean?"
+        },
+        {
+          "id": "action",
+          "index": "03",
+          "name": "Action",
+          "heading": "Knowledge only matters when you use it.",
+          "copy": "Take what you've learned and decide what your next meaningful step looks like.",
+          "labels": ["Nutrition", "Movement", "Sleep", "Routines", "Questions for your doctor", "Tools", "Products"],
+          "question": "What can I do next?"
+        }
+      ]
+    },
+    "choosePath": {
+      "heading": "Where are you right now?",
+      "paths": [
+        { "id": "understand-topic", "index": "01", "name": "Understand something", "copy": "I want a credible place to learn about a topic.", "cta": "Explore the Library", "href": "library.html" },
+        { "id": "understand-numbers", "index": "02", "name": "Understand my numbers", "copy": "I want to know what a measurement can—and can’t—tell me.", "cta": "Read the testing guide", "href": "library/should-you-test-your-omega-3-levels.html" },
+        { "id": "not-sure", "index": "03", "name": "Not sure yet", "copy": "I want a simple way to decide where to begin.", "cta": "Start here", "href": "start.html" }
+      ]
+    },
+    "startHere": {
+      "heroCopy": "The Mindful Matrix helps you understand your situation, learn what it means, and decide what—if anything—to do next.",
+      "heading": "A simple way forward.",
+      "copy": "You do not need every answer today. Begin with the stage that best matches where you are now.",
+      "stages": [
+        {
+          "id": "information",
+          "index": "01",
+          "name": "Information",
+          "heading": "Understand your situation.",
+          "copy": "Start with the question, pattern, or measurement you actually have.",
+          "question": "What do I know right now?"
+        },
+        {
+          "id": "education",
+          "index": "02",
+          "name": "Education",
+          "heading": "Learn what it means.",
+          "copy": "Use credible sources, context, and limitations to separate what is known from what remains uncertain.",
+          "question": "What does this information support?"
+        },
+        {
+          "id": "action",
+          "index": "03",
+          "name": "Action",
+          "heading": "Decide what—if anything—to do next.",
+          "copy": "Action might mean learning more, changing a habit, asking a better question, discussing it with a healthcare professional, measuring when appropriate, doing nothing yet, or considering a tool for a clear reason.",
+          "question": "What is the next useful step?"
+        }
+      ],
+      "note": "Action does not automatically mean buying something. A tool or product is only one possible option when there is a clear reason for it.",
+      "pathways": {
+        "label": "Where do I start?",
+        "heading": "What do you need right now?",
+        "copy": "Each path begins with understanding. Tools remain optional.",
+        "items": [
+          {
+            "id": "understand-topic",
+            "index": "01",
+            "heading": "I want to understand something.",
+            "copy": "Browse practical guides that show sources, evidence, and uncertainty.",
+            "cta": "Explore the Library",
+            "href": "library.html"
+          },
+          {
+            "id": "understand-numbers",
+            "index": "02",
+            "heading": "I want to understand my numbers.",
+            "copy": "Start with what omega-3 blood testing can—and can’t—tell you.",
+            "cta": "Read the testing guide",
+            "href": "library/should-you-test-your-omega-3-levels.html"
+          },
+          {
+            "id": "see-tools",
+            "index": "03",
+            "heading": "I want to see the tools.",
+            "copy": "Visit the Shelf to see why each optional tool is included before following a commercial link.",
+            "cta": "View the Shelf",
+            "href": "index.html#shelf"
+          },
+          {
+            "id": "not-sure",
+            "index": "04",
+            "heading": "I’m not sure yet.",
+            "copy": "Begin with Information. You can learn more or do nothing yet.",
+            "cta": "Start with Information",
+            "href": "#information"
+          }
+        ]
+      }
+    },
+    "founder": {
+      "label": "Why I built this",
+      "heading": "I got tired of waiting.",
+      "paragraphs": [
+        "I got tired of relying on other people to make me feel better.",
+        "So I decided to get informed about my situation. I started educating myself about what I found, asking better questions, and looking for credible information.",
+        "Then came the most important part: taking action.",
+        "The Mindful Matrix didn't come from having all the answers. It came from realizing that I didn't have to wait around for them.",
+        "I could learn. I could ask questions. I could make changes. I could take the next step."
+      ],
+      "statement": "Nobody is coming to save me but me.",
+      "philosophy": "Self-care is the real healthcare.",
+      "philosophyContext": "A personal philosophy about agency—not a replacement for professional healthcare.",
+      "transition": "Now you can too."
+    },
+    "testing": {
+      "label": "Get informed",
+      "heading": "Start with what you can measure.",
+      "copy": "Testing is one possible way to become more informed. It is a starting point for asking better questions—not the entire Mindful Matrix philosophy.",
+      "education": {
+        "label": "Understand before you test",
+        "heading": "Learn what an omega-3 blood test can—and can’t—tell you.",
+        "copy": "The testing guide explains what is measured, what can affect a result, and where interpretation stops.",
+        "cta": "Read the testing guide",
+        "href": "library/should-you-test-your-omega-3-levels.html"
+      },
+      "why": "The one most people begin with.",
+      "measureLinkLabel": "See what it measures"
+    },
+    "library": {
+      "label": "The Library",
+      "heading": "Understand before you act.",
+      "copy": "Learn the why behind the choices you're making.",
+      "status": "The Library is being built.",
+      "statusCopy": "We're creating practical wellness guides grounded in credible sources—not more noise.",
+      "categoriesLabel": "Coming to the Library",
+      "transition": "Keep learning—or explore tools only when there is a clear reason."
+    },
+    "shelf": {
+      "label": "Action",
+      "heading": "Tools with a reason for being here.",
+      "copy": "The Shelf collects optional tools selected for a specific reason. Read why an item is here before deciding whether it belongs in your next step."
+    },
+    "standards": {
+      "heading": "You deserve to know why.",
+      "statement": [
+        "Trust isn't something we claim.",
+        "It's something we earn."
+      ],
+      "principles": [
+        { "index": "01", "name": "We explain our reasoning", "copy": "If we recommend something, we tell you why." },
+        { "index": "02", "name": "We show our sources", "copy": "Whenever possible, education should link back to credible evidence." },
+        { "index": "03", "name": "We separate evidence from opinion", "copy": "What research suggests and what we personally think should not be presented as the same thing." },
+        { "index": "04", "name": "We disclose our partnerships", "copy": "If we can financially benefit from something, visitors should know." },
+        { "index": "05", "name": "We tell you when we don't know", "copy": "Uncertainty should not be hidden." }
+      ]
+    },
+    "transparency": {
+      "heading": "Transparency",
+      "copy": "That relationship doesn't change our standard: understand first, decide second.",
+      "approvalStatus": "Any expanded compensation language requires business/legal approval before publication."
+    },
+    "finalCta": {
+      "headline": ["Stop waiting for someone", "to tell you what's wrong."],
+      "response": ["Start figuring out what's right."],
+      "philosophy": "Self-care is the real healthcare."
+    }
+  },
+  "featuredProductId": "balance-basic-kit",
+  "products": [
+    {
+      "id": "balance-basic-kit",
+      "name": "Balance Test Basic Kit",
+      "category": "Start here",
+      "description": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "note": "The one most people begin with",
+      "priceLabel": "$127",
+      "priceStatus": "pending business verification",
+      "whyItsHere": "The one most people begin with.",
+      "cta": "Get the kit",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
+      "image": { "src": "img/kit.png", "alt": "Balance Test Basic Kit packaging", "width": 560, "height": 560 },
+      "environment": "balance",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+        "width": 560,
+        "height": 560,
+        "sourceAsset": "assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png"
+      },
+      "artwork": {
+        "src": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+        "width": 1024,
+        "height": 1536,
+        "status": "approved Mindful Matrix cinematic background"
+      },
+      "showInShelf": false
+    },
+    {
+      "id": "home-health-tests",
+      "name": "Home health tests",
+      "category": "Test",
+      "description": "Dried blood spot, taken at home, posted to the lab",
+      "whyItsHere": "A direct path to the current home health tests collection.",
+      "cta": "Browse",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests",
+      "image": { "src": "img/test.png", "alt": "Representative BalanceTest packaging from the Zinzino home health tests collection", "width": 560, "height": 560 },
+      "environment": "test",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balance-test-309000.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/balance-test/balance-test-309000-main.png"
+      },
+      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "showInShelf": true
+    },
+    {
+      "id": "omega-kits",
+      "name": "All omega kits",
+      "category": "Omega",
+      "description": "Premium, AquaX, Vegan and Essent+ options",
+      "whyItsHere": "A direct path to the current omega kit collection.",
+      "cta": "Browse",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits",
+      "image": { "src": "img/omega.png", "alt": "Representative BalanceOil+ Premium x2 Kit with Test from the Zinzino omega kits collection", "width": 560, "height": 560 },
+      "environment": "omega",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/balanceoil-premium-x2-kit-with-test-910886.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/omega-kits/balanceoil-premium-x2-kit-with-test-910886.png"
+      },
+      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "showInShelf": true
+    },
+    {
+      "id": "gut-health",
+      "name": "Gut Health",
+      "category": "Gut",
+      "description": "Gut health products in the Zinzino shop",
+      "whyItsHere": "A direct path to the current gut health collection.",
+      "cta": "Browse",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements",
+      "image": { "src": "img/gut.png", "alt": "Representative ZinoBiotic+ packaging from the Zinzino gut health collection", "width": 560, "height": 560 },
+      "environment": "gut",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png"
+      },
+      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "showInShelf": false
+    },
+    {
+      "id": "x-gold",
+      "name": "X Gold+",
+      "category": "Turmeric",
+      "description": "X Gold+ in the Zinzino shop",
+      "whyItsHere": "A direct path to the current product destination.",
+      "cta": "Browse",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790",
+      "image": { "src": "img/gold.png", "alt": "Zinzino X Gold+ 250 ml packaging", "width": 560, "height": 560 },
+      "environment": "gold",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png"
+      },
+      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "showInShelf": false
+    },
+    {
+      "id": "full-shop",
+      "name": "Full shop",
+      "category": "All",
+      "description": "Gut, immune, skin and weight management",
+      "whyItsHere": "The broadest path to the current Zinzino shop.",
+      "cta": "Browse",
+      "destination": "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop",
+      "image": { "src": "img/revoo.png", "alt": "Representative R.E.V.O.O bottles from the Zinzino shop", "width": 560, "height": 560 },
+      "environment": "shop",
+      "cutout": {
+        "src": "assets/product-cutouts/zinzino/revoo-302401.png",
+        "width": 650,
+        "height": 650,
+        "sourceAsset": "assets/source-products/zinzino/full-shop/revoo-302401-main.png"
+      },
+      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "showInShelf": true
+    },
+    {
+      "id": "biolimitless",
+      "name": "BioLimitless",
+      "category": "Library",
+      "description": "Academy, library and formulas — my partner page",
+      "whyItsHere": "The current destination for the BioLimitless partner resource.",
+      "cta": "Visit",
+      "destination": "https://biolimitless.com/me/matrix/",
+      "image": { "src": "img/biolimitless.webp", "alt": "BioLimitless", "width": 1024, "height": 529 },
+      "environment": "partner",
+      "artwork": { "src": null, "status": "awaiting original editorial artwork" },
+      "showInShelf": true
+    }
+  ]
+}

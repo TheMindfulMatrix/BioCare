@@ -1,0 +1,21 @@
+{
+  "product_name": "R.E.V.O.O",
+  "sku": "302401",
+  "shelf_role": "Representative official product image for the Full shop collection",
+  "official_product_page_url": "https://www.zinzino.com/shop/site/US/en-US/products/shop/omega-supplements/302401/",
+  "source_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/302401.png",
+  "page_display_image_url": "https://zinzinowebstorage.blob.core.windows.net/productimages/small/302401.png",
+  "downloaded_filename": "revoo-302401-main.png",
+  "production_filename": "assets/product-cutouts/zinzino/revoo-302401.png",
+  "pixel_dimensions": { "width": 650, "height": 650 },
+  "file_type": "PNG",
+  "mime_type": "image/png",
+  "sha256": "bf67768b1439251c624492040f0e73dd49ce714780fb0be65be8ae7dec9be7f9",
+  "download_date": "2026-08-16",
+  "direct_from_zinzino": true,
+  "source_host": "zinzinowebstorage.blob.core.windows.net",
+  "source_discovery": "The official Zinzino R.E.V.O.O page identifies SKU 302401 and the shop listing references the /productimages/small/302401.png derivative. The downloaded asset is the corresponding original without the /small/ path segment.",
+  "transparency": "The official original already contains clean transparency; background removal was not run.",
+  "alteration": "None. The production file is a byte-for-byte copy of the official source asset.",
+  "uncertainty_or_caveat": "The Shelf entry links to the full Zinzino shop. R.E.V.O.O is retained only as a representative official product image, not as a claim that it defines the whole shop."
+}
