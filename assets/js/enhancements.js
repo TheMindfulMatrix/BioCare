@@ -86,12 +86,15 @@
     var intentDescription = root.querySelector("[data-universe-intent-description]");
     var position = root.querySelector("[data-universe-position]");
     var total = root.querySelector("[data-universe-total]");
+    var status = root.querySelector("[data-universe-status]");
     var stage = root.querySelector(".product-universe__stage");
     if (!intentButtons.length || !products.length || !rosterButtons.length) return;
 
     var activeIntent = intentButtons[0].dataset.universeIntent;
     var activeProduct = products.find(function (product) { return product.hasAttribute("data-active"); }) || products[0];
     var touchStartX = 0;
+    var imageLoadToken = 0;
+    var transitionAnimation = null;
     root.dataset.enhanced = "true";
 
     function productsForIntent(intent) {
@@ -129,6 +132,7 @@
         product.toggleAttribute("data-active", active);
         product.setAttribute("aria-hidden", String(!active));
         product.inert = !active;
+        if (!active) product.removeAttribute("aria-busy");
       });
       rosterButtons.forEach(function (button) {
         button.setAttribute("aria-pressed", String(button.dataset.universeSelect === productId));
@@ -137,10 +141,33 @@
       var localIndex = intentProducts.indexOf(next);
       if (position) position.textContent = String(localIndex + 1).padStart(2, "0");
       if (total) total.textContent = String(intentProducts.length).padStart(2, "0");
-      if (announce && !reduceMotion) next.animate(
-        [{ opacity: .55, transform: "translateY(10px) scale(.985)" }, { opacity: 1, transform: "translateY(0) scale(1)" }],
-        { duration: 360, easing: "cubic-bezier(.2,.75,.25,1)" }
-      );
+      var image = next.querySelector("img[data-image-role='official-product-cutout']");
+      var token = ++imageLoadToken;
+      function settleImage() {
+        if (token !== imageLoadToken) return;
+        if (stage) stage.removeAttribute("data-loading");
+        next.removeAttribute("aria-busy");
+      }
+      if (image && !image.complete) {
+        image.loading = "eager";
+        if (stage) stage.dataset.loading = "true";
+        next.setAttribute("aria-busy", "true");
+        image.addEventListener("load", settleImage, { once: true });
+        image.addEventListener("error", settleImage, { once: true });
+      } else {
+        settleImage();
+      }
+      if (announce && status) {
+        var selectedIntent = intentButton(activeIntent);
+        status.textContent = next.querySelector("h3").textContent + " selected. Product " + (localIndex + 1) + " of " + intentProducts.length + " in " + selectedIntent.dataset.intentName + ".";
+      }
+      if (transitionAnimation) transitionAnimation.cancel();
+      if (announce && !reduceMotion) {
+        transitionAnimation = next.animate(
+          [{ opacity: .55, transform: "translateY(10px) scale(.985)" }, { opacity: 1, transform: "translateY(0) scale(1)" }],
+          { duration: 360, easing: "cubic-bezier(.2,.75,.25,1)" }
+        );
+      }
     }
 
     function activateIntent(button, moveFocus) {

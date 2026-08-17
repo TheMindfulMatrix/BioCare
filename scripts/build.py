@@ -348,14 +348,14 @@ def hero_product_markup(product: dict) -> str:
 
 def universe_intents_markup(catalog: dict) -> str:
     return "".join(
-        f'''<button class="product-universe__intent" type="button" data-universe-intent="{esc(intent["id"], attribute=True)}" data-intent-featured="{esc(intent["featuredProductId"], attribute=True)}" data-intent-index="{esc(intent["index"], attribute=True)}" data-intent-name="{esc(intent["name"], attribute=True)}" data-intent-description="{esc(intent["description"], attribute=True)}" data-intent-environment="{esc(intent["environment"], attribute=True)}" aria-pressed="{'true' if index == 0 else 'false'}"><span>{esc(intent["index"])}</span><strong>{esc(intent["name"])}</strong><small>{esc(intent["shortName"])}</small></button>'''
+        f'''<button class="product-universe__intent" type="button" data-universe-intent="{esc(intent["id"], attribute=True)}" data-intent-featured="{esc(intent["featuredProductId"], attribute=True)}" data-intent-index="{esc(intent["index"], attribute=True)}" data-intent-name="{esc(intent["name"], attribute=True)}" data-intent-description="{esc(intent["description"], attribute=True)}" data-intent-environment="{esc(intent["environment"], attribute=True)}" aria-controls="universe-products" aria-pressed="{'true' if index == 0 else 'false'}"><span>{esc(intent["index"])}</span><strong>{esc(intent["name"])}</strong><small>{esc(intent["shortName"])}</small></button>'''
         for index, intent in enumerate(catalog["intents"])
     )
 
 
 def universe_roster_markup(products: list[dict], featured_id: str) -> str:
     return "".join(
-        f'''<button type="button" data-universe-select="{esc(product["id"], attribute=True)}" data-product-intent="{esc(product["intent"], attribute=True)}" aria-pressed="{'true' if product["id"] == featured_id else 'false'}"><span>{index:02d}</span><strong>{esc(product["name"])}</strong></button>'''
+        f'''<button type="button" data-universe-select="{esc(product["id"], attribute=True)}" data-product-intent="{esc(product["intent"], attribute=True)}" aria-controls="universe-products" aria-pressed="{'true' if product["id"] == featured_id else 'false'}"><span>{index:02d}</span><strong>{esc(product["name"])}</strong></button>'''
         for index, product in enumerate(products, start=1)
     )
 
@@ -394,13 +394,22 @@ def shelf_product_markup(product: dict, *, eager: bool = False) -> str:
     )
 
 
+def product_name_modifier(name: str) -> str:
+    if len(name) >= 42:
+        return " product-name--very-long"
+    if len(name) >= 30:
+        return " product-name--long"
+    return ""
+
+
 def universe_product_markup(product: dict, *, index: int, active: bool = False) -> str:
     active_attribute = ' data-active="true"' if active else ""
+    name_modifier = product_name_modifier(product["name"])
     related = product.get("relatedEducation")
     related_markup = ""
     if related:
         related_markup = f'<a class="product-universe__learn" href="{esc(related["href"], attribute=True)}">{esc(related["label"])} →</a>'
-    return f'''<article class="product-universe__product" data-universe-product="{esc(product["id"], attribute=True)}" data-product-intent="{esc(product["intent"], attribute=True)}" data-environment="{esc(product["environment"], attribute=True)}"{active_attribute}>
+    return f'''<article class="product-universe__product{name_modifier}" data-universe-product="{esc(product["id"], attribute=True)}" data-product-intent="{esc(product["intent"], attribute=True)}" data-environment="{esc(product["environment"], attribute=True)}" aria-labelledby="universe-product-title-{esc(product["id"], attribute=True)}"{active_attribute}>
         <div class="product-universe__visual artwork-stage">
           {product_artwork_markup(product)}
           <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
@@ -412,7 +421,7 @@ def universe_product_markup(product: dict, *, index: int, active: bool = False) 
         </div>
         <div class="product-universe__content">
           <p class="interface-label">{esc(product["category"])} / {esc(product["productKind"])}</p>
-          <h3>{esc(product["name"])}</h3>
+          <h3 id="universe-product-title-{esc(product["id"], attribute=True)}">{esc(product["name"])}</h3>
           <p class="product-universe__description">{esc(product["description"])}</p>
           <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>{esc(product["manufacturer"])}</dd></div><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div></dl>
           <div class="product-universe__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>
@@ -432,7 +441,8 @@ def shop_intent_nav_markup(intents: list[dict], products: list[dict]) -> str:
 def shop_product_card_markup(product: dict, *, index: int) -> str:
     related = product.get("relatedEducation")
     related_markup = f'<a class="shop-product__learn" href="{esc(related["href"], attribute=True)}">{esc(related["label"])} →</a>' if related else ""
-    return f'''<article class="shop-product" data-product-sku="{esc(product["sku"], attribute=True)}" data-reveal>
+    name_modifier = product_name_modifier(product["name"])
+    return f'''<article class="shop-product{name_modifier}" data-product-sku="{esc(product["sku"], attribute=True)}" data-reveal>
         <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product)}</div><small>SKU {esc(product["sku"])}</small></div>
         <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p><dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl><div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
       </article>'''

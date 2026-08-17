@@ -38,14 +38,16 @@
           <nav class="product-universe__intents" aria-label="Choose a product intent" data-reveal>{{UNIVERSE_INTENTS}}</nav>
           <div class="product-universe__stage" data-reveal>
             <div class="product-universe__field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-            <div class="product-universe__products" aria-live="polite">{{UNIVERSE_PRODUCTS}}</div>
-            <div class="product-universe__controls">
+            <span class="product-universe__loading" aria-hidden="true">Loading official image</span>
+            <div class="product-universe__products" id="universe-products">{{UNIVERSE_PRODUCTS}}</div>
+            <p class="visually-hidden" data-universe-status aria-live="polite" aria-atomic="true"></p>
+            <div class="product-universe__controls" role="group" aria-label="Browse products in the selected category">
               <button type="button" data-universe-step="-1" aria-label="Previous product">←</button>
               <p><span data-universe-position>01</span><i aria-hidden="true">/</i><span data-universe-total>01</span></p>
               <button type="button" data-universe-step="1" aria-label="Next product">→</button>
             </div>
           </div>
-          <aside class="product-universe__console" data-reveal>
+          <aside class="product-universe__console" aria-label="Products in the selected category" data-reveal>
             <p class="interface-label">Active intent / <span data-universe-intent-index>01</span></p>
             <h3 data-universe-intent-name>Test &amp; Measure</h3>
             <p data-universe-intent-description>Start with a measurement you can inspect and discuss in context.</p>

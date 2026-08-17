@@ -235,6 +235,8 @@ def validate_content(site: dict, library: dict) -> None:
     intents = catalog.get("intents", [])
     intent_ids = [intent.get("id") for intent in intents]
     check(intent_ids == ["test-measure", "omega-nutrition", "gut-digestion", "daily-wellness", "performance-recovery", "healthy-aging"], "Product intents must preserve the approved six-part visitor taxonomy")
+    intent_names = [intent.get("name") for intent in intents]
+    check(intent_names == ["Test & Measure", "Omega & Nutrition", "Gut & Digestion", "Daily Wellness", "Active Nutrition & Tools", "Skin & Collagen"], "Visitor-facing product taxonomy must preserve the neutral release-candidate labels")
     check(len({product.get("sku") for product in products}) == len(products), "Verified product SKUs must be unique")
     check(len({product.get("destination") for product in products}) == len(products), "Verified individual product destinations must be unique")
     check(len({product.get("cutout", {}).get("sourceAsset") for product in products}) == len(products), "Official product source assets must be unique")
@@ -255,6 +257,7 @@ def validate_content(site: dict, library: dict) -> None:
         label = product.get("id", "unknown")
         for field in ("id", "name", "manufacturer", "sku", "intent", "category", "productKind", "purchaseModel", "description", "descriptionSource", "whyItsHere", "variantGroup", "variantLabel", "officialProductPage", "cta", "destination", "cutout", "artwork"):
             check(bool(product.get(field)), f"{label}: missing {field}")
+        check("verified" not in product.get("whyItsHere", "").lower(), f"{label}: Why It's Here should provide product context rather than verification boilerplate")
         check(bool(product.get("environment")), f"{label}: decorative Shelf environment is required")
         check(product.get("intent") in intent_ids, f"{label}: unknown product intent")
         check(product.get("manufacturer") == "Zinzino", f"{label}: manufacturer must remain explicit")
@@ -447,6 +450,13 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     check(home.count('data-universe-product=') == len(site["products"]), "Homepage Product Universe must render every verified product")
     check(home.count("data-artwork-state=") == len(site["products"]), "Every Product Universe item requires a stable environmental artwork slot")
     check(home.count("data-universe-intent=") == len(site["catalog"]["intents"]), "Homepage must expose every approved product intent")
+    check('data-universe-status aria-live="polite" aria-atomic="true"' in home, "Product Universe requires a concise live selected-state announcement")
+    universe_start = home.find('<div class="product-universe"')
+    universe_end = home.find('<section id="problem"')
+    universe_markup = home[universe_start:universe_end]
+    eager_universe_cutouts = re.findall(r'<img[^>]+loading="eager"[^>]+data-image-role="official-product-cutout"', universe_markup)
+    lazy_universe_cutouts = re.findall(r'<img[^>]+loading="lazy"[^>]+data-image-role="official-product-cutout"', universe_markup)
+    check(len(eager_universe_cutouts) == 1 and len(lazy_universe_cutouts) == len(site["products"]) - 1, "Homepage must eagerly load only the active Product Universe cutout")
     check(home.count("data-library-article") == len([article for article in library["articles"] if article.get("status") == "published"]), "Homepage Library count must match published content")
     check('data-library-state="empty"' in home if not any(article.get("status") == "published" for article in library["articles"]) else 'data-library-state="published"' in home, "Homepage Library state mismatch")
     check("content model is ready" not in home.lower(), "Developer-facing Library language must not be published")
