@@ -28,10 +28,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@500..800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script defer src="assets/js/enhancements.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css?v=experience-v2-3-product-universe">
+  <link rel="stylesheet" href="assets/css/base.css?v=experience-v2-3-product-universe">
+  <link rel="stylesheet" href="assets/css/site.css?v=experience-v2-3-product-universe">
+  <script defer src="assets/js/enhancements.js?v=experience-v2-3-product-universe"></script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://themindfulmatrix.github.io/BioCare/#organization","name":"The Mindful Matrix","url":"https://themindfulmatrix.github.io/BioCare/","logo":"https://themindfulmatrix.github.io/BioCare/assets/brand/lockup-dark.svg"},{"@type":"WebSite","@id":"https://themindfulmatrix.github.io/BioCare/#website","name":"The Mindful Matrix","url":"https://themindfulmatrix.github.io/BioCare/","publisher":{"@id":"https://themindfulmatrix.github.io/BioCare/#organization"}}]}</script>
 </head>
 <body>
@@ -43,24 +43,763 @@
       <ul id="primary-links" class="nav-links">
         <li><a href="start.html">Start here</a></li>
         <li><a href="library.html">The Library</a></li>
-        <li><a href="index.html#shelf">The Shelf</a></li>
+        <li><a href="shop.html">Products</a></li>
         <li><a href="index.html#story">Our story</a></li>
-        <li><a class="button button-primary" href="start.html#pathways">Find your path →</a></li>
+        <li><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="sponsored noopener noreferrer">Get the kit ↗<span class="visually-hidden"> (opens in a new tab)</span></a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main-content" tabindex="-1">
     <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
+      <canvas class="matrix-field" data-matrix-field aria-hidden="true"></canvas>
+      <div class="hero-biome" aria-hidden="true"><span class="hero-biome__plane hero-biome__plane--one" data-parallax-depth="0.35"></span><span class="hero-biome__plane hero-biome__plane--two" data-parallax-depth="0.7"></span><span class="hero-biome__signal hero-biome__signal--one" data-parallax-depth="1.1"></span><span class="hero-biome__signal hero-biome__signal--two" data-parallax-depth="0.55"></span></div>
       <div class="home-hero__grid container-wide">
         <div class="home-hero__content" data-reveal>
-          <p class="section-kicker">Information → Education → Action</p><h1 id="hero-title"><span>You know you can</span><span>feel better.</span></h1><p class="home-hero__support">You just need somewhere to start.</p><p class="home-hero__copy">The Mindful Matrix helps you get informed about your situation, educate yourself on what it means, and take action toward better wellness.</p>
-          <div class="button-row"><a class="button button-primary" href="start.html">Start your journey →</a><a class="button button-secondary" href="#matrix">Explore the Matrix ↓</a></div>
+          <p class="section-kicker">Information → Education → Action</p><h1 id="hero-title"><span>Test first.</span><span>Then choose.</span></h1><p class="home-hero__support">Your featured starting point is right here.</p><p class="home-hero__copy">Go straight to the kit, browse every verified Shelf destination, or use the Matrix when you want more context. Education is here to support the decision—not stand between you and it.</p>
+          <div class="hero-actions button-row">
+            <a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="sponsored noopener noreferrer">View Balance Test Basic Kit ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="button button-secondary" href="#shelf">Shop all 36 options ↓</a>
+          </div>
+          <div class="hero-context"><span>Official product imagery</span><span>External Zinzino checkout</span><a href="#matrix">Want context first? Enter the Matrix ↓</a></div>
         </div>
-        <div class="home-hero__visual" aria-hidden="true" data-reveal>
-          <span class="matrix-orbit matrix-orbit--outer"></span><span class="matrix-orbit matrix-orbit--inner"></span><span class="matrix-orbit matrix-orbit--trace"></span>
-          <svg class="matrix-path" viewBox="0 0 600 600"><path class="matrix-path__ambient" d="M-54 450C95 142 351 42 664 182"/><path class="path-draw" d="M44 378C137 94 448 90 550 292S376 563 123 494"/><circle class="matrix-path__node" cx="44" cy="378" r="8"/><circle class="matrix-path__node matrix-path__node--bio" cx="550" cy="292" r="8"/><circle class="matrix-path__node" cx="123" cy="494" r="8"/><circle class="matrix-path__marker" cx="355" cy="95" r="4"/><circle class="matrix-path__marker matrix-path__marker--bio" cx="418" cy="527" r="4"/></svg>
-          <img class="hero-mark" src="assets/brand/mark-dark.svg" width="64" height="64" alt=""><span class="hero-data hero-data--one">Information / 01</span><span class="hero-data hero-data--two">Education / 02</span><span class="hero-data hero-data--three">Action / 03</span>
+        <div class="home-hero__visual" data-reveal>
+          <div class="matrix-volume" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="hero-product" data-product-id="balance-basic-kit">
+            <span class="hero-product__orbit hero-product__orbit--outer" data-parallax-depth="0.35" aria-hidden="true"></span>
+            <span class="hero-product__orbit hero-product__orbit--inner" data-parallax-depth="0.8" aria-hidden="true"></span>
+            <span class="hero-product__channel hero-product__channel--gold" data-parallax-depth="1.1" aria-hidden="true"></span>
+            <span class="hero-product__channel hero-product__channel--green" data-parallax-depth="0.65" aria-hidden="true"></span>
+            <a class="hero-product__stage" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="sponsored noopener noreferrer" aria-label="View Balance Test Basic Kit on Zinzino (opens in a new tab)">
+              <img class="hero-product__background" src="assets/artwork/shelf/balance-test-basic-kit-cinematic.webp" alt="" data-parallax-depth="0.55" width="1024" height="1536" loading="eager" decoding="async">
+              <span class="hero-product__pedestal" data-parallax-depth="0.5" aria-hidden="true"></span>
+              <div class="hero-product__cutout" data-parallax-depth="0.22"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png" alt="Balance Test Basic Kit official Zinzino product packaging" width="560" height="560" loading="eager" decoding="async" fetchpriority="high" data-image-role="official-product-cutout"></div>
+              <div class="hero-product__signal hero-product__signal--one" data-parallax-depth="1.15" aria-hidden="true"><span>01</span> Test</div>
+              <div class="hero-product__signal hero-product__signal--two" data-parallax-depth="0.8" aria-hidden="true"><span>02</span> Learn</div>
+              <div class="hero-product__signal hero-product__signal--three" data-parallax-depth="1.35" aria-hidden="true"><span>03</span> Choose</div>
+              <span class="hero-product__tap">View the kit ↗</span>
+            </a>
+            <div class="hero-product__caption" data-parallax-depth="0.9"><span>Featured starting point</span><strong>Balance Test Basic Kit</strong><small>kit / SKU 910465</small></div>
+          </div>
+          <span class="hero-data hero-data--one" aria-hidden="true">Input / Personal data</span><span class="hero-data hero-data--two" aria-hidden="true">Signal / Context</span><span class="hero-data hero-data--three" aria-hidden="true">Output / Next step</span>
+        </div>
+      </div>
+      <div class="hero-status" aria-hidden="true"><span>Live matrix</span><span>Pointer reactive</span><span>Information → Education → Action</span></div>
+      <div class="hero-system-bridge" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><defs><linearGradient id="hero-bridge-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".52" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="hero-system-bridge__ghost" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><path class="hero-system-bridge__live" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><circle cx="1095" cy="82" r="5"/><circle cx="1265" cy="138" r="4"/></svg></div>
+    </section>
+
+    <section id="shelf" class="product-universe-section section-dark section-pad" aria-labelledby="shelf-title">
+      <div class="universe-entry-path" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container-wide">
+        <div class="product-universe__heading" data-reveal>
+          <div><p class="section-kicker">The Product Universe</p><h2 id="shelf-title" class="section-title">Find the right starting point.</h2></div>
+          <div class="product-universe__intro"><strong>36 verified products</strong><p class="section-copy">Move by intent, inspect every verified product, or open the full catalog. Official product imagery stays separate from the interactive environment.</p></div>
+        </div>
+        <div class="product-universe" data-product-universe data-active-intent="test-measure" data-active-environment="signal">
+          <svg class="product-universe__pathways" viewBox="0 0 1200 760" aria-hidden="true"><defs><linearGradient id="universe-path-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path d="M84 118 C280 80 350 260 600 378 S930 680 1112 622"/><path d="M82 632 C278 684 370 502 600 378 S930 80 1114 132"/><circle cx="600" cy="378" r="208"/><circle cx="600" cy="378" r="286"/></svg>
+          <nav class="product-universe__intents" aria-label="Choose a product intent" data-reveal><button class="product-universe__intent" type="button" data-universe-intent="test-measure" data-intent-featured="balance-basic-kit" data-intent-index="01" data-intent-name="Test &amp; Measure" data-intent-description="Start with a measurement you can inspect and discuss in context." data-intent-environment="signal" aria-controls="universe-products" aria-pressed="true"><span>01</span><strong>Test &amp; Measure</strong><small>Measure</small></button><button class="product-universe__intent" type="button" data-universe-intent="omega-nutrition" data-intent-featured="balanceoil-plus-300ml" data-intent-index="02" data-intent-name="Omega &amp; Nutrition" data-intent-description="Explore verified omega and nutrition formats in the current US catalog." data-intent-environment="omega" aria-controls="universe-products" aria-pressed="false"><span>02</span><strong>Omega &amp; Nutrition</strong><small>Omega</small></button><button class="product-universe__intent" type="button" data-universe-intent="gut-digestion" data-intent-featured="zinobiotic-plus" data-intent-index="03" data-intent-name="Gut &amp; Digestion" data-intent-description="Explore the current fiber and turmeric-root formats grouped here." data-intent-environment="biotic" aria-controls="universe-products" aria-pressed="false"><span>03</span><strong>Gut &amp; Digestion</strong><small>Gut</small></button><button class="product-universe__intent" type="button" data-universe-intent="daily-wellness" data-intent-featured="xtend-plus" data-intent-index="04" data-intent-name="Daily Wellness" data-intent-description="Browse verified daily supplement formats from the current catalog." data-intent-environment="daily" aria-controls="universe-products" aria-pressed="false"><span>04</span><strong>Daily Wellness</strong><small>Daily</small></button><button class="product-universe__intent" type="button" data-universe-intent="performance-recovery" data-intent-featured="phycosci-plus-x20" data-intent-index="05" data-intent-name="Active Nutrition &amp; Tools" data-intent-description="Explore verified shakes, food, spirulina formats, and practical accessories." data-intent-environment="performance" aria-controls="universe-products" aria-pressed="false"><span>05</span><strong>Active Nutrition &amp; Tools</strong><small>Active</small></button><button class="product-universe__intent" type="button" data-universe-intent="healthy-aging" data-intent-featured="collagen-boozt" data-intent-index="06" data-intent-name="Skin &amp; Collagen" data-intent-description="Explore verified collagen and topical skin-care formats." data-intent-environment="longevity" aria-controls="universe-products" aria-pressed="false"><span>06</span><strong>Skin &amp; Collagen</strong><small>Skin</small></button></nav>
+          <div class="product-universe__stage" data-reveal>
+            <div class="product-universe__field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <span class="product-universe__loading" aria-hidden="true">Loading official image</span>
+            <div class="product-universe__products" id="universe-products"><article class="product-universe__product" data-universe-product="balance-basic-kit" data-product-intent="test-measure" data-environment="balance" aria-labelledby="universe-product-title-balance-basic-kit" data-active="true">
+        <div class="product-universe__visual artwork-stage">
+          <img class="shelf-card__artwork artwork-stage__background" src="assets/artwork/shelf/balance-test-basic-kit-cinematic.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" data-artwork-state="ready">
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png" alt="Balance Test Basic Kit official Zinzino product packaging" width="560" height="560" loading="eager" decoding="async" fetchpriority="high" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 910465</span>
+          <span class="product-universe__number" aria-hidden="true">01</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Start here / kit</p>
+          <h3 id="universe-product-title-balance-basic-kit">Balance Test Basic Kit</h3>
+          <p class="product-universe__description">The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>Our featured test-first route, pairing the measurement with the included product format.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="sponsored noopener noreferrer">Get the kit ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/should-you-test-your-omega-3-levels.html">Read the testing guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="balance-test" data-product-intent="test-measure" data-environment="signal" aria-labelledby="universe-product-title-balance-test">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-309000.png" alt="BalanceTest official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 309000</span>
+          <span class="product-universe__number" aria-hidden="true">02</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Home health test / individual product</p>
+          <h3 id="universe-product-title-balance-test">BalanceTest</h3>
+          <p class="product-universe__description">Track your fatty acid profile from home</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The individual fatty-acid test for visitors who want the test without a kit.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309000" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/should-you-test-your-omega-3-levels.html">Read the testing guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="gut-health-test" data-product-intent="test-measure" data-environment="signal" aria-labelledby="universe-product-title-gut-health-test">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/gut-health-test-309070.png" alt="Gut Health Test official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 309070</span>
+          <span class="product-universe__number" aria-hidden="true">03</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Home health test / individual product</p>
+          <h3 id="universe-product-title-gut-health-test">Gut Health Test</h3>
+          <p class="product-universe__description">Home health blood spot test to track gut and metabolic markers</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The single-test option in the home health testing range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309070" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="gut-health-test-x2" data-product-intent="test-measure" data-environment="signal" aria-labelledby="universe-product-title-gut-health-test-x2">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/gut-health-test-x2-309080.png" alt="Gut Health Test x2 official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 309080</span>
+          <span class="product-universe__number" aria-hidden="true">04</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Home health test / multipack</p>
+          <h3 id="universe-product-title-gut-health-test-x2">Gut Health Test x2</h3>
+          <p class="product-universe__description">Home health blood spot test to track gut and metabolic markers</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>x2</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The two-test option for visitors comparing single- and two-test quantities.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309080" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="vitamin-d-test" data-product-intent="test-measure" data-environment="signal" aria-labelledby="universe-product-title-vitamin-d-test">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/vitamin-d-test-309049.png" alt="Vitamin D Test official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 309049</span>
+          <span class="product-universe__number" aria-hidden="true">05</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Home health test / individual product</p>
+          <h3 id="universe-product-title-vitamin-d-test">Vitamin D Test</h3>
+          <p class="product-universe__description">Monitor your vitamin D levels</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The individual at-home test dedicated to vitamin D measurement.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309049" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="hba1c-test" data-product-intent="test-measure" data-environment="signal" aria-labelledby="universe-product-title-hba1c-test">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/hba1c-test-309060.png" alt="HbA1c Test official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 309060</span>
+          <span class="product-universe__number" aria-hidden="true">06</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Home health test / individual product</p>
+          <h3 id="universe-product-title-hba1c-test">HbA1c Test</h3>
+          <p class="product-universe__description">Track your long-term blood sugar levels</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The individual at-home test dedicated to HbA1c measurement.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/309060" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="balanceoil-plus-300ml" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-plus-300ml">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png" alt="BalanceOil+, 300 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300000</span>
+          <span class="product-universe__number" aria-hidden="true">07</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-balanceoil-plus-300ml">BalanceOil+, 300 ml</h3>
+          <p class="product-universe__description">Omega-3 food supplement with EPA, DHA and polyphenols</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>300 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The standard 300 ml BalanceOil+ format.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300000" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product product-name--long" data-universe-product="balanceoil-plus-100ml" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-plus-100ml">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png" alt="BalanceOil+ Orange Lemon Mint, 100 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300430</span>
+          <span class="product-universe__number" aria-hidden="true">08</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-balanceoil-plus-100ml">BalanceOil+ Orange Lemon Mint, 100 ml</h3>
+          <p class="product-universe__description">Omega-3 food supplement with EPA, DHA and polyphenols</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>100 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The compact 100 ml Orange Lemon Mint format.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300430" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product product-name--very-long" data-universe-product="balanceoil-plus-100ml-6pcs" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-plus-100ml-6pcs">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png" alt="BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300481</span>
+          <span class="product-universe__number" aria-hidden="true">09</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / multipack</p>
+          <h3 id="universe-product-title-balanceoil-plus-100ml-6pcs">BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs</h3>
+          <p class="product-universe__description">Omega-3 food supplement with EPA, DHA and polyphenols</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>6 × 100 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The six-bottle version of the 100 ml format.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300481" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="balanceoil-plus-premium" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-plus-premium">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png" alt="BalanceOil+ Premium, 300 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 700000</span>
+          <span class="product-universe__number" aria-hidden="true">10</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-balanceoil-plus-premium">BalanceOil+ Premium, 300 ml</h3>
+          <p class="product-universe__description">Omega-3 food supplement with EPA, DHA and polyphenols from extra virgin olive oil</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Premium 300 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The 300 ml Premium variant in the BalanceOil+ range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/700000" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="balanceoil-plus-aquax" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-plus-aquax">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png" alt="BalanceOil+ AquaX, 300 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300700</span>
+          <span class="product-universe__number" aria-hidden="true">11</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-balanceoil-plus-aquax">BalanceOil+ AquaX, 300 ml</h3>
+          <p class="product-universe__description">Water-soluble formula in lemon flavor.</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>AquaX 300 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The water-soluble 300 ml lemon-flavor variant.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300700" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="balanceoil-plus-vegan" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-plus-vegan">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png" alt="BalanceOil+ Vegan official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 400000</span>
+          <span class="product-universe__number" aria-hidden="true">12</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-balanceoil-plus-vegan">BalanceOil+ Vegan</h3>
+          <p class="product-universe__description">With marine micro-algae oil and vegan vitamin D3.</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Vegan</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The vegan omega format in the BalanceOil+ range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/400000" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product product-name--long" data-universe-product="balanceoil-tutti-frutti" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-balanceoil-tutti-frutti">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png" alt="BalanceOil Tutti Frutti, 300 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 301799</span>
+          <span class="product-universe__number" aria-hidden="true">13</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-balanceoil-tutti-frutti">BalanceOil Tutti Frutti, 300 ml</h3>
+          <p class="product-universe__description">Omega-3 food supplement with EPA, DHA, polyphenols, and a kid-friendly taste</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Tutti Frutti 300 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The 300 ml Tutti Frutti flavor variant.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301799" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="essent-plus-premium" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-essent-plus-premium">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/essent-plus-premium-300310.png" alt="Essent+ Premium official Zinzino product packaging" width="960" height="960" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300310</span>
+          <span class="product-universe__number" aria-hidden="true">14</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Omega supplement / individual product</p>
+          <h3 id="universe-product-title-essent-plus-premium">Essent+ Premium</h3>
+          <p class="product-universe__description">Polyphenol omega balance supplement</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Premium</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The softgel-format option in the omega assortment.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300310" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a><a class="product-universe__learn" href="library/omega-3-what-the-numbers-mean.html">Read the omega-3 guide →</a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="revoo" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-revoo">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/revoo-302401.png" alt="R.E.V.O.O official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302401</span>
+          <span class="product-universe__number" aria-hidden="true">15</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Olive oil / individual product</p>
+          <h3 id="universe-product-title-revoo">R.E.V.O.O</h3>
+          <p class="product-universe__description">Extra virgin olive oil</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>250 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The standalone extra virgin olive oil format.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302401" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="dosage-cups" data-product-intent="omega-nutrition" data-environment="omega" aria-labelledby="universe-product-title-dosage-cups">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png" alt="Dosage Cups, 10 pc official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 600508</span>
+          <span class="product-universe__number" aria-hidden="true">16</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Accessory / accessory</p>
+          <h3 id="universe-product-title-dosage-cups">Dosage Cups, 10 pc</h3>
+          <p class="product-universe__description">Measuring caps made from dishwasher-safe plastic.</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>10 pc</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>A measuring accessory for liquid BalanceOil+ formats.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/600508" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="zinobiotic-plus" data-product-intent="gut-digestion" data-environment="biotic" aria-labelledby="universe-product-title-zinobiotic-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/zinobiotic-plus-301390.png" alt="ZinoBiotic+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 301390</span>
+          <span class="product-universe__number" aria-hidden="true">17</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Fiber supplement / individual product</p>
+          <h3 id="universe-product-title-zinobiotic-plus">ZinoBiotic+</h3>
+          <p class="product-universe__description">A tailored blend of eight natural sources of dietary fibers</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>180 g</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The dietary-fiber format in the gut and digestion collection.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301390" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="x-gold-plus" data-product-intent="gut-digestion" data-environment="biotic" aria-labelledby="universe-product-title-x-gold-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/x-gold-plus-302790.png" alt="X Gold+ 250 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302790</span>
+          <span class="product-universe__number" aria-hidden="true">18</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Turmeric format / individual product</p>
+          <h3 id="universe-product-title-x-gold-plus">X Gold+ 250 ml</h3>
+          <p class="product-universe__description">Liquid turmeric root extract and piperine from black pepper</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>250 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The liquid turmeric-root format listed in Zinzino’s gut-health collection.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="zinogene-plus" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-zinogene-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/zinogene-plus-302500.png" alt="ZinoGene+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302500</span>
+          <span class="product-universe__number" aria-hidden="true">19</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / individual product</p>
+          <h3 id="universe-product-title-zinogene-plus">ZinoGene+</h3>
+          <p class="product-universe__description">With seaweed fucoidans, curcumin, vitamin C, and zinc</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>30 tablets</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>A daily option centered on its listed fucoidans and micronutrients.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302500" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="viva-plus" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-viva-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/viva-plus-300800.png" alt="Viva+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300800</span>
+          <span class="product-universe__number" aria-hidden="true">20</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / individual product</p>
+          <h3 id="universe-product-title-viva-plus">Viva+</h3>
+          <p class="product-universe__description">With saffron stigmas, magnesium, iodine, and vitamin C</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>60 tablets</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The single-pack Viva+ option in the daily supplement group.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300800" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="viva-plus-x2" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-viva-plus-x2">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/viva-plus-x2-300811.png" alt="Viva+ x2 official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300811</span>
+          <span class="product-universe__number" aria-hidden="true">21</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / multipack</p>
+          <h3 id="universe-product-title-viva-plus-x2">Viva+ x2</h3>
+          <p class="product-universe__description">With saffron stigmas, magnesium, iodine, and vitamin C</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>x2</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The two-pack Viva+ option for visitors comparing quantities.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300811" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="zinoshine-plus" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-zinoshine-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/zinoshine-plus-302600.png" alt="ZinoShine+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302600</span>
+          <span class="product-universe__number" aria-hidden="true">22</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / individual product</p>
+          <h3 id="universe-product-title-zinoshine-plus">ZinoShine+</h3>
+          <p class="product-universe__description">With vitamin D and broad-spectrum magnesium</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>60 tablets</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>A daily option centered on vitamin D and magnesium.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302600" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="xtend-plus" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-xtend-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/xtend-plus-302200.png" alt="Xtend+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302200</span>
+          <span class="product-universe__number" aria-hidden="true">23</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / individual product</p>
+          <h3 id="universe-product-title-xtend-plus">Xtend+</h3>
+          <p class="product-universe__description">Multi-immune food supplement with 22 naturally derived micro- and phytonutrients</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Plus</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The Plus variant in the Xtend daily supplement range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302200" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="xtend" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-xtend">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/xtend-300520.png" alt="Xtend official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300520</span>
+          <span class="product-universe__number" aria-hidden="true">24</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / individual product</p>
+          <h3 id="universe-product-title-xtend">Xtend</h3>
+          <p class="product-universe__description">With 23 essential vitamins and minerals</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The standard variant in the Xtend daily supplement range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300520" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="protect-plus" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-protect-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/protect-plus-300600.png" alt="Protect+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 300600</span>
+          <span class="product-universe__number" aria-hidden="true">25</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Daily supplement / individual product</p>
+          <h3 id="universe-product-title-protect-plus">Protect+</h3>
+          <p class="product-universe__description">With vegan beta-glucans and naturally derived vitamin C and D3</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>60 capsules</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>A daily option with its listed beta-glucans and vitamins C and D3.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/300600" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="spirumax-plus" data-product-intent="daily-wellness" data-environment="daily" aria-labelledby="universe-product-title-spirumax-plus">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/spirumax-plus-302699.png" alt="SpiruMax+ official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302699</span>
+          <span class="product-universe__number" aria-hidden="true">26</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Spirulina supplement / individual product</p>
+          <h3 id="universe-product-title-spirumax-plus">SpiruMax+</h3>
+          <p class="product-universe__description">Food supplement with naturally derived spirulina maxima</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>80 tablets</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The tablet-format spirulina option.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302699" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="phycosci-plus-x20" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-phycosci-plus-x20">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png" alt="PhycoSci+ X20 official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302770</span>
+          <span class="product-universe__number" aria-hidden="true">27</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Spirulina supplement / individual product</p>
+          <h3 id="universe-product-title-phycosci-plus-x20">PhycoSci+ X20</h3>
+          <p class="product-universe__description">Naturally derived spirulina extract food supplement</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>X20</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The liquid spirulina format in the active-nutrition group.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302770" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product product-name--long" data-universe-product="leanshake-chocolate" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-leanshake-chocolate">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/leanshake-chocolate-301331.png" alt="LeanShake Chocolate, portion pack official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 301331</span>
+          <span class="product-universe__number" aria-hidden="true">28</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Meal replacement / individual product</p>
+          <h3 id="universe-product-title-leanshake-chocolate">LeanShake Chocolate, portion pack</h3>
+          <p class="product-universe__description">Meal replacement with whey proteins, collagen peptides, and dietary fibers, chocolate flavor</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Chocolate</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The chocolate portion-pack option in the LeanShake range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301331" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product product-name--long" data-universe-product="leanshake-strawberry" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-leanshake-strawberry">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/leanshake-strawberry-301531.png" alt="LeanShake Strawberry, portion pack official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 301531</span>
+          <span class="product-universe__number" aria-hidden="true">29</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Meal replacement / individual product</p>
+          <h3 id="universe-product-title-leanshake-strawberry">LeanShake Strawberry, portion pack</h3>
+          <p class="product-universe__description">Meal replacement with whey proteins, collagen peptides, and dietary fibers, strawberry flavor</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Strawberry</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The strawberry portion-pack option in the LeanShake range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301531" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product product-name--long" data-universe-product="leanshake-vanilla" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-leanshake-vanilla">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/leanshake-vanilla-301581.png" alt="LeanShake Vanilla, portion pack official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 301581</span>
+          <span class="product-universe__number" aria-hidden="true">30</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Meal replacement / individual product</p>
+          <h3 id="universe-product-title-leanshake-vanilla">LeanShake Vanilla, portion pack</h3>
+          <p class="product-universe__description">Meal replacement with vegetarian pea and oat proteins and dietary fibers, vanilla flavor</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Vanilla</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The vanilla portion-pack option in the LeanShake range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301581" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="leanshake-berry" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-leanshake-berry">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/leanshake-berry-301381.png" alt="LeanShake Berry, portion pack official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 301381</span>
+          <span class="product-universe__number" aria-hidden="true">31</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Meal replacement / individual product</p>
+          <h3 id="universe-product-title-leanshake-berry">LeanShake Berry, portion pack</h3>
+          <p class="product-universe__description">Meal replacement with vegetarian pea and oat proteins and dietary fibers, berry flavor</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Berry</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The berry portion-pack option in the LeanShake range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/301381" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="shake-bottle" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-shake-bottle">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/shake-bottle-600509.png" alt="Shake Bottle official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 600509</span>
+          <span class="product-universe__number" aria-hidden="true">32</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Accessory / accessory</p>
+          <h3 id="universe-product-title-shake-bottle">Shake Bottle</h3>
+          <p class="product-universe__description">On-the-go, dishwasher safe with a leak-proof lid</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The preparation accessory for the LeanShake range.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/600509" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="energy-bar-nut-seed" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-energy-bar-nut-seed">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png" alt="Energy Bar Nut &amp; Seed official Zinzino product packaging" width="960" height="960" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302011</span>
+          <span class="product-universe__number" aria-hidden="true">33</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Food / individual product</p>
+          <h3 id="universe-product-title-energy-bar-nut-seed">Energy Bar Nut &amp; Seed</h3>
+          <p class="product-universe__description">Vegan, high-fiber energy bar with almonds, dates, and super seeds</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Nut &amp; Seed</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The solid-food option in the active-nutrition assortment.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302011" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="measuring-tape" data-product-intent="performance-recovery" data-environment="performance" aria-labelledby="universe-product-title-measuring-tape">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/measuring-tape-600211.png" alt="Measuring Tape official Zinzino product packaging" width="330" height="330" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 600211</span>
+          <span class="product-universe__number" aria-hidden="true">34</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Accessory / accessory</p>
+          <h3 id="universe-product-title-measuring-tape">Measuring Tape</h3>
+          <p class="product-universe__description">Metric and imperial measures with a BMI calculator.</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>Standard</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>A non-consumable tracking tool available in the product catalog.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/600211" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="collagen-boozt" data-product-intent="healthy-aging" data-environment="longevity" aria-labelledby="universe-product-title-collagen-boozt">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/collagen-boozt-302800.png" alt="Collagen Boozt official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 302800</span>
+          <span class="product-universe__number" aria-hidden="true">35</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Collagen supplement / individual product</p>
+          <h3 id="universe-product-title-collagen-boozt">Collagen Boozt</h3>
+          <p class="product-universe__description">Food supplement with liquid marine collagen and hyaluronic acid</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>10 × 46 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The ingestible collagen format in the skin and collagen group.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/302800" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+<article class="product-universe__product" data-universe-product="skin-serum" data-product-intent="healthy-aging" data-environment="longevity" aria-labelledby="universe-product-title-skin-serum">
+        <div class="product-universe__visual artwork-stage">
+          <span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
+          <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
+          <span class="product-universe__pedestal" aria-hidden="true"></span>
+          <div class="product-universe__cutout"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/skin-serum-50ml-800150.png" alt="Skin Serum, 50 ml official Zinzino product packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div>
+          <span class="product-universe__sku">SKU / 800150</span>
+          <span class="product-universe__number" aria-hidden="true">36</span>
+        </div>
+        <div class="product-universe__content">
+          <p class="interface-label">Skin care / individual product</p>
+          <h3 id="universe-product-title-skin-serum">Skin Serum, 50 ml</h3>
+          <p class="product-universe__description">24-hour deep skincare formula for face and neck</p>
+          <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>Zinzino</dd></div><div><dt>Format</dt><dd>50 ml</dd></div></dl>
+          <div class="product-universe__why"><span>Why it’s here</span><p>The topical skin-care format in this product group.</p></div>
+          <div class="button-row"><a class="button button-primary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/800150" target="_blank" rel="sponsored noopener noreferrer">View product ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+        </div>
+      </article></div>
+            <p class="visually-hidden" data-universe-status aria-live="polite" aria-atomic="true"></p>
+            <div class="product-universe__controls" role="group" aria-label="Browse products in the selected category">
+              <button type="button" data-universe-step="-1" aria-label="Previous product">←</button>
+              <p><span data-universe-position>01</span><i aria-hidden="true">/</i><span data-universe-total>01</span></p>
+              <button type="button" data-universe-step="1" aria-label="Next product">→</button>
+            </div>
+          </div>
+          <aside class="product-universe__console" aria-label="Products in the selected category" data-reveal>
+            <p class="interface-label">Active intent / <span data-universe-intent-index>01</span></p>
+            <h3 data-universe-intent-name>Test &amp; Measure</h3>
+            <p data-universe-intent-description>Start with a measurement you can inspect and discuss in context.</p>
+            <div class="product-universe__roster" data-universe-roster><button type="button" data-universe-select="balance-basic-kit" data-product-intent="test-measure" aria-controls="universe-products" aria-pressed="true"><span>01</span><strong>Balance Test Basic Kit</strong></button><button type="button" data-universe-select="balance-test" data-product-intent="test-measure" aria-controls="universe-products" aria-pressed="false"><span>02</span><strong>BalanceTest</strong></button><button type="button" data-universe-select="gut-health-test" data-product-intent="test-measure" aria-controls="universe-products" aria-pressed="false"><span>03</span><strong>Gut Health Test</strong></button><button type="button" data-universe-select="gut-health-test-x2" data-product-intent="test-measure" aria-controls="universe-products" aria-pressed="false"><span>04</span><strong>Gut Health Test x2</strong></button><button type="button" data-universe-select="vitamin-d-test" data-product-intent="test-measure" aria-controls="universe-products" aria-pressed="false"><span>05</span><strong>Vitamin D Test</strong></button><button type="button" data-universe-select="hba1c-test" data-product-intent="test-measure" aria-controls="universe-products" aria-pressed="false"><span>06</span><strong>HbA1c Test</strong></button><button type="button" data-universe-select="balanceoil-plus-300ml" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>07</span><strong>BalanceOil+, 300 ml</strong></button><button type="button" data-universe-select="balanceoil-plus-100ml" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>08</span><strong>BalanceOil+ Orange Lemon Mint, 100 ml</strong></button><button type="button" data-universe-select="balanceoil-plus-100ml-6pcs" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>09</span><strong>BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs</strong></button><button type="button" data-universe-select="balanceoil-plus-premium" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>10</span><strong>BalanceOil+ Premium, 300 ml</strong></button><button type="button" data-universe-select="balanceoil-plus-aquax" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>11</span><strong>BalanceOil+ AquaX, 300 ml</strong></button><button type="button" data-universe-select="balanceoil-plus-vegan" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>12</span><strong>BalanceOil+ Vegan</strong></button><button type="button" data-universe-select="balanceoil-tutti-frutti" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>13</span><strong>BalanceOil Tutti Frutti, 300 ml</strong></button><button type="button" data-universe-select="essent-plus-premium" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>14</span><strong>Essent+ Premium</strong></button><button type="button" data-universe-select="revoo" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>15</span><strong>R.E.V.O.O</strong></button><button type="button" data-universe-select="dosage-cups" data-product-intent="omega-nutrition" aria-controls="universe-products" aria-pressed="false"><span>16</span><strong>Dosage Cups, 10 pc</strong></button><button type="button" data-universe-select="zinobiotic-plus" data-product-intent="gut-digestion" aria-controls="universe-products" aria-pressed="false"><span>17</span><strong>ZinoBiotic+</strong></button><button type="button" data-universe-select="x-gold-plus" data-product-intent="gut-digestion" aria-controls="universe-products" aria-pressed="false"><span>18</span><strong>X Gold+ 250 ml</strong></button><button type="button" data-universe-select="zinogene-plus" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>19</span><strong>ZinoGene+</strong></button><button type="button" data-universe-select="viva-plus" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>20</span><strong>Viva+</strong></button><button type="button" data-universe-select="viva-plus-x2" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>21</span><strong>Viva+ x2</strong></button><button type="button" data-universe-select="zinoshine-plus" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>22</span><strong>ZinoShine+</strong></button><button type="button" data-universe-select="xtend-plus" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>23</span><strong>Xtend+</strong></button><button type="button" data-universe-select="xtend" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>24</span><strong>Xtend</strong></button><button type="button" data-universe-select="protect-plus" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>25</span><strong>Protect+</strong></button><button type="button" data-universe-select="spirumax-plus" data-product-intent="daily-wellness" aria-controls="universe-products" aria-pressed="false"><span>26</span><strong>SpiruMax+</strong></button><button type="button" data-universe-select="phycosci-plus-x20" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>27</span><strong>PhycoSci+ X20</strong></button><button type="button" data-universe-select="leanshake-chocolate" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>28</span><strong>LeanShake Chocolate, portion pack</strong></button><button type="button" data-universe-select="leanshake-strawberry" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>29</span><strong>LeanShake Strawberry, portion pack</strong></button><button type="button" data-universe-select="leanshake-vanilla" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>30</span><strong>LeanShake Vanilla, portion pack</strong></button><button type="button" data-universe-select="leanshake-berry" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>31</span><strong>LeanShake Berry, portion pack</strong></button><button type="button" data-universe-select="shake-bottle" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>32</span><strong>Shake Bottle</strong></button><button type="button" data-universe-select="energy-bar-nut-seed" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>33</span><strong>Energy Bar Nut &amp; Seed</strong></button><button type="button" data-universe-select="measuring-tape" data-product-intent="performance-recovery" aria-controls="universe-products" aria-pressed="false"><span>34</span><strong>Measuring Tape</strong></button><button type="button" data-universe-select="collagen-boozt" data-product-intent="healthy-aging" aria-controls="universe-products" aria-pressed="false"><span>35</span><strong>Collagen Boozt</strong></button><button type="button" data-universe-select="skin-serum" data-product-intent="healthy-aging" aria-controls="universe-products" aria-pressed="false"><span>36</span><strong>Skin Serum, 50 ml</strong></button></div>
+            <a class="button button-secondary product-universe__shop-link" href="shop.html">Explore all 36 products →</a>
+          </aside>
+          <div class="product-universe__telemetry" aria-hidden="true"><span>Official imagery</span><span>36 verified SKUs</span><span>Partner-coded routes</span><span>No generated packaging</span></div>
         </div>
       </div>
     </section>
@@ -70,7 +809,7 @@
     </section>
 
     <section id="matrix" class="matrix-section section-dark section-pad" aria-labelledby="matrix-title">
-      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">A better way to move forward.</h2><p class="section-copy">You don't need every answer today. You need a process for finding your next one.</p></div><div class="matrix-sequence"><div class="matrix-spine" aria-hidden="true"><span></span><span></span><span></span></div><article class="matrix-stage" data-matrix-stage="information" data-reveal>
+      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">A better way to move forward.</h2><p class="section-copy">You don't need every answer today. You need a process for finding your next one.</p></div><div class="matrix-sequence" data-matrix-sequence><svg class="matrix-pathway" viewBox="0 0 260 1200" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="matrix-path-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="matrix-pathway__base" d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/><path class="matrix-pathway__progress" data-matrix-path-progress d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/></svg><article class="matrix-stage" data-matrix-stage="information" data-matrix-index="01" data-reveal>
           <div class="matrix-stage__node" aria-hidden="true"><span>01</span></div>
           <div class="matrix-stage__content">
             <p class="interface-label">Information / 01</p>
@@ -80,7 +819,7 @@
             <strong class="matrix-question">Where am I?</strong>
           </div>
         </article>
-        <article class="matrix-stage" data-matrix-stage="education" data-reveal>
+        <article class="matrix-stage" data-matrix-stage="education" data-matrix-index="02" data-reveal>
           <div class="matrix-stage__node" aria-hidden="true"><span>02</span></div>
           <div class="matrix-stage__content">
             <p class="interface-label">Education / 02</p>
@@ -90,7 +829,7 @@
             <strong class="matrix-question">What does this mean?</strong>
           </div>
         </article>
-        <article class="matrix-stage" data-matrix-stage="action" data-reveal>
+        <article class="matrix-stage" data-matrix-stage="action" data-matrix-index="03" data-reveal>
           <div class="matrix-stage__node" aria-hidden="true"><span>03</span></div>
           <div class="matrix-stage__content">
             <p class="interface-label">Action / 03</p>
@@ -123,16 +862,33 @@
         </article></div></div>
     </section>
 
-    <section id="story" class="founder section-light section-pad" aria-labelledby="story-title">
-      <div class="container founder__grid"><div class="founder__heading" data-reveal><p class="section-kicker">Why I built this</p><h2 id="story-title" class="section-title">I got tired of waiting.</h2><blockquote>Nobody is coming to save me but me.</blockquote><div class="founder-media" data-media-status="awaiting-original-photography" aria-hidden="true"><span class="founder-media__orbit"></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span class="founder-media__label">Information → Education → Action</span></div></div><div class="founder__copy" data-reveal><p>I got tired of relying on other people to make me feel better.</p><p>So I decided to get informed about my situation. I started educating myself about what I found, asking better questions, and looking for credible information.</p><p>Then came the most important part: taking action.</p><p>The Mindful Matrix didn't come from having all the answers. It came from realizing that I didn't have to wait around for them.</p><p>I could learn. I could ask questions. I could make changes. I could take the next step.</p><div class="founder__philosophy"><strong>Self-care is the real healthcare.</strong><small>A personal philosophy about agency—not a replacement for professional healthcare.</small></div><p class="founder__transition">Now you can too.</p><a class="button button-tertiary" href="library.html">Explore the Library →</a></div></div>
+    <section id="story" class="founder founder--cinematic section-light section-pad" aria-labelledby="story-title">
+      <div class="section-handoff section-handoff--warm-light" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide founder-cinematic">
+        <header class="founder-cinematic__masthead" data-reveal><div><p class="section-kicker">Why I built this</p><h2 id="story-title" class="section-title">I got tired of waiting.</h2></div><p class="founder-cinematic__folio"><span>Origin record</span><strong>01 / 01</strong></p></header>
+        <div class="founder-cinematic__composition">
+          <figure class="founder-media" data-media-status="awaiting-original-photography" data-scroll-depth="0.45" aria-label="A branded editorial artwork area reserved for original founder photography">
+            <span class="founder-media__wash" aria-hidden="true"></span><span class="founder-media__orbit founder-media__orbit--one" aria-hidden="true"></span><span class="founder-media__orbit founder-media__orbit--two" aria-hidden="true"></span><span class="founder-media__trace" aria-hidden="true"></span>
+            <img src="assets/brand/mark-gold.svg" width="64" height="64" alt="">
+            <figcaption><span>The origin story</span><strong>Information → Education → Action</strong></figcaption>
+          </figure>
+          <div class="founder-cinematic__narrative">
+            <blockquote data-reveal><span>The turning point</span>Nobody is coming to save me but me.</blockquote>
+            <div class="founder__copy" data-reveal><p>I got tired of relying on other people to make me feel better.</p><p>So I decided to get informed about my situation. I started educating myself about what I found, asking better questions, and looking for credible information.</p><p>Then came the most important part: taking action.</p><p>The Mindful Matrix didn't come from having all the answers. It came from realizing that I didn't have to wait around for them.</p><p>I could learn. I could ask questions. I could make changes. I could take the next step.</p></div>
+            <div class="founder__philosophy" data-reveal><span class="founder__philosophy-node" aria-hidden="true"></span><div><strong>Self-care is the real healthcare.</strong><small>A personal philosophy about agency—not a replacement for professional healthcare.</small></div></div>
+            <div class="founder-cinematic__action" data-reveal><p class="founder__transition">Now you can too.</p><a class="button button-tertiary" href="library.html">Explore the Library →</a></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="testing" class="testing section-dark section-pad" aria-labelledby="testing-title">
-      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">Get informed</p><h2 id="testing-title" class="section-title">Start with what you can measure.</h2></div><p class="section-copy">Testing is one possible way to become more informed. It is a starting point for asking better questions—not the entire Mindful Matrix philosophy.</p></div><section class="testing-education" aria-labelledby="testing-education-title" data-reveal>
-        <div><p class="interface-label">Understand before you test</p><h3 id="testing-education-title">Learn what an omega-3 blood test can—and can’t—tell you.</h3><p>The testing guide explains what is measured, what can affect a result, and where interpretation stops.</p></div>
-        <a class="button button-tertiary" href="library/should-you-test-your-omega-3-levels.html">Read the testing guide →</a>
-      </section><article class="testing-card" data-reveal>
-        <div class="testing-card__visual"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png" alt="Balance Test Basic Kit packaging" width="560" height="560" loading="eager" decoding="async" fetchpriority="high" data-image-role="official-product-cutout"></div>
+    <section id="testing" class="testing testing--lab section-dark section-pad" aria-labelledby="testing-title">
+      <div class="section-handoff section-handoff--light-dark" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="section-heading-grid testing__heading" data-reveal><div><p class="section-kicker">Get informed</p><h2 id="testing-title" class="section-title">Start with what you can measure.</h2></div><p class="section-copy">Testing is one possible way to become more informed. It is a starting point for asking better questions—not the entire Mindful Matrix philosophy.</p></div><div class="testing-workflow" data-testing-workflow data-reveal>
+        <div class="testing-workflow__track" aria-hidden="true"><span data-workflow-progress></span></div>
+        <ol><li data-workflow-step><span class="testing-workflow__node">01</span><div><strong>Sample</strong><small>Starting point</small></div></li><li data-workflow-step><span class="testing-workflow__node">02</span><div><strong>Measurement</strong><small>A result</small></div></li><li data-workflow-step><span class="testing-workflow__node">03</span><div><strong>Interpretation</strong><small>Context matters</small></div></li><li data-workflow-step><span class="testing-workflow__node">04</span><div><strong>Next step</strong><small>An informed choice</small></div></li></ol>
+      </div><div class="testing-lab"><article class="testing-card" data-reveal>
+        <div class="testing-card__visual"><span class="testing-card__scan" aria-hidden="true"></span><span class="testing-card__orbit testing-card__orbit--one" aria-hidden="true"></span><span class="testing-card__orbit testing-card__orbit--two" aria-hidden="true"></span><span class="testing-card__marker testing-card__marker--one" aria-hidden="true">Sample / 01</span><span class="testing-card__marker testing-card__marker--two" aria-hidden="true">Signal / Ready</span><div class="testing-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png" alt="Balance Test Basic Kit official Zinzino product packaging" width="560" height="560" loading="eager" decoding="async" fetchpriority="high" data-image-role="official-product-cutout"></div></div>
         <div class="testing-card__content">
           <p class="interface-label">Start here / Optional tool</p>
           <h3>Balance Test Basic Kit</h3>
@@ -143,117 +899,57 @@
             <a class="button button-secondary" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="sponsored noopener noreferrer">Product details ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
           </div>
         </div>
-      </article></div>
+      </article><section class="testing-education" aria-labelledby="testing-education-title" data-reveal>
+        <div><p class="interface-label">Understand before you test</p><h3 id="testing-education-title">Learn what an omega-3 blood test can—and can’t—tell you.</h3><p>The testing guide explains what is measured, what can affect a result, and where interpretation stops.</p></div>
+        <a class="button button-tertiary" href="library/should-you-test-your-omega-3-levels.html">Read the testing guide →</a>
+      </section></div></div>
     </section>
 
-    <section id="library" class="library-section section-light section-pad" aria-labelledby="library-title">
-      <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">The Library</p><h2 id="library-title" class="section-title">Understand before you act.</h2></div><p class="section-copy">Learn the why behind the choices you're making.</p></div><div class="library-article-grid" data-library-state="published"><article class="library-article" data-library-article data-reveal>
-        <div class="library-article__visual"><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div></div>
+    <section id="library" class="library-section library-section--terminal section-dark section-pad" aria-labelledby="library-title">
+      <div class="section-handoff section-handoff--dark-green" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="section-heading-grid library-terminal__heading" data-reveal><div><p class="section-kicker">The Library</p><h2 id="library-title" class="section-title">Understand before you act.</h2></div><p class="section-copy">Learn the why behind the choices you're making.</p></div><div class="library-terminal" data-library-terminal data-reveal><div class="library-terminal__bar"><span><i aria-hidden="true"></i> Research archive online</span><span>04 published guides</span><span>Evidence trace enabled</span></div><div class="library-article-grid" data-library-state="published"><article class="library-article" data-library-article data-reveal data-archive-index="01">
+        <div class="library-article__visual"><span class="library-article__index" aria-hidden="true">01</span><span class="library-article__signal" aria-hidden="true"></span><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div><div class="library-article__evidence"><span>Evidence reviewed August 2026</span><strong>05 sources</strong></div></div>
         <div class="library-article__content">
           <p class="interface-label">Omega-3</p><h3>Omega-3: What It Is, What You Can Measure, and What the Numbers Actually Mean</h3><p>Understand ALA, EPA, DHA, the Omega-3 Index, fatty-acid ratios and what blood measurements can—and cannot—tell you.</p>
           <div class="library-article__meta"><span>~9 minutes</span><span>Evidence reviewed August 2026</span><span>Updated August 2026</span></div>
           <a class="button button-tertiary" href="library/omega-3-what-the-numbers-mean.html">Read the guide →</a>
         </div>
-      </article><article class="library-article" data-library-article data-reveal>
-        <div class="library-article__visual"><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div></div>
+      </article><article class="library-article" data-library-article data-reveal data-archive-index="02">
+        <div class="library-article__visual"><span class="library-article__index" aria-hidden="true">02</span><span class="library-article__signal" aria-hidden="true"></span><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div><div class="library-article__evidence"><span>Evidence reviewed August 2026</span><strong>07 sources</strong></div></div>
         <div class="library-article__content">
           <p class="interface-label">Testing</p><h3>Should You Test Your Omega-3 Levels? What a Blood Test Can—and Can’t—Tell You</h3><p>Learn what omega-3 blood tests measure, what can affect a result, and why a number is information—not a diagnosis.</p>
           <div class="library-article__meta"><span>~10 minutes</span><span>Evidence reviewed August 2026</span><span>Updated August 2026</span></div>
           <a class="button button-tertiary" href="library/should-you-test-your-omega-3-levels.html">Read the guide →</a>
         </div>
-      </article><article class="library-article" data-library-article data-reveal>
-        <div class="library-article__visual"><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div></div>
+      </article><article class="library-article" data-library-article data-reveal data-archive-index="03">
+        <div class="library-article__visual"><span class="library-article__index" aria-hidden="true">03</span><span class="library-article__signal" aria-hidden="true"></span><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div><div class="library-article__evidence"><span>Evidence reviewed August 2026</span><strong>06 sources</strong></div></div>
         <div class="library-article__content">
           <p class="interface-label">Omega-3</p><h3>Food vs. Omega-3 Supplements: Where EPA and DHA Actually Come From</h3><p>Understand the difference between ALA, EPA and DHA, where food fits, when supplements may be useful, and why changing a biomarker is not the same as guaranteeing a health outcome.</p>
           <div class="library-article__meta"><span>~10 minutes</span><span>Evidence reviewed August 2026</span><span>Updated August 2026</span></div>
           <a class="button button-tertiary" href="library/food-vs-omega-3-supplements.html">Read the guide →</a>
         </div>
-      </article><article class="library-article" data-library-article data-reveal>
-        <div class="library-article__visual"><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div></div>
+      </article><article class="library-article" data-library-article data-reveal data-archive-index="04">
+        <div class="library-article__visual"><span class="library-article__index" aria-hidden="true">04</span><span class="library-article__signal" aria-hidden="true"></span><div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div><div class="library-article__evidence"><span>Evidence reviewed August 2026</span><strong>07 sources</strong></div></div>
         <div class="library-article__content">
           <p class="interface-label">Foundations</p><h3>How to Read a Supplement Label Without Overreading It</h3><p>Learn what a Supplement Facts panel can establish, what claims and disclaimers do not prove, and how to compare serving size, amounts, ingredients and quality signals.</p>
           <div class="library-article__meta"><span>~9 minutes</span><span>Evidence reviewed August 2026</span><span>Updated August 2026</span></div>
           <a class="button button-tertiary" href="library/how-to-read-a-supplement-label.html">Read the guide →</a>
         </div>
-      </article></div><div class="library-transition" data-reveal><p>Keep learning—or explore tools only when there is a clear reason.</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
+      </article></div></div><div class="library-transition" data-reveal><p>Keep learning—or explore tools only when there is a clear reason.</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
     </section>
 
-    <section id="shelf" class="shelf section-dark section-pad" aria-labelledby="shelf-title">
-      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">Action</p><h2 id="shelf-title" class="section-title">Tools with a reason for being here.</h2></div><p class="section-copy">The Shelf collects optional tools selected for a specific reason. Read why an item is here before deciding whether it belongs in your next step.</p></div><div class="shelf-grid"><article class="shelf-card" data-product-id="balance-basic-kit" data-environment="balance" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><img class="shelf-card__artwork artwork-stage__background" src="assets/artwork/shelf/balance-test-basic-kit-cinematic.webp" alt="" width="1024" height="1536" loading="lazy" decoding="async" data-artwork-state="ready"><div class="shelf-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png" alt="Balance Test Basic Kit packaging" width="560" height="560" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">Start here</p>
-          <h3>Balance Test Basic Kit</h3><p>The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>The one most people begin with.</p></div>
-          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465" target="_blank" rel="sponsored noopener noreferrer">Get the kit ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article>
-        <article class="shelf-card" data-product-id="home-health-tests" data-environment="test" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balance-test-309000.png" alt="Representative BalanceTest packaging from the Zinzino home health tests collection" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">Test</p>
-          <h3>Home health tests</h3><p>Dried blood spot, taken at home, posted to the lab</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>A direct path to the current home health tests collection.</p></div>
-          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests" target="_blank" rel="sponsored noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article>
-        <article class="shelf-card" data-product-id="omega-kits" data-environment="omega" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/balanceoil-premium-x2-kit-with-test-910886.png" alt="Representative BalanceOil+ Premium x2 Kit with Test from the Zinzino omega kits collection" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">Omega</p>
-          <h3>All omega kits</h3><p>Premium, AquaX, Vegan and Essent+ options</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>A direct path to the current omega kit collection.</p></div>
-          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits" target="_blank" rel="sponsored noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article>
-        <article class="shelf-card" data-product-id="gut-health" data-environment="gut" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/zinobiotic-plus-301390.png" alt="Representative ZinoBiotic+ packaging from the Zinzino gut health collection" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">Gut</p>
-          <h3>Gut Health</h3><p>Gut health products in the Zinzino shop</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>A direct path to the current gut health collection.</p></div>
-          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements" target="_blank" rel="sponsored noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article>
-        <article class="shelf-card" data-product-id="x-gold" data-environment="gold" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/x-gold-plus-302790.png" alt="Zinzino X Gold+ 250 ml packaging" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">Turmeric</p>
-          <h3>X Gold+</h3><p>X Gold+ in the Zinzino shop</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>A direct path to the current product destination.</p></div>
-          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790" target="_blank" rel="sponsored noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article>
-        <article class="shelf-card" data-product-id="full-shop" data-environment="shop" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><img class="shelf-card__cutout" src="assets/product-cutouts/zinzino/revoo-302401.png" alt="Representative R.E.V.O.O bottles from the Zinzino shop" width="650" height="650" loading="lazy" decoding="async" data-image-role="official-product-cutout"></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">All</p>
-          <h3>Full shop</h3><p>Gut, immune, skin and weight management</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>The broadest path to the current Zinzino shop.</p></div>
-          <a class="shelf-card__link" href="https://www.zinzino.com/shop/2021428066/us/en-us/products/shop" target="_blank" rel="sponsored noopener noreferrer">Browse ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article>
-        <article class="shelf-card" data-product-id="biolimitless" data-environment="partner" data-reveal>
-        <div class="shelf-card__visual artwork-stage"><span class="shelf-card__artwork artwork-stage__background" data-artwork-state="placeholder" aria-hidden="true"></span><div class="shelf-card__product"><picture><source type="image/webp" srcset="img/responsive/biolimitless-512.webp 512w, img/responsive/biolimitless-1024.webp 1024w" sizes="(max-width: 48rem) 90vw, 42vw"><img src="img/biolimitless.webp" alt="BioLimitless" width="1024" height="529" loading="lazy" decoding="async"></picture></div></div>
-        <div class="shelf-card__content">
-          <p class="interface-label">Library</p>
-          <h3>BioLimitless</h3><p>Academy, library and formulas — my partner page</p>
-          <div class="shelf-card__why"><span>Why it’s here</span><p>The current destination for the BioLimitless partner resource.</p></div>
-          <a class="shelf-card__link" href="https://biolimitless.com/me/matrix/" target="_blank" rel="sponsored noopener noreferrer">Visit ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
-        </div>
-      </article></div></div>
+    <section id="standards" class="standards standards--matrix section-warm section-pad" aria-labelledby="standards-title">
+      <div class="section-handoff section-handoff--green-warm" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="standards__heading" data-reveal><div><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">You deserve to know why.</h2></div><p>Open each principle to inspect the standard behind the signal.</p></div><div class="standards-system" data-standards-system><div class="standards-system__core" aria-hidden="true"><span></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><strong>Editorial<br>integrity</strong></div><ol class="standards-list"><li class="standards-node" data-standard-node data-standard-index="01"><details open><summary><span class="standards-node__signal" aria-hidden="true"></span><span class="standards-node__index">01</span><strong>We explain our reasoning</strong><span class="standards-node__toggle" aria-hidden="true"></span></summary><p>If we recommend something, we tell you why.</p></details></li>
+        <li class="standards-node" data-standard-node data-standard-index="02"><details><summary><span class="standards-node__signal" aria-hidden="true"></span><span class="standards-node__index">02</span><strong>We show our sources</strong><span class="standards-node__toggle" aria-hidden="true"></span></summary><p>Whenever possible, education should link back to credible evidence.</p></details></li>
+        <li class="standards-node" data-standard-node data-standard-index="03"><details><summary><span class="standards-node__signal" aria-hidden="true"></span><span class="standards-node__index">03</span><strong>We separate evidence from opinion</strong><span class="standards-node__toggle" aria-hidden="true"></span></summary><p>What research suggests and what we personally think should not be presented as the same thing.</p></details></li>
+        <li class="standards-node" data-standard-node data-standard-index="04"><details><summary><span class="standards-node__signal" aria-hidden="true"></span><span class="standards-node__index">04</span><strong>We disclose our partnerships</strong><span class="standards-node__toggle" aria-hidden="true"></span></summary><p>If we can financially benefit from something, visitors should know.</p></details></li>
+        <li class="standards-node" data-standard-node data-standard-index="05"><details><summary><span class="standards-node__signal" aria-hidden="true"></span><span class="standards-node__index">05</span><strong>We tell you when we don't know</strong><span class="standards-node__toggle" aria-hidden="true"></span></summary><p>Uncertainty should not be hidden.</p></details></li></ol></div><p class="standards-statement" data-reveal><span>Trust isn't something we claim.</span><span>It's something we earn.</span></p></div>
     </section>
 
-    <section id="standards" class="standards section-warm section-pad" aria-labelledby="standards-title">
-      <div class="container"><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">You deserve to know why.</h2><ol class="standards-list" data-reveal><li><span>01</span><div><h3>We explain our reasoning</h3><p>If we recommend something, we tell you why.</p></div></li>
-        <li><span>02</span><div><h3>We show our sources</h3><p>Whenever possible, education should link back to credible evidence.</p></div></li>
-        <li><span>03</span><div><h3>We separate evidence from opinion</h3><p>What research suggests and what we personally think should not be presented as the same thing.</p></div></li>
-        <li><span>04</span><div><h3>We disclose our partnerships</h3><p>If we can financially benefit from something, visitors should know.</p></div></li>
-        <li><span>05</span><div><h3>We tell you when we don't know</h3><p>Uncertainty should not be hidden.</p></div></li></ol><p class="standards-statement" data-reveal><span>Trust isn't something we claim.</span><span>It's something we earn.</span></p></div>
-    </section>
-
-    <section id="transparency" class="transparency section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
-      <div class="container-reading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">Transparency</h2><p class="transparency__disclosure">Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York.</p><p class="transparency__standard">That relationship doesn't change our standard: understand first, decide second.</p></div>
+    <section id="transparency" class="transparency transparency--map section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
+      <div class="section-handoff section-handoff--warm-light" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><header class="transparency__heading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">Transparency</h2></header><div class="transparency-map" data-reveal><div class="transparency-map__node transparency-map__node--visitor"><span>01 / Visitor</span><strong>Your decision</strong></div><span class="transparency-map__connector transparency-map__connector--one" aria-hidden="true"></span><div class="transparency-map__node transparency-map__node--matrix"><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span>02 / The Mindful Matrix</span><strong>Education + context</strong></div><span class="transparency-map__connector transparency-map__connector--two" aria-hidden="true"></span><div class="transparency-map__node transparency-map__node--partner"><span>03 / Partner site</span><strong>External checkout</strong></div><div class="transparency-map__disclosure"><span>Relationship record</span><p class="transparency__disclosure">Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York.</p></div></div><p class="transparency__standard" data-reveal>That relationship doesn't change our standard: understand first, decide second.</p></div>
     </section>
 
     <section id="start" class="final-cta section-dark" aria-labelledby="final-title">
@@ -264,7 +960,7 @@
   <footer class="site-footer section-dark">
     <div class="footer-grid container-wide">
       <div><a href="index.html" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">Information → Education → Action</p></div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="start.html">Start here</a><a href="library.html">The Library</a><a href="index.html#shelf">The Shelf</a><a href="index.html#story">Our story</a><a href="index.html#transparency">Transparency</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="start.html">Start here</a><a href="library.html">The Library</a><a href="index.html#shelf">Product Universe</a><a href="shop.html">All products</a><a href="index.html#story">Our story</a><a href="index.html#transparency">Transparency</a></nav>
       <div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="https://www.instagram.com/the_mindful.matrix/" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></nav><p class="fine">Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York.</p><p class="copyright">© 2026 The Mindful Matrix</p></div>
     </div>
   </footer>

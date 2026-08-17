@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{DOCUMENT_HEAD}}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {{SHARED_HEADER}}
+
+  <main id="main-content" tabindex="-1">
+    <section class="shop-hero section-dark" aria-labelledby="shop-title">
+      <div class="shop-hero__field" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container-wide shop-hero__grid">
+        <div data-reveal>
+          <p class="section-kicker">The Product Universe</p>
+          <h1 id="shop-title">Every verified product.<br>One clear system.</h1>
+          <p class="shop-hero__copy">Browse by intent, compare official product presentations, and leave for the manufacturer’s site only when you choose.</p>
+        </div>
+        <div class="shop-hero__status" data-reveal>
+          <strong>{{SHOP_COUNT}}</strong>
+          <span>verified individual products</span>
+          <small>Current US catalog · checked {{VERIFIED_DATE}}</small>
+        </div>
+      </div>
+      <div class="shop-hero__path" aria-hidden="true"></div>
+    </section>
+
+    <section class="shop-navigation section-dark" aria-labelledby="shop-navigation-title">
+      <div class="container-wide">
+        <p class="interface-label" id="shop-navigation-title">Navigate by intent</p>
+        <nav class="shop-intent-nav" aria-label="Product intent categories">{{SHOP_INTENT_NAV}}</nav>
+      </div>
+    </section>
+
+    <div class="shop-catalog">
+      {{SHOP_GROUPS}}
+    </div>
+
+    <section class="shop-fallbacks section-light section-pad" aria-labelledby="shop-fallbacks-title">
+      <div class="container-wide">
+        <div class="section-heading-grid" data-reveal>
+          <div><p class="section-kicker">Still looking?</p><h2 id="shop-fallbacks-title" class="section-title">Open the broader destinations.</h2></div>
+          <p class="section-copy">These verified collection and partner routes remain available as fallbacks. They do not replace the individual product records above.</p>
+        </div>
+        <div class="shop-fallbacks__grid">{{SHOP_FALLBACKS}}</div>
+      </div>
+    </section>
+
+    <section class="shop-disclosure section-dark">
+      <div class="container shop-disclosure__grid">
+        <p class="interface-label">Commercial separation</p>
+        <p>{{DISCLOSURE}}</p>
+        <a class="button button-secondary" href="index.html#transparency">See how the relationship works →</a>
+      </div>
+    </section>
+  </main>
+
+  {{SHARED_FOOTER}}
+</body>
+</html>

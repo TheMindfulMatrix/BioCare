@@ -9,15 +9,52 @@
 
   <main id="main-content" tabindex="-1">
     <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
+      <canvas class="matrix-field" data-matrix-field aria-hidden="true"></canvas>
+      <div class="hero-biome" aria-hidden="true"><span class="hero-biome__plane hero-biome__plane--one" data-parallax-depth="0.35"></span><span class="hero-biome__plane hero-biome__plane--two" data-parallax-depth="0.7"></span><span class="hero-biome__signal hero-biome__signal--one" data-parallax-depth="1.1"></span><span class="hero-biome__signal hero-biome__signal--two" data-parallax-depth="0.55"></span></div>
       <div class="home-hero__grid container-wide">
         <div class="home-hero__content" data-reveal>
           <p class="section-kicker">{{PHILOSOPHY}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__support">{{HERO_SUPPORT}}</p><p class="home-hero__copy">{{HERO_COPY}}</p>
-          <div class="button-row"><a class="button button-primary" href="start.html">Start your journey →</a><a class="button button-secondary" href="#matrix">Explore the Matrix ↓</a></div>
+          {{HERO_ACTIONS}}
         </div>
-        <div class="home-hero__visual" aria-hidden="true" data-reveal>
-          <span class="matrix-orbit matrix-orbit--outer"></span><span class="matrix-orbit matrix-orbit--inner"></span><span class="matrix-orbit matrix-orbit--trace"></span>
-          <svg class="matrix-path" viewBox="0 0 600 600"><path class="matrix-path__ambient" d="M-54 450C95 142 351 42 664 182"/><path class="path-draw" d="M44 378C137 94 448 90 550 292S376 563 123 494"/><circle class="matrix-path__node" cx="44" cy="378" r="8"/><circle class="matrix-path__node matrix-path__node--bio" cx="550" cy="292" r="8"/><circle class="matrix-path__node" cx="123" cy="494" r="8"/><circle class="matrix-path__marker" cx="355" cy="95" r="4"/><circle class="matrix-path__marker matrix-path__marker--bio" cx="418" cy="527" r="4"/></svg>
-          <img class="hero-mark" src="assets/brand/mark-dark.svg" width="64" height="64" alt=""><span class="hero-data hero-data--one">Information / 01</span><span class="hero-data hero-data--two">Education / 02</span><span class="hero-data hero-data--three">Action / 03</span>
+        <div class="home-hero__visual" data-reveal>
+          <div class="matrix-volume" aria-hidden="true"><span></span><span></span><span></span></div>
+          {{HERO_PRODUCT}}
+          <span class="hero-data hero-data--one" aria-hidden="true">Input / Personal data</span><span class="hero-data hero-data--two" aria-hidden="true">Signal / Context</span><span class="hero-data hero-data--three" aria-hidden="true">Output / Next step</span>
+        </div>
+      </div>
+      <div class="hero-status" aria-hidden="true"><span>Live matrix</span><span>Pointer reactive</span><span>Information → Education → Action</span></div>
+      <div class="hero-system-bridge" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><defs><linearGradient id="hero-bridge-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".52" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="hero-system-bridge__ghost" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><path class="hero-system-bridge__live" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><circle cx="1095" cy="82" r="5"/><circle cx="1265" cy="138" r="4"/></svg></div>
+    </section>
+
+    <section id="shelf" class="product-universe-section section-dark section-pad" aria-labelledby="shelf-title">
+      <div class="universe-entry-path" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container-wide">
+        <div class="product-universe__heading" data-reveal>
+          <div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div>
+          <div class="product-universe__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div>
+        </div>
+        <div class="product-universe" data-product-universe data-active-intent="test-measure" data-active-environment="signal">
+          <svg class="product-universe__pathways" viewBox="0 0 1200 760" aria-hidden="true"><defs><linearGradient id="universe-path-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path d="M84 118 C280 80 350 260 600 378 S930 680 1112 622"/><path d="M82 632 C278 684 370 502 600 378 S930 80 1114 132"/><circle cx="600" cy="378" r="208"/><circle cx="600" cy="378" r="286"/></svg>
+          <nav class="product-universe__intents" aria-label="Choose a product intent" data-reveal>{{UNIVERSE_INTENTS}}</nav>
+          <div class="product-universe__stage" data-reveal>
+            <div class="product-universe__field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <span class="product-universe__loading" aria-hidden="true">Loading official image</span>
+            <div class="product-universe__products" id="universe-products">{{UNIVERSE_PRODUCTS}}</div>
+            <p class="visually-hidden" data-universe-status aria-live="polite" aria-atomic="true"></p>
+            <div class="product-universe__controls" role="group" aria-label="Browse products in the selected category">
+              <button type="button" data-universe-step="-1" aria-label="Previous product">←</button>
+              <p><span data-universe-position>01</span><i aria-hidden="true">/</i><span data-universe-total>01</span></p>
+              <button type="button" data-universe-step="1" aria-label="Next product">→</button>
+            </div>
+          </div>
+          <aside class="product-universe__console" aria-label="Products in the selected category" data-reveal>
+            <p class="interface-label">Active intent / <span data-universe-intent-index>01</span></p>
+            <h3 data-universe-intent-name>Test &amp; Measure</h3>
+            <p data-universe-intent-description>Start with a measurement you can inspect and discuss in context.</p>
+            <div class="product-universe__roster" data-universe-roster>{{UNIVERSE_ROSTER}}</div>
+            <a class="button button-secondary product-universe__shop-link" href="shop.html">Explore all {{PRODUCT_COUNT}} products →</a>
+          </aside>
+          <div class="product-universe__telemetry" aria-hidden="true"><span>Official imagery</span><span>{{PRODUCT_COUNT}} verified SKUs</span><span>Partner-coded routes</span><span>No generated packaging</span></div>
         </div>
       </div>
     </section>
@@ -27,35 +64,51 @@
     </section>
 
     <section id="matrix" class="matrix-section section-dark section-pad" aria-labelledby="matrix-title">
-      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">{{MATRIX_HEADING}}</h2><p class="section-copy">{{MATRIX_INTRO}}</p></div><div class="matrix-sequence"><div class="matrix-spine" aria-hidden="true"><span></span><span></span><span></span></div>{{MATRIX_STAGES}}</div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>{{MATRIX_CONCLUSION}}</h3><p>{{MATRIX_CONCLUSION_COPY}}</p></div></div></div>
+      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">{{MATRIX_HEADING}}</h2><p class="section-copy">{{MATRIX_INTRO}}</p></div><div class="matrix-sequence" data-matrix-sequence><svg class="matrix-pathway" viewBox="0 0 260 1200" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="matrix-path-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="matrix-pathway__base" d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/><path class="matrix-pathway__progress" data-matrix-path-progress d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/></svg>{{MATRIX_STAGES}}</div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>{{MATRIX_CONCLUSION}}</h3><p>{{MATRIX_CONCLUSION_COPY}}</p></div></div></div>
     </section>
 
     <section id="choose-path" class="choose-path section-warm section-pad" aria-labelledby="choose-title">
       <div class="container"><p class="section-kicker">Choose your path</p><h2 id="choose-title" class="section-title">{{CHOOSE_HEADING}}</h2><div class="journey-grid" data-reveal>{{PATH_CARDS}}</div></div>
     </section>
 
-    <section id="story" class="founder section-light section-pad" aria-labelledby="story-title">
-      <div class="container founder__grid"><div class="founder__heading" data-reveal><p class="section-kicker">{{FOUNDER_LABEL}}</p><h2 id="story-title" class="section-title">{{FOUNDER_HEADING}}</h2><blockquote>{{FOUNDER_STATEMENT}}</blockquote><div class="founder-media" data-media-status="awaiting-original-photography" aria-hidden="true"><span class="founder-media__orbit"></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span class="founder-media__label">Information → Education → Action</span></div></div><div class="founder__copy" data-reveal>{{FOUNDER_PARAGRAPHS}}<div class="founder__philosophy"><strong>{{FOUNDER_PHILOSOPHY}}</strong><small>{{FOUNDER_CONTEXT}}</small></div><p class="founder__transition">{{FOUNDER_TRANSITION}}</p><a class="button button-tertiary" href="library.html">Explore the Library →</a></div></div>
+    <section id="story" class="founder founder--cinematic section-light section-pad" aria-labelledby="story-title">
+      <div class="section-handoff section-handoff--warm-light" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide founder-cinematic">
+        <header class="founder-cinematic__masthead" data-reveal><div><p class="section-kicker">{{FOUNDER_LABEL}}</p><h2 id="story-title" class="section-title">{{FOUNDER_HEADING}}</h2></div><p class="founder-cinematic__folio"><span>Origin record</span><strong>01 / 01</strong></p></header>
+        <div class="founder-cinematic__composition">
+          <figure class="founder-media" data-media-status="awaiting-original-photography" data-scroll-depth="0.45" aria-label="A branded editorial artwork area reserved for original founder photography">
+            <span class="founder-media__wash" aria-hidden="true"></span><span class="founder-media__orbit founder-media__orbit--one" aria-hidden="true"></span><span class="founder-media__orbit founder-media__orbit--two" aria-hidden="true"></span><span class="founder-media__trace" aria-hidden="true"></span>
+            <img src="assets/brand/mark-gold.svg" width="64" height="64" alt="">
+            <figcaption><span>The origin story</span><strong>Information → Education → Action</strong></figcaption>
+          </figure>
+          <div class="founder-cinematic__narrative">
+            <blockquote data-reveal><span>The turning point</span>{{FOUNDER_STATEMENT}}</blockquote>
+            <div class="founder__copy" data-reveal>{{FOUNDER_PARAGRAPHS}}</div>
+            <div class="founder__philosophy" data-reveal><span class="founder__philosophy-node" aria-hidden="true"></span><div><strong>{{FOUNDER_PHILOSOPHY}}</strong><small>{{FOUNDER_CONTEXT}}</small></div></div>
+            <div class="founder-cinematic__action" data-reveal><p class="founder__transition">{{FOUNDER_TRANSITION}}</p><a class="button button-tertiary" href="library.html">Explore the Library →</a></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="testing" class="testing section-dark section-pad" aria-labelledby="testing-title">
-      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title" class="section-title">{{TESTING_HEADING}}</h2></div><p class="section-copy">{{TESTING_COPY}}</p></div>{{TESTING_EDUCATION}}{{TESTING_PRODUCT}}</div>
+    <section id="testing" class="testing testing--lab section-dark section-pad" aria-labelledby="testing-title">
+      <div class="section-handoff section-handoff--light-dark" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="section-heading-grid testing__heading" data-reveal><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title" class="section-title">{{TESTING_HEADING}}</h2></div><p class="section-copy">{{TESTING_COPY}}</p></div>{{TESTING_WORKFLOW}}<div class="testing-lab">{{TESTING_PRODUCT}}{{TESTING_EDUCATION}}</div></div>
     </section>
 
-    <section id="library" class="library-section section-light section-pad" aria-labelledby="library-title">
-      <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{LIBRARY_LABEL}}</p><h2 id="library-title" class="section-title">{{LIBRARY_HEADING}}</h2></div><p class="section-copy">{{LIBRARY_COPY}}</p></div>{{LIBRARY_BODY}}<div class="library-transition" data-reveal><p>{{LIBRARY_TRANSITION}}</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
+    <section id="library" class="library-section library-section--terminal section-dark section-pad" aria-labelledby="library-title">
+      <div class="section-handoff section-handoff--dark-green" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="section-heading-grid library-terminal__heading" data-reveal><div><p class="section-kicker">{{LIBRARY_LABEL}}</p><h2 id="library-title" class="section-title">{{LIBRARY_HEADING}}</h2></div><p class="section-copy">{{LIBRARY_COPY}}</p></div><div class="library-terminal" data-library-terminal data-reveal><div class="library-terminal__bar"><span><i aria-hidden="true"></i> Research archive online</span><span>{{LIBRARY_COUNT}}</span><span>Evidence trace enabled</span></div>{{LIBRARY_BODY}}</div><div class="library-transition" data-reveal><p>{{LIBRARY_TRANSITION}}</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
     </section>
 
-    <section id="shelf" class="shelf section-dark section-pad" aria-labelledby="shelf-title">
-      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{SHELF_LABEL}}</p><h2 id="shelf-title" class="section-title">{{SHELF_HEADING}}</h2></div><p class="section-copy">{{SHELF_COPY}}</p></div><div class="shelf-grid">{{SHELF_CARDS}}</div></div>
+    <section id="standards" class="standards standards--matrix section-warm section-pad" aria-labelledby="standards-title">
+      <div class="section-handoff section-handoff--green-warm" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="standards__heading" data-reveal><div><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">{{STANDARDS_HEADING}}</h2></div><p>Open each principle to inspect the standard behind the signal.</p></div><div class="standards-system" data-standards-system><div class="standards-system__core" aria-hidden="true"><span></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><strong>Editorial<br>integrity</strong></div><ol class="standards-list">{{STANDARDS_LIST}}</ol></div><p class="standards-statement" data-reveal>{{STANDARDS_STATEMENT}}</p></div>
     </section>
 
-    <section id="standards" class="standards section-warm section-pad" aria-labelledby="standards-title">
-      <div class="container"><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">{{STANDARDS_HEADING}}</h2><ol class="standards-list" data-reveal>{{STANDARDS_LIST}}</ol><p class="standards-statement" data-reveal>{{STANDARDS_STATEMENT}}</p></div>
-    </section>
-
-    <section id="transparency" class="transparency section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
-      <div class="container-reading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">{{TRANSPARENCY_HEADING}}</h2><p class="transparency__disclosure">{{DISCLOSURE}}</p><p class="transparency__standard">{{TRANSPARENCY_COPY}}</p></div>
+    <section id="transparency" class="transparency transparency--map section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
+      <div class="section-handoff section-handoff--warm-light" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><header class="transparency__heading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">{{TRANSPARENCY_HEADING}}</h2></header><div class="transparency-map" data-reveal><div class="transparency-map__node transparency-map__node--visitor"><span>01 / Visitor</span><strong>Your decision</strong></div><span class="transparency-map__connector transparency-map__connector--one" aria-hidden="true"></span><div class="transparency-map__node transparency-map__node--matrix"><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span>02 / The Mindful Matrix</span><strong>Education + context</strong></div><span class="transparency-map__connector transparency-map__connector--two" aria-hidden="true"></span><div class="transparency-map__node transparency-map__node--partner"><span>03 / Partner site</span><strong>External checkout</strong></div><div class="transparency-map__disclosure"><span>Relationship record</span><p class="transparency__disclosure">{{DISCLOSURE}}</p></div></div><p class="transparency__standard" data-reveal>{{TRANSPARENCY_COPY}}</p></div>
     </section>
 
     <section id="start" class="final-cta section-dark" aria-labelledby="final-title">

@@ -4,11 +4,13 @@ This repository is a dependency-free static site published under the GitHub Page
 
 ## Content model
 
-- `content/site.json` is the source of truth for site copy, disclosures, product metadata, images, and verified destinations.
+- `content/site.json` is the source of truth for site copy, disclosures, page metadata, and brand relationships.
+- `content/catalog.json` is the single product source of truth. It records the six visitor-intent categories, 36 verified Zinzino products, exact SKUs, official public pages, partner-coded destinations, manufacturer catalog descriptions, formats, source/cutout paths, and broader fallback destinations.
+- The homepage Product Universe and generated `shop.html` both read from that catalog. Product pricing is intentionally excluded.
 - Each product's `artwork` object reserves a stable Shelf background slot. Its `environment` selects a low-cost decorative treatment, while a verified `cutout` remains a separate foreground image. Keep `artwork.src` null until approved original editorial artwork, dimensions, and crops are supplied.
 - `content/library.json` is the single source of truth for Library categories, the article schema, publication status, and article records. An empty collection renders the visitor-facing coming-soon state.
-- `templates/index.html`, `templates/library.html`, `templates/start.html`, and `templates/article.html` contain page structure only. Shared navigation, footer, and metadata markup are generated centrally.
-- `scripts/build.py` produces `index.html`, `library.html`, `start.html`, published-only `library/<slug>.html` files, `robots.txt`, and `sitemap.xml` using only Python's standard library. Draft records are never emitted as public pages or included in the sitemap.
+- `templates/index.html`, `templates/shop.html`, `templates/library.html`, `templates/start.html`, and `templates/article.html` contain page structure only. Shared navigation, footer, and metadata markup are generated centrally.
+- `scripts/build.py` produces `index.html`, `shop.html`, `library.html`, `start.html`, published-only `library/<slug>.html` files, `robots.txt`, and `sitemap.xml` using only Python's standard library. Draft records are never emitted as public pages or included in the sitemap.
 - `img/responsive/` contains optimized WebP derivatives; the original `img/` files remain fallbacks and source assets.
 
 Do not edit generated page content in root HTML files. Change the content model or templates, then regenerate the site.
@@ -46,6 +48,8 @@ Generated public pages include unique canonical URLs, Open Graph and Twitter met
 
 Immutable manufacturer downloads belong in `assets/source-products/`. Normalized transparent foregrounds belong in `assets/product-cutouts/`; never write processed files back into the source folder.
 
+The V2.3 catalog sources live under `assets/source-products/zinzino/catalog/` with a manifest-style `provenance.json`. Every added product image is the official transparent manufacturer PNG and is copied byte-for-byte to its production foreground path; the catalog points to both layers explicitly.
+
 The reusable cutout tool accepts separate input and output folders and defaults to a 560 × 560 transparent PNG with a 6% margin:
 
 ```text
@@ -66,4 +70,6 @@ python scripts/cutout.py assets/source-products/zinzino/balance-test-basic-kit a
 - `assets/css/tokens.css` defines contrast-safe dark, light, and warm environments; display, body, and data typography; layout; spacing; shape; focus; and motion roles.
 - `assets/brand/` contains replaceable SVG lockups, standalone mark variants, a single-color gold mark, and the favicon.
 - `assets/css/site.css` contains reusable navigation, button, journey, data, product, Library, pathway, and destination patterns.
+- The homepage Matrix field is progressively enhanced by `assets/js/enhancements.js` using a dependency-free projected 3D canvas. It is decorative, pointer-reactive, pauses when offscreen or hidden, and renders a static frame when reduced motion is requested.
+- `site.metadata.assetVersion` provides deterministic cache-busting for CSS and JavaScript releases on GitHub Pages.
 - The generated root pages are the homepage, Library landing page, and Start Here orientation. Published Library records are generated as evidence-forward guides; draft records remain private to the content model and preview workflow.

@@ -123,7 +123,7 @@ def validate_content(site: dict, library: dict) -> None:
 
     metadata = site.get("site", {}).get("metadata", {})
     check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrix.github.io/BioCare/", "Canonical base must preserve the verified /BioCare/ GitHub Pages URL")
-    check(set(metadata.get("pages", {})) == {"home", "library", "start"}, "Home, Library and Start metadata are required")
+    check(set(metadata.get("pages", {})) == {"home", "library", "start", "shop"}, "Home, Library, Start and Shop metadata are required")
     social_image = metadata.get("socialImage", {})
     social_image_path = ROOT / social_image.get("src", "missing")
     check(social_image_path.is_file(), "Default social preview image is required")
@@ -229,44 +229,69 @@ def validate_content(site: dict, library: dict) -> None:
             check(hero.get("alt") is not None, f"{label}: hero image alt behavior required")
             check(bool(hero.get("width") and hero.get("height")), f"{label}: hero dimensions required")
 
+    catalog = site.get("catalog", {})
     partner_id = site.get("affiliate", {}).get("zinzinoPartnerId")
+    check(catalog.get("affiliate", {}).get("zinzinoPartnerId") == partner_id == "2021428066", "Catalog and site affiliate identifiers must match the verified partner ID")
+    intents = catalog.get("intents", [])
+    intent_ids = [intent.get("id") for intent in intents]
+    check(intent_ids == ["test-measure", "omega-nutrition", "gut-digestion", "daily-wellness", "performance-recovery", "healthy-aging"], "Product intents must preserve the approved six-part visitor taxonomy")
+    intent_names = [intent.get("name") for intent in intents]
+    check(intent_names == ["Test & Measure", "Omega & Nutrition", "Gut & Digestion", "Daily Wellness", "Active Nutrition & Tools", "Skin & Collagen"], "Visitor-facing product taxonomy must preserve the neutral release-candidate labels")
+    check(len({product.get("sku") for product in products}) == len(products), "Verified product SKUs must be unique")
+    check(len({product.get("destination") for product in products}) == len(products), "Verified individual product destinations must be unique")
+    check(len({product.get("cutout", {}).get("sourceAsset") for product in products}) == len(products), "Official product source assets must be unique")
+    check("$" not in json.dumps(products, ensure_ascii=False), "Unapproved pricing must not enter the verified product catalog")
+    legacy_destinations = {
+        "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
+        "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests",
+        "https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/balance-supplements-kits",
+        "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements",
+        "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/gut-health-supplements/302790",
+        "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop",
+        "https://biolimitless.com/me/matrix/",
+    }
+    current_destinations = {product.get("destination") for product in products}
+    current_destinations.update(item.get("destination") for item in catalog.get("fallbackDestinations", []))
+    check(legacy_destinations.issubset(current_destinations), "All seven previously verified commercial destinations must remain intact")
     for product in products:
         label = product.get("id", "unknown")
-        for field in ("id", "name", "category", "description", "whyItsHere", "cta", "destination", "image", "artwork"):
+        for field in ("id", "name", "manufacturer", "sku", "intent", "category", "productKind", "purchaseModel", "description", "descriptionSource", "whyItsHere", "variantGroup", "variantLabel", "officialProductPage", "cta", "destination", "cutout", "artwork"):
             check(bool(product.get(field)), f"{label}: missing {field}")
+        check("verified" not in product.get("whyItsHere", "").lower(), f"{label}: Why It's Here should provide product context rather than verification boilerplate")
         check(bool(product.get("environment")), f"{label}: decorative Shelf environment is required")
+        check(product.get("intent") in intent_ids, f"{label}: unknown product intent")
+        check(product.get("manufacturer") == "Zinzino", f"{label}: manufacturer must remain explicit")
+        check(product.get("sku") in product.get("officialProductPage", ""), f"{label}: official product page must contain the exact SKU")
+        check(urlparse(product.get("officialProductPage", "")).scheme == "https", f"{label}: official product page must use HTTPS")
         destination = product.get("destination", "")
         check(urlparse(destination).scheme == "https", f"{label}: destination must use HTTPS")
         if "zinzino.com" in destination:
             check(f"/shop/{partner_id}/" in destination, f"{label}: Zinzino partner ID mismatch")
-        image = product.get("image", {})
-        check((ROOT / image.get("src", "missing")).is_file(), f"{label}: missing image {image.get('src')}")
-        source = Path(image.get("src", "missing"))
-        widths = [280, 560] if image.get("width") == 560 else [512, 1024]
-        for width in widths:
-            responsive = ROOT / "img" / "responsive" / f"{source.stem}-{width}.webp"
-            check(responsive.is_file(), f"{label}: missing responsive image {responsive.relative_to(ROOT)}")
-        check(bool(image.get("alt")), f"{label}: product image requires alt text")
-        check(bool(image.get("width") and image.get("height")), f"{label}: image dimensions required")
         cutout = product.get("cutout")
         if cutout:
             cutout_path = ROOT / cutout.get("src", "missing")
             source_path = ROOT / cutout.get("sourceAsset", "missing")
             check(cutout_path.is_file(), f"{label}: missing product cutout")
+            check(bool(cutout.get("alt")), f"{label}: official product cutout requires alt text")
             check(bool(cutout.get("width") and cutout.get("height")), f"{label}: cutout dimensions required")
             check(source_path.is_file(), f"{label}: missing immutable cutout source")
             check(cutout_path.resolve() != source_path.resolve(), f"{label}: official source and production cutout must remain separate files")
+            check(product.get("sku") in cutout.get("sourceUrl", ""), f"{label}: official image URL must contain the exact SKU")
             if cutout_path.is_file():
                 check(png_dimensions(cutout_path) == (cutout.get("width"), cutout.get("height")), f"{label}: cutout dimensions do not match its PNG")
             if source_path.is_file():
-                provenance_path = source_path.parent / "provenance.json"
+                provenance_path = ROOT / cutout.get("provenance", source_path.parent / "provenance.json")
                 check(provenance_path.is_file(), f"{label}: official source requires provenance.json")
                 if provenance_path.is_file():
                     try:
-                        provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+                        provenance_payload = json.loads(provenance_path.read_text(encoding="utf-8"))
                     except json.JSONDecodeError as error:
                         check(False, f"{label}: invalid provenance JSON: {error}")
-                        provenance = {}
+                        provenance_payload = {}
+                    if isinstance(provenance_payload.get("assets"), list):
+                        provenance = next((item for item in provenance_payload["assets"] if item.get("downloaded_filename") == source_path.name), {})
+                    else:
+                        provenance = provenance_payload
                     expected_dimensions = provenance.get("pixel_dimensions", {})
                     check(provenance.get("direct_from_zinzino") is True, f"{label}: provenance must confirm direct manufacturer origin")
                     check(provenance.get("downloaded_filename") == source_path.name, f"{label}: provenance filename mismatch")
@@ -285,7 +310,7 @@ def validate_content(site: dict, library: dict) -> None:
 
 
 def public_pages(library: dict) -> list[Path]:
-    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html"]
+    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html", ROOT / "shop.html"]
     pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
     return pages
 
@@ -417,15 +442,21 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
             check(not (article_dir / f'{article["slug"]}.html').exists(), f"Draft article generated publicly: {article['slug']}")
 
     home = (ROOT / "index.html").read_text(encoding="utf-8")
-    fallback_count = sum(1 for product in site["products"] if not product.get("cutout"))
-    check(home.count("<picture>") == fallback_count, "Every Shelf product without an official cutout must use responsive picture markup")
     cutout_count = sum(1 for product in site["products"] if product.get("cutout"))
     featured = next(product for product in site["products"] if product["id"] == site["featuredProductId"])
     testing_cutout_count = 1 if featured.get("cutout") else 0
-    check(home.count('data-image-role="official-product-cutout"') == cutout_count + testing_cutout_count, "Every configured Shelf cutout must render as a separate foreground image")
-    check(home.count('class="shelf-card__visual artwork-stage"') == len(site["products"]), "Every Shelf card requires separate artwork and product layers")
-    check(home.count("data-artwork-state=") == len(site["products"]), "Every Shelf product requires a stable editorial artwork slot")
-    check(home.count("data-environment=") == len(site["products"]), "Every Shelf product requires a decorative environment identifier")
+    hero_cutout_count = 1 if featured.get("cutout") else 0
+    check(home.count('data-image-role="official-product-cutout"') == cutout_count + testing_cutout_count + hero_cutout_count, "Every configured Product Universe, testing, and hero cutout must render as a separate foreground image")
+    check(home.count('data-universe-product=') == len(site["products"]), "Homepage Product Universe must render every verified product")
+    check(home.count("data-artwork-state=") == len(site["products"]), "Every Product Universe item requires a stable environmental artwork slot")
+    check(home.count("data-universe-intent=") == len(site["catalog"]["intents"]), "Homepage must expose every approved product intent")
+    check('data-universe-status aria-live="polite" aria-atomic="true"' in home, "Product Universe requires a concise live selected-state announcement")
+    universe_start = home.find('<div class="product-universe"')
+    universe_end = home.find('<section id="problem"')
+    universe_markup = home[universe_start:universe_end]
+    eager_universe_cutouts = re.findall(r'<img[^>]+loading="eager"[^>]+data-image-role="official-product-cutout"', universe_markup)
+    lazy_universe_cutouts = re.findall(r'<img[^>]+loading="lazy"[^>]+data-image-role="official-product-cutout"', universe_markup)
+    check(len(eager_universe_cutouts) == 1 and len(lazy_universe_cutouts) == len(site["products"]) - 1, "Homepage must eagerly load only the active Product Universe cutout")
     check(home.count("data-library-article") == len([article for article in library["articles"] if article.get("status") == "published"]), "Homepage Library count must match published content")
     check('data-library-state="empty"' in home if not any(article.get("status") == "published" for article in library["articles"]) else 'data-library-state="published"' in home, "Homepage Library state mismatch")
     check("content model is ready" not in home.lower(), "Developer-facing Library language must not be published")
@@ -437,13 +468,26 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     testing_guide = 'href="library/should-you-test-your-omega-3-levels.html"'
     featured_destination = next(product["destination"] for product in site["products"] if product["id"] == site["featuredProductId"])
     check(testing_guide in home, "Testing section must link to the testing education guide")
-    check(home.find(testing_guide) < home.find(featured_destination), "Testing education must appear before the commercial destination")
-    check(home.count('class="shelf-card__why"') == len(site["products"]), "Every Shelf item must show why it is included before its commercial link")
-    check('href="start.html#pathways">Find your path' in home, "Primary navigation must distinguish Start Here from the pathway shortcut")
+    check('data-matrix-field' in home, "Homepage must include the progressively enhanced Matrix field")
+    check(home.find('<section id="shelf"') < home.find('<section id="problem"'), "The Product Universe must follow the hero without an educational gate")
+    check(home.count(f'href="{featured_destination}"') >= 3, "Featured product must be directly reachable from navigation, hero, and product content")
+    check(f'Shop all {len(site["products"])} options' in home, "Hero must expose the complete Shelf count")
+    check(home.count('class="product-universe__why"') == len(site["products"]), "Every Product Universe item must show why it is included before its commercial link")
+    check(f'href="{featured_destination}" target="_blank" rel="sponsored noopener noreferrer">{featured["cta"]}' in home, "Primary navigation must provide a direct sponsored route to the featured product")
     for product in site["products"]:
         check(product["destination"] in home, f"{product['id']}: destination missing from homepage")
         escaped_destination = re.escape(product["destination"])
         check(bool(re.search(rf'href="{escaped_destination}"[^>]+rel="[^"]*sponsored', home)), f"{product['id']}: commercial link must be marked sponsored")
+    shop = (ROOT / "shop.html").read_text(encoding="utf-8")
+    check(shop.count('data-product-sku=') == len(site["products"]), "Shop must render every verified SKU exactly once")
+    check(shop.count('data-image-role="official-product-cutout"') == cutout_count, "Shop must render every official product image as a separate foreground")
+    for intent in site["catalog"]["intents"]:
+        check(f'id="intent-{intent["id"]}"' in shop, f"Shop missing intent section: {intent['name']}")
+    for product in site["products"]:
+        check(shop.count(f'data-product-sku="{product["sku"]}"') == 1, f"{product['id']}: Shop SKU must be unique")
+        check(product["destination"] in shop, f"{product['id']}: destination missing from Shop")
+    for fallback in site["catalog"]["fallbackDestinations"]:
+        check(fallback["destination"] in shop, f"{fallback['id']}: verified fallback destination missing from Shop")
     css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     check("overflow-x: hidden" not in css, "Horizontal overflow must not be concealed in CSS")
     base_css = (ROOT / "assets" / "css" / "base.css").read_text(encoding="utf-8")
@@ -497,6 +541,11 @@ def main() -> None:
     args = parse_args()
     site = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
     library = json.loads((ROOT / "content" / "library.json").read_text(encoding="utf-8"))
+    catalog = json.loads((ROOT / "content" / "catalog.json").read_text(encoding="utf-8"))
+    site["catalog"] = catalog
+    site["affiliate"] = catalog["affiliate"]
+    site["products"] = catalog["products"]
+    site["featuredProductId"] = catalog["featuredProductId"]
     validate_content(site, library)
     validate_public_output(site, library, args.preview)
     if errors:
@@ -505,7 +554,7 @@ def main() -> None:
             print(f"- {error}")
         sys.exit(1)
     published_count = sum(1 for article in library["articles"] if article.get("status") == "published")
-    print(f"Validation passed: 3 core pages, {published_count} published articles, {len(site['products'])} products, /BioCare/ paths safe")
+    print(f"Validation passed: 4 core pages, {published_count} published articles, {len(site['products'])} verified products, /BioCare/ paths safe")
 
 
 if __name__ == "__main__":
