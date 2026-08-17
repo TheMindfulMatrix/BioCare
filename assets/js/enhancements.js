@@ -238,6 +238,59 @@
 
   document.querySelectorAll("[data-product-universe]").forEach(initProductUniverse);
 
+  function initShopFilters(root) {
+    var buttons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-brand]"));
+    var products = Array.prototype.slice.call(document.querySelectorAll("[data-shop-product]"));
+    var groups = Array.prototype.slice.call(document.querySelectorAll("[data-shop-group]"));
+    var status = root.querySelector("[data-shop-filter-status]");
+    if (!buttons.length || !products.length) return;
+    root.dataset.enhanced = "true";
+
+    function applyFilter(manufacturer, announce) {
+      var visibleCount = 0;
+      root.dataset.activeManufacturer = manufacturer;
+      buttons.forEach(function (button) {
+        var active = button.dataset.shopBrand === manufacturer;
+        button.setAttribute("aria-pressed", String(active));
+        button.setAttribute("tabindex", active ? "0" : "-1");
+      });
+      products.forEach(function (product) {
+        var visible = manufacturer === "all" || product.dataset.manufacturer === manufacturer;
+        product.hidden = !visible;
+        if (visible) visibleCount += 1;
+      });
+      groups.forEach(function (group) {
+        var visibleProducts = Array.prototype.slice.call(group.querySelectorAll("[data-shop-product]:not([hidden])"));
+        var counter = group.querySelector("[data-shop-group-count]");
+        var empty = group.querySelector("[data-shop-empty]");
+        if (counter) counter.textContent = String(visibleProducts.length).padStart(2, "0") + " verified product" + (visibleProducts.length === 1 ? "" : "s");
+        if (empty) empty.hidden = visibleProducts.length > 0;
+      });
+      if (announce && status) status.textContent = manufacturer === "all"
+        ? "Showing all " + visibleCount + " active products."
+        : "Showing " + visibleCount + " " + manufacturer + " products.";
+    }
+
+    buttons.forEach(function (button, index) {
+      button.addEventListener("click", function () { applyFilter(button.dataset.shopBrand, true); });
+      button.addEventListener("keydown", function (event) {
+        var nextIndex = null;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % buttons.length;
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + buttons.length) % buttons.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = buttons.length - 1;
+        if (nextIndex === null) return;
+        event.preventDefault();
+        applyFilter(buttons[nextIndex].dataset.shopBrand, true);
+        buttons[nextIndex].focus();
+      });
+    });
+
+    applyFilter("all", false);
+  }
+
+  document.querySelectorAll("[data-shop-filter-root]").forEach(initShopFilters);
+
   function initHeroParallax(hero) {
     if (reduceMotion || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     var layers = Array.prototype.slice.call(hero.querySelectorAll("[data-parallax-depth]"));

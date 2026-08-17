@@ -29,7 +29,19 @@
       <div class="container-wide">
         <p class="interface-label" id="shop-navigation-title">Navigate by intent</p>
         <nav class="shop-intent-nav" aria-label="Product intent categories">{{SHOP_INTENT_NAV}}</nav>
-        <p class="fine" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p>
+        <div class="shop-filter-bar" data-shop-filter-root data-active-manufacturer="all">
+          <div><p class="interface-label">Then filter by manufacturer</p><div class="shop-brand-filters" role="group" aria-label="Filter products by manufacturer">
+            <button type="button" data-shop-brand="all" aria-pressed="true">All</button>
+            <button type="button" data-shop-brand="Zinzino" aria-pressed="false">Zinzino</button>
+            <button type="button" data-shop-brand="BioLimitless" aria-pressed="false">BioLimitless</button>
+          </div></div>
+          <p class="shop-filter-status" data-shop-filter-status aria-live="polite">Showing all {{SHOP_COUNT}} active products.</p>
+        </div>
+        <div class="commercial-notes">
+          <p class="fine" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p>
+          <p class="fine" data-biolimitless-disclosure>{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}</p>
+          <p class="fine" data-pricing-disclosure>{{PRICING_DISCLOSURE}}</p>
+        </div>
       </div>
     </section>
 

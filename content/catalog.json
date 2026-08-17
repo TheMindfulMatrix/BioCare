@@ -1,10 +1,15 @@
 {
-  "schemaVersion": "2.3",
-  "verifiedDate": "2026-08-16",
-  "scope": "Current public United States Zinzino core shop plus the previously verified Balance Test Basic Kit and BioLimitless relationship.",
+  "schemaVersion": "3.1",
+  "verifiedDate": "2026-08-17",
+  "scope": "Current public United States Zinzino core shop and BioLimitless public product inventory, with elevated-compliance BioLimitless products retained internally and omitted from public commercial rendering.",
   "affiliate": {
     "zinzinoPartnerId": "2021428066",
-    "market": "us/en-us"
+    "market": "us/en-us",
+    "biolimitlessPartnerBase": "https://biolimitless.com/me/matrix/",
+    "biolimitlessReferralSlug": "matrix",
+    "biolimitlessReferralQueryKey": "me",
+    "biolimitlessMechanism": "AffiliateWP direct product query; the official site declares referral_var='me' and a 30-day referral cookie.",
+    "biolimitlessVerifiedDate": "2026-08-17"
   },
   "featuredProductId": "balance-basic-kit",
   "intents": [
@@ -101,7 +106,19 @@
         "href": "library/should-you-test-your-omega-3-levels.html"
       },
       "description": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
-      "descriptionSource": "Previously approved Mindful Matrix site summary"
+      "descriptionSource": "Previously approved Mindful Matrix site summary",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "starter_subscription",
+        "currency": "USD",
+        "start_price": 127,
+        "recurring_price": 47,
+        "start_label": "Start kit",
+        "recurring_label": "Monthly subscription",
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465"
+      }
     },
     {
       "id": "balance-test",
@@ -138,7 +155,17 @@
         "href": "library/should-you-test-your-omega-3-levels.html"
       },
       "description": "Track your fatty acid profile from home",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 179,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 127
+      }
     },
     {
       "id": "gut-health-test",
@@ -171,7 +198,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Home health blood spot test to track gut and metabolic markers",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 205,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 145
+      }
     },
     {
       "id": "gut-health-test-x2",
@@ -204,7 +241,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Home health blood spot test to track gut and metabolic markers",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 410,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 209
+      }
     },
     {
       "id": "vitamin-d-test",
@@ -237,7 +284,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Monitor your vitamin D levels",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 78,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 55
+      }
     },
     {
       "id": "hba1c-test",
@@ -270,7 +327,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Track your long-term blood sugar levels",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 78,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 55
+      }
     },
     {
       "id": "balanceoil-plus-300ml",
@@ -307,7 +374,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 67,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 47
+      }
     },
     {
       "id": "balanceoil-plus-100ml",
@@ -344,7 +421,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 26,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 18
+      }
     },
     {
       "id": "balanceoil-plus-100ml-6pcs",
@@ -381,7 +468,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 133,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 94
+      }
     },
     {
       "id": "balanceoil-plus-premium",
@@ -418,7 +515,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Omega-3 food supplement with EPA, DHA and polyphenols from extra virgin olive oil",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 94,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 66
+      }
     },
     {
       "id": "balanceoil-plus-aquax",
@@ -455,7 +562,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Water-soluble formula in lemon flavor.",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 77,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 54
+      }
     },
     {
       "id": "balanceoil-plus-vegan",
@@ -492,7 +609,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "With marine micro-algae oil and vegan vitamin D3.",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 116,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 82
+      }
     },
     {
       "id": "balanceoil-tutti-frutti",
@@ -529,7 +656,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Omega-3 food supplement with EPA, DHA, polyphenols, and a kid-friendly taste",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 67,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 47
+      }
     },
     {
       "id": "essent-plus-premium",
@@ -566,7 +703,17 @@
         "href": "library/omega-3-what-the-numbers-mean.html"
       },
       "description": "Polyphenol omega balance supplement",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 67,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 47
+      }
     },
     {
       "id": "revoo",
@@ -599,7 +746,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Extra virgin olive oil",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 112,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 79
+      }
     },
     {
       "id": "dosage-cups",
@@ -632,7 +789,16 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Measuring caps made from dishwasher-safe plastic.",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 16,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products"
+      }
     },
     {
       "id": "zinobiotic-plus",
@@ -665,7 +831,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "A tailored blend of eight natural sources of dietary fibers",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 50,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 35
+      }
     },
     {
       "id": "x-gold-plus",
@@ -698,7 +874,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Liquid turmeric root extract and piperine from black pepper",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 85,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 60
+      }
     },
     {
       "id": "zinogene-plus",
@@ -731,7 +917,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "With seaweed fucoidans, curcumin, vitamin C, and zinc",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 87,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 61
+      }
     },
     {
       "id": "viva-plus",
@@ -764,7 +960,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "With saffron stigmas, magnesium, iodine, and vitamin C",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 45,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 32
+      }
     },
     {
       "id": "viva-plus-x2",
@@ -797,7 +1003,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "With saffron stigmas, magnesium, iodine, and vitamin C",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 86,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 56
+      }
     },
     {
       "id": "zinoshine-plus",
@@ -830,7 +1046,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "With vitamin D and broad-spectrum magnesium",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 26,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 18
+      }
     },
     {
       "id": "xtend-plus",
@@ -863,7 +1089,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 65,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 46
+      }
     },
     {
       "id": "xtend",
@@ -896,7 +1132,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "With 23 essential vitamins and minerals",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 50,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 35
+      }
     },
     {
       "id": "protect-plus",
@@ -929,7 +1175,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "With vegan beta-glucans and naturally derived vitamin C and D3",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 67,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 47
+      }
     },
     {
       "id": "spirumax-plus",
@@ -962,7 +1218,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Food supplement with naturally derived spirulina maxima",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 44,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 31
+      }
     },
     {
       "id": "phycosci-plus-x20",
@@ -995,7 +1261,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Naturally derived spirulina extract food supplement",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 71,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 50
+      }
     },
     {
       "id": "leanshake-chocolate",
@@ -1028,7 +1304,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Meal replacement with whey proteins, collagen peptides, and dietary fibers, chocolate flavor",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 82,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 58
+      }
     },
     {
       "id": "leanshake-strawberry",
@@ -1061,7 +1347,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Meal replacement with whey proteins, collagen peptides, and dietary fibers, strawberry flavor",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 82,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 58
+      }
     },
     {
       "id": "leanshake-vanilla",
@@ -1094,7 +1390,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Meal replacement with vegetarian pea and oat proteins and dietary fibers, vanilla flavor",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 82,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 58
+      }
     },
     {
       "id": "leanshake-berry",
@@ -1127,7 +1433,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Meal replacement with vegetarian pea and oat proteins and dietary fibers, berry flavor",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 82,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 58
+      }
     },
     {
       "id": "shake-bottle",
@@ -1160,7 +1476,16 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "On-the-go, dishwasher safe with a leak-proof lid",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 7,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products"
+      }
     },
     {
       "id": "energy-bar-nut-seed",
@@ -1193,7 +1518,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Vegan, high-fiber energy bar with almonds, dates, and super seeds",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 24,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 17
+      }
     },
     {
       "id": "measuring-tape",
@@ -1226,7 +1561,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Metric and imperial measures with a BMI calculator.",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": false,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 8,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 6
+      }
     },
     {
       "id": "collagen-boozt",
@@ -1259,7 +1604,17 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "Food supplement with liquid marine collagen and hyaluronic acid",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 87,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 61
+      }
     },
     {
       "id": "skin-serum",
@@ -1292,7 +1647,1007 @@
         "status": "environment generated from the design-token system; official product remains a separate foreground image"
       },
       "description": "24-hour deep skincare formula for face and neck",
-      "descriptionSource": "Official current Zinzino US catalog card"
+      "descriptionSource": "Official current Zinzino US catalog card",
+      "commercial_status": "active",
+      "curated": true,
+      "price": {
+        "pricing_model": "retail_premier",
+        "currency": "USD",
+        "retail_price": 116,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "premier_price": 58
+      }
+    },
+    {
+      "id": "biolimitless-master-microbiotics",
+      "name": "Master Microbiotics",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "gut-digestion",
+      "category": "Peptide formula",
+      "productKind": "formula",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried for catalog completeness; its BPC-157 content places it behind the elevated compliance firewall.",
+      "variantGroup": "Peptide formulas",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/peptide-formulas/master-microbiotics/",
+      "destination": "https://biolimitless.com/shop/peptide-formulas/master-microbiotics/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Master Microbiotics",
+      "environment": "cellular",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/master-microbiotics.webp",
+        "alt": "Master Microbiotics official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/master-microbiotics.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/03/MM-img-0825.webp",
+        "sourceMediaId": 20200,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 85,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/peptide-formulas/master-microbiotics/",
+        "autoship_price": 80.75,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/master-microbiotics-autoship/"
+      },
+      "description": "A manufacturer-described capsule formula that lists BPC-157 among its ingredients.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Contains BPC-157; elevated owner-approved compliance review is required before public commercial treatment.",
+        "flaggedIngredients": [
+          "BPC-157"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-dna-discovery-kit",
+      "name": "The DNA Discovery Kit",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "test-measure",
+      "category": "Testing",
+      "productKind": "at-home test",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "A measurement-first option for visitors specifically exploring manufacturer-provided genomic information.",
+      "variantGroup": "Testing",
+      "variantLabel": "saliva collection kit",
+      "officialProductPage": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/",
+      "destination": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless The DNA Discovery Kit",
+      "environment": "genomic",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+        "alt": "The DNA Discovery Kit official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/dna-discovery-kit.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/03/DNA-img-0825.webp",
+        "sourceMediaId": 20199,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time",
+        "currency": "USD",
+        "one_time_price": 900,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/"
+      },
+      "description": "An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "relatedEducation": {
+        "label": "How to read health research",
+        "href": "library/how-to-read-a-health-study.html"
+      }
+    },
+    {
+      "id": "biolimitless-becoming-biolimitless-book",
+      "name": "Becoming BioLimitless",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Education",
+      "productKind": "book",
+      "purchaseModel": "One-time product",
+      "whyItsHere": "An optional manufacturer-authored education title, kept distinct from independent Mindful Matrix evidence.",
+      "variantGroup": "Books",
+      "variantLabel": "format selected on manufacturer site",
+      "officialProductPage": "https://biolimitless.com/shop/books/becoming-biolimitless-book/",
+      "destination": "https://biolimitless.com/shop/books/becoming-biolimitless-book/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Becoming BioLimitless",
+      "environment": "knowledge",
+      "commercial_status": "active",
+      "curated": false,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/becoming-biolimitless-book.webp",
+        "alt": "Becoming BioLimitless official BioLimitless product presentation",
+        "width": 960,
+        "height": 795,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/becoming-biolimitless-book.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2024/09/becomingbiolimitlessbook3.webp",
+        "sourceMediaId": 5627,
+        "sourceWidth": 1362,
+        "sourceHeight": 1128,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_range",
+        "currency": "USD",
+        "one_time_price_min": 9.99,
+        "one_time_price_max": 29.33,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/books/becoming-biolimitless-book/"
+      },
+      "description": "A BioLimitless-authored education title offered in multiple formats.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims"
+    },
+    {
+      "id": "biolimitless-cell-signals",
+      "name": "Cell Signals",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Daily wellness",
+      "productKind": "powder formula",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A non-peptide BioLimitless formula grouped here for transparent comparison with other daily formats.",
+      "variantGroup": "Formulas",
+      "variantLabel": "powder",
+      "officialProductPage": "https://biolimitless.com/shop/formulas/cell-signals/",
+      "destination": "https://biolimitless.com/shop/formulas/cell-signals/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Cell Signals",
+      "environment": "cellular",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/cell-signals.webp",
+        "alt": "Cell Signals official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/cell-signals.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/03/CS-img-0825.webp",
+        "sourceMediaId": 20198,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 85,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/formulas/cell-signals/",
+        "autoship_price": 80.75,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/cell-signals-autoship/"
+      },
+      "description": "A powdered formula listing beta-hydroxybutyrate, amino acids, methylated folate and vitamin B12 among its ingredients.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims"
+    },
+    {
+      "id": "biolimitless-cellular-reset",
+      "name": "Cellular Reset",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Peptide formula",
+      "productKind": "formula",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried for catalog completeness; multiple research-compound ingredients require elevated compliance review.",
+      "variantGroup": "Peptide formulas",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/peptide-formulas/cellular-reset/",
+      "destination": "https://biolimitless.com/shop/peptide-formulas/cellular-reset/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Cellular Reset",
+      "environment": "cellular",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/cellular-reset.webp",
+        "alt": "Cellular Reset official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/cellular-reset.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/03/CR-img-0825.webp",
+        "sourceMediaId": 20197,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 320,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/peptide-formulas/cellular-reset/",
+        "autoship_price": 304,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/cellular-reset-autoship/"
+      },
+      "description": "A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Contains 5-Amino-1-MQ, BPC-157 and SLU-PP-332; elevated owner-approved compliance review is required before public commercial treatment.",
+        "flaggedIngredients": [
+          "5-Amino-1-MQ",
+          "BPC-157",
+          "SLU-PP-332"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-neuro-reboot",
+      "name": "Neuro Reboot",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Peptide formula",
+      "productKind": "formula",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried for catalog completeness; its research-compound ingredients require elevated compliance review.",
+      "variantGroup": "Peptide formulas",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/peptide-formulas/neuro-reboot/",
+      "destination": "https://biolimitless.com/shop/peptide-formulas/neuro-reboot/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Neuro Reboot",
+      "environment": "neural",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/neuro-reboot.webp",
+        "alt": "Neuro Reboot official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/neuro-reboot.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/03/NR-img-0825.webp",
+        "sourceMediaId": 20195,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 320,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/peptide-formulas/neuro-reboot/",
+        "autoship_price": 304,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/neuro-reboot-autoship/"
+      },
+      "description": "A manufacturer-described formula that lists Tesofensine, Dihexa and BPC-157 among its ingredients.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Contains Tesofensine, Dihexa and BPC-157; elevated owner-approved compliance review is required before public commercial treatment.",
+        "flaggedIngredients": [
+          "Tesofensine",
+          "Dihexa",
+          "BPC-157"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-detox-pro-plus",
+      "name": "Detox Pro Plus",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Daily wellness",
+      "productKind": "powder formula",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A manufacturer-formulated powder included for visitors comparing ordinary non-peptide wellness formats.",
+      "variantGroup": "Formulas",
+      "variantLabel": "powder",
+      "officialProductPage": "https://biolimitless.com/shop/formulas/detox-pro-plus/",
+      "destination": "https://biolimitless.com/shop/formulas/detox-pro-plus/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Detox Pro Plus",
+      "environment": "mineral",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+        "alt": "Detox Pro Plus official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/detox-pro-plus.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/03/DPP-img-0825.webp",
+        "sourceMediaId": 20196,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 55,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/formulas/detox-pro-plus/",
+        "autoship_price": 52.25,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/detox-pro-plus-autoship/"
+      },
+      "description": "A powdered formula listing bentonite clay, activated charcoal and trace-mineral ingredients on the manufacturer page.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims"
+    },
+    {
+      "id": "biolimitless-foundation-stack",
+      "name": "Foundation Stack",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Power stack",
+      "productKind": "stack",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried as a manufacturer bundle; it includes Master Microbiotics and therefore inherits its compliance hold.",
+      "variantGroup": "Power stacks",
+      "variantLabel": "three-formula stack",
+      "officialProductPage": "https://biolimitless.com/shop/power-stacks/foundation-stack/",
+      "destination": "https://biolimitless.com/shop/power-stacks/foundation-stack/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Foundation Stack",
+      "environment": "cellular",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/foundation-stack.webp",
+        "alt": "Foundation Stack official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/foundation-stack.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Foundation-Stack-img-0825.webp",
+        "sourceMediaId": 20231,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 140,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/power-stacks/foundation-stack/",
+        "autoship_price": 133,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-foundation-stack-autoship/"
+      },
+      "description": "A manufacturer bundle that includes Cell Signals, Detox Pro Plus and Master Microbiotics.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Includes Master Microbiotics, which lists BPC-157; elevated owner-approved compliance review is required before public commercial treatment.",
+        "flaggedIngredients": [
+          "BPC-157"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-triple-stack",
+      "name": "Triple Stack",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Power stack",
+      "productKind": "stack",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried as a manufacturer bundle; it includes Master Microbiotics and therefore inherits its compliance hold.",
+      "variantGroup": "Power stacks",
+      "variantLabel": "multi-formula stack",
+      "officialProductPage": "https://biolimitless.com/shop/power-stacks/triple-stack/",
+      "destination": "https://biolimitless.com/shop/power-stacks/triple-stack/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Triple Stack",
+      "environment": "cellular",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/triple-stack.webp",
+        "alt": "Triple Stack official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/triple-stack.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Trio-Stack-img-0825.webp",
+        "sourceMediaId": 20235,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 225,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/power-stacks/triple-stack/",
+        "autoship_price": 213.75,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-triple-stack-autoship/"
+      },
+      "description": "A manufacturer bundle containing formulas from the BioLimitless product line, including Master Microbiotics.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Includes Master Microbiotics, which lists BPC-157; elevated owner-approved compliance review is required before public commercial treatment.",
+        "flaggedIngredients": [
+          "BPC-157"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-cellular-stack",
+      "name": "Cellular Stack",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Power stack",
+      "productKind": "stack",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried as a manufacturer bundle; it includes deferred research-compound formulas.",
+      "variantGroup": "Power stacks",
+      "variantLabel": "multi-formula stack",
+      "officialProductPage": "https://biolimitless.com/shop/power-stacks/cellular-stack/",
+      "destination": "https://biolimitless.com/shop/power-stacks/cellular-stack/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Cellular Stack",
+      "environment": "cellular",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/cellular-stack.webp",
+        "alt": "Cellular Stack official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/cellular-stack.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Cell-Stack-img-0825.webp",
+        "sourceMediaId": 20223,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 545,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/power-stacks/cellular-stack/",
+        "autoship_price": 517.75,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-cellular-stack-autoship/"
+      },
+      "description": "A manufacturer bundle containing Cellular Reset and other BioLimitless formulas.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Includes Cellular Reset, which lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332; elevated owner-approved compliance review is required.",
+        "flaggedIngredients": [
+          "5-Amino-1-MQ",
+          "BPC-157",
+          "SLU-PP-332"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-neuro-stack",
+      "name": "Neuro Stack",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Power stack",
+      "productKind": "stack",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried as a manufacturer bundle; it includes deferred research-compound formulas.",
+      "variantGroup": "Power stacks",
+      "variantLabel": "multi-formula stack",
+      "officialProductPage": "https://biolimitless.com/shop/power-stacks/neuro-stack/",
+      "destination": "https://biolimitless.com/shop/power-stacks/neuro-stack/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Neuro Stack",
+      "environment": "neural",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/neuro-stack.webp",
+        "alt": "Neuro Stack official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/neuro-stack.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Neuro-Stack-img-0825.webp",
+        "sourceMediaId": 20226,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 545,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/power-stacks/neuro-stack/",
+        "autoship_price": 517.75,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-neuro-stack-autoship/"
+      },
+      "description": "A manufacturer bundle containing Neuro Reboot and other BioLimitless formulas.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Includes Neuro Reboot, which lists Tesofensine, Dihexa and BPC-157; elevated owner-approved compliance review is required.",
+        "flaggedIngredients": [
+          "Tesofensine",
+          "Dihexa",
+          "BPC-157"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-master-stack",
+      "name": "Master Stack",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Power stack",
+      "productKind": "stack",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "Inventoried as the broad manufacturer bundle; it includes multiple deferred research-compound formulas.",
+      "variantGroup": "Power stacks",
+      "variantLabel": "multi-formula stack",
+      "officialProductPage": "https://biolimitless.com/shop/power-stacks/master-stack/",
+      "destination": "https://biolimitless.com/shop/power-stacks/master-stack/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Master Stack",
+      "environment": "cellular",
+      "commercial_status": "deferred_compliance_review",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/master-stack.webp",
+        "alt": "Master Stack official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/master-stack.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Master-Stack-img-0825.webp",
+        "sourceMediaId": 20225,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 865,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/power-stacks/master-stack/",
+        "autoship_price": 821.75,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/master-stack-autoship/"
+      },
+      "description": "A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "complianceReview": {
+        "reason": "Includes formulas listing 5-Amino-1-MQ, Tesofensine, Dihexa, BPC-157 and SLU-PP-332; elevated owner-approved compliance review is required.",
+        "flaggedIngredients": [
+          "5-Amino-1-MQ",
+          "Tesofensine",
+          "Dihexa",
+          "BPC-157",
+          "SLU-PP-332"
+        ],
+        "publicRendering": "omit"
+      }
+    },
+    {
+      "id": "biolimitless-magnesium-glycinate",
+      "name": "Magnesium Glycinate",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Foundational nutrition",
+      "productKind": "dietary supplement",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A clearly labeled single-mineral format for visitors comparing foundational supplements.",
+      "variantGroup": "Bio Basics",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/",
+      "destination": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Magnesium Glycinate",
+      "environment": "mineral",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+        "alt": "Magnesium Glycinate official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/magnesium-glycinate.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2026/04/MagGlyc-img-0426.webp",
+        "sourceMediaId": 31548,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 42,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/",
+        "autoship_price": 39.9,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/magnesium-glycinate-autoship/"
+      },
+      "description": "A capsule supplement providing magnesium in a glycinate form.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "relatedEducation": {
+        "label": "How to read a supplement label",
+        "href": "library/how-to-read-a-supplement-label.html"
+      }
+    },
+    {
+      "id": "biolimitless-zinc-copper",
+      "name": "Zinc + Copper",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Foundational nutrition",
+      "productKind": "dietary supplement",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A clearly labeled two-mineral format for visitors comparing foundational supplements.",
+      "variantGroup": "Bio Basics",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/bio-basics/zinc-copper/",
+      "destination": "https://biolimitless.com/shop/bio-basics/zinc-copper/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Zinc + Copper",
+      "environment": "mineral",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/zinc-copper.webp",
+        "alt": "Zinc + Copper official BioLimitless product presentation",
+        "width": 960,
+        "height": 628,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/zinc-copper.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2026/04/ZnCu-img-0426.webp",
+        "sourceMediaId": 31549,
+        "sourceWidth": 1200,
+        "sourceHeight": 785,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 42,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/bio-basics/zinc-copper/",
+        "autoship_price": 39.9,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/zinc-copper-autoship/"
+      },
+      "description": "A capsule supplement combining zinc and copper in one formula.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "relatedEducation": {
+        "label": "How to read a supplement label",
+        "href": "library/how-to-read-a-supplement-label.html"
+      }
+    },
+    {
+      "id": "biolimitless-vitamin-d3-k2",
+      "name": "Vitamin D3 + K2",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Foundational nutrition",
+      "productKind": "dietary supplement",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A combined vitamin format for visitors who have a clear reason to compare vitamin D and K products.",
+      "variantGroup": "Bio Basics",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/",
+      "destination": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless Vitamin D3 + K2",
+      "environment": "solar",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+        "alt": "Vitamin D3 + K2 official BioLimitless product presentation",
+        "width": 960,
+        "height": 538,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/vitamin-d3-k2.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2026/04/D3K2-img-0426.webp",
+        "sourceMediaId": 32021,
+        "sourceWidth": 1376,
+        "sourceHeight": 771,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 42,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/",
+        "autoship_price": 39.9,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/vitamin-d3-k2-autoship/"
+      },
+      "description": "A capsule supplement combining vitamin D3 and vitamin K2.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "relatedEducation": {
+        "label": "How to read a supplement label",
+        "href": "library/how-to-read-a-supplement-label.html"
+      }
+    },
+    {
+      "id": "biolimitless-biozyme",
+      "name": "BioZyme",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "gut-digestion",
+      "category": "Gut & digestion",
+      "productKind": "dietary supplement",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A non-peptide digestive-enzyme format grouped with other gut and digestion tools.",
+      "variantGroup": "Bio Basics",
+      "variantLabel": "capsules",
+      "officialProductPage": "https://biolimitless.com/shop/bio-basics/biozyme/",
+      "destination": "https://biolimitless.com/shop/bio-basics/biozyme/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless BioZyme",
+      "environment": "biotic",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/biozyme.webp",
+        "alt": "BioZyme official BioLimitless product presentation",
+        "width": 960,
+        "height": 538,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/biozyme.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2026/04/BioZym-img-0426.webp",
+        "sourceMediaId": 32081,
+        "sourceWidth": 1376,
+        "sourceHeight": 771,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 42,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/bio-basics/biozyme/",
+        "autoship_price": 39.9,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/biozyme-autoship/"
+      },
+      "description": "A capsule formula listing 17 plant- and microbe-derived digestive enzymes on the manufacturer page.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "relatedEducation": {
+        "label": "Gut Health 101",
+        "href": "library/gut-health-101.html"
+      }
+    },
+    {
+      "id": "biolimitless-bio-basics-core-four",
+      "name": "The Bio Basics Core Four",
+      "manufacturer": "BioLimitless",
+      "sku": null,
+      "intent": "daily-wellness",
+      "category": "Foundational nutrition",
+      "productKind": "stack",
+      "purchaseModel": "One-time or monthly subscription",
+      "whyItsHere": "A transparent bundle of the four Bio Basics products for visitors who want to compare the combined format.",
+      "variantGroup": "Bio Basics",
+      "variantLabel": "four-product stack",
+      "officialProductPage": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/",
+      "destination": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/?me=matrix",
+      "cta": "View product",
+      "visualLabel": "Official BioLimitless The Bio Basics Core Four",
+      "environment": "cellular",
+      "commercial_status": "active",
+      "curated": true,
+      "affiliate": {
+        "mechanism": "AffiliateWP direct product query",
+        "referralQueryKey": "me",
+        "referralSlug": "matrix",
+        "verifiedAt": "2026-08-17"
+      },
+      "cutout": {
+        "src": "assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+        "alt": "The Bio Basics Core Four official BioLimitless product presentation",
+        "width": 960,
+        "height": 538,
+        "sourceAsset": "assets/source-products/biolimitless/catalog/bio-basics-core-four.webp",
+        "sourceUrl": "https://bl-assets.lifepilotos.com/wp-media/2026/04/Core-Four-img-0426.webp",
+        "sourceMediaId": 32119,
+        "sourceWidth": 1376,
+        "sourceHeight": 771,
+        "provenance": "assets/source-products/biolimitless/catalog/provenance.json"
+      },
+      "artwork": {
+        "src": null,
+        "status": "official BioLimitless product scene presented inside the Mindful Matrix cellular environment"
+      },
+      "price": {
+        "pricing_model": "one_time_autoship",
+        "currency": "USD",
+        "one_time_price": 168,
+        "price_verified_at": "2026-08-17",
+        "official_price_source": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/",
+        "autoship_price": 159.6,
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-biobasics-core-four-autoship/"
+      },
+      "description": "A four-product bundle containing Magnesium Glycinate, Zinc + Copper, Vitamin D3 + K2 and BioZyme.",
+      "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
+      "relatedEducation": {
+        "label": "Read labels before choosing",
+        "href": "library/how-to-read-a-supplement-label.html"
+      }
     }
   ],
   "fallbackDestinations": [
