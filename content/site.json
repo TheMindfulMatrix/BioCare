@@ -5,7 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "experience-v2-3-product-universe",
+      "assetVersion": "experience-v3-1-product-value",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -31,7 +31,7 @@
         "shop": {
           "path": "shop.html",
           "title": "Product Universe | The Mindful Matrix",
-          "description": "Explore verified products by visitor intent, with official manufacturer imagery, transparent partner links, and no invented pricing."
+          "description": "Explore verified Zinzino and BioLimitless products by visitor intent, with current official US pricing and transparent partner links."
         }
       }
     },
@@ -43,7 +43,10 @@
     },
     "disclosure": "Gavin Reidel — Zinzino Independent Partner. Purchases are completed on Zinzino's own site at their listed retail price. BalanceTest is not available in New York.",
     "fdaDisclaimer": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
-    "affiliateDisclosure": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a commission on purchases made through them."
+    "affiliateDisclosure": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a commission on purchases made through them.",
+    "biolimitlessAffiliateDisclosure": "BioLimitless links use the Matrix partner referral. I may earn compensation from qualifying purchases.",
+    "pricingDisclosure": "Prices were checked against official US manufacturer pages on August 17, 2026. Prices, purchase options, and eligibility can change; the manufacturer checkout shows the current applicable price.",
+    "premierPricingNote": "Premier pricing may require an eligible Premier purchase or customer status. Checkout reflects the current applicable price."
   },
   "brand": {
     "philosophy": "Information → Education → Action",
@@ -287,7 +290,7 @@
     "shelf": {
       "label": "The Product Universe",
       "heading": "Find the right starting point.",
-      "copy": "Move by intent, inspect every verified product, or open the full catalog. Official product imagery stays separate from the interactive environment."
+      "copy": "Move by intent, compare current official pricing, and inspect a curated set from both manufacturers. The complete verified catalog remains one step away."
     },
     "standards": {
       "heading": "You deserve to know why.",

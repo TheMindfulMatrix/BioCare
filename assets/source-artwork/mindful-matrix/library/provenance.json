@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "collection": "Mindful Matrix V3.1 Library visuals",
+  "assets": [
+    {
+      "id": "gut-health-101",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free intestinal microbiome ecosystem with cellular depth and distinct microbial forms.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/gut-health-101-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "fd6aa1e8c4bc7899537e795c79f15d6d4ec39389e81ff84b69c908cb240a5f41"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/gut-health-101-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "2a9753d670a40bbdf92215f77489f6cb4ae1f7c268c6caf57e74f20b2e1f902a"
+        },
+        {
+          "path": "assets/artwork/library/gut-health-101-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "e5e30c79bb4fc7e72dcd6a0ffeb82e611ff18557e2908a501781848ed6615a53"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "gut-testing-biomarkers",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free laboratory sample pathway with biomarker bands and analytical measurement signals.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/gut-testing-biomarkers-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "3944550384573722618a840b529f6adb985de786f841f713ad551b593c1f9a36"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/gut-testing-biomarkers-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "8956cb08813d8f3b7637aca3a1459b594a0d2e26273ea360062e996b61a9fcdf"
+        },
+        {
+          "path": "assets/artwork/library/gut-testing-biomarkers-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "f1411cdf909995a0e4cf1e3e454433470a61ee73a570f5cc72a5311af1cab785"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "recovery-after-training",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free post-training recovery system using muscle fibers, glycogen and restorative flow.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/recovery-after-training-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "9f857393fcb9779297bbf6afd6b529927705aa009d1c1ed4e5859a64d0fa5333"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/recovery-after-training-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "327507b29210e52968459c129deb036823df1d867cbec1deac759b3dbeaf9d96"
+        },
+        {
+          "path": "assets/artwork/library/recovery-after-training-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "af4bb39021d7079c2d7a91f4d1b91296d03928916a871074ef2cd9f9bb6c8bd2"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "performance-nutrition",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free athletic physiology connecting whole-food fuel, hydration and muscle-energy pathways.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/performance-nutrition-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "cbc4d78d517a8f9b6df0393781cc820b82f856012d9916249ee675ff55e4a0ed"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/performance-nutrition-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "677967ef980f0288041227779ce1c528afb1e7467f36a11ae2b7772a5306716f"
+        },
+        {
+          "path": "assets/artwork/library/performance-nutrition-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "5bb283847ec2b14dc59160091e7bf42f4882cd89bcb5fc96fdec346d5cbf7031"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "read-health-study",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free research paper and evidence hierarchy under a precise reading beam.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/read-health-study-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "50b7ee4835f401386fb358d01e91c04f7045a6a398a1912fbc2131f2c4bc08ef"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/read-health-study-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "18f094be0825173e7e8a64109e1736eb9bc8a3a1cf5f447a0dc1a006d6aa2bab"
+        },
+        {
+          "path": "assets/artwork/library/read-health-study-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "6f076fa60da6d4a8a8ffa40166ee16466f6efe2fabbc98ca9135c186dd5a3176"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "correlation-causation-risk",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free data paths separating correlation, confounding, relative risk and absolute risk.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/correlation-causation-risk-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "07cd8d8cfeda5d51fe6ec04a40853b8169ca19480b978a2db2ee78d13e5854ce"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/correlation-causation-risk-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "145a8a016c2f3ef1f08f58a5bc75180b5f6fe92888a1a949e531899e21f113e2"
+        },
+        {
+          "path": "assets/artwork/library/correlation-causation-risk-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "ba32d17b38329dc2c72366b4e9cb8c7223c94b672601b93d3163215b9e756e66"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "omega-numbers",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free omega fatty-acid and blood-status measurement environment.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/omega-numbers-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "c499c66fa0e30118187a333228e311ca0c116e94842c31e4a3f64970b77f7e7b"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/omega-numbers-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "522f734b368a73a57841f7acc1896d4d5590c6d341488476d89ee52fbbbfe50d"
+        },
+        {
+          "path": "assets/artwork/library/omega-numbers-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "cbad8e436e4fbf90f8628ccadf8742d7ab65727bbf684b65832608cdde462832"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "omega-testing",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free at-home blood-sample and omega measurement interface.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/omega-testing-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "431162214fcefd1b8c4b4ee4febfa9a5945ee4e456a89e38a07dec6109b964f1"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/omega-testing-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "ef02c412d602a862005e39d99bbd2fe2565fa6739b3eba36969ab636ab2486aa"
+        },
+        {
+          "path": "assets/artwork/library/omega-testing-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "914a6336149b667ef6aa6973481be62dc8e9026d808fc7cbdf113529711bd4a1"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "food-vs-supplements",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free whole-food versus supplement-format comparison without branded packaging.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/food-vs-supplements-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "3a746a3cf973a7e14b3aae314d3129a16ec951c0cc278885d6e1613b654c9844"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/food-vs-supplements-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "76f534a099dc7bb5a4ac566dd897fd71df9ed2e0be44bb9ffffd010f8b81a39e"
+        },
+        {
+          "path": "assets/artwork/library/food-vs-supplements-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "7ce657b3632f1eeb53aaf118db45e719131bbff43898342e0c69c698d8087137"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    },
+    {
+      "id": "supplement-label",
+      "type": "original product-free editorial artwork",
+      "generator": "OpenAI image generation tool",
+      "prompt_summary": "Product-free supplement-label analysis with dose, ingredient and evidence fields.",
+      "generated_at": "2026-08-17",
+      "source": {
+        "path": "assets/source-artwork/mindful-matrix/library/supplement-label-source.png",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "f229011a2286767b19e2e3ef9e0ad99bb1cb4bc7ffa215fb916c027f96ebf365"
+      },
+      "derivatives": [
+        {
+          "path": "assets/artwork/library/supplement-label-560.webp",
+          "width": 560,
+          "height": 373,
+          "sha256": "cd3600b6f294cd471aaaba5bf324d4e662689437d2c611afb9a9a241ed5745ab"
+        },
+        {
+          "path": "assets/artwork/library/supplement-label-960.webp",
+          "width": 960,
+          "height": 640,
+          "sha256": "25e1c8b517a5f2afab6a81cf27833130a935bf2f6be82e125b73b3922bb605b8"
+        }
+      ],
+      "commercial_packaging": false,
+      "notes": "Original Mindful Matrix editorial artwork. No manufacturer logo, product, package, label or health-data claim is depicted."
+    }
+  ]
+}

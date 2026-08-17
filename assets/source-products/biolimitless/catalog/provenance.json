@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "manufacturer": "BioLimitless",
+  "policy": "Immutable official manufacturer downloads are retained separately from optimized production derivatives.",
+  "assets": [
+    {
+      "product_id": "biolimitless-master-microbiotics",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "MM-img-0825.webp",
+      "manufacturer_media_id": 20200,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/03/MM-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/peptide-formulas/master-microbiotics/",
+      "downloaded_filename": "master-microbiotics.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "b64449bae5b53832f1d440c92d0f70525203620ace43b473964ae336c63f0645",
+      "production_filename": "assets/product-cutouts/biolimitless/master-microbiotics.webp",
+      "production_sha256": "b695b20fd5f37cb1819d1ee99df5479a7f39dc0b6bf0573b19b0fbc67bc702ad",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-dna-discovery-kit",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "DNA-img-0825.webp",
+      "manufacturer_media_id": 20199,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/03/DNA-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/",
+      "downloaded_filename": "dna-discovery-kit.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "cc3d600260ef0720f070550e96a94182c031dd83e0ac11f662e6b14fcb461b92",
+      "production_filename": "assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+      "production_sha256": "52689afcd97a6f6ffa005ced9c9bd3071d20407b1ccdc033a8b51c60f8c85cba",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-becoming-biolimitless-book",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "becomingbiolimitlessbook3.webp",
+      "manufacturer_media_id": 5627,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2024/09/becomingbiolimitlessbook3.webp",
+      "source_page": "https://biolimitless.com/shop/books/becoming-biolimitless-book/",
+      "downloaded_filename": "becoming-biolimitless-book.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1362,
+        "height": 1128
+      },
+      "sha256": "5d3f822b7ccc83ef0e2558766b74b251ae179d299fc2e43bf853058ce96bbf5a",
+      "production_filename": "assets/product-cutouts/biolimitless/becoming-biolimitless-book.webp",
+      "production_sha256": "9a456c9a591f6803ea4b066c6ef139e6019e0bce041c2c9e63239673c3b5a60d",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-cell-signals",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "CS-img-0825.webp",
+      "manufacturer_media_id": 20198,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/03/CS-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/formulas/cell-signals/",
+      "downloaded_filename": "cell-signals.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "088c7de4aa18ad2129808f8f259341d1a5dff36fc7e67017437882192bfd702c",
+      "production_filename": "assets/product-cutouts/biolimitless/cell-signals.webp",
+      "production_sha256": "81035ab898474647e103dc2f2cd5ef68fd92949941bd340dc4d714f7fac25c87",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-cellular-reset",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "CR-img-0825.webp",
+      "manufacturer_media_id": 20197,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/03/CR-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/peptide-formulas/cellular-reset/",
+      "downloaded_filename": "cellular-reset.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "adcfe7314429c0888dfda5670f63c570ce317517ac241b95ed10217ca0795584",
+      "production_filename": "assets/product-cutouts/biolimitless/cellular-reset.webp",
+      "production_sha256": "1bbc20b386465045104cc0be32e59ae5977197b51941ae6b44a15e11f0e2760b",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-neuro-reboot",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "NR-img-0825.webp",
+      "manufacturer_media_id": 20195,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/03/NR-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/peptide-formulas/neuro-reboot/",
+      "downloaded_filename": "neuro-reboot.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "8e5f58e027ced89aef1e6dbd698ce7970e254d1b3c1579cb5ce52c31a6a1d7fd",
+      "production_filename": "assets/product-cutouts/biolimitless/neuro-reboot.webp",
+      "production_sha256": "df66287e597e7159d71c84f863619f56031039e6ec33560d90ba44637da2d9ad",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-detox-pro-plus",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "DPP-img-0825.webp",
+      "manufacturer_media_id": 20196,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/03/DPP-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/formulas/detox-pro-plus/",
+      "downloaded_filename": "detox-pro-plus.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "bd78d2e01b45a857dffd07b2061f7a8adab19da276b443cb08809e3bb59da32c",
+      "production_filename": "assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+      "production_sha256": "6f2eaf79fe1424a3e060f5102ad9791462e63e8c5ad6ec14de5e6556323181a7",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-foundation-stack",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "Foundation-Stack-img-0825.webp",
+      "manufacturer_media_id": 20231,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Foundation-Stack-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/power-stacks/foundation-stack/",
+      "downloaded_filename": "foundation-stack.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "aff7528e127e5d7e39b889fa45538bf2bf596d6baa5df356af16692786218c52",
+      "production_filename": "assets/product-cutouts/biolimitless/foundation-stack.webp",
+      "production_sha256": "6305f3ca9ed397f295b4f2c97f7238e49def6b31d882529cc3fa1088cfbd7d31",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-triple-stack",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "Trio-Stack-img-0825.webp",
+      "manufacturer_media_id": 20235,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Trio-Stack-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/power-stacks/triple-stack/",
+      "downloaded_filename": "triple-stack.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "d1c5961bb466fba9e96edce1df4d144d02fc9f50377863bbe65bf1938329d0b7",
+      "production_filename": "assets/product-cutouts/biolimitless/triple-stack.webp",
+      "production_sha256": "c849ea8568de80b5375e95c73fdd6996cb01200091f57f786715917ac4c47f88",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-cellular-stack",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "Cell-Stack-img-0825.webp",
+      "manufacturer_media_id": 20223,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Cell-Stack-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/power-stacks/cellular-stack/",
+      "downloaded_filename": "cellular-stack.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "fbd4d5a0cf64e1c885beab0bddff814297379ff9c93800960d5e0eaaf5d2b59a",
+      "production_filename": "assets/product-cutouts/biolimitless/cellular-stack.webp",
+      "production_sha256": "603be0aed6d895e93bff00a03073c058d3be5587821e064b221916a344d4ed87",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-neuro-stack",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "Neuro-Stack-img-0825.webp",
+      "manufacturer_media_id": 20226,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Neuro-Stack-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/power-stacks/neuro-stack/",
+      "downloaded_filename": "neuro-stack.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "27b5783307e3a1dbd210adcb9476d8f5b2ccec364dca838d91c424e463cae5e4",
+      "production_filename": "assets/product-cutouts/biolimitless/neuro-stack.webp",
+      "production_sha256": "f4c8741d808d04f88df2389762132596d62de0bbb212f3a4de4d1fca9d82e30d",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-master-stack",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "Master-Stack-img-0825.webp",
+      "manufacturer_media_id": 20225,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2025/08/Master-Stack-img-0825.webp",
+      "source_page": "https://biolimitless.com/shop/power-stacks/master-stack/",
+      "downloaded_filename": "master-stack.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "a758e8f4d28f4da9e77c5d2273a9bc22af1351e590b52fc963361a35b230874c",
+      "production_filename": "assets/product-cutouts/biolimitless/master-stack.webp",
+      "production_sha256": "acb2efc3c1f5bd18f752e9d71d8318829186bd5099958ed0be778e02ac32598e",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-magnesium-glycinate",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "MagGlyc-img-0426.webp",
+      "manufacturer_media_id": 31548,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2026/04/MagGlyc-img-0426.webp",
+      "source_page": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/",
+      "downloaded_filename": "magnesium-glycinate.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "220832ed8ffd3084cfa4bf701aa4c75b4aa6d4e7987da8cb39a33badbcdcf3c7",
+      "production_filename": "assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+      "production_sha256": "fbd1cabd078e7854dc3e9a9c0a643bd75bd8076220e69fbda23d30bc7ab76669",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-zinc-copper",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "ZnCu-img-0426.webp",
+      "manufacturer_media_id": 31549,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2026/04/ZnCu-img-0426.webp",
+      "source_page": "https://biolimitless.com/shop/bio-basics/zinc-copper/",
+      "downloaded_filename": "zinc-copper.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1200,
+        "height": 785
+      },
+      "sha256": "71aaf02282ab576fcd6f8f03bee18a782d06d8d53c0bc02a05563de876cff449",
+      "production_filename": "assets/product-cutouts/biolimitless/zinc-copper.webp",
+      "production_sha256": "94d5825eef956303666f60f7b31ca294ec35eb9d930a7d57999e651f73d8875c",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-vitamin-d3-k2",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "D3K2-img-0426.webp",
+      "manufacturer_media_id": 32021,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2026/04/D3K2-img-0426.webp",
+      "source_page": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/",
+      "downloaded_filename": "vitamin-d3-k2.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1376,
+        "height": 771
+      },
+      "sha256": "8637dacaa74401525f8184925fe75bb368660f57f70d3f2b30888bab09de21d8",
+      "production_filename": "assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+      "production_sha256": "353c739a62eabb46617024946e4eb2e5fb51d3a771eb3383fdc3ba63a878d53e",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-biozyme",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "BioZym-img-0426.webp",
+      "manufacturer_media_id": 32081,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2026/04/BioZym-img-0426.webp",
+      "source_page": "https://biolimitless.com/shop/bio-basics/biozyme/",
+      "downloaded_filename": "biozyme.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1376,
+        "height": 771
+      },
+      "sha256": "8ace2b437683c4d98d13363534c0a755fb20a037d93ba8a207e9e0825ad9ecf7",
+      "production_filename": "assets/product-cutouts/biolimitless/biozyme.webp",
+      "production_sha256": "85063da97fc6c04e44168aff15493b7aa2349ea1b7347f60a17a4b798b4af27c",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    },
+    {
+      "product_id": "biolimitless-bio-basics-core-four",
+      "manufacturer": "BioLimitless",
+      "manufacturer_media_filename": "Core-Four-img-0426.webp",
+      "manufacturer_media_id": 32119,
+      "source_url": "https://bl-assets.lifepilotos.com/wp-media/2026/04/Core-Four-img-0426.webp",
+      "source_page": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/",
+      "downloaded_filename": "bio-basics-core-four.webp",
+      "downloaded_at": "2026-08-17",
+      "direct_from_biolimitless": true,
+      "pixel_dimensions": {
+        "width": 1376,
+        "height": 771
+      },
+      "sha256": "7f680930528f0c005e6510d349706abdb4fd15ede77505e1c5bcbac2612419ad",
+      "production_filename": "assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+      "production_sha256": "6bdd5b770db3543efae42d5e979a07c3c1060e9d0a6377b1f0a67e0781b15fa0",
+      "alteration": "Manufacturer image resized to a maximum width of 960 pixels and encoded as WebP; packaging and scene content were not redrawn or regenerated."
+    }
+  ]
+}

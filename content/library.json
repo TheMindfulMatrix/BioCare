@@ -1,11 +1,29 @@
 {
   "categories": [
-    { "id": "foundations", "name": "Foundations" },
-    { "id": "omega-3", "name": "Omega-3" },
-    { "id": "testing", "name": "Testing" },
-    { "id": "gut-health", "name": "Gut Health" },
-    { "id": "performance", "name": "Performance" },
-    { "id": "research", "name": "Research" }
+    {
+      "id": "foundations",
+      "name": "Foundations"
+    },
+    {
+      "id": "omega-3",
+      "name": "Omega-3"
+    },
+    {
+      "id": "testing",
+      "name": "Testing"
+    },
+    {
+      "id": "gut-health",
+      "name": "Gut Health"
+    },
+    {
+      "id": "performance",
+      "name": "Performance"
+    },
+    {
+      "id": "research",
+      "name": "Research"
+    }
   ],
   "articles": [
     {
@@ -422,6 +440,15 @@
             "href": "../index.html#shelf"
           }
         ]
+      },
+      "hero": {
+        "src": "assets/artwork/library/omega-numbers-960.webp",
+        "srcSmall": "assets/artwork/library/omega-numbers-560.webp",
+        "alt": "Omega-3 lipid molecules and blood-status signals in a dark biological matrix",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
       }
     },
     {
@@ -851,6 +878,15 @@
             "href": "../index.html#shelf"
           }
         ]
+      },
+      "hero": {
+        "src": "assets/artwork/library/omega-testing-960.webp",
+        "srcSmall": "assets/artwork/library/omega-testing-560.webp",
+        "alt": "At-home blood sample card moving through a precise omega measurement interface",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
       }
     },
     {
@@ -1173,6 +1209,15 @@
             "href": "../index.html#shelf"
           }
         ]
+      },
+      "hero": {
+        "src": "assets/artwork/library/food-vs-supplements-960.webp",
+        "srcSmall": "assets/artwork/library/food-vs-supplements-560.webp",
+        "alt": "Whole-food omega sources balanced against a neutral supplement form",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
       }
     },
     {
@@ -1523,13 +1568,1623 @@
             "href": "../index.html#shelf"
           }
         ]
+      },
+      "hero": {
+        "src": "assets/artwork/library/supplement-label-960.webp",
+        "srcSmall": "assets/artwork/library/supplement-label-560.webp",
+        "alt": "Supplement label under an evidence-reading scanner with ingredient and dose fields",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      }
+    },
+    {
+      "slug": "gut-health-101",
+      "title": "Gut Health 101: The Microbiome—and What We Actually Know",
+      "seoTitle": "Gut Health 101: What We Actually Know | The Mindful Matrix",
+      "summary": "A practical map of the gut microbiome, the factors that shape it, and the line between useful evidence and confident-sounding speculation.",
+      "seoDescription": "Understand the gut microbiome, what shapes it, and where current gut-health evidence remains uncertain.",
+      "dek": "The microbiome matters. That does not mean every microbe has a simple meaning—or that one food, probiotic, or score can define a healthy gut.",
+      "category": "gut-health",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "updatedIso": "2026-08-17",
+      "published": "August 17, 2026",
+      "publishedIso": "2026-08-17",
+      "readingTime": "~10 minutes",
+      "featured": true,
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "hero": {
+        "src": "assets/artwork/library/gut-health-101-960.webp",
+        "srcSmall": "assets/artwork/library/gut-health-101-560.webp",
+        "alt": "Layered intestinal microbiome forms rendered as a living cellular ecosystem",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      },
+      "keyTakeaways": [
+        "The gut microbiome is an ecosystem of microorganisms and their genes—not a single organ with one ideal setting.",
+        "Diet, medications, age, environment and many other factors can shift microbial communities.",
+        "Associations between microbes and health are common; direct cause-and-effect conclusions are much harder.",
+        "The basics—adequate nutrition, fiber from varied foods when tolerated, sleep and appropriate medical care—matter more than chasing a perfect score."
+      ],
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established physiology, nutrition, or research-method evidence.",
+          "items": [
+            "Microorganisms live throughout the gastrointestinal tract.",
+            "Microbiome composition varies substantially between people and over time.",
+            "Antibiotics and dietary patterns can alter gut microbial communities."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but effect size and application depend on context.",
+          "items": [
+            "Greater dietary variety and fiber-rich plant foods can support microbial functions in many people.",
+            "Some specific probiotic strains have evidence for specific uses; effects cannot be generalized to every product or condition."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Evidence is incomplete, inconsistent, or not ready for universal interpretation.",
+          "items": [
+            "A universal definition of a healthy microbiome.",
+            "Personalized food or supplement prescriptions based on a single commercial microbiome profile.",
+            "Treating diversity as a stand-alone health grade."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable next step that follows from the evidence without turning uncertainty into a promise.",
+          "items": [
+            "Start with symptoms, dietary context, medications and medical history—not a microbiome trend score.",
+            "Seek clinical evaluation for persistent or concerning gastrointestinal symptoms."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "ecosystem",
+          "heading": "A living ecosystem, not a personality test",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The gut microbiome includes bacteria, archaea, fungi, viruses and their collective genetic material. These organisms interact with food components, medications, the immune system and each other. Researchers can measure parts of that ecosystem, but no single list of organisms captures every function that matters."
+            },
+            {
+              "type": "paragraph",
+              "text": "Two people can have different microbial communities and both be healthy. The same person can also show variation across samples. That is why a result that labels one organism ‘good’ or ‘bad’ without context should trigger questions, not instant action."
+            },
+            {
+              "type": "callout",
+              "label": "Better question",
+              "text": "What was measured, how stable is that measurement, and has the result been linked to a decision that improves outcomes?"
+            }
+          ]
+        },
+        {
+          "id": "what-shapes-it",
+          "heading": "What shapes the microbiome",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Microbial communities develop across a lifetime. Diet is one influence, but so are geography, age, recent illness, medications, sanitation, sleep, activity, host genetics and ordinary day-to-day variation."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Antibiotics can produce large shifts, although recovery patterns differ.",
+                "Diet can change microbial activity quickly, while lasting community changes are harder to predict.",
+                "Fiber is not one substance; different fibers are used differently by microbes and tolerated differently by people.",
+                "A probiotic name at the species level may not tell you what a specific strain does."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "association",
+          "heading": "Association is not explanation",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Many studies compare microbiomes in people with and without a condition. If one group has more or less of a microbe, that is an association. The condition, medication, diet, age or another factor may have produced the difference. The microbial difference may contribute, merely accompany the condition, or have no practical role at all."
+            },
+            {
+              "type": "paragraph",
+              "text": "Mechanistic experiments, repeated findings, prospective studies and intervention trials can increase confidence. Even then, results from a narrow population may not transfer to everyone."
+            }
+          ]
+        },
+        {
+          "id": "basics",
+          "heading": "The useful basics before advanced tools",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "For many generally healthy adults, the practical foundation is not exotic: eat a varied, adequate diet; include fiber-rich foods you tolerate; stay physically active; protect sleep; and use antibiotics only as prescribed. Those steps support overall health even when the microbiome mechanism is not the main reason."
+            },
+            {
+              "type": "paragraph",
+              "text": "More is not always better. A sudden large increase in fiber can cause symptoms, and probiotic or fermented products are not appropriate for everyone. Individual conditions, immune status and medications can change the risk-benefit discussion."
+            },
+            {
+              "type": "callout",
+              "label": "When to get help",
+              "text": "Blood in stool, unexplained weight loss, persistent vomiting, severe pain, fever, dehydration, or a major change in bowel habits deserves clinical attention—not a wellness score."
+            }
+          ]
+        },
+        {
+          "id": "next-step",
+          "heading": "A grounded next step",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Define the problem you are actually trying to solve.",
+                "Separate digestive symptoms from a general desire to ‘optimize.’",
+                "Review diet, recent medications and symptom timing.",
+                "Use a test only when you understand what it measures and what decision could follow.",
+                "Treat a supplement as optional, product-specific and evidence-specific."
+              ]
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What the evidence supports",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Established",
+            "items": [
+              "The microbiome is biologically important and highly variable.",
+              "Diet and medications can influence it."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported",
+            "items": [
+              "Food variety and certain fibers can support useful microbial functions for many people.",
+              "Specific probiotics can help in specific contexts."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Debated",
+            "items": [
+              "Universal microbial targets and broad treatment plans derived from commercial profiles."
+            ]
+          }
+        ],
+        "statement": "The microbiome is worth understanding, but useful decisions still require symptoms, context, validated methods and humility about what a profile can prove."
+      },
+      "evidenceNotes": [
+        "Manufacturer education was used only for topic discovery; scientific statements were built from government and peer-reviewed sources.",
+        "Probiotic evidence is strain-, dose-, population- and outcome-specific."
+      ],
+      "limitations": [
+        "Microbiome research changes quickly and uses varied sampling, sequencing and analysis methods.",
+        "This guide does not address the diagnosis or treatment of a specific gastrointestinal condition.",
+        "Evidence from one population or sample type may not generalize to another."
+      ],
+      "sources": [
+        {
+          "organization": "National Institute of Environmental Health Sciences",
+          "citation": "NIH educational overview",
+          "title": "The Human Microbiome",
+          "detail": "Used for the definition of the microbiome and the range of microorganisms and body sites involved.",
+          "url": "https://www.niehs.nih.gov/sites/default/files/health/materials/microbiome_508.pdf"
+        },
+        {
+          "organization": "NIH Office of Dietary Supplements",
+          "citation": "Consumer fact sheet",
+          "title": "Probiotics: Fact Sheet for Consumers",
+          "detail": "Used for strain-specific probiotic context, product variability and safety considerations.",
+          "url": "https://ods.od.nih.gov/pdf/factsheets/Probiotics-Consumer.pdf"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed Central",
+          "citation": "Peer-reviewed review",
+          "title": "The Microbiome in Health and Disease",
+          "detail": "Used for the ecosystem model and the distinction between microbial composition, function and disease association.",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8206793/"
+        },
+        {
+          "organization": "The Lancet Gastroenterology & Hepatology",
+          "citation": "International consensus statement",
+          "title": "International consensus statement on microbiome testing in clinical practice",
+          "detail": "Used for current limits, standardization needs and responsible clinical interpretation.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39647502/"
+        },
+        {
+          "organization": "National Center for Complementary and Integrative Health",
+          "citation": "NIH consumer guidance",
+          "title": "Probiotics: Usefulness and Safety",
+          "detail": "Used for practical evidence and safety context around probiotic products.",
+          "url": "https://www.nccih.nih.gov/health/probiotics-what-do-we-know"
+        }
+      ],
+      "relatedArticles": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label"
+      ],
+      "relatedReadingHeading": "Keep the ecosystem in context",
+      "relatedReadingIntro": "Next, see what consumer gut tests can measure—and where interpretation can overreach.",
+      "optionalAction": {
+        "label": "Optional tools",
+        "heading": "If you are comparing gut tools",
+        "copy": "Start with the question and the evidence. Products and tests remain optional, and persistent symptoms belong in a clinical conversation.",
+        "ctas": [
+          {
+            "label": "Read the gut testing guide",
+            "href": "gut-testing-biomarkers.html"
+          },
+          {
+            "label": "Explore Gut & Digestion",
+            "href": "../shop.html#intent-gut-digestion"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "gut-testing-biomarkers",
+      "title": "Gut Testing: What Biomarkers Can—and Can’t—Tell You",
+      "seoTitle": "Gut Testing: What Biomarkers Can and Can’t Tell You | The Mindful Matrix",
+      "summary": "Understand the difference between clinically ordered stool or blood markers and consumer microbiome profiles before acting on a result.",
+      "seoDescription": "Learn what gut biomarkers and consumer microbiome tests measure, where they can help, and where interpretation stops.",
+      "dek": "A gut-related test can measure something real and still fail to answer the question you care about. The method, purpose, and decision pathway matter.",
+      "category": "gut-health",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "updatedIso": "2026-08-17",
+      "published": "August 17, 2026",
+      "publishedIso": "2026-08-17",
+      "readingTime": "~9 minutes",
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "hero": {
+        "src": "assets/artwork/library/gut-testing-biomarkers-960.webp",
+        "srcSmall": "assets/artwork/library/gut-testing-biomarkers-560.webp",
+        "alt": "Laboratory sample channel, biomarker bands and microbial signals in a dark diagnostic interface",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      },
+      "keyTakeaways": [
+        "A biomarker is useful only in relation to a defined question and validated interpretation.",
+        "Clinical stool and blood tests are not interchangeable with direct-to-consumer microbiome profiles.",
+        "Sample collection, transport, sequencing and analysis pipelines can change results.",
+        "A report should not become a treatment plan by itself."
+      ],
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established physiology, nutrition, or research-method evidence.",
+          "items": [
+            "Different tests measure different targets: organisms, genes, inflammation, digestion, immune response or other processes.",
+            "Pre-analytic and analytic methods affect test results."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but effect size and application depend on context.",
+          "items": [
+            "Selected clinician-ordered biomarkers can assist evaluation when used for an appropriate indication.",
+            "Repeated measurements may be useful only when the method and decision threshold are reliable."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Evidence is incomplete, inconsistent, or not ready for universal interpretation.",
+          "items": [
+            "Clinical usefulness of broad direct-to-consumer microbiome scores.",
+            "Personalized supplement plans derived from a single taxonomic profile.",
+            "Cross-company comparison of diversity or wellness scores."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable next step that follows from the evidence without turning uncertainty into a promise.",
+          "items": [
+            "Write down the question before ordering a test.",
+            "Ask what result would change the next step.",
+            "Use concerning symptoms—not a consumer score—to decide when clinical evaluation is needed."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "question-first",
+          "heading": "Begin with the decision, not the dashboard",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Testing is not automatically informative. A test becomes useful when it measures the right target accurately enough, has a valid reference or decision framework, and can change a reasonable next step."
+            },
+            {
+              "type": "list",
+              "items": [
+                "What exact question is the test designed to answer?",
+                "Is the sample type appropriate?",
+                "Has the method been validated for that use?",
+                "What happens if the result is high, low or inconclusive?",
+                "Who is qualified to interpret it in context?"
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Decision rule",
+              "text": "If no possible result would change a sensible action, the test may add data without adding value."
+            }
+          ]
+        },
+        {
+          "id": "different-tests",
+          "heading": "Not all gut tests are the same",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A clinician may order targeted tests for a pathogen, blood loss, inflammation, malabsorption or another specific concern. Those tests have defined targets. A direct-to-consumer microbiome service may sequence microbial DNA and compare relative abundance or diversity with its own reference database."
+            },
+            {
+              "type": "paragraph",
+              "text": "Both can produce numbers. That does not give them the same diagnostic purpose, regulatory status, or clinical usefulness. A broad wellness profile should not be read as a diagnosis."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Targeted clinical test: a specific analyte tied to a clinical question.",
+                "Sequencing profile: a snapshot of microbial genetic material using a particular laboratory and software pipeline.",
+                "Symptom questionnaire: reported experience, not a biological measurement.",
+                "Blood marker: systemic information that may be relevant but is rarely specific to the gut by itself."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "variation",
+          "heading": "Where variation enters",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Collection timing, storage temperature, shipping time, extraction method, sequencing technology, reference databases and analysis software can all affect the final profile. Stool also samples what leaves the gastrointestinal tract; it is not a complete map of every location or function inside it."
+            },
+            {
+              "type": "paragraph",
+              "text": "A 2026 evaluation using standardized material found substantial discrepancies within and across seven consumer services. That does not mean sequencing is meaningless. It means analytical reliability must come before confident personal recommendations."
+            }
+          ]
+        },
+        {
+          "id": "reading-report",
+          "heading": "How to read a report without overreaching",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Confirm whether the result is a measurement, percentile, proprietary score or interpretation.",
+                "Look for the laboratory method and its validation data.",
+                "Check whether the reference population resembles you.",
+                "Separate relative abundance from absolute amount.",
+                "Look for uncertainty, detection limits and reproducibility.",
+                "Do not assume a green score proves health or a red score proves disease."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Red flag",
+              "text": "A report that moves directly from one microbial pattern to a long supplement protocol without showing validated clinical utility is making a larger claim than the measurement alone can support."
+            }
+          ]
+        },
+        {
+          "id": "when-useful",
+          "heading": "When testing may be worth discussing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Targeted clinical evaluation can be appropriate when symptoms, history and professional judgment point to a specific question. Consumer testing may still satisfy curiosity or support learning, but the user should understand that educational interest and medical utility are different standards."
+            },
+            {
+              "type": "paragraph",
+              "text": "If symptoms are persistent, severe, associated with bleeding, fever, dehydration, weight loss or significant pain, skip the wellness interpretation and seek appropriate care."
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What the evidence supports",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Established",
+            "items": [
+              "Methods and sample handling materially affect microbiome results.",
+              "Targeted clinical tests and consumer sequencing profiles have different purposes."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported",
+            "items": [
+              "Appropriately selected biomarkers can contribute to a clinical evaluation when interpreted with symptoms and history."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Debated",
+            "items": [
+              "Broad consumer scores as diagnostic tools or as reliable selectors of personalized treatments."
+            ]
+          }
+        ],
+        "statement": "A real measurement is not automatically a clinically useful answer. Purpose, analytical validity and decision relevance all matter."
+      },
+      "evidenceNotes": [
+        "The recent NIST-associated comparison assessed analytical performance, not whether every possible microbiome test is useless.",
+        "The consensus literature distinguishes research potential from current routine clinical utility."
+      ],
+      "limitations": [
+        "Test offerings and laboratory methods can change faster than consensus guidance.",
+        "This guide does not evaluate a specific commercial report or replace clinical interpretation.",
+        "Some specialized tests have narrower evidence bases than can be covered here."
+      ],
+      "sources": [
+        {
+          "organization": "The Lancet Gastroenterology & Hepatology",
+          "citation": "International consensus statement",
+          "title": "International consensus statement on microbiome testing in clinical practice",
+          "detail": "Used for minimum requirements, clinical-value limits and best-practice context.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39647502/"
+        },
+        {
+          "organization": "National Institute of Standards and Technology / Communications Biology",
+          "citation": "Standardized analytical evaluation",
+          "title": "Evaluating the analytical performance of direct-to-consumer gut microbiome testing services",
+          "detail": "Used for evidence of variability across seven consumer services using standardized material.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41748906/"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed",
+          "citation": "Expert-panel opinion",
+          "title": "Opinion of an international panel of experts on the clinical use of microbiome testing",
+          "detail": "Used for the current limits of standardization and individual health interpretation.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40816900/"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed Central",
+          "citation": "Peer-reviewed diagnostics review",
+          "title": "The Microbiome and Its Potential for Pharmacology",
+          "detail": "Used for the distinction between research associations, diagnostic development and clinical translation.",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8206793/"
+        },
+        {
+          "organization": "U.S. Food and Drug Administration",
+          "citation": "Consumer guidance",
+          "title": "Direct-to-Consumer Tests",
+          "detail": "Used for general questions consumers should ask about purpose, limitations and interpretation of direct-to-consumer tests.",
+          "url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/direct-consumer-tests"
+        }
+      ],
+      "relatedArticles": [
+        "gut-health-101",
+        "how-to-read-a-health-study"
+      ],
+      "relatedReadingHeading": "Put the result back in context",
+      "relatedReadingIntro": "The next guide explains how study design and bias affect the confidence you should place in any health claim.",
+      "optionalAction": {
+        "label": "Optional tools",
+        "heading": "Considering a gut test?",
+        "copy": "Understand the method and the decision it could support before following a commercial route. A report is a starting point for questions, not a diagnosis.",
+        "ctas": [
+          {
+            "label": "Return to Gut Health 101",
+            "href": "gut-health-101.html"
+          },
+          {
+            "label": "Explore testing options",
+            "href": "../shop.html#intent-test-measure"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "recovery-after-training",
+      "title": "Recovery After Training: What Actually Matters",
+      "seoTitle": "Recovery After Training: What Actually Matters | The Mindful Matrix",
+      "summary": "A practical hierarchy for sleep, food, fluid, training load and recovery tools—without pretending every workout needs a product.",
+      "seoDescription": "Learn the recovery fundamentals that matter after training and where popular recovery tools fit.",
+      "dek": "Recovery is not a gadget category. It is the process of restoring capacity after a training stress—and the basics carry most of the load.",
+      "category": "performance",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "updatedIso": "2026-08-17",
+      "published": "August 17, 2026",
+      "publishedIso": "2026-08-17",
+      "readingTime": "~9 minutes",
+      "featured": true,
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "hero": {
+        "src": "assets/artwork/library/recovery-after-training-960.webp",
+        "srcSmall": "assets/artwork/library/recovery-after-training-560.webp",
+        "alt": "Muscle-fiber waves, glycogen signals and a quiet recovery arc after training",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      },
+      "keyTakeaways": [
+        "Training creates the stimulus; recovery allows adaptation and readiness to return.",
+        "Sleep, adequate energy, protein distribution, carbohydrate needs and fluid replacement deserve attention before specialized tools.",
+        "Recovery needs vary with session type, environment, schedule and individual tolerance.",
+        "Soreness is not a complete measure of recovery or workout quality."
+      ],
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established physiology, nutrition, or research-method evidence.",
+          "items": [
+            "Recovery needs rise with training stress and short turnaround time.",
+            "Fluid, carbohydrate, protein and sleep contribute to restoration through different mechanisms."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but effect size and application depend on context.",
+          "items": [
+            "Protein and carbohydrate timing can matter more when the next demanding session is soon.",
+            "Some modalities can reduce perceived soreness, but outcomes and tradeoffs differ."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Evidence is incomplete, inconsistent, or not ready for universal interpretation.",
+          "items": [
+            "One universal recovery window or protocol.",
+            "Using soreness alone to prove muscle damage, adaptation or readiness.",
+            "Most branded recovery blends outperforming an adequate diet."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable next step that follows from the evidence without turning uncertainty into a promise.",
+          "items": [
+            "Match the recovery plan to the next session.",
+            "Fix chronic sleep, fueling or load problems before adding a specialized tool.",
+            "Seek care for pain or symptoms that do not fit ordinary post-training fatigue."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "define",
+          "heading": "Recover for what comes next",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Recovery means restoring the capacity needed for the next task. An athlete with another hard session in six hours has a different problem from a recreational lifter resting for two days. The goal is not to erase every sign of training; some fatigue and soreness are normal parts of adaptation."
+            },
+            {
+              "type": "callout",
+              "label": "Start here",
+              "text": "Ask what you need to be ready for, how soon, and which resource—sleep, energy, fluid, carbohydrate, protein or reduced load—is most likely limiting."
+            }
+          ]
+        },
+        {
+          "id": "hierarchy",
+          "heading": "The recovery hierarchy",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Training load: a program must allow adaptation instead of piling stress on declining performance.",
+                "Sleep: protect adequate opportunity, consistency and quality.",
+                "Energy: chronic under-fueling can undermine performance and recovery.",
+                "Protein: total daily intake and distribution matter more than a magic minute.",
+                "Carbohydrate: importance rises with glycogen-demanding training and short recovery windows.",
+                "Fluid and sodium: replace meaningful losses in proportion to sweat, heat and the next session."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "These needs overlap. A drink or supplement cannot compensate for a schedule that repeatedly removes sleep, enough food or appropriate training variation."
+            }
+          ]
+        },
+        {
+          "id": "timing",
+          "heading": "Timing matters—but context decides how much",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "After demanding exercise, muscle remains responsive to protein for many hours. Immediate intake can be convenient, but the idea that progress disappears if a shake is not consumed within a tiny window is too rigid. Total daily intake and repeated meals are usually the larger levers."
+            },
+            {
+              "type": "paragraph",
+              "text": "Carbohydrate replacement becomes more urgent when sessions are long, glycogen-depleting, or close together. With a full day or more before the next session, ordinary meals often provide a wider recovery window."
+            },
+            {
+              "type": "paragraph",
+              "text": "For substantial sweat loss, rehydration is not just water volume. Sodium, food and continued urine loss affect how much fluid is retained."
+            }
+          ]
+        },
+        {
+          "id": "tools",
+          "heading": "Where recovery tools fit",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Massage, compression, cold-water immersion, active recovery and other modalities may change soreness or perceived fatigue in some settings. That can be useful during tournaments or congested schedules. It does not prove the tool increases long-term adaptation."
+            },
+            {
+              "type": "paragraph",
+              "text": "Some interventions may trade one goal for another. Regular aggressive cooling immediately after resistance training, for example, may not be the same choice for maximizing adaptation as it is for restoring short-term comfort. Define the outcome first."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Use subjective readiness alongside performance trends, not instead of them.",
+                "Do not treat wearable recovery scores as diagnoses.",
+                "Stop and reassess when pain is sharp, worsening, localized, or changes movement."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "checklist",
+          "heading": "A repeatable recovery check",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Did the session create unusual fatigue, heat exposure or fluid loss?",
+                "When is the next important session?",
+                "Have I eaten enough across the day?",
+                "Is protein distributed across meals?",
+                "Do I need rapid carbohydrate replacement—or simply a normal meal?",
+                "Can I protect sleep tonight?",
+                "Is this ordinary soreness, or a symptom that needs evaluation?"
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Action",
+              "text": "Build a boring, repeatable recovery base. Specialized tools earn a place only when they solve a defined problem."
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What the evidence supports",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Established",
+            "items": [
+              "Sleep, nutrition, hydration and training load are foundational recovery inputs.",
+              "Post-exercise needs depend on the work performed and the time before the next session."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported",
+            "items": [
+              "Selected nutrition timing and recovery modalities can help in specific high-demand contexts."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Debated",
+            "items": [
+              "Universal timing rules, recovery scores and tool stacks that apply to everyone."
+            ]
+          }
+        ],
+        "statement": "Recovery works best as a hierarchy: define the demand, cover the fundamentals, then add a tool only for a clear reason."
+      },
+      "evidenceNotes": [
+        "Several sports-nutrition position papers include expert interpretation; they are not equivalent to a single randomized trial.",
+        "Recovery research often uses short-term biomarkers or soreness, which may not predict long-term performance or adaptation."
+      ],
+      "limitations": [
+        "Needs differ by sport, body size, climate, health status and training history.",
+        "This guide does not provide an individualized hydration or nutrition prescription.",
+        "Persistent fatigue, disordered eating concerns, injury symptoms or heat illness require appropriate professional care."
+      ],
+      "sources": [
+        {
+          "organization": "National Library of Medicine / PubMed",
+          "citation": "Peer-reviewed recovery review",
+          "title": "The 4R's Framework of Nutritional Strategies for Post-Exercise Recovery",
+          "detail": "Used for the rehydrate, refuel, repair and rest framework and its contextual limitations.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33375691/"
+        },
+        {
+          "organization": "American College of Sports Medicine, Academy of Nutrition and Dietetics, Dietitians of Canada",
+          "citation": "Joint position statement",
+          "title": "Nutrition and Athletic Performance",
+          "detail": "Used for the role of adequate energy, carbohydrate, protein, fluid and individualized planning.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed",
+          "citation": "Peer-reviewed hydration review",
+          "title": "Optimizing the restoration and maintenance of fluid balance after exercise-induced dehydration",
+          "detail": "Used for post-exercise fluid-volume, sodium and retention context.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28126906/"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed",
+          "citation": "Systematic review with meta-analysis",
+          "title": "An Evidence-Based Approach for Choosing Post-exercise Recovery Techniques",
+          "detail": "Used for evidence on soreness and perceived-fatigue outcomes across recovery modalities.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29755363/"
+        },
+        {
+          "organization": "NIH Office of Dietary Supplements",
+          "citation": "Consumer fact sheet",
+          "title": "Dietary Supplements for Exercise and Athletic Performance",
+          "detail": "Used for the limited role, evidence variation and safety considerations of performance supplements.",
+          "url": "https://ods.od.nih.gov/pdf/factsheets/ExercisePerformance-Consumer.pdf"
+        }
+      ],
+      "relatedArticles": [
+        "performance-nutrition-basics",
+        "food-vs-omega-3-supplements"
+      ],
+      "relatedReadingHeading": "Build the performance base",
+      "relatedReadingIntro": "The performance-nutrition guide puts protein, carbohydrate, hydration and supplements into one practical order.",
+      "optionalAction": {
+        "label": "Optional tools",
+        "heading": "Only after the basics",
+        "copy": "If you have identified a clear format or fueling need, compare the available tools without treating them as a substitute for sleep, food or training design.",
+        "ctas": [
+          {
+            "label": "Read performance nutrition",
+            "href": "performance-nutrition-basics.html"
+          },
+          {
+            "label": "Explore active nutrition & tools",
+            "href": "../shop.html#intent-performance-recovery"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "performance-nutrition-basics",
+      "title": "Performance Nutrition: The Basics Before Supplements",
+      "seoTitle": "Performance Nutrition Basics Before Supplements | The Mindful Matrix",
+      "summary": "Organize energy, protein, carbohydrate, hydration and meal timing before deciding whether a supplement solves anything.",
+      "seoDescription": "A practical evidence-aware guide to performance nutrition fundamentals before supplements.",
+      "dek": "Most performance-nutrition decisions are not about finding a secret ingredient. They are about matching enough food and fluid to the work you actually do.",
+      "category": "performance",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "updatedIso": "2026-08-17",
+      "published": "August 17, 2026",
+      "publishedIso": "2026-08-17",
+      "readingTime": "~10 minutes",
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "hero": {
+        "src": "assets/artwork/library/performance-nutrition-960.webp",
+        "srcSmall": "assets/artwork/library/performance-nutrition-560.webp",
+        "alt": "Athletic energy pathways connecting whole-food fuel, hydration and muscle signals",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      },
+      "keyTakeaways": [
+        "Adequate total energy and a sustainable eating pattern come before optimization.",
+        "Protein supports repair and adaptation; carbohydrate availability supports many high-intensity and endurance demands.",
+        "Hydration needs are individual and environment-dependent.",
+        "Supplements are optional tools with product-specific evidence, quality and safety questions."
+      ],
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established physiology, nutrition, or research-method evidence.",
+          "items": [
+            "Food provides energy, amino acids, carbohydrate, fat, micronutrients and fluid needed for training and health.",
+            "Protein and resistance exercise interact to stimulate muscle protein synthesis.",
+            "Carbohydrate is an important fuel for many moderate-to-high intensity activities."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but effect size and application depend on context.",
+          "items": [
+            "Higher protein intake than the general adult minimum can support many training programs.",
+            "Planned carbohydrate and fluid strategies can improve performance in longer or repeated demanding sessions."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Evidence is incomplete, inconsistent, or not ready for universal interpretation.",
+          "items": [
+            "One macro split, meal frequency or supplement stack for all athletes.",
+            "Using sweat color, thirst or wearable estimates as universally precise prescriptions.",
+            "Benefits from a branded multi-ingredient formula without product-specific trials."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable next step that follows from the evidence without turning uncertainty into a promise.",
+          "items": [
+            "Establish regular meals, adequate energy and a training-matched plan.",
+            "Use food first when practical.",
+            "Evaluate supplements one ingredient, dose, purpose and risk at a time."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "energy",
+          "heading": "Energy availability is the foundation",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Performance nutrition starts with enough energy to support training, recovery and ordinary biological function. Chronic under-fueling can appear as declining performance, persistent fatigue, impaired recovery, menstrual disturbance, recurrent injury or other health effects. Those signs deserve attention rather than another stimulant."
+            },
+            {
+              "type": "paragraph",
+              "text": "Energy needs change with body size, training volume, goals and season. A sustainable plan may use portions and performance trends, while higher-level sport can warrant support from a qualified sports dietitian."
+            }
+          ]
+        },
+        {
+          "id": "protein",
+          "heading": "Protein: daily pattern before perfect timing",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Protein supplies amino acids used in tissue repair and remodeling. Exercise changes the response, which is why active people often benefit from more than the general minimum. But the useful amount depends on total diet, body size, training and goals."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Spread meaningful protein servings across meals rather than relying on one large dose.",
+                "Choose a variety of food sources that fit preferences and tolerances.",
+                "Treat post-training protein as one meal in the daily pattern, not a rescue for an inadequate diet.",
+                "A powder can be convenient; convenience is not proof that it is superior to food."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "carbohydrate",
+          "heading": "Carbohydrate: match the demand",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Carbohydrate supports blood glucose and muscle glycogen. Its performance importance generally rises with session intensity, duration and repetition. A short easy session and a long competition do not require the same strategy."
+            },
+            {
+              "type": "paragraph",
+              "text": "Before cutting carbohydrate by default, ask what the training requires. During or immediately after exercise, rapid carbohydrate may be useful when the workload is long or the turnaround is short. On lighter days, normal meals may be enough."
+            }
+          ]
+        },
+        {
+          "id": "hydration",
+          "heading": "Hydration: replace what matters, not everything imaginable",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sweat rate changes with heat, humidity, clothing, intensity, body size and acclimatization. That makes universal fluid rules unreliable. Starting hydrated, drinking to a plan suited to the session, and replacing substantial losses afterward are more useful than forcing excessive water."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Compare body mass before and after representative sessions when a precise plan is warranted.",
+                "Account for fluids consumed and urine produced.",
+                "Include sodium and food when losses are substantial or recovery time is short.",
+                "Avoid overdrinking; more water is not always safer."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "supplements",
+          "heading": "Supplements come last",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A supplement should answer a specific question: Is there a diagnosed deficiency? A food-access problem? A proven performance use at an appropriate dose? A convenience need? Without a clear purpose, a stack mostly adds cost, complexity and interaction risk."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Check the exact ingredient and dose.",
+                "Look for evidence in a population and outcome relevant to you.",
+                "Review medication and health interactions.",
+                "Prefer independent quality certification when contamination carries sport or health consequences.",
+                "Reassess whether the product changed the intended outcome."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Bottom line",
+              "text": "Build the plate, the schedule and the hydration plan first. A product is optional infrastructure—not the foundation."
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What the evidence supports",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Established",
+            "items": [
+              "Adequate energy, protein, carbohydrate, fat, micronutrients and fluid support training and health.",
+              "Needs depend on the athlete and the work performed."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported",
+            "items": [
+              "Planned protein distribution, carbohydrate timing and hydration can improve recovery or performance in appropriate contexts."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Debated",
+            "items": [
+              "Universal macro targets and broad multi-ingredient supplement claims."
+            ]
+          }
+        ],
+        "statement": "Performance nutrition is a matching problem: align enough food and fluid with the training demand, then evaluate optional tools narrowly."
+      },
+      "evidenceNotes": [
+        "Position statements synthesize broad evidence but still require individual application.",
+        "Sports-supplement evidence can be affected by small studies, trained-vs-untrained differences, product formulation and industry funding."
+      ],
+      "limitations": [
+        "This guide does not calculate individualized energy, carbohydrate, protein, electrolyte or fluid targets.",
+        "Clinical conditions, pregnancy, eating disorders and medication use can change nutrition decisions.",
+        "Competitive athletes should consider anti-doping contamination risk and governing-body rules."
+      ],
+      "sources": [
+        {
+          "organization": "American College of Sports Medicine, Academy of Nutrition and Dietetics, Dietitians of Canada",
+          "citation": "Joint position statement",
+          "title": "Nutrition and Athletic Performance",
+          "detail": "Used for the integrated energy, carbohydrate, protein, fat, fluid and timing framework.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26891166/"
+        },
+        {
+          "organization": "International Society of Sports Nutrition",
+          "citation": "Peer-reviewed position stand",
+          "title": "International Society of Sports Nutrition Position Stand: protein and exercise",
+          "detail": "Used for protein intake, distribution and exercise-context evidence.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28642676/"
+        },
+        {
+          "organization": "NIH Office of Dietary Supplements",
+          "citation": "Consumer fact sheet",
+          "title": "Dietary Supplements for Exercise and Athletic Performance",
+          "detail": "Used for supplement evidence, safety, labeling and quality context.",
+          "url": "https://ods.od.nih.gov/pdf/factsheets/ExercisePerformance-Consumer.pdf"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed Central",
+          "citation": "Systematic review, meta-analysis and meta-regression",
+          "title": "Effect of protein supplementation on resistance training-induced gains in muscle mass and strength",
+          "detail": "Used for the small additional effect of protein supplementation when combined with resistance training and the importance of baseline intake.",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5867436/"
+        },
+        {
+          "organization": "National Library of Medicine / PubMed",
+          "citation": "Peer-reviewed hydration review",
+          "title": "Optimizing the restoration and maintenance of fluid balance after exercise-induced dehydration",
+          "detail": "Used for individualized post-exercise rehydration context.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28126906/"
+        }
+      ],
+      "relatedArticles": [
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "relatedReadingHeading": "Connect the plan to recovery",
+      "relatedReadingIntro": "See how the basics change when the goal is restoring readiness after a specific session.",
+      "optionalAction": {
+        "label": "Optional tools",
+        "heading": "If a format would make the plan easier",
+        "copy": "Compare products only after defining the food, hydration or convenience problem. Evidence for one ingredient does not automatically validate every blend.",
+        "ctas": [
+          {
+            "label": "Read the recovery guide",
+            "href": "recovery-after-training.html"
+          },
+          {
+            "label": "Explore active nutrition & tools",
+            "href": "../shop.html#intent-performance-recovery"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "how-to-read-a-health-study",
+      "title": "How to Read a Health Study Without Getting Fooled",
+      "seoTitle": "How to Read a Health Study Without Getting Fooled | The Mindful Matrix",
+      "summary": "A repeatable way to inspect the question, design, population, outcome, effect size, uncertainty and conflicts behind a health headline.",
+      "seoDescription": "Learn a practical framework for reading health studies, spotting bias and judging whether results apply to you.",
+      "dek": "A study can be real, peer-reviewed and statistically significant—and still fail to support the headline built around it.",
+      "category": "research",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "updatedIso": "2026-08-17",
+      "published": "August 17, 2026",
+      "publishedIso": "2026-08-17",
+      "readingTime": "~11 minutes",
+      "featured": true,
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "hero": {
+        "src": "assets/artwork/library/read-health-study-960.webp",
+        "srcSmall": "assets/artwork/library/read-health-study-560.webp",
+        "alt": "Layered research paper, study groups and evidence signals under a focused reading beam",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      },
+      "keyTakeaways": [
+        "Start with the research question and study design, not the conclusion paragraph.",
+        "Look at who was studied, what was compared, and what outcome was actually measured.",
+        "Effect size and uncertainty matter alongside statistical significance.",
+        "One study rarely settles a broad health question."
+      ],
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established physiology, nutrition, or research-method evidence.",
+          "items": [
+            "Randomization can reduce confounding in intervention studies.",
+            "Blinding, complete follow-up and valid outcome measurement can reduce bias.",
+            "Observational studies identify associations but generally cannot establish causation alone."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but effect size and application depend on context.",
+          "items": [
+            "Systematic reviews can improve the evidence picture when methods are rigorous and included studies are sufficiently comparable.",
+            "Preregistration and transparent protocols can reduce selective reporting."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Evidence is incomplete, inconsistent, or not ready for universal interpretation.",
+          "items": [
+            "A single universal hierarchy that makes every randomized trial better than every observational study.",
+            "Using journal prestige or peer review as a guarantee that a conclusion is correct."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable next step that follows from the evidence without turning uncertainty into a promise.",
+          "items": [
+            "Identify the study type.",
+            "Compare the headline with the actual outcome and effect size.",
+            "Check limitations, funding, registration and the wider evidence."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "question",
+          "heading": "Step 1: Find the actual question",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Translate the paper into a sentence: In which population, does which exposure or intervention, compared with what, affect which outcome, over what time? This PICO-style frame exposes missing pieces quickly."
+            },
+            {
+              "type": "paragraph",
+              "text": "A headline may say a food ‘improves health’ while the study measured one laboratory marker for four weeks. That outcome may be interesting, but it is not the same claim."
+            }
+          ]
+        },
+        {
+          "id": "design",
+          "heading": "Step 2: Match the design to the claim",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Randomized controlled trial: can support causal inference when allocation, adherence, follow-up and measurement are sound.",
+                "Cohort study: follows exposures and outcomes over time; useful for association and risk patterns, still vulnerable to confounding.",
+                "Case-control study: starts with an outcome and looks backward; efficient for rare outcomes, sensitive to selection and recall bias.",
+                "Cross-sectional study: one-time snapshot; cannot reliably establish which came first.",
+                "Systematic review or meta-analysis: structured synthesis whose strength depends on search, selection, bias assessment and study comparability."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Design rule",
+              "text": "Do not ask whether the study is ‘good’ in the abstract. Ask whether its design can answer the claim being made."
+            }
+          ]
+        },
+        {
+          "id": "methods",
+          "heading": "Step 3: Inspect who, what and how",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Read the methods before trusting the conclusion. Check inclusion criteria, sample size, randomization, blinding, comparison group, duration, dropouts, adherence and whether the outcome measure was valid."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Does the sample resemble the people in the headline?",
+                "Was the comparison fair and planned in advance?",
+                "Did groups differ at baseline?",
+                "Were many outcomes tested but only a few highlighted?",
+                "Were missing data or dropouts handled transparently?",
+                "Was the study long enough to observe a meaningful outcome?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "results",
+          "heading": "Step 4: Read magnitude and uncertainty",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A p-value addresses compatibility with a statistical model; it does not tell you whether an effect is large, important, unbiased or likely to apply to you. Look for the absolute difference, relative difference, confidence interval and the number of events."
+            },
+            {
+              "type": "paragraph",
+              "text": "A large relative change can describe a tiny absolute change when the starting risk is low. A wide confidence interval may include both trivial and meaningful effects. If only a surrogate marker changed, ask whether changing that marker has been shown to improve outcomes people care about."
+            }
+          ]
+        },
+        {
+          "id": "context",
+          "heading": "Step 5: Put one result into the evidence map",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Read the stated limitations—and look for important ones the authors did not emphasize.",
+                "Check trial registration or a published protocol when available.",
+                "Look for conflicts of interest without assuming funding alone invalidates data.",
+                "Compare with systematic reviews, guidelines or independent replications.",
+                "Notice whether the conclusion language matches the design: associated with, improved, reduced, or caused."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Action",
+              "text": "Change confidence in proportion to the evidence. Do not let one exciting abstract rewrite an entire health plan."
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What the evidence supports",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Established",
+            "items": [
+              "Study design, bias control, measurement validity and complete reporting affect confidence.",
+              "Effect magnitude and uncertainty are necessary for interpretation."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported",
+            "items": [
+              "Preregistration, replication and rigorous systematic review can strengthen the evidence base."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Debated",
+            "items": [
+              "Using a single checklist score or journal label as a substitute for topic-specific judgment."
+            ]
+          }
+        ],
+        "statement": "A careful reader does not need to become a statistician. The essential move is to compare the claim with what the study was actually capable of showing."
+      },
+      "evidenceNotes": [
+        "Quality tools guide judgment; they are not mechanical point systems that remove the need for context.",
+        "Peer review is a filter, not proof of truth or absence of bias."
+      ],
+      "limitations": [
+        "This guide cannot cover specialized statistical methods or every study design.",
+        "A full critical appraisal may require subject-matter and statistical expertise.",
+        "Preprints, secondary analyses and adaptive trials can require additional questions not covered here."
+      ],
+      "sources": [
+        {
+          "organization": "National Institutes of Health",
+          "citation": "Research-literacy guide",
+          "title": "Understanding Clinical Studies",
+          "detail": "Used for the strengths and limits of randomized and observational study designs.",
+          "url": "https://www.nih.gov/about-nih/science-health-public-trust/tools/understanding-clinical-studies"
+        },
+        {
+          "organization": "National Center for Complementary and Integrative Health",
+          "citation": "Know the Science interactive guide",
+          "title": "How To Make Sense of a Scientific Journal Article",
+          "detail": "Used for the structured reading path through abstract, methods, results and discussion.",
+          "url": "https://www.nccih.nih.gov/health/know-science/how-to-make-sense-of-a-scientific-journal-article/overview"
+        },
+        {
+          "organization": "National Heart, Lung, and Blood Institute",
+          "citation": "NIH critical-appraisal tools",
+          "title": "Study Quality Assessment Tools",
+          "detail": "Used for bias, allocation, blinding, dropout, outcome measurement and systematic-review quality questions.",
+          "url": "https://www.nhlbi.nih.gov/health-topics/study-quality-assessment-tools"
+        },
+        {
+          "organization": "National Academies / NCBI Bookshelf",
+          "citation": "Methods guidance",
+          "title": "Assessing the Quality of Individual Studies in Systematic Reviews of Health Care Interventions",
+          "detail": "Used for internal validity and risk-of-bias principles across study designs.",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK390294/"
+        },
+        {
+          "organization": "ClinicalTrials.gov",
+          "citation": "U.S. trial-registry guidance",
+          "title": "Learn About Studies",
+          "detail": "Used for the role of protocols, outcomes and public trial records.",
+          "url": "https://clinicaltrials.gov/study-basics/learn-about-studies"
+        }
+      ],
+      "relatedArticles": [
+        "correlation-causation-relative-risk",
+        "how-to-read-a-supplement-label"
+      ],
+      "relatedReadingHeading": "Go one level deeper",
+      "relatedReadingIntro": "Next, learn why an association is not automatically a cause—and why relative risk needs an absolute baseline.",
+      "optionalAction": {
+        "label": "Keep learning",
+        "heading": "Practice on the next headline",
+        "copy": "Take one recent health claim and identify the population, design, comparator, measured outcome, absolute effect and largest uncertainty before deciding what it means.",
+        "ctas": [
+          {
+            "label": "Read correlation and causation",
+            "href": "correlation-causation-relative-risk.html"
+          },
+          {
+            "label": "Return to the Library",
+            "href": "../library.html"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "correlation-causation-relative-risk",
+      "title": "Correlation, Causation, and Relative Risk: A Practical Guide",
+      "seoTitle": "Correlation, Causation, and Relative Risk | The Mindful Matrix",
+      "summary": "Learn how associations form, where confounding hides, and why absolute risk often changes the meaning of a dramatic relative number.",
+      "seoDescription": "Understand correlation, causation, confounding, relative risk and absolute risk in everyday health research.",
+      "dek": "Two things can move together without one causing the other. And a large relative change can describe a very small absolute difference.",
+      "category": "research",
+      "status": "published",
+      "author": "The Mindful Matrix Editorial Team",
+      "evidenceReviewed": "August 2026",
+      "updated": "August 2026",
+      "updatedIso": "2026-08-17",
+      "published": "August 17, 2026",
+      "publishedIso": "2026-08-17",
+      "readingTime": "~9 minutes",
+      "educationDisclosure": "The Library provides educational information and does not diagnose medical conditions or replace individualized medical care.",
+      "hero": {
+        "src": "assets/artwork/library/correlation-causation-risk-960.webp",
+        "srcSmall": "assets/artwork/library/correlation-causation-risk-560.webp",
+        "alt": "Two data pathways diverging through confounders into relative and absolute risk frames",
+        "width": 960,
+        "height": 640,
+        "smallWidth": 560,
+        "smallHeight": 373
+      },
+      "keyTakeaways": [
+        "Correlation means variables are associated; it does not by itself identify cause.",
+        "Confounding, selection, measurement error, reverse causation and chance can create or distort associations.",
+        "Relative risk compares groups; absolute risk shows the size of the difference in context.",
+        "Causal confidence grows from converging evidence, not one impressive number."
+      ],
+      "evidenceLabels": [
+        {
+          "level": "established",
+          "label": "Established",
+          "meaning": "Supported by established physiology, nutrition, or research-method evidence.",
+          "items": [
+            "Risk ratios compare event probability between groups.",
+            "Absolute risk difference describes the difference in event rates.",
+            "Observational associations can be distorted by confounding and bias."
+          ]
+        },
+        {
+          "level": "supported",
+          "label": "Supported",
+          "meaning": "Evidence supports the idea, but effect size and application depend on context.",
+          "items": [
+            "Temporality, consistency, dose-response patterns, plausible mechanisms and intervention evidence can strengthen causal inference when considered together."
+          ]
+        },
+        {
+          "level": "debated",
+          "label": "Debated",
+          "meaning": "Evidence is incomplete, inconsistent, or not ready for universal interpretation.",
+          "items": [
+            "Any single checklist that proves causation.",
+            "Treating a statistically significant association as necessarily important or causal."
+          ]
+        },
+        {
+          "level": "action",
+          "label": "Action",
+          "meaning": "A reasonable next step that follows from the evidence without turning uncertainty into a promise.",
+          "items": [
+            "Ask what else differs between groups.",
+            "Translate relative numbers into absolute event rates.",
+            "Look for replication and designs that address alternative explanations."
+          ]
+        }
+      ],
+      "bodySections": [
+        {
+          "id": "correlation",
+          "heading": "Correlation is a pattern, not a mechanism",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "An association tells you that an exposure and an outcome differ together in the observed data. It does not tell you why. The exposure could affect the outcome, the outcome could affect the exposure, a third factor could influence both, or the pattern could reflect bias or chance."
+            },
+            {
+              "type": "paragraph",
+              "text": "Associations are still valuable. They can identify signals, generate hypotheses and reveal patterns that cannot be tested experimentally for ethical or practical reasons. The mistake is not observing correlation; it is skipping the work required to interpret it."
+            }
+          ]
+        },
+        {
+          "id": "confounding",
+          "heading": "The alternative explanations",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Confounding: a third factor is related to both exposure and outcome.",
+                "Reverse causation: the early outcome changes the exposure rather than the exposure causing the outcome.",
+                "Selection bias: the people included differ in a way that affects the relationship.",
+                "Measurement error: exposure or outcome is classified inaccurately.",
+                "Multiple testing: many comparisons increase the chance of an apparently positive result.",
+                "Residual confounding: statistical adjustment cannot fully measure or remove every important difference."
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Example pattern",
+              "text": "If supplement users have better outcomes, the supplement may help—or users may also differ in income, diet, health behavior, access to care, baseline risk or reasons for taking it."
+            }
+          ]
+        },
+        {
+          "id": "risk",
+          "heading": "Relative risk needs an absolute baseline",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Suppose an event occurs in 2 of 1,000 people in one group and 1 of 1,000 in another. The relative risk is doubled, but the absolute difference is one additional event per 1,000. Both statements are mathematically valid; only together show the scale."
+            },
+            {
+              "type": "paragraph",
+              "text": "Now imagine rates of 200 and 100 per 1,000. The same two-fold relative risk represents an absolute difference of 100 per 1,000. Baseline risk changes the practical meaning."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Risk ratio: event risk in the exposed group divided by event risk in the comparison group.",
+                "Absolute risk difference: exposed event rate minus comparison event rate.",
+                "Odds ratio: compares odds, not risks; it can look more dramatic when outcomes are common.",
+                "Confidence interval: a range of values compatible with the model and data under its assumptions."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "causation",
+          "heading": "How causal confidence grows",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Randomization can balance known and unknown confounders on average, making a well-conducted trial a strong design for many intervention questions. But trials can be short, small, unblinded, poorly adhered to or focused on surrogate outcomes."
+            },
+            {
+              "type": "paragraph",
+              "text": "For exposures that cannot be randomized, causal reasoning draws on temporality, replication, magnitude, dose-response, negative controls, natural experiments, mechanistic evidence and methods designed to reduce confounding. No one feature automatically proves the case."
+            }
+          ]
+        },
+        {
+          "id": "headline",
+          "heading": "A five-question headline check",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Was the study observational or experimental?",
+                "What were the absolute event rates?",
+                "What confounders were measured—and which important ones may remain?",
+                "Could reverse causation or selection explain the pattern?",
+                "Does the language say associated with or caused, and is that wording justified?"
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Action",
+              "text": "When a relative number sounds dramatic, find the denominator and baseline. When a causal claim sounds certain, look for the design that earned that certainty."
+            }
+          ]
+        }
+      ],
+      "evidenceSummary": {
+        "heading": "What the evidence supports",
+        "groups": [
+          {
+            "level": "established",
+            "label": "Established",
+            "items": [
+              "Association and causation are different claims.",
+              "Absolute and relative measures answer different questions.",
+              "Confounding and bias can distort observational results."
+            ]
+          },
+          {
+            "level": "supported",
+            "label": "Supported",
+            "items": [
+              "Converging evidence from stronger designs, replication and plausible mechanisms can increase causal confidence."
+            ]
+          },
+          {
+            "level": "debated",
+            "label": "Debated",
+            "items": [
+              "A universal threshold or single criterion that proves causality in every health question."
+            ]
+          }
+        ],
+        "statement": "Good interpretation keeps the denominator, the alternative explanations and the study design visible at the same time."
+      },
+      "evidenceNotes": [
+        "The numerical examples are hypothetical and illustrate interpretation; they are not estimates of a real health outcome.",
+        "Causal inference methods continue to evolve and must be judged in the context of the specific question and data."
+      ],
+      "limitations": [
+        "This guide does not cover hazard ratios, competing risks, Bayesian inference or advanced causal models in depth.",
+        "Odds ratios and time-to-event measures require additional care beyond the simplified examples.",
+        "A full causal assessment often requires specialist domain knowledge."
+      ],
+      "sources": [
+        {
+          "organization": "Centers for Disease Control and Prevention",
+          "citation": "Epidemiology training module",
+          "title": "Principles of Epidemiology: Measures of Association",
+          "detail": "Used for definitions of risk ratio and measures of association.",
+          "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson3/section5.html"
+        },
+        {
+          "organization": "National Institutes of Health",
+          "citation": "Research-literacy guide",
+          "title": "Understanding Clinical Studies",
+          "detail": "Used for the causal strengths of randomized trials and the associational role of observational designs.",
+          "url": "https://www.nih.gov/about-nih/science-health-public-trust/tools/understanding-clinical-studies"
+        },
+        {
+          "organization": "National Heart, Lung, and Blood Institute",
+          "citation": "NIH critical-appraisal tools",
+          "title": "Study Quality Assessment Tools",
+          "detail": "Used for confounding, temporality, selection and measurement-bias questions.",
+          "url": "https://www.nhlbi.nih.gov/health-topics/study-quality-assessment-tools"
+        },
+        {
+          "organization": "Centers for Disease Control and Prevention / NIOSH",
+          "citation": "Epidemiology methods paper",
+          "title": "Estimation of Risk and Inferring Causality in Epidemiology",
+          "detail": "Used for risk measures and the complexity of causal inference in chronic-disease epidemiology.",
+          "url": "https://stacks.cdc.gov/view/cdc/242356"
+        },
+        {
+          "organization": "National Center for Complementary and Integrative Health",
+          "citation": "Know the Science guidance",
+          "title": "The Facts About Health News Stories",
+          "detail": "Used for practical questions about study type, magnitude, uncertainty and reporting.",
+          "url": "https://www.nccih.nih.gov/health/know-science/the-facts-about-health-news-stories"
+        }
+      ],
+      "relatedArticles": [
+        "how-to-read-a-health-study",
+        "gut-testing-biomarkers"
+      ],
+      "relatedReadingHeading": "Use the framework",
+      "relatedReadingIntro": "Return to the study-reading guide and apply the risk and causation questions to a complete paper.",
+      "optionalAction": {
+        "label": "Keep learning",
+        "heading": "Translate the next risk headline",
+        "copy": "Find the comparison group, event counts, absolute difference, relative measure and confidence interval. Then list at least two alternative explanations before deciding what the result supports.",
+        "ctas": [
+          {
+            "label": "Read the study guide",
+            "href": "how-to-read-a-health-study.html"
+          },
+          {
+            "label": "Return to the Library",
+            "href": "../library.html"
+          }
+        ]
       }
     }
   ],
   "schema": {
-    "statusValues": ["draft", "published"],
-    "required": ["slug", "title", "summary", "category", "status", "author", "readingTime", "bodySections"],
-    "publishedRequired": ["evidenceReviewed", "updated", "sources"],
+    "statusValues": [
+      "draft",
+      "published"
+    ],
+    "required": [
+      "slug",
+      "title",
+      "summary",
+      "category",
+      "status",
+      "author",
+      "readingTime",
+      "bodySections"
+    ],
+    "publishedRequired": [
+      "evidenceReviewed",
+      "updated",
+      "sources"
+    ],
     "optional": [
       "dek",
       "seoTitle",

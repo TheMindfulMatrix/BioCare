@@ -99,6 +99,40 @@ def png_dimensions(path: Path) -> tuple[int, int] | None:
     return struct.unpack(">II", header[16:24])
 
 
+def webp_dimensions(path: Path) -> tuple[int, int] | None:
+    data = path.read_bytes()
+    if len(data) < 30 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return None
+    offset = 12
+    while offset + 8 <= len(data):
+        chunk = data[offset:offset + 4]
+        size = int.from_bytes(data[offset + 4:offset + 8], "little")
+        payload = offset + 8
+        if chunk == b"VP8X" and payload + 10 <= len(data):
+            width = 1 + int.from_bytes(data[payload + 4:payload + 7], "little")
+            height = 1 + int.from_bytes(data[payload + 7:payload + 10], "little")
+            return width, height
+        if chunk == b"VP8 " and payload + 10 <= len(data):
+            marker = data.find(b"\x9d\x01\x2a", payload, min(len(data), payload + size))
+            if marker >= 0 and marker + 7 <= len(data):
+                width = int.from_bytes(data[marker + 3:marker + 5], "little") & 0x3FFF
+                height = int.from_bytes(data[marker + 5:marker + 7], "little") & 0x3FFF
+                return width, height
+        if chunk == b"VP8L" and payload + 5 <= len(data) and data[payload] == 0x2F:
+            bits = int.from_bytes(data[payload + 1:payload + 5], "little")
+            return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+        offset = payload + size + (size % 2)
+    return None
+
+
+def image_dimensions(path: Path) -> tuple[int, int] | None:
+    if path.suffix.lower() == ".png":
+        return png_dimensions(path)
+    if path.suffix.lower() == ".webp":
+        return webp_dimensions(path)
+    return None
+
+
 def json_ld_records(generated: str, label: object) -> list[dict]:
     scripts = re.findall(r'<script type="application/ld\+json">(.*?)</script>', generated, flags=re.DOTALL)
     records: list[dict] = []
@@ -155,7 +189,12 @@ def validate_content(site: dict, library: dict) -> None:
     statuses = set(schema.get("statusValues", []))
     slugs = [article.get("slug") for article in library.get("articles", [])]
     check(len(slugs) == len(set(slugs)), "Library article slugs must be unique")
+    titles = [article.get("title") for article in library.get("articles", [])]
+    check(len(titles) == len(set(titles)), "Library article titles must be unique")
     published_slugs = {article.get("slug") for article in library.get("articles", []) if article.get("status") == "published"}
+    check(len(published_slugs) == 10, "V3.1 requires ten published Library guides")
+    for completed_category in ("gut-health", "performance", "research"):
+        check(sum(1 for article in library.get("articles", []) if article.get("status") == "published" and article.get("category") == completed_category) >= 2, f"{completed_category}: V3.1 requires at least two published guides")
     for article in library.get("articles", []):
         label = article.get("slug", "unknown article")
         for field in required:
@@ -195,7 +234,9 @@ def validate_content(site: dict, library: dict) -> None:
             for group in groups:
                 check(bool(group.get("label")), f"{label}: evidence summary groups require visible labels")
                 check(isinstance(group.get("items"), list) and bool(group.get("items")), f"{label}: evidence summary groups require items")
-        for source in article.get("sources", []):
+        article_sources = article.get("sources", [])
+        check(len({source.get("url") for source in article_sources}) == len(article_sources), f"{label}: source URLs must be unique within the guide")
+        for source in article_sources:
             check(urlparse(source.get("url", "")).scheme == "https", f"{label}: source URLs must use HTTPS")
             check(bool(source.get("organization")), f"{label}: source organization required")
             check(bool(source.get("citation")), f"{label}: source citation required")
@@ -224,10 +265,20 @@ def validate_content(site: dict, library: dict) -> None:
         for product_term in ("balanceoil", "balancetest"):
             check(product_term not in educational_content, f"{label}: direct product promotion appears inside educational content")
         hero = article.get("hero")
+        if article.get("status") == "published":
+            check(bool(hero), f"{label}: published V3.1 guide requires topic-specific hero artwork")
         if hero:
-            check((ROOT / hero.get("src", "missing")).is_file(), f"{label}: missing hero image")
+            hero_path = ROOT / hero.get("src", "missing")
+            check(hero_path.is_file(), f"{label}: missing hero image")
             check(hero.get("alt") is not None, f"{label}: hero image alt behavior required")
             check(bool(hero.get("width") and hero.get("height")), f"{label}: hero dimensions required")
+            if hero_path.is_file():
+                check(image_dimensions(hero_path) == (hero.get("width"), hero.get("height")), f"{label}: hero dimensions must match its source")
+            if hero.get("srcSmall"):
+                small_path = ROOT / hero["srcSmall"]
+                check(small_path.is_file(), f"{label}: missing responsive hero derivative")
+                if small_path.is_file():
+                    check(image_dimensions(small_path) == (hero.get("smallWidth"), hero.get("smallHeight")), f"{label}: responsive hero dimensions must match")
 
     catalog = site.get("catalog", {})
     partner_id = site.get("affiliate", {}).get("zinzinoPartnerId")
@@ -237,10 +288,23 @@ def validate_content(site: dict, library: dict) -> None:
     check(intent_ids == ["test-measure", "omega-nutrition", "gut-digestion", "daily-wellness", "performance-recovery", "healthy-aging"], "Product intents must preserve the approved six-part visitor taxonomy")
     intent_names = [intent.get("name") for intent in intents]
     check(intent_names == ["Test & Measure", "Omega & Nutrition", "Gut & Digestion", "Daily Wellness", "Active Nutrition & Tools", "Skin & Collagen"], "Visitor-facing product taxonomy must preserve the neutral release-candidate labels")
-    check(len({product.get("sku") for product in products}) == len(products), "Verified product SKUs must be unique")
+    skus = [product.get("sku") for product in products if product.get("sku")]
+    check(len(set(skus)) == len(skus), "Published manufacturer SKUs must be unique when present")
     check(len({product.get("destination") for product in products}) == len(products), "Verified individual product destinations must be unique")
     check(len({product.get("cutout", {}).get("sourceAsset") for product in products}) == len(products), "Official product source assets must be unique")
-    check("$" not in json.dumps(products, ensure_ascii=False), "Unapproved pricing must not enter the verified product catalog")
+    manufacturers = {product.get("manufacturer") for product in products}
+    check(manufacturers == {"Zinzino", "BioLimitless"}, "Catalog manufacturers must be recognized and explicit")
+    active_products = [product for product in products if product.get("commercial_status") == "active"]
+    deferred_products = [product for product in products if product.get("commercial_status") == "deferred_compliance_review"]
+    check(len([product for product in products if product.get("manufacturer") == "Zinzino"]) == 36, "V3.1 must preserve all 36 verified Zinzino products")
+    check(len([product for product in products if product.get("manufacturer") == "BioLimitless"]) == 17, "V3.1 must inventory all 17 scoped BioLimitless products")
+    check(len([product for product in active_products if product.get("manufacturer") == "BioLimitless"]) == 9, "V3.1 must expose exactly nine active BioLimitless products")
+    check(len(deferred_products) == 8, "V3.1 must retain exactly eight BioLimitless products behind the compliance firewall")
+    affiliate = catalog.get("affiliate", {})
+    check(affiliate.get("biolimitlessPartnerBase") == "https://biolimitless.com/me/matrix/", "BioLimitless partner base must remain exact")
+    check(affiliate.get("biolimitlessReferralQueryKey") == "me" and affiliate.get("biolimitlessReferralSlug") == "matrix", "BioLimitless referral mechanism must preserve ?me=matrix")
+    check(bool(site.get("site", {}).get("biolimitlessAffiliateDisclosure")), "BioLimitless material-connection disclosure is required")
+    check(bool(site.get("site", {}).get("pricingDisclosure")), "Current-price disclosure is required")
     legacy_destinations = {
         "https://www.zinzino.com/shop/2021428066/us/en-us/products/balance-supplements-kits/910465",
         "https://www.zinzino.com/shop/2021428066/us/en-us/products/shop/home-health-tests",
@@ -255,18 +319,47 @@ def validate_content(site: dict, library: dict) -> None:
     check(legacy_destinations.issubset(current_destinations), "All seven previously verified commercial destinations must remain intact")
     for product in products:
         label = product.get("id", "unknown")
-        for field in ("id", "name", "manufacturer", "sku", "intent", "category", "productKind", "purchaseModel", "description", "descriptionSource", "whyItsHere", "variantGroup", "variantLabel", "officialProductPage", "cta", "destination", "cutout", "artwork"):
+        for field in ("id", "name", "manufacturer", "intent", "category", "productKind", "purchaseModel", "description", "descriptionSource", "whyItsHere", "variantGroup", "variantLabel", "officialProductPage", "cta", "destination", "cutout", "artwork", "price", "commercial_status"):
             check(bool(product.get(field)), f"{label}: missing {field}")
         check("verified" not in product.get("whyItsHere", "").lower(), f"{label}: Why It's Here should provide product context rather than verification boilerplate")
         check(bool(product.get("environment")), f"{label}: decorative Shelf environment is required")
         check(product.get("intent") in intent_ids, f"{label}: unknown product intent")
-        check(product.get("manufacturer") == "Zinzino", f"{label}: manufacturer must remain explicit")
-        check(product.get("sku") in product.get("officialProductPage", ""), f"{label}: official product page must contain the exact SKU")
+        check(product.get("manufacturer") in {"Zinzino", "BioLimitless"}, f"{label}: manufacturer must be recognized")
+        if product.get("manufacturer") == "Zinzino":
+            check(bool(product.get("sku")), f"{label}: Zinzino SKU is required")
+            check(product.get("sku") in product.get("officialProductPage", ""), f"{label}: official product page must contain the exact SKU")
+        else:
+            check(product.get("sku") is None, f"{label}: BioLimitless SKU must not be invented")
         check(urlparse(product.get("officialProductPage", "")).scheme == "https", f"{label}: official product page must use HTTPS")
         destination = product.get("destination", "")
         check(urlparse(destination).scheme == "https", f"{label}: destination must use HTTPS")
         if "zinzino.com" in destination:
             check(f"/shop/{partner_id}/" in destination, f"{label}: Zinzino partner ID mismatch")
+            check(product.get("manufacturer") == "Zinzino", f"{label}: Zinzino route cannot be assigned to BioLimitless")
+        if "biolimitless.com" in destination:
+            check(product.get("manufacturer") == "BioLimitless", f"{label}: BioLimitless route cannot be assigned to Zinzino")
+            check(destination.endswith("?me=matrix"), f"{label}: active BioLimitless deep link must preserve ?me=matrix")
+            referral = product.get("affiliate", {})
+            check(referral.get("referralQueryKey") == "me" and referral.get("referralSlug") == "matrix", f"{label}: BioLimitless referral metadata mismatch")
+        price = product.get("price", {})
+        check(price.get("currency") == "USD", f"{label}: verified US price requires USD currency")
+        check(price.get("price_verified_at") == catalog.get("verifiedDate"), f"{label}: price verification date must match catalog verification date")
+        check(urlparse(price.get("official_price_source", "")).scheme == "https", f"{label}: official price source must use HTTPS")
+        numeric_values = [value for key, value in price.items() if key.endswith("_price") or key.endswith("_price_min") or key.endswith("_price_max")]
+        check(bool(numeric_values) and all(isinstance(value, (int, float)) and value > 0 for value in numeric_values), f"{label}: price values must be positive numbers without $0 placeholders")
+        if product.get("manufacturer") == "Zinzino":
+            check(price.get("pricing_model") in {"retail_premier", "starter_subscription"}, f"{label}: Zinzino price model must be retail/Premier or starter/subscription")
+            if price.get("pricing_model") == "retail_premier":
+                check("retail_price" in price and "one_time_price" not in price and "autoship_price" not in price, f"{label}: Zinzino retail field cannot cross into BioLimitless pricing")
+        else:
+            check(price.get("pricing_model") in {"one_time", "one_time_autoship", "one_time_range"}, f"{label}: BioLimitless price model must preserve one-time/autoship semantics")
+            check("retail_price" not in price and "premier_price" not in price, f"{label}: BioLimitless fields cannot cross into Zinzino pricing")
+            if price.get("pricing_model") == "one_time_autoship":
+                check("one_time_price" in price and "autoship_price" in price and urlparse(price.get("autoship_price_source", "")).scheme == "https", f"{label}: BioLimitless autoship price and official source are required")
+        if product.get("commercial_status") == "deferred_compliance_review":
+            review = product.get("complianceReview", {})
+            check(product.get("manufacturer") == "BioLimitless", f"{label}: only BioLimitless products may use the V3.1 deferred firewall")
+            check(review.get("publicRendering") == "omit" and bool(review.get("flaggedIngredients")), f"{label}: deferred product requires an explicit omit policy and flagged ingredients")
         cutout = product.get("cutout")
         if cutout:
             cutout_path = ROOT / cutout.get("src", "missing")
@@ -276,9 +369,12 @@ def validate_content(site: dict, library: dict) -> None:
             check(bool(cutout.get("width") and cutout.get("height")), f"{label}: cutout dimensions required")
             check(source_path.is_file(), f"{label}: missing immutable cutout source")
             check(cutout_path.resolve() != source_path.resolve(), f"{label}: official source and production cutout must remain separate files")
-            check(product.get("sku") in cutout.get("sourceUrl", ""), f"{label}: official image URL must contain the exact SKU")
+            if product.get("manufacturer") == "Zinzino":
+                check(product.get("sku") in cutout.get("sourceUrl", ""), f"{label}: official image URL must contain the exact SKU")
+            else:
+                check("bl-assets.lifepilotos.com" in cutout.get("sourceUrl", ""), f"{label}: BioLimitless image must come from its official media host")
             if cutout_path.is_file():
-                check(png_dimensions(cutout_path) == (cutout.get("width"), cutout.get("height")), f"{label}: cutout dimensions do not match its PNG")
+                check(image_dimensions(cutout_path) == (cutout.get("width"), cutout.get("height")), f"{label}: product image dimensions do not match its file")
             if source_path.is_file():
                 provenance_path = ROOT / cutout.get("provenance", source_path.parent / "provenance.json")
                 check(provenance_path.is_file(), f"{label}: official source requires provenance.json")
@@ -293,10 +389,11 @@ def validate_content(site: dict, library: dict) -> None:
                     else:
                         provenance = provenance_payload
                     expected_dimensions = provenance.get("pixel_dimensions", {})
-                    check(provenance.get("direct_from_zinzino") is True, f"{label}: provenance must confirm direct manufacturer origin")
+                    origin_key = "direct_from_zinzino" if product.get("manufacturer") == "Zinzino" else "direct_from_biolimitless"
+                    check(provenance.get(origin_key) is True, f"{label}: provenance must confirm direct manufacturer origin")
                     check(provenance.get("downloaded_filename") == source_path.name, f"{label}: provenance filename mismatch")
                     check(provenance.get("sha256", "").lower() == sha256(source_path), f"{label}: official source SHA-256 mismatch")
-                    check(png_dimensions(source_path) == (expected_dimensions.get("width"), expected_dimensions.get("height")), f"{label}: provenance dimensions mismatch")
+                    check(image_dimensions(source_path) == (expected_dimensions.get("width"), expected_dimensions.get("height")), f"{label}: provenance dimensions mismatch")
                     production_filename = provenance.get("production_filename")
                     if production_filename:
                         check(production_filename == cutout.get("src"), f"{label}: provenance production filename mismatch")
@@ -307,6 +404,33 @@ def validate_content(site: dict, library: dict) -> None:
         if artwork.get("src"):
             check((ROOT / artwork["src"]).is_file(), f"{label}: missing editorial artwork {artwork['src']}")
             check(bool(artwork.get("width") and artwork.get("height")), f"{label}: artwork dimensions required")
+
+    library_provenance_path = ROOT / "assets" / "source-artwork" / "mindful-matrix" / "library" / "provenance.json"
+    check(library_provenance_path.is_file(), "Library visual provenance is required")
+    if library_provenance_path.is_file():
+        try:
+            library_provenance = json.loads(library_provenance_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            check(False, f"Invalid Library visual provenance JSON: {error}")
+            library_provenance = {}
+        visual_records = library_provenance.get("assets", [])
+        check(len(visual_records) == 10, "V3.1 requires provenance for ten distinct Library visuals")
+        derivative_paths = {item.get("path") for record in visual_records for item in record.get("derivatives", [])}
+        for record in visual_records:
+            check(record.get("commercial_packaging") is False, f"{record.get('id', 'unknown visual')}: generated Library artwork must remain product-free")
+            source_record = record.get("source", {})
+            source_path = ROOT / source_record.get("path", "missing")
+            check(source_path.is_file(), f"{record.get('id', 'unknown visual')}: missing original artwork source")
+            if source_path.is_file():
+                check(source_record.get("sha256") == sha256(source_path), f"{record.get('id', 'unknown visual')}: source artwork SHA-256 mismatch")
+            for derivative in record.get("derivatives", []):
+                derivative_path = ROOT / derivative.get("path", "missing")
+                check(derivative_path.is_file(), f"{record.get('id', 'unknown visual')}: missing responsive derivative")
+                if derivative_path.is_file():
+                    check(derivative.get("sha256") == sha256(derivative_path), f"{record.get('id', 'unknown visual')}: derivative SHA-256 mismatch")
+                    check(image_dimensions(derivative_path) == (derivative.get("width"), derivative.get("height")), f"{record.get('id', 'unknown visual')}: derivative dimensions mismatch")
+        for article in (item for item in library["articles"] if item.get("status") == "published"):
+            check(article.get("hero", {}).get("src") in derivative_paths and article.get("hero", {}).get("srcSmall") in derivative_paths, f"{article['slug']}: responsive hero files must be covered by provenance")
 
 
 def public_pages(library: dict) -> list[Path]:
@@ -448,13 +572,19 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
 
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     affiliate_disclosure = site["site"]["affiliateDisclosure"]
-    cutout_count = sum(1 for product in site["products"] if product.get("cutout"))
+    biolimitless_disclosure = site["site"]["biolimitlessAffiliateDisclosure"]
+    pricing_disclosure = site["site"]["pricingDisclosure"]
+    active_products = [product for product in site["products"] if product.get("commercial_status") == "active"]
+    deferred_products = [product for product in site["products"] if product.get("commercial_status") == "deferred_compliance_review"]
+    curated_products = [product for product in active_products if product.get("curated", True)]
+    cutout_count = sum(1 for product in curated_products if product.get("cutout"))
     featured = next(product for product in site["products"] if product["id"] == site["featuredProductId"])
     testing_cutout_count = 1 if featured.get("cutout") else 0
     hero_cutout_count = 1 if featured.get("cutout") else 0
     check(home.count('data-image-role="official-product-cutout"') == cutout_count + testing_cutout_count + hero_cutout_count, "Every configured Product Universe, testing, and hero cutout must render as a separate foreground image")
-    check(home.count('data-universe-product=') == len(site["products"]), "Homepage Product Universe must render every verified product")
-    check(home.count("data-artwork-state=") == len(site["products"]), "Every Product Universe item requires a stable environmental artwork slot")
+    check(home.count('data-universe-product=') == len(curated_products), "Homepage Product Universe must render only the active curated product set")
+    check(home.count("data-artwork-state=") == len(curated_products), "Every curated Product Universe item requires a stable environmental artwork slot")
+    check(home.count("data-price-record") == len(curated_products) + 2, "Homepage must price every curated product plus the hero and testing preview")
     check(home.count("data-universe-intent=") == len(site["catalog"]["intents"]), "Homepage must expose every approved product intent")
     check('data-universe-status aria-live="polite" aria-atomic="true"' in home, "Product Universe requires a concise live selected-state announcement")
     universe_start = home.find('<div class="product-universe"')
@@ -463,15 +593,17 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     shelf_start = home.find('<section id="shelf"')
     check(home.count(affiliate_disclosure) == 1, "Homepage must contain the exact affiliate disclosure once")
     check(shelf_start < home.find(affiliate_disclosure) < universe_start, "Homepage affiliate disclosure must appear at the start of Product Universe before its commercial controls")
+    check(home.count(biolimitless_disclosure) == 1 + sum(1 for product in curated_products if product["manufacturer"] == "BioLimitless"), "Homepage must disclose the BioLimitless relationship globally and beside each recommendation")
+    check(home.count(pricing_disclosure) == 1 and shelf_start < home.find(pricing_disclosure) < universe_start, "Homepage pricing disclosure must appear before Product Universe controls")
     eager_universe_cutouts = re.findall(r'<img[^>]+loading="eager"[^>]+data-image-role="official-product-cutout"', universe_markup)
     lazy_universe_cutouts = re.findall(r'<img[^>]+loading="lazy"[^>]+data-image-role="official-product-cutout"', universe_markup)
-    check(len(eager_universe_cutouts) == 1 and len(lazy_universe_cutouts) == len(site["products"]) - 1, "Homepage must eagerly load only the active Product Universe cutout")
+    check(len(eager_universe_cutouts) == 1 and len(lazy_universe_cutouts) == len(curated_products) - 1, "Homepage must eagerly load only the active Product Universe cutout")
     check(home.count("data-library-article") == len([article for article in library["articles"] if article.get("status") == "published"]), "Homepage Library count must match published content")
     check('data-library-state="empty"' in home if not any(article.get("status") == "published" for article in library["articles"]) else 'data-library-state="published"' in home, "Homepage Library state mismatch")
     check("content model is ready" not in home.lower(), "Developer-facing Library language must not be published")
     check('data-media-status="awaiting-original-photography"' in home, "Founder media placeholder must remain")
     check("<span>Trust isn't something we claim.</span><span>It's something we earn.</span>" in home, "Standards payoff must remain")
-    check("$127" not in home, "Unverified legacy price must not be rendered")
+    check("$127" in home and "$47/mo" in home, "Verified flagship start and monthly pricing must render")
     check('assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png' in home, "Verified Balance cutout must remain the rendered foreground")
     check('assets/artwork/shelf/balance-test-basic-kit-cinematic.webp' in home, "Approved Balance artwork must remain")
     testing_guide = 'href="library/should-you-test-your-omega-3-levels.html"'
@@ -480,10 +612,10 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     check('data-matrix-field' in home, "Homepage must include the progressively enhanced Matrix field")
     check(home.find('<section id="shelf"') < home.find('<section id="problem"'), "The Product Universe must follow the hero without an educational gate")
     check(home.count(f'href="{featured_destination}"') >= 3, "Featured product must be directly reachable from navigation, hero, and product content")
-    check(f'Shop all {len(site["products"])} options' in home, "Hero must expose the complete Shelf count")
-    check(home.count('class="product-universe__why"') == len(site["products"]), "Every Product Universe item must show why it is included before its commercial link")
+    check(f'Shop all {len(active_products)} options' in home, "Hero must expose the complete active Shop count")
+    check(home.count('class="product-universe__why"') == len(curated_products), "Every curated Product Universe item must show why it is included before its commercial link")
     check(f'href="{featured_destination}" target="_blank" rel="sponsored noopener noreferrer">{featured["cta"]}' in home, "Primary navigation must provide a direct sponsored route to the featured product")
-    for product in site["products"]:
+    for product in curated_products:
         check(product["destination"] in home, f"{product['id']}: destination missing from homepage")
         escaped_destination = re.escape(product["destination"])
         check(bool(re.search(rf'href="{escaped_destination}"[^>]+rel="[^"]*sponsored', home)), f"{product['id']}: commercial link must be marked sponsored")
@@ -491,13 +623,23 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     shop_catalog_start = shop.find('<div class="shop-catalog">')
     check(shop.count(affiliate_disclosure) == 1, "Shop must contain the exact affiliate disclosure once")
     check(shop.find(affiliate_disclosure) < shop_catalog_start, "Shop affiliate disclosure must appear before the product catalog")
-    check(shop.count('data-product-sku=') == len(site["products"]), "Shop must render every verified SKU exactly once")
-    check(shop.count('data-image-role="official-product-cutout"') == cutout_count, "Shop must render every official product image as a separate foreground")
+    check(shop.count(biolimitless_disclosure) == 1 + sum(1 for product in active_products if product["manufacturer"] == "BioLimitless"), "Shop must disclose the BioLimitless relationship globally and beside every BioLimitless commercial card")
+    check(shop.count(pricing_disclosure) == 1 and shop.find(pricing_disclosure) < shop_catalog_start, "Shop pricing disclosure must appear before the product catalog")
+    check(shop.count('data-shop-product') == len(active_products), "Shop must render every active commercial product exactly once")
+    check(shop.count('data-product-sku=') == sum(1 for product in active_products if product.get("sku")), "Shop must render every published SKU exactly once without inventing BioLimitless SKUs")
+    check(shop.count('data-image-role="official-product-cutout"') == len(active_products), "Shop must render every active official product image as a separate foreground")
+    check(shop.count("data-price-record") == len(active_products), "Shop must show one verified price record for every active commercial product")
+    check(all(token in shop for token in ('data-shop-brand="all"', 'data-shop-brand="Zinzino"', 'data-shop-brand="BioLimitless"')), "Shop requires All, Zinzino and BioLimitless brand filters")
     for intent in site["catalog"]["intents"]:
         check(f'id="intent-{intent["id"]}"' in shop, f"Shop missing intent section: {intent['name']}")
-    for product in site["products"]:
-        check(shop.count(f'data-product-sku="{product["sku"]}"') == 1, f"{product['id']}: Shop SKU must be unique")
+    for product in active_products:
+        check(shop.count(f'data-product-id="{product["id"]}"') == 1, f"{product['id']}: Shop product record must be unique")
+        if product.get("sku"):
+            check(shop.count(f'data-product-sku="{product["sku"]}"') == 1, f"{product['id']}: Shop SKU must be unique")
         check(product["destination"] in shop, f"{product['id']}: destination missing from Shop")
+    for product in deferred_products:
+        check(product["destination"] not in home and product["destination"] not in shop, f"{product['id']}: deferred commercial destination leaked into public output")
+        check(f'data-product-id="{product["id"]}"' not in shop and f'data-universe-product="{product["id"]}"' not in home, f"{product['id']}: deferred product rendered publicly")
     for fallback in site["catalog"]["fallbackDestinations"]:
         check(fallback["destination"] in shop, f"{fallback['id']}: verified fallback destination missing from Shop")
     css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -566,7 +708,9 @@ def main() -> None:
             print(f"- {error}")
         sys.exit(1)
     published_count = sum(1 for article in library["articles"] if article.get("status") == "published")
-    print(f"Validation passed: 4 core pages, {published_count} published articles, {len(site['products'])} verified products, /BioCare/ paths safe")
+    active_count = sum(1 for product in site["products"] if product.get("commercial_status") == "active")
+    deferred_count = sum(1 for product in site["products"] if product.get("commercial_status") == "deferred_compliance_review")
+    print(f"Validation passed: 4 core pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe")
 
 
 if __name__ == "__main__":

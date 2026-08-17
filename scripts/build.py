@@ -283,6 +283,7 @@ def testing_product_markup(product: dict, testing: dict) -> str:
           <p class="interface-label">{esc(product["category"])} / Optional tool</p>
           <h3>{esc(product["name"])}</h3>
           <p>{esc(product["description"])}</p>
+          {price_markup(product)}
           <div class="testing-card__why"><span>Why it’s here</span><strong>{esc(testing["why"])}</strong></div>
           <div class="button-row">
             <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">{esc(testing["measureLinkLabel"])} ↗{external_note()}</a>
@@ -311,7 +312,8 @@ def testing_workflow_markup() -> str:
 
 def hero_actions_markup(product: dict, product_count: int) -> str:
     url = esc(product["destination"], attribute=True)
-    return f'''<div class="hero-actions button-row">
+    return f'''{price_markup(product, context="hero")}
+          <div class="hero-actions button-row">
             <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">View {esc(product["name"])} ↗{external_note()}</a>
             <a class="button button-secondary" href="#shelf">Shop all {product_count} options ↓</a>
           </div>
@@ -402,6 +404,60 @@ def product_name_modifier(name: str) -> str:
     return ""
 
 
+def active_products(catalog: dict) -> list[dict]:
+    return [product for product in catalog["products"] if product.get("commercial_status", "active") == "active"]
+
+
+def curated_products(catalog: dict) -> list[dict]:
+    return [product for product in active_products(catalog) if product.get("curated", True)]
+
+
+def money(value: int | float) -> str:
+    number = float(value)
+    return f"${number:,.0f}" if number.is_integer() else f"${number:,.2f}"
+
+
+def price_markup(product: dict, *, context: str = "detail") -> str:
+    price = product["price"]
+    model = price["pricing_model"]
+    items: list[str] = []
+    if model == "starter_subscription":
+        items = [
+            f'<span><strong>{money(price["start_price"])}</strong> {esc(price["start_label"])}</span>',
+            f'<span><strong>{money(price["recurring_price"])}/mo</strong> {esc(price["recurring_label"])}</span>',
+        ]
+    elif model == "retail_premier":
+        items = [f'<span><strong>{money(price["retail_price"])}</strong> retail</span>']
+        if price.get("premier_price") is not None:
+            items.append(f'<span><strong>{money(price["premier_price"])}</strong> Premier price</span>')
+    elif model == "one_time_autoship":
+        items = [
+            f'<span><strong>{money(price["one_time_price"])}</strong> one-time</span>',
+            f'<span><strong>{money(price["autoship_price"])}/mo</strong> Subscribe &amp; Save</span>',
+        ]
+    elif model == "one_time_range":
+        items = [f'<span><strong>{money(price["one_time_price_min"])}–{money(price["one_time_price_max"])}</strong> one-time · format varies</span>']
+    else:
+        items = [f'<span><strong>{money(price["one_time_price"])}</strong> one-time</span>']
+    verified = esc(price["price_verified_at"], attribute=True)
+    source = esc(price["official_price_source"], attribute=True)
+    helper = ""
+    if context == "detail" and product["manufacturer"] == "Zinzino" and price.get("premier_price") is not None:
+        helper = '<small>Premier pricing may require an eligible Premier purchase or customer status. Checkout reflects the current applicable price.</small>'
+    return f'<div class="product-price product-price--{esc(context, attribute=True)}" data-price-record data-price-model="{esc(model, attribute=True)}" data-price-verified="{verified}"><div>{"".join(items)}</div>{helper}<a href="{source}" target="_blank" rel="noopener noreferrer" aria-label="Official price source (opens in a new tab)">Official price source ↗{external_note()}</a></div>'
+
+
+def product_reference(product: dict, *, prefix: str = "") -> str:
+    sku = product.get("sku")
+    return f'{prefix}SKU {esc(sku)}' if sku else f'{prefix}BioLimitless product'
+
+
+def biolimitless_disclosure(product: dict) -> str:
+    if product["manufacturer"] != "BioLimitless":
+        return ""
+    return '<p class="fine product-material-connection" data-biolimitless-disclosure>BioLimitless links use the Matrix partner referral. I may earn compensation from qualifying purchases.</p>'
+
+
 def universe_product_markup(product: dict, *, index: int, active: bool = False) -> str:
     active_attribute = ' data-active="true"' if active else ""
     name_modifier = product_name_modifier(product["name"])
@@ -409,14 +465,14 @@ def universe_product_markup(product: dict, *, index: int, active: bool = False) 
     related_markup = ""
     if related:
         related_markup = f'<a class="product-universe__learn" href="{esc(related["href"], attribute=True)}">{esc(related["label"])} →</a>'
-    return f'''<article class="product-universe__product{name_modifier}" data-universe-product="{esc(product["id"], attribute=True)}" data-product-intent="{esc(product["intent"], attribute=True)}" data-environment="{esc(product["environment"], attribute=True)}" aria-labelledby="universe-product-title-{esc(product["id"], attribute=True)}"{active_attribute}>
+    return f'''<article class="product-universe__product{name_modifier}" data-universe-product="{esc(product["id"], attribute=True)}" data-product-intent="{esc(product["intent"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}" data-environment="{esc(product["environment"], attribute=True)}" aria-labelledby="universe-product-title-{esc(product["id"], attribute=True)}"{active_attribute}>
         <div class="product-universe__visual artwork-stage">
           {product_artwork_markup(product)}
           <span class="product-universe__orbit product-universe__orbit--one" aria-hidden="true"></span>
           <span class="product-universe__orbit product-universe__orbit--two" aria-hidden="true"></span>
           <span class="product-universe__pedestal" aria-hidden="true"></span>
           <div class="product-universe__cutout">{shelf_product_markup(product, eager=active)}</div>
-          <span class="product-universe__sku">SKU / {esc(product["sku"])}</span>
+          <span class="product-universe__sku">{product_reference(product)}</span>
           <span class="product-universe__number" aria-hidden="true">{index:02d}</span>
         </div>
         <div class="product-universe__content">
@@ -424,7 +480,8 @@ def universe_product_markup(product: dict, *, index: int, active: bool = False) 
           <h3 id="universe-product-title-{esc(product["id"], attribute=True)}">{esc(product["name"])}</h3>
           <p class="product-universe__description">{esc(product["description"])}</p>
           <dl class="product-universe__facts"><div><dt>Manufacturer</dt><dd>{esc(product["manufacturer"])}</dd></div><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div></dl>
-          <div class="product-universe__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>
+          {price_markup(product)}
+          <div class="product-universe__why"><span>Why it’s here</span><p>{esc(product["whyItsHere"])}</p></div>{biolimitless_disclosure(product)}
           <div class="button-row"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div>
         </div>
       </article>'''
@@ -442,9 +499,10 @@ def shop_product_card_markup(product: dict, *, index: int) -> str:
     related = product.get("relatedEducation")
     related_markup = f'<a class="shop-product__learn" href="{esc(related["href"], attribute=True)}">{esc(related["label"])} →</a>' if related else ""
     name_modifier = product_name_modifier(product["name"])
-    return f'''<article class="shop-product{name_modifier}" data-product-sku="{esc(product["sku"], attribute=True)}" data-reveal>
-        <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product)}</div><small>SKU {esc(product["sku"])}</small></div>
-        <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p><dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl><div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
+    sku_attribute = f' data-product-sku="{esc(product["sku"], attribute=True)}"' if product.get("sku") else ""
+    return f'''<article class="shop-product{name_modifier}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}"{sku_attribute} data-reveal>
+        <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product)}</div><small>{product_reference(product)}</small></div>
+        <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>{price_markup(product, context="compact")}<dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl>{biolimitless_disclosure(product)}<div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
       </article>'''
 
 
@@ -452,14 +510,14 @@ def shop_groups_markup(catalog: dict) -> str:
     groups: list[str] = []
     product_index = 0
     for position, intent in enumerate(catalog["intents"]):
-        products = [product for product in catalog["products"] if product["intent"] == intent["id"]]
+        products = [product for product in active_products(catalog) if product["intent"] == intent["id"]]
         cards: list[str] = []
         for product in products:
             product_index += 1
             cards.append(shop_product_card_markup(product, index=product_index))
         tone = "section-dark" if position % 2 == 0 else "section-warm"
         groups.append(
-            f'''<section id="intent-{esc(intent["id"], attribute=True)}" class="shop-group {tone} section-pad" aria-labelledby="intent-{esc(intent["id"], attribute=True)}-title" data-environment="{esc(intent["environment"], attribute=True)}"><div class="container-wide"><header class="shop-group__heading" data-reveal><div><p class="section-kicker">Intent {esc(intent["index"])}</p><h2 id="intent-{esc(intent["id"], attribute=True)}-title">{esc(intent["name"])}</h2></div><p>{esc(intent["description"])}</p><span>{len(products):02d} verified products</span></header><div class="shop-group__grid">{"".join(cards)}</div></div></section>'''
+            f'''<section id="intent-{esc(intent["id"], attribute=True)}" class="shop-group {tone} section-pad" aria-labelledby="intent-{esc(intent["id"], attribute=True)}-title" data-shop-group data-environment="{esc(intent["environment"], attribute=True)}"><div class="container-wide"><header class="shop-group__heading" data-reveal><div><p class="section-kicker">Intent {esc(intent["index"])}</p><h2 id="intent-{esc(intent["id"], attribute=True)}-title">{esc(intent["name"])}</h2></div><p>{esc(intent["description"])}</p><span data-shop-group-count>{len(products):02d} verified products</span></header><div class="shop-group__grid">{"".join(cards)}</div><p class="shop-group__empty" data-shop-empty hidden>No products from this manufacturer in this intent.</p></div></section>'''
         )
     return "".join(groups)
 
@@ -483,9 +541,10 @@ def category_name(library: dict, category_id: str) -> str:
 def library_article_markup(article: dict, library: dict, *, index: int = 1, archive: bool = False) -> str:
     hero = article.get("hero")
     if hero and hero.get("src"):
+        source = f'<source media="(max-width: 44rem)" srcset="{esc(hero["srcSmall"], attribute=True)}" width="{int(hero["smallWidth"])}" height="{int(hero["smallHeight"])}">' if hero.get("srcSmall") else ""
         visual = (
-            f'<img src="{esc(hero["src"], attribute=True)}" alt="{esc(hero.get("alt", ""), attribute=True)}" '
-            f'width="{int(hero["width"])}" height="{int(hero["height"])}" loading="lazy" decoding="async">'
+            f'<picture>{source}<img src="{esc(hero["src"], attribute=True)}" alt="{esc(hero.get("alt", ""), attribute=True)}" '
+            f'width="{int(hero["width"])}" height="{int(hero["height"])}" loading="lazy" decoding="async"></picture>'
         )
     else:
         visual = '<div class="library-card__art" aria-hidden="true"><span class="library-card__line"></span></div>'
@@ -736,7 +795,8 @@ def article_replacements(
             byline.append(f'<span>Updated {esc(article["updated"])}</span>')
     hero = article.get("hero")
     if hero and hero.get("src"):
-        hero_markup = f'''<figure class="article-hero__media"><img src="../{esc(hero["src"], attribute=True)}" alt="{esc(hero.get("alt", ""), attribute=True)}" width="{int(hero["width"])}" height="{int(hero["height"])}" decoding="async"></figure>'''
+        source = f'<source media="(max-width: 44rem)" srcset="../{esc(hero["srcSmall"], attribute=True)}" width="{int(hero["smallWidth"])}" height="{int(hero["smallHeight"])}">' if hero.get("srcSmall") else ""
+        hero_markup = f'''<figure class="article-hero__media"><picture>{source}<img src="../{esc(hero["src"], attribute=True)}" alt="{esc(hero.get("alt", ""), attribute=True)}" width="{int(hero["width"])}" height="{int(hero["height"])}" decoding="async" fetchpriority="high"></picture></figure>'''
     else:
         hero_markup = '<div class="article-hero__placeholder" aria-hidden="true"><span></span><img src="../assets/brand/mark-gold.svg" width="64" height="64" alt=""></div>'
     takeaways = article_list_section("key-takeaways", "Key takeaways", article.get("keyTakeaways", []), "article-takeaways")
@@ -788,8 +848,9 @@ def article_replacements(
 
 def build_home(data: dict, library: dict) -> None:
     catalog = data["catalog"]
-    products = data["products"]
-    products_by_id = {product["id"]: product for product in products}
+    public_products = active_products(catalog)
+    products = curated_products(catalog)
+    products_by_id = {product["id"]: product for product in public_products}
     featured = products_by_id[data["featuredProductId"]]
     site = data["site"]
     metadata = site["metadata"]
@@ -811,7 +872,7 @@ def build_home(data: dict, library: dict) -> None:
         "{{HERO_HEADLINE}}": line_markup(home["hero"]["headline"]),
         "{{HERO_SUPPORT}}": esc(home["hero"]["supportingLine"]),
         "{{HERO_COPY}}": esc(home["hero"]["copy"]),
-        "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(products)),
+        "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products)),
         "{{HERO_PRODUCT}}": hero_product_markup(featured),
         "{{PROBLEM_HEADLINE}}": line_markup(home["problem"]["headline"]),
         "{{PROBLEM_COPY}}": esc(home["problem"]["copy"]),
@@ -847,8 +908,10 @@ def build_home(data: dict, library: dict) -> None:
         "{{SHELF_HEADING}}": esc(home["shelf"]["heading"]),
         "{{SHELF_COPY}}": esc(home["shelf"]["copy"]),
         "{{AFFILIATE_DISCLOSURE}}": esc(site["affiliateDisclosure"]),
-        "{{SHELF_COUNT}}": f'{len(products):02d} verified products',
-        "{{PRODUCT_COUNT}}": str(len(products)),
+        "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}": esc(site["biolimitlessAffiliateDisclosure"]),
+        "{{PRICING_DISCLOSURE}}": esc(site["pricingDisclosure"]),
+        "{{SHELF_COUNT}}": f'{len(products):02d} curated products',
+        "{{PRODUCT_COUNT}}": str(len(public_products)),
         "{{UNIVERSE_INTENTS}}": universe_intents_markup(catalog),
         "{{UNIVERSE_PRODUCTS}}": "\n".join(
             universe_product_markup(product, index=index, active=product["id"] == data["featuredProductId"])
@@ -933,6 +996,7 @@ def build_shop(data: dict) -> None:
     metadata = data["site"]["metadata"]
     page = metadata["pages"]["shop"]
     catalog = data["catalog"]
+    products = active_products(catalog)
     replacements = {
         "{{DOCUMENT_HEAD}}": document_head_markup(
             metadata,
@@ -948,12 +1012,14 @@ def build_shop(data: dict) -> None:
         ),
         "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current="shop"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
-        "{{SHOP_COUNT}}": f'{len(catalog["products"]):02d}',
+        "{{SHOP_COUNT}}": f'{len(products):02d}',
         "{{VERIFIED_DATE}}": esc(catalog["verifiedDate"]),
-        "{{SHOP_INTENT_NAV}}": shop_intent_nav_markup(catalog["intents"], catalog["products"]),
+        "{{SHOP_INTENT_NAV}}": shop_intent_nav_markup(catalog["intents"], products),
         "{{SHOP_GROUPS}}": shop_groups_markup(catalog),
         "{{SHOP_FALLBACKS}}": shop_fallbacks_markup(catalog["fallbackDestinations"]),
         "{{AFFILIATE_DISCLOSURE}}": esc(data["site"]["affiliateDisclosure"]),
+        "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}": esc(data["site"]["biolimitlessAffiliateDisclosure"]),
+        "{{PRICING_DISCLOSURE}}": esc(data["site"]["pricingDisclosure"]),
         "{{DISCLOSURE}}": esc(data["site"]["disclosure"]),
     }
     write_output(ROOT / "shop.html", render_template("shop.html", replacements))
