@@ -320,6 +320,59 @@
     revealObserver.observe(target);
   });
 
+  var depthLayers = Array.prototype.slice.call(document.querySelectorAll("[data-scroll-depth]"));
+  var depthFrame = 0;
+
+  function updateScrollDepth() {
+    depthFrame = 0;
+    var viewportCenter = window.innerHeight * .5;
+    depthLayers.forEach(function (layer) {
+      var bounds = layer.getBoundingClientRect();
+      if (bounds.bottom < -120 || bounds.top > window.innerHeight + 120) return;
+      var depth = Number(layer.dataset.scrollDepth || .4);
+      var distance = viewportCenter - (bounds.top + bounds.height * .5);
+      var shift = Math.max(-24, Math.min(24, distance * depth * .035));
+      layer.style.setProperty("--scroll-depth-shift", shift.toFixed(2) + "px");
+    });
+  }
+
+  function requestScrollDepth() {
+    if (!depthFrame) depthFrame = window.requestAnimationFrame(updateScrollDepth);
+  }
+
+  if (depthLayers.length) {
+    window.addEventListener("scroll", requestScrollDepth, { passive: true });
+    window.addEventListener("resize", requestScrollDepth, { passive: true });
+    updateScrollDepth();
+  }
+
+  var testingWorkflow = document.querySelector("[data-testing-workflow]");
+  var workflowSteps = testingWorkflow ? Array.prototype.slice.call(testingWorkflow.querySelectorAll("[data-workflow-step]")) : [];
+  var workflowFrame = 0;
+
+  function updateTestingWorkflow() {
+    workflowFrame = 0;
+    if (!testingWorkflow || !workflowSteps.length) return;
+    var bounds = testingWorkflow.getBoundingClientRect();
+    var travel = Math.max(1, window.innerHeight * .62);
+    var progress = Math.max(0, Math.min(1, (window.innerHeight * .82 - bounds.top) / travel));
+    testingWorkflow.style.setProperty("--workflow-progress", (progress * 100).toFixed(1) + "%");
+    var activeCount = Math.max(1, Math.ceil(progress * workflowSteps.length));
+    workflowSteps.forEach(function (step, index) {
+      step.classList.toggle("is-active", index < activeCount);
+    });
+  }
+
+  function requestTestingWorkflow() {
+    if (!workflowFrame) workflowFrame = window.requestAnimationFrame(updateTestingWorkflow);
+  }
+
+  if (testingWorkflow) {
+    window.addEventListener("scroll", requestTestingWorkflow, { passive: true });
+    window.addEventListener("resize", requestTestingWorkflow, { passive: true });
+    updateTestingWorkflow();
+  }
+
   var stages = Array.prototype.slice.call(document.querySelectorAll("[data-matrix-stage]"));
   var matrixSequence = document.querySelector("[data-matrix-sequence]");
   var matrixProgressPath = document.querySelector("[data-matrix-path-progress]");

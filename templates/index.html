@@ -42,24 +42,44 @@
       <div class="container"><p class="section-kicker">Choose your path</p><h2 id="choose-title" class="section-title">{{CHOOSE_HEADING}}</h2><div class="journey-grid" data-reveal>{{PATH_CARDS}}</div></div>
     </section>
 
-    <section id="story" class="founder section-light section-pad" aria-labelledby="story-title">
-      <div class="container founder__grid"><div class="founder__heading" data-reveal><p class="section-kicker">{{FOUNDER_LABEL}}</p><h2 id="story-title" class="section-title">{{FOUNDER_HEADING}}</h2><blockquote>{{FOUNDER_STATEMENT}}</blockquote><div class="founder-media" data-media-status="awaiting-original-photography" aria-hidden="true"><span class="founder-media__orbit"></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span class="founder-media__label">Information → Education → Action</span></div></div><div class="founder__copy" data-reveal>{{FOUNDER_PARAGRAPHS}}<div class="founder__philosophy"><strong>{{FOUNDER_PHILOSOPHY}}</strong><small>{{FOUNDER_CONTEXT}}</small></div><p class="founder__transition">{{FOUNDER_TRANSITION}}</p><a class="button button-tertiary" href="library.html">Explore the Library →</a></div></div>
+    <section id="story" class="founder founder--cinematic section-light section-pad" aria-labelledby="story-title">
+      <div class="section-handoff section-handoff--warm-light" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide founder-cinematic">
+        <header class="founder-cinematic__masthead" data-reveal><div><p class="section-kicker">{{FOUNDER_LABEL}}</p><h2 id="story-title" class="section-title">{{FOUNDER_HEADING}}</h2></div><p class="founder-cinematic__folio"><span>Origin record</span><strong>01 / 01</strong></p></header>
+        <div class="founder-cinematic__composition">
+          <figure class="founder-media" data-media-status="awaiting-original-photography" data-scroll-depth="0.45" aria-label="A branded editorial artwork area reserved for original founder photography">
+            <span class="founder-media__wash" aria-hidden="true"></span><span class="founder-media__orbit founder-media__orbit--one" aria-hidden="true"></span><span class="founder-media__orbit founder-media__orbit--two" aria-hidden="true"></span><span class="founder-media__trace" aria-hidden="true"></span>
+            <img src="assets/brand/mark-gold.svg" width="64" height="64" alt="">
+            <figcaption><span>The origin story</span><strong>Information → Education → Action</strong></figcaption>
+          </figure>
+          <div class="founder-cinematic__narrative">
+            <blockquote data-reveal><span>The turning point</span>{{FOUNDER_STATEMENT}}</blockquote>
+            <div class="founder__copy" data-reveal>{{FOUNDER_PARAGRAPHS}}</div>
+            <div class="founder__philosophy" data-reveal><span class="founder__philosophy-node" aria-hidden="true"></span><div><strong>{{FOUNDER_PHILOSOPHY}}</strong><small>{{FOUNDER_CONTEXT}}</small></div></div>
+            <div class="founder-cinematic__action" data-reveal><p class="founder__transition">{{FOUNDER_TRANSITION}}</p><a class="button button-tertiary" href="library.html">Explore the Library →</a></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="testing" class="testing section-dark section-pad" aria-labelledby="testing-title">
-      <div class="container-wide"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title" class="section-title">{{TESTING_HEADING}}</h2></div><p class="section-copy">{{TESTING_COPY}}</p></div>{{TESTING_EDUCATION}}{{TESTING_PRODUCT}}</div>
+    <section id="testing" class="testing testing--lab section-dark section-pad" aria-labelledby="testing-title">
+      <div class="section-handoff section-handoff--light-dark" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="section-heading-grid testing__heading" data-reveal><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title" class="section-title">{{TESTING_HEADING}}</h2></div><p class="section-copy">{{TESTING_COPY}}</p></div>{{TESTING_WORKFLOW}}<div class="testing-lab">{{TESTING_PRODUCT}}{{TESTING_EDUCATION}}</div></div>
     </section>
 
-    <section id="library" class="library-section section-light section-pad" aria-labelledby="library-title">
-      <div class="container"><div class="section-heading-grid" data-reveal><div><p class="section-kicker">{{LIBRARY_LABEL}}</p><h2 id="library-title" class="section-title">{{LIBRARY_HEADING}}</h2></div><p class="section-copy">{{LIBRARY_COPY}}</p></div>{{LIBRARY_BODY}}<div class="library-transition" data-reveal><p>{{LIBRARY_TRANSITION}}</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
+    <section id="library" class="library-section library-section--terminal section-dark section-pad" aria-labelledby="library-title">
+      <div class="section-handoff section-handoff--dark-green" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="section-heading-grid library-terminal__heading" data-reveal><div><p class="section-kicker">{{LIBRARY_LABEL}}</p><h2 id="library-title" class="section-title">{{LIBRARY_HEADING}}</h2></div><p class="section-copy">{{LIBRARY_COPY}}</p></div><div class="library-terminal" data-library-terminal data-reveal><div class="library-terminal__bar"><span><i aria-hidden="true"></i> Research archive online</span><span>{{LIBRARY_COUNT}}</span><span>Evidence trace enabled</span></div>{{LIBRARY_BODY}}</div><div class="library-transition" data-reveal><p>{{LIBRARY_TRANSITION}}</p><div class="button-row"><a class="button button-primary" href="library.html">Explore the Library →</a><a class="button button-tertiary" href="#shelf">Visit the Shelf →</a></div></div></div>
     </section>
 
-    <section id="standards" class="standards section-warm section-pad" aria-labelledby="standards-title">
-      <div class="container"><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">{{STANDARDS_HEADING}}</h2><ol class="standards-list" data-reveal>{{STANDARDS_LIST}}</ol><p class="standards-statement" data-reveal>{{STANDARDS_STATEMENT}}</p></div>
+    <section id="standards" class="standards standards--matrix section-warm section-pad" aria-labelledby="standards-title">
+      <div class="section-handoff section-handoff--green-warm" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><div class="standards__heading" data-reveal><div><p class="section-kicker">Our standards</p><h2 id="standards-title" class="section-title">{{STANDARDS_HEADING}}</h2></div><p>Open each principle to inspect the standard behind the signal.</p></div><div class="standards-system" data-standards-system><div class="standards-system__core" aria-hidden="true"><span></span><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><strong>Editorial<br>integrity</strong></div><ol class="standards-list">{{STANDARDS_LIST}}</ol></div><p class="standards-statement" data-reveal>{{STANDARDS_STATEMENT}}</p></div>
     </section>
 
-    <section id="transparency" class="transparency section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
-      <div class="container-reading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">{{TRANSPARENCY_HEADING}}</h2><p class="transparency__disclosure">{{DISCLOSURE}}</p><p class="transparency__standard">{{TRANSPARENCY_COPY}}</p></div>
+    <section id="transparency" class="transparency transparency--map section-light section-pad" aria-labelledby="transparency-title" data-content-review="business-legal">
+      <div class="section-handoff section-handoff--warm-light" aria-hidden="true"><span></span><span></span></div>
+      <div class="container-wide"><header class="transparency__heading" data-reveal><p class="section-kicker">Partnership disclosure</p><h2 id="transparency-title" class="section-title">{{TRANSPARENCY_HEADING}}</h2></header><div class="transparency-map" data-reveal><div class="transparency-map__node transparency-map__node--visitor"><span>01 / Visitor</span><strong>Your decision</strong></div><span class="transparency-map__connector transparency-map__connector--one" aria-hidden="true"></span><div class="transparency-map__node transparency-map__node--matrix"><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><span>02 / The Mindful Matrix</span><strong>Education + context</strong></div><span class="transparency-map__connector transparency-map__connector--two" aria-hidden="true"></span><div class="transparency-map__node transparency-map__node--partner"><span>03 / Partner site</span><strong>External checkout</strong></div><div class="transparency-map__disclosure"><span>Relationship record</span><p class="transparency__disclosure">{{DISCLOSURE}}</p></div></div><p class="transparency__standard" data-reveal>{{TRANSPARENCY_COPY}}</p></div>
     </section>
 
     <section id="start" class="final-cta section-dark" aria-labelledby="final-title">

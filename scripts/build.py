@@ -277,7 +277,7 @@ def path_card_markup(path: dict) -> str:
 def testing_product_markup(product: dict, testing: dict) -> str:
     url = esc(product["destination"], attribute=True)
     return f'''<article class="testing-card" data-reveal>
-        <div class="testing-card__visual">{shelf_product_markup(product, eager=True)}</div>
+        <div class="testing-card__visual"><span class="testing-card__scan" aria-hidden="true"></span><span class="testing-card__orbit testing-card__orbit--one" aria-hidden="true"></span><span class="testing-card__orbit testing-card__orbit--two" aria-hidden="true"></span><span class="testing-card__marker testing-card__marker--one" aria-hidden="true">Sample / 01</span><span class="testing-card__marker testing-card__marker--two" aria-hidden="true">Signal / Ready</span><div class="testing-card__product">{shelf_product_markup(product, eager=True)}</div></div>
         <div class="testing-card__content">
           <p class="interface-label">{esc(product["category"])} / Optional tool</p>
           <h3>{esc(product["name"])}</h3>
@@ -289,6 +289,23 @@ def testing_product_markup(product: dict, testing: dict) -> str:
           </div>
         </div>
       </article>'''
+
+
+def testing_workflow_markup() -> str:
+    stages = [
+        ("01", "Sample", "Starting point"),
+        ("02", "Measurement", "A result"),
+        ("03", "Interpretation", "Context matters"),
+        ("04", "Next step", "An informed choice"),
+    ]
+    items = "".join(
+        f'''<li data-workflow-step><span class="testing-workflow__node">{index}</span><div><strong>{esc(name)}</strong><small>{esc(note)}</small></div></li>'''
+        for index, name, note in stages
+    )
+    return f'''<div class="testing-workflow" data-testing-workflow data-reveal>
+        <div class="testing-workflow__track" aria-hidden="true"><span data-workflow-progress></span></div>
+        <ol>{items}</ol>
+      </div>'''
 
 
 def hero_actions_markup(product: dict, product_count: int) -> str:
@@ -392,7 +409,7 @@ def category_name(library: dict, category_id: str) -> str:
     return categories.get(category_id, category_id)
 
 
-def library_article_markup(article: dict, library: dict) -> str:
+def library_article_markup(article: dict, library: dict, *, index: int = 1, archive: bool = False) -> str:
     hero = article.get("hero")
     if hero and hero.get("src"):
         visual = (
@@ -410,7 +427,12 @@ def library_article_markup(article: dict, library: dict) -> str:
         metadata.append(f'<span>Evidence reviewed {esc(article["evidenceReviewed"])}</span>')
     if article.get("updated"):
         metadata.append(f'<span>Updated {esc(article["updated"])}</span>')
-    return f'''<article class="library-article" data-library-article data-reveal>
+    archive_attribute = f' data-archive-index="{index:02d}"' if archive else ""
+    if archive:
+        source_count = len(article.get("sources", []))
+        evidence_status = f'Evidence reviewed {esc(article["evidenceReviewed"])}' if article.get("evidenceReviewed") else "Evidence record available"
+        visual = f'''<span class="library-article__index" aria-hidden="true">{index:02d}</span><span class="library-article__signal" aria-hidden="true"></span>{visual}<div class="library-article__evidence"><span>{evidence_status}</span><strong>{source_count:02d} sources</strong></div>'''
+    return f'''<article class="library-article" data-library-article data-reveal{archive_attribute}>
         <div class="library-article__visual">{visual}</div>
         <div class="library-article__content">
           <p class="interface-label">{esc(category_name(library, article["category"]))}</p><h3>{esc(article["title"])}</h3><p>{esc(article["summary"])}</p>
@@ -428,7 +450,7 @@ def library_body_markup(library: dict, library_home: dict) -> str:
     articles = published_articles(library)
     if articles:
         return '<div class="library-article-grid" data-library-state="published">' + "".join(
-            library_article_markup(article, library) for article in articles
+            library_article_markup(article, library, index=index, archive=True) for index, article in enumerate(articles, start=1)
         ) + "</div>"
     return f'''<div class="library-layout" data-library-state="empty">
         <article class="library-status-card" data-reveal>
@@ -465,7 +487,10 @@ def library_index_markup(library: dict, home: dict) -> str:
     </div>'''
 
 
-def standard_markup(principle: dict) -> str:
+def standard_markup(principle: dict, *, interactive: bool = False, active: bool = False) -> str:
+    if interactive:
+        open_attribute = " open" if active else ""
+        return f'''<li class="standards-node" data-standard-node data-standard-index="{esc(principle["index"], attribute=True)}"><details{open_attribute}><summary><span class="standards-node__signal" aria-hidden="true"></span><span class="standards-node__index">{esc(principle["index"])}</span><strong>{esc(principle["name"])}</strong><span class="standards-node__toggle" aria-hidden="true"></span></summary><p>{esc(principle["copy"])}</p></details></li>'''
     return f'''<li><span>{esc(principle["index"])}</span><div><h3>{esc(principle["name"])}</h3><p>{esc(principle["copy"])}</p></div></li>'''
 
 
@@ -737,12 +762,14 @@ def build_home(data: dict, library: dict) -> None:
         "{{TESTING_LABEL}}": esc(home["testing"]["label"]),
         "{{TESTING_HEADING}}": esc(home["testing"]["heading"]),
         "{{TESTING_COPY}}": esc(home["testing"]["copy"]),
+        "{{TESTING_WORKFLOW}}": testing_workflow_markup(),
         "{{TESTING_EDUCATION}}": testing_education_markup(home["testing"]),
         "{{TESTING_PRODUCT}}": testing_product_markup(featured, home["testing"]),
         "{{LIBRARY_LABEL}}": esc(home["library"]["label"]),
         "{{LIBRARY_HEADING}}": esc(home["library"]["heading"]),
         "{{LIBRARY_COPY}}": esc(home["library"]["copy"]),
         "{{LIBRARY_BODY}}": library_body_markup(library, home["library"]),
+        "{{LIBRARY_COUNT}}": f'{len(published_articles(library)):02d} published guides',
         "{{LIBRARY_TRANSITION}}": esc(home["library"]["transition"]),
         "{{SHELF_LABEL}}": esc(home["shelf"]["label"]),
         "{{SHELF_HEADING}}": esc(home["shelf"]["heading"]),
@@ -754,7 +781,7 @@ def build_home(data: dict, library: dict) -> None:
             for index, product in enumerate(products, start=1)
         ),
         "{{STANDARDS_HEADING}}": esc(home["standards"]["heading"]),
-        "{{STANDARDS_LIST}}": "\n        ".join(standard_markup(item) for item in home["standards"]["principles"]),
+        "{{STANDARDS_LIST}}": "\n        ".join(standard_markup(item, interactive=True, active=index == 0) for index, item in enumerate(home["standards"]["principles"])),
         "{{STANDARDS_STATEMENT}}": line_markup(home["standards"]["statement"]),
         "{{TRANSPARENCY_HEADING}}": esc(home["transparency"]["heading"]),
         "{{TRANSPARENCY_COPY}}": esc(home["transparency"]["copy"]),
