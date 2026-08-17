@@ -399,6 +399,11 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
         if page in {item.resolve() for item in pages}:
             generated = page.read_text(encoding="utf-8")
             check(site["site"]["disclosure"] in generated, f"{page.relative_to(ROOT)}: affiliate disclosure must remain visible")
+            fda_disclaimer = site["site"]["fdaDisclaimer"]
+            partner_disclosure = site["site"]["disclosure"]
+            check(generated.count(fda_disclaimer) == 1, f"{page.relative_to(ROOT)}: exact FDA disclaimer must appear once")
+            expected_footer_disclosures = f'<p class="fine" data-fda-disclaimer>{fda_disclaimer}</p><p class="fine">{partner_disclosure}</p>'
+            check(expected_footer_disclosures in generated, f"{page.relative_to(ROOT)}: FDA disclaimer must immediately precede the footer partner-identification line")
 
     public_parsers = [parsers[page.resolve()] for page in pages if page.resolve() in parsers]
     titles = [parser.titles[0] for parser in public_parsers if parser.titles]
@@ -442,6 +447,7 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
             check(not (article_dir / f'{article["slug"]}.html').exists(), f"Draft article generated publicly: {article['slug']}")
 
     home = (ROOT / "index.html").read_text(encoding="utf-8")
+    affiliate_disclosure = site["site"]["affiliateDisclosure"]
     cutout_count = sum(1 for product in site["products"] if product.get("cutout"))
     featured = next(product for product in site["products"] if product["id"] == site["featuredProductId"])
     testing_cutout_count = 1 if featured.get("cutout") else 0
@@ -454,6 +460,9 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     universe_start = home.find('<div class="product-universe"')
     universe_end = home.find('<section id="problem"')
     universe_markup = home[universe_start:universe_end]
+    shelf_start = home.find('<section id="shelf"')
+    check(home.count(affiliate_disclosure) == 1, "Homepage must contain the exact affiliate disclosure once")
+    check(shelf_start < home.find(affiliate_disclosure) < universe_start, "Homepage affiliate disclosure must appear at the start of Product Universe before its commercial controls")
     eager_universe_cutouts = re.findall(r'<img[^>]+loading="eager"[^>]+data-image-role="official-product-cutout"', universe_markup)
     lazy_universe_cutouts = re.findall(r'<img[^>]+loading="lazy"[^>]+data-image-role="official-product-cutout"', universe_markup)
     check(len(eager_universe_cutouts) == 1 and len(lazy_universe_cutouts) == len(site["products"]) - 1, "Homepage must eagerly load only the active Product Universe cutout")
@@ -479,6 +488,9 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
         escaped_destination = re.escape(product["destination"])
         check(bool(re.search(rf'href="{escaped_destination}"[^>]+rel="[^"]*sponsored', home)), f"{product['id']}: commercial link must be marked sponsored")
     shop = (ROOT / "shop.html").read_text(encoding="utf-8")
+    shop_catalog_start = shop.find('<div class="shop-catalog">')
+    check(shop.count(affiliate_disclosure) == 1, "Shop must contain the exact affiliate disclosure once")
+    check(shop.find(affiliate_disclosure) < shop_catalog_start, "Shop affiliate disclosure must appear before the product catalog")
     check(shop.count('data-product-sku=') == len(site["products"]), "Shop must render every verified SKU exactly once")
     check(shop.count('data-image-role="official-product-cutout"') == cutout_count, "Shop must render every official product image as a separate foreground")
     for intent in site["catalog"]["intents"]:
