@@ -629,6 +629,14 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     check(shop.count('data-product-sku=') == sum(1 for product in active_products if product.get("sku")), "Shop must render every published SKU exactly once without inventing BioLimitless SKUs")
     check(shop.count('data-image-role="official-product-cutout"') == len(active_products), "Shop must render every active official product image as a separate foreground")
     check(shop.count("data-price-record") == len(active_products), "Shop must show one verified price record for every active commercial product")
+    check(shop.count('data-price-role="primary"') == len(active_products), "Shop must give every active product one visually primary price")
+    expected_reference_prices = sum(
+        1
+        for product in active_products
+        if (product["price"]["pricing_model"] == "retail_premier" and product["price"].get("premier_price") is not None)
+        or product["price"]["pricing_model"] == "one_time_autoship"
+    )
+    check(shop.count('data-price-role="reference"') == expected_reference_prices, "Shop must reserve subdued reference pricing for products with a preferred verified price")
     check(all(token in shop for token in ('data-shop-brand="all"', 'data-shop-brand="Zinzino"', 'data-shop-brand="BioLimitless"')), "Shop requires All, Zinzino and BioLimitless brand filters")
     for intent in site["catalog"]["intents"]:
         check(f'id="intent-{intent["id"]}"' in shop, f"Shop missing intent section: {intent['name']}")

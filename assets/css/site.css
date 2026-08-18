@@ -1605,18 +1605,19 @@
 
 .product-price { display: grid; gap: .6rem; margin-block: var(--space-4); }
 .product-price > div { display: flex; flex-wrap: wrap; gap: .45rem; }
-.product-price span { display: inline-flex; align-items: baseline; gap: .35rem; padding: .48rem .62rem; border: 1px solid rgba(136,190,160,.24); background: rgba(112,170,140,.065); color: var(--dark-text-muted); font: 600 .6rem/1.25 var(--font-data); letter-spacing: .035em; text-transform: uppercase; }
-.product-price span strong { color: var(--dark-text); font-size: .78rem; letter-spacing: -.01em; }
+.product-price__item { display: inline-flex; align-items: baseline; gap: .4rem; padding: .52rem .66rem; border: 1px solid rgba(223,187,120,.38); background: linear-gradient(135deg, rgba(15,18,15,.98), rgba(36,42,36,.96)); color: var(--gold-400); font: 700 .59rem/1.25 var(--font-data); letter-spacing: .045em; text-transform: uppercase; box-shadow: inset 0 1px rgba(255,228,168,.08), 0 .35rem 1rem rgba(8,10,8,.12); }
+.product-price__item strong { color: #f2c873; font-size: .84rem; font-weight: 800; letter-spacing: -.02em; text-shadow: 0 0 .8rem rgba(223,187,120,.28); }
+.product-price__item--primary { padding: .7rem .82rem; border-color: rgba(242,200,115,.72); background: linear-gradient(120deg, #12150f, #2b2517 58%, #161a13); color: #efc46f; box-shadow: inset 0 1px rgba(255,235,190,.18), 0 0 0 1px rgba(223,187,120,.08), 0 .55rem 1.35rem rgba(8,10,8,.18); }
+.product-price__item--primary strong { color: #ffd989; font-size: clamp(1.02rem, .93rem + .28vw, 1.25rem); text-shadow: 0 0 1rem rgba(223,187,120,.4); }
+.product-price__item--supporting { padding: .62rem .72rem; border-color: rgba(223,187,120,.5); color: #e8bd6b; }
+.product-price__item--supporting strong { color: #f4cb7a; font-size: .98rem; }
+.product-price__item--reference { align-self: center; padding: .34rem .48rem; border-color: rgba(223,187,120,.24); background: rgba(15,18,15,.9); color: #d9ad5c; font-size: .5rem; box-shadow: none; }
+.product-price__item--reference strong { color: #dfb663; font-size: .66rem; font-weight: 700; text-shadow: none; }
 .product-price > small { max-width: 56ch; color: rgba(248,244,236,.54); font: 500 .58rem/1.55 var(--font-data); }
 .product-price > a { width: max-content; color: var(--dark-green); font: 600 .52rem/1.25 var(--font-data); letter-spacing: .055em; text-transform: uppercase; }
 .product-price--hero { margin: var(--space-5) 0 var(--space-3); }
-.product-price--hero span { background: rgba(248,244,236,.06); }
 .product-price--compact { margin: var(--space-4) 0; padding-block: var(--space-3); border-block: 1px solid rgba(136,190,140,.15); }
-.product-price--compact span { color: var(--light-text-muted); border-color: rgba(25,77,51,.16); background: rgba(25,77,51,.045); }
-.product-price--compact span strong { color: var(--light-text); }
 .product-price--compact > a { color: var(--light-green); }
-.shop-product .product-price--compact span { color: var(--dark-text-muted); border-color: rgba(136,190,160,.24); background: rgba(112,170,140,.065); }
-.shop-product .product-price--compact span strong { color: var(--dark-text); }
 .product-material-connection { max-width: 62ch; margin: var(--space-4) 0 0; padding-left: var(--space-3); border-left: 1px solid rgba(223,187,120,.35); color: rgba(248,244,236,.57); }
 .shop-product .product-material-connection { color: var(--light-text-muted); border-left-color: rgba(25,77,51,.28); }
 
@@ -1675,7 +1676,8 @@
 @media (max-width: 44rem) {
   .commercial-notes { padding: var(--space-3); }
   .product-price > div { display: grid; grid-template-columns: 1fr; }
-  .product-price span { justify-content: space-between; }
+  .product-price__item--primary, .product-price__item--supporting { width: 100%; justify-content: space-between; }
+  .product-price__item--reference { width: max-content; max-width: 100%; }
   .product-price--hero { max-width: 27rem; }
   .product-universe__product[data-manufacturer="BioLimitless"] .product-universe__cutout { width: 92%; height: 17rem; }
   .shop-filter-bar { padding: var(--space-4); }

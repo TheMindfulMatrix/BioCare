@@ -421,24 +421,32 @@ def price_markup(product: dict, *, context: str = "detail") -> str:
     price = product["price"]
     model = price["pricing_model"]
     items: list[str] = []
+
+    def price_item(value: str, label: str, role: str) -> str:
+        return f'<span class="product-price__item product-price__item--{role}" data-price-role="{role}"><strong>{value}</strong> {label}</span>'
+
     if model == "starter_subscription":
         items = [
-            f'<span><strong>{money(price["start_price"])}</strong> {esc(price["start_label"])}</span>',
-            f'<span><strong>{money(price["recurring_price"])}/mo</strong> {esc(price["recurring_label"])}</span>',
+            price_item(money(price["start_price"]), esc(price["start_label"]), "primary"),
+            price_item(f'{money(price["recurring_price"])}/mo', esc(price["recurring_label"]), "supporting"),
         ]
     elif model == "retail_premier":
-        items = [f'<span><strong>{money(price["retail_price"])}</strong> retail</span>']
         if price.get("premier_price") is not None:
-            items.append(f'<span><strong>{money(price["premier_price"])}</strong> Premier price</span>')
+            items = [
+                price_item(money(price["premier_price"]), "Premier price", "primary"),
+                price_item(money(price["retail_price"]), "retail", "reference"),
+            ]
+        else:
+            items = [price_item(money(price["retail_price"]), "retail", "primary")]
     elif model == "one_time_autoship":
         items = [
-            f'<span><strong>{money(price["one_time_price"])}</strong> one-time</span>',
-            f'<span><strong>{money(price["autoship_price"])}/mo</strong> Subscribe &amp; Save</span>',
+            price_item(f'{money(price["autoship_price"])}/mo', "Subscribe &amp; Save", "primary"),
+            price_item(money(price["one_time_price"]), "one-time", "reference"),
         ]
     elif model == "one_time_range":
-        items = [f'<span><strong>{money(price["one_time_price_min"])}–{money(price["one_time_price_max"])}</strong> one-time · format varies</span>']
+        items = [price_item(f'{money(price["one_time_price_min"])}–{money(price["one_time_price_max"])}', "one-time · format varies", "primary")]
     else:
-        items = [f'<span><strong>{money(price["one_time_price"])}</strong> one-time</span>']
+        items = [price_item(money(price["one_time_price"]), "one-time", "primary")]
     verified = esc(price["price_verified_at"], attribute=True)
     source = esc(price["official_price_source"], attribute=True)
     helper = ""
