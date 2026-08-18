@@ -1,0 +1,32 @@
+{
+  "policy_id": "MATRIX_SOCIAL_COMPLIANCE_V1",
+  "version": "1.0.0",
+  "platforms": ["INSTAGRAM", "FACEBOOK", "THREADS", "REELS", "SHORT_FORM_VIDEO"],
+  "required_checks": [
+    "CLAIM_CLASSIFICATION",
+    "EVIDENCE_MATCH",
+    "AFFILIATE_RELATIONSHIP",
+    "DISCLOSURE_PLACEMENT",
+    "TESTIMONIAL",
+    "PRICE",
+    "DISEASE_CLAIM",
+    "MLM_EARNINGS"
+  ],
+  "commercial_brief_requirements": {
+    "approved_claim_ids_required": true,
+    "approved_product_status_required": true,
+    "relationship_disclosure_required_when_material": true,
+    "instruction": "Do not strengthen, paraphrase, or extend approved claims."
+  },
+  "blocked_by_default": [
+    "DISEASE_CLAIM",
+    "DIAGNOSTIC_CLAIM",
+    "ABSOLUTE_SAFETY_CLAIM",
+    "UNSUBSTANTIATED_EARNINGS_CLAIM",
+    "DEFERRED_PRODUCT_PROMOTION",
+    "FABRICATED_TESTIMONIAL",
+    "UNSUPPORTED_SCARCITY"
+  ],
+  "escalation": "If one requested statement conflicts with the registry, stop that statement and report the conflict without blocking unrelated production.",
+  "legal_notice": "This policy is a risk-control workflow. It does not certify that content is legally compliant."
+}

@@ -688,6 +688,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--preview", type=Path, help="Also validate a non-public article preview")
+    parser.add_argument("--compliance-strict", action="store_true", help="Fail unresolved YELLOW and unregistered commercial health claims")
+    parser.add_argument("--compliance-dry-run", action="store_true", help="Report strict-mode failures without failing the existing release gate")
     return parser.parse_args()
 
 
@@ -702,6 +704,16 @@ def main() -> None:
     site["featuredProductId"] = catalog["featuredProductId"]
     validate_content(site, library)
     validate_public_output(site, library, args.preview)
+    from validate_compliance import validate_compliance
+
+    normal_compliance = validate_compliance(strict=False)
+    errors.extend(f"Compliance: {message}" for message in normal_compliance["errors"])
+    strict_only_errors: list[str] = []
+    if args.compliance_strict:
+        strict_compliance = validate_compliance(strict=True)
+        strict_only_errors = sorted(set(strict_compliance["errors"]) - set(normal_compliance["errors"]))
+        if not args.compliance_dry_run:
+            errors.extend(f"Compliance strict: {message}" for message in strict_only_errors)
     if errors:
         print("Validation failed:")
         for error in errors:
@@ -710,7 +722,15 @@ def main() -> None:
     published_count = sum(1 for article in library["articles"] if article.get("status") == "published")
     active_count = sum(1 for product in site["products"] if product.get("commercial_status") == "active")
     deferred_count = sum(1 for product in site["products"] if product.get("commercial_status") == "deferred_compliance_review")
-    print(f"Validation passed: 4 core pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe")
+    warning_count = len(normal_compliance["warnings"])
+    print(f"Validation passed: 4 core pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe; compliance hard gate passed with {warning_count} review warning(s)")
+    if warning_count:
+        for warning in normal_compliance["warnings"][:10]:
+            print(f"Compliance warning: {warning}")
+        if warning_count > 10:
+            print(f"Compliance warning: {warning_count - 10} additional item(s); see reports/compliance-audit-v1.json")
+    if args.compliance_strict and args.compliance_dry_run:
+        print(f"Compliance strict dry run: would fail with {len(strict_only_errors)} unresolved strict-mode item(s)")
 
 
 if __name__ == "__main__":

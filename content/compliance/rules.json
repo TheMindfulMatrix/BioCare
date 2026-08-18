@@ -1,0 +1,294 @@
+{
+  "ruleset_version": "1.0.0",
+  "jurisdiction": "US",
+  "state": "MO",
+  "state_policy": "STATE_LEGAL_REVIEW_REQUIRED",
+  "state_order": ["GREEN", "YELLOW", "RED"],
+  "rule_defaults": {
+    "jurisdiction": "US",
+    "state": "MO",
+    "required_fields": [],
+    "required_disclosure": null
+  },
+  "rules": [
+    {
+      "rule_id": "CE_RED_DISEASE_COMMERCIAL",
+      "name": "Commercial disease claim firewall",
+      "priority": 1000,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MLM_RECRUITMENT", "MIXED_PUBLIC"],
+      "claim_types": ["DISEASE_CLAIM"],
+      "match": {
+        "mode": "cooccurrence",
+        "groups": [
+          ["\\b(?:cure|treat|prevent|reverse|heal|eradicate|eliminate|mitigate|diagnose|fix(?:es|ed|ing)?)\\b"],
+          ["\\b(?:disease|disorder|syndrome|depression|alzheimer(?:'s)?|diabetes|ibs|leaky gut|cancer|arthritis|infection|hypertension|heart disease)\\b"]
+        ]
+      },
+      "risk": "RED",
+      "action": "BLOCKED",
+      "notes": "A DSHEA disclaimer does not cure a disease claim.",
+      "authoritative_sources": ["FDA_STRUCTURE_FUNCTION", "FDA_DIETARY_SUPPLEMENT_QA", "FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_RED_DISEASE_ACTION",
+      "name": "Commercial product treatment or prevention claim",
+      "priority": 990,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MLM_RECRUITMENT", "MIXED_PUBLIC"],
+      "claim_types": ["DISEASE_CLAIM", "EFFICACY_CLAIM"],
+      "match": {
+        "mode": "regex_any",
+        "patterns": ["\\b(?:cures?|treats?|prevents?|reverses?|heals?|eradicates?|diagnoses?)\\b", "\\breplaces? (?:prescribed )?(?:treatment|medication|professional diagnosis)\\b"]
+      },
+      "risk": "RED",
+      "action": "BLOCKED",
+      "notes": "Escalate even when a named disease is omitted if the commercial net impression is treatment-like.",
+      "authoritative_sources": ["FDA_STRUCTURE_FUNCTION", "FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_RED_GUARANTEE",
+      "name": "Guaranteed or universal outcome",
+      "priority": 980,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MLM_RECRUITMENT", "MIXED_PUBLIC"],
+      "claim_types": ["EFFICACY_CLAIM", "SAFETY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bguaranteed?(?: to)?\\b", "\\bworks? for everyone\\b", "\\buniversally (?:safe|effective)\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED",
+      "notes": "Absolute outcomes ordinarily exceed support and can create a deceptive net impression.",
+      "authoritative_sources": ["FTC_HEALTH_PRODUCTS_GUIDANCE", "FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_RED_ABSOLUTE_SAFETY",
+      "name": "Absolute safety claim",
+      "priority": 975,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["SAFETY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\b(?:risk[- ]?free|harmless|no side effects|completely safe|safe for everyone)\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED",
+      "notes": "Absolute safety language is blocked absent a specific lawful basis and human review.",
+      "authoritative_sources": ["FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_RED_FALSE_FDA_APPROVAL",
+      "name": "Unverified FDA approval claim",
+      "priority": 970,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["PROFESSIONAL_AUTHORITY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bfda[- ]approved\\b", "\\bapproved by (?:the )?fda\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED_UNLESS_AUTHORITY_REGISTERED",
+      "notes": "FDA does not approve dietary supplements or their labeling as products.",
+      "authoritative_sources": ["FDA_DIETARY_SUPPLEMENT_QA"]
+    },
+    {
+      "rule_id": "CE_RED_MEDICAL_ADVICE",
+      "name": "Individualized medical advice firewall",
+      "priority": 960,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "EDITORIAL", "MIXED_PUBLIC"],
+      "claim_types": ["DIAGNOSTIC_CLAIM", "DISEASE_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\byou should stop taking\\b", "\\btake .{1,60} instead of\\b", "\\bthis means you have\\b", "\\byou (?:do not|don't) need (?:a |your )?doctor\\b", "\\buse (?:this|it) to treat\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED",
+      "notes": "The site may explain concepts and questions, not individual diagnosis or treatment changes.",
+      "authoritative_sources": ["FDA_DIETARY_SUPPLEMENT_QA", "FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_RED_TEST_DIAGNOSIS",
+      "name": "Commercial test diagnostic overreach",
+      "priority": 950,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["DIAGNOSTIC_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bdiagnos(?:e|es|ed|ing) (?:all|your|any)\\b", "\\bcomplete health status\\b", "\\breplaces? professional interpretation\\b", "\\bguarantees? treatment decisions?\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED",
+      "notes": "Tests may be described factually but not as comprehensive diagnosis or a replacement for professional interpretation.",
+      "authoritative_sources": ["FTC_HEALTH_PRODUCTS_GUIDANCE", "FDA_DIETARY_SUPPLEMENT_QA"]
+    },
+    {
+      "rule_id": "CE_RED_MLM_EARNINGS",
+      "name": "MLM earnings claim firewall",
+      "priority": 940,
+      "contexts": ["MLM_RECRUITMENT", "SOCIAL_COMMERCIAL", "COMMERCIAL_PRODUCT", "MIXED_PUBLIC"],
+      "claim_types": ["MLM_EARNINGS_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bmake \\$?[0-9][0-9,]*(?:\\s*(?:a|per)\\s*(?:month|week|year))?\\b", "\\breplace your income\\b", "\\bpart[- ]time income\\b", "\\bcareer[- ]level income\\b", "\\bsix figures\\b", "\\bpay off debt\\b", "\\bmake money while you sleep\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED_WITHOUT_TYPICAL_NET_EARNINGS_EVIDENCE_AND_HUMAN_REVIEW",
+      "notes": "Any claim must reflect typical net results after typical expenses; no such evidence is currently registered.",
+      "authoritative_sources": ["FTC_MLM_GUIDANCE", "FTC_MLM_EARNINGS_RULE_PROPOSAL"]
+    },
+    {
+      "rule_id": "CE_RED_MLM_LIFESTYLE",
+      "name": "MLM lifestyle claim firewall",
+      "priority": 935,
+      "contexts": ["MLM_RECRUITMENT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["MLM_LIFESTYLE_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bfinancial freedom\\b", "\\bpassive income\\b", "\\bquit your job\\b", "\\bwork from anywhere(?: and earn)?\\b", "\\bluxury lifestyle\\b", "\\bwealth\\b", "\\b(?:luxury cars?|mansions?|income screenshots?|cash imagery)\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED_WITHOUT_TYPICAL_NET_EARNINGS_EVIDENCE_AND_HUMAN_REVIEW",
+      "notes": "Lifestyle imagery can imply an earnings claim even without numbers.",
+      "authoritative_sources": ["FTC_MLM_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_RED_UNSUPPORTED_URGENCY",
+      "name": "Unsupported urgency or scarcity",
+      "priority": 920,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["AVAILABILITY_URGENCY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\blimited time\\b", "\\bselling out\\b", "\\bonly [0-9]+ left\\b", "\\bact now\\b", "\\bsale ends today\\b", "\\blast chance\\b", "\\bprice (?:is )?going up tomorrow\\b"]},
+      "risk": "RED",
+      "action": "BLOCKED_UNLESS_REAL_TIME_OFFICIAL_SOURCE",
+      "notes": "No real-time inventory or promotion feed is registered.",
+      "authoritative_sources": ["FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_YELLOW_MLM_RECRUITMENT",
+      "name": "MLM recruitment requires human review",
+      "priority": 800,
+      "contexts": ["MLM_RECRUITMENT"],
+      "claim_types": ["MLM_RECRUITMENT_CLAIM"],
+      "match": {"mode": "always"},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "authoritative_sources": ["FTC_MLM_GUIDANCE", "FTC_MLM_EARNINGS_RULE_PROPOSAL"]
+    },
+    {
+      "rule_id": "CE_YELLOW_STRUCTURE_FUNCTION",
+      "name": "Structure/function claim control",
+      "priority": 790,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["STRUCTURE_FUNCTION_CLAIM", "GENERAL_WELLBEING_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bsupports? (?:normal )?(?:immune|gut|digestive|cardiovascular|cognitive|metabolic|joint|muscle|sleep|energy|recovery|heart|brain|skin|cellular)\\b", "\\bhelps? maintain\\b", "\\bpromotes? (?:normal |healthy )?(?:function|sleep|digestion|recovery|energy|metabolism)\\b"]},
+      "risk": "YELLOW",
+      "action": "PASS_WITH_QUALIFICATION_OR_HUMAN_REVIEW",
+      "notes": "Requires substantiation, disease-claim screening, and applicable DSHEA disclaimer treatment; footer-only placement is not presumed sufficient.",
+      "authoritative_sources": ["FDA_STRUCTURE_FUNCTION", "FDA_SUPPLEMENT_LABELING_CLAIMS", "FDA_DSHEA_PLACEMENT_2025", "FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_YELLOW_EFFICACY",
+      "name": "Health benefit or efficacy claim",
+      "priority": 780,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["EFFICACY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\b(?:improves?|boosts?|enhances?|optimizes?|accelerates?) (?:recovery|cognition|digestion|sleep|energy|metabolism|body composition|performance|immune function)\\b", "\\bget back faster\\b", "\\beffective\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "Evidence must match the exact claim, product or formulation, population, dose, context, and measured outcome.",
+      "authoritative_sources": ["FTC_HEALTH_PRODUCTS_GUIDANCE", "FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_YELLOW_SCIENTIFIC_LANGUAGE",
+      "name": "Strong scientific language",
+      "priority": 770,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "EDITORIAL", "MIXED_PUBLIC"],
+      "claim_types": ["SCIENTIFIC_EVIDENCE_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bclinically proven\\b", "\\bscientifically proven\\b", "\\bscience[- ]backed\\b", "\\bdoctor[- ]approved\\b", "\\bresearch proves\\b", "\\bstudies prove\\b", "\\bresearch suggests\\b", "\\bshown to\\b", "\\bproven(?: to)?\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "The advertiser must possess at least the level and type of substantiation communicated by the claim.",
+      "authoritative_sources": ["FTC_AD_SUBSTANTIATION_POLICY", "FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_YELLOW_SAFETY",
+      "name": "Non-absolute safety claim",
+      "priority": 760,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "EDITORIAL", "MIXED_PUBLIC"],
+      "claim_types": ["SAFETY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bsafe during pregnancy\\b", "\\bsafe with medications\\b", "\\bgenerally safe\\b", "\\bsafe for\\b", "\\bsafe\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "Safety claims require exact population, dose, interaction, and limitation support.",
+      "authoritative_sources": ["FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_YELLOW_COMPARATIVE",
+      "name": "Comparative, superiority, or savings claim",
+      "priority": 750,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["COMPARATIVE_CLAIM", "SUPERIORITY_CLAIM", "PRICE_SAVINGS_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\b(?:cheapest|lowest price|best deal|better value|better than competitors|way cheaper)\\b", "\\b[0-9]+% (?:cheaper|less|savings?)\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED_WITH_CURRENT_COMPARISON_EVIDENCE",
+      "notes": "Comparison set, date, geography, product equivalence, and source must be explicit.",
+      "authoritative_sources": ["FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_YELLOW_TESTIMONIAL",
+      "name": "Testimonial or personal-results claim",
+      "priority": 740,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["TESTIMONIAL_CLAIM", "ENDORSEMENT_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bi took (?:this|it) and\\b", "\\bi lost\\b", "\\bmy (?:inflammation|pain|symptoms|lab results?) (?:disappeared|improved|changed)\\b", "\\bdoctor said\\b", "\\bcustomer review\\b", "\\btestimonial\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "A testimonial cannot communicate a claim the advertiser could not otherwise substantiate; material connections must be disclosed.",
+      "authoritative_sources": ["FTC_ENDORSEMENT_GUIDES", "FTC_ENDORSEMENT_GUIDES_FAQ"]
+    },
+    {
+      "rule_id": "CE_YELLOW_BEFORE_AFTER",
+      "name": "Before/after claim",
+      "priority": 735,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["BEFORE_AFTER_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bbefore[- /]after\\b", "\\b(?:body|lab[- ]result|disease[- ]result|skin|performance) transformation\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "Imagery can imply causation or typicality even when copy is qualified.",
+      "authoritative_sources": ["FTC_ENDORSEMENT_GUIDES", "FTC_HEALTH_PRODUCTS_GUIDANCE"]
+    },
+    {
+      "rule_id": "CE_YELLOW_PROFESSIONAL_AUTHORITY",
+      "name": "Professional authority claim",
+      "priority": 730,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "EDITORIAL", "MIXED_PUBLIC"],
+      "claim_types": ["PROFESSIONAL_AUTHORITY_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\bdoctor[- ]approved\\b", "\\bphysician[- ]recommended\\b", "\\bscientist[- ]endorsed\\b", "\\bmedical expert recommends\\b"]},
+      "risk": "YELLOW",
+      "action": "HUMAN_REVIEW_REQUIRED",
+      "notes": "Verify credentials and do not use them to imply product efficacy, independence, or regulatory approval without support.",
+      "authoritative_sources": ["FTC_ENDORSEMENT_GUIDES", "FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_YELLOW_IMPLIED_CLAIM",
+      "name": "Implied commercial claim review",
+      "priority": 720,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["IMPLIED_CLAIM_REVIEW"],
+      "match": {
+        "mode": "cooccurrence",
+        "groups": [
+          ["\\b(?:recovery|injury|metabolism|detox|immune|cognition|gut|cellular reset)\\b"],
+          ["\\b(?:faster|repair|restore|reset|fix|boost|transform|results?)\\b"]
+        ]
+      },
+      "risk": "YELLOW",
+      "action": "IMPLIED_CLAIM_REVIEW",
+      "notes": "Escalates suspicious heading/copy/image combinations because deterministic rules cannot resolve the complete net impression.",
+      "authoritative_sources": ["FTC_HEALTH_PRODUCTS_GUIDANCE", "FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_GREEN_FACTUAL_COUNT",
+      "name": "Low-risk factual count or contents",
+      "priority": 100,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "EDITORIAL", "MIXED_PUBLIC"],
+      "claim_types": ["FACTUAL_PRODUCT_FACT", "INGREDIENT_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\b[0-9]+ (?:capsules?|softgels?|servings?|packets?|tests?|tablets?)\\b", "\\bcontains? [a-z0-9]", "\\bincludes? [a-z0-9]"]},
+      "risk": "GREEN",
+      "action": "PASS_IF_SOURCE_VERIFIED",
+      "notes": "Factual product attributes remain subject to source and version verification.",
+      "authoritative_sources": ["FTC_AD_SUBSTANTIATION_POLICY"]
+    },
+    {
+      "rule_id": "CE_GREEN_PRICE_FORMAT",
+      "name": "Supported price format",
+      "priority": 90,
+      "contexts": ["COMMERCIAL_PRODUCT", "SOCIAL_COMMERCIAL", "MIXED_PUBLIC"],
+      "claim_types": ["PRICE_CLAIM"],
+      "match": {"mode": "regex_any", "patterns": ["\\$[0-9]+(?:\\.[0-9]{2})?(?:\\s*(?:one[- ]time|retail|premier|monthly|/mo))?"]},
+      "risk": "GREEN",
+      "action": "PASS_IF_CURRENT_OFFICIAL_PRICE_SOURCE",
+      "notes": "The validator separately enforces currency, price type, source URL, and verification date.",
+      "authoritative_sources": ["FTC_AD_SUBSTANTIATION_POLICY"]
+    }
+  ]
+}

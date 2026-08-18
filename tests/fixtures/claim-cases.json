@@ -1,0 +1,17 @@
+{
+  "cases": [
+    {"id": "green_capsule_count", "text": "60 capsules.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "GREEN", "expected_type": "FACTUAL_PRODUCT_FACT"},
+    {"id": "green_one_time_price", "text": "$42 one-time.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "GREEN", "expected_type": "PRICE_CLAIM"},
+    {"id": "green_ingredient_fact", "text": "Contains vitamin D3 and K2.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "GREEN", "expected_type": "FACTUAL_PRODUCT_FACT"},
+    {"id": "yellow_structure_function", "text": "Supports normal immune function.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "YELLOW", "expected_type": "STRUCTURE_FUNCTION_CLAIM"},
+    {"id": "yellow_recovery", "text": "May support recovery.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "YELLOW", "expected_type": "STRUCTURE_FUNCTION_CLAIM"},
+    {"id": "yellow_research_language", "text": "Research suggests this may support recovery.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "YELLOW", "expected_type": "STRUCTURE_FUNCTION_CLAIM"},
+    {"id": "red_cure", "text": "Cures depression.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "RED", "expected_type": "DISEASE_CLAIM"},
+    {"id": "red_prevention", "text": "Prevents Alzheimer's.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "RED", "expected_type": "DISEASE_CLAIM"},
+    {"id": "red_guaranteed_gut", "text": "Guaranteed to heal your gut.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "RED", "expected_type": "DISEASE_CLAIM"},
+    {"id": "red_mlm_earnings", "text": "Make $5,000 a month joining Zinzino.", "context": "MLM_RECRUITMENT", "expected_risk": "RED", "expected_type": "MLM_EARNINGS_CLAIM"},
+    {"id": "red_mlm_lifestyle", "text": "Quit your job and earn passive income.", "context": "MLM_RECRUITMENT", "expected_risk": "RED", "expected_type": "MLM_LIFESTYLE_CLAIM"},
+    {"id": "red_safety", "text": "Safe for everyone.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "RED", "expected_type": "SAFETY_CLAIM"},
+    {"id": "red_fda_approval", "text": "FDA approved.", "context": "COMMERCIAL_PRODUCT", "expected_risk": "RED", "expected_type": "PROFESSIONAL_AUTHORITY_CLAIM"}
+  ]
+}

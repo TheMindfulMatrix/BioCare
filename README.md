@@ -35,8 +35,14 @@ The preview receives `noindex, nofollow`, no canonical URL, and a visible non-pu
 ```text
 python scripts/build.py
 python scripts/validate.py
+python scripts/validate.py --compliance-strict
+python scripts/validate.py --compliance-strict --compliance-dry-run
+python scripts/check_claims.py --text "Supports immune function." --context SOCIAL_COMMERCIAL
+python -m unittest discover -s tests -v
 python -m http.server 8000 --directory ..
 ```
+
+Compliance Engine v1 is an internal build-time risk-control layer. Its claim, evidence, product-status, disclosure, social, and FTC/FDA source registries live in `content/compliance/`; the workflow and limitations are documented in `docs/COMPLIANCE_ENGINE.md`. Normal validation blocks configured hard-rule violations and reports review items as warnings. Strict mode also treats unresolved commercial YELLOW/unregistered claims as failures; `--compliance-dry-run` reports those failures without changing content or failing the command. The complete current-site audit is committed under `reports/`.
 
 Open `http://localhost:8000/BioCare/` to test the same subpath shape used by GitHub Pages.
 
