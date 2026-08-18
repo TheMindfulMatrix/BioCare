@@ -1,0 +1,117 @@
+{
+  "reviewed_at": "2026-08-18",
+  "sources": [
+    {
+      "source_id": "FTC_HEALTH_PRODUCTS_GUIDANCE",
+      "organization": "Federal Trade Commission",
+      "title": "Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "status": "CURRENT_GUIDANCE",
+      "topics": ["health advertising", "substantiation", "express claims", "implied claims", "net impression", "safety"]
+    },
+    {
+      "source_id": "FTC_AD_SUBSTANTIATION_POLICY",
+      "organization": "Federal Trade Commission",
+      "title": "FTC Policy Statement Regarding Advertising Substantiation",
+      "url": "https://www.ftc.gov/legal-library/browse/ftc-policy-statement-regarding-advertising-substantiation",
+      "status": "CURRENT_POLICY_STATEMENT",
+      "topics": ["prior substantiation", "reasonable basis", "express substantiation claims", "implied claims"]
+    },
+    {
+      "source_id": "FTC_ENDORSEMENT_GUIDES_FAQ",
+      "organization": "Federal Trade Commission",
+      "title": "FTC's Endorsement Guides: What People Are Asking",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "status": "CURRENT_GUIDANCE_REVISED_2023",
+      "topics": ["endorsements", "testimonials", "affiliate disclosures", "material connections", "social media"]
+    },
+    {
+      "source_id": "FTC_ENDORSEMENT_GUIDES",
+      "organization": "Federal Trade Commission",
+      "title": "Guides Concerning the Use of Endorsements and Testimonials in Advertising",
+      "url": "https://www.ftc.gov/news-events/topics/truth-advertising/advertisement-endorsements",
+      "status": "CURRENT_GUIDES_REVISED_2023",
+      "topics": ["endorsements", "testimonials", "clear and conspicuous disclosures"]
+    },
+    {
+      "source_id": "FTC_DOT_COM_DISCLOSURES",
+      "organization": "Federal Trade Commission",
+      "title": ".com Disclosures: How to Make Effective Disclosures in Digital Advertising",
+      "url": "https://www.ftc.gov/business-guidance/resources/com-disclosures-how-make-effective-disclosures-digital-advertising",
+      "status": "CURRENT_STAFF_GUIDANCE",
+      "topics": ["digital disclosures", "proximity", "prominence", "net impression"]
+    },
+    {
+      "source_id": "FTC_MLM_GUIDANCE",
+      "organization": "Federal Trade Commission",
+      "title": "Business Guidance Concerning Multi-Level Marketing",
+      "url": "https://www.ftc.gov/business-guidance/resources/business-guidance-concerning-multi-level-marketing",
+      "status": "CURRENT_BUSINESS_GUIDANCE",
+      "topics": ["MLM", "earnings claims", "lifestyle claims", "expenses", "typical results", "recruitment"]
+    },
+    {
+      "source_id": "FTC_MLM_EARNINGS_RULE_PROPOSAL",
+      "organization": "Federal Trade Commission",
+      "title": "Earnings Claim Rule Regarding Multi-Level Marketing",
+      "url": "https://www.ftc.gov/legal-library/browse/federal-register-notices/earnings-claim-rule-regarding-multi-level-marketing",
+      "status": "PROPOSED_RULE_NOT_FINAL_AS_REVIEWED",
+      "topics": ["MLM", "earnings claims", "written substantiation", "record retention"]
+    },
+    {
+      "source_id": "FDA_LABEL_CLAIMS",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Label Claims for Conventional Foods and Dietary Supplements",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-conventional-foods-and-dietary-supplements",
+      "status": "CURRENT_FDA_INFORMATION",
+      "topics": ["authorized health claims", "qualified health claims", "nutrient content claims", "structure/function claims"]
+    },
+    {
+      "source_id": "FDA_STRUCTURE_FUNCTION",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Structure/Function Claims",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/structurefunction-claims",
+      "status": "CURRENT_FDA_INFORMATION",
+      "topics": ["structure/function claims", "general well-being claims", "disease claims", "substantiation", "DSHEA disclaimer"]
+    },
+    {
+      "source_id": "FDA_STRUCTURE_FUNCTION_NOTIFICATIONS",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Notifications for Structure/Function and Related Claims in Dietary Supplement Labeling",
+      "url": "https://www.fda.gov/food/information-industry-dietary-supplements/notifications-structurefunction-and-related-claims-dietary-supplement-labeling",
+      "status": "CURRENT_FDA_INFORMATION",
+      "topics": ["notification", "structure/function claims", "truthful and not misleading", "disease claims"]
+    },
+    {
+      "source_id": "FDA_SUPPLEMENT_LABELING_CLAIMS",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Dietary Supplement Labeling Guide: Chapter VI. Claims",
+      "url": "https://www.fda.gov/food/dietary-supplements-guidance-documents-regulatory-information/dietary-supplement-labeling-guide-chapter-vi-claims",
+      "status": "CURRENT_FDA_GUIDE",
+      "topics": ["claim categories", "DSHEA disclaimer wording", "disclaimer placement", "authorized claims", "qualified claims"]
+    },
+    {
+      "source_id": "FDA_DSHEA_PLACEMENT_2025",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Letter to the Dietary Supplement Industry on the DSHEA Disclaimer",
+      "url": "https://www.fda.gov/food/information-industry-dietary-supplements/letter-dietary-supplement-industry-dshea-disclaimer",
+      "status": "CURRENT_FDA_COMMUNICATION_2025",
+      "topics": ["DSHEA disclaimer", "claim-adjacent placement", "same-panel placement"]
+    },
+    {
+      "source_id": "FDA_DIETARY_SUPPLEMENT_QA",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Questions and Answers on Dietary Supplements",
+      "url": "https://www.fda.gov/food/information-consumers-using-dietary-supplements/questions-and-answers-dietary-supplements",
+      "status": "CURRENT_FDA_INFORMATION",
+      "topics": ["dietary supplement oversight", "FDA approval", "disease claims", "advertising roles"]
+    },
+    {
+      "source_id": "FDA_HEALTH_CLAIMS_QA",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Questions and Answers on Health Claims in Food Labeling",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-health-claims-food-labeling",
+      "status": "CURRENT_FDA_INFORMATION",
+      "topics": ["authorized health claims", "qualified health claims", "exact qualifying language", "premarket review"]
+    }
+  ]
+}

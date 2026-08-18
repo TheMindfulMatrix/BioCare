@@ -1,0 +1,20 @@
+{
+  "engine_name": "The Mindful Matrix Compliance Engine",
+  "engine_version": "1.0.0",
+  "ruleset_version": "1.0.0",
+  "last_policy_review": "2026-08-18",
+  "source_review_dates": {
+    "FTC": "2026-08-18",
+    "FDA": "2026-08-18"
+  },
+  "primary_jurisdiction": {
+    "country": "US",
+    "state": "MO",
+    "state_policy": "STATE_LEGAL_REVIEW_REQUIRED"
+  },
+  "reviewed_by": "Mindful Matrix compliance ruleset",
+  "claim_recheck_days": 365,
+  "price_recheck_days": 180,
+  "policy_recheck_days": 90,
+  "legal_notice": "This system is a risk-control and workflow tool. It is not legal advice, regulatory approval, or a guarantee of compliance."
+}

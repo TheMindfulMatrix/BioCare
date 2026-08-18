@@ -1,0 +1,36 @@
+{
+  "jurisdiction": "US",
+  "state": "MO",
+  "disclosures": [
+    {
+      "disclosure_id": "DISCLOSURE_ZINZINO_PARTNER",
+      "relationship_type": "INDEPENDENT_MLM_PARTNER_AND_AFFILIATE",
+      "partner": "Zinzino",
+      "compensation_type": "COMMISSION_ON_QUALIFYING_PURCHASES",
+      "exact_text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a commission on purchases made through them.",
+      "placement_requirement": "Clear and conspicuous before or beside commercial controls; repeat when link and disclosure are separated.",
+      "required": true,
+      "authoritative_sources": ["FTC_ENDORSEMENT_GUIDES_FAQ", "FTC_DOT_COM_DISCLOSURES"]
+    },
+    {
+      "disclosure_id": "DISCLOSURE_BIOLIMITLESS_PARTNER",
+      "relationship_type": "AFFILIATE",
+      "partner": "BioLimitless",
+      "compensation_type": "POTENTIAL_COMPENSATION_ON_QUALIFYING_PURCHASES",
+      "exact_text": "BioLimitless links use the Matrix partner referral. I may earn compensation from qualifying purchases.",
+      "placement_requirement": "Clear and conspicuous before or beside BioLimitless recommendations and links.",
+      "required": true,
+      "authoritative_sources": ["FTC_ENDORSEMENT_GUIDES_FAQ", "FTC_DOT_COM_DISCLOSURES"]
+    },
+    {
+      "disclosure_id": "DISCLOSURE_FDA_DSHEA_PLURAL",
+      "relationship_type": "REGULATORY_CLAIM_DISCLAIMER",
+      "partner": null,
+      "compensation_type": null,
+      "exact_text": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "placement_requirement": "When applicable to a 403(r)(6) claim, use the exact wording and apply the claim-adjacent or linked same-panel placement required by current FDA policy; a footer alone is not presumed sufficient.",
+      "required": "CONTEXT_DEPENDENT",
+      "authoritative_sources": ["FDA_SUPPLEMENT_LABELING_CLAIMS", "FDA_DSHEA_PLACEMENT_2025"]
+    }
+  ]
+}

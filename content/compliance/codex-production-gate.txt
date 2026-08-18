@@ -1,0 +1,13 @@
+COMPLIANCE GATE:
+- Only use claims explicitly listed as GREEN or approved YELLOW.
+- Cite the approved claim IDs in every commercial production brief.
+- Do not independently strengthen, paraphrase, or extend health claims.
+- Do not create disease, diagnostic, treatment, cure, prevention, or guaranteed-outcome claims.
+- Do not create MLM earnings, recruitment, or lifestyle claims.
+- Preserve every required disclosure and its placement requirement.
+- Do not activate, promote, price, render, or link a deferred or blocked product.
+- Do not turn ingredient-only evidence into finished-product evidence.
+- If a requested statement conflicts with the claim registry, stop that statement and report the conflict without blocking unrelated production.
+- HUMAN REVIEW REQUIRED and DEFERRED_COMPLIANCE_REVIEW are not approvals.
+
+This gate is a risk-control workflow. It is not legal advice, regulatory approval, or a guarantee of compliance.
