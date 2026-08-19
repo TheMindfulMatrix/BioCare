@@ -31,6 +31,20 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pillow beautifulsoup4 playwright pypdf
           python -m playwright install --with-deps chromium
+      - name: Make image normalization idempotent
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/v6_finalize_candidate.py')
+          text = path.read_text(encoding='utf-8')
+          old = 'output_path = output_dir / f"{Path(original_rel).stem}.webp"'
+          new = 'output_path = output_dir / f"{Path(original_rel or source_rel).stem}.webp"'
+          if old in text:
+              text = text.replace(old, new, 1)
+              path.write_text(text, encoding='utf-8')
+          elif new not in text:
+              raise SystemExit('Expected image-normalization line not found')
+          PY
       - name: Prepare candidate
         run: python scripts/v6_finalize_candidate.py prepare
       - name: Render and exercise candidate
