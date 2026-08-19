@@ -19,26 +19,34 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Reconstruct and verify approved patch
+      - name: Apply, validate, and record result
+        shell: bash
         run: |
-          cat reports/v6/patch/core.part* | base64 --decode | gzip --decompress > /tmp/v6-core.patch
-          echo "ed53a2a5549ecf2629b5566f9b7e31f2cbe93e903f5ffd2bf0b6ebfc9d30ef36  /tmp/v6-core.patch" | sha256sum --check
-      - name: Apply approved V6 core changes
-        run: patch -p1 --forward < /tmp/v6-core.patch
-      - name: Build and validate
-        run: |
-          python scripts/build.py
-          python scripts/validate.py
-          python scripts/validate.py --compliance-strict --compliance-dry-run
-          python -m unittest discover -s tests -v
-          git diff --check
-      - name: Clean transfer tooling and record state
-        run: |
-          rm -rf reports/v6/patch
-          rm -f reports/v6/latest_source_run.txt
-          rm -f .github/workflows/v6-apply-core.yml
-          rm -f .github/workflows/v6-source-snapshot.yml
-          cat > reports/v6/BUILD_STATUS.md <<'EOF'
+          set +e
+          LOG=/tmp/v6-apply.log
+          : > "$LOG"
+          {
+            cat reports/v6/patch/core.part* | base64 --decode | gzip --decompress > /tmp/v6-core.patch
+            echo "ed53a2a5549ecf2629b5566f9b7e31f2cbe93e903f5ffd2bf0b6ebfc9d30ef36  /tmp/v6-core.patch" | sha256sum --check
+            patch -p1 --forward < /tmp/v6-core.patch
+            python scripts/build.py
+            python scripts/validate.py
+            python scripts/validate.py --compliance-strict --compliance-dry-run
+            python -m unittest discover -s tests -v
+            git diff --check
+          } 2>&1 | tee "$LOG"
+          STATUS=${PIPESTATUS[0]}
+
+          git config user.name "BioCare V6 Builder"
+          git config user.email "gherbonzt3@outlook.com"
+
+          if [ "$STATUS" -eq 0 ]; then
+            rm -rf reports/v6/patch
+            rm -f reports/v6/latest_source_run.txt
+            rm -f reports/v6/latest_apply_run.txt reports/v6/latest_apply_status.txt
+            rm -f .github/workflows/v6-apply-core.yml
+            rm -f .github/workflows/v6-source-snapshot.yml
+            cat > reports/v6/BUILD_STATUS.md <<'EOF'
           # The Mindful Matrix V6 build status
 
           - Baseline: `b5d35772e98580e253c08f6319aa8e412fa20aea` (V5.1)
@@ -52,10 +60,16 @@ jobs:
           - Production: unchanged
           - Merge/deployment: prohibited until separate approval
           EOF
-      - name: Commit checkpoint
-        run: |
-          git config user.name "BioCare V6 Builder"
-          git config user.email "gherbonzt3@outlook.com"
-          git add -A
-          git commit -m "v6: implement catalog, attribution, and accessibility foundation [skip v6 apply]"
+            git add -A
+            git commit -m "v6: implement catalog, attribution, and accessibility foundation [skip v6 apply]"
+          else
+            git reset --hard HEAD
+            mkdir -p reports/v6
+            printf '%s\n' "$GITHUB_RUN_ID" > reports/v6/latest_apply_run.txt
+            printf 'FAILED (%s)\n' "$STATUS" > reports/v6/latest_apply_status.txt
+            tail -n 160 "$LOG" > reports/v6/latest_apply_log.txt
+            git add reports/v6/latest_apply_run.txt reports/v6/latest_apply_status.txt reports/v6/latest_apply_log.txt
+            git commit -m "chore(v6): record failed core build run [skip v6 apply]"
+          fi
           git push origin HEAD:agent/v6-build
+          exit "$STATUS"
