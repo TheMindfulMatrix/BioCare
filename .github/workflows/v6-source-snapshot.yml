@@ -1,0 +1,25 @@
+name: V6 source snapshot
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/v6-build
+      - name: Upload branch source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: biocare-v6-source-current
+          path: |
+            .
+            !.git/
+          include-hidden-files: true
+          retention-days: 1
