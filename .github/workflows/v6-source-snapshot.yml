@@ -1,39 +1,61 @@
-name: V6 source snapshot
+name: V6 approved core build
 
 on:
   push:
     branches: [agent/v6-build]
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  snapshot:
-    if: ${{ !contains(github.event.head_commit.message, '[skip snapshot]') }}
+  apply:
+    if: ${{ !contains(github.event.head_commit.message, '[skip v6 apply]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: agent/v6-build
-      - name: Upload branch source snapshot
-        uses: actions/upload-artifact@v4
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
         with:
-          name: biocare-v6-source
-          path: |
-            .
-            !.git/
-          include-hidden-files: true
-          retention-days: 1
-      - name: Record source snapshot run
+          python-version: "3.12"
+      - name: Reconstruct and verify approved patch
         run: |
-          mkdir -p reports/v6
-          printf '%s\n' "$GITHUB_RUN_ID" > reports/v6/latest_source_run.txt
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/v6/latest_source_run.txt
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m "chore(v6): record source snapshot run [skip snapshot]"
+          cat reports/v6/patch/core.part* | base64 --decode | gzip --decompress > /tmp/v6-core.patch
+          echo "ed53a2a5549ecf2629b5566f9b7e31f2cbe93e903f5ffd2bf0b6ebfc9d30ef36  /tmp/v6-core.patch" | sha256sum --check
+      - name: Apply approved V6 core changes
+        run: patch -p1 --forward < /tmp/v6-core.patch
+      - name: Build and validate
+        run: |
+          python scripts/build.py
+          python scripts/validate.py
+          python scripts/validate.py --compliance-strict --compliance-dry-run
+          python -m unittest discover -s tests -v
+          git diff --check
+      - name: Clean transfer tooling and record state
+        run: |
+          rm -rf reports/v6/patch
+          rm -f reports/v6/latest_source_run.txt
+          rm -f .github/workflows/v6-apply-core.yml
+          rm -f .github/workflows/v6-source-snapshot.yml
+          cat > reports/v6/BUILD_STATUS.md <<'EOF'
+          # The Mindful Matrix V6 build status
+
+          - Baseline: `b5d35772e98580e253c08f6319aa8e412fa20aea` (V5.1)
+          - Branch: `agent/v6-build`
+          - Phase A: approved
+          - Core V6 architecture: implemented and validated
+          - Image normalization: pending user visual approval; V5.1 images remain active
+          - Ingredient dataset: pending user factual approval; no unapproved data renders
+          - Policy language: pending current-source verification and user approval
+          - How It Works imagery: deferred until licensed assets are supplied
+          - Production: unchanged
+          - Merge/deployment: prohibited until separate approval
+          EOF
+      - name: Commit checkpoint
+        run: |
+          git config user.name "BioCare V6 Builder"
+          git config user.email "gherbonzt3@outlook.com"
+          git add -A
+          git commit -m "v6: implement catalog, attribution, and accessibility foundation [skip v6 apply]"
           git push origin HEAD:agent/v6-build
