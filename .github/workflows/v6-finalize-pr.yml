@@ -28,28 +28,12 @@ jobs:
         run: |
           test -f scripts/v6_finalize_candidate.py
           test -f scripts/v6_browser_qa.py
+          test -f scripts/v6_apply_final_fixes.py
           python -m pip install --upgrade pip
-          python -m pip install pillow beautifulsoup4 playwright pypdf
+          python -m pip install pillow beautifulsoup4 playwright pypdf lxml
           python -m playwright install --with-deps chromium
-      - name: Make finalization script idempotent and dependency-light
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          path = Path('scripts/v6_finalize_candidate.py')
-          text = path.read_text(encoding='utf-8')
-          replacements = {
-              'output_path = output_dir / f"{Path(original_rel).stem}.webp"':
-                  'output_path = output_dir / f"{Path(original_rel or source_rel).stem}.webp"',
-              'sitemap = BeautifulSoup((ROOT / "sitemap.xml").read_text(encoding="utf-8"), "xml")':
-                  'sitemap = BeautifulSoup((ROOT / "sitemap.xml").read_text(encoding="utf-8"), "html.parser")',
-          }
-          for old, new in replacements.items():
-              if old in text:
-                  text = text.replace(old, new, 1)
-              elif new not in text:
-                  raise SystemExit(f'Expected finalization line not found: {old}')
-          path.write_text(text, encoding='utf-8')
-          PY
+      - name: Apply approved final fixes
+        run: python scripts/v6_apply_final_fixes.py
       - name: Prepare candidate
         run: python scripts/v6_finalize_candidate.py prepare
       - name: Render and exercise candidate
@@ -125,11 +109,13 @@ jobs:
         run: |
           git config user.name "BioCare V6 Builder"
           git config user.email "gherbonzt3@outlook.com"
+          rm -f scripts/v6_apply_final_fixes.py
+          git add -A scripts/v6_apply_final_fixes.py
           git add \
             assets/product-cutouts/zinzino-v6/ \
             content/catalog.json content/product-labels.json content/manufacturer-documents.json \
             index.html shop.html library.html start.html library/ robots.txt sitemap.xml \
-            reports/v6/ scripts/v6_finalize_candidate.py scripts/v6_browser_qa.py
+            reports/v6/ scripts/build.py scripts/validate.py scripts/v6_finalize_candidate.py scripts/v6_browser_qa.py
           if ! git diff --cached --quiet; then
             git commit -m "v6: finalize candidate for user review [skip v6-finalize] [skip v6-finalize-v2] [skip v6-finalize-pr]"
             git push origin HEAD:agent/v6-build
