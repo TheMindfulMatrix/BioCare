@@ -6,13 +6,16 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   snapshot:
+    if: ${{ !contains(github.event.head_commit.message, '[skip snapshot]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: agent/v6-build
       - name: Upload branch source snapshot
         uses: actions/upload-artifact@v4
         with:
@@ -22,3 +25,15 @@ jobs:
             !.git/
           include-hidden-files: true
           retention-days: 1
+      - name: Record source snapshot run
+        run: |
+          mkdir -p reports/v6
+          printf '%s\n' "$GITHUB_RUN_ID" > reports/v6/latest_source_run.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/v6/latest_source_run.txt
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore(v6): record source snapshot run [skip snapshot]"
+          git push origin HEAD:agent/v6-build
