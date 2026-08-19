@@ -31,19 +31,24 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pillow beautifulsoup4 playwright pypdf
           python -m playwright install --with-deps chromium
-      - name: Make image normalization idempotent
+      - name: Make finalization script idempotent and dependency-light
         run: |
           python - <<'PY'
           from pathlib import Path
           path = Path('scripts/v6_finalize_candidate.py')
           text = path.read_text(encoding='utf-8')
-          old = 'output_path = output_dir / f"{Path(original_rel).stem}.webp"'
-          new = 'output_path = output_dir / f"{Path(original_rel or source_rel).stem}.webp"'
-          if old in text:
-              text = text.replace(old, new, 1)
-              path.write_text(text, encoding='utf-8')
-          elif new not in text:
-              raise SystemExit('Expected image-normalization line not found')
+          replacements = {
+              'output_path = output_dir / f"{Path(original_rel).stem}.webp"':
+                  'output_path = output_dir / f"{Path(original_rel or source_rel).stem}.webp"',
+              'sitemap = BeautifulSoup((ROOT / "sitemap.xml").read_text(encoding="utf-8"), "xml")':
+                  'sitemap = BeautifulSoup((ROOT / "sitemap.xml").read_text(encoding="utf-8"), "html.parser")',
+          }
+          for old, new in replacements.items():
+              if old in text:
+                  text = text.replace(old, new, 1)
+              elif new not in text:
+                  raise SystemExit(f'Expected finalization line not found: {old}')
+          path.write_text(text, encoding='utf-8')
           PY
       - name: Prepare candidate
         run: python scripts/v6_finalize_candidate.py prepare
