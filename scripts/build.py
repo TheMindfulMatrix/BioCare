@@ -140,24 +140,44 @@ def document_head_markup(
     social_image = image or metadata.get("socialImage")
     asset_version = esc(metadata.get("assetVersion", "1"), attribute=True)
     asset_suffix = f"?v={asset_version}"
+
+    # Keep identity and social metadata at the start of the static document so
+    # link-preview crawlers do not need to traverse presentation resources.
     tags = [
         '  <meta charset="utf-8">',
         '  <meta name="viewport" content="width=device-width, initial-scale=1">',
         f"  <title>{esc(title)}</title>",
         f'  <meta name="description" content="{esc(description, attribute=True)}">',
-        f"  {GENERATOR_MARKER}",
     ]
-    if noindex:
-        tags.append('  <meta name="robots" content="noindex, nofollow">')
-    else:
-        tags.append('  <meta name="robots" content="index, follow">')
     if canonical:
         tags.append(f'  <link rel="canonical" href="{esc(canonical, attribute=True)}">')
     tags.extend(
         [
             f'  <meta property="og:title" content="{esc(title, attribute=True)}">',
-            f'  <meta property="og:description" content="{esc(description, attribute=True)}">',
             f'  <meta property="og:type" content="{esc(page_type, attribute=True)}">',
+        ]
+    )
+    if canonical:
+        tags.append(f'  <meta property="og:url" content="{esc(canonical, attribute=True)}">')
+    if social_image and social_image.get("src"):
+        image_url = page_url(metadata, social_image["src"])
+        image_type = social_image.get("type") or {
+            ".jpeg": "image/jpeg",
+            ".jpg": "image/jpeg",
+            ".png": "image/png",
+            ".webp": "image/webp",
+        }.get(Path(social_image["src"]).suffix.lower())
+        tags.append(f'  <meta property="og:image" content="{esc(image_url, attribute=True)}">')
+        if social_image.get("alt"):
+            tags.append(f'  <meta property="og:image:alt" content="{esc(social_image["alt"], attribute=True)}">')
+        if image_type:
+            tags.append(f'  <meta property="og:image:type" content="{esc(image_type, attribute=True)}">')
+        if social_image.get("width") and social_image.get("height"):
+            tags.append(f'  <meta property="og:image:width" content="{int(social_image["width"])}">')
+            tags.append(f'  <meta property="og:image:height" content="{int(social_image["height"])}">')
+    tags.extend(
+        [
+            f'  <meta property="og:description" content="{esc(description, attribute=True)}">',
             '  <meta property="og:site_name" content="The Mindful Matrix">',
             '  <meta property="og:locale" content="en_US">',
             '  <meta name="twitter:card" content="summary_large_image">',
@@ -165,23 +185,20 @@ def document_head_markup(
             f'  <meta name="twitter:description" content="{esc(description, attribute=True)}">',
         ]
     )
-    if canonical:
-        tags.append(f'  <meta property="og:url" content="{esc(canonical, attribute=True)}">')
     if social_image and social_image.get("src"):
-        image_url = page_url(metadata, social_image["src"])
-        tags.append(f'  <meta property="og:image" content="{esc(image_url, attribute=True)}">')
         tags.append(f'  <meta name="twitter:image" content="{esc(image_url, attribute=True)}">')
         if social_image.get("alt"):
-            tags.append(f'  <meta property="og:image:alt" content="{esc(social_image["alt"], attribute=True)}">')
             tags.append(f'  <meta name="twitter:image:alt" content="{esc(social_image["alt"], attribute=True)}">')
-        if social_image.get("width") and social_image.get("height"):
-            tags.append(f'  <meta property="og:image:width" content="{int(social_image["width"])}">')
-            tags.append(f'  <meta property="og:image:height" content="{int(social_image["height"])}">')
     if page_type == "article":
         if published:
             tags.append(f'  <meta property="article:published_time" content="{esc(published, attribute=True)}">')
         if updated:
             tags.append(f'  <meta property="article:modified_time" content="{esc(updated, attribute=True)}">')
+    tags.append(f"  {GENERATOR_MARKER}")
+    if noindex:
+        tags.append('  <meta name="robots" content="noindex, nofollow">')
+    else:
+        tags.append('  <meta name="robots" content="index, follow">')
     tags.extend(
         [
             '  <meta name="theme-color" content="#151814">',

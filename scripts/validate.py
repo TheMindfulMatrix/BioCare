@@ -28,6 +28,7 @@ class DocumentParser(HTMLParser):
         self.canonicals: list[str] = []
         self.titles: list[str] = []
         self.descriptions: list[str] = []
+        self.social_metadata: dict[str, list[str]] = {}
         self.heading_levels: list[int] = []
         self.blank_target_links: list[dict[str, str | None]] = []
         self._in_title = False
@@ -46,6 +47,10 @@ class DocumentParser(HTMLParser):
             self._in_title = True
         if tag == "meta" and values.get("name") == "description" and values.get("content"):
             self.descriptions.append(str(values["content"]))
+        if tag == "meta" and values.get("content"):
+            social_name = values.get("property") or values.get("name")
+            if social_name and str(social_name).startswith(("og:", "twitter:")):
+                self.social_metadata.setdefault(str(social_name), []).append(str(values["content"]))
         if tag == "link" and values.get("rel") == "canonical" and values.get("href"):
             self.canonicals.append(str(values["href"]))
         if tag == "a" and values.get("target") == "_blank":
@@ -163,6 +168,7 @@ def validate_content(site: dict, library: dict) -> None:
     check(social_image_path.is_file(), "Default social preview image is required")
     if social_image_path.is_file():
         check(png_dimensions(social_image_path) == (social_image.get("width"), social_image.get("height")), "Default social preview dimensions must match the source file")
+    check(social_image.get("type") == "image/png", "Default social preview MIME type must match the PNG source")
     check(bool(social_image.get("alt")), "Default social preview requires alt text")
     check("categories" not in site.get("homepage", {}).get("library", {}), "Library categories must have one source of truth in content/library.json")
     start_here = site.get("homepage", {}).get("startHere", {})
@@ -476,10 +482,17 @@ def validate_page(page: Path, *, preview: bool = False) -> DocumentParser:
         check(len(parser.canonicals) == 1, f"{label}: one canonical URL required")
         if parser.canonicals:
             check(parser.canonicals[0].startswith("https://themindfulmatrix.github.io/BioCare/"), f"{label}: canonical must preserve /BioCare/")
-        required_meta = ("og:title", "og:description", "og:type", "og:url", "og:image", "og:image:alt", "twitter:card", "twitter:title", "twitter:description", "twitter:image", "twitter:image:alt")
+        required_meta = ("og:title", "og:description", "og:type", "og:url", "og:image", "og:image:alt", "og:image:type", "twitter:card", "twitter:title", "twitter:description", "twitter:image", "twitter:image:alt")
         for name in required_meta:
-            attribute = "property" if name.startswith("og:") else "name"
-            check(f'<meta {attribute}="{name}"' in generated, f"{label}: missing {name} social metadata")
+            records = parser.social_metadata.get(name, [])
+            check(len(records) == 1, f"{label}: exactly one {name} social metadata record required")
+        head_position = generated.find("<head>")
+        title_position = generated.find("<title>")
+        first_og_position = generated.find('<meta property="og:')
+        first_stylesheet_position = generated.find('<link rel="stylesheet"')
+        check(-1 < head_position < title_position < first_og_position, f"{label}: title and social metadata must begin at the top of head")
+        check(0 <= first_og_position < 2048, f"{label}: Open Graph metadata must occur within the first 2 KB")
+        check(first_stylesheet_position == -1 or first_og_position < first_stylesheet_position, f"{label}: Open Graph metadata must precede stylesheets")
         records = json_ld_records(generated, label)
         types = {record.get("@type") for record in records}
         check({"Organization", "WebSite"}.issubset(types), f"{label}: Organization and WebSite structured data required")

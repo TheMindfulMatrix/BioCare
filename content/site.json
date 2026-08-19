@@ -5,11 +5,12 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "experience-v3-1-product-value",
+      "assetVersion": "v5-1-product-card-social",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
         "alt": "The Mindful Matrix — Information, Education, Action",
+        "type": "image/png",
         "width": 1200,
         "height": 630
       },

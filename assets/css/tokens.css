@@ -12,6 +12,11 @@
   --gold-400: #dfbb78;
   --gold-500: #d3a85c;
   --gold-700: #8a6429;
+  --price-gold-primary: #ffd989;
+  --price-gold-secondary: #e8bd6b;
+  --price-comparison-line: rgba(232, 224, 207, 0.52);
+  --price-surface-deep: #11140f;
+  --price-surface-warm: #2b2517;
   --bio-green-400: #70aa8c;
   --bio-green-600: #2f7255;
 
