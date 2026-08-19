@@ -78,9 +78,10 @@
 
   function initProductUniverse(root) {
     var intentButtons = Array.prototype.slice.call(root.querySelectorAll("[data-universe-intent]"));
-    var products = Array.prototype.slice.call(root.querySelectorAll("[data-universe-product]"));
     var rosterButtons = Array.prototype.slice.call(root.querySelectorAll("[data-universe-select]"));
     var stepButtons = Array.prototype.slice.call(root.querySelectorAll("[data-universe-step]"));
+    var dataNode = root.querySelector("[data-universe-data]");
+    var productContainer = root.querySelector("#universe-products");
     var intentIndex = root.querySelector("[data-universe-intent-index]");
     var intentName = root.querySelector("[data-universe-intent-name]");
     var intentDescription = root.querySelector("[data-universe-intent-description]");
@@ -88,152 +89,74 @@
     var total = root.querySelector("[data-universe-total]");
     var status = root.querySelector("[data-universe-status]");
     var stage = root.querySelector(".product-universe__stage");
-    if (!intentButtons.length || !products.length || !rosterButtons.length) return;
-
-    var activeIntent = intentButtons[0].dataset.universeIntent;
-    var activeProduct = products.find(function (product) { return product.hasAttribute("data-active"); }) || products[0];
+    if (!intentButtons.length || !rosterButtons.length || !dataNode || !productContainer) return;
+    var products;
+    try { products = JSON.parse(dataNode.textContent || "[]"); } catch (error) { return; }
+    if (!products.length) return;
+    var initialArticle = productContainer.querySelector("[data-universe-product]");
+    var initialId = initialArticle ? initialArticle.dataset.universeProduct : products[0].id;
+    var activeProduct = products.find(function (product) { return product.id === initialId; }) || products[0];
+    var activeIntent = activeProduct.intent;
     var touchStartX = 0;
-    var imageLoadToken = 0;
     var transitionAnimation = null;
     root.dataset.enhanced = "true";
 
-    function productsForIntent(intent) {
-      return products.filter(function (product) { return product.dataset.productIntent === intent; });
+    function e(value) { return String(value == null ? "" : value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#39;"); }
+    function money(value) { var number=Number(value); return new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",minimumFractionDigits:Number.isInteger(number)?0:2,maximumFractionDigits:2}).format(number); }
+    function priceItem(value,label,role) { return '<span class="product-price__item product-price__item--'+role+'" data-price-role="'+role+'"><strong>'+value+'</strong> '+label+'</span>'; }
+    function priceMarkup(product) {
+      var price=product.price, items=[];
+      if (price.pricing_model === "starter_subscription") items=[priceItem(money(price.start_price),e(price.start_label),"primary"),priceItem(money(price.recurring_price)+"/mo",e(price.recurring_label),"supporting")];
+      else if (price.pricing_model === "retail_premier") items=price.premier_price!=null?[priceItem(money(price.premier_price),"Premier price","primary"),priceItem(money(price.retail_price),"retail","reference")]:[priceItem(money(price.retail_price),"retail","primary")];
+      else if (price.pricing_model === "one_time_autoship") items=[priceItem(money(price.autoship_price)+"/mo","Subscribe &amp; Save","primary"),priceItem(money(price.one_time_price),"one-time","reference")];
+      else if (price.pricing_model === "one_time_range") items=[priceItem(money(price.one_time_price_min)+"–"+money(price.one_time_price_max),"one-time · format varies","primary")];
+      else items=[priceItem(money(price.one_time_price),"one-time","primary")];
+      var helper=product.manufacturer==="Zinzino"&&price.premier_price!=null?"<small>Premier pricing may require an eligible Premier purchase or customer status. Checkout reflects the current applicable price.</small>":"";
+      return '<div>'+items.join("")+'</div>'+helper+'<a class="product-price__source" href="'+e(price.affiliate_price_source)+'" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="shelf-affiliate-disclosure" aria-label="Official price source for '+e(product.name)+' (opens in a new tab)">Official price source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>';
     }
-
-    function intentButton(intent) {
-      return intentButtons.find(function (button) { return button.dataset.universeIntent === intent; });
+    function productsForIntent(intent) { return products.filter(function(product){return product.intent===intent;}); }
+    function intentButton(intent) { return intentButtons.find(function(button){return button.dataset.universeIntent===intent;}); }
+    function replaceArtwork(article, product) {
+      var old=article.querySelector(".shelf-card__artwork"); if(!old)return;
+      var node;
+      if(product.artwork&&product.artwork.src){node=document.createElement("img");node.className="shelf-card__artwork artwork-stage__background";node.src=product.artwork.src;node.alt="";node.width=Number(product.artwork.width);node.height=Number(product.artwork.height);node.loading="lazy";node.decoding="async";node.dataset.artworkState="ready";}
+      else{node=document.createElement("span");node.className="shelf-card__artwork artwork-stage__background";node.dataset.artworkState="placeholder";node.setAttribute("aria-hidden","true");}
+      old.replaceWith(node);
     }
-
-    function updateIntent(intent) {
-      var button = intentButton(intent);
-      if (!button) return;
-      activeIntent = intent;
-      root.dataset.activeIntent = intent;
-      root.dataset.activeEnvironment = button.dataset.intentEnvironment || "signal";
-      intentButtons.forEach(function (item) {
-        item.setAttribute("aria-pressed", String(item === button));
-      });
-      if (intentIndex) intentIndex.textContent = button.dataset.intentIndex || "";
-      if (intentName) intentName.textContent = button.dataset.intentName || "";
-      if (intentDescription) intentDescription.textContent = button.dataset.intentDescription || "";
-      rosterButtons.forEach(function (item) {
-        item.hidden = item.dataset.productIntent !== intent;
-      });
+    function renderProduct(product, announce) {
+      var article=productContainer.querySelector("[data-universe-product]"); if(!article)return;
+      activeProduct=product;
+      article.className="product-universe__product"+(product.name.length>=42?" product-name--very-long":product.name.length>=30?" product-name--long":"");
+      article.dataset.universeProduct=product.id;article.dataset.productIntent=product.intent;article.dataset.manufacturer=product.manufacturer;article.dataset.environment=product.environment;article.dataset.active="true";article.id="";
+      var titleId="universe-product-title-"+product.id;article.setAttribute("aria-labelledby",titleId);
+      replaceArtwork(article,product);
+      var cutout=article.querySelector("img[data-image-role='official-product-cutout']");
+      if(cutout&&product.cutout){cutout.src=product.cutout.src;cutout.alt=product.cutout.alt;cutout.width=Number(product.cutout.width);cutout.height=Number(product.cutout.height);cutout.loading="eager";}
+      var sku=article.querySelector(".product-universe__sku");if(sku)sku.textContent=product.sku?"SKU "+product.sku:"BioLimitless product";
+      var number=article.querySelector(".product-universe__number");if(number)number.textContent=String(product.index).padStart(2,"0");
+      var label=article.querySelector(".product-universe__content .interface-label");if(label)label.textContent=product.category+" / "+product.productKind;
+      var title=article.querySelector(".product-universe__content h3");if(title){title.id=titleId;title.textContent=product.name;}
+      var description=article.querySelector(".product-universe__description");if(description)description.textContent=product.description;
+      var facts=article.querySelectorAll(".product-universe__facts dd");if(facts[0])facts[0].textContent=product.manufacturer;if(facts[1])facts[1].textContent=product.variantLabel;
+      var price=article.querySelector(".product-price");if(price){price.dataset.priceModel=product.price.pricing_model;price.dataset.priceVerified=product.price.price_verified_at;price.innerHTML=priceMarkup(product);}
+      var why=article.querySelector(".product-universe__why p");if(why)why.textContent=product.whyItsHere;
+      var existingBio=article.querySelector("[data-biolimitless-disclosure]");if(existingBio)existingBio.remove();
+      if(product.manufacturer==="BioLimitless"){var bio=document.createElement("p");bio.className="fine product-material-connection";bio.dataset.biolimitlessDisclosure="";bio.textContent="BioLimitless links use the Matrix partner referral. I may earn compensation from qualifying purchases.";article.querySelector(".product-universe__why").after(bio);}
+      var row=article.querySelector(".product-universe__content .button-row");if(row){var related=product.relatedEducation?'<a class="product-universe__learn" href="'+e(product.relatedEducation.href)+'" aria-label="'+e(product.relatedEducation.label)+' for '+e(product.name)+'">'+e(product.relatedEducation.label)+' →</a>':"";row.innerHTML='<a class="button button-primary" href="'+e(product.destination)+'" target="_blank" rel="sponsored noopener noreferrer" aria-label="'+e(product.cta)+': '+e(product.name)+' (opens in a new tab)">'+e(product.cta)+' ↗<span class="visually-hidden"> (opens in a new tab)</span></a>'+related;}
+      var intentProducts=productsForIntent(activeIntent), localIndex=intentProducts.indexOf(product);
+      if(position)position.textContent=String(localIndex+1).padStart(2,"0");if(total)total.textContent=String(intentProducts.length).padStart(2,"0");
+      rosterButtons.forEach(function(button){button.setAttribute("aria-pressed",String(button.dataset.universeSelect===product.id));});
+      if(announce&&status){var selectedIntent=intentButton(activeIntent);status.textContent=product.name+" selected. Product "+(localIndex+1)+" of "+intentProducts.length+" in "+selectedIntent.dataset.intentName+".";}
+      if(transitionAnimation)transitionAnimation.cancel();if(announce&&!reduceMotion&&article.animate)transitionAnimation=article.animate([{opacity:.55,transform:"translateY(10px) scale(.985)"},{opacity:1,transform:"translateY(0) scale(1)"}],{duration:360,easing:"cubic-bezier(.2,.75,.25,1)"});
     }
-
-    function activateProduct(productId, announce) {
-      var next = products.find(function (product) { return product.dataset.universeProduct === productId; });
-      if (!next) return;
-      if (next.dataset.productIntent !== activeIntent) updateIntent(next.dataset.productIntent);
-      activeProduct = next;
-      products.forEach(function (product) {
-        var active = product === next;
-        product.toggleAttribute("data-active", active);
-        product.setAttribute("aria-hidden", String(!active));
-        product.inert = !active;
-        if (!active) product.removeAttribute("aria-busy");
-      });
-      rosterButtons.forEach(function (button) {
-        button.setAttribute("aria-pressed", String(button.dataset.universeSelect === productId));
-      });
-      var intentProducts = productsForIntent(activeIntent);
-      var localIndex = intentProducts.indexOf(next);
-      if (position) position.textContent = String(localIndex + 1).padStart(2, "0");
-      if (total) total.textContent = String(intentProducts.length).padStart(2, "0");
-      var image = next.querySelector("img[data-image-role='official-product-cutout']");
-      var token = ++imageLoadToken;
-      function settleImage() {
-        if (token !== imageLoadToken) return;
-        if (stage) stage.removeAttribute("data-loading");
-        next.removeAttribute("aria-busy");
-      }
-      if (image && !image.complete) {
-        image.loading = "eager";
-        if (stage) stage.dataset.loading = "true";
-        next.setAttribute("aria-busy", "true");
-        image.addEventListener("load", settleImage, { once: true });
-        image.addEventListener("error", settleImage, { once: true });
-      } else {
-        settleImage();
-      }
-      if (announce && status) {
-        var selectedIntent = intentButton(activeIntent);
-        status.textContent = next.querySelector("h3").textContent + " selected. Product " + (localIndex + 1) + " of " + intentProducts.length + " in " + selectedIntent.dataset.intentName + ".";
-      }
-      if (transitionAnimation) transitionAnimation.cancel();
-      if (announce && !reduceMotion) {
-        transitionAnimation = next.animate(
-          [{ opacity: .55, transform: "translateY(10px) scale(.985)" }, { opacity: 1, transform: "translateY(0) scale(1)" }],
-          { duration: 360, easing: "cubic-bezier(.2,.75,.25,1)" }
-        );
-      }
-    }
-
-    function activateIntent(button, moveFocus) {
-      updateIntent(button.dataset.universeIntent);
-      activateProduct(button.dataset.intentFeatured || productsForIntent(activeIntent)[0].dataset.universeProduct, true);
-      if (moveFocus) button.focus();
-    }
-
-    function stepProduct(direction) {
-      var intentProducts = productsForIntent(activeIntent);
-      var index = intentProducts.indexOf(activeProduct);
-      var nextIndex = (index + direction + intentProducts.length) % intentProducts.length;
-      activateProduct(intentProducts[nextIndex].dataset.universeProduct, true);
-    }
-
-    intentButtons.forEach(function (button, index) {
-      button.addEventListener("click", function () { activateIntent(button, false); });
-      button.addEventListener("keydown", function (event) {
-        var nextIndex = null;
-        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % intentButtons.length;
-        if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + intentButtons.length) % intentButtons.length;
-        if (event.key === "Home") nextIndex = 0;
-        if (event.key === "End") nextIndex = intentButtons.length - 1;
-        if (nextIndex === null) return;
-        event.preventDefault();
-        activateIntent(intentButtons[nextIndex], true);
-      });
-    });
-
-    rosterButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        activateProduct(button.dataset.universeSelect, true);
-      });
-    });
-
-    stepButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        stepProduct(Number(button.dataset.universeStep));
-      });
-    });
-
-    if (stage) {
-      stage.addEventListener("touchstart", function (event) {
-        touchStartX = event.changedTouches[0].clientX;
-      }, { passive: true });
-      stage.addEventListener("touchend", function (event) {
-        var distance = event.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(distance) > 48) stepProduct(distance < 0 ? 1 : -1);
-      }, { passive: true });
-      if (!reduceMotion && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        stage.addEventListener("pointermove", function (event) {
-          var bounds = stage.getBoundingClientRect();
-          var x = ((event.clientX - bounds.left) / bounds.width - .5) * 2;
-          var y = ((event.clientY - bounds.top) / bounds.height - .5) * 2;
-          stage.style.setProperty("--universe-tilt-x", (y * -2.2).toFixed(2) + "deg");
-          stage.style.setProperty("--universe-tilt-y", (x * 3).toFixed(2) + "deg");
-        }, { passive: true });
-        stage.addEventListener("pointerleave", function () {
-          stage.style.setProperty("--universe-tilt-x", "0deg");
-          stage.style.setProperty("--universe-tilt-y", "0deg");
-        }, { passive: true });
-      }
-    }
-
-    updateIntent(activeProduct.dataset.productIntent);
-    activateProduct(activeProduct.dataset.universeProduct, false);
+    function updateIntent(intent){var button=intentButton(intent);if(!button)return;activeIntent=intent;root.dataset.activeIntent=intent;root.dataset.activeEnvironment=button.dataset.intentEnvironment||"signal";intentButtons.forEach(function(item){item.setAttribute("aria-pressed",String(item===button));});if(intentIndex)intentIndex.textContent=button.dataset.intentIndex||"";if(intentName)intentName.textContent=button.dataset.intentName||"";if(intentDescription)intentDescription.textContent=button.dataset.intentDescription||"";rosterButtons.forEach(function(item){item.hidden=item.dataset.productIntent!==intent;});}
+    function activateProduct(id,announce){var product=products.find(function(item){return item.id===id;});if(!product)return;if(product.intent!==activeIntent)updateIntent(product.intent);renderProduct(product,announce);}
+    function activateIntent(button,focus){updateIntent(button.dataset.universeIntent);var candidates=productsForIntent(activeIntent);activateProduct(button.dataset.intentFeatured||candidates[0].id,true);if(focus)button.focus();}
+    function stepProduct(direction){var list=productsForIntent(activeIntent),index=list.indexOf(activeProduct),next=(index+direction+list.length)%list.length;activateProduct(list[next].id,true);}
+    intentButtons.forEach(function(button,index){button.addEventListener("click",function(){activateIntent(button,false);});button.addEventListener("keydown",function(event){var next=null;if(event.key==="ArrowRight"||event.key==="ArrowDown")next=(index+1)%intentButtons.length;if(event.key==="ArrowLeft"||event.key==="ArrowUp")next=(index-1+intentButtons.length)%intentButtons.length;if(event.key==="Home")next=0;if(event.key==="End")next=intentButtons.length-1;if(next===null)return;event.preventDefault();activateIntent(intentButtons[next],true);});});
+    rosterButtons.forEach(function(button){button.addEventListener("click",function(){activateProduct(button.dataset.universeSelect,true);});});stepButtons.forEach(function(button){button.addEventListener("click",function(){stepProduct(Number(button.dataset.universeStep));});});
+    if(stage){stage.addEventListener("touchstart",function(event){touchStartX=event.changedTouches[0].clientX;},{passive:true});stage.addEventListener("touchend",function(event){var distance=event.changedTouches[0].clientX-touchStartX;if(Math.abs(distance)>48)stepProduct(distance<0?1:-1);},{passive:true});if(!reduceMotion&&window.matchMedia("(hover: hover) and (pointer: fine)").matches){stage.addEventListener("pointermove",function(event){var bounds=stage.getBoundingClientRect(),x=((event.clientX-bounds.left)/bounds.width-.5)*2,y=((event.clientY-bounds.top)/bounds.height-.5)*2;stage.style.setProperty("--universe-tilt-x",(y*-2.2).toFixed(2)+"deg");stage.style.setProperty("--universe-tilt-y",(x*3).toFixed(2)+"deg");},{passive:true});stage.addEventListener("pointerleave",function(){stage.style.setProperty("--universe-tilt-x","0deg");stage.style.setProperty("--universe-tilt-y","0deg");},{passive:true});}}
+    updateIntent(activeProduct.intent);renderProduct(activeProduct,false);
   }
 
   document.querySelectorAll("[data-product-universe]").forEach(initProductUniverse);

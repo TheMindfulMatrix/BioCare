@@ -243,7 +243,7 @@
       "description": "Home health blood spot test to track gut and metabolic markers",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -470,7 +470,7 @@
       "description": "Omega-3 food supplement with EPA, DHA and polyphenols",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -791,7 +791,7 @@
       "description": "Measuring caps made from dishwasher-safe plastic.",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1005,7 +1005,7 @@
       "description": "With saffron stigmas, magnesium, iodine, and vitamin C",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1349,7 +1349,7 @@
       "description": "Meal replacement with whey proteins, collagen peptides, and dietary fibers, strawberry flavor",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1392,7 +1392,7 @@
       "description": "Meal replacement with vegetarian pea and oat proteins and dietary fibers, vanilla flavor",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1435,7 +1435,7 @@
       "description": "Meal replacement with vegetarian pea and oat proteins and dietary fibers, berry flavor",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1478,7 +1478,7 @@
       "description": "On-the-go, dishwasher safe with a leak-proof lid",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1563,7 +1563,7 @@
       "description": "Metric and imperial measures with a BMI calculator.",
       "descriptionSource": "Official current Zinzino US catalog card",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "price": {
         "pricing_model": "retail_premier",
         "currency": "USD",
@@ -1792,7 +1792,7 @@
       "visualLabel": "Official BioLimitless Becoming BioLimitless",
       "environment": "knowledge",
       "commercial_status": "active",
-      "curated": false,
+      "curated": true,
       "affiliate": {
         "mechanism": "AffiliateWP direct product query",
         "referralQueryKey": "me",
