@@ -1,8 +1,6 @@
 name: V6 approved core build
 
 on:
-  push:
-    branches: [agent/v6-build]
   pull_request:
     branches: [main]
 
@@ -11,7 +9,6 @@ permissions:
 
 jobs:
   apply:
-    if: ${{ github.event_name == 'pull_request' || !contains(github.event.head_commit.message, '[skip v6 apply]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,11 +40,10 @@ jobs:
           git config user.email "gherbonzt3@outlook.com"
 
           if [ "$STATUS" -eq 0 ]; then
+            git restore --source=HEAD -- .github/workflows/validate.yml
             rm -rf reports/v6/patch
             rm -f reports/v6/latest_source_run.txt
             rm -f reports/v6/latest_apply_run.txt reports/v6/latest_apply_status.txt reports/v6/latest_apply_log.txt
-            rm -f .github/workflows/v6-apply-core.yml
-            rm -f .github/workflows/v6-source-snapshot.yml
             cat > reports/v6/BUILD_STATUS.md <<'EOF'
           # The Mindful Matrix V6 build status
 
@@ -55,6 +51,7 @@ jobs:
           - Branch: `agent/v6-build`
           - Phase A: approved
           - Core V6 architecture: implemented and validated
+          - CI workflow hardening: pending connector-authored checkpoint
           - Image normalization: pending user visual approval; V5.1 images remain active
           - Ingredient dataset: pending user factual approval; no unapproved data renders
           - Policy language: pending current-source verification and user approval
@@ -63,7 +60,7 @@ jobs:
           - Merge/deployment: prohibited until separate approval
           EOF
             git add -A
-            git commit -m "v6: implement catalog, attribution, and accessibility foundation [skip v6 apply]"
+            git commit -m "v6: implement catalog, attribution, and accessibility foundation"
           else
             git reset --hard HEAD
             mkdir -p reports/v6
@@ -71,7 +68,7 @@ jobs:
             printf 'FAILED (%s)\n' "$STATUS" > reports/v6/latest_apply_status.txt
             tail -n 160 "$LOG" > reports/v6/latest_apply_log.txt
             git add reports/v6/latest_apply_run.txt reports/v6/latest_apply_status.txt reports/v6/latest_apply_log.txt
-            git commit -m "chore(v6): record failed core build run [skip v6 apply]"
+            git commit -m "chore(v6): record failed core build run"
           fi
           git push origin HEAD:agent/v6-build
           exit "$STATUS"
