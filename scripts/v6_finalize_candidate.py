@@ -128,6 +128,8 @@ def normalize_zinzino_images(catalog: dict[str, Any]) -> dict[str, Any]:
         if not original_path.exists():
             original_path = source_path
             original_rel = source_rel
+        if not original_rel:
+            original_rel = source_rel
 
         with Image.open(original_path) as opened:
             original = opened.convert("RGBA")
@@ -163,7 +165,7 @@ def normalize_zinzino_images(catalog: dict[str, Any]) -> dict[str, Any]:
         if result_bbox[0] < 0 or result_bbox[1] < 0 or result_bbox[2] > output_side or result_bbox[3] > output_side:
             raise ValueError(f"Normalized image clipped: {product['name']}")
 
-        output_path = output_dir / f"{Path(original_rel).stem}.webp"
+        output_path = output_dir / f"{Path(original_rel or source_rel).stem}.webp"
         canvas.save(output_path, "WEBP", quality=82, method=6, exact=True)
         # Decode the final file to prove it is usable and has alpha.
         with Image.open(output_path) as test:
@@ -333,6 +335,7 @@ def approve_verified_labels(catalog: dict[str, Any]) -> dict[str, Any]:
         # Set compatibility flags used by the current build and preserve a clear audit trail.
         publish = status in {"complete_verified", "partial_verified"}
         record["verificationStatus"] = status
+        record["status"] = "approved" if publish else "pending"
         record["approvalStatus"] = "approved" if publish else "pending"
         record["approval_status"] = "approved" if publish else "pending"
         record["approved"] = publish
@@ -420,10 +423,28 @@ def identity_matches(product: dict[str, Any], final_url: str, body: str) -> bool
     return sum(token in haystack for token in tokens[:5]) >= min(2, len(tokens))
 
 
+def attributed_source_url(product: dict[str, Any]) -> str:
+    """Derive the same disclosed partner source URL used by the static builder."""
+    price = product.get("price") or {}
+    explicit = price.get("affiliate_price_source")
+    if explicit:
+        return str(explicit)
+    source = str(price.get("official_price_source") or product.get("officialProductPage") or "")
+    manufacturer = str(product.get("manufacturer") or "")
+    if manufacturer == "Zinzino":
+        return source.replace("/shop/site/US/en-US/", f"/shop/{PARTNER_ID}/us/en-us/", 1)
+    if manufacturer == "BioLimitless":
+        parsed = urllib.parse.urlsplit(source)
+        query = [(key, value) for key, value in urllib.parse.parse_qsl(parsed.query, keep_blank_values=True) if key != BIO_REF_KEY]
+        query.append((BIO_REF_KEY, BIO_REF_VALUE))
+        return urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urllib.parse.urlencode(query), parsed.fragment))
+    return source
+
+
 def fetch_link(product: dict[str, Any]) -> LinkResult:
     price = product.get("price") or {}
     original = str(price.get("official_price_source") or product.get("officialProductPage") or "")
-    attributed = str(price.get("affiliate_price_source") or original)
+    attributed = attributed_source_url(product)
     manufacturer = str(product.get("manufacturer") or "")
     mechanism = "Zinzino partner path" if manufacturer == "Zinzino" else "BioLimitless AffiliateWP query"
     result = LinkResult(
@@ -576,9 +597,22 @@ def consolidate_commerce(catalog: dict[str, Any]) -> dict[str, Any]:
         browser_item = browser_map.get(item.get("product_id"), {})
         browser_result = browser_item.get("classification")
         item["browser_result"] = browser_result
-        passed = item.get("classification") == "pass" or browser_result == "pass"
+        manufacturer = str(item.get("manufacturer") or "")
+        browser_final = str(browser_item.get("final_url") or "")
+        item["identity_ok"] = bool(item.get("identity_ok") or browser_item.get("identity_ok"))
+        item["attribution_ok"] = bool(
+            item.get("attribution_ok")
+            or attribution_ok(browser_final, manufacturer)
+            or attribution_ok(str(item.get("attributed_url") or ""), manufacturer)
+        )
+        passed = bool(
+            (item.get("classification") == "pass" or browser_result == "pass")
+            and item.get("identity_ok")
+            and item.get("attribution_ok")
+            and not item.get("duplicate_referral")
+        )
+        product = products.get(item.get("product_id"))
         if not passed:
-            product = products.get(item.get("product_id"))
             if product:
                 price = product.get("price") or {}
                 original = item.get("original_url")
@@ -588,6 +622,8 @@ def consolidate_commerce(catalog: dict[str, Any]) -> dict[str, Any]:
                     item["classification"] = "reverted_unverified"
                     reverted.append(item.get("product_name") or item.get("product_id"))
         else:
+            if product:
+                product.setdefault("price", {})["affiliate_price_source"] = item.get("attributed_url")
             item["classification"] = "pass"
 
     report["final_pass"] = sum(i.get("classification") == "pass" for i in report.get("items", []))

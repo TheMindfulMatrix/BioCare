@@ -87,13 +87,19 @@
       "visualLabel": "Official Balance Test Basic Kit",
       "environment": "balance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+        "src": "assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
         "alt": "Balance Test Basic Kit official Zinzino product packaging",
         "width": 560,
         "height": 560,
         "sourceAsset": "assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/910465.png",
-        "provenance": "assets/source-products/zinzino/balance-test-basic-kit/provenance.json"
+        "provenance": "assets/source-products/zinzino/balance-test-basic-kit/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
@@ -117,7 +123,8 @@
         "start_label": "Start kit",
         "recurring_label": "Monthly subscription",
         "price_verified_at": "2026-08-17",
-        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465"
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465",
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products/premier-kits/910465"
       }
     },
     {
@@ -138,13 +145,19 @@
       "visualLabel": "Official BalanceTest",
       "environment": "signal",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balance-test-309000.png",
+        "src": "assets/product-cutouts/zinzino-v6/balance-test-309000.webp",
         "alt": "BalanceTest official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/balance-test/balance-test-309000-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309000.png",
-        "provenance": "assets/source-products/zinzino/balance-test/provenance.json"
+        "provenance": "assets/source-products/zinzino/balance-test/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balance-test-309000.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -164,7 +177,8 @@
         "retail_price": 179,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 127
+        "premier_price": 127,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -185,13 +199,19 @@
       "visualLabel": "Official Gut Health Test",
       "environment": "signal",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/gut-health-test-309070.png",
+        "src": "assets/product-cutouts/zinzino-v6/gut-health-test-309070.webp",
         "alt": "Gut Health Test official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/gut-health-test-309070-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309070.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/gut-health-test-309070.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -207,7 +227,8 @@
         "retail_price": 205,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 145
+        "premier_price": 145,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -228,13 +249,19 @@
       "visualLabel": "Official Gut Health Test x2",
       "environment": "signal",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+        "src": "assets/product-cutouts/zinzino-v6/gut-health-test-x2-309080.webp",
         "alt": "Gut Health Test x2 official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/gut-health-test-x2-309080-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309080.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -250,7 +277,8 @@
         "retail_price": 410,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 209
+        "premier_price": 209,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -271,13 +299,19 @@
       "visualLabel": "Official Vitamin D Test",
       "environment": "signal",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+        "src": "assets/product-cutouts/zinzino-v6/vitamin-d-test-309049.webp",
         "alt": "Vitamin D Test official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/vitamin-d-test-309049-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309049.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -293,7 +327,8 @@
         "retail_price": 78,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 55
+        "premier_price": 55,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -314,13 +349,19 @@
       "visualLabel": "Official HbA1c Test",
       "environment": "signal",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/hba1c-test-309060.png",
+        "src": "assets/product-cutouts/zinzino-v6/hba1c-test-309060.webp",
         "alt": "HbA1c Test official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/hba1c-test-309060-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/309060.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/hba1c-test-309060.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -336,7 +377,8 @@
         "retail_price": 78,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 55
+        "premier_price": 55,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -357,13 +399,19 @@
       "visualLabel": "Official BalanceOil+, 300 ml",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
         "alt": "BalanceOil+, 300 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-300ml-300000-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300000.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -383,7 +431,8 @@
         "retail_price": 67,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 47
+        "premier_price": 47,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -404,13 +453,19 @@
       "visualLabel": "Official BalanceOil+ Orange Lemon Mint, 100 ml",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-300430.webp",
         "alt": "BalanceOil+ Orange Lemon Mint, 100 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-100ml-300430-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300430.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -430,7 +485,8 @@
         "retail_price": 26,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 18
+        "premier_price": 18,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -451,13 +507,19 @@
       "visualLabel": "Official BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-6pcs-300481.webp",
         "alt": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-100ml-6pcs-300481-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300481.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -477,7 +539,8 @@
         "retail_price": 133,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 94
+        "premier_price": 94,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -498,13 +561,19 @@
       "visualLabel": "Official BalanceOil+ Premium, 300 ml",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-premium-300ml-700000.webp",
         "alt": "BalanceOil+ Premium, 300 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-premium-300ml-700000-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/700000.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -524,7 +593,8 @@
         "retail_price": 94,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 66
+        "premier_price": 66,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -545,13 +615,19 @@
       "visualLabel": "Official BalanceOil+ AquaX, 300 ml",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-aquax-300ml-300700.webp",
         "alt": "BalanceOil+ AquaX, 300 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-aquax-300ml-300700-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300700.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -571,7 +647,8 @@
         "retail_price": 77,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 54
+        "premier_price": 54,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -592,13 +669,19 @@
       "visualLabel": "Official BalanceOil+ Vegan",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-vegan-400000.webp",
         "alt": "BalanceOil+ Vegan official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-plus-vegan-400000-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/400000.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -618,7 +701,8 @@
         "retail_price": 116,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 82
+        "premier_price": 82,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -639,13 +723,19 @@
       "visualLabel": "Official BalanceOil Tutti Frutti, 300 ml",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+        "src": "assets/product-cutouts/zinzino-v6/balanceoil-tutti-frutti-300ml-301799.webp",
         "alt": "BalanceOil Tutti Frutti, 300 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/balanceoil-tutti-frutti-300ml-301799-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301799.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -665,7 +755,8 @@
         "retail_price": 67,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 47
+        "premier_price": 47,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -686,13 +777,19 @@
       "visualLabel": "Official Essent+ Premium",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+        "src": "assets/product-cutouts/zinzino-v6/essent-plus-premium-300310.webp",
         "alt": "Essent+ Premium official Zinzino product packaging",
-        "width": 960,
-        "height": 960,
+        "width": 800,
+        "height": 800,
         "sourceAsset": "assets/source-products/zinzino/catalog/essent-plus-premium-300310-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300310.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -712,7 +809,8 @@
         "retail_price": 67,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 47
+        "premier_price": 47,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -733,13 +831,19 @@
       "visualLabel": "Official R.E.V.O.O",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/revoo-302401.png",
+        "src": "assets/product-cutouts/zinzino-v6/revoo-302401.webp",
         "alt": "R.E.V.O.O official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/full-shop/revoo-302401-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302401.png",
-        "provenance": "assets/source-products/zinzino/full-shop/provenance.json"
+        "provenance": "assets/source-products/zinzino/full-shop/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/revoo-302401.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -755,7 +859,8 @@
         "retail_price": 112,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 79
+        "premier_price": 79,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -776,13 +881,19 @@
       "visualLabel": "Official Dosage Cups, 10 pc",
       "environment": "omega",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+        "src": "assets/product-cutouts/zinzino-v6/dosage-cups-10pc-600508.webp",
         "alt": "Dosage Cups, 10 pc official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/dosage-cups-10pc-600508-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/600508.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -797,7 +908,8 @@
         "currency": "USD",
         "retail_price": 16,
         "price_verified_at": "2026-08-17",
-        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products"
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -818,13 +930,19 @@
       "visualLabel": "Official ZinoBiotic+",
       "environment": "biotic",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+        "src": "assets/product-cutouts/zinzino-v6/zinobiotic-plus-301390.webp",
         "alt": "ZinoBiotic+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301390.png",
-        "provenance": "assets/source-products/zinzino/gut-health/provenance.json"
+        "provenance": "assets/source-products/zinzino/gut-health/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -840,7 +958,8 @@
         "retail_price": 50,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 35
+        "premier_price": 35,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -861,13 +980,19 @@
       "visualLabel": "Official X Gold+ 250 ml",
       "environment": "biotic",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+        "src": "assets/product-cutouts/zinzino-v6/x-gold-plus-302790.webp",
         "alt": "X Gold+ 250 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302790-001.png",
-        "provenance": "assets/source-products/zinzino/x-gold/provenance.json"
+        "provenance": "assets/source-products/zinzino/x-gold/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -883,7 +1008,8 @@
         "retail_price": 85,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 60
+        "premier_price": 60,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -904,13 +1030,19 @@
       "visualLabel": "Official ZinoGene+",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+        "src": "assets/product-cutouts/zinzino-v6/zinogene-plus-302500.webp",
         "alt": "ZinoGene+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/zinogene-plus-302500-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302500.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -926,7 +1058,8 @@
         "retail_price": 87,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 61
+        "premier_price": 61,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -947,13 +1080,19 @@
       "visualLabel": "Official Viva+",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/viva-plus-300800.png",
+        "src": "assets/product-cutouts/zinzino-v6/viva-plus-300800.webp",
         "alt": "Viva+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/viva-plus-300800-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300800.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/viva-plus-300800.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -969,7 +1108,8 @@
         "retail_price": 45,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 32
+        "premier_price": 32,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -990,13 +1130,19 @@
       "visualLabel": "Official Viva+ x2",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+        "src": "assets/product-cutouts/zinzino-v6/viva-plus-x2-300811.webp",
         "alt": "Viva+ x2 official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/viva-plus-x2-300811-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300811.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1012,7 +1158,8 @@
         "retail_price": 86,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 56
+        "premier_price": 56,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1033,13 +1180,19 @@
       "visualLabel": "Official ZinoShine+",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+        "src": "assets/product-cutouts/zinzino-v6/zinoshine-plus-302600.webp",
         "alt": "ZinoShine+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/zinoshine-plus-302600-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302600.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1055,7 +1208,8 @@
         "retail_price": 26,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 18
+        "premier_price": 18,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1076,13 +1230,19 @@
       "visualLabel": "Official Xtend+",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/xtend-plus-302200.png",
+        "src": "assets/product-cutouts/zinzino-v6/xtend-plus-302200.webp",
         "alt": "Xtend+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/xtend-plus-302200-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302200.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/xtend-plus-302200.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1098,7 +1258,8 @@
         "retail_price": 65,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 46
+        "premier_price": 46,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1119,13 +1280,19 @@
       "visualLabel": "Official Xtend",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/xtend-300520.png",
+        "src": "assets/product-cutouts/zinzino-v6/xtend-300520.webp",
         "alt": "Xtend official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/xtend-300520-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300520.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/xtend-300520.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1141,7 +1308,8 @@
         "retail_price": 50,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 35
+        "premier_price": 35,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1162,13 +1330,19 @@
       "visualLabel": "Official Protect+",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/protect-plus-300600.png",
+        "src": "assets/product-cutouts/zinzino-v6/protect-plus-300600.webp",
         "alt": "Protect+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/protect-plus-300600-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/300600.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/protect-plus-300600.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1184,7 +1358,8 @@
         "retail_price": 67,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 47
+        "premier_price": 47,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1205,13 +1380,19 @@
       "visualLabel": "Official SpiruMax+",
       "environment": "daily",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+        "src": "assets/product-cutouts/zinzino-v6/spirumax-plus-302699.webp",
         "alt": "SpiruMax+ official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/spirumax-plus-302699-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302699.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1227,7 +1408,8 @@
         "retail_price": 44,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 31
+        "premier_price": 31,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1248,13 +1430,19 @@
       "visualLabel": "Official PhycoSci+ X20",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+        "src": "assets/product-cutouts/zinzino-v6/phycosci-plus-x20-302770.webp",
         "alt": "PhycoSci+ X20 official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/phycosci-plus-x20-302770-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302770.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1270,7 +1458,8 @@
         "retail_price": 71,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 50
+        "premier_price": 50,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1291,13 +1480,19 @@
       "visualLabel": "Official LeanShake Chocolate, portion pack",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+        "src": "assets/product-cutouts/zinzino-v6/leanshake-chocolate-301331.webp",
         "alt": "LeanShake Chocolate, portion pack official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-chocolate-301331-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301331.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1313,7 +1508,8 @@
         "retail_price": 82,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 58
+        "premier_price": 58,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1334,13 +1530,19 @@
       "visualLabel": "Official LeanShake Strawberry, portion pack",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+        "src": "assets/product-cutouts/zinzino-v6/leanshake-strawberry-301531.webp",
         "alt": "LeanShake Strawberry, portion pack official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-strawberry-301531-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301531.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1356,7 +1558,8 @@
         "retail_price": 82,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 58
+        "premier_price": 58,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1377,13 +1580,19 @@
       "visualLabel": "Official LeanShake Vanilla, portion pack",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+        "src": "assets/product-cutouts/zinzino-v6/leanshake-vanilla-301581.webp",
         "alt": "LeanShake Vanilla, portion pack official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-vanilla-301581-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301581.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1399,7 +1608,8 @@
         "retail_price": 82,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 58
+        "premier_price": 58,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1420,13 +1630,19 @@
       "visualLabel": "Official LeanShake Berry, portion pack",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+        "src": "assets/product-cutouts/zinzino-v6/leanshake-berry-301381.webp",
         "alt": "LeanShake Berry, portion pack official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/leanshake-berry-301381-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/301381.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1442,7 +1658,8 @@
         "retail_price": 82,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 58
+        "premier_price": 58,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1463,13 +1680,19 @@
       "visualLabel": "Official Shake Bottle",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/shake-bottle-600509.png",
+        "src": "assets/product-cutouts/zinzino-v6/shake-bottle-600509.webp",
         "alt": "Shake Bottle official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/shake-bottle-600509-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/600509.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/shake-bottle-600509.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1484,7 +1707,8 @@
         "currency": "USD",
         "retail_price": 7,
         "price_verified_at": "2026-08-17",
-        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products"
+        "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1505,13 +1729,19 @@
       "visualLabel": "Official Energy Bar Nut & Seed",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+        "src": "assets/product-cutouts/zinzino-v6/energy-bar-nut-seed-302011.webp",
         "alt": "Energy Bar Nut & Seed official Zinzino product packaging",
-        "width": 960,
-        "height": 960,
+        "width": 800,
+        "height": 800,
         "sourceAsset": "assets/source-products/zinzino/catalog/energy-bar-nut-seed-302011-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302011.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1527,7 +1757,8 @@
         "retail_price": 24,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 17
+        "premier_price": 17,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1548,13 +1779,19 @@
       "visualLabel": "Official Measuring Tape",
       "environment": "performance",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/measuring-tape-600211.png",
+        "src": "assets/product-cutouts/zinzino-v6/measuring-tape-600211.webp",
         "alt": "Measuring Tape official Zinzino product packaging",
         "width": 330,
         "height": 330,
         "sourceAsset": "assets/source-products/zinzino/catalog/measuring-tape-600211-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/600211.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/measuring-tape-600211.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1570,7 +1807,8 @@
         "retail_price": 8,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 6
+        "premier_price": 6,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1591,13 +1829,19 @@
       "visualLabel": "Official Collagen Boozt",
       "environment": "longevity",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+        "src": "assets/product-cutouts/zinzino-v6/collagen-boozt-302800.webp",
         "alt": "Collagen Boozt official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/collagen-boozt-302800-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/302800.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1613,7 +1857,8 @@
         "retail_price": 87,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 61
+        "premier_price": 61,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1634,13 +1879,19 @@
       "visualLabel": "Official Skin Serum, 50 ml",
       "environment": "longevity",
       "cutout": {
-        "src": "assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+        "src": "assets/product-cutouts/zinzino-v6/skin-serum-50ml-800150.webp",
         "alt": "Skin Serum, 50 ml official Zinzino product packaging",
         "width": 650,
         "height": 650,
         "sourceAsset": "assets/source-products/zinzino/catalog/skin-serum-50ml-800150-main.png",
         "sourceUrl": "https://zinzinowebstorage.blob.core.windows.net/productimages/800150.png",
-        "provenance": "assets/source-products/zinzino/catalog/provenance.json"
+        "provenance": "assets/source-products/zinzino/catalog/provenance.json",
+        "v6Optimization": {
+          "status": "approved",
+          "originalSrc": "assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+          "method": "alpha-bounds reframe, no upscale, 8% baseline, transparent WebP quality 82",
+          "checkedDate": "2026-08-19"
+        }
       },
       "artwork": {
         "src": null,
@@ -1656,7 +1907,8 @@
         "retail_price": 116,
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://www.zinzino.com/shop/site/US/en-US/products",
-        "premier_price": 58
+        "premier_price": 58,
+        "affiliate_price_source": "https://www.zinzino.com/shop/2021428066/us/en-us/products"
       }
     },
     {
@@ -1765,7 +2017,8 @@
         "currency": "USD",
         "one_time_price": 900,
         "price_verified_at": "2026-08-17",
-        "official_price_source": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/"
+        "official_price_source": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/",
+        "affiliate_price_source": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/?me=matrix"
       },
       "description": "An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
@@ -1821,7 +2074,8 @@
         "one_time_price_min": 9.99,
         "one_time_price_max": 29.33,
         "price_verified_at": "2026-08-17",
-        "official_price_source": "https://biolimitless.com/shop/books/becoming-biolimitless-book/"
+        "official_price_source": "https://biolimitless.com/shop/books/becoming-biolimitless-book/",
+        "affiliate_price_source": "https://biolimitless.com/shop/books/becoming-biolimitless-book/?me=matrix"
       },
       "description": "A BioLimitless-authored education title offered in multiple formats.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims"
@@ -1874,7 +2128,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/formulas/cell-signals/",
         "autoship_price": 80.75,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/cell-signals-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/cell-signals-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/formulas/cell-signals/?me=matrix"
       },
       "description": "A powdered formula listing beta-hydroxybutyrate, amino acids, methylated folate and vitamin B12 among its ingredients.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims"
@@ -2051,7 +2306,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/formulas/detox-pro-plus/",
         "autoship_price": 52.25,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/detox-pro-plus-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/detox-pro-plus-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/formulas/detox-pro-plus/?me=matrix"
       },
       "description": "A powdered formula listing bentonite clay, activated charcoal and trace-mineral ingredients on the manufacturer page.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims"
@@ -2412,7 +2668,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/",
         "autoship_price": 39.9,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/magnesium-glycinate-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/magnesium-glycinate-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/?me=matrix"
       },
       "description": "A capsule supplement providing magnesium in a glycinate form.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
@@ -2469,7 +2726,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/bio-basics/zinc-copper/",
         "autoship_price": 39.9,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/zinc-copper-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/zinc-copper-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/bio-basics/zinc-copper/?me=matrix"
       },
       "description": "A capsule supplement combining zinc and copper in one formula.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
@@ -2526,7 +2784,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/",
         "autoship_price": 39.9,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/vitamin-d3-k2-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/vitamin-d3-k2-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/?me=matrix"
       },
       "description": "A capsule supplement combining vitamin D3 and vitamin K2.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
@@ -2583,7 +2842,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/bio-basics/biozyme/",
         "autoship_price": 39.9,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/biozyme-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/biozyme-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/bio-basics/biozyme/?me=matrix"
       },
       "description": "A capsule formula listing 17 plant- and microbe-derived digestive enzymes on the manufacturer page.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",
@@ -2640,7 +2900,8 @@
         "price_verified_at": "2026-08-17",
         "official_price_source": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/",
         "autoship_price": 159.6,
-        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-biobasics-core-four-autoship/"
+        "autoship_price_source": "https://biolimitless.com/shop/subscribe-save/the-biobasics-core-four-autoship/",
+        "affiliate_price_source": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/?me=matrix"
       },
       "description": "A four-product bundle containing Magnesium Glycinate, Zinc + Copper, Vitamin D3 + K2 and BioZyme.",
       "descriptionSource": "Official current BioLimitless product page; condensed without outcome claims",

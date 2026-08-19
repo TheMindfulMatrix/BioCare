@@ -1,0 +1,1201 @@
+{
+  "checked_date": "2026-08-19",
+  "active_zinzino_count": 36,
+  "original_zinzino_bytes": 4220602,
+  "final_zinzino_bytes": 982214,
+  "zinzino_savings_bytes": 3238388,
+  "zinzino_savings_percent": 76.73,
+  "final_active_product_image_bytes": 1405208,
+  "files_changed_to_webp": 36,
+  "intentionally_unchanged": [],
+  "items": [
+    {
+      "product_id": "balance-basic-kit",
+      "product_name": "Balance Test Basic Kit",
+      "sku": "910465",
+      "original_src": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+      "original_dimensions": [
+        560,
+        560
+      ],
+      "v6_dimensions": [
+        560,
+        560
+      ],
+      "original_bytes": 130143,
+      "v6_bytes": 20986,
+      "original_sha256": "62a23314eeaf9fcee4c30d2a7cec8627cfbb476be015d8d3c650a0d9f7470a5b",
+      "v6_sha256": "937f73ebd08d952d95ab4cad2b9ed025b84e1374be948066b722e7be3adb4e57",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        34,
+        101,
+        522,
+        462
+      ],
+      "subject_bbox_after": [
+        39,
+        158,
+        521,
+        515
+      ]
+    },
+    {
+      "product_id": "balance-test",
+      "product_name": "BalanceTest",
+      "sku": "309000",
+      "original_src": "assets/product-cutouts/zinzino/balance-test-309000.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balance-test-309000.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 64772,
+      "v6_bytes": 18842,
+      "original_sha256": "492c9ab03e55d411b56a8ca3481a647183824e66a984c5780f495aeedffb7f60",
+      "v6_sha256": "1336ee963c87978cbd9c92816e8723143efed77497dc555be1ab4afc04e8f1e6",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        147,
+        650,
+        627
+      ],
+      "subject_bbox_after": [
+        45,
+        185,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "gut-health-test",
+      "product_name": "Gut Health Test",
+      "sku": "309070",
+      "original_src": "assets/product-cutouts/zinzino/gut-health-test-309070.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/gut-health-test-309070.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 174618,
+      "v6_bytes": 28424,
+      "original_sha256": "3f410fcffb9a6b1dceae343ee47dbca24f3108631e832e5ebe9a43409f11094a",
+      "v6_sha256": "c2c58eef0469e6574acfc4e100cb67886c15bdde425297e26d6067a0990f6abd",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        14,
+        163,
+        635,
+        650
+      ],
+      "subject_bbox_after": [
+        45,
+        160,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "gut-health-test-x2",
+      "product_name": "Gut Health Test x2",
+      "sku": "309080",
+      "original_src": "assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/gut-health-test-x2-309080.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 203872,
+      "v6_bytes": 29700,
+      "original_sha256": "7404e410282869a339ea81ed7bd38c23c3b243b70570e0c01d0558110a555558",
+      "v6_sha256": "3fcbc503e609d74bb4ed23adb507028beb8dafe75d0ace59abcf827ceaf48e09",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        13,
+        126,
+        636,
+        650
+      ],
+      "subject_bbox_after": [
+        45,
+        128,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "vitamin-d-test",
+      "product_name": "Vitamin D Test",
+      "sku": "309049",
+      "original_src": "assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/vitamin-d-test-309049.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 62239,
+      "v6_bytes": 22572,
+      "original_sha256": "5d0179f3a5afecc307add64fe8ade3f17cbce4854a965d640d7b54d997105361",
+      "v6_sha256": "f011da3211c18b01429629fb49ff149261795661dd30c9d81324bc24b8211945",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        147,
+        650,
+        627
+      ],
+      "subject_bbox_after": [
+        45,
+        185,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "hba1c-test",
+      "product_name": "HbA1c Test",
+      "sku": "309060",
+      "original_src": "assets/product-cutouts/zinzino/hba1c-test-309060.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/hba1c-test-309060.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 68804,
+      "v6_bytes": 24124,
+      "original_sha256": "94c5e11de5b02f50e14037ecc7e84415455a83929c126e5da2d0fa84cf44aa10",
+      "v6_sha256": "8ce8bb9b4d9c7d8ce1d57232a8de3816c37937acf8e99cc5f8dc242446a52676",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        147,
+        650,
+        627
+      ],
+      "subject_bbox_after": [
+        45,
+        185,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-plus-300ml",
+      "product_name": "BalanceOil+, 300 ml",
+      "sku": "300000",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 51569,
+      "v6_bytes": 30064,
+      "original_sha256": "b8f73b2edd65528cffd31103d1f4939da488958e3d36fb24852fb053fb7dfdde",
+      "v6_sha256": "18974039d31db08573d6471d1ecb13f2e06be1b426224c8519384c911a0175b6",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        51,
+        650,
+        629
+      ],
+      "subject_bbox_after": [
+        45,
+        101,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-plus-100ml",
+      "product_name": "BalanceOil+ Orange Lemon Mint, 100 ml",
+      "sku": "300430",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-300430.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 35946,
+      "v6_bytes": 23478,
+      "original_sha256": "cfa654cbf0ecccbc1ce787f41a78e86d0d5c2a8f3ad825639623e20b3a8d8510",
+      "v6_sha256": "444811eb305d6e640e21d4f4b4f19542978b585a37804360ac14a2f7f1a988b8",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        182,
+        650,
+        627
+      ],
+      "subject_bbox_after": [
+        45,
+        215,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-plus-100ml-6pcs",
+      "product_name": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs",
+      "sku": "300481",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-6pcs-300481.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 75678,
+      "v6_bytes": 39042,
+      "original_sha256": "5015b64cacea9d822e6673016d557b17076582cbd7599bb3627caf01a2c080e4",
+      "v6_sha256": "57bdaf67cd2163ab90b5f8fed47a70c4f003eb3fd8e20ea2e6c0305a7c3738ac",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        123,
+        650,
+        631
+      ],
+      "subject_bbox_after": [
+        45,
+        161,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-plus-premium",
+      "product_name": "BalanceOil+ Premium, 300 ml",
+      "sku": "700000",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-premium-300ml-700000.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 253180,
+      "v6_bytes": 44890,
+      "original_sha256": "5a25e1073a3f7600a4ad9e55909d1d46c3f84d8553c9e27c7cb4f38bcb899e41",
+      "v6_sha256": "f3730c9e8065e0371b2d98bae03f68d18eb7c889f80cda67b17e4848df4c4c36",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        22,
+        650,
+        629
+      ],
+      "subject_bbox_after": [
+        46,
+        78,
+        603,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-plus-aquax",
+      "product_name": "BalanceOil+ AquaX, 300 ml",
+      "sku": "300700",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-aquax-300ml-300700.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 51562,
+      "v6_bytes": 30034,
+      "original_sha256": "7624b3ed5d52ceaac0060cf739dc2de111718a8a8737c5c7fbba21c3c9624b33",
+      "v6_sha256": "46fb1ea98556f57aec5a80d79272e5b46c0367db46bcbf7d609ec340b45dcbb6",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        51,
+        650,
+        629
+      ],
+      "subject_bbox_after": [
+        45,
+        101,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-plus-vegan",
+      "product_name": "BalanceOil+ Vegan",
+      "sku": "400000",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-vegan-400000.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 50271,
+      "v6_bytes": 29600,
+      "original_sha256": "ef26a6c835cf8b24aa5c39965d7d65e6df8e4b10ae53b056b9ce61d8a3a65fe6",
+      "v6_sha256": "68a8a48be6277aaf4c47b5bca183b3905d9cdbef5a3b76781328db4b35c28bce",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        51,
+        650,
+        629
+      ],
+      "subject_bbox_after": [
+        45,
+        101,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "balanceoil-tutti-frutti",
+      "product_name": "BalanceOil Tutti Frutti, 300 ml",
+      "sku": "301799",
+      "original_src": "assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/balanceoil-tutti-frutti-300ml-301799.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 241292,
+      "v6_bytes": 42448,
+      "original_sha256": "89422b5f677688221f1024acc2b8a247218c21dc67cae310fb3b57cfc132d5a0",
+      "v6_sha256": "6e4cc87ca9fb8af89e05e81466026d3eafe0e80bb0897018e797cd941360eb60",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        22,
+        650,
+        632
+      ],
+      "subject_bbox_after": [
+        48,
+        78,
+        602,
+        598
+      ]
+    },
+    {
+      "product_id": "essent-plus-premium",
+      "product_name": "Essent+ Premium",
+      "sku": "300310",
+      "original_src": "assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/essent-plus-premium-300310.webp",
+      "original_dimensions": [
+        960,
+        960
+      ],
+      "v6_dimensions": [
+        800,
+        800
+      ],
+      "original_bytes": 178262,
+      "v6_bytes": 36272,
+      "original_sha256": "699f38c9e6e9d4dc538316386e213e744c533afb395e1a4c433577cf7bb52bdb",
+      "v6_sha256": "1c7d2624b51a967ee0b8af36bbb1911e205b36c50faebc4573956756ef8251d4",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        283,
+        960,
+        889
+      ],
+      "subject_bbox_after": [
+        56,
+        302,
+        744,
+        735
+      ]
+    },
+    {
+      "product_id": "revoo",
+      "product_name": "R.E.V.O.O",
+      "sku": "302401",
+      "original_src": "assets/product-cutouts/zinzino/revoo-302401.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/revoo-302401.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 57345,
+      "v6_bytes": 30602,
+      "original_sha256": "bf67768b1439251c624492040f0e73dd49ce714780fb0be65be8ae7dec9be7f9",
+      "v6_sha256": "c525385674e8d8fb88dd6169dd3f6d438ff11c1c21f04ddcfcef54108ccc1406",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        39,
+        61,
+        590,
+        633
+      ],
+      "subject_bbox_after": [
+        74,
+        78,
+        575,
+        598
+      ]
+    },
+    {
+      "product_id": "dosage-cups",
+      "product_name": "Dosage Cups, 10 pc",
+      "sku": "600508",
+      "original_src": "assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/dosage-cups-10pc-600508.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 46760,
+      "v6_bytes": 21234,
+      "original_sha256": "9047f790a6c0ea1fc1f1c11fdc9336ee5f8b9e166eb4a44c3633a53fd36aa964",
+      "v6_sha256": "612b1f36581f4cada4b05c62cddde3449692d352d779680cfca829987bc4a637",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        143,
+        136,
+        510,
+        630
+      ],
+      "subject_bbox_after": [
+        141,
+        104,
+        508,
+        598
+      ]
+    },
+    {
+      "product_id": "zinobiotic-plus",
+      "product_name": "ZinoBiotic+",
+      "sku": "301390",
+      "original_src": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/zinobiotic-plus-301390.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 52189,
+      "v6_bytes": 18962,
+      "original_sha256": "93b93f1bab6427458e0086eb2f895f62b1b0ca1c19301eeb76961eaba0a208c0",
+      "v6_sha256": "ffb7173458adaef35fd90eebed5e00cedef2558aca8694f240283062e82524e3",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        66,
+        265,
+        583,
+        634
+      ],
+      "subject_bbox_after": [
+        66,
+        229,
+        583,
+        598
+      ]
+    },
+    {
+      "product_id": "x-gold-plus",
+      "product_name": "X Gold+ 250 ml",
+      "sku": "302790",
+      "original_src": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/x-gold-plus-302790.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 341826,
+      "v6_bytes": 40292,
+      "original_sha256": "0477e44493f23dcd1c6a1047086de9a837bd055d38b86d99a0f803a90fcbcc84",
+      "v6_sha256": "8fba86fc87c97806874fec40968ed0d66ebc4ec3fab62b5ac2709cb36536a057",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        7,
+        109,
+        633,
+        642
+      ],
+      "subject_bbox_after": [
+        45,
+        122,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "zinogene-plus",
+      "product_name": "ZinoGene+",
+      "sku": "302500",
+      "original_src": "assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/zinogene-plus-302500.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 49112,
+      "v6_bytes": 23794,
+      "original_sha256": "958a21070b82b03b3064a64b03a183546e4937eaacae8e38056328d519097003",
+      "v6_sha256": "a866aaffcdd97804369f247c5e6ad1371f6888eb47f77ab2caa415b31fe533fe",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        148,
+        650,
+        627
+      ],
+      "subject_bbox_after": [
+        45,
+        186,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "viva-plus",
+      "product_name": "Viva+",
+      "sku": "300800",
+      "original_src": "assets/product-cutouts/zinzino/viva-plus-300800.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/viva-plus-300800.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 70741,
+      "v6_bytes": 22566,
+      "original_sha256": "e95c35e93ca56fe7dd2d4b87e7160e6fd6a4922a038d0d1f4fe8730fcac17946",
+      "v6_sha256": "d9337508c69fed704951b8ca2f95670270b1132c0d2f651b8e4ecffd07ad2180",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        148,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        187,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "viva-plus-x2",
+      "product_name": "Viva+ x2",
+      "sku": "300811",
+      "original_src": "assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/viva-plus-x2-300811.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 164287,
+      "v6_bytes": 22170,
+      "original_sha256": "f9c531a9367e356e1717fe07bfd5b39baa61011db77136fa6a96c955e57f3e12",
+      "v6_sha256": "f7224fd2a561a7351ee14930d4ed9e7ed33dd2bf9bf6b4bd095df4f21425ef86",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        180,
+        650,
+        635
+      ],
+      "subject_bbox_after": [
+        45,
+        207,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "zinoshine-plus",
+      "product_name": "ZinoShine+",
+      "sku": "302600",
+      "original_src": "assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/zinoshine-plus-302600.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 130556,
+      "v6_bytes": 24794,
+      "original_sha256": "fcbb28f53a775d6655651a2c3239238d422cca691613cdc9dc2d8759c158267c",
+      "v6_sha256": "d49c72f5caa54aa4bb53baaab5a3042ab9c2cbc00edac57fa08c7babec91c05e",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        148,
+        650,
+        627
+      ],
+      "subject_bbox_after": [
+        45,
+        186,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "xtend-plus",
+      "product_name": "Xtend+",
+      "sku": "302200",
+      "original_src": "assets/product-cutouts/zinzino/xtend-plus-302200.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/xtend-plus-302200.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 58307,
+      "v6_bytes": 24048,
+      "original_sha256": "f641a90b57771eafef69e0ebd869b40bcd85128282931c20058362870a533101",
+      "v6_sha256": "cd22f557e09d9fef7952088c828af78825c5a708cae3032acf9089dc446a7fd3",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        147,
+        650,
+        628
+      ],
+      "subject_bbox_after": [
+        45,
+        184,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "xtend",
+      "product_name": "Xtend",
+      "sku": "300520",
+      "original_src": "assets/product-cutouts/zinzino/xtend-300520.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/xtend-300520.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 63692,
+      "v6_bytes": 22986,
+      "original_sha256": "22972320311bf82359be7213f917d8aeb7d2b1539a823b47404667ea6224df9f",
+      "v6_sha256": "5e0a9bc5fbca40b8365ab8089eb32177563926092ab9a759dbde75a84b7eab3a",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        148,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        187,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "protect-plus",
+      "product_name": "Protect+",
+      "sku": "300600",
+      "original_src": "assets/product-cutouts/zinzino/protect-plus-300600.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/protect-plus-300600.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 41423,
+      "v6_bytes": 24104,
+      "original_sha256": "e35dc699581d7d47664624be8f7fdf9f75531d423e94c9fe970142c6c6e9b8ac",
+      "v6_sha256": "6fe66eb7c3c500678f146c803d9b310538c08a1542bac6355bc861a442e74212",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        147,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        186,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "spirumax-plus",
+      "product_name": "SpiruMax+",
+      "sku": "302699",
+      "original_src": "assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/spirumax-plus-302699.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 193509,
+      "v6_bytes": 29520,
+      "original_sha256": "634d2d898c5a3f55cd68cab16fb0fe4a9ecb7936c92e46521eec52aa51f30145",
+      "v6_sha256": "ca7053b4ba5777300b3d3e8684f2a6ca164a54037b827f9ce147b1c103eeefd3",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        25,
+        241,
+        624,
+        635
+      ],
+      "subject_bbox_after": [
+        45,
+        230,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "phycosci-plus-x20",
+      "product_name": "PhycoSci+ X20",
+      "sku": "302770",
+      "original_src": "assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/phycosci-plus-x20-302770.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 375308,
+      "v6_bytes": 39804,
+      "original_sha256": "26ab03919a41575cc9b24d10cf95ebc5ae260a6c4567148f25ddc9032bc46ab0",
+      "v6_sha256": "d6a42aa7c371ee25bd3a196ecf9a94a5fba99049ea1921e9ad67c19fa0b47f1c",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        8,
+        104,
+        635,
+        644
+      ],
+      "subject_bbox_after": [
+        45,
+        117,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "leanshake-chocolate",
+      "product_name": "LeanShake Chocolate, portion pack",
+      "sku": "301331",
+      "original_src": "assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/leanshake-chocolate-301331.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 63579,
+      "v6_bytes": 26172,
+      "original_sha256": "410a9ce1562144fecbff768601bbec70d4e7ba345b4bc5f6172084085ad6854e",
+      "v6_sha256": "6208d0bb019471f7a9dcbf492571d5c4cb980e8e45638a85678430b14d27b298",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        143,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        183,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "leanshake-strawberry",
+      "product_name": "LeanShake Strawberry, portion pack",
+      "sku": "301531",
+      "original_src": "assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/leanshake-strawberry-301531.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 65239,
+      "v6_bytes": 28150,
+      "original_sha256": "13ae5cb8f8ac4d5df9067dab609900ed2778aea727965eb1fce3cda87904eec5",
+      "v6_sha256": "1a92c6d5144069d399053ae31b5c6c38c276deaf2debd08a24aac3fb7c3bf7b7",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        143,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        183,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "leanshake-vanilla",
+      "product_name": "LeanShake Vanilla, portion pack",
+      "sku": "301581",
+      "original_src": "assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/leanshake-vanilla-301581.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 69248,
+      "v6_bytes": 24706,
+      "original_sha256": "3c709ff8b345294104431d5f90c53d444aee8bac107c1c832b59bb0468e1d64b",
+      "v6_sha256": "88846481065ba4e03c5fbb80e47f65fe9b6bb8542a3ba5f5eb626c21a9bc1062",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        143,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        183,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "leanshake-berry",
+      "product_name": "LeanShake Berry, portion pack",
+      "sku": "301381",
+      "original_src": "assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/leanshake-berry-301381.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 62354,
+      "v6_bytes": 27944,
+      "original_sha256": "06ffbc2b24411b84df0c90cc4f7cd07e80718b26e867b49b3846e7317b2cb772",
+      "v6_sha256": "d3732d389018e5d3861622f5cf2a2af8edb93666d23e49286e786269cd6760c3",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        0,
+        143,
+        650,
+        626
+      ],
+      "subject_bbox_after": [
+        45,
+        183,
+        604,
+        598
+      ]
+    },
+    {
+      "product_id": "shake-bottle",
+      "product_name": "Shake Bottle",
+      "sku": "600509",
+      "original_src": "assets/product-cutouts/zinzino/shake-bottle-600509.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/shake-bottle-600509.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 44012,
+      "v6_bytes": 21088,
+      "original_sha256": "7128cc9d8858f061d240f186f72a387d6ba6f08b5e668f3e70d6bf806089a090",
+      "v6_sha256": "f875d8a43f7c9d7e3a5eab4e67ad8322d360057b35daf4028beda073e0f4e4a8",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        101,
+        113,
+        548,
+        628
+      ],
+      "subject_bbox_after": [
+        101,
+        83,
+        548,
+        598
+      ]
+    },
+    {
+      "product_id": "energy-bar-nut-seed",
+      "product_name": "Energy Bar Nut & Seed",
+      "sku": "302011",
+      "original_src": "assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/energy-bar-nut-seed-302011.webp",
+      "original_dimensions": [
+        960,
+        960
+      ],
+      "v6_dimensions": [
+        800,
+        800
+      ],
+      "original_bytes": 438730,
+      "v6_bytes": 37344,
+      "original_sha256": "d45054d65c8bdf8e630427cfee2ef7034fd8b6d6ad90777b5769bc6e5dd6a5ec",
+      "v6_sha256": "3706401b5b0f37a2d08a42d536920086fb98fb4f9364ca9059c034f7b400220e",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        39,
+        209,
+        879,
+        928
+      ],
+      "subject_bbox_after": [
+        56,
+        147,
+        744,
+        736
+      ]
+    },
+    {
+      "product_id": "measuring-tape",
+      "product_name": "Measuring Tape",
+      "sku": "600211",
+      "original_src": "assets/product-cutouts/zinzino/measuring-tape-600211.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/measuring-tape-600211.webp",
+      "original_dimensions": [
+        330,
+        330
+      ],
+      "v6_dimensions": [
+        330,
+        330
+      ],
+      "original_bytes": 56341,
+      "v6_bytes": 10674,
+      "original_sha256": "5ffa4e445f1f80884177745845684958fda8ff78861535abcb0bb390ccf82d8b",
+      "v6_sha256": "cfec23cc5e5bd732dc81f893015400096aaaf56a853aff28d85ea0f695d7f285",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        49,
+        125,
+        283,
+        296
+      ],
+      "subject_bbox_after": [
+        48,
+        133,
+        282,
+        304
+      ]
+    },
+    {
+      "product_id": "collagen-boozt",
+      "product_name": "Collagen Boozt",
+      "sku": "302800",
+      "original_src": "assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/collagen-boozt-302800.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 93757,
+      "v6_bytes": 22594,
+      "original_sha256": "1fe92d0e9df6e00ed19db91941b61a8de32db284c22566a854fe820a75037786",
+      "v6_sha256": "1f4b0764fd7401f71d594173335f418aabb1233ad048d860d9dadc92a46d9668",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        62,
+        76,
+        571,
+        635
+      ],
+      "subject_bbox_after": [
+        88,
+        78,
+        561,
+        598
+      ]
+    },
+    {
+      "product_id": "skin-serum",
+      "product_name": "Skin Serum, 50 ml",
+      "sku": "800150",
+      "original_src": "assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+      "v6_src": "assets/product-cutouts/zinzino-v6/skin-serum-50ml-800150.webp",
+      "original_dimensions": [
+        650,
+        650
+      ],
+      "v6_dimensions": [
+        650,
+        650
+      ],
+      "original_bytes": 40079,
+      "v6_bytes": 18190,
+      "original_sha256": "b76c91be884fc4b5b4e3c95b53ff7c3bc50bc84150971a56c3bbba659bf2fe1a",
+      "v6_sha256": "798618469f0aafabcf8a929b2d34e16e63890fad252cc57e5ce26cd5d604a07f",
+      "alpha_preserved": true,
+      "upscaled": false,
+      "subject_bbox_before": [
+        131,
+        157,
+        517,
+        627
+      ],
+      "subject_bbox_after": [
+        132,
+        128,
+        518,
+        598
+      ]
+    }
+  ]
+}

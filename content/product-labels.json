@@ -24,7 +24,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products/premier-kits/910465",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balance-test",
@@ -36,7 +42,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "gut-health-test",
@@ -48,7 +60,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "gut-health-test-x2",
@@ -60,7 +78,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "vitamin-d-test",
@@ -72,7 +96,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "hba1c-test",
@@ -84,19 +114,100 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balanceoil-plus-300ml",
       "sku": "300000",
       "manufacturer": "Zinzino",
-      "status": "pending",
-      "serving_size": null,
-      "servings_per_container": null,
-      "ingredients": [],
-      "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
-      "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "status": "approved",
+      "serving_size": "2.5 tsp (12.5 mL) for 175 lb reference body weight",
+      "servings_per_container": 24,
+      "ingredients": [
+        {
+          "ingredient": "Calories",
+          "amount": 110,
+          "unit": "cal",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Total Fat",
+          "amount": 12,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Polyunsaturated Fat",
+          "amount": 3,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Monounsaturated Fat",
+          "amount": 5,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Vitamin D",
+          "amount": 20,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Omega-3 Fatty Acids",
+          "amount": 2500,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "EPA",
+          "amount": 1336,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "DHA",
+          "amount": 711,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Olive Oil",
+          "amount": 4262,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Oleic Acid (Omega-9)",
+          "amount": 3197,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Olive Polyphenols",
+          "amount": 3.7,
+          "unit": "mg",
+          "disclosed": true
+        }
+      ],
+      "source_url": "https://zinzinowebstorage.blob.core.windows.net/product-sheets/BalanceOil-plus-en-US.pdf",
+      "checked_date": "2026-08-19",
+      "notes": "Verified from the cited official manufacturer product sheet; approved continuation sample.",
+      "source_title": "BalanceOil+ US Product Sheet",
+      "source_version": "en-US 2024-11-27",
+      "verificationStatus": "complete_verified",
+      "approvalStatus": "approved",
+      "approval_status": "approved",
+      "approved": true,
+      "public": true,
+      "checkedDate": "2026-08-19"
     },
     {
       "product_id": "balanceoil-plus-100ml",
@@ -108,7 +219,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balanceoil-plus-100ml-6pcs",
@@ -120,7 +237,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balanceoil-plus-premium",
@@ -132,7 +255,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balanceoil-plus-aquax",
@@ -144,7 +273,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balanceoil-plus-vegan",
@@ -156,7 +291,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "balanceoil-tutti-frutti",
@@ -168,7 +309,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "essent-plus-premium",
@@ -180,7 +327,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "revoo",
@@ -192,7 +345,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "dosage-cups",
@@ -204,19 +363,88 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "zinobiotic-plus",
       "sku": "301390",
       "manufacturer": "Zinzino",
-      "status": "pending",
-      "serving_size": null,
-      "servings_per_container": null,
-      "ingredients": [],
-      "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
-      "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "status": "approved",
+      "serving_size": "1 scoop (6 g)",
+      "servings_per_container": 30,
+      "ingredients": [
+        {
+          "ingredient": "Calories",
+          "amount": 21,
+          "unit": "cal",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Total Carbohydrate",
+          "amount": 6,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Dietary Fiber",
+          "amount": 5,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Resistant Starch",
+          "amount": 2.5,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Beta Glucans",
+          "amount": 0.5,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Inulin",
+          "amount": 0.9,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Fructo-oligosaccharides",
+          "amount": 0.1,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Psyllium Seed Husk",
+          "amount": 0.3,
+          "unit": "g",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Guar Gum Fiber",
+          "amount": 0.12,
+          "unit": "g",
+          "disclosed": true
+        }
+      ],
+      "source_url": "https://zinzinowebstorage.blob.core.windows.net/product-sheets/ZinoBiotic-plus-en-US.pdf",
+      "checked_date": "2026-08-19",
+      "notes": "Verified from the cited official manufacturer product sheet; approved continuation sample.",
+      "source_title": "ZinoBiotic+ US Product Sheet",
+      "source_version": "en-US 2025-12-04",
+      "verificationStatus": "complete_verified",
+      "approvalStatus": "approved",
+      "approval_status": "approved",
+      "approved": true,
+      "public": true,
+      "checkedDate": "2026-08-19"
     },
     {
       "product_id": "x-gold-plus",
@@ -228,7 +456,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "zinogene-plus",
@@ -240,7 +474,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "viva-plus",
@@ -252,7 +492,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "viva-plus-x2",
@@ -264,7 +510,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "zinoshine-plus",
@@ -276,19 +528,226 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "xtend-plus",
       "sku": "302200",
       "manufacturer": "Zinzino",
-      "status": "pending",
-      "serving_size": null,
-      "servings_per_container": null,
-      "ingredients": [],
-      "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
-      "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "status": "approved",
+      "serving_size": "4 capsules",
+      "servings_per_container": 15,
+      "ingredients": [
+        {
+          "ingredient": "Vitamin C",
+          "amount": 80,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Vitamin D3",
+          "amount": 20,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Vitamin E",
+          "amount": 3,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Thiamin",
+          "amount": 0.27,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Riboflavin",
+          "amount": 0.39,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Niacin",
+          "amount": 4.94,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Vitamin B6",
+          "amount": 0.25,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Folate",
+          "amount": 57,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Vitamin B12",
+          "amount": 0.6,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Biotin",
+          "amount": 18,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Pantothenic Acid",
+          "amount": 1.84,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Iron",
+          "amount": 4.2,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Iodine",
+          "amount": 150,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Magnesium",
+          "amount": 180,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Zinc",
+          "amount": 10,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Selenium",
+          "amount": 82.5,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Copper",
+          "amount": 1,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Manganese",
+          "amount": 2,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Chromium",
+          "amount": 80,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Molybdenum",
+          "amount": 50,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Boron",
+          "amount": 3,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Beta Glucans",
+          "amount": 200,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Menaquinone",
+          "amount": 60,
+          "unit": "mcg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Turmeric Root Extract",
+          "amount": 100,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Coenzyme Q10",
+          "amount": 15,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Tomato Fruit Extract",
+          "amount": 40,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Olive Leaf Extract",
+          "amount": 500,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Lutein",
+          "amount": 6,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Zeaxanthin",
+          "amount": 6,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Broccoli Aerial-parts Extract",
+          "amount": 50,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Mixed Tocopherols and Tocotrienols",
+          "amount": 14.4,
+          "unit": "mg",
+          "disclosed": true
+        },
+        {
+          "ingredient": "Seaweed Extract",
+          "amount": 200,
+          "unit": "mg",
+          "disclosed": true
+        }
+      ],
+      "source_url": "https://zinzinowebstorage.blob.core.windows.net/product-sheets/Xtend-plus-en-US.pdf",
+      "checked_date": "2026-08-19",
+      "notes": "Verified from the cited official manufacturer product sheet; approved continuation sample.",
+      "source_title": "Xtend+ US Product Sheet",
+      "source_version": "en-US 2024-05-02",
+      "verificationStatus": "complete_verified",
+      "approvalStatus": "approved",
+      "approval_status": "approved",
+      "approved": true,
+      "public": true,
+      "checkedDate": "2026-08-19"
     },
     {
       "product_id": "xtend",
@@ -300,7 +759,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "protect-plus",
@@ -312,7 +777,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "spirumax-plus",
@@ -324,7 +795,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "phycosci-plus-x20",
@@ -336,7 +813,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "leanshake-chocolate",
@@ -348,7 +831,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "leanshake-strawberry",
@@ -360,7 +849,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "leanshake-vanilla",
@@ -372,7 +867,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "leanshake-berry",
@@ -384,7 +885,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "shake-bottle",
@@ -396,7 +903,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "energy-bar-nut-seed",
@@ -408,7 +921,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "measuring-tape",
@@ -420,7 +939,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "collagen-boozt",
@@ -432,7 +957,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "skin-serum",
@@ -444,7 +975,13 @@
       "ingredients": [],
       "source_url": "https://www.zinzino.com/shop/site/US/en-US/products",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-dna-discovery-kit",
@@ -456,7 +993,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/testing/dna-genomic-sequencing/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-becoming-biolimitless-book",
@@ -468,19 +1011,84 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/books/becoming-biolimitless-book/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-cell-signals",
       "sku": null,
       "manufacturer": "BioLimitless",
-      "status": "pending",
+      "status": "approved",
       "serving_size": null,
       "servings_per_container": null,
-      "ingredients": [],
+      "ingredients": [
+        {
+          "ingredient": "Beta-Hydroxybutyrate",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        },
+        {
+          "ingredient": "L-Carnosine",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        },
+        {
+          "ingredient": "Methylcobalamin (Vitamin B12)",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        },
+        {
+          "ingredient": "L-5-MTHF",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        },
+        {
+          "ingredient": "Glycine",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        },
+        {
+          "ingredient": "Phosphatidylserine",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        },
+        {
+          "ingredient": "L-Tyrosine",
+          "amount": null,
+          "unit": null,
+          "disclosed": false,
+          "note": "Amount not disclosed by manufacturer."
+        }
+      ],
       "source_url": "https://biolimitless.com/shop/formulas/cell-signals/",
-      "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "checked_date": "2026-08-19",
+      "notes": "Named ingredients are present on the official product page. Serving information and per-serving amounts remain unavailable and are not inferred.",
+      "source_title": "BioLimitless Cell Signals Official Product Page",
+      "source_version": null,
+      "verificationStatus": "partial_verified",
+      "approvalStatus": "approved",
+      "approval_status": "approved",
+      "approved": true,
+      "public": true,
+      "checkedDate": "2026-08-19",
+      "limitations": "Only facts verified from the cited manufacturer source are shown; the label record is incomplete."
     },
     {
       "product_id": "biolimitless-detox-pro-plus",
@@ -492,7 +1100,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/formulas/detox-pro-plus/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-magnesium-glycinate",
@@ -504,7 +1118,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/bio-basics/magnesium-glycinate/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-zinc-copper",
@@ -516,7 +1136,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/bio-basics/zinc-copper/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-vitamin-d3-k2",
@@ -528,7 +1154,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/bio-basics/vitamin-d3-k2/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-biozyme",
@@ -540,7 +1172,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/bio-basics/biozyme/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     },
     {
       "product_id": "biolimitless-bio-basics-core-four",
@@ -552,7 +1190,13 @@
       "ingredients": [],
       "source_url": "https://biolimitless.com/shop/bio-basics/the-bio-basics-core-four/",
       "checked_date": null,
-      "notes": "Not rendered until verified and user-approved."
+      "notes": "Not rendered until verified and user-approved.",
+      "verificationStatus": "unavailable_or_unverified",
+      "approvalStatus": "pending",
+      "approval_status": "pending",
+      "approved": false,
+      "public": false,
+      "checkedDate": null
     }
   ]
 }

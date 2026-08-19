@@ -130,6 +130,27 @@ def webp_dimensions(path: Path) -> tuple[int, int] | None:
     return None
 
 
+def webp_has_alpha(path: Path) -> bool:
+    """Return whether a WebP container declares or carries an alpha channel."""
+    data = path.read_bytes()
+    if len(data) < 21 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return False
+    offset = 12
+    while offset + 8 <= len(data):
+        chunk = data[offset:offset + 4]
+        size = int.from_bytes(data[offset + 4:offset + 8], "little")
+        payload = offset + 8
+        if chunk == b"VP8X" and payload < len(data):
+            return bool(data[payload] & 0x10)
+        if chunk == b"ALPH":
+            return True
+        if chunk == b"VP8L" and payload + 5 <= len(data) and data[payload] == 0x2F:
+            bits = int.from_bytes(data[payload + 1:payload + 5], "little")
+            return bool((bits >> 28) & 1)
+        offset = payload + size + (size % 2)
+    return False
+
+
 def image_dimensions(path: Path) -> tuple[int, int] | None:
     if path.suffix.lower() == ".png":
         return png_dimensions(path)
@@ -401,7 +422,31 @@ def validate_content(site: dict, library: dict) -> None:
                     check(provenance.get("sha256", "").lower() == sha256(source_path), f"{label}: official source SHA-256 mismatch")
                     check(image_dimensions(source_path) == (expected_dimensions.get("width"), expected_dimensions.get("height")), f"{label}: provenance dimensions mismatch")
                     production_filename = provenance.get("production_filename")
-                    if production_filename:
+                    optimization = cutout.get("v6Optimization") or {}
+                    if optimization:
+                        original_rel = optimization.get("originalSrc")
+                        original_path = ROOT / (original_rel or "missing")
+                        check(product.get("manufacturer") == "Zinzino", f"{label}: V6 product-image derivatives are limited to Zinzino assets")
+                        check(optimization.get("status") == "approved", f"{label}: V6 product-image derivative requires approved status")
+                        check(bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(optimization.get("checkedDate", "")))), f"{label}: V6 product-image derivative requires a checked date")
+                        check(bool(original_rel) and original_path.is_file(), f"{label}: V6 product-image derivative requires its original production asset")
+                        check(cutout.get("src", "").startswith("assets/product-cutouts/zinzino-v6/"), f"{label}: approved V6 cutout must remain in the dedicated derivative directory")
+                        check(cutout_path.suffix.lower() == ".webp", f"{label}: approved V6 product-image derivative must be WebP")
+                        check("no upscale" in str(optimization.get("method", "")).lower(), f"{label}: V6 product-image method must declare no-upscale processing")
+                        if cutout_path.is_file():
+                            check(webp_has_alpha(cutout_path), f"{label}: approved V6 WebP must preserve alpha transparency")
+                        if original_path.is_file() and cutout_path.is_file():
+                            original_dimensions = image_dimensions(original_path)
+                            derivative_dimensions = image_dimensions(cutout_path)
+                            check(original_dimensions is not None, f"{label}: original production image dimensions could not be read")
+                            check(derivative_dimensions is not None, f"{label}: V6 derivative dimensions could not be read")
+                            if original_dimensions and derivative_dimensions:
+                                check(derivative_dimensions[0] <= original_dimensions[0] and derivative_dimensions[1] <= original_dimensions[1], f"{label}: V6 product-image derivative must not upscale its original production asset")
+                        if production_filename:
+                            check(production_filename == original_rel, f"{label}: provenance original production filename mismatch")
+                            if original_path.is_file() and "byte-for-byte copy" in provenance.get("alteration", ""):
+                                check(sha256(original_path) == sha256(source_path), f"{label}: declared untouched original production copy differs from official source")
+                    elif production_filename:
                         check(production_filename == cutout.get("src"), f"{label}: provenance production filename mismatch")
                         if cutout_path.is_file() and "byte-for-byte copy" in provenance.get("alteration", ""):
                             check(sha256(cutout_path) == sha256(source_path), f"{label}: declared untouched production copy differs from official source")
@@ -440,7 +485,7 @@ def validate_content(site: dict, library: dict) -> None:
 
 
 def attributed_source_url(product: dict) -> str:
-    source = product["price"]["official_price_source"]
+    source = product["price"].get("affiliate_price_source") or product["price"]["official_price_source"]
     if product["manufacturer"] == "Zinzino":
         return source.replace("/shop/site/US/en-US/", "/shop/2021428066/us/en-us/", 1)
     if product["manufacturer"] == "BioLimitless":
@@ -644,7 +689,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
     check('data-media-status="awaiting-original-photography"' in home, "Founder media placeholder must remain")
     check("<span>Trust isn't something we claim.</span><span>It's something we earn.</span>" in home, "Standards payoff must remain")
     check("$127" in home and "$47/mo" in home, "Verified flagship start and monthly pricing must render")
-    check('assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png' in home, "Verified Balance cutout must remain the rendered foreground")
+    featured_cutout_src = featured.get("cutout", {}).get("src", "")
+    check(bool(featured_cutout_src) and featured_cutout_src in home, "The canonical featured Balance cutout must remain the rendered foreground")
     check('assets/artwork/shelf/balance-test-basic-kit-cinematic.webp' in home, "Approved Balance artwork must remain")
     check('href="library/should-you-test-your-omega-3-levels.html"' in home, "Testing section must link to the testing education guide")
     check('data-matrix-field' in home, "Homepage must include the progressively enhanced Matrix field")

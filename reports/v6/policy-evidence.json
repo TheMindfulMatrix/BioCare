@@ -1,0 +1,44 @@
+{
+  "checked_date": "2026-08-19",
+  "market": "United States",
+  "numeric_return_claim_published": false,
+  "new_policy_claims_published": [],
+  "held_claims": [
+    "Numeric return window",
+    "BalanceTest first-test refund/guarantee",
+    "Subscription cancellation/no commitment"
+  ],
+  "entries": [
+    {
+      "claim": "Numeric return window",
+      "sources": [
+        "https://www.zinzino.com/site/us/en-us/about/how-it-works",
+        "https://zinzinowebstorage.blob.core.windows.net/contracts/TermsAndConditions_US_en-US.pdf"
+      ],
+      "status": "hold",
+      "reason": "Current official web copy and the currently linked April 2022 PDF describe different return windows.",
+      "published": false
+    },
+    {
+      "claim": "BalanceTest first-test refund/guarantee",
+      "sources": [
+        "https://www.zinzino.com/site/us/en-us/apie-mus/this-is-zinzino/",
+        "https://zinzinowebstorage.blob.core.windows.net/contracts/TermsAndConditions_US_en-US.pdf"
+      ],
+      "status": "hold",
+      "reason": "A current general statement exists, while detailed eligibility conditions are in an older linked document; no broader website claim is published.",
+      "published": false
+    },
+    {
+      "claim": "Subscription cancellation/no commitment",
+      "sources": [
+        "https://www.zinzino.com/site/us/en-us/about/how-it-works",
+        "https://zinzinowebstorage.blob.core.windows.net/contracts/TermsAndConditions_US_en-US.pdf"
+      ],
+      "status": "hold",
+      "reason": "Cancellation is described through Customer Care, while the detailed notice condition remains tied to the older linked policy PDF.",
+      "published": false
+    }
+  ],
+  "recommendation": "Ship V6 without new guarantee, return-window, or cancellation badges until current official terms are unambiguous."
+}

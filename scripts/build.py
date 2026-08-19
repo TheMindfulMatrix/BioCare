@@ -457,7 +457,7 @@ def money(value: int | float) -> str:
 
 def affiliate_source_url(product: dict) -> str:
     """Return the official manufacturer source with the established partner attribution."""
-    source = product["price"]["official_price_source"]
+    source = product["price"].get("affiliate_price_source") or product["price"]["official_price_source"]
     if product["manufacturer"] == "Zinzino":
         return source.replace("/shop/site/US/en-US/", "/shop/2021428066/us/en-us/", 1)
     if product["manufacturer"] == "BioLimitless":
