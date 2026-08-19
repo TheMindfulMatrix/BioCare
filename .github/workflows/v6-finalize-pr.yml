@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: v6-final-candidate-review
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pull-requests: write
@@ -31,7 +35,7 @@ jobs:
           test -f scripts/v6_apply_final_fixes.py
           python -m pip install --upgrade pip
           python -m pip install pillow beautifulsoup4 playwright pypdf lxml
-          python -m playwright install --with-deps chromium
+          python -m playwright install chromium
       - name: Apply approved final fixes
         run: python scripts/v6_apply_final_fixes.py
       - name: Prepare candidate
