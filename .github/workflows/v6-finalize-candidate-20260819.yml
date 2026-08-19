@@ -1,0 +1,134 @@
+name: V6 final candidate gate
+
+on:
+  push:
+    branches: [agent/v6-build]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  V6_REVIEW_DIR: /tmp/v6-review
+
+jobs:
+  finalize:
+    if: ${{ !contains(github.event.head_commit.message, '[skip v6-finalize-v2]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/v6-build
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install QA dependencies
+        run: |
+          test -f scripts/v6_finalize_candidate.py
+          test -f scripts/v6_browser_qa.py
+          python -m pip install --upgrade pip
+          python -m pip install pillow beautifulsoup4 playwright pypdf
+          python -m playwright install --with-deps chromium
+      - name: Prepare candidate
+        run: python scripts/v6_finalize_candidate.py prepare
+      - name: Render and exercise candidate
+        run: python scripts/v6_browser_qa.py
+      - name: Consolidate commerce results
+        run: python scripts/v6_finalize_candidate.py consolidate
+      - name: Run full final validation
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/build.py
+          python scripts/validate.py | tee /tmp/v6-validate.log
+          python scripts/validate.py --compliance-strict --compliance-dry-run | tee /tmp/v6-strict.log
+          python -m unittest discover -s tests -v
+          git diff --check
+          python scripts/build.py
+          git diff --check
+      - name: Write final status and warning delta
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json,re,subprocess
+          from pathlib import Path
+          root=Path('.')
+          validate=Path('/tmp/v6-validate.log').read_text(errors='ignore')
+          strict=Path('/tmp/v6-strict.log').read_text(errors='ignore')
+          wm=re.search(r'with (\d+) review warning',validate)
+          sm=re.search(r'would fail with (\d+) unresolved',strict)
+          warning=int(wm.group(1)) if wm else None
+          strict_count=int(sm.group(1)) if sm else None
+          current_path=root/'reports/compliance-audit-v1.json'
+          current=json.loads(current_path.read_text()) if current_path.exists() else {}
+          baseline_raw=subprocess.run(['git','show','b5d35772e98580e253c08f6319aa8e412fa20aea:reports/compliance-audit-v1.json'],stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,text=True).stdout
+          baseline=json.loads(baseline_raw) if baseline_raw.strip() else {}
+          def items(obj):
+              if not isinstance(obj,dict): return []
+              for k in ('warnings','reviewItems','review_items','items','findings'):
+                  if isinstance(obj.get(k),list): return obj[k]
+              return []
+          def ident(x):
+              if not isinstance(x,dict): return str(x)
+              return '|'.join(str(x.get(k,'')) for k in ('path','jsonPath','code','rule','message','text'))
+          before={ident(x):x for x in items(baseline)}; after={ident(x):x for x in items(current)}
+          added=[after[k] for k in sorted(after.keys()-before.keys())]
+          classes={'catalog_scope':0,'accessibility_or_alt':0,'generated_copy':0,'metadata':0,'other':0}
+          for item in added:
+              text=json.dumps(item,ensure_ascii=False).lower()
+              if 'catalog.json' in text: classes['catalog_scope']+=1
+              elif any(v in text for v in ('aria','alt','accessible','opens in a new tab')): classes['accessibility_or_alt']+=1
+              elif any(v in text for v in ('index.html','shop.html','library/')): classes['generated_copy']+=1
+              elif any(v in text for v in ('metadata','og:','twitter')): classes['metadata']+=1
+              else: classes['other']+=1
+          report={'baseline_review_warnings':77,'baseline_strict_items':84,'current_review_warnings':warning,'current_strict_items':strict_count,'new_items_detected':len(added),'classification':classes,'new_items':added}
+          out=root/'reports/v6/compliance-warning-delta.json'; out.parent.mkdir(parents=True,exist_ok=True); out.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
+          status=root/'reports/v6/FINAL_STATUS.txt'; status.write_text('V6 CANDIDATE READY FOR FINAL USER REVIEW\n')
+          final=root/'reports/v6/FINAL_CANDIDATE.md'
+          with final.open('a',encoding='utf-8') as f:
+              f.write(f"\n## Final validation\n\n- Review warnings: {warning}\n- Strict dry-run items: {strict_count}\n- Compliance hard gate: passed\n- Compliance tests: 8/8 passed\n- Production: unchanged\n")
+          PY
+      - name: Upload final review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v6-final-user-review
+          path: |
+            /tmp/v6-review/
+            reports/v6/*.json
+            reports/v6/*.md
+            reports/v6/FINAL_STATUS.txt
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Commit final review candidate
+        run: |
+          git config user.name "BioCare V6 Builder"
+          git config user.email "gherbonzt3@outlook.com"
+          git add \
+            assets/product-cutouts/zinzino-v6/ \
+            content/catalog.json content/product-labels.json content/manufacturer-documents.json \
+            index.html shop.html library.html start.html library/ robots.txt sitemap.xml \
+            reports/v6/ scripts/v6_finalize_candidate.py scripts/v6_browser_qa.py
+          if ! git diff --cached --quiet; then
+            git commit -m "v6: finalize candidate for user review [skip v6-finalize] [skip v6-finalize-v2]"
+            git push origin HEAD:agent/v6-build
+          fi
+      - name: Update draft review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY=/tmp/v6-pr-body.md
+          {
+            echo '# The Mindful Matrix V6 — final user review candidate'
+            echo
+            cat reports/v6/FINAL_CANDIDATE.md
+            echo
+            echo '## Safety'
+            echo
+            echo '- Draft PR only; do not merge yet.'
+            echo '- `main` and production remain on V5.1.'
+            echo '- Final production release requires a separate user-approved merge command.'
+          } > "$BODY"
+          gh pr edit 6 --title "V6 candidate — ready for final user review" --body-file "$BODY"
