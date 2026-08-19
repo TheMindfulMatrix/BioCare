@@ -3,7 +3,7 @@ name: Validate static site
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, agent/v6-build]
 
 permissions:
   contents: read
@@ -20,14 +20,19 @@ jobs:
         run: python scripts/build.py
       - name: Verify committed output and site structure
         run: |
-          git diff --exit-code -- index.html library.html start.html library/ robots.txt sitemap.xml
+          git diff --exit-code -- index.html shop.html library.html start.html library/ robots.txt sitemap.xml
           python scripts/validate.py
+      - name: Run compliance fixtures
+        run: python -m unittest discover -s tests -v
+      - name: Report strict compliance backlog
+        run: python scripts/validate.py --compliance-strict --compliance-dry-run
       - name: Upload preview artifact
         uses: actions/upload-artifact@v4
         with:
           name: biocare-static-preview
           path: |
             index.html
+            shop.html
             library.html
             start.html
             robots.txt
