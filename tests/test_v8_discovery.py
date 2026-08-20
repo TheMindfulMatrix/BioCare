@@ -49,6 +49,24 @@ class V8DiscoveryTests(unittest.TestCase):
         self.assertTrue(search("omega"))
         self.assertEqual([], search("no-such-matrix-result"))
 
+    def test_visual_layers_are_decorative_and_environment_driven(self):
+        pages = [ROOT / "index.html", ROOT / "explore.html", ROOT / "know-your-number.html"]
+        pages.extend((ROOT / "departments").glob("*.html"))
+        for page in pages:
+            markup = page.read_text(encoding="utf-8")
+            self.assertIn('class="matrix-visual', markup)
+            self.assertIn('aria-hidden="true"', markup)
+        css = (ROOT / "assets/css/site.css").read_text(encoding="utf-8")
+        self.assertIn("pointer-events:none", css)
+        self.assertIn("prefers-reduced-motion:reduce", css)
+        for environment in {item["environment"] for item in self.catalog["intents"]}:
+            self.assertIn(f'data-environment="{environment}"', (ROOT / "index.html").read_text(encoding="utf-8") + "".join(page.read_text(encoding="utf-8") for page in (ROOT / "departments").glob("*.html")))
+
+    def test_visual_pass_adds_no_runtime_dependency(self):
+        markup = (ROOT / "index.html").read_text(encoding="utf-8")
+        scripts = [part.split('"', 1)[0] for part in markup.split('<script defer src="')[1:]]
+        self.assertEqual(["assets/js/enhancements.js?v=v8-visual-8"], scripts)
+
 
 if __name__ == "__main__":
     unittest.main()

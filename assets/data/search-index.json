@@ -8,7 +8,10 @@
     "terms": [
       "Testing & Measurement",
       "Explore verified testing tools and guides for understanding measurements, methods, and limitations."
-    ]
+    ],
+    "productCount": 7,
+    "guideCount": 4,
+    "environment": "signal"
   },
   {
     "id": "omega-nutrition",
@@ -19,7 +22,10 @@
     "terms": [
       "Omega & Nutrition",
       "Browse verified omega and nutrition formats alongside evidence-aware guides to food, testing, and labels."
-    ]
+    ],
+    "productCount": 10,
+    "guideCount": 4,
+    "environment": "omega"
   },
   {
     "id": "gut-digestion",
@@ -30,7 +36,10 @@
     "terms": [
       "Gut & Digestion",
       "Explore the verified formats grouped in this department and learn how gut testing and biomarkers are interpreted."
-    ]
+    ],
+    "productCount": 3,
+    "guideCount": 2,
+    "environment": "biotic"
   },
   {
     "id": "daily-wellness",
@@ -41,7 +50,10 @@
     "terms": [
       "Daily Wellness",
       "Browse verified everyday formats with practical guidance for reading evidence and supplement labels."
-    ]
+    ],
+    "productCount": 15,
+    "guideCount": 3,
+    "environment": "daily"
   },
   {
     "id": "performance-recovery",
@@ -52,7 +64,10 @@
     "terms": [
       "Active Nutrition & Tools",
       "Explore verified nutrition formats and practical tools with education about fueling, training, and recovery context."
-    ]
+    ],
+    "productCount": 8,
+    "guideCount": 3,
+    "environment": "performance"
   },
   {
     "id": "healthy-aging",
@@ -63,7 +78,10 @@
     "terms": [
       "Skin & Collagen",
       "Browse verified collagen and topical formats while keeping product labels, evidence, and limitations visible."
-    ]
+    ],
+    "productCount": 2,
+    "guideCount": 2,
+    "environment": "longevity"
   },
   {
     "id": "balance-basic-kit",
@@ -78,6 +96,10 @@
     "productKind": "kit",
     "variant": "standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+      "alt": "Balance Test Basic Kit official Zinzino product packaging"
+    },
     "order": 0
   },
   {
@@ -93,6 +115,10 @@
     "productKind": "individual product",
     "variant": "standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balance-test-309000.webp",
+      "alt": "BalanceTest official Zinzino product packaging"
+    },
     "order": 1
   },
   {
@@ -108,6 +134,10 @@
     "productKind": "individual product",
     "variant": "standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/gut-health-test-309070.webp",
+      "alt": "Gut Health Test official Zinzino product packaging"
+    },
     "order": 2
   },
   {
@@ -123,6 +153,10 @@
     "productKind": "multipack",
     "variant": "x2",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/gut-health-test-x2-309080.webp",
+      "alt": "Gut Health Test x2 official Zinzino product packaging"
+    },
     "order": 3
   },
   {
@@ -138,6 +172,10 @@
     "productKind": "individual product",
     "variant": "standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/vitamin-d-test-309049.webp",
+      "alt": "Vitamin D Test official Zinzino product packaging"
+    },
     "order": 4
   },
   {
@@ -153,6 +191,10 @@
     "productKind": "individual product",
     "variant": "standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/hba1c-test-309060.webp",
+      "alt": "HbA1c Test official Zinzino product packaging"
+    },
     "order": 5
   },
   {
@@ -180,6 +222,10 @@
       "Oleic Acid (Omega-9)",
       "Olive Polyphenols"
     ],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+      "alt": "BalanceOil+, 300 ml official Zinzino product packaging"
+    },
     "order": 6
   },
   {
@@ -195,6 +241,10 @@
     "productKind": "individual product",
     "variant": "100 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-300430.webp",
+      "alt": "BalanceOil+ Orange Lemon Mint, 100 ml official Zinzino product packaging"
+    },
     "order": 7
   },
   {
@@ -210,6 +260,10 @@
     "productKind": "multipack",
     "variant": "6 × 100 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-6pcs-300481.webp",
+      "alt": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs official Zinzino product packaging"
+    },
     "order": 8
   },
   {
@@ -225,6 +279,10 @@
     "productKind": "individual product",
     "variant": "Premium 300 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-premium-300ml-700000.webp",
+      "alt": "BalanceOil+ Premium, 300 ml official Zinzino product packaging"
+    },
     "order": 9
   },
   {
@@ -240,6 +298,10 @@
     "productKind": "individual product",
     "variant": "AquaX 300 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-aquax-300ml-300700.webp",
+      "alt": "BalanceOil+ AquaX, 300 ml official Zinzino product packaging"
+    },
     "order": 10
   },
   {
@@ -255,6 +317,10 @@
     "productKind": "individual product",
     "variant": "Vegan",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-vegan-400000.webp",
+      "alt": "BalanceOil+ Vegan official Zinzino product packaging"
+    },
     "order": 11
   },
   {
@@ -270,6 +336,10 @@
     "productKind": "individual product",
     "variant": "Tutti Frutti 300 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/balanceoil-tutti-frutti-300ml-301799.webp",
+      "alt": "BalanceOil Tutti Frutti, 300 ml official Zinzino product packaging"
+    },
     "order": 12
   },
   {
@@ -285,6 +355,10 @@
     "productKind": "individual product",
     "variant": "Premium",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/essent-plus-premium-300310.webp",
+      "alt": "Essent+ Premium official Zinzino product packaging"
+    },
     "order": 13
   },
   {
@@ -300,6 +374,10 @@
     "productKind": "individual product",
     "variant": "250 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/revoo-302401.webp",
+      "alt": "R.E.V.O.O official Zinzino product packaging"
+    },
     "order": 14
   },
   {
@@ -315,6 +393,10 @@
     "productKind": "accessory",
     "variant": "10 pc",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/dosage-cups-10pc-600508.webp",
+      "alt": "Dosage Cups, 10 pc official Zinzino product packaging"
+    },
     "order": 15
   },
   {
@@ -340,6 +422,10 @@
       "Psyllium Seed Husk",
       "Guar Gum Fiber"
     ],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/zinobiotic-plus-301390.webp",
+      "alt": "ZinoBiotic+ official Zinzino product packaging"
+    },
     "order": 16
   },
   {
@@ -355,6 +441,10 @@
     "productKind": "individual product",
     "variant": "250 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/x-gold-plus-302790.webp",
+      "alt": "X Gold+ 250 ml official Zinzino product packaging"
+    },
     "order": 17
   },
   {
@@ -370,6 +460,10 @@
     "productKind": "individual product",
     "variant": "30 tablets",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/zinogene-plus-302500.webp",
+      "alt": "ZinoGene+ official Zinzino product packaging"
+    },
     "order": 18
   },
   {
@@ -385,6 +479,10 @@
     "productKind": "individual product",
     "variant": "60 tablets",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/viva-plus-300800.webp",
+      "alt": "Viva+ official Zinzino product packaging"
+    },
     "order": 19
   },
   {
@@ -400,6 +498,10 @@
     "productKind": "multipack",
     "variant": "x2",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/viva-plus-x2-300811.webp",
+      "alt": "Viva+ x2 official Zinzino product packaging"
+    },
     "order": 20
   },
   {
@@ -415,6 +517,10 @@
     "productKind": "individual product",
     "variant": "60 tablets",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/zinoshine-plus-302600.webp",
+      "alt": "ZinoShine+ official Zinzino product packaging"
+    },
     "order": 21
   },
   {
@@ -463,6 +569,10 @@
       "Mixed Tocopherols and Tocotrienols",
       "Seaweed Extract"
     ],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/xtend-plus-302200.webp",
+      "alt": "Xtend+ official Zinzino product packaging"
+    },
     "order": 22
   },
   {
@@ -478,6 +588,10 @@
     "productKind": "individual product",
     "variant": "Standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/xtend-300520.webp",
+      "alt": "Xtend official Zinzino product packaging"
+    },
     "order": 23
   },
   {
@@ -493,6 +607,10 @@
     "productKind": "individual product",
     "variant": "60 capsules",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/protect-plus-300600.webp",
+      "alt": "Protect+ official Zinzino product packaging"
+    },
     "order": 24
   },
   {
@@ -508,6 +626,10 @@
     "productKind": "individual product",
     "variant": "80 tablets",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/spirumax-plus-302699.webp",
+      "alt": "SpiruMax+ official Zinzino product packaging"
+    },
     "order": 25
   },
   {
@@ -523,6 +645,10 @@
     "productKind": "individual product",
     "variant": "X20",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/phycosci-plus-x20-302770.webp",
+      "alt": "PhycoSci+ X20 official Zinzino product packaging"
+    },
     "order": 26
   },
   {
@@ -538,6 +664,10 @@
     "productKind": "individual product",
     "variant": "Chocolate",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/leanshake-chocolate-301331.webp",
+      "alt": "LeanShake Chocolate, portion pack official Zinzino product packaging"
+    },
     "order": 27
   },
   {
@@ -553,6 +683,10 @@
     "productKind": "individual product",
     "variant": "Strawberry",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/leanshake-strawberry-301531.webp",
+      "alt": "LeanShake Strawberry, portion pack official Zinzino product packaging"
+    },
     "order": 28
   },
   {
@@ -568,6 +702,10 @@
     "productKind": "individual product",
     "variant": "Vanilla",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/leanshake-vanilla-301581.webp",
+      "alt": "LeanShake Vanilla, portion pack official Zinzino product packaging"
+    },
     "order": 29
   },
   {
@@ -583,6 +721,10 @@
     "productKind": "individual product",
     "variant": "Berry",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/leanshake-berry-301381.webp",
+      "alt": "LeanShake Berry, portion pack official Zinzino product packaging"
+    },
     "order": 30
   },
   {
@@ -598,6 +740,10 @@
     "productKind": "accessory",
     "variant": "Standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/shake-bottle-600509.webp",
+      "alt": "Shake Bottle official Zinzino product packaging"
+    },
     "order": 31
   },
   {
@@ -613,6 +759,10 @@
     "productKind": "individual product",
     "variant": "Nut & Seed",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/energy-bar-nut-seed-302011.webp",
+      "alt": "Energy Bar Nut & Seed official Zinzino product packaging"
+    },
     "order": 32
   },
   {
@@ -628,6 +778,10 @@
     "productKind": "accessory",
     "variant": "Standard",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/measuring-tape-600211.webp",
+      "alt": "Measuring Tape official Zinzino product packaging"
+    },
     "order": 33
   },
   {
@@ -643,6 +797,10 @@
     "productKind": "individual product",
     "variant": "10 × 46 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/collagen-boozt-302800.webp",
+      "alt": "Collagen Boozt official Zinzino product packaging"
+    },
     "order": 34
   },
   {
@@ -658,6 +816,10 @@
     "productKind": "individual product",
     "variant": "50 ml",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/zinzino-v6/skin-serum-50ml-800150.webp",
+      "alt": "Skin Serum, 50 ml official Zinzino product packaging"
+    },
     "order": 35
   },
   {
@@ -673,6 +835,10 @@
     "productKind": "at-home test",
     "variant": "saliva collection kit",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+      "alt": "The DNA Discovery Kit official BioLimitless product presentation"
+    },
     "order": 36
   },
   {
@@ -688,6 +854,10 @@
     "productKind": "book",
     "variant": "format selected on manufacturer site",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/becoming-biolimitless-book.webp",
+      "alt": "Becoming BioLimitless official BioLimitless product presentation"
+    },
     "order": 37
   },
   {
@@ -711,6 +881,10 @@
       "Phosphatidylserine",
       "L-Tyrosine"
     ],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/cell-signals.webp",
+      "alt": "Cell Signals official BioLimitless product presentation"
+    },
     "order": 38
   },
   {
@@ -726,6 +900,10 @@
     "productKind": "powder formula",
     "variant": "powder",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+      "alt": "Detox Pro Plus official BioLimitless product presentation"
+    },
     "order": 39
   },
   {
@@ -741,6 +919,10 @@
     "productKind": "dietary supplement",
     "variant": "capsules",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+      "alt": "Magnesium Glycinate official BioLimitless product presentation"
+    },
     "order": 40
   },
   {
@@ -756,6 +938,10 @@
     "productKind": "dietary supplement",
     "variant": "capsules",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/zinc-copper.webp",
+      "alt": "Zinc + Copper official BioLimitless product presentation"
+    },
     "order": 41
   },
   {
@@ -771,6 +957,10 @@
     "productKind": "dietary supplement",
     "variant": "capsules",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+      "alt": "Vitamin D3 + K2 official BioLimitless product presentation"
+    },
     "order": 42
   },
   {
@@ -786,6 +976,10 @@
     "productKind": "dietary supplement",
     "variant": "capsules",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/biozyme.webp",
+      "alt": "BioZyme official BioLimitless product presentation"
+    },
     "order": 43
   },
   {
@@ -801,6 +995,10 @@
     "productKind": "stack",
     "variant": "four-product stack",
     "ingredients": [],
+    "image": {
+      "src": "assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+      "alt": "The Bio Basics Core Four official BioLimitless product presentation"
+    },
     "order": 44
   },
   {
@@ -813,7 +1011,12 @@
     "intents": [
       "test-measure",
       "omega-nutrition"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/omega-numbers-560.webp",
+      "alt": "Omega-3 lipid molecules and blood-status signals in a dark biological matrix"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "should-you-test-your-omega-3-levels",
@@ -825,7 +1028,12 @@
     "intents": [
       "test-measure",
       "omega-nutrition"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/omega-testing-560.webp",
+      "alt": "At-home blood sample card moving through a precise omega measurement interface"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "food-vs-omega-3-supplements",
@@ -836,7 +1044,12 @@
     "category": "Omega-3",
     "intents": [
       "omega-nutrition"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/food-vs-supplements-560.webp",
+      "alt": "Whole-food omega sources balanced against a neutral supplement form"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "how-to-read-a-supplement-label",
@@ -851,7 +1064,12 @@
       "daily-wellness",
       "performance-recovery",
       "healthy-aging"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/supplement-label-560.webp",
+      "alt": "Supplement label under an evidence-reading scanner with ingredient and dose fields"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "gut-health-101",
@@ -860,7 +1078,12 @@
     "summary": "A practical map of the gut microbiome, the factors that shape it, and the line between useful evidence and confident-sounding speculation.",
     "href": "library/gut-health-101.html",
     "category": "Gut Health",
-    "intents": []
+    "intents": [],
+    "image": {
+      "src": "assets/artwork/library/gut-health-101-560.webp",
+      "alt": "Layered intestinal microbiome forms rendered as a living cellular ecosystem"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "gut-testing-biomarkers",
@@ -872,7 +1095,12 @@
     "intents": [
       "test-measure",
       "gut-digestion"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/gut-testing-biomarkers-560.webp",
+      "alt": "Laboratory sample channel, biomarker bands and microbial signals in a dark diagnostic interface"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "recovery-after-training",
@@ -883,7 +1111,12 @@
     "category": "Performance",
     "intents": [
       "performance-recovery"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/recovery-after-training-560.webp",
+      "alt": "Muscle-fiber waves, glycogen signals and a quiet recovery arc after training"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "performance-nutrition-basics",
@@ -894,7 +1127,12 @@
     "category": "Performance",
     "intents": [
       "performance-recovery"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/performance-nutrition-560.webp",
+      "alt": "Athletic energy pathways connecting whole-food fuel, hydration and muscle signals"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "how-to-read-a-health-study",
@@ -907,7 +1145,12 @@
       "test-measure",
       "daily-wellness",
       "healthy-aging"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/read-health-study-560.webp",
+      "alt": "Layered research paper, study groups and evidence signals under a focused reading beam"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "correlation-causation-relative-risk",
@@ -918,7 +1161,12 @@
     "category": "Research",
     "intents": [
       "daily-wellness"
-    ]
+    ],
+    "image": {
+      "src": "assets/artwork/library/correlation-causation-risk-560.webp",
+      "alt": "Two data pathways diverging through confounders into relative and absolute risk frames"
+    },
+    "evidenceReviewed": "August 2026"
   },
   {
     "id": "know-your-number",
