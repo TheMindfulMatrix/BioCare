@@ -1,0 +1,54 @@
+name: V6 finish-pass source snapshot
+
+on:
+  push:
+    branches: [agent/v6-build]
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    if: ${{ !contains(github.event.head_commit.message, '[skip v6-finish-snapshot]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/v6-build
+          fetch-depth: 0
+      - name: Record repository state
+        shell: bash
+        run: |
+          mkdir -p /tmp/v6-finish-state
+          git rev-parse HEAD > /tmp/v6-finish-state/HEAD.txt
+          git rev-parse origin/main > /tmp/v6-finish-state/MAIN.txt
+          git status --short > /tmp/v6-finish-state/STATUS.txt
+          git tag --list --format='%(refname:short) %(objectname)' > /tmp/v6-finish-state/TAGS.txt
+          git log --oneline --decorate --no-merges b5d35772e98580e253c08f6319aa8e412fa20aea..HEAD > /tmp/v6-finish-state/COMMITS.txt
+      - name: Upload source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: v6-finish-source-snapshot
+          path: |
+            .github/
+            assets/
+            content/
+            docs/
+            img/
+            library/
+            reports/
+            scripts/
+            templates/
+            tests/
+            .gitignore
+            PUBLISH.bat
+            README.md
+            index.html
+            library.html
+            shop.html
+            start.html
+            robots.txt
+            sitemap.xml
+            /tmp/v6-finish-state/
+          if-no-files-found: error
+          retention-days: 3
