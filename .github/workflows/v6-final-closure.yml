@@ -3,6 +3,8 @@ name: V6 final closure
 on:
   push:
     branches: [agent/v6-build]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: write
@@ -16,7 +18,7 @@ env:
 
 jobs:
   truth-check:
-    if: ${{ contains(github.event.head_commit.message, '[run v6-final-closure]') }}
+    if: ${{ (github.event_name == 'push' && contains(github.event.head_commit.message, '[run v6-final-closure]')) || (github.event_name == 'pull_request' && github.head_ref == 'agent/v6-build') }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
