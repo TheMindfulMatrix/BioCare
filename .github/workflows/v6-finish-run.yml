@@ -52,9 +52,9 @@ jobs:
           set -euo pipefail
           cat reports/v6/finish-patch/part* > /tmp/v6-finish.patch.gz.b64
           base64 --decode /tmp/v6-finish.patch.gz.b64 | gzip --decompress > /tmp/v6-finish.patch
-          test "$(sha256sum /tmp/v6-finish.patch | cut -d' ' -f1)" = "fabfc4fa7b3c4d1791a9f085ac9209115cf63a905753d356e849cc896cff0850"
+          test "$(sha256sum /tmp/v6-finish.patch | cut -d' ' -f1)" = "312318ddfc14ec8434dfcf0418c457fb10ce748988a28d04de80b8184a93e0f5"
           git apply --whitespace=nowarn /tmp/v6-finish.patch
-          python -m py_compile scripts/v6_finish_prepare.py scripts/v6_finish_verify.py scripts/build.py scripts/validate.py
+          python -m py_compile scripts/v6_finish_prepare.py scripts/v6_finish_verify.py scripts/v6_finish_browser_qa.py scripts/build.py scripts/validate.py
 
       - name: Create and verify V5.1 rollback tag
         shell: bash
