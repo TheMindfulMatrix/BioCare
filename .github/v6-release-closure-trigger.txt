@@ -1,1 +1,1 @@
-Authorized V6 release-closure trigger.
+Authorized V6 resilient-finalization trigger.
