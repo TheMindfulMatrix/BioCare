@@ -1,0 +1,58 @@
+{
+  "baselineBytes": 1405208,
+  "finalBytes": 1103598,
+  "trials": [
+    {
+      "quality": 86,
+      "bytes": 1391704,
+      "meanRgbError": 0.492
+    },
+    {
+      "quality": 82,
+      "bytes": 1286288,
+      "meanRgbError": 0.513
+    },
+    {
+      "quality": 78,
+      "bytes": 1186476,
+      "meanRgbError": 0.714
+    },
+    {
+      "quality": 74,
+      "bytes": 1103598,
+      "meanRgbError": 0.848
+    }
+  ],
+  "chosen": {
+    "quality": 74,
+    "bytes": 1103598,
+    "meanRgbError": 0.848
+  },
+  "largestSavings": [
+    {
+      "path": "assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+      "beforeBytes": 62348,
+      "finalBytes": 36410
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+      "beforeBytes": 57308,
+      "finalBytes": 32360
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+      "beforeBytes": 53512,
+      "finalBytes": 32152
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/zinc-copper.webp",
+      "beforeBytes": 49754,
+      "finalBytes": 28858
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+      "beforeBytes": 46502,
+      "finalBytes": 27020
+    }
+  ]
+}

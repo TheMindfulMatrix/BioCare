@@ -1705,6 +1705,9 @@
 }
 
 @media (max-width: 44rem) {
+  .hero-context a { min-height: var(--touch-target); display:inline-flex; align-items:center; padding-block:.75rem; }
+  .home-hero :is(.product-price__item,.hero-context span,.hero-context a,.hero-product__tap),
+  .product-universe-section :is(.product-universe__intro strong,.product-universe__intent span,.product-universe__loading,.product-universe__sku,.product-universe__facts dt,.product-universe__facts dd,.product-universe__why span,.product-universe__learn,.product-universe__controls,.product-universe__roster span,.product-universe__roster strong) { font-size:.6875rem !important; }
   .universe-discovery { grid-template-columns:1fr; }
   .universe-discovery p { grid-column:1; }
   .commercial-notes { padding: var(--space-3); }
@@ -1726,6 +1729,12 @@
 @media (prefers-reduced-motion: reduce) {
   .library-article__visual picture img, .shop-brand-filters button { transition: none; }
   .library-article:hover .library-article__visual picture img, .library-article:focus-within .library-article__visual picture img { transform: none; }
+}
+
+@media (max-width: 44rem) {
+  .home-hero a, .product-universe-section a, .product-universe-section button,
+  .product-universe-section input, .product-universe-section select { min-height:46px !important; }
+  .hero-context a { display:inline-flex !important; align-items:center; padding-block:.75rem; }
 }
 
 /* V6 candidate: clarity, accessibility, catalog cohesion, and trust systems */

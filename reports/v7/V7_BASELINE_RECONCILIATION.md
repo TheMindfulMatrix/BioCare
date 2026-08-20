@@ -18,7 +18,7 @@ V7 removes `.github/workflows/v6-final-closure.yml`, `v6-finish-finalize-v2.yml`
 
 ## Metric resets
 
-- Active image payload: 1,405,208 B baseline → 1,405,208 B candidate. The prior approximately 800 KB figure is a future optimization target, not a historical fact. V7 does not recompress verified cutouts without a defensible visual-comparison pass.
+- Active image payload: 1,405,208 B baseline → 1,103,598 B final candidate. The four-setting WebP study saved 301,610 B (21.46%) while preserving dimensions, aspect ratios, alpha and provenance. The contact sheet records the five largest savings; approximately 800 KB was not defensible without a more aggressive quality tradeoff.
 - Compliance: 91 review warnings → 91; 98 strict dry-run items → 98.
 - Catalog: 45 active and 8 deferred products, unchanged.
 
