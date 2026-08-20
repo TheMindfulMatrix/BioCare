@@ -1,1 +1,1 @@
-Authorized V6 resilient-finalization trigger.
+Authorized V6 PR-finalization trigger.
