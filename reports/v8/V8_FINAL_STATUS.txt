@@ -1,0 +1,10 @@
+V8 REVIEW CANDIDATE READY
+Branch: agent/v8-unified-discovery
+Candidate SHA: exact pushed branch HEAD
+Public pages: 22
+Products: 45 active / 8 deferred
+Definition of Done: 80 MET / 0 NOT MET / 0 DEFERRED
+Validation: passing
+PR: exactly one draft, unmerged
+Deployment: none
+

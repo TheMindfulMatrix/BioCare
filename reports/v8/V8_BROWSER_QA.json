@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "viewports": [
+    "1440x900",
+    "768x1024",
+    "390x844",
+    "375x812"
+  ],
+  "publicPages": 22,
+  "horizontalOverflow": 0,
+  "brokenRenderedImages": 0,
+  "failedLocalRequests": 0,
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "duplicateIds": 0,
+  "staleState": 0,
+  "screenshots": [
+    "homepage-desktop-full.png",
+    "homepage-desktop-above-fold.png",
+    "homepage-tablet.png",
+    "homepage-375-full.png",
+    "homepage-375-above-fold.png",
+    "explore-desktop-search.png",
+    "explore-mobile-search.png",
+    "department-omega-desktop-full.png"
+  ]
+}
+

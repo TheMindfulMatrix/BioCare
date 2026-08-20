@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": [
+    "one H1 per page",
+    "semantic landmarks",
+    "skip link",
+    "visible focus",
+    "keyboard search",
+    "Escape clear/close",
+    "mode pressed state",
+    "live result counts",
+    "44px interactive target floor",
+    "mobile menu retained",
+    "reduced motion retained",
+    "no duplicate IDs",
+    "no horizontal overflow",
+    "product-specific external link names"
+  ]
+}
+

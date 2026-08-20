@@ -1,0 +1,10 @@
+{
+  "hardGate": "passed",
+  "fixtureTests": "8/8 passed",
+  "reviewWarnings": 91,
+  "strictDryRunItems": 98,
+  "reconciliation": "Counts exactly match verified V7 baseline; V8 adds neutral discovery copy and ID-only mappings, with no new product claims.",
+  "restrictedResource69315": "withheld",
+  "deferredProductsPublic": 0
+}
+

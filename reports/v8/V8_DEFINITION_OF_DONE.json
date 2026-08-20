@@ -1,0 +1,412 @@
+{
+  "release": "V8",
+  "candidateShaSource": "exact pushed branch HEAD",
+  "totals": {
+    "met": 80,
+    "notMet": 0,
+    "deferred": 0
+  },
+  "items": [
+    {
+      "id": 1,
+      "status": "MET",
+      "requirement": "V8 starts from the verified V7 production baseline"
+    },
+    {
+      "id": 2,
+      "status": "MET",
+      "requirement": "Work is isolated to agent/v8-unified-discovery"
+    },
+    {
+      "id": 3,
+      "status": "MET",
+      "requirement": "main remains unchanged during candidate development"
+    },
+    {
+      "id": 4,
+      "status": "MET",
+      "requirement": "No deployment occurs"
+    },
+    {
+      "id": 5,
+      "status": "MET",
+      "requirement": "One universal search covers products and education"
+    },
+    {
+      "id": 6,
+      "status": "MET",
+      "requirement": "Search index derives from canonical sources"
+    },
+    {
+      "id": 7,
+      "status": "MET",
+      "requirement": "Search supports Everything, Products, and Learn"
+    },
+    {
+      "id": 8,
+      "status": "MET",
+      "requirement": "Search works on desktop"
+    },
+    {
+      "id": 9,
+      "status": "MET",
+      "requirement": "Search works at 390px"
+    },
+    {
+      "id": 10,
+      "status": "MET",
+      "requirement": "Search works at 375px"
+    },
+    {
+      "id": 11,
+      "status": "MET",
+      "requirement": "Search is keyboard accessible"
+    },
+    {
+      "id": 12,
+      "status": "MET",
+      "requirement": "Search result counts derive from canonical data"
+    },
+    {
+      "id": 13,
+      "status": "MET",
+      "requirement": "Search back/forward state does not become stale"
+    },
+    {
+      "id": 14,
+      "status": "MET",
+      "requirement": "Explore is a first-class public route"
+    },
+    {
+      "id": 15,
+      "status": "MET",
+      "requirement": "Explore metadata and sitemap entry are correct"
+    },
+    {
+      "id": 16,
+      "status": "MET",
+      "requirement": "Balance Kit remains the featured starting product"
+    },
+    {
+      "id": 17,
+      "status": "MET",
+      "requirement": "Balance Kit provides distinct Learn and Product Source paths"
+    },
+    {
+      "id": 18,
+      "status": "MET",
+      "requirement": "All 45 active products remain represented"
+    },
+    {
+      "id": 19,
+      "status": "MET",
+      "requirement": "All 8 deferred products remain non-public"
+    },
+    {
+      "id": 20,
+      "status": "MET",
+      "requirement": "Product facts remain canonical"
+    },
+    {
+      "id": 21,
+      "status": "MET",
+      "requirement": "Product filters work correctly"
+    },
+    {
+      "id": 22,
+      "status": "MET",
+      "requirement": "Product sorting is honest and supported"
+    },
+    {
+      "id": 23,
+      "status": "MET",
+      "requirement": "Active filters and reset are usable"
+    },
+    {
+      "id": 24,
+      "status": "MET",
+      "requirement": "Product cards remain transparent and accessible"
+    },
+    {
+      "id": 25,
+      "status": "MET",
+      "requirement": "No heavyweight hidden-panel regression occurs"
+    },
+    {
+      "id": 26,
+      "status": "MET",
+      "requirement": "Six departments are visible from the homepage"
+    },
+    {
+      "id": 27,
+      "status": "MET",
+      "requirement": "Department product counts derive from canonical data"
+    },
+    {
+      "id": 28,
+      "status": "MET",
+      "requirement": "Department guide counts derive from canonical data"
+    },
+    {
+      "id": 29,
+      "status": "MET",
+      "requirement": "Six public department hubs are generated"
+    },
+    {
+      "id": 30,
+      "status": "MET",
+      "requirement": "Department hubs combine products and education"
+    },
+    {
+      "id": 31,
+      "status": "MET",
+      "requirement": "Department copy contains no unsupported health promise"
+    },
+    {
+      "id": 32,
+      "status": "MET",
+      "requirement": "Library remains one-click accessible"
+    },
+    {
+      "id": 33,
+      "status": "MET",
+      "requirement": "Start Here remains one-click accessible"
+    },
+    {
+      "id": 34,
+      "status": "MET",
+      "requirement": "Know Your Number remains complete and evidence-aware"
+    },
+    {
+      "id": 35,
+      "status": "MET",
+      "requirement": "Information → Education → Action remains central"
+    },
+    {
+      "id": 36,
+      "status": "MET",
+      "requirement": "TEST. DON’T GUESS. remains represented correctly"
+    },
+    {
+      "id": 37,
+      "status": "MET",
+      "requirement": "TEST → MEASURE → ACT → RETEST remains represented correctly"
+    },
+    {
+      "id": 38,
+      "status": "MET",
+      "requirement": "Product-first presentation does not reduce transparency"
+    },
+    {
+      "id": 39,
+      "status": "MET",
+      "requirement": "Verified labels remain accurate"
+    },
+    {
+      "id": 40,
+      "status": "MET",
+      "requirement": "Missing labels remain explicitly unavailable"
+    },
+    {
+      "id": 41,
+      "status": "MET",
+      "requirement": "Manufacturer-documentation limitations remain visible"
+    },
+    {
+      "id": 42,
+      "status": "MET",
+      "requirement": "Commercial links remain attributed"
+    },
+    {
+      "id": 43,
+      "status": "MET",
+      "requirement": "Commercial disclosures remain proximate"
+    },
+    {
+      "id": 44,
+      "status": "MET",
+      "requirement": "New York notice remains where required"
+    },
+    {
+      "id": 45,
+      "status": "MET",
+      "requirement": "Dated pricing logic remains intact"
+    },
+    {
+      "id": 46,
+      "status": "MET",
+      "requirement": "No restricted R3G/Reel material is published"
+    },
+    {
+      "id": 47,
+      "status": "MET",
+      "requirement": "No unsupported health claim is introduced"
+    },
+    {
+      "id": 48,
+      "status": "MET",
+      "requirement": "No fake rating, review, availability, popularity, or seller fact is added"
+    },
+    {
+      "id": 49,
+      "status": "MET",
+      "requirement": "Structured data remains truthful"
+    },
+    {
+      "id": 50,
+      "status": "MET",
+      "requirement": "Metadata is complete on every public page"
+    },
+    {
+      "id": 51,
+      "status": "MET",
+      "requirement": "Sitemap includes every intended public page only"
+    },
+    {
+      "id": 52,
+      "status": "MET",
+      "requirement": "Desktop QA passes"
+    },
+    {
+      "id": 53,
+      "status": "MET",
+      "requirement": "Tablet QA passes"
+    },
+    {
+      "id": 54,
+      "status": "MET",
+      "requirement": "390px QA passes"
+    },
+    {
+      "id": 55,
+      "status": "MET",
+      "requirement": "375px QA passes"
+    },
+    {
+      "id": 56,
+      "status": "MET",
+      "requirement": "No horizontal overflow"
+    },
+    {
+      "id": 57,
+      "status": "MET",
+      "requirement": "No broken images"
+    },
+    {
+      "id": 58,
+      "status": "MET",
+      "requirement": "No failed local requests"
+    },
+    {
+      "id": 59,
+      "status": "MET",
+      "requirement": "No console errors"
+    },
+    {
+      "id": 60,
+      "status": "MET",
+      "requirement": "No console warnings"
+    },
+    {
+      "id": 61,
+      "status": "MET",
+      "requirement": "No duplicate IDs"
+    },
+    {
+      "id": 62,
+      "status": "MET",
+      "requirement": "No below-floor text"
+    },
+    {
+      "id": 63,
+      "status": "MET",
+      "requirement": "No below-floor tap targets"
+    },
+    {
+      "id": 64,
+      "status": "MET",
+      "requirement": "No stale search/filter/Product Universe state"
+    },
+    {
+      "id": 65,
+      "status": "MET",
+      "requirement": "Performance uses the actual V7 baseline"
+    },
+    {
+      "id": 66,
+      "status": "MET",
+      "requirement": "Product-image payload does not materially regress"
+    },
+    {
+      "id": 67,
+      "status": "MET",
+      "requirement": "HTML and DOM growth are measured and justified"
+    },
+    {
+      "id": 68,
+      "status": "MET",
+      "requirement": "V8-specific tests pass"
+    },
+    {
+      "id": 69,
+      "status": "MET",
+      "requirement": "Existing permanent validation passes"
+    },
+    {
+      "id": 70,
+      "status": "MET",
+      "requirement": "Compliance hard gate passes"
+    },
+    {
+      "id": 71,
+      "status": "MET",
+      "requirement": "Compliance fixtures pass"
+    },
+    {
+      "id": 72,
+      "status": "MET",
+      "requirement": "Review and strict findings are fully reconciled"
+    },
+    {
+      "id": 73,
+      "status": "MET",
+      "requirement": "Screenshots accurately show the rendered candidate"
+    },
+    {
+      "id": 74,
+      "status": "MET",
+      "requirement": "Final V8 candidate reports are complete and consistent"
+    },
+    {
+      "id": 75,
+      "status": "MET",
+      "requirement": "Branch is clean at the exact pushed SHA"
+    },
+    {
+      "id": 76,
+      "status": "MET",
+      "requirement": "Local and remote branch SHAs match"
+    },
+    {
+      "id": 77,
+      "status": "MET",
+      "requirement": "One draft V8 PR exists"
+    },
+    {
+      "id": 78,
+      "status": "MET",
+      "requirement": "PR is open, draft, mergeable, and unmerged"
+    },
+    {
+      "id": 79,
+      "status": "MET",
+      "requirement": "No auto-merge is enabled"
+    },
+    {
+      "id": 80,
+      "status": "MET",
+      "requirement": "Production remains unchanged"
+    }
+  ]
+}
+

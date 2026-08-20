@@ -1,0 +1,17 @@
+{
+  "baseline": "V7 persisted production tree",
+  "homepageHtmlBytes": 172225,
+  "exploreHtmlBytes": 113286,
+  "productsHtmlBytes": 137119,
+  "javascriptBytes": 43491,
+  "searchIndexBytes": 31142,
+  "activeProductImagePayloadBytes": 1103598,
+  "baselineActiveProductImagePayloadBytes": 1103598,
+  "imagePayloadRegressionBytes": 0,
+  "initialProductCards": 12,
+  "totalActiveProducts": 45,
+  "lazyProductImages": true,
+  "highPriorityImages": "featured homepage product only",
+  "notes": "Static generated payload; no framework or hosted search service."
+}
+

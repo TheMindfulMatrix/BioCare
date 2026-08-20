@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "index": {
+    "products": 45,
+    "guides": 10,
+    "departments": 6,
+    "journeys": 1
+  },
+  "modes": [
+    "everything",
+    "products",
+    "learn"
+  ],
+  "cases": [
+    "empty",
+    "exact product",
+    "partial product",
+    "mixed case",
+    "multiple terms",
+    "article title",
+    "article keyword",
+    "department",
+    "journey",
+    "verified ingredient",
+    "unverified ingredient excluded",
+    "no match",
+    "clear",
+    "replacement",
+    "back",
+    "forward"
+  ],
+  "unitTests": "5/5 V8 discovery tests",
+  "browserEvidence": {
+    "omegaEverything": {
+      "products": 10,
+      "guides": 3,
+      "journeys": 1,
+      "departments": 1
+    },
+    "omegaLearn": 5
+  }
+}
+

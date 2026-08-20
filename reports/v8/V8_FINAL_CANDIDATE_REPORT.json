@@ -1,0 +1,40 @@
+{
+  "release": "V8",
+  "status": "review_candidate",
+  "branch": "agent/v8-unified-discovery",
+  "candidateShaSource": "exact pushed branch HEAD",
+  "baselineSha": "db2c82b36f356c92e37d983844fea0fdb0297ae5",
+  "publicPages": 22,
+  "products": {
+    "active": 45,
+    "deferred": 8
+  },
+  "search": {
+    "products": 45,
+    "guides": 10,
+    "departments": 6,
+    "journeys": 1
+  },
+  "performance": {
+    "homepageHtmlBytes": 172225,
+    "exploreHtmlBytes": 113286,
+    "productsHtmlBytes": 137119,
+    "javascriptBytes": 43491,
+    "searchIndexBytes": 31142,
+    "activeProductImagePayloadBytes": 1103598
+  },
+  "compliance": {
+    "hardGate": "passed",
+    "fixtures": "8/8",
+    "reviewWarnings": 91,
+    "strictDryRunItems": 98
+  },
+  "definitionOfDone": {
+    "met": 80,
+    "notMet": 0,
+    "deferred": 0
+  },
+  "merge": false,
+  "deployment": false
+}
+
