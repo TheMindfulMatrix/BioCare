@@ -3,13 +3,15 @@ name: V7 source snapshot
 on:
   push:
     branches: [agent/v7-product-first]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   snapshot:
-    if: ${{ contains(github.event.head_commit.message, '[run v7-source-snapshot]') }}
+    if: ${{ github.event_name == 'pull_request' || contains(github.event.head_commit.message, '[run v7-source-snapshot]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
