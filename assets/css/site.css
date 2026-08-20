@@ -1630,7 +1630,18 @@
 .shop-product[data-manufacturer="BioLimitless"] .shop-product__visual > div { width: 86%; height: 15rem; }
 .shop-product[data-manufacturer="BioLimitless"] .shop-product__visual img { object-fit: cover; border: 1px solid rgba(223,187,120,.24); border-radius: .28rem; box-shadow: 0 1rem 2.5rem rgba(0,0,0,.42); filter: saturate(.9) contrast(1.03); }
 
-.shop-filter-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-5); align-items: end; margin-top: var(--space-6); padding: var(--space-5); border: 1px solid rgba(223,187,120,.2); background: rgba(248,244,236,.035); }
+.shop-filter-bar { display: grid; grid-template-columns: minmax(14rem, 1.5fr) minmax(14rem, 1fr) minmax(12rem, .8fr); gap: var(--space-5); align-items: end; margin-top: var(--space-6); padding: var(--space-5); border: 1px solid rgba(223,187,120,.2); background: rgba(248,244,236,.035); }
+.shop-search, .shop-sort { display:grid; gap:.55rem; }
+.shop-search input, .shop-sort select { width:100%; min-height:48px; border:1px solid rgba(223,187,120,.36); border-radius:4px; background:#13231e; color:#f8f4ec; padding:.75rem .9rem; font:600 .86rem/1.3 var(--font-body); }
+.shop-search input::placeholder { color:rgba(248,244,236,.58); }
+.shop-clear { min-height:44px; justify-self:start; border:0; background:transparent; color:#dfbb78; text-decoration:underline; cursor:pointer; }
+.shop-filter-bar > .shop-filter-status { grid-column:1 / span 2; }
+.omega-journey__steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin:var(--space-7) 0; padding:0; list-style:none; background:rgba(24,55,46,.18); }
+.omega-journey__steps li { min-height:15rem; padding:var(--space-5); background:#f3ecdf; }
+.omega-journey__steps span { display:block; color:#8c6a31; font:700 .72rem/1 var(--font-data); }
+.omega-journey__steps strong { display:block; margin:2.4rem 0 .8rem; color:#17392f; font:600 clamp(1.4rem,2vw,2rem)/1 var(--font-display); }
+.omega-journey__steps p { color:#34483f; }
+.omega-journey__actions { display:flex; flex-wrap:wrap; gap:var(--space-3); }
 .shop-brand-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .65rem; }
 .shop-brand-filters button { min-height: var(--touch-target); padding: .65rem 1rem; border: 1px solid rgba(136,190,160,.28); background: rgba(4,10,7,.4); color: var(--dark-text-muted); font: 700 .61rem/1 var(--font-data); letter-spacing: .07em; text-transform: uppercase; cursor: pointer; }
 .shop-brand-filters button[aria-pressed="true"] { border-color: var(--dark-gold); background: rgba(223,187,120,.11); color: var(--dark-text); box-shadow: inset 0 -2px var(--dark-gold); }
@@ -1651,7 +1662,9 @@
 
 @media (max-width: 62rem) {
   .shop-filter-bar { grid-template-columns: 1fr; align-items: start; }
+  .shop-filter-bar > .shop-filter-status { grid-column:auto; }
   .shop-filter-status { max-width: none; text-align: left; }
+  .omega-journey__steps { grid-template-columns:1fr 1fr; }
   .product-universe__product[data-manufacturer="BioLimitless"] .product-universe__cutout { height: 21rem; }
 }
 
@@ -1683,6 +1696,8 @@
   .product-price--hero { max-width: 27rem; }
   .product-universe__product[data-manufacturer="BioLimitless"] .product-universe__cutout { width: 92%; height: 17rem; }
   .shop-filter-bar { padding: var(--space-4); }
+  .omega-journey__steps { grid-template-columns:1fr; }
+  .omega-journey__steps li { min-height:0; }
   .shop-brand-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .shop-brand-filters button { min-width: 0; padding-inline: .35rem; font-size: .54rem; }
   .shop-product[data-manufacturer="BioLimitless"] .shop-product__visual > div { width: 90%; height: 15.5rem; }

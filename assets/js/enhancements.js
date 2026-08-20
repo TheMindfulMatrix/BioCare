@@ -166,11 +166,18 @@
     var products = Array.prototype.slice.call(document.querySelectorAll("[data-shop-product]"));
     var groups = Array.prototype.slice.call(document.querySelectorAll("[data-shop-group]"));
     var status = root.querySelector("[data-shop-filter-status]");
+    var search = root.querySelector("[data-shop-search]");
+    var sort = root.querySelector("[data-shop-sort]");
+    var clear = root.querySelector("[data-shop-clear]");
+    var activeManufacturer = "all";
     if (!buttons.length || !products.length) return;
     root.dataset.enhanced = "true";
 
     function applyFilter(manufacturer, announce) {
       var visibleCount = 0;
+      var query = search ? search.value.trim().toLowerCase().replace(/\s+/g, " ") : "";
+      var terms = query ? query.split(" ") : [];
+      activeManufacturer = manufacturer;
       root.dataset.activeManufacturer = manufacturer;
       buttons.forEach(function (button) {
         var active = button.dataset.shopBrand === manufacturer;
@@ -178,7 +185,10 @@
         button.setAttribute("tabindex", active ? "0" : "-1");
       });
       products.forEach(function (product) {
-        var visible = manufacturer === "all" || product.dataset.manufacturer === manufacturer;
+        var brandMatch = manufacturer === "all" || product.dataset.manufacturer === manufacturer;
+        var haystack = product.dataset.searchText || "";
+        var searchMatch = terms.every(function (term) { return haystack.indexOf(term) !== -1; });
+        var visible = brandMatch && searchMatch;
         product.hidden = !visible;
         if (visible) visibleCount += 1;
       });
@@ -189,9 +199,25 @@
         if (counter) counter.textContent = String(visibleProducts.length).padStart(2, "0") + " verified product" + (visibleProducts.length === 1 ? "" : "s");
         if (empty) empty.hidden = visibleProducts.length > 0;
       });
-      if (announce && status) status.textContent = manufacturer === "all"
-        ? "Showing all " + visibleCount + " active products."
-        : "Showing " + visibleCount + " " + manufacturer + " products.";
+      if (status) status.textContent = "Showing " + visibleCount + " of " + products.length + " active products" + (query ? " matching “" + query + "”" : "") + (manufacturer === "all" ? "." : " from " + manufacturer + ".");
+      if (clear) clear.hidden = !query && manufacturer === "all" && (!sort || sort.value === "curated");
+    }
+
+    function applySort() {
+      var mode = sort ? sort.value : "curated";
+      groups.forEach(function (group) {
+        var grid = group.querySelector(".shop-group__grid");
+        if (!grid) return;
+        Array.prototype.slice.call(grid.querySelectorAll("[data-shop-product]")).sort(function (left, right) {
+          if (mode === "name-asc") return left.dataset.productName.localeCompare(right.dataset.productName);
+          if (mode === "price-asc" || mode === "price-desc") {
+            var delta = Number(left.dataset.productPrice) - Number(right.dataset.productPrice);
+            return mode === "price-desc" ? -delta : delta;
+          }
+          return Number(left.dataset.curatedIndex) - Number(right.dataset.curatedIndex);
+        }).forEach(function (product) { grid.appendChild(product); });
+      });
+      applyFilter(activeManufacturer, true);
     }
 
     buttons.forEach(function (button, index) {
@@ -207,6 +233,16 @@
         applyFilter(buttons[nextIndex].dataset.shopBrand, true);
         buttons[nextIndex].focus();
       });
+    });
+
+    if (search) search.addEventListener("input", function () { applyFilter(activeManufacturer, true); });
+    if (sort) sort.addEventListener("change", applySort);
+    if (clear) clear.addEventListener("click", function () {
+      if (search) search.value = "";
+      if (sort) sort.value = "curated";
+      applySort();
+      applyFilter("all", true);
+      if (search) search.focus();
     });
 
     applyFilter("all", false);

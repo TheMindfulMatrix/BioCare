@@ -3,7 +3,7 @@ name: Validate static site
 on:
   pull_request:
   push:
-    branches: [main, agent/v6-build]
+    branches: [main, agent/v6-build, agent/v7-product-first]
 
 permissions:
   contents: read
