@@ -57,6 +57,9 @@ jobs:
           base64 --decode reports/v6/finish-patch/dod-fix.b64 > /tmp/v6-dod-fix.patch
           test "$(sha256sum /tmp/v6-dod-fix.patch | cut -d' ' -f1)" = "bd43086e155833d145b44a590fbdf479649fb66407a327189db619426ba15d6a"
           git apply --whitespace=nowarn /tmp/v6-dod-fix.patch
+          base64 --decode reports/v6/finish-patch/dod-fix2.b64 > /tmp/v6-dod-fix2.patch
+          test "$(sha256sum /tmp/v6-dod-fix2.patch | cut -d' ' -f1)" = "1667d60328feff549be56e507f55104513b5637705b04cae5becb1cc098177ed"
+          git apply --whitespace=nowarn /tmp/v6-dod-fix2.patch
           python -m py_compile scripts/v6_finish_prepare.py scripts/v6_finish_verify.py scripts/v6_finish_browser_qa.py scripts/build.py scripts/validate.py
 
       - name: Create and verify V5.1 rollback tag
