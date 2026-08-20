@@ -5,8 +5,8 @@ This repository is a dependency-free static site published under the GitHub Page
 ## Content model
 
 - `content/site.json` is the source of truth for site copy, disclosures, page metadata, and brand relationships.
-- `content/catalog.json` is the single product source of truth. It records the six visitor-intent categories, 36 verified Zinzino products, exact SKUs, official public pages, partner-coded destinations, manufacturer catalog descriptions, formats, source/cutout paths, and broader fallback destinations.
-- The homepage Product Universe and generated `shop.html` both read from that catalog. Product pricing is intentionally excluded.
+- `content/catalog.json` is the single product source of truth. It currently inventories 53 products (45 active and 8 deferred), including 36 active Zinzino products and 9 active BioLimitless products, with exact SKUs, verified pricing, official source pages, partner-coded destinations, formats, source/cutout paths, and broader fallback destinations.
+- The homepage Product Universe and generated `shop.html` both read from that catalog. Product counts, pricing semantics, official source links, and commercial destinations are generated from the same canonical records.
 - Each product's `artwork` object reserves a stable Shelf background slot. Its `environment` selects a low-cost decorative treatment, while a verified `cutout` remains a separate foreground image. Keep `artwork.src` null until approved original editorial artwork, dimensions, and crops are supplied.
 - `content/library.json` is the single source of truth for Library categories, the article schema, publication status, and article records. An empty collection renders the visitor-facing coming-soon state.
 - `templates/index.html`, `templates/shop.html`, `templates/library.html`, `templates/start.html`, and `templates/article.html` contain page structure only. Shared navigation, footer, and metadata markup are generated centrally.

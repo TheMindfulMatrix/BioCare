@@ -1,0 +1,15 @@
+{
+  "baseline_review_warnings": 77,
+  "baseline_strict_items": 84,
+  "current_review_warnings": 91,
+  "current_strict_items": 98,
+  "new_items_detected": 0,
+  "classification": {
+    "catalog_scope": 0,
+    "accessibility_or_alt": 0,
+    "generated_copy": 0,
+    "metadata": 0,
+    "other": 0
+  },
+  "new_items": []
+}

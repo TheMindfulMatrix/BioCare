@@ -8,7 +8,7 @@ import html
 import json
 import re
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR_MARKER = '<meta name="generator" content="The Mindful Matrix static builder">'
@@ -91,6 +91,26 @@ def breadcrumb_schema(metadata: dict, items: list[tuple[str, str]]) -> dict:
             }
             for position, (name, path) in enumerate(items, start=1)
         ],
+    }
+
+
+def shop_collection_schema(metadata: dict, products: list[dict]) -> dict:
+    canonical = page_url(metadata, "shop.html")
+    return {
+        "@type": "CollectionPage",
+        "@id": canonical + "#collection",
+        "name": "Product Universe",
+        "url": canonical,
+        "description": "A curated catalog of optional wellness products organized by visitor intent.",
+        "isPartOf": {"@id": page_url(metadata, "#website")},
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": len(products),
+            "itemListElement": [
+                {"@type": "ListItem", "position": index, "name": product["name"], "url": canonical + f'#product-{product["id"]}'}
+                for index, product in enumerate(products, start=1)
+            ],
+        },
     }
 
 
@@ -327,14 +347,15 @@ def testing_workflow_markup() -> str:
       </div>'''
 
 
-def hero_actions_markup(product: dict, product_count: int) -> str:
+def hero_actions_markup(product: dict, product_count: int, affiliate_note: str) -> str:
     url = esc(product["destination"], attribute=True)
     return f'''{price_markup(product, context="hero")}
           <div class="hero-actions button-row">
-            <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">View {esc(product["name"])} ↗{external_note()}</a>
-            <a class="button button-secondary" href="#shelf">Shop all {product_count} options ↓</a>
+            <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">Start with the kit ↗{external_note()}</a>
+            <a class="button button-secondary" href="shop.html">Browse all {product_count} curated products →</a>
           </div>
-          <div class="hero-context"><span>Official product imagery</span><span>External Zinzino checkout</span><a href="#matrix">Want context first? Enter the Matrix ↓</a></div>'''
+          <div class="hero-context"><span>Information → Education → Action</span><span>Test → Understand → Decide</span><a href="#matrix">Just browsing? Enter the Matrix ↓</a></div>
+          <p id="hero-affiliate-disclosure" class="hero-affiliate-note" data-affiliate-disclosure>{esc(affiliate_note)}</p>'''
 
 
 def hero_product_markup(product: dict) -> str:
@@ -434,42 +455,44 @@ def money(value: int | float) -> str:
     return f"${number:,.0f}" if number.is_integer() else f"${number:,.2f}"
 
 
+def affiliate_source_url(product: dict) -> str:
+    """Return the official manufacturer source with the established partner attribution."""
+    source = product["price"].get("affiliate_price_source") or product["price"]["official_price_source"]
+    if product["manufacturer"] == "Zinzino":
+        return source.replace("/shop/site/US/en-US/", "/shop/2021428066/us/en-us/", 1)
+    if product["manufacturer"] == "BioLimitless":
+        parsed = urlsplit(source)
+        query = parse_qsl(parsed.query, keep_blank_values=True)
+        if not any(key == "me" for key, _ in query):
+            query.append(("me", "matrix"))
+        return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), parsed.fragment))
+    return source
+
+
 def price_markup(product: dict, *, context: str = "detail") -> str:
     price = product["price"]
     model = price["pricing_model"]
     items: list[str] = []
-
     def price_item(value: str, label: str, role: str) -> str:
         return f'<span class="product-price__item product-price__item--{role}" data-price-role="{role}"><strong>{value}</strong> {label}</span>'
-
     if model == "starter_subscription":
-        items = [
-            price_item(money(price["start_price"]), esc(price["start_label"]), "primary"),
-            price_item(f'{money(price["recurring_price"])}/mo', esc(price["recurring_label"]), "supporting"),
-        ]
+        items = [price_item(money(price["start_price"]), esc(price["start_label"]), "primary"), price_item(f'{money(price["recurring_price"])}/mo', esc(price["recurring_label"]), "supporting")]
     elif model == "retail_premier":
-        if price.get("premier_price") is not None:
-            items = [
-                price_item(money(price["premier_price"]), "Premier price", "primary"),
-                price_item(money(price["retail_price"]), "retail", "reference"),
-            ]
-        else:
-            items = [price_item(money(price["retail_price"]), "retail", "primary")]
+        items = [price_item(money(price["premier_price"]), "Premier price", "primary"), price_item(money(price["retail_price"]), "retail", "reference")] if price.get("premier_price") is not None else [price_item(money(price["retail_price"]), "retail", "primary")]
     elif model == "one_time_autoship":
-        items = [
-            price_item(f'{money(price["autoship_price"])}/mo', "Subscribe &amp; Save", "primary"),
-            price_item(money(price["one_time_price"]), "one-time", "reference"),
-        ]
+        items = [price_item(f'{money(price["autoship_price"])}/mo', "Subscribe &amp; Save", "primary"), price_item(money(price["one_time_price"]), "one-time", "reference")]
     elif model == "one_time_range":
         items = [price_item(f'{money(price["one_time_price_min"])}–{money(price["one_time_price_max"])}', "one-time · format varies", "primary")]
     else:
         items = [price_item(money(price["one_time_price"]), "one-time", "primary")]
     verified = esc(price["price_verified_at"], attribute=True)
-    source = esc(price["official_price_source"], attribute=True)
+    source = esc(affiliate_source_url(product), attribute=True)
+    product_name = esc(product["name"], attribute=True)
     helper = ""
     if context == "detail" and product["manufacturer"] == "Zinzino" and price.get("premier_price") is not None:
         helper = '<small>Premier pricing may require an eligible Premier purchase or customer status. Checkout reflects the current applicable price.</small>'
-    return f'<div class="product-price product-price--{esc(context, attribute=True)}" data-price-record data-price-model="{esc(model, attribute=True)}" data-price-verified="{verified}"><div>{"".join(items)}</div>{helper}<a href="{source}" target="_blank" rel="noopener noreferrer" aria-label="Official price source (opens in a new tab)">Official price source ↗{external_note()}</a></div>'
+    disclosure_id = "shop-affiliate-disclosure" if context == "compact" else ("hero-affiliate-disclosure" if context == "hero" else "shelf-affiliate-disclosure")
+    return f'<div class="product-price product-price--{esc(context, attribute=True)}" data-price-record data-price-model="{esc(model, attribute=True)}" data-price-verified="{verified}"><div>{"".join(items)}</div>{helper}<a class="product-price__source" href="{source}" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="{disclosure_id}" aria-label="Official price source for {product_name} (opens in a new tab)">Official price source ↗{external_note()}</a></div>'
 
 
 def product_reference(product: dict, *, prefix: str = "") -> str:
@@ -512,6 +535,36 @@ def universe_product_markup(product: dict, *, index: int, active: bool = False) 
       </article>'''
 
 
+def universe_product_payload(product: dict, *, index: int) -> dict:
+    return {
+        "id": product["id"], "index": index, "name": product["name"], "manufacturer": product["manufacturer"], "sku": product.get("sku"),
+        "intent": product["intent"], "category": product["category"], "productKind": product["productKind"], "variantLabel": product["variantLabel"],
+        "description": product["description"], "whyItsHere": product["whyItsHere"], "environment": product["environment"], "destination": product["destination"],
+        "cta": product["cta"], "price": {**product["price"], "affiliate_price_source": affiliate_source_url(product)}, "cutout": product.get("cutout"),
+        "artwork": product.get("artwork"), "relatedEducation": product.get("relatedEducation"),
+    }
+
+
+def universe_data_markup(products: list[dict]) -> str:
+    payload = [universe_product_payload(product, index=index) for index, product in enumerate(products, start=1)]
+    serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    return f'<script type="application/json" data-universe-data>{serialized}</script>'
+
+
+def product_label_panel_markup(product: dict, label_record: dict | None) -> str:
+    if not label_record or label_record.get("status") != "approved":
+        return ""
+    ingredients = label_record.get("ingredients", [])
+    rows=[]
+    for ingredient in ingredients:
+        amount=ingredient.get("amount")
+        amount_text=f'{esc(amount)} {esc(ingredient.get("unit", ""))}'.strip() if ingredient.get("disclosed", amount is not None) and amount is not None else "Amount not disclosed by manufacturer."
+        rows.append(f'<li><span>{esc(ingredient["ingredient"])}</span><strong>{amount_text}</strong></li>')
+    source=esc(label_record["source_url"],attribute=True); checked=esc(label_record["checked_date"])
+    serving=esc(label_record.get("serving_size") or "Not stated"); servings=esc(label_record.get("servings_per_container") or "Not stated")
+    return f'''<details class="product-label-panel"><summary>View full label information</summary><div class="product-label-panel__body"><dl><div><dt>Serving size</dt><dd>{serving}</dd></div><div><dt>Servings per container</dt><dd>{servings}</dd></div></dl><ul>{"".join(rows)}</ul><p>Checked {checked} against the official manufacturer source.</p><a href="{source}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Full label source for {esc(product["name"], attribute=True)} (opens in a new tab)">View manufacturer label source ↗{external_note()}</a></div></details>'''
+
+
 def shop_intent_nav_markup(intents: list[dict], products: list[dict]) -> str:
     counts = {intent["id"]: sum(1 for product in products if product["intent"] == intent["id"]) for intent in intents}
     return "".join(
@@ -520,30 +573,27 @@ def shop_intent_nav_markup(intents: list[dict], products: list[dict]) -> str:
     )
 
 
-def shop_product_card_markup(product: dict, *, index: int) -> str:
+def shop_product_card_markup(product: dict, *, index: int, label_record: dict | None = None) -> str:
     related = product.get("relatedEducation")
-    related_markup = f'<a class="shop-product__learn" href="{esc(related["href"], attribute=True)}">{esc(related["label"])} →</a>' if related else ""
+    related_markup = f'<a class="shop-product__learn" href="{esc(related["href"], attribute=True)}" aria-label="{esc(related["label"], attribute=True)} for {esc(product["name"], attribute=True)}">{esc(related["label"])} →</a>' if related else ""
     name_modifier = product_name_modifier(product["name"])
     sku_attribute = f' data-product-sku="{esc(product["sku"], attribute=True)}"' if product.get("sku") else ""
-    return f'''<article class="shop-product{name_modifier}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}"{sku_attribute} data-reveal>
-        <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product)}</div><small>{product_reference(product)}</small></div>
-        <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>{price_markup(product, context="compact")}<dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl>{biolimitless_disclosure(product)}<div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
+    eager = index <= 3
+    return f'''<article id="product-{esc(product["id"], attribute=True)}" class="shop-product{name_modifier}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}"{sku_attribute} data-reveal>
+        <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product, eager=eager)}</div><small>{product_reference(product)}</small></div>
+        <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>{price_markup(product, context="compact")}<dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl>{product_label_panel_markup(product, label_record)}{biolimitless_disclosure(product)}<div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer" aria-label="{esc(product["cta"], attribute=True)}: {esc(product["name"], attribute=True)} (opens in a new tab)">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
       </article>'''
 
 
-def shop_groups_markup(catalog: dict) -> str:
-    groups: list[str] = []
-    product_index = 0
-    for position, intent in enumerate(catalog["intents"]):
-        products = [product for product in active_products(catalog) if product["intent"] == intent["id"]]
-        cards: list[str] = []
+def shop_groups_markup(catalog: dict, label_records: dict[str, dict]) -> str:
+    groups=[]; product_index=0
+    for position,intent in enumerate(catalog["intents"]):
+        products=[product for product in active_products(catalog) if product["intent"]==intent["id"]]
+        cards=[]
         for product in products:
-            product_index += 1
-            cards.append(shop_product_card_markup(product, index=product_index))
-        tone = "section-dark" if position % 2 == 0 else "section-warm"
-        groups.append(
-            f'''<section id="intent-{esc(intent["id"], attribute=True)}" class="shop-group {tone} section-pad" aria-labelledby="intent-{esc(intent["id"], attribute=True)}-title" data-shop-group data-environment="{esc(intent["environment"], attribute=True)}"><div class="container-wide"><header class="shop-group__heading" data-reveal><div><p class="section-kicker">Intent {esc(intent["index"])}</p><h2 id="intent-{esc(intent["id"], attribute=True)}-title">{esc(intent["name"])}</h2></div><p>{esc(intent["description"])}</p><span data-shop-group-count>{len(products):02d} verified products</span></header><div class="shop-group__grid">{"".join(cards)}</div><p class="shop-group__empty" data-shop-empty hidden>No products from this manufacturer in this intent.</p></div></section>'''
-        )
+            product_index+=1; cards.append(shop_product_card_markup(product,index=product_index,label_record=label_records.get(product["id"])))
+        tone="section-dark" if position%2==0 else "section-warm"
+        groups.append(f'''<section id="intent-{esc(intent["id"], attribute=True)}" class="shop-group {tone} section-pad" aria-labelledby="intent-{esc(intent["id"], attribute=True)}-title" data-shop-group data-environment="{esc(intent["environment"], attribute=True)}"><div class="container-wide"><header class="shop-group__heading" data-reveal><div><p class="section-kicker">Intent {esc(intent["index"])}</p><h2 id="intent-{esc(intent["id"], attribute=True)}-title">{esc(intent["name"])}</h2></div><p>{esc(intent["description"])}</p><span data-shop-group-count>{len(products):02d} curated products</span></header><div class="shop-group__grid">{"".join(cards)}</div><p class="shop-group__empty" data-shop-empty hidden>No products from this manufacturer in this intent.</p></div></section>''')
     return "".join(groups)
 
 
@@ -858,6 +908,7 @@ def article_replacements(
         "{{ARTICLE_DEK}}": esc(display_dek),
         "{{ARTICLE_BYLINE}}": " · ".join(byline),
         "{{ARTICLE_DISCLOSURE}}": f'<p class="article-disclosure" role="note">{esc(article["educationDisclosure"])}</p>' if article.get("educationDisclosure") else "",
+        "{{ARTICLE_AFFILIATE_DISCLOSURE}}": "" if preview else f'<p class="article-affiliate-disclosure" role="note" data-affiliate-disclosure>{esc(data["site"]["affiliateDisclosure"])}</p>',
         "{{ARTICLE_HERO}}": hero_markup,
         "{{ARTICLE_TOC}}": article_toc_markup(article),
         "{{ARTICLE_TAKEAWAYS}}": takeaways,
@@ -897,7 +948,7 @@ def build_home(data: dict, library: dict) -> None:
         "{{HERO_HEADLINE}}": line_markup(home["hero"]["headline"]),
         "{{HERO_SUPPORT}}": esc(home["hero"]["supportingLine"]),
         "{{HERO_COPY}}": esc(home["hero"]["copy"]),
-        "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products)),
+        "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products), site["affiliateSourceDisclosure"]),
         "{{HERO_PRODUCT}}": hero_product_markup(featured),
         "{{PROBLEM_HEADLINE}}": line_markup(home["problem"]["headline"]),
         "{{PROBLEM_COPY}}": esc(home["problem"]["copy"]),
@@ -938,10 +989,8 @@ def build_home(data: dict, library: dict) -> None:
         "{{SHELF_COUNT}}": f'{len(products):02d} curated products',
         "{{PRODUCT_COUNT}}": str(len(public_products)),
         "{{UNIVERSE_INTENTS}}": universe_intents_markup(catalog),
-        "{{UNIVERSE_PRODUCTS}}": "\n".join(
-            universe_product_markup(product, index=index, active=product["id"] == data["featuredProductId"])
-            for index, product in enumerate(products, start=1)
-        ),
+        "{{UNIVERSE_PRODUCTS}}": universe_product_markup(featured, index=products.index(featured) + 1, active=True),
+        "{{UNIVERSE_DATA}}": universe_data_markup(products),
         "{{UNIVERSE_ROSTER}}": universe_roster_markup(products, data["featuredProductId"]),
         "{{STANDARDS_HEADING}}": esc(home["standards"]["heading"]),
         "{{STANDARDS_LIST}}": "\n        ".join(standard_markup(item, interactive=True, active=index == 0) for index, item in enumerate(home["standards"]["principles"])),
@@ -1017,35 +1066,16 @@ def build_start(data: dict) -> None:
     write_output(ROOT / "start.html", render_template("start.html", replacements))
 
 
-def build_shop(data: dict) -> None:
-    metadata = data["site"]["metadata"]
-    page = metadata["pages"]["shop"]
-    catalog = data["catalog"]
-    products = active_products(catalog)
-    replacements = {
-        "{{DOCUMENT_HEAD}}": document_head_markup(
-            metadata,
-            prefix="",
-            title=page["title"],
-            description=page["description"],
-            path=page["path"],
-            structured_data=[
-                organization_schema(metadata),
-                website_schema(metadata),
-                breadcrumb_schema(metadata, [("Home", ""), ("Product Universe", page["path"])]),
-            ],
-        ),
-        "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current="shop"),
-        "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
-        "{{SHOP_COUNT}}": f'{len(products):02d}',
-        "{{VERIFIED_DATE}}": esc(catalog["verifiedDate"]),
-        "{{SHOP_INTENT_NAV}}": shop_intent_nav_markup(catalog["intents"], products),
-        "{{SHOP_GROUPS}}": shop_groups_markup(catalog),
-        "{{SHOP_FALLBACKS}}": shop_fallbacks_markup(catalog["fallbackDestinations"]),
-        "{{AFFILIATE_DISCLOSURE}}": esc(data["site"]["affiliateDisclosure"]),
-        "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}": esc(data["site"]["biolimitlessAffiliateDisclosure"]),
-        "{{PRICING_DISCLOSURE}}": esc(data["site"]["pricingDisclosure"]),
-        "{{DISCLOSURE}}": esc(data["site"]["disclosure"]),
+def build_shop(data: dict, product_labels: dict) -> None:
+    metadata=data["site"]["metadata"]; page=metadata["pages"]["shop"]; catalog=data["catalog"]; products=active_products(catalog)
+    label_records={record["product_id"]:record for record in product_labels.get("records",[])}
+    replacements={
+        "{{DOCUMENT_HEAD}}": document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Product Universe",page["path"])]),shop_collection_schema(metadata,products)]),
+        "{{SHARED_HEADER}}": shared_header_markup(data,prefix="",current="shop"), "{{SHARED_FOOTER}}": shared_footer_markup(data,prefix=""),
+        "{{SHOP_COUNT}}":f'{len(products):02d}', "{{VERIFIED_DATE}}":esc(catalog["verifiedDate"]), "{{SHOP_INTENT_NAV}}":shop_intent_nav_markup(catalog["intents"],products),
+        "{{SHOP_GROUPS}}":shop_groups_markup(catalog,label_records), "{{SHOP_FALLBACKS}}":shop_fallbacks_markup(catalog["fallbackDestinations"]),
+        "{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"]), "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}":esc(data["site"]["biolimitlessAffiliateDisclosure"]),
+        "{{PRICING_DISCLOSURE}}":esc(data["site"]["pricingDisclosure"]), "{{FDA_DISCLAIMER}}":esc(data["site"]["fdaDisclaimer"]), "{{DISCLOSURE}}":esc(data["site"]["disclosure"]),
     }
     write_output(ROOT / "shop.html", render_template("shop.html", replacements))
 
@@ -1110,14 +1140,18 @@ def main() -> None:
     data = load_json(ROOT / "content" / "site.json")
     library = load_json(ROOT / "content" / "library.json")
     catalog = load_json(ROOT / "content" / "catalog.json")
+    product_labels = load_json(ROOT / "content" / "product-labels.json")
+    manufacturer_documents = load_json(ROOT / "content" / "manufacturer-documents.json")
     data["catalog"] = catalog
+    data["productLabels"] = product_labels
+    data["manufacturerDocuments"] = manufacturer_documents
     data["affiliate"] = catalog["affiliate"]
     data["products"] = catalog["products"]
     data["featuredProductId"] = catalog["featuredProductId"]
     build_home(data, library)
     build_library(data, library)
     build_start(data)
-    build_shop(data)
+    build_shop(data, product_labels)
     build_articles(data, library)
     build_crawl_files(data, library)
     if args.preview_article:

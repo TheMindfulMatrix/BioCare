@@ -12,7 +12,7 @@ import sys
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import parse_qsl, unquote, urlencode, urlparse, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 errors: list[str] = []
@@ -128,6 +128,27 @@ def webp_dimensions(path: Path) -> tuple[int, int] | None:
             return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
         offset = payload + size + (size % 2)
     return None
+
+
+def webp_has_alpha(path: Path) -> bool:
+    """Return whether a WebP container declares or carries an alpha channel."""
+    data = path.read_bytes()
+    if len(data) < 21 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return False
+    offset = 12
+    while offset + 8 <= len(data):
+        chunk = data[offset:offset + 4]
+        size = int.from_bytes(data[offset + 4:offset + 8], "little")
+        payload = offset + 8
+        if chunk == b"VP8X" and payload < len(data):
+            return bool(data[payload] & 0x10)
+        if chunk == b"ALPH":
+            return True
+        if chunk == b"VP8L" and payload + 5 <= len(data) and data[payload] == 0x2F:
+            bits = int.from_bytes(data[payload + 1:payload + 5], "little")
+            return bool((bits >> 28) & 1)
+        offset = payload + size + (size % 2)
+    return False
 
 
 def image_dimensions(path: Path) -> tuple[int, int] | None:
@@ -401,7 +422,31 @@ def validate_content(site: dict, library: dict) -> None:
                     check(provenance.get("sha256", "").lower() == sha256(source_path), f"{label}: official source SHA-256 mismatch")
                     check(image_dimensions(source_path) == (expected_dimensions.get("width"), expected_dimensions.get("height")), f"{label}: provenance dimensions mismatch")
                     production_filename = provenance.get("production_filename")
-                    if production_filename:
+                    optimization = cutout.get("v6Optimization") or {}
+                    if optimization:
+                        original_rel = optimization.get("originalSrc")
+                        original_path = ROOT / (original_rel or "missing")
+                        check(product.get("manufacturer") == "Zinzino", f"{label}: V6 product-image derivatives are limited to Zinzino assets")
+                        check(optimization.get("status") == "approved", f"{label}: V6 product-image derivative requires approved status")
+                        check(bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(optimization.get("checkedDate", "")))), f"{label}: V6 product-image derivative requires a checked date")
+                        check(bool(original_rel) and original_path.is_file(), f"{label}: V6 product-image derivative requires its original production asset")
+                        check(cutout.get("src", "").startswith("assets/product-cutouts/zinzino-v6/"), f"{label}: approved V6 cutout must remain in the dedicated derivative directory")
+                        check(cutout_path.suffix.lower() == ".webp", f"{label}: approved V6 product-image derivative must be WebP")
+                        check("no upscale" in str(optimization.get("method", "")).lower(), f"{label}: V6 product-image method must declare no-upscale processing")
+                        if cutout_path.is_file():
+                            check(webp_has_alpha(cutout_path), f"{label}: approved V6 WebP must preserve alpha transparency")
+                        if original_path.is_file() and cutout_path.is_file():
+                            original_dimensions = image_dimensions(original_path)
+                            derivative_dimensions = image_dimensions(cutout_path)
+                            check(original_dimensions is not None, f"{label}: original production image dimensions could not be read")
+                            check(derivative_dimensions is not None, f"{label}: V6 derivative dimensions could not be read")
+                            if original_dimensions and derivative_dimensions:
+                                check(derivative_dimensions[0] <= original_dimensions[0] and derivative_dimensions[1] <= original_dimensions[1], f"{label}: V6 product-image derivative must not upscale its original production asset")
+                        if production_filename:
+                            check(production_filename == original_rel, f"{label}: provenance original production filename mismatch")
+                            if original_path.is_file() and "byte-for-byte copy" in provenance.get("alteration", ""):
+                                check(sha256(original_path) == sha256(source_path), f"{label}: declared untouched original production copy differs from official source")
+                    elif production_filename:
                         check(production_filename == cutout.get("src"), f"{label}: provenance production filename mismatch")
                         if cutout_path.is_file() and "byte-for-byte copy" in provenance.get("alteration", ""):
                             check(sha256(cutout_path) == sha256(source_path), f"{label}: declared untouched production copy differs from official source")
@@ -437,6 +482,28 @@ def validate_content(site: dict, library: dict) -> None:
                     check(image_dimensions(derivative_path) == (derivative.get("width"), derivative.get("height")), f"{record.get('id', 'unknown visual')}: derivative dimensions mismatch")
         for article in (item for item in library["articles"] if item.get("status") == "published"):
             check(article.get("hero", {}).get("src") in derivative_paths and article.get("hero", {}).get("srcSmall") in derivative_paths, f"{article['slug']}: responsive hero files must be covered by provenance")
+
+
+def attributed_source_url(product: dict) -> str:
+    source = product["price"].get("affiliate_price_source") or product["price"]["official_price_source"]
+    if product["manufacturer"] == "Zinzino":
+        return source.replace("/shop/site/US/en-US/", "/shop/2021428066/us/en-us/", 1)
+    if product["manufacturer"] == "BioLimitless":
+        parsed = urlsplit(source); query = parse_qsl(parsed.query, keep_blank_values=True)
+        if not any(key == "me" for key, _ in query): query.append(("me", "matrix"))
+        return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), parsed.fragment))
+    return source
+
+
+def extract_universe_payload(home: str) -> list[dict]:
+    match = re.search(r'<script type="application/json" data-universe-data>(.*?)</script>', home, flags=re.S)
+    check(bool(match), "Homepage requires one build-generated Product Universe data payload")
+    if not match: return []
+    try: payload = json.loads(match.group(1))
+    except json.JSONDecodeError as error:
+        check(False, f"Homepage Product Universe data is invalid JSON: {error}"); return []
+    check(isinstance(payload, list), "Homepage Product Universe payload must be a list")
+    return payload if isinstance(payload, list) else []
 
 
 def public_pages(library: dict) -> list[Path]:
@@ -538,7 +605,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
             check(site["site"]["disclosure"] in generated, f"{page.relative_to(ROOT)}: affiliate disclosure must remain visible")
             fda_disclaimer = site["site"]["fdaDisclaimer"]
             partner_disclosure = site["site"]["disclosure"]
-            check(generated.count(fda_disclaimer) == 1, f"{page.relative_to(ROOT)}: exact FDA disclaimer must appear once")
+            expected_fda_count = 2 if page.name == "shop.html" else 1
+            check(generated.count(fda_disclaimer) == expected_fda_count, f"{page.relative_to(ROOT)}: exact FDA disclaimer count must match the approved footer/proximity pattern")
             expected_footer_disclosures = f'<p class="fine" data-fda-disclaimer>{fda_disclaimer}</p><p class="fine">{partner_disclosure}</p>'
             check(expected_footer_disclosures in generated, f"{page.relative_to(ROOT)}: FDA disclaimer must immediately precede the footer partner-identification line")
 
@@ -585,84 +653,93 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
 
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     affiliate_disclosure = site["site"]["affiliateDisclosure"]
+    affiliate_source_disclosure = site["site"].get("affiliateSourceDisclosure", "")
     biolimitless_disclosure = site["site"]["biolimitlessAffiliateDisclosure"]
     pricing_disclosure = site["site"]["pricingDisclosure"]
     active_products = [product for product in site["products"] if product.get("commercial_status") == "active"]
     deferred_products = [product for product in site["products"] if product.get("commercial_status") == "deferred_compliance_review"]
     curated_products = [product for product in active_products if product.get("curated", True)]
-    cutout_count = sum(1 for product in curated_products if product.get("cutout"))
+    check(len(curated_products) == len(active_products), "Every active product must be curated in V6")
     featured = next(product for product in site["products"] if product["id"] == site["featuredProductId"])
-    testing_cutout_count = 1 if featured.get("cutout") else 0
-    hero_cutout_count = 1 if featured.get("cutout") else 0
-    check(home.count('data-image-role="official-product-cutout"') == cutout_count + testing_cutout_count + hero_cutout_count, "Every configured Product Universe, testing, and hero cutout must render as a separate foreground image")
-    check(home.count('data-universe-product=') == len(curated_products), "Homepage Product Universe must render only the active curated product set")
-    check(home.count("data-artwork-state=") == len(curated_products), "Every curated Product Universe item requires a stable environmental artwork slot")
-    check(home.count("data-price-record") == len(curated_products) + 2, "Homepage must price every curated product plus the hero and testing preview")
+    universe_payload = extract_universe_payload(home); payload_by_id = {record.get("id"): record for record in universe_payload if isinstance(record, dict)}
+    expected_ids = {product["id"] for product in curated_products}
+    check(len(universe_payload) == len(curated_products), "Homepage Product Universe payload must contain every curated active product exactly once")
+    check(set(payload_by_id) == expected_ids, "Homepage Product Universe payload IDs must exactly match curated active products")
+    check(home.count('data-universe-product=') == 1, "Homepage must emit only one progressively enhanced Product Universe panel")
+    check(home.count('data-artwork-state=') == 1, "Homepage must emit only the active Product Universe artwork slot")
+    check(home.count('data-image-role="official-product-cutout"') == 3, "Homepage must render only hero, testing, and active Product Universe cutouts initially")
+    check(home.count("data-price-record") == 3, "Homepage must render only hero, testing, and active Product Universe price records initially")
     check(home.count("data-universe-intent=") == len(site["catalog"]["intents"]), "Homepage must expose every approved product intent")
     check('data-universe-status aria-live="polite" aria-atomic="true"' in home, "Product Universe requires a concise live selected-state announcement")
-    universe_start = home.find('<div class="product-universe"')
-    universe_end = home.find('<section id="problem"')
-    universe_markup = home[universe_start:universe_end]
-    shelf_start = home.find('<section id="shelf"')
-    check(home.count(affiliate_disclosure) == 1, "Homepage must contain the exact affiliate disclosure once")
-    check(shelf_start < home.find(affiliate_disclosure) < universe_start, "Homepage affiliate disclosure must appear at the start of Product Universe before its commercial controls")
-    check(home.count(biolimitless_disclosure) == 1 + sum(1 for product in curated_products if product["manufacturer"] == "BioLimitless"), "Homepage must disclose the BioLimitless relationship globally and beside each recommendation")
+    check(home.count('data-universe-data') == 1, "Homepage requires exactly one canonical Product Universe payload")
+    check(home.count('class="product-universe__why"') == 1, "Initial Product Universe fallback must explain why the featured item is included")
+    universe_start = home.find('<div class="product-universe"'); shelf_start = home.find('<section id="shelf"')
+    check(home.count(affiliate_disclosure) == 1, "Homepage must contain the approved full affiliate disclosure once")
+    check(shelf_start < home.find(affiliate_disclosure) < universe_start, "Homepage full affiliate disclosure must appear before Product Universe controls")
+    if affiliate_source_disclosure: check(home.count(affiliate_source_disclosure) == 1 and home.find(affiliate_source_disclosure) < shelf_start, "Homepage requires a concise above-the-fold affiliate disclosure")
+    check(home.count(biolimitless_disclosure) == 1, "Homepage must contain the global BioLimitless relationship disclosure; dynamic cards add contextual disclosure at runtime")
     check(home.count(pricing_disclosure) == 1 and shelf_start < home.find(pricing_disclosure) < universe_start, "Homepage pricing disclosure must appear before Product Universe controls")
+    universe_markup = home[universe_start:home.find('<section id="problem"')]
     eager_universe_cutouts = re.findall(r'<img[^>]+loading="eager"[^>]+data-image-role="official-product-cutout"', universe_markup)
     lazy_universe_cutouts = re.findall(r'<img[^>]+loading="lazy"[^>]+data-image-role="official-product-cutout"', universe_markup)
-    check(len(eager_universe_cutouts) == 1 and len(lazy_universe_cutouts) == len(curated_products) - 1, "Homepage must eagerly load only the active Product Universe cutout")
+    check(len(eager_universe_cutouts) == 1 and not lazy_universe_cutouts, "Homepage must initially load only the active Product Universe cutout")
     check(home.count("data-library-article") == len([article for article in library["articles"] if article.get("status") == "published"]), "Homepage Library count must match published content")
     check('data-library-state="empty"' in home if not any(article.get("status") == "published" for article in library["articles"]) else 'data-library-state="published"' in home, "Homepage Library state mismatch")
     check("content model is ready" not in home.lower(), "Developer-facing Library language must not be published")
     check('data-media-status="awaiting-original-photography"' in home, "Founder media placeholder must remain")
     check("<span>Trust isn't something we claim.</span><span>It's something we earn.</span>" in home, "Standards payoff must remain")
     check("$127" in home and "$47/mo" in home, "Verified flagship start and monthly pricing must render")
-    check('assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png' in home, "Verified Balance cutout must remain the rendered foreground")
+    featured_cutout_src = featured.get("cutout", {}).get("src", "")
+    check(bool(featured_cutout_src) and featured_cutout_src in home, "The canonical featured Balance cutout must remain the rendered foreground")
     check('assets/artwork/shelf/balance-test-basic-kit-cinematic.webp' in home, "Approved Balance artwork must remain")
-    testing_guide = 'href="library/should-you-test-your-omega-3-levels.html"'
-    featured_destination = next(product["destination"] for product in site["products"] if product["id"] == site["featuredProductId"])
-    check(testing_guide in home, "Testing section must link to the testing education guide")
+    check('href="library/should-you-test-your-omega-3-levels.html"' in home, "Testing section must link to the testing education guide")
     check('data-matrix-field' in home, "Homepage must include the progressively enhanced Matrix field")
     check(home.find('<section id="shelf"') < home.find('<section id="problem"'), "The Product Universe must follow the hero without an educational gate")
-    check(home.count(f'href="{featured_destination}"') >= 3, "Featured product must be directly reachable from navigation, hero, and product content")
-    check(f'Shop all {len(active_products)} options' in home, "Hero must expose the complete active Shop count")
-    check(home.count('class="product-universe__why"') == len(curated_products), "Every curated Product Universe item must show why it is included before its commercial link")
-    check(f'href="{featured_destination}" target="_blank" rel="sponsored noopener noreferrer">{featured["cta"]}' in home, "Primary navigation must provide a direct sponsored route to the featured product")
+    featured_destination = featured["destination"]
+    check(home.count(f'href="{featured_destination}"') >= 3, "Featured product must remain directly reachable from navigation, hero, and initial product content")
+    check(f'Browse all {len(active_products)} curated products' in home, "Hero must expose the complete curated Shop count")
+    check(f'href="{featured_destination}" target="_blank" rel="sponsored noopener noreferrer">{featured["cta"]}' in home, "Initial Product Universe card must provide a direct sponsored route")
     for product in curated_products:
-        check(product["destination"] in home, f"{product['id']}: destination missing from homepage")
-        escaped_destination = re.escape(product["destination"])
-        check(bool(re.search(rf'href="{escaped_destination}"[^>]+rel="[^"]*sponsored', home)), f"{product['id']}: commercial link must be marked sponsored")
-    shop = (ROOT / "shop.html").read_text(encoding="utf-8")
-    shop_catalog_start = shop.find('<div class="shop-catalog">')
+        record = payload_by_id.get(product["id"], {})
+        check(record.get("destination") == product["destination"], f"{product['id']}: Product Universe payload destination mismatch")
+        check(record.get("whyItsHere") == product["whyItsHere"], f"{product['id']}: Product Universe payload must preserve curation reasoning")
+        check(record.get("price", {}).get("affiliate_price_source") == attributed_source_url(product), f"{product['id']}: Product Universe payload source attribution mismatch")
+    enhancements_text = (ROOT / "assets" / "js" / "enhancements.js").read_text(encoding="utf-8")
+    check('sponsored noopener noreferrer' in enhancements_text, "Dynamic Product Universe commercial links must be sponsored")
+
+    shop = (ROOT / "shop.html").read_text(encoding="utf-8"); shop_catalog_start = shop.find('<div class="shop-catalog">')
     check(shop.count(affiliate_disclosure) == 1, "Shop must contain the exact affiliate disclosure once")
     check(shop.find(affiliate_disclosure) < shop_catalog_start, "Shop affiliate disclosure must appear before the product catalog")
     check(shop.count(biolimitless_disclosure) == 1 + sum(1 for product in active_products if product["manufacturer"] == "BioLimitless"), "Shop must disclose the BioLimitless relationship globally and beside every BioLimitless commercial card")
     check(shop.count(pricing_disclosure) == 1 and shop.find(pricing_disclosure) < shop_catalog_start, "Shop pricing disclosure must appear before the product catalog")
+    check(shop.count(site["site"]["fdaDisclaimer"]) == 2 and shop.find(site["site"]["fdaDisclaimer"]) < shop_catalog_start, "Shop must place the exact FDA disclaimer near the catalog and retain it in the footer")
     check(shop.count('data-shop-product') == len(active_products), "Shop must render every active commercial product exactly once")
     check(shop.count('data-product-sku=') == sum(1 for product in active_products if product.get("sku")), "Shop must render every published SKU exactly once without inventing BioLimitless SKUs")
     check(shop.count('data-image-role="official-product-cutout"') == len(active_products), "Shop must render every active official product image as a separate foreground")
+    check(shop.count('loading="eager"') == min(3, len(active_products)), "Shop must eagerly load only the first visible product images")
+    check(shop.count('loading="lazy"') == max(0, len(active_products) - 3), "Shop must lazy-load below-the-fold product images")
     check(shop.count("data-price-record") == len(active_products), "Shop must show one verified price record for every active commercial product")
     check(shop.count('data-price-role="primary"') == len(active_products), "Shop must give every active product one visually primary price")
-    expected_reference_prices = sum(
-        1
-        for product in active_products
-        if (product["price"]["pricing_model"] == "retail_premier" and product["price"].get("premier_price") is not None)
-        or product["price"]["pricing_model"] == "one_time_autoship"
-    )
+    expected_reference_prices = sum(1 for product in active_products if (product["price"]["pricing_model"] == "retail_premier" and product["price"].get("premier_price") is not None) or product["price"]["pricing_model"] == "one_time_autoship")
     check(shop.count('data-price-role="reference"') == expected_reference_prices, "Shop must reserve subdued reference pricing for products with a preferred verified price")
-    check(all(token in shop for token in ('data-shop-brand="all"', 'data-shop-brand="Zinzino"', 'data-shop-brand="BioLimitless"')), "Shop requires All, Zinzino and BioLimitless brand filters")
-    for intent in site["catalog"]["intents"]:
-        check(f'id="intent-{intent["id"]}"' in shop, f"Shop missing intent section: {intent['name']}")
+    check(shop.count('class="product-price__source"') == len(active_products), "Shop must render one attributed official-source link per product")
+    check(all(token in shop for token in ('data-shop-brand="all"','data-shop-brand="Zinzino"','data-shop-brand="BioLimitless"')), "Shop requires All, Zinzino and BioLimitless brand filters")
+    records = json_ld_records(shop, "shop.html"); collection = next((record for record in records if record.get("@type") == "CollectionPage"), {}); item_list = collection.get("mainEntity", {}) if isinstance(collection, dict) else {}
+    check(item_list.get("@type") == "ItemList" and item_list.get("numberOfItems") == len(active_products), "Shop structured data must describe the visible catalog as a CollectionPage/ItemList")
+    check(not any(record.get("@type") == "Product" for record in records), "Multi-product Shop must not publish Product rich-result objects")
+    for intent in site["catalog"]["intents"]: check(f'id="intent-{intent["id"]}"' in shop, f"Shop missing intent section: {intent['name']}")
     for product in active_products:
         check(shop.count(f'data-product-id="{product["id"]}"') == 1, f"{product['id']}: Shop product record must be unique")
-        if product.get("sku"):
-            check(shop.count(f'data-product-sku="{product["sku"]}"') == 1, f"{product['id']}: Shop SKU must be unique")
+        check(shop.count(f'id="product-{product["id"]}"') == 1, f"{product['id']}: Shop collection anchor must be unique")
+        if product.get("sku"): check(shop.count(f'data-product-sku="{product["sku"]}"') == 1, f"{product['id']}: Shop SKU must be unique")
         check(product["destination"] in shop, f"{product['id']}: destination missing from Shop")
+        source=attributed_source_url(product); check(source.replace("&","&amp;") in shop, f"{product['id']}: attributed official source missing from Shop")
+        escaped_source=re.escape(source.replace("&","&amp;")); escaped_name=re.escape(product["name"].replace("&","&amp;"))
+        check(bool(re.search(rf'<a class="product-price__source" href="{escaped_source}"[^>]+rel="sponsored noopener noreferrer"[^>]+aria-describedby="shop-affiliate-disclosure"[^>]+aria-label="Official price source for {escaped_name}', shop)), f"{product['id']}: official source must be sponsored, disclosed and contextually named")
     for product in deferred_products:
         check(product["destination"] not in home and product["destination"] not in shop, f"{product['id']}: deferred commercial destination leaked into public output")
-        check(f'data-product-id="{product["id"]}"' not in shop and f'data-universe-product="{product["id"]}"' not in home, f"{product['id']}: deferred product rendered publicly")
-    for fallback in site["catalog"]["fallbackDestinations"]:
-        check(fallback["destination"] in shop, f"{fallback['id']}: verified fallback destination missing from Shop")
+        check(f'data-product-id="{product["id"]}"' not in shop and product["id"] not in payload_by_id, f"{product['id']}: deferred product rendered publicly")
+    for fallback in site["catalog"]["fallbackDestinations"]: check(fallback["destination"] in shop, f"{fallback['id']}: verified fallback destination missing from Shop")
     css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     check("overflow-x: hidden" not in css, "Horizontal overflow must not be concealed in CSS")
     base_css = (ROOT / "assets" / "css" / "base.css").read_text(encoding="utf-8")
@@ -699,6 +776,10 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
         check(("datePublished" in article_record) == bool(article.get("publishedIso")), f"{article['slug']}: structured publication date must only use approved ISO data")
         check(("dateModified" in article_record) == bool(article.get("updatedIso")), f"{article['slug']}: structured modified date must only use approved ISO data")
         check("reviewedBy" not in article_record, f"{article['slug']}: structured data must not invent a reviewer")
+        check(article_page.count(affiliate_disclosure) == 1, f"{article['slug']}: approved affiliate disclosure must appear once in the article body")
+        disclosure_position = article_page.find(affiliate_disclosure); article_main = article_page.find('<main id="article-content"'); article_journey = article_page.find('id="article-journey"')
+        check(article_main <= disclosure_position < article_journey, f"{article['slug']}: affiliate disclosure must appear in the article body before optional commercial pathways")
+        check('class="article-affiliate-disclosure"' in article_page, f"{article['slug']}: affiliate disclosure must use the article-body disclosure pattern")
     start_page = (ROOT / "start.html").read_text(encoding="utf-8")
     for stage_id in ("information", "education", "action"):
         check(f'id="{stage_id}"' in start_page, f"Start Here missing orientation stage: {stage_id}")
@@ -719,11 +800,25 @@ def main() -> None:
     site = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
     library = json.loads((ROOT / "content" / "library.json").read_text(encoding="utf-8"))
     catalog = json.loads((ROOT / "content" / "catalog.json").read_text(encoding="utf-8"))
+    product_labels = json.loads((ROOT / "content" / "product-labels.json").read_text(encoding="utf-8"))
+    manufacturer_documents = json.loads((ROOT / "content" / "manufacturer-documents.json").read_text(encoding="utf-8"))
     site["catalog"] = catalog
+    site["productLabels"] = product_labels
+    site["manufacturerDocuments"] = manufacturer_documents
     site["affiliate"] = catalog["affiliate"]
     site["products"] = catalog["products"]
     site["featuredProductId"] = catalog["featuredProductId"]
     validate_content(site, library)
+    active_ids = {product["id"] for product in catalog["products"] if product.get("commercial_status") == "active"}
+    label_records = product_labels.get("records", [])
+    check({record.get("product_id") for record in label_records} == active_ids, "Product-label architecture must cover every active product exactly once")
+    check(len(label_records) == len(active_ids), "Product-label architecture must not duplicate active products")
+    for record in label_records:
+        check(record.get("status") in {"pending", "approved", "unavailable"}, f"{record.get('product_id')}: invalid product-label status")
+        check(str(record.get("source_url", "")).startswith("https://"), f"{record.get('product_id')}: product-label source must use HTTPS")
+        if record.get("status") == "approved": check(bool(record.get("checked_date")), f"{record.get('product_id')}: approved product-label data requires a checked date")
+    check(product_labels.get("status") == "PENDING USER FACTUAL APPROVAL", "Unapproved product-label dataset must remain explicitly pending")
+    check(manufacturer_documents.get("status") != "approved" or manufacturer_documents.get("records"), "Approved manufacturer-document data cannot be empty")
     validate_public_output(site, library, args.preview)
     from validate_compliance import validate_compliance
 

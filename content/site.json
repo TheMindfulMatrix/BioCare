@@ -5,7 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "v5-1-product-card-social",
+      "assetVersion": "v6-candidate",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -32,12 +32,12 @@
         "shop": {
           "path": "shop.html",
           "title": "Product Universe | The Mindful Matrix",
-          "description": "Explore verified Zinzino and BioLimitless products by visitor intent, with current official US pricing and transparent partner links."
+          "description": "Explore 45 carefully curated Zinzino and BioLimitless products by visitor intent, with current official US pricing and transparent partner links."
         }
       }
     },
     "eyebrow": "ZINZINO INDEPENDENT PARTNER",
-    "lede": "Test first. Then choose. Everything I use and recommend, in one place.",
+    "lede": "A practical system for getting informed, understanding what the information means, and choosing a next step that makes sense.",
     "instagram": {
       "label": "@the_mindful.matrix",
       "url": "https://www.instagram.com/the_mindful.matrix/"
@@ -47,7 +47,8 @@
     "affiliateDisclosure": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a commission on purchases made through them.",
     "biolimitlessAffiliateDisclosure": "BioLimitless links use the Matrix partner referral. I may earn compensation from qualifying purchases.",
     "pricingDisclosure": "Prices were checked against official US manufacturer pages on August 17, 2026. Prices, purchase options, and eligibility can change; the manufacturer checkout shows the current applicable price.",
-    "premierPricingNote": "Premier pricing may require an eligible Premier purchase or customer status. Checkout reflects the current applicable price."
+    "premierPricingNote": "Premier pricing may require an eligible Premier purchase or customer status. Checkout reflects the current applicable price.",
+    "affiliateSourceDisclosure": "Official manufacturer link. I may earn a commission if you purchase through it."
   },
   "brand": {
     "philosophy": "Information → Education → Action",
@@ -79,8 +80,8 @@
         "Test first.",
         "Then choose."
       ],
-      "supportingLine": "Your featured starting point is right here.",
-      "copy": "Go straight to the kit, browse every verified Shelf destination, or use the Matrix when you want more context. Education is here to support the decision—not stand between you and it."
+      "supportingLine": "A practical system for taking a more informed role in your wellness.",
+      "copy": "Get informed about your situation. Understand what the information means. Then decide what action makes sense. Start with a test, explore the evidence, or browse every curated product—without pretending every next step has to be a purchase."
     },
     "problem": {
       "headline": [
@@ -291,7 +292,7 @@
     "shelf": {
       "label": "The Product Universe",
       "heading": "Find the right starting point.",
-      "copy": "Move by intent, compare current official pricing, and inspect a curated set from both manufacturers. The complete verified catalog remains one step away."
+      "copy": "Move by intent, compare current official pricing, and inspect all 45 carefully curated products from both manufacturers in one transparent catalog."
     },
     "standards": {
       "heading": "You deserve to know why.",

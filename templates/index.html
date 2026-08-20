@@ -34,7 +34,7 @@
           <div class="product-universe__intro"><strong>{{SHELF_COUNT}}</strong><p class="section-copy">{{SHELF_COPY}}</p></div>
         </div>
         <div class="commercial-notes" data-reveal>
-          <p class="fine" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p>
+          <p id="shelf-affiliate-disclosure" class="fine" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p>
           <p class="fine" data-biolimitless-disclosure>{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}</p>
           <p class="fine" data-pricing-disclosure>{{PRICING_DISCLOSURE}}</p>
         </div>
@@ -45,6 +45,7 @@
             <div class="product-universe__field" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             <span class="product-universe__loading" aria-hidden="true">Loading official image</span>
             <div class="product-universe__products" id="universe-products">{{UNIVERSE_PRODUCTS}}</div>
+            {{UNIVERSE_DATA}}
             <p class="visually-hidden" data-universe-status aria-live="polite" aria-atomic="true"></p>
             <div class="product-universe__controls" role="group" aria-label="Browse products in the selected category">
               <button type="button" data-universe-step="-1" aria-label="Previous product">←</button>
