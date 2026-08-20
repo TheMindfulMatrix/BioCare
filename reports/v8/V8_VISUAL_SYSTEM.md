@@ -41,4 +41,3 @@ No framework, runtime library, video, external search service, or new image payl
 
 - Before: `outputs/v8/before/`
 - After: `outputs/v8/after/`
-
