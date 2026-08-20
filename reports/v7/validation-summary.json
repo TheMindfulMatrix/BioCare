@@ -6,6 +6,6 @@
   "reviewWarnings": 91,
   "strictDryRunItems": 98,
   "complianceTests": { "passed": 8, "total": 8 },
-  "browser": { "desktop": true, "mobile375": true, "horizontalOverflow": 0, "consoleErrors": 0 },
+  "browser": { "desktop": true, "mobile375": true, "mobile390": true, "featuredImageVisible": true, "horizontalOverflow": 0, "consoleErrors": 0 },
   "rights": { "resource69315": "blocked_pending_verification", "restrictedRecordingsPublished": false }
 }

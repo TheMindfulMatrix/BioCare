@@ -183,7 +183,7 @@ def validate_content(site: dict, library: dict) -> None:
 
     metadata = site.get("site", {}).get("metadata", {})
     check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrix.github.io/BioCare/", "Canonical base must preserve the verified /BioCare/ GitHub Pages URL")
-    check(set(metadata.get("pages", {})) == {"home", "library", "start", "shop"}, "Home, Library, Start and Shop metadata are required")
+    check(set(metadata.get("pages", {})) == {"home", "library", "start", "shop", "knowYourNumber"}, "Home, Library, Start, Shop and Know Your Number metadata are required")
     social_image = metadata.get("socialImage", {})
     social_image_path = ROOT / social_image.get("src", "missing")
     check(social_image_path.is_file(), "Default social preview image is required")
@@ -507,7 +507,7 @@ def extract_universe_payload(home: str) -> list[dict]:
 
 
 def public_pages(library: dict) -> list[Path]:
-    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html", ROOT / "shop.html"]
+    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html"]
     pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
     return pages
 
@@ -839,7 +839,7 @@ def main() -> None:
     active_count = sum(1 for product in site["products"] if product.get("commercial_status") == "active")
     deferred_count = sum(1 for product in site["products"] if product.get("commercial_status") == "deferred_compliance_review")
     warning_count = len(normal_compliance["warnings"])
-    print(f"Validation passed: 4 core pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe; compliance hard gate passed with {warning_count} review warning(s)")
+    print(f"Validation passed: 5 core pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe; compliance hard gate passed with {warning_count} review warning(s)")
     if warning_count:
         for warning in normal_compliance["warnings"][:10]:
             print(f"Compliance warning: {warning}")

@@ -1,5 +1,9 @@
 # The Mindful Matrix V7 candidate
 
+## Complete candidate finish
+
+The finished candidate adds canonical homepage discovery (search, manufacturer, category and six-intent filters; canonical/name/manufacturer sorts; live derived counts; reset and empty states), removes non-comparable price sorting, and adds the generated `know-your-number.html` education route with metadata, canonical URL, sitemap entry, evidence links, limitations and clearly separated official product-source actions. The Balance Kit foreground is forced out of reveal-animation dependency; served-asset inspection at 375px and 390px confirmed the 560 × 560 source loaded, rendered at 350.8 × 350.8 and 367.0 × 367.0 CSS pixels respectively, opacity 1, visible display, and zero horizontal overflow. Resource 69315 and restricted recordings remain withheld.
+
 # BASELINE RECONCILIATION
 
 See `V7_BASELINE_RECONCILIATION.md`. V7 uses the persisted V6 tree, removes only obsolete execution machinery, resets payload/warning metrics to deterministic values, and does not rewrite V6 history.

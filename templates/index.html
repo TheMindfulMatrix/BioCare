@@ -38,6 +38,14 @@
           <p class="fine" data-biolimitless-disclosure>{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}</p>
           <p class="fine" data-pricing-disclosure>{{PRICING_DISCLOSURE}}</p>
         </div>
+        <form class="universe-discovery" data-universe-discovery role="search">
+          <label>Search products<input type="search" data-universe-search autocomplete="off" placeholder="Name, category, format…"></label>
+          <label>Manufacturer<select data-universe-manufacturer><option value="all">All manufacturers</option><option>Zinzino</option><option>BioLimitless</option></select></label>
+          <label>Intent<select data-universe-intent-filter><option value="all">All intents</option>{{DISCOVERY_INTENTS}}</select></label>
+          <label>Category<select data-universe-category><option value="all">All categories</option>{{DISCOVERY_CATEGORIES}}</select></label>
+          <label>Sort<select data-universe-sort><option value="canonical">Featured / canonical</option><option value="name">Name A–Z</option><option value="manufacturer">Manufacturer</option></select></label>
+          <p data-universe-results aria-live="polite">Showing {{PRODUCT_COUNT}} of {{PRODUCT_COUNT}} active products.</p><button type="reset" data-universe-reset hidden>Clear search and filters</button><p data-universe-empty hidden>No products match. Clear the search or filters to browse all products.</p>
+        </form>
         <div class="product-universe" data-product-universe data-active-intent="test-measure" data-active-environment="signal">
           <svg class="product-universe__pathways" viewBox="0 0 1200 760" aria-hidden="true"><defs><linearGradient id="universe-path-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path d="M84 118 C280 80 350 260 600 378 S930 680 1112 622"/><path d="M82 632 C278 684 370 502 600 378 S930 80 1114 132"/><circle cx="600" cy="378" r="208"/><circle cx="600" cy="378" r="286"/></svg>
           <nav class="product-universe__intents" aria-label="Choose a product intent" data-reveal>{{UNIVERSE_INTENTS}}</nav>

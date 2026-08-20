@@ -161,6 +161,18 @@
 
   document.querySelectorAll("[data-product-universe]").forEach(initProductUniverse);
 
+  function initUniverseDiscovery(form) {
+    var root=document.querySelector("[data-product-universe]"), data=root&&root.querySelector("[data-universe-data]");
+    if(!root||!data)return; var products=JSON.parse(data.textContent), roster=root.querySelector("[data-universe-roster]");
+    var search=form.querySelector("[data-universe-search]"),manufacturer=form.querySelector("[data-universe-manufacturer]"),intent=form.querySelector("[data-universe-intent-filter]"),category=form.querySelector("[data-universe-category]"),sort=form.querySelector("[data-universe-sort]"),status=form.querySelector("[data-universe-results]"),empty=form.querySelector("[data-universe-empty]"),reset=form.querySelector("[data-universe-reset]");
+    function apply(){var terms=search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);var matches=products.filter(function(p){var text=[p.name,p.manufacturer,p.category,p.intent,p.productKind,p.variantLabel,p.description].join(" ").toLowerCase();return terms.every(function(t){return text.indexOf(t)>=0;})&&(manufacturer.value==="all"||p.manufacturer===manufacturer.value)&&(intent.value==="all"||p.intent===intent.value)&&(category.value==="all"||p.category===category.value);});
+      matches.sort(function(a,b){if(sort.value==="name")return a.name.localeCompare(b.name);if(sort.value==="manufacturer")return a.manufacturer.localeCompare(b.manufacturer)||a.name.localeCompare(b.name);return a.index-b.index;});
+      var ids=matches.map(function(p){return p.id;}),buttons=Array.prototype.slice.call(roster.querySelectorAll("[data-universe-select]"));buttons.forEach(function(b){b.hidden=ids.indexOf(b.dataset.universeSelect)<0;});matches.forEach(function(p){var b=roster.querySelector('[data-universe-select="'+p.id+'"]');if(b)roster.appendChild(b);});
+      status.textContent="Showing "+matches.length+" of "+products.length+" active products.";empty.hidden=matches.length!==0;reset.hidden=terms.length===0&&manufacturer.value==="all"&&intent.value==="all"&&category.value==="all"&&sort.value==="canonical";if(matches[0]){var first=roster.querySelector('[data-universe-select="'+matches[0].id+'"]');if(first)first.click();}}
+    [search,manufacturer,intent,category,sort].forEach(function(control){control.addEventListener(control===search?"input":"change",apply);});form.addEventListener("reset",function(){window.setTimeout(apply,0);});apply();
+  }
+  document.querySelectorAll("[data-universe-discovery]").forEach(initUniverseDiscovery);
+
   function initShopFilters(root) {
     var buttons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-brand]"));
     var products = Array.prototype.slice.call(document.querySelectorAll("[data-shop-product]"));
@@ -210,10 +222,7 @@
         if (!grid) return;
         Array.prototype.slice.call(grid.querySelectorAll("[data-shop-product]")).sort(function (left, right) {
           if (mode === "name-asc") return left.dataset.productName.localeCompare(right.dataset.productName);
-          if (mode === "price-asc" || mode === "price-desc") {
-            var delta = Number(left.dataset.productPrice) - Number(right.dataset.productPrice);
-            return mode === "price-desc" ? -delta : delta;
-          }
+          if (mode === "manufacturer") return left.dataset.manufacturer.localeCompare(right.dataset.manufacturer) || left.dataset.productName.localeCompare(right.dataset.productName);
           return Number(left.dataset.curatedIndex) - Number(right.dataset.curatedIndex);
         }).forEach(function (product) { grid.appendChild(product); });
       });
