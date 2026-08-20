@@ -1,15 +1,15 @@
 name: V6 finish-pass source snapshot
 
 on:
-  push:
-    branches: [agent/v6-build]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   snapshot:
-    if: ${{ !contains(github.event.head_commit.message, '[skip v6-finish-snapshot]') }}
+    if: ${{ github.head_ref == 'agent/v6-build' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
