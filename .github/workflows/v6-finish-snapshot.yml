@@ -1,15 +1,15 @@
 name: V6 finish-pass source snapshot
 
 on:
-  push:
-    branches: [agent/v6-build]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
   snapshot:
-    if: ${{ !contains(github.event.head_commit.message, '[skip finish-snapshot]') }}
+    if: ${{ github.head_ref == 'agent/v6-build' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir -p /tmp/v6-source
           rsync -a --exclude='.git/' --exclude='.github/workflows/v6-finish-snapshot.yml' ./ /tmp/v6-source/BioCare/
-          git log --oneline --decorate --graph --all -80 > /tmp/v6-source/branch-history.txt
+          git log --oneline --decorate --graph --all -100 > /tmp/v6-source/branch-history.txt
           git tag --list --format='%(refname:short) %(objectname)' > /tmp/v6-source/tags.txt
           git grep -n -E '(^|[^0-9])(35|45)([^0-9]|$)' -- '*.html' '*.py' '*.js' '*.json' '*.md' '*.yml' '*.bat' > /tmp/v6-source/product-count-literals.txt || true
       - name: Upload source snapshot
