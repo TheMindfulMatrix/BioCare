@@ -38,6 +38,14 @@
           <p class="fine" data-biolimitless-disclosure>{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}</p>
           <p class="fine" data-pricing-disclosure>{{PRICING_DISCLOSURE}}</p>
         </div>
+        <form class="universe-discovery" data-universe-discovery role="search">
+          <label>Search products<input type="search" data-universe-search autocomplete="off" placeholder="Name, category, format…"></label>
+          <label>Manufacturer<select data-universe-manufacturer><option value="all">All manufacturers</option><option>Zinzino</option><option>BioLimitless</option></select></label>
+          <label>Intent<select data-universe-intent-filter><option value="all">All intents</option>{{DISCOVERY_INTENTS}}</select></label>
+          <label>Category<select data-universe-category><option value="all">All categories</option>{{DISCOVERY_CATEGORIES}}</select></label>
+          <label>Sort<select data-universe-sort><option value="canonical">Featured / canonical</option><option value="name">Name A–Z</option><option value="manufacturer">Manufacturer</option></select></label>
+          <p data-universe-results aria-live="polite">Showing {{PRODUCT_COUNT}} of {{PRODUCT_COUNT}} active products.</p><button type="reset" data-universe-reset hidden>Clear search and filters</button><p data-universe-empty hidden>No products match. Clear the search or filters to browse all products.</p>
+        </form>
         <div class="product-universe" data-product-universe data-active-intent="test-measure" data-active-environment="signal">
           <svg class="product-universe__pathways" viewBox="0 0 1200 760" aria-hidden="true"><defs><linearGradient id="universe-path-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path d="M84 118 C280 80 350 260 600 378 S930 680 1112 622"/><path d="M82 632 C278 684 370 502 600 378 S930 80 1114 132"/><circle cx="600" cy="378" r="208"/><circle cx="600" cy="378" r="286"/></svg>
           <nav class="product-universe__intents" aria-label="Choose a product intent" data-reveal>{{UNIVERSE_INTENTS}}</nav>
@@ -63,6 +71,12 @@
           <div class="product-universe__telemetry" aria-hidden="true"><span>Official imagery</span><span>{{PRODUCT_COUNT}} active products</span><span>Partner-coded routes</span><span>No generated packaging</span></div>
         </div>
       </div>
+    </section>
+
+    <section id="know-your-number" class="omega-journey section-warm section-pad" aria-labelledby="omega-journey-title">
+      <div class="container-wide"><header class="section-heading-grid" data-reveal><div><p class="section-kicker">Know your number</p><h2 id="omega-journey-title" class="section-title">Test. Measure. Act. Retest.</h2></div><p class="section-copy">An omega-3 blood test can provide one measurement to explore in context. It is not a diagnosis, a verdict, or the whole story.</p></header>
+      <ol class="omega-journey__steps" data-reveal><li><span>01</span><strong>Test</strong><p>Begin with a verified at-home testing tool when measuring answers a clear question.</p></li><li><span>02</span><strong>Measure</strong><p>Read the result with its method, limitations, and surrounding context in view.</p></li><li><span>03</span><strong>Act</strong><p>Choose an informed next step—which may be learning, discussing, changing a habit, or doing nothing yet.</p></li><li><span>04</span><strong>Retest</strong><p>If appropriate, use another measurement to compare rather than relying on guesswork.</p></li></ol>
+      <div class="omega-journey__actions" data-reveal><a class="button button-primary" href="library/should-you-test-your-omega-3-levels.html">Understand omega testing →</a><a class="button button-tertiary" href="library/omega-3-what-the-numbers-mean.html">Learn what the numbers mean →</a><a class="button button-tertiary" href="#shelf">Explore testing tools →</a></div></div>
     </section>
 
     <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">

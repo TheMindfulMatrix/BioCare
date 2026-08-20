@@ -351,7 +351,8 @@ def hero_actions_markup(product: dict, product_count: int, affiliate_note: str) 
     url = esc(product["destination"], attribute=True)
     return f'''{price_markup(product, context="hero")}
           <div class="hero-actions button-row">
-            <a class="button button-primary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">Start with the kit ↗{external_note()}</a>
+            <a class="button button-primary" href="know-your-number.html">Learn: know your number →</a>
+            <a class="button button-secondary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">Official product source ↗{external_note()}</a>
             <a class="button button-secondary" href="shop.html">Browse all {product_count} curated products →</a>
           </div>
           <div class="hero-context"><span>Information → Education → Action</span><span>Test → Understand → Decide</span><a href="#matrix">Just browsing? Enter the Matrix ↓</a></div>
@@ -579,7 +580,9 @@ def shop_product_card_markup(product: dict, *, index: int, label_record: dict | 
     name_modifier = product_name_modifier(product["name"])
     sku_attribute = f' data-product-sku="{esc(product["sku"], attribute=True)}"' if product.get("sku") else ""
     eager = index <= 3
-    return f'''<article id="product-{esc(product["id"], attribute=True)}" class="shop-product{name_modifier}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}"{sku_attribute} data-reveal>
+    search_text = " ".join(str(product.get(key, "")) for key in ("name", "manufacturer", "category", "productKind", "variantLabel", "description")).lower()
+    price_value = product.get("price", {}).get("one_time_price") or product.get("price", {}).get("retail_price") or 0
+    return f'''<article id="product-{esc(product["id"], attribute=True)}" class="shop-product{name_modifier}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}" data-search-text="{esc(search_text, attribute=True)}" data-product-name="{esc(product["name"].lower(), attribute=True)}" data-product-price="{price_value}" data-curated-index="{index}"{sku_attribute} data-reveal>
         <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product, eager=eager)}</div><small>{product_reference(product)}</small></div>
         <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>{price_markup(product, context="compact")}<dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl>{product_label_panel_markup(product, label_record)}{biolimitless_disclosure(product)}<div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer" aria-label="{esc(product["cta"], attribute=True)}: {esc(product["name"], attribute=True)} (opens in a new tab)">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
       </article>'''
@@ -988,6 +991,8 @@ def build_home(data: dict, library: dict) -> None:
         "{{PRICING_DISCLOSURE}}": esc(site["pricingDisclosure"]),
         "{{SHELF_COUNT}}": f'{len(products):02d} curated products',
         "{{PRODUCT_COUNT}}": str(len(public_products)),
+        "{{DISCOVERY_INTENTS}}": "".join(f'<option value="{esc(item["id"], attribute=True)}">{esc(item["name"])}</option>' for item in catalog["intents"]),
+        "{{DISCOVERY_CATEGORIES}}": "".join(f'<option value="{esc(item, attribute=True)}">{esc(item)}</option>' for item in sorted({product["category"] for product in public_products})),
         "{{UNIVERSE_INTENTS}}": universe_intents_markup(catalog),
         "{{UNIVERSE_PRODUCTS}}": universe_product_markup(featured, index=products.index(featured) + 1, active=True),
         "{{UNIVERSE_DATA}}": universe_data_markup(products),
@@ -1080,6 +1085,13 @@ def build_shop(data: dict, product_labels: dict) -> None:
     write_output(ROOT / "shop.html", render_template("shop.html", replacements))
 
 
+def build_know_your_number(data: dict) -> None:
+    metadata=data["site"]["metadata"]; page=metadata["pages"]["knowYourNumber"]
+    product=next(item for item in active_products(data["catalog"]) if item["id"]==data["featuredProductId"])
+    replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Know Your Number",page["path"])])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="know-your-number"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{PRODUCT_SOURCE}}":esc(product["destination"],attribute=True),"{{PRODUCT_NAME}}":esc(product["name"]),"{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"])}
+    write_output(ROOT / "know-your-number.html",render_template("know-your-number.html",replacements))
+
+
 def clean_generated_articles(expected: set[Path]) -> None:
     article_dir = ROOT / "library"
     if not article_dir.exists():
@@ -1102,7 +1114,7 @@ def build_articles(data: dict, library: dict) -> None:
 
 def build_crawl_files(data: dict, library: dict) -> None:
     metadata = data["site"]["metadata"]
-    paths = ["", "start.html", "library.html", "shop.html"]
+    paths = ["", "start.html", "library.html", "shop.html", "know-your-number.html"]
     paths.extend(f'library/{article["slug"]}.html' for article in published_articles(library))
     urls = "\n".join(f"  <url><loc>{esc(page_url(metadata, path))}</loc></url>" for path in paths)
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
@@ -1152,6 +1164,7 @@ def main() -> None:
     build_library(data, library)
     build_start(data)
     build_shop(data, product_labels)
+    build_know_your_number(data)
     build_articles(data, library)
     build_crawl_files(data, library)
     if args.preview_article:

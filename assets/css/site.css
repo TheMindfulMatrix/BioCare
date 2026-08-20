@@ -1630,7 +1630,31 @@
 .shop-product[data-manufacturer="BioLimitless"] .shop-product__visual > div { width: 86%; height: 15rem; }
 .shop-product[data-manufacturer="BioLimitless"] .shop-product__visual img { object-fit: cover; border: 1px solid rgba(223,187,120,.24); border-radius: .28rem; box-shadow: 0 1rem 2.5rem rgba(0,0,0,.42); filter: saturate(.9) contrast(1.03); }
 
-.shop-filter-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-5); align-items: end; margin-top: var(--space-6); padding: var(--space-5); border: 1px solid rgba(223,187,120,.2); background: rgba(248,244,236,.035); }
+.shop-filter-bar { display: grid; grid-template-columns: minmax(14rem, 1.5fr) minmax(14rem, 1fr) minmax(12rem, .8fr); gap: var(--space-5); align-items: end; margin-top: var(--space-6); padding: var(--space-5); border: 1px solid rgba(223,187,120,.2); background: rgba(248,244,236,.035); }
+.shop-search, .shop-sort { display:grid; gap:.55rem; }
+.shop-search input, .shop-sort select { width:100%; min-height:48px; border:1px solid rgba(223,187,120,.36); border-radius:4px; background:#13231e; color:#f8f4ec; padding:.75rem .9rem; font:600 .86rem/1.3 var(--font-body); }
+.shop-search input::placeholder { color:rgba(248,244,236,.58); }
+.universe-discovery { display:grid; grid-template-columns:2fr repeat(4,1fr); gap:.8rem; align-items:end; margin:0 0 var(--space-5); padding:var(--space-4); border:1px solid rgba(223,187,120,.25); background:rgba(8,18,13,.66); }
+.universe-discovery label { display:grid; gap:.45rem; color:rgba(248,244,236,.72); font:700 .7rem/1.3 var(--font-data); text-transform:uppercase; }
+.universe-discovery input,.universe-discovery select { width:100%; min-height:48px; padding:.7rem; border:1px solid rgba(223,187,120,.34); background:#13231e; color:#f8f4ec; font-size:.82rem; }
+.universe-discovery p { grid-column:1 / span 4; margin:0; color:rgba(248,244,236,.72); }
+.universe-discovery button { min-height:44px; border:0; background:transparent; color:#dfbb78; text-decoration:underline; cursor:pointer; }
+.home-hero__visual[data-reveal] { opacity:1; transform:none; }
+.shop-clear { min-height:44px; justify-self:start; border:0; background:transparent; color:#dfbb78; text-decoration:underline; cursor:pointer; }
+.shop-filter-bar > .shop-filter-status { grid-column:1 / span 2; }
+.omega-journey__steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin:var(--space-7) 0; padding:0; list-style:none; background:rgba(24,55,46,.18); }
+.omega-journey__steps li { min-height:15rem; padding:var(--space-5); background:#f3ecdf; }
+.omega-journey__steps span { display:block; color:#8c6a31; font:700 .72rem/1 var(--font-data); }
+.omega-journey__steps strong { display:block; margin:2.4rem 0 .8rem; color:#17392f; font:600 clamp(1.4rem,2vw,2rem)/1 var(--font-display); }
+.omega-journey__steps p { color:#34483f; }
+.omega-journey__actions { display:flex; flex-wrap:wrap; gap:var(--space-3); }
+.kyn-hero h1 { max-width:12ch; font-size:clamp(3.4rem,8vw,7.5rem); }
+.kyn-hero .fine { max-width:70ch; margin-top:var(--space-5); }
+.kyn-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:var(--space-7); padding:0; list-style:none; background:rgba(24,55,46,.18); }
+.kyn-steps li { padding:var(--space-6); background:#f3ecdf; }
+.kyn-steps span { color:#8c6a31; font:700 .72rem/1 var(--font-data); }
+.kyn-steps h3 { margin:2rem 0 1rem; }
+.kyn-boundary { margin-top:var(--space-7); padding:var(--space-5); border-left:.2rem solid var(--light-gold); background:rgba(223,187,120,.08); }
 .shop-brand-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .65rem; }
 .shop-brand-filters button { min-height: var(--touch-target); padding: .65rem 1rem; border: 1px solid rgba(136,190,160,.28); background: rgba(4,10,7,.4); color: var(--dark-text-muted); font: 700 .61rem/1 var(--font-data); letter-spacing: .07em; text-transform: uppercase; cursor: pointer; }
 .shop-brand-filters button[aria-pressed="true"] { border-color: var(--dark-gold); background: rgba(223,187,120,.11); color: var(--dark-text); box-shadow: inset 0 -2px var(--dark-gold); }
@@ -1650,8 +1674,13 @@
 .article-hero__media::after { content: "Evidence / context / action"; position: absolute; right: var(--space-4); bottom: var(--space-4); padding: .45rem .6rem; border: 1px solid rgba(248,244,236,.25); background: rgba(5,12,8,.72); color: rgba(248,244,236,.76); font: 600 .5rem/1 var(--font-data); letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(.3rem); }
 
 @media (max-width: 62rem) {
+  .universe-discovery { grid-template-columns:1fr 1fr; }
+  .universe-discovery p { grid-column:1 / -1; }
   .shop-filter-bar { grid-template-columns: 1fr; align-items: start; }
+  .shop-filter-bar > .shop-filter-status { grid-column:auto; }
   .shop-filter-status { max-width: none; text-align: left; }
+  .omega-journey__steps { grid-template-columns:1fr 1fr; }
+  .kyn-steps { grid-template-columns:1fr 1fr; }
   .product-universe__product[data-manufacturer="BioLimitless"] .product-universe__cutout { height: 21rem; }
 }
 
@@ -1676,6 +1705,11 @@
 }
 
 @media (max-width: 44rem) {
+  .hero-context a { min-height: var(--touch-target); display:inline-flex; align-items:center; padding-block:.75rem; }
+  .home-hero :is(.product-price__item,.hero-context span,.hero-context a,.hero-product__tap),
+  .product-universe-section :is(.product-universe__intro strong,.product-universe__intent span,.product-universe__loading,.product-universe__sku,.product-universe__facts dt,.product-universe__facts dd,.product-universe__why span,.product-universe__learn,.product-universe__controls,.product-universe__roster span,.product-universe__roster strong) { font-size:.6875rem !important; }
+  .universe-discovery { grid-template-columns:1fr; }
+  .universe-discovery p { grid-column:1; }
   .commercial-notes { padding: var(--space-3); }
   .product-price > div { display: grid; grid-template-columns: 1fr; }
   .product-price__item--primary, .product-price__item--supporting { width: 100%; justify-content: space-between; }
@@ -1683,8 +1717,11 @@
   .product-price--hero { max-width: 27rem; }
   .product-universe__product[data-manufacturer="BioLimitless"] .product-universe__cutout { width: 92%; height: 17rem; }
   .shop-filter-bar { padding: var(--space-4); }
+  .omega-journey__steps { grid-template-columns:1fr; }
+  .kyn-steps { grid-template-columns:1fr; }
+  .omega-journey__steps li { min-height:0; }
   .shop-brand-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .shop-brand-filters button { min-width: 0; padding-inline: .35rem; font-size: .54rem; }
+  .shop-brand-filters button { min-width: 0; padding-inline: .55rem; font-size: .7rem; }
   .shop-product[data-manufacturer="BioLimitless"] .shop-product__visual > div { width: 90%; height: 15.5rem; }
   .article-hero__media::after { right: var(--space-3); bottom: var(--space-3); }
 }
@@ -1692,6 +1729,12 @@
 @media (prefers-reduced-motion: reduce) {
   .library-article__visual picture img, .shop-brand-filters button { transition: none; }
   .library-article:hover .library-article__visual picture img, .library-article:focus-within .library-article__visual picture img { transform: none; }
+}
+
+@media (max-width: 44rem) {
+  .home-hero a, .product-universe-section a, .product-universe-section button,
+  .product-universe-section input, .product-universe-section select { min-height:46px !important; }
+  .hero-context a { display:inline-flex !important; align-items:center; padding-block:.75rem; }
 }
 
 /* V6 candidate: clarity, accessibility, catalog cohesion, and trust systems */

@@ -30,12 +30,15 @@
         <p class="interface-label" id="shop-navigation-title">Navigate by intent</p>
         <nav class="shop-intent-nav" aria-label="Product intent categories">{{SHOP_INTENT_NAV}}</nav>
         <div class="shop-filter-bar" data-shop-filter-root data-active-manufacturer="all">
-          <div><p class="interface-label">Then filter by manufacturer</p><div class="shop-brand-filters" role="group" aria-label="Filter products by manufacturer">
+          <div class="shop-search"><label class="interface-label" for="product-search">Search all products</label><input id="product-search" type="search" inputmode="search" autocomplete="off" placeholder="Name, category, format…" data-shop-search></div>
+          <div><p class="interface-label">Filter by manufacturer</p><div class="shop-brand-filters" role="group" aria-label="Filter products by manufacturer">
             <button type="button" data-shop-brand="all" aria-pressed="true">All</button>
             <button type="button" data-shop-brand="Zinzino" aria-pressed="false">Zinzino</button>
             <button type="button" data-shop-brand="BioLimitless" aria-pressed="false">BioLimitless</button>
           </div></div>
+          <div class="shop-sort"><label class="interface-label" for="product-sort">Sort results</label><select id="product-sort" data-shop-sort><option value="curated">Featured / canonical</option><option value="name-asc">Name A–Z</option><option value="manufacturer">Manufacturer</option></select></div>
           <p class="shop-filter-status" data-shop-filter-status aria-live="polite">Showing all {{SHOP_COUNT}} active products.</p>
+          <button class="shop-clear" type="button" data-shop-clear hidden>Clear search and filters</button>
         </div>
         <div class="commercial-notes">
           <p id="shop-affiliate-disclosure" class="fine" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p>

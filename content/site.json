@@ -5,7 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "v6-candidate",
+      "assetVersion": "v7-release-1",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -33,6 +33,11 @@
           "path": "shop.html",
           "title": "Product Universe | The Mindful Matrix",
           "description": "Explore 45 carefully curated Zinzino and BioLimitless products by visitor intent, with current official US pricing and transparent partner links."
+        },
+        "knowYourNumber": {
+          "path": "know-your-number.html",
+          "title": "Know Your Number | The Mindful Matrix",
+          "description": "Understand what omega-3 blood testing measures, what a result can and cannot tell you, and how to use test, measure, act and retest responsibly."
         }
       }
     },

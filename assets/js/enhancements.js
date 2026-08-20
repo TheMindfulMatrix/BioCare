@@ -161,16 +161,35 @@
 
   document.querySelectorAll("[data-product-universe]").forEach(initProductUniverse);
 
+  function initUniverseDiscovery(form) {
+    var root=document.querySelector("[data-product-universe]"), data=root&&root.querySelector("[data-universe-data]");
+    if(!root||!data)return; var products=JSON.parse(data.textContent), roster=root.querySelector("[data-universe-roster]");
+    var search=form.querySelector("[data-universe-search]"),manufacturer=form.querySelector("[data-universe-manufacturer]"),intent=form.querySelector("[data-universe-intent-filter]"),category=form.querySelector("[data-universe-category]"),sort=form.querySelector("[data-universe-sort]"),status=form.querySelector("[data-universe-results]"),empty=form.querySelector("[data-universe-empty]"),reset=form.querySelector("[data-universe-reset]");
+    function apply(){var terms=search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);var matches=products.filter(function(p){var text=[p.name,p.manufacturer,p.category,p.intent,p.productKind,p.variantLabel,p.description].join(" ").toLowerCase();return terms.every(function(t){return text.indexOf(t)>=0;})&&(manufacturer.value==="all"||p.manufacturer===manufacturer.value)&&(intent.value==="all"||p.intent===intent.value)&&(category.value==="all"||p.category===category.value);});
+      matches.sort(function(a,b){if(sort.value==="name")return a.name.localeCompare(b.name);if(sort.value==="manufacturer")return a.manufacturer.localeCompare(b.manufacturer)||a.name.localeCompare(b.name);return a.index-b.index;});
+      var ids=matches.map(function(p){return p.id;}),buttons=Array.prototype.slice.call(roster.querySelectorAll("[data-universe-select]"));buttons.forEach(function(b){b.hidden=ids.indexOf(b.dataset.universeSelect)<0;});matches.forEach(function(p){var b=roster.querySelector('[data-universe-select="'+p.id+'"]');if(b)roster.appendChild(b);});
+      status.textContent="Showing "+matches.length+" of "+products.length+" active products.";empty.hidden=matches.length!==0;reset.hidden=terms.length===0&&manufacturer.value==="all"&&intent.value==="all"&&category.value==="all"&&sort.value==="canonical";if(matches[0]){var first=roster.querySelector('[data-universe-select="'+matches[0].id+'"]');if(first)first.click();}}
+    [search,manufacturer,intent,category,sort].forEach(function(control){control.addEventListener(control===search?"input":"change",apply);});form.addEventListener("reset",function(){window.setTimeout(apply,0);});apply();
+  }
+  document.querySelectorAll("[data-universe-discovery]").forEach(initUniverseDiscovery);
+
   function initShopFilters(root) {
     var buttons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-brand]"));
     var products = Array.prototype.slice.call(document.querySelectorAll("[data-shop-product]"));
     var groups = Array.prototype.slice.call(document.querySelectorAll("[data-shop-group]"));
     var status = root.querySelector("[data-shop-filter-status]");
+    var search = root.querySelector("[data-shop-search]");
+    var sort = root.querySelector("[data-shop-sort]");
+    var clear = root.querySelector("[data-shop-clear]");
+    var activeManufacturer = "all";
     if (!buttons.length || !products.length) return;
     root.dataset.enhanced = "true";
 
     function applyFilter(manufacturer, announce) {
       var visibleCount = 0;
+      var query = search ? search.value.trim().toLowerCase().replace(/\s+/g, " ") : "";
+      var terms = query ? query.split(" ") : [];
+      activeManufacturer = manufacturer;
       root.dataset.activeManufacturer = manufacturer;
       buttons.forEach(function (button) {
         var active = button.dataset.shopBrand === manufacturer;
@@ -178,7 +197,10 @@
         button.setAttribute("tabindex", active ? "0" : "-1");
       });
       products.forEach(function (product) {
-        var visible = manufacturer === "all" || product.dataset.manufacturer === manufacturer;
+        var brandMatch = manufacturer === "all" || product.dataset.manufacturer === manufacturer;
+        var haystack = product.dataset.searchText || "";
+        var searchMatch = terms.every(function (term) { return haystack.indexOf(term) !== -1; });
+        var visible = brandMatch && searchMatch;
         product.hidden = !visible;
         if (visible) visibleCount += 1;
       });
@@ -189,9 +211,22 @@
         if (counter) counter.textContent = String(visibleProducts.length).padStart(2, "0") + " verified product" + (visibleProducts.length === 1 ? "" : "s");
         if (empty) empty.hidden = visibleProducts.length > 0;
       });
-      if (announce && status) status.textContent = manufacturer === "all"
-        ? "Showing all " + visibleCount + " active products."
-        : "Showing " + visibleCount + " " + manufacturer + " products.";
+      if (status) status.textContent = "Showing " + visibleCount + " of " + products.length + " active products" + (query ? " matching “" + query + "”" : "") + (manufacturer === "all" ? "." : " from " + manufacturer + ".");
+      if (clear) clear.hidden = !query && manufacturer === "all" && (!sort || sort.value === "curated");
+    }
+
+    function applySort() {
+      var mode = sort ? sort.value : "curated";
+      groups.forEach(function (group) {
+        var grid = group.querySelector(".shop-group__grid");
+        if (!grid) return;
+        Array.prototype.slice.call(grid.querySelectorAll("[data-shop-product]")).sort(function (left, right) {
+          if (mode === "name-asc") return left.dataset.productName.localeCompare(right.dataset.productName);
+          if (mode === "manufacturer") return left.dataset.manufacturer.localeCompare(right.dataset.manufacturer) || left.dataset.productName.localeCompare(right.dataset.productName);
+          return Number(left.dataset.curatedIndex) - Number(right.dataset.curatedIndex);
+        }).forEach(function (product) { grid.appendChild(product); });
+      });
+      applyFilter(activeManufacturer, true);
     }
 
     buttons.forEach(function (button, index) {
@@ -207,6 +242,16 @@
         applyFilter(buttons[nextIndex].dataset.shopBrand, true);
         buttons[nextIndex].focus();
       });
+    });
+
+    if (search) search.addEventListener("input", function () { applyFilter(activeManufacturer, true); });
+    if (sort) sort.addEventListener("change", applySort);
+    if (clear) clear.addEventListener("click", function () {
+      if (search) search.value = "";
+      if (sort) sort.value = "curated";
+      applySort();
+      applyFilter("all", true);
+      if (search) search.focus();
     });
 
     applyFilter("all", false);

@@ -1,0 +1,13 @@
+{
+  "baselineCommit": "ff41ceecadfbded6e6702c5307754d5903c2f636",
+  "activeProducts": 45,
+  "deferredProducts": 8,
+  "baselineActiveImagePayloadBytes": 1405208,
+  "activeImagePayloadBytes": 1103598,
+  "imagePayloadSavingsBytes": 301610,
+  "reviewWarnings": 91,
+  "strictDryRunItems": 98,
+  "complianceTests": { "passed": 8, "total": 8 },
+  "browser": { "desktop": true, "mobile375": true, "mobile390": true, "featuredImageVisible": true, "horizontalOverflow": 0, "consoleErrors": 0 },
+  "rights": { "resource69315": "blocked_pending_verification", "restrictedRecordingsPublished": false }
+}

@@ -3,7 +3,7 @@ name: Validate static site
 on:
   pull_request:
   push:
-    branches: [main, agent/v6-build]
+    branches: [main, agent/v6-build, agent/v7-product-first]
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
         run: python scripts/build.py
       - name: Verify committed output and site structure
         run: |
-          git diff --exit-code -- index.html shop.html library.html start.html library/ robots.txt sitemap.xml
+          git diff --exit-code -- index.html shop.html library.html start.html know-your-number.html library/ robots.txt sitemap.xml
           python scripts/validate.py
       - name: Run compliance fixtures
         run: python -m unittest discover -s tests -v
@@ -35,6 +35,7 @@ jobs:
             shop.html
             library.html
             start.html
+            know-your-number.html
             robots.txt
             sitemap.xml
             library/
