@@ -1,8 +1,9 @@
 {
   "release": "V8",
-  "status": "review_candidate",
+  "status": "visual_review_candidate",
   "branch": "agent/v8-unified-discovery",
-  "candidateShaSource": "exact pushed branch HEAD",
+  "previousCandidateSha": "ac6c7c2e7957dc751cd975abe8d4cdcab3f0f5be",
+  "candidateShaSource": "exact final pushed branch HEAD",
   "baselineSha": "db2c82b36f356c92e37d983844fea0fdb0297ae5",
   "publicPages": 22,
   "products": {
@@ -15,13 +16,30 @@
     "departments": 6,
     "journeys": 1
   },
+  "visualSystem": {
+    "components": 9,
+    "intensityLevels": [
+      "high",
+      "medium",
+      "low"
+    ],
+    "departmentBiomes": 6,
+    "reducedMotion": true,
+    "offscreenPause": true
+  },
   "performance": {
-    "homepageHtmlBytes": 172225,
-    "exploreHtmlBytes": 113286,
-    "productsHtmlBytes": 137119,
-    "javascriptBytes": 43491,
-    "searchIndexBytes": 31142,
+    "homepageHtmlBytes": 183104,
+    "exploreHtmlBytes": 130822,
+    "productsHtmlBytes": 137115,
+    "cssBytes": 206317,
+    "javascriptBytes": 45614,
+    "searchIndexBytes": 41482,
     "activeProductImagePayloadBytes": 1103598
+  },
+  "validation": {
+    "unitTests": "15/15",
+    "publicPages": 22,
+    "browserViewports": 4
   },
   "compliance": {
     "hardGate": "passed",
@@ -34,7 +52,11 @@
     "notMet": 0,
     "deferred": 0
   },
+  "visualAcceptance": {
+    "met": 20,
+    "notMet": 0,
+    "deferred": 0
+  },
   "merge": false,
   "deployment": false
 }
-

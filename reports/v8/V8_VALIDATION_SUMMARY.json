@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "build": "deterministic",
+  "publicPageValidation": "22/22",
+  "unitTests": "15/15",
+  "complianceFixtures": "8/8",
+  "complianceHardGate": "passed",
+  "reviewWarnings": 91,
+  "strictDryRunItems": 98,
+  "javascriptSyntax": "passed",
+  "diffCheck": "passed",
+  "browser": {
+    "viewports": 4,
+    "departmentRoutes": 6,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "brokenImages": 0,
+    "horizontalOverflow": 0,
+    "duplicateIds": 0
+  },
+  "exactShaSource": "final pushed branch HEAD and GitHub Actions run"
+}
+

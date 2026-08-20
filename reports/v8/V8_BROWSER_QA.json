@@ -7,6 +7,7 @@
     "375x812"
   ],
   "publicPages": 22,
+  "departmentRoutes": 6,
   "horizontalOverflow": 0,
   "brokenRenderedImages": 0,
   "failedLocalRequests": 0,
@@ -14,15 +15,26 @@
   "consoleWarnings": 0,
   "duplicateIds": 0,
   "staleState": 0,
+  "mobileNestedScrollTrap": false,
+  "productVisibleInMobileOpening": true,
+  "screenshotsRoot": "outputs/v8/after",
   "screenshots": [
     "homepage-desktop-full.png",
     "homepage-desktop-above-fold.png",
     "homepage-tablet.png",
     "homepage-375-full.png",
     "homepage-375-above-fold.png",
-    "explore-desktop-search.png",
-    "explore-mobile-search.png",
-    "department-omega-desktop-full.png"
+    "explore-desktop-everything.png",
+    "explore-390-everything.png",
+    "explore-390-learn.png",
+    "explore-390-no-result.png",
+    "explore-375-products.png",
+    "department-testing-measurement-desktop.png",
+    "department-omega-nutrition-desktop.png",
+    "department-skin-collagen-desktop.png",
+    "know-your-number-desktop.png",
+    "library-desktop.png",
+    "start-here-desktop.png"
   ]
 }
 

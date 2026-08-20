@@ -12,5 +12,12 @@ Validation: 22 public pages; deterministic build; core validator passed; 13/13 u
 
 Performance: homepage 172,225 B; Explore 113,286 B; Products 137,119 B; JavaScript 43,491 B; generated search index 31,142 B; active product imagery 1,103,598 B (no regression). Explore initially exposes 12 of 45 product cards and uses lazy images.
 
-Evidence screenshots are in `outputs/v8/` outside the repository. No merge or deployment occurred.
+## Biological-tech visual integration
 
+The visual pass corrects the flat utility presentation while retaining the approved V8 platform structure. Reusable CSS/SVG components now provide biological fields, signal paths, node clusters, scan frames, product stages, six department biomes, data captions, and evidence frames. Homepage search is integrated with the featured Balance Kit opening; typed search results visually separate product cutouts, article artwork, journeys, and departments. Know Your Number, Library, Start Here, Product Universe, header, and footer share the same restrained pathway language.
+
+Motion is transform/opacity/SVG based, pauses offscreen and when the document is hidden, and resolves to a complete static design under reduced motion. Decorative layers are `aria-hidden`, ignore pointer events, and introduce no claims or fake measurements.
+
+Final performance: homepage 183,104 B; Explore 130,822 B; Products 137,115 B; CSS 206,317 B; JavaScript 45,614 B; generated search index 41,482 B; active product imagery remains 1,103,598 B. JavaScript growth is 6.33%. Explore/search-index growth is the measured cost of richer typed-result imagery and derived department metadata.
+
+Evidence screenshots are in `outputs/v8/before/` and `outputs/v8/after/` outside the repository. No merge or deployment occurred.

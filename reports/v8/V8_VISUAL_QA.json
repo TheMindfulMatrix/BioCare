@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "problemCorrected": "The approved V8 platform structure no longer presents as a flat utility portal; V7 Matrix depth is integrated without restoring obsolete layout.",
+  "acceptance": {
+    "met": 20,
+    "notMet": 0,
+    "deferred": 0
+  },
+  "systems": [
+    "biological field",
+    "signal path",
+    "node cluster",
+    "scan frame",
+    "specimen stage",
+    "environment biome",
+    "data caption",
+    "department signature",
+    "evidence frame"
+  ],
+  "pages": [
+    "Homepage",
+    "Explore",
+    "Products",
+    "Library",
+    "Start Here",
+    "Know Your Number",
+    "six departments"
+  ],
+  "responsive": [
+    "1440x900",
+    "768x1024",
+    "390x844",
+    "375x812"
+  ],
+  "reducedMotion": "complete static state",
+  "rightsRisk": "no new external or restricted assets",
+  "claimsRisk": "no new factual or health claims",
+  "beforeScreenshots": "outputs/v8/before",
+  "afterScreenshots": "outputs/v8/after",
+  "remainingLimitations": []
+}
+

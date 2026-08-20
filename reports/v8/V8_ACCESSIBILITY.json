@@ -1,5 +1,12 @@
 {
   "status": "passed",
+  "contrast": {
+    "searchButton": "dark text on restrained gold; exceeds AA",
+    "placeholder": "dark neutral on white input; exceeds AA",
+    "resultSummary": "light neutral on deep-green surface; exceeds AA",
+    "typeLabel": "warm gold on deep-green surface; exceeds AA",
+    "inactiveMode": "warm ivory on deep-green surface; exceeds AA"
+  },
   "checks": [
     "one H1 per page",
     "semantic landmarks",
@@ -9,9 +16,12 @@
     "Escape clear/close",
     "mode pressed state",
     "live result counts",
-    "44px interactive target floor",
+    "44px interactive target floor at 375px and 390px",
+    "12px mobile microcopy floor for V8 interactive and visual-system components",
     "mobile menu retained",
-    "reduced motion retained",
+    "decorative layers aria-hidden and pointer-events none",
+    "reduced-motion static state",
+    "motion pauses offscreen and when document hidden",
     "no duplicate IDs",
     "no horizontal overflow",
     "product-specific external link names"
