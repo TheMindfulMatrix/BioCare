@@ -7,6 +7,10 @@
   "complianceHardGate": "passed",
   "reviewWarnings": 91,
   "strictDryRunItems": 98,
+  "externalLinks": {
+    "nonCommercial": "49 checked / 49 verified / 0 failed",
+    "commercial": "90 records / 56 unique URLs / 56 reachable / 0 failed"
+  },
   "javascriptSyntax": "passed",
   "diffCheck": "passed",
   "browser": {
@@ -16,7 +20,11 @@
     "consoleWarnings": 0,
     "brokenImages": 0,
     "horizontalOverflow": 0,
-    "duplicateIds": 0
+    "duplicateIds": 0,
+    "allPagesPerViewport": 22,
+    "mobileBelowFloorText": 0,
+    "mobileBelowFloorTargets": 0,
+    "productUniverseFilterStateFailures": 0
   },
   "exactShaSource": "final pushed branch HEAD and GitHub Actions run"
 }

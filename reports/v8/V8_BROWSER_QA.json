@@ -15,6 +15,17 @@
   "consoleWarnings": 0,
   "duplicateIds": 0,
   "staleState": 0,
+  "allPagesCheckedPerViewport": 22,
+  "mobileBelow12pxVisibleText": 0,
+  "mobileTargetsBelow44px": 0,
+  "productUniverse": {
+    "productsExercised": 45,
+    "manufacturers": 2,
+    "intents": 6,
+    "categories": 18,
+    "filterStateFailures": 0,
+    "staleInspectorOnEmpty": false
+  },
   "mobileNestedScrollTrap": false,
   "productVisibleInMobileOpening": true,
   "screenshotsRoot": "outputs/v8/after",
@@ -37,4 +48,3 @@
     "start-here-desktop.png"
   ]
 }
-

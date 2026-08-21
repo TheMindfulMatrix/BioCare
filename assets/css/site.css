@@ -1954,4 +1954,9 @@
   .testing-workflow li span,.testing-workflow li strong,.footer-philosophy { font-size:12px!important; }
   .search-result__type,.search-result__content em { font-size:12px!important; }
   .kyn-signal-loop span,.kyn-steps li>span { font-size:12px!important; }
+
+  /* Release gate: keep secondary mobile evidence controls readable and touch-safe. */
+  .article-copy ol a,.article-source__identity :is(strong,span),.evidence-summary__label,.article-byline,.article-byline :is(span,time),.article-affiliate-disclosure,.article-back,.socials a,.shop-product__learn,.shop-intent-nav a :is(span,strong),.category-card__index,.universe-discovery label,.shop-fallback a,.editorial-principles span,.explore-toolbar label,.product-label-panel__body :is(p,a),.shop-hero__status span,.shop-filter-status,.orientation-note span,blockquote cite { font-size:12px!important; }
+  main ol li>a { min-width:44px!important; min-height:44px!important; display:inline-flex; align-items:center; font-size:12px!important; }
+  .learn-card>a,.breadcrumbs>a,.journey-callout>a { min-width:44px!important; min-height:44px!important; display:inline-flex; align-items:center; }
 }

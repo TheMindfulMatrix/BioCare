@@ -16,15 +16,24 @@
     "Escape clear/close",
     "mode pressed state",
     "live result counts",
-    "44px interactive target floor at 375px and 390px",
-    "12px mobile microcopy floor for V8 interactive and visual-system components",
+    "44px interactive target floor across all 22 pages at 375px and 390px",
+    "12px visible non-decorative text floor across all 22 pages at 375px and 390px",
     "mobile menu retained",
     "decorative layers aria-hidden and pointer-events none",
     "reduced-motion static state",
     "motion pauses offscreen and when document hidden",
     "no duplicate IDs",
     "no horizontal overflow",
-    "product-specific external link names"
-  ]
+    "product-specific external link names",
+    "filtered Product Universe intent controls expose only available result groups",
+    "Product Universe empty state hides the stale inspector"
+  ],
+  "releaseGateRecheck": {
+    "mobileViewports": 2,
+    "pagesPerViewport": 22,
+    "belowFloorText": 0,
+    "belowFloorTargets": 0,
+    "focusReturn": "passed",
+    "escapeClose": "passed"
+  }
 }
-
