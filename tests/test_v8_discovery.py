@@ -65,7 +65,7 @@ class V8DiscoveryTests(unittest.TestCase):
     def test_visual_pass_adds_no_runtime_dependency(self):
         markup = (ROOT / "index.html").read_text(encoding="utf-8")
         scripts = [part.split('"', 1)[0] for part in markup.split('<script defer src="')[1:]]
-        self.assertEqual(["assets/js/enhancements.js?v=v8-final-10"], scripts)
+        self.assertEqual(["assets/js/enhancements.js?v=v9-candidate-3"], scripts)
         enhancements = (ROOT / "assets/js/enhancements.js").read_text(encoding="utf-8")
         self.assertIn("root.dataset.universeFilterIds=ids.join", enhancements)
         self.assertIn("root.hidden=matches.length===0", enhancements)
