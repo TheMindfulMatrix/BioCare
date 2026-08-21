@@ -1,5 +1,6 @@
 {
-  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "candidateSha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
+  "candidateValidationRun": 32444530137,
   "totals": {"MET": 96, "NOT MET": 0, "DEFERRED": 0},
   "items": [
     {"id":1,"status":"MET","evidence":"verified V8 baseline"},

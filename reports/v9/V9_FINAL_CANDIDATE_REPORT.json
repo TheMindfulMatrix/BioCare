@@ -1,7 +1,8 @@
 {
   "baselineSha": "2bfabedfeaf86ec13bb479e6daa51d6df857bb46",
   "branch": "agent/v9-mobile-catalog",
-  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "candidateSha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
+  "candidateValidationRun": 32444530137,
   "status": "ready for user review",
   "products": {"active": 45, "deferred": 8, "manufacturers": 2, "intents": 6},
   "mobileOrder": ["global header/search", "horizontal intent rail", "compact Product Universe header", "catalog search", "result/filter/sort toolbar", "compact disclosure", "two-column product grid"],

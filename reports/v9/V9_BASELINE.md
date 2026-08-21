@@ -2,7 +2,7 @@
 
 - Verified V8 production baseline: `2bfabedfeaf86ec13bb479e6daa51d6df857bb46`
 - Candidate branch: `agent/v9-mobile-catalog`
-- V9 implementation SHA documented by this report set: `a87231bcc197ce03c1a371f56cef7f1f78fe9814`
+- Approved V9 candidate SHA documented by this report set: `182e39a6beba1c735dfa699fb3a598d793e56b10`
 - Production state at start: GitHub Pages validation and deployment successful; no open PR.
 - Catalog: 45 active / 8 deferred; 2 manufacturers; 6 canonical intents.
 - V8 compliance inventory: 91 review warnings / 98 strict dry-run items; hard gate and 8/8 fixtures passed.

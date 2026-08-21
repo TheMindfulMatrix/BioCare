@@ -1,5 +1,5 @@
 {
-  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "candidateSha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
   "measurementMethod": "Git blob byte sizes plus stabilized 375x812 browser geometry and request observation",
   "before": {"productsHtmlBytes": 137176, "productsDomNodes": 1760, "javascriptBytes": 45977, "cssBytes": 205419, "activeProductImagePayloadBytes": 1103598, "initialProductCards": 45, "initialProductImageRequestsObserved": 14, "highPriorityProductImages": 3, "firstProductY": 2485, "medianCardHeight": 931, "product6Y": 6997, "product12Y": 13143, "pageHeight": 49722},
   "after": {"productsHtmlBytes": 136174, "productsDomNodes": 509, "javascriptBytes": 67014, "cssBytes": 226563, "activeProductImagePayloadBytes": 1103598, "initialProductCards": 12, "initialProductImageRequestsObserved": 2, "deferredInitialProductImages": 10, "highPriorityProductImages": 2, "firstProductY": 659, "medianCardHeight": 363, "product6Y": 1436, "product12Y": 2550, "pageHeight": 8212},

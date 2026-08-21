@@ -1,6 +1,6 @@
 # V9 Definition of Done
 
-Candidate implementation: `a87231bcc197ce03c1a371f56cef7f1f78fe9814`. Totals: **96 MET / 0 NOT MET / 0 DEFERRED**.
+Approved candidate: `182e39a6beba1c735dfa699fb3a598d793e56b10`. Permanent validation run `32444530137` passed this exact SHA. Totals: **96 MET / 0 NOT MET / 0 DEFERRED**.
 
 1. MET — V8 baseline `2bfabedf…` verified.
 2. MET — Work isolated to `agent/v9-mobile-catalog`.

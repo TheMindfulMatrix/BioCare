@@ -1,6 +1,6 @@
 # V9 final candidate report
 
-Candidate implementation: `a87231bcc197ce03c1a371f56cef7f1f78fe9814` on `agent/v9-mobile-catalog`, based on V8 production `2bfabedfeaf86ec13bb479e6daa51d6df857bb46`.
+Approved candidate: `182e39a6beba1c735dfa699fb3a598d793e56b10` on `agent/v9-mobile-catalog`, based on V8 production `2bfabedfeaf86ec13bb479e6daa51d6df857bb46`. Permanent validation run `32444530137` passed this exact SHA before report reconciliation.
 
 ## Outcome
 
