@@ -605,6 +605,20 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
         if page in {item.resolve() for item in pages}:
             generated = page.read_text(encoding="utf-8")
             check(site["site"]["disclosure"] in generated, f"{page.relative_to(ROOT)}: affiliate disclosure must remain visible")
+            described_by_ids = {
+                token
+                for value in re.findall(r'aria-describedby="([^"]+)"', generated)
+                for token in value.split()
+            }
+            for described_by_id in described_by_ids:
+                check(f'id="{described_by_id}"' in generated, f"{page.relative_to(ROOT)}: aria-describedby target is missing: {described_by_id}")
+            if 'data-discovery-product' in generated:
+                first_product = generated.find('data-discovery-product')
+                affiliate_disclosure = site["site"]["affiliateDisclosure"]
+                check(0 <= generated.find(affiliate_disclosure) < first_product, f"{page.relative_to(ROOT)}: approved commission disclosure must precede the product grid")
+                if 'data-manufacturer="BioLimitless"' in generated:
+                    biolimitless_disclosure = site["site"]["biolimitlessAffiliateDisclosure"]
+                    check(0 <= generated.find(biolimitless_disclosure) < first_product, f"{page.relative_to(ROOT)}: BioLimitless disclosure must precede its product grid")
             fda_disclaimer = site["site"]["fdaDisclaimer"]
             partner_disclosure = site["site"]["disclosure"]
             expected_fda_count = 2 if page.name == "shop.html" else 1
