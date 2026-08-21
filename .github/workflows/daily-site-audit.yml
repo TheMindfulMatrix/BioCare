@@ -1,0 +1,138 @@
+name: Daily website audit
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+      timezone: "America/Chicago"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: daily-site-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: Audit repository and production
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the default-branch audit source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run permanent suite and live read-only audit
+        id: audit
+        shell: bash
+        env:
+          PRODUCTION_BASE: https://themindfulmatrix.github.io/BioCare/
+        run: |
+          set +e
+          mkdir -p audit-artifacts
+
+          run_component() {
+            local result_variable="$1"
+            local log_name="$2"
+            shift 2
+            "$@" 2>&1 | tee "audit-artifacts/${log_name}"
+            local status=${PIPESTATUS[0]}
+            printf -v "${result_variable}" '%s' "${status}"
+          }
+
+          run_component BUILD_STATUS build.log \
+            python scripts/build.py
+          run_component COMMITTED_OUTPUT_STATUS committed-output.log \
+            git diff --exit-code -- .
+          run_component VALIDATE_STATUS validate.log \
+            python scripts/validate.py
+          run_component STRICT_STATUS compliance-strict.log \
+            python scripts/validate.py --compliance-strict --compliance-dry-run
+          run_component TEST_STATUS unittest.log \
+            python -m unittest discover -s tests -v
+
+          python scripts/daily_site_audit.py \
+            --repository-root . \
+            --production-base "${PRODUCTION_BASE}" \
+            --output-dir audit-artifacts \
+            --component-status "build=${BUILD_STATUS}" \
+            --component-status "committed-output=${COMMITTED_OUTPUT_STATUS}" \
+            --component-status "validate=${VALIDATE_STATUS}" \
+            --component-status "compliance-strict=${STRICT_STATUS}" \
+            --component-status "unittest=${TEST_STATUS}" \
+            2>&1 | tee audit-artifacts/live-audit.log
+          AUDIT_STATUS=${PIPESTATUS[0]}
+
+          if [[ "${AUDIT_STATUS}" -eq 0 ]]; then
+            echo "outcome=success" >> "${GITHUB_OUTPUT}"
+          else
+            echo "outcome=failure" >> "${GITHUB_OUTPUT}"
+          fi
+          exit 0
+
+      - name: Upload permanent audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: biocare-daily-audit-${{ github.run_id }}
+          path: audit-artifacts/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Report failure or recovery in one tracking issue
+        if: always() && steps.audit.outputs.outcome != ''
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUDIT_OUTCOME: ${{ steps.audit.outputs.outcome }}
+          ISSUE_TITLE: "[Daily Audit] BioCare site audit failing"
+        run: |
+          set -euo pipefail
+          issue_number="$(
+            gh issue list \
+              --repo "${GITHUB_REPOSITORY}" \
+              --state open \
+              --limit 100 \
+              --json number,title \
+              --jq 'map(select(.title == "[Daily Audit] BioCare site audit failing")) | .[0].number // empty'
+          )"
+
+          if [[ "${AUDIT_OUTCOME}" == "failure" ]]; then
+            if [[ -n "${issue_number}" ]]; then
+              gh issue comment "${issue_number}" \
+                --repo "${GITHUB_REPOSITORY}" \
+                --body-file audit-artifacts/daily-site-audit.md
+            else
+              gh issue create \
+                --repo "${GITHUB_REPOSITORY}" \
+                --title "${ISSUE_TITLE}" \
+                --body-file audit-artifacts/daily-site-audit.md
+            fi
+          elif [[ -n "${issue_number}" ]]; then
+            {
+              echo '<!-- biocare-daily-audit-recovery -->'
+              echo '# BioCare daily site audit recovered'
+              echo
+              echo "The daily audit passed on ${GITHUB_SHA}."
+              echo
+              echo "Workflow run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            } > audit-artifacts/recovery.md
+            gh issue comment "${issue_number}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --body-file audit-artifacts/recovery.md
+            gh issue close "${issue_number}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --reason completed
+          fi
+
+      - name: Mark a failed audit run
+        if: steps.audit.outputs.outcome == 'failure'
+        run: exit 1
