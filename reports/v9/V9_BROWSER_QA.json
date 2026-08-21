@@ -1,0 +1,13 @@
+{
+  "candidateSha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
+  "status": "passed",
+  "viewports": ["1440x900", "768x1024", "390x844", "375x812"],
+  "columns": {"1440x900": 4, "768x1024": 3, "390x844": 2, "375x812": 2},
+  "mobileStatesExercised": ["top", "intent rail", "compact header", "search", "toolbar", "first row", "first six", "first twelve", "active intent", "manufacturer", "combined filter", "sort", "no results", "filter dialog", "inspector", "learn", "disclosures", "footer"],
+  "catalog": {"productsExercised": 45, "manufacturerStates": 2, "intentStates": 6, "productKinds": 9, "labelStates": 3, "progression": [12, 24, 36, 45]},
+  "failures": {"horizontalOverflow": 0, "overlappingCards": 0, "brokenImages": 0, "failedLocalRequests": 0, "consoleErrors": 0, "consoleWarnings": 0, "duplicateIds": 0, "staleState": 0, "blankProductGaps": 0, "disclosureLoss": 0},
+  "stickyHeightPx": {"375": 167, "390": 167},
+  "initialDomNodes": 509,
+  "expandedDomNodes": 1025,
+  "screenshotsRoot": "outputs/v9"
+}

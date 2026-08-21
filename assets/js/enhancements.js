@@ -177,91 +177,390 @@
   }
   document.querySelectorAll("[data-universe-discovery]").forEach(initUniverseDiscovery);
 
-  function initShopFilters(root) {
-    var buttons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-brand]"));
-    var products = Array.prototype.slice.call(document.querySelectorAll("[data-shop-product]"));
-    var groups = Array.prototype.slice.call(document.querySelectorAll("[data-shop-group]"));
-    var status = root.querySelector("[data-shop-filter-status]");
+  function initShopCatalog(root) {
+    var dataNode = root.querySelector("[data-shop-catalog]");
+    if (!dataNode) return;
+    var catalog = JSON.parse(dataNode.textContent);
+    var products = catalog.products;
+    var disclosures = {
+      zinzino: (root.querySelector("[data-affiliate-disclosure]") || {}).textContent || "",
+      biolimitless: (root.querySelector("[data-biolimitless-disclosure]") || {}).textContent || "",
+      pricing: (root.querySelector("[data-pricing-disclosure]") || {}).textContent || "",
+      commercial: (document.querySelector(".footer-meta p.fine:not([data-fda-disclaimer])") || {}).textContent || "",
+      fda: (root.querySelector("[data-fda-disclaimer]") || {}).textContent || ""
+    };
+    var byId = {};
+    products.forEach(function (product) { byId[product.id] = product; });
+    var grid = root.querySelector("[data-shop-grid]");
     var search = root.querySelector("[data-shop-search]");
+    var searchClear = root.querySelector("[data-shop-search-clear]");
     var sort = root.querySelector("[data-shop-sort]");
-    var clear = root.querySelector("[data-shop-clear]");
-    var activeManufacturer = "all";
-    if (!buttons.length || !products.length) return;
-    root.dataset.enhanced = "true";
+    var resultCount = root.querySelector("[data-shop-result-count]");
+    var status = root.querySelector("[data-shop-status]");
+    var empty = root.querySelector("[data-shop-empty]");
+    var emptyReset = root.querySelector("[data-shop-empty-reset]");
+    var loadMore = root.querySelector("[data-shop-load-more]");
+    var loadStatus = root.querySelector("[data-shop-load-status]");
+    var chips = root.querySelector("[data-shop-chips]");
+    var filterButton = root.querySelector("[data-shop-filter-open]");
+    var filterCount = root.querySelector("[data-shop-filter-count]");
+    var filterDialog = root.querySelector("[data-shop-filter-dialog]");
+    var filterForm = root.querySelector("[data-shop-filter-form]");
+    var filterApply = root.querySelector("[data-shop-filter-apply]");
+    var filterReset = root.querySelector("[data-shop-filter-reset]");
+    var filterClose = root.querySelector("[data-shop-filter-close]");
+    var inspector = root.querySelector("[data-product-inspector]");
+    var inspectorContent = root.querySelector("[data-product-inspector-content]");
+    var inspectorClose = root.querySelector("[data-product-close]");
+    var intentButtons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-intent]"));
+    var state = { q: "", intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
+    var limit = catalog.initialCount;
+    var currentProductId = null;
+    var lastProductTrigger = null;
+    var lastProductFocusId = null;
+    var transparentPixel = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+    var deferredImageObserver = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var image = entry.target;
+        deferredImageObserver.unobserve(image);
+        image.addEventListener("load", function () { image.classList.add("is-loaded"); }, { once: true });
+        image.src = image.dataset.src;
+        image.removeAttribute("data-src");
+      });
+    }, { rootMargin: "160px 0px" }) : null;
 
-    function applyFilter(manufacturer, announce) {
-      var visibleCount = 0;
-      var query = search ? search.value.trim().toLowerCase().replace(/\s+/g, " ") : "";
-      var terms = query ? query.split(" ") : [];
-      activeManufacturer = manufacturer;
-      root.dataset.activeManufacturer = manufacturer;
-      buttons.forEach(function (button) {
-        var active = button.dataset.shopBrand === manufacturer;
+    function money(value) {
+      var number = Number(value);
+      return "$" + number.toLocaleString("en-US", { minimumFractionDigits: number % 1 ? 2 : 0, maximumFractionDigits: 2 });
+    }
+
+    function priceRows(product) {
+      var price = product.price;
+      if (price.pricing_model === "starter_subscription") return [[money(price.start_price), price.start_label, "primary"], [money(price.recurring_price) + "/mo", price.recurring_label, "supporting"]];
+      if (price.pricing_model === "retail_premier") return price.premier_price == null ? [[money(price.retail_price), "retail", "primary"]] : [[money(price.premier_price), "Premier", "primary"], [money(price.retail_price), "retail", "reference"]];
+      if (price.pricing_model === "one_time_autoship") return [[money(price.autoship_price) + "/mo", "Subscribe & Save", "primary"], [money(price.one_time_price), "one-time", "reference"]];
+      if (price.pricing_model === "one_time_range") return [[money(price.one_time_price_min) + "–" + money(price.one_time_price_max), "one-time range", "primary"]];
+      return [[money(price.one_time_price), "one-time", "primary"]];
+    }
+
+    function priceSummary(product, detailed) {
+      var rows = priceRows(product).map(function (row) { return '<span class="catalog-price__' + row[2] + '"><strong>' + htmlSafe(row[0]) + '</strong><small>' + htmlSafe(row[1]) + '</small></span>'; }).join("");
+      var source = detailed ? '<a class="product-price__source" href="' + htmlSafe(product.price.affiliate_price_source) + '" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="inspector-source-disclosure" aria-label="Official price source for ' + htmlSafe(product.name) + ' (opens in a new tab)">Official price source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>' : "";
+      return '<div class="catalog-price' + (detailed ? ' catalog-price--detail' : '') + '" data-price-model="' + htmlSafe(product.price.pricing_model) + '">' + rows + source + '</div>';
+    }
+
+    function productImage(product, eager) {
+      if (!product.cutout) return "";
+      return '<img src="' + (eager ? htmlSafe(product.cutout.src) : transparentPixel) + '"' + (eager ? '' : ' data-src="' + htmlSafe(product.cutout.src) + '"') + ' alt="' + htmlSafe(product.cutout.alt) + '" width="' + Number(product.cutout.width) + '" height="' + Number(product.cutout.height) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + '>';
+    }
+
+    function observeDeferredImages() {
+      Array.prototype.slice.call(grid.querySelectorAll("img[data-src]")).forEach(function (image) {
+        if (deferredImageObserver) deferredImageObserver.observe(image);
+        else { image.src = image.dataset.src; image.removeAttribute("data-src"); }
+      });
+    }
+
+    function cardMarkup(product, index) {
+      return '<article id="product-' + htmlSafe(product.id) + '" class="catalog-card' + (product.name.length >= 42 ? ' product-name--very-long' : product.name.length >= 30 ? ' product-name--long' : '') + '" data-shop-product data-product-id="' + htmlSafe(product.id) + '" data-environment="' + htmlSafe(product.environment) + '">' +
+        '<div class="catalog-card__visual"><span class="catalog-card__node" aria-hidden="true"></span>' + productImage(product, index < 2) + '</div>' +
+        '<div class="catalog-card__body"><p class="catalog-card__meta">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2>' + htmlSafe(product.name) + '</h2><p class="catalog-card__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, false) + '<button class="catalog-card__inspect" type="button" data-product-open="' + htmlSafe(product.id) + '" aria-label="View details for ' + htmlSafe(product.name) + '">View details</button></div></article>';
+    }
+
+    function searchable(product) {
+      return normalize([product.name, product.manufacturer, product.category, product.intent, product.productKind, product.variantLabel, product.description].concat(product.verifiedIngredients || []).join(" "));
+    }
+
+    function filterProducts(snapshot) {
+      var terms = normalize(snapshot.q).split(" ").filter(Boolean);
+      var matches = products.filter(function (product) {
+        return terms.every(function (term) { return searchable(product).indexOf(term) >= 0; }) &&
+          (snapshot.intent === "all" || product.intent === snapshot.intent) &&
+          (snapshot.manufacturer === "all" || product.manufacturer === snapshot.manufacturer) &&
+          (!snapshot.kinds.length || snapshot.kinds.indexOf(product.productKind) >= 0) &&
+          (!snapshot.labels.length || snapshot.labels.indexOf(product.label.state) >= 0);
+      });
+      matches.sort(function (left, right) {
+        if (snapshot.sort === "name") return left.name.localeCompare(right.name);
+        if (snapshot.sort === "manufacturer") return left.manufacturer.localeCompare(right.manufacturer) || left.name.localeCompare(right.name);
+        return left.index - right.index;
+      });
+      return matches;
+    }
+
+    function activeFilterTotal() {
+      return (state.intent === "all" ? 0 : 1) + (state.manufacturer === "all" ? 0 : 1) + state.kinds.length + state.labels.length;
+    }
+
+    function syncControls() {
+      search.value = state.q;
+      searchClear.hidden = !state.q;
+      sort.value = state.sort;
+      intentButtons.forEach(function (button) {
+        var active = button.dataset.shopIntent === state.intent;
         button.setAttribute("aria-pressed", String(active));
         button.setAttribute("tabindex", active ? "0" : "-1");
+        if (active) button.scrollIntoView({ block: "nearest", inline: "center" });
       });
-      products.forEach(function (product) {
-        var brandMatch = manufacturer === "all" || product.dataset.manufacturer === manufacturer;
-        var haystack = product.dataset.searchText || "";
-        var searchMatch = terms.every(function (term) { return haystack.indexOf(term) !== -1; });
-        var visible = brandMatch && searchMatch;
-        product.hidden = !visible;
-        if (visible) visibleCount += 1;
-      });
-      groups.forEach(function (group) {
-        var visibleProducts = Array.prototype.slice.call(group.querySelectorAll("[data-shop-product]:not([hidden])"));
-        var counter = group.querySelector("[data-shop-group-count]");
-        var empty = group.querySelector("[data-shop-empty]");
-        if (counter) counter.textContent = String(visibleProducts.length).padStart(2, "0") + " verified product" + (visibleProducts.length === 1 ? "" : "s");
-        if (empty) empty.hidden = visibleProducts.length > 0;
-      });
-      if (status) status.textContent = "Showing " + visibleCount + " of " + products.length + " active products" + (query ? " matching “" + query + "”" : "") + (manufacturer === "all" ? "." : " from " + manufacturer + ".");
-      if (clear) clear.hidden = !query && manufacturer === "all" && (!sort || sort.value === "curated");
+      var total = activeFilterTotal();
+      filterCount.hidden = total === 0;
+      filterCount.textContent = String(total);
+      filterButton.classList.toggle("is-active", total > 0);
     }
 
-    function applySort() {
-      var mode = sort ? sort.value : "curated";
-      groups.forEach(function (group) {
-        var grid = group.querySelector(".shop-group__grid");
-        if (!grid) return;
-        Array.prototype.slice.call(grid.querySelectorAll("[data-shop-product]")).sort(function (left, right) {
-          if (mode === "name-asc") return left.dataset.productName.localeCompare(right.dataset.productName);
-          if (mode === "manufacturer") return left.dataset.manufacturer.localeCompare(right.dataset.manufacturer) || left.dataset.productName.localeCompare(right.dataset.productName);
-          return Number(left.dataset.curatedIndex) - Number(right.dataset.curatedIndex);
-        }).forEach(function (product) { grid.appendChild(product); });
-      });
-      applyFilter(activeManufacturer, true);
+    function chipLabel(type, value) {
+      if (type === "intent") {
+        var intent = catalog.intents.find(function (item) { return item.id === value; });
+        return intent ? intent.shortName : value;
+      }
+      if (type === "label") return value === "complete_verified" ? "Verified label" : value === "partial_verified" ? "Partial label" : "Label unavailable";
+      return value;
     }
 
-    buttons.forEach(function (button, index) {
-      button.addEventListener("click", function () { applyFilter(button.dataset.shopBrand, true); });
+    function renderChips() {
+      var rows = [];
+      if (state.intent !== "all") rows.push(["intent", state.intent]);
+      if (state.manufacturer !== "all") rows.push(["manufacturer", state.manufacturer]);
+      state.kinds.forEach(function (value) { rows.push(["kind", value]); });
+      state.labels.forEach(function (value) { rows.push(["label", value]); });
+      chips.hidden = rows.length === 0;
+      chips.innerHTML = rows.map(function (row) { var label = chipLabel(row[0], row[1]); return '<button type="button" data-shop-chip="' + htmlSafe(row[0]) + '" data-shop-chip-value="' + htmlSafe(row[1]) + '" aria-label="Remove ' + htmlSafe(label) + ' filter"><span>' + htmlSafe(label) + '</span> ×</button>'; }).join("") + (rows.length ? '<button type="button" data-shop-chip="clear">Clear all</button>' : '');
+    }
+
+    function urlForState() {
+      var url = new URL(location.href);
+      ["q", "intent", "manufacturer", "kind", "label", "sort"].forEach(function (key) { url.searchParams.delete(key); });
+      if (state.q) url.searchParams.set("q", normalize(state.q));
+      if (state.intent !== "all") url.searchParams.set("intent", state.intent);
+      if (state.manufacturer !== "all") url.searchParams.set("manufacturer", state.manufacturer);
+      state.kinds.forEach(function (value) { url.searchParams.append("kind", value); });
+      state.labels.forEach(function (value) { url.searchParams.append("label", value); });
+      if (state.sort !== "canonical") url.searchParams.set("sort", state.sort);
+      return url;
+    }
+
+    function saveState(mode, extra) {
+      history[mode + "State"](Object.assign({ v9Catalog: true }, extra || {}), "", urlForState());
+    }
+
+    function closeStaleInspector(matches) {
+      if (!currentProductId || matches.some(function (product) { return product.id === currentProductId; })) return;
+      var url = urlForState();
+      url.searchParams.delete("product");
+      history.replaceState({ v9Catalog: true }, "", url);
+      currentProductId = null;
+      if (inspector.open) inspector.close();
+    }
+
+    function render(options) {
+      options = options || {};
+      var matches = filterProducts(state);
+      var visible = matches.slice(0, Math.min(limit, matches.length));
+      grid.innerHTML = visible.map(cardMarkup).join("");
+      observeDeferredImages();
+      resultCount.textContent = String(matches.length);
+      empty.hidden = matches.length !== 0;
+      loadMore.hidden = matches.length <= visible.length;
+      loadStatus.hidden = matches.length === 0;
+      loadStatus.textContent = "Showing " + visible.length + " of " + matches.length;
+      status.textContent = "Showing " + visible.length + " of " + matches.length + " matching products out of " + products.length + " active products.";
+      syncControls();
+      renderChips();
+      closeStaleInspector(matches);
+      if (options.history) saveState(options.history);
+    }
+
+    function resetAll(historyMode) {
+      state = { q: "", intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
+      limit = catalog.initialCount;
+      render({ history: historyMode || "push" });
+    }
+
+    function removeChip(type, value) {
+      if (type === "clear") return resetAll("push");
+      if (type === "intent") state.intent = "all";
+      if (type === "manufacturer") state.manufacturer = "all";
+      if (type === "kind") state.kinds = state.kinds.filter(function (item) { return item !== value; });
+      if (type === "label") state.labels = state.labels.filter(function (item) { return item !== value; });
+      limit = catalog.initialCount;
+      render({ history: "push" });
+    }
+
+    function setIntent(value, moveFocus) {
+      state.intent = value;
+      limit = catalog.initialCount;
+      render({ history: "push" });
+      var active = intentButtons.find(function (button) { return button.dataset.shopIntent === value; });
+      if (active && moveFocus) active.focus();
+    }
+
+    function draftState() {
+      var intent = filterForm.querySelector('[name="filter-intent"]:checked');
+      var manufacturer = filterForm.querySelector('[name="filter-manufacturer"]:checked');
+      return {
+        q: state.q,
+        intent: intent ? intent.value : "all",
+        manufacturer: manufacturer ? manufacturer.value : "all",
+        kinds: Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-kind"]:checked')).map(function (input) { return input.value; }),
+        labels: Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-label"]:checked')).map(function (input) { return input.value; }),
+        sort: state.sort
+      };
+    }
+
+    function syncFilterForm() {
+      Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-intent"]')).forEach(function (input) { input.checked = input.value === state.intent; });
+      Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-manufacturer"]')).forEach(function (input) { input.checked = input.value === state.manufacturer; });
+      Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-kind"]')).forEach(function (input) { input.checked = state.kinds.indexOf(input.value) >= 0; });
+      Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-label"]')).forEach(function (input) { input.checked = state.labels.indexOf(input.value) >= 0; });
+      updateDraftCount();
+    }
+
+    function updateDraftCount() {
+      var count = filterProducts(draftState()).length;
+      filterApply.textContent = "Show " + count + " product" + (count === 1 ? "" : "s");
+    }
+
+    function updateDialogLock() {
+      document.body.classList.toggle("catalog-dialog-open", Boolean(filterDialog.open || inspector.open));
+    }
+
+    function openFilters() {
+      syncFilterForm();
+      history.pushState({ v9Catalog: true, filterOpen: true }, "", location.href);
+      filterDialog.showModal();
+      updateDialogLock();
+    }
+
+    function requestFilterClose() {
+      if (history.state && history.state.filterOpen) history.back();
+      else filterDialog.close();
+    }
+
+    function labelMarkup(product) {
+      var label = product.label;
+      if (label.state === "unavailable_or_unverified") return '<section class="inspector-label"><h3>Label documentation unavailable</h3><p>Manufacturer label documentation is not currently verified for this product. No ingredient list is shown.</p></section>';
+      var heading = label.state === "partial_verified" ? "Partially verified label" : "Verified label information";
+      var rows = (label.ingredients || []).map(function (item) { var amount = item.disclosed === false || item.amount == null ? "Amount not disclosed by manufacturer" : String(item.amount) + (item.unit ? " " + item.unit : ""); return '<li><span>' + htmlSafe(item.ingredient) + '</span><strong>' + htmlSafe(amount) + '</strong></li>'; }).join("");
+      return '<section class="inspector-label"><h3>' + heading + '</h3><dl><div><dt>Serving size</dt><dd>' + htmlSafe(label.servingSize || "Not stated") + '</dd></div><div><dt>Servings</dt><dd>' + htmlSafe(label.servingsPerContainer || "Not stated") + '</dd></div></dl><ul>' + rows + '</ul><p>Checked ' + htmlSafe(label.checkedDate || "date unavailable") + ' against the official manufacturer source.</p>' + (label.sourceUrl ? '<a href="' + htmlSafe(label.sourceUrl) + '" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="inspector-source-disclosure">View manufacturer label source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>' : '') + '</section>';
+    }
+
+    function inspectorMarkup(product) {
+      var disclosure = product.manufacturer === "BioLimitless" ? disclosures.biolimitless : disclosures.zinzino;
+      var education = product.relatedEducation ? '<a class="button button-secondary" href="' + htmlSafe(product.relatedEducation.href) + '">' + htmlSafe(product.relatedEducation.label) + ' →</a>' : "";
+      return '<article data-inspector-product="' + htmlSafe(product.id) + '"><div class="product-inspector__visual" data-environment="' + htmlSafe(product.environment) + '">' + productImage(product, true) + '</div><div class="product-inspector__details"><p class="interface-label">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2 id="product-inspector-title">' + htmlSafe(product.name) + '</h2><p class="product-inspector__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, true) + '<dl class="product-inspector__facts"><div><dt>SKU</dt><dd>' + htmlSafe(product.sku || "Not assigned") + '</dd></div><div><dt>Format</dt><dd>' + htmlSafe(product.variantLabel) + '</dd></div><div><dt>Type</dt><dd>' + htmlSafe(product.productKind) + '</dd></div><div><dt>Pricing source</dt><dd>Checked ' + htmlSafe(product.price.price_verified_at) + '</dd></div></dl><section class="product-inspector__why"><h3>Why it’s here</h3><p>' + htmlSafe(product.whyItsHere) + '</p></section>' + labelMarkup(product) + '<div class="product-inspector__actions"><a class="button button-primary" href="' + htmlSafe(product.destination) + '" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="inspector-source-disclosure" aria-label="Official product source for ' + htmlSafe(product.name) + ' (opens in a new tab)">Official product source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>' + education + '</div><div class="product-inspector__disclosure" id="inspector-source-disclosure" role="note"><p>' + htmlSafe(disclosure) + '</p><p>' + htmlSafe(disclosures.pricing) + '</p>' + (product.manufacturer === "Zinzino" ? '<p>' + htmlSafe(disclosures.commercial) + '</p>' : '') + '<p>' + htmlSafe(disclosures.fda) + '</p></div></div></article>';
+    }
+
+    function openInspector(productId, updateUrl, trigger) {
+      var product = byId[productId];
+      if (!product) return;
+      currentProductId = productId;
+      if (trigger) { lastProductTrigger = trigger; lastProductFocusId = productId; }
+      inspectorContent.innerHTML = inspectorMarkup(product);
+      if (!inspector.open) inspector.showModal();
+      updateDialogLock();
+      if (updateUrl) {
+        var url = urlForState();
+        url.searchParams.set("product", productId);
+        history.pushState({ v9Catalog: true, v9Product: productId }, "", url);
+      }
+      inspectorClose.focus();
+    }
+
+    function hideInspector() {
+      currentProductId = null;
+      if (inspector.open) inspector.close();
+      updateDialogLock();
+    }
+
+    function requestInspectorClose() {
+      if (history.state && history.state.v9Product) history.back();
+      else {
+        var url = urlForState();
+        url.searchParams.delete("product");
+        history.replaceState({ v9Catalog: true }, "", url);
+        hideInspector();
+      }
+    }
+
+    function restoreFromUrl() {
+      var params = new URLSearchParams(location.search);
+      var intent = params.get("intent") || "all";
+      var manufacturer = params.get("manufacturer") || "all";
+      var sortMode = params.get("sort") || "canonical";
+      state.q = params.get("q") || "";
+      state.intent = intentButtons.some(function (button) { return button.dataset.shopIntent === intent; }) ? intent : "all";
+      state.manufacturer = products.some(function (product) { return product.manufacturer === manufacturer; }) ? manufacturer : "all";
+      state.kinds = params.getAll("kind").filter(function (kind) { return products.some(function (product) { return product.productKind === kind; }); });
+      state.labels = params.getAll("label").filter(function (label) { return ["complete_verified", "partial_verified", "unavailable_or_unverified"].indexOf(label) >= 0; });
+      state.sort = ["canonical", "name", "manufacturer"].indexOf(sortMode) >= 0 ? sortMode : "canonical";
+      return params.get("product");
+    }
+
+    intentButtons.forEach(function (button, index) {
+      button.addEventListener("click", function () { setIntent(button.dataset.shopIntent, false); });
       button.addEventListener("keydown", function (event) {
-        var nextIndex = null;
-        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % buttons.length;
-        if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + buttons.length) % buttons.length;
-        if (event.key === "Home") nextIndex = 0;
-        if (event.key === "End") nextIndex = buttons.length - 1;
-        if (nextIndex === null) return;
+        var next = null;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % intentButtons.length;
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index - 1 + intentButtons.length) % intentButtons.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = intentButtons.length - 1;
+        if (next == null) return;
         event.preventDefault();
-        applyFilter(buttons[nextIndex].dataset.shopBrand, true);
-        buttons[nextIndex].focus();
+        setIntent(intentButtons[next].dataset.shopIntent, true);
       });
     });
-
-    if (search) search.addEventListener("input", function () { applyFilter(activeManufacturer, true); });
-    if (sort) sort.addEventListener("change", applySort);
-    if (clear) clear.addEventListener("click", function () {
-      if (search) search.value = "";
-      if (sort) sort.value = "curated";
-      applySort();
-      applyFilter("all", true);
-      if (search) search.focus();
+    search.addEventListener("input", function () { state.q = search.value; limit = catalog.initialCount; render({ history: "replace" }); });
+    searchClear.addEventListener("click", function () { state.q = ""; limit = catalog.initialCount; render({ history: "push" }); search.focus(); });
+    sort.addEventListener("change", function () { state.sort = sort.value; render({ history: "push" }); });
+    loadMore.addEventListener("click", function () { limit += catalog.initialCount; render(); loadStatus.focus({ preventScroll: true }); });
+    chips.addEventListener("click", function (event) { var button = event.target.closest("[data-shop-chip]"); if (button) removeChip(button.dataset.shopChip, button.dataset.shopChipValue); });
+    emptyReset.addEventListener("click", function () { resetAll("push"); search.focus(); });
+    grid.addEventListener("click", function (event) { var button = event.target.closest("[data-product-open]"); if (button) openInspector(button.dataset.productOpen, true, button); });
+    filterButton.addEventListener("click", openFilters);
+    filterClose.addEventListener("click", requestFilterClose);
+    filterDialog.addEventListener("cancel", function (event) { event.preventDefault(); requestFilterClose(); });
+    filterDialog.addEventListener("close", function () { updateDialogLock(); filterButton.focus(); });
+    filterForm.addEventListener("change", updateDraftCount);
+    filterReset.addEventListener("click", function () {
+      Array.prototype.slice.call(filterForm.querySelectorAll('input[type="checkbox"]')).forEach(function (input) { input.checked = false; });
+      filterForm.querySelector('[name="filter-intent"][value="all"]').checked = true;
+      filterForm.querySelector('[name="filter-manufacturer"][value="all"]').checked = true;
+      updateDraftCount();
     });
-
-    applyFilter("all", false);
+    filterApply.addEventListener("click", function () {
+      var draft = draftState();
+      state.intent = draft.intent; state.manufacturer = draft.manufacturer; state.kinds = draft.kinds; state.labels = draft.labels;
+      limit = catalog.initialCount;
+      saveState("replace");
+      filterDialog.close();
+      render();
+    });
+    inspectorClose.addEventListener("click", requestInspectorClose);
+    inspector.addEventListener("cancel", function (event) { event.preventDefault(); requestInspectorClose(); });
+    inspector.addEventListener("close", function () {
+      updateDialogLock();
+      var returnTarget = lastProductTrigger && document.contains(lastProductTrigger) ? lastProductTrigger : (lastProductFocusId ? grid.querySelector('[data-product-open="' + CSS.escape(lastProductFocusId) + '"]') : null);
+      if (returnTarget) returnTarget.focus();
+    });
+    window.addEventListener("popstate", function () {
+      if (filterDialog.open && !(history.state && history.state.filterOpen)) filterDialog.close();
+      var productId = restoreFromUrl();
+      limit = catalog.initialCount;
+      render();
+      if (productId) openInspector(productId, false);
+      else hideInspector();
+    });
+    function updateStickyOffset() { var header = document.querySelector(".site-header"); document.documentElement.style.setProperty("--catalog-header-height", (header ? Math.ceil(header.getBoundingClientRect().height) : 0) + "px"); }
+    window.addEventListener("resize", updateStickyOffset, { passive: true });
+    updateStickyOffset();
+    var initialProductId = restoreFromUrl();
+    render();
+    history.replaceState({ v9Catalog: true }, "", location.href);
+    if (initialProductId) openInspector(initialProductId, false);
   }
 
-  document.querySelectorAll("[data-shop-filter-root]").forEach(initShopFilters);
+  document.querySelectorAll("[data-shop-catalog-root]").forEach(initShopCatalog);
 
   function normalize(value) { return String(value || "").trim().toLowerCase().replace(/\s+/g, " "); }
   function htmlSafe(value) { return String(value == null ? "" : value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character];}); }

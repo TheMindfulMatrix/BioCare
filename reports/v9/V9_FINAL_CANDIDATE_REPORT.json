@@ -1,0 +1,18 @@
+{
+  "baselineSha": "2bfabedfeaf86ec13bb479e6daa51d6df857bb46",
+  "branch": "agent/v9-mobile-catalog",
+  "candidateSha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
+  "candidateValidationRun": 32444530137,
+  "status": "ready for user review",
+  "products": {"active": 45, "deferred": 8, "manufacturers": 2, "intents": 6},
+  "mobileOrder": ["global header/search", "horizontal intent rail", "compact Product Universe header", "catalog search", "result/filter/sort toolbar", "compact disclosure", "two-column product grid"],
+  "gridColumns": {"375": 2, "390": 2, "768": 3, "1440": 4},
+  "progressiveCards": [12, 24, 36, 45],
+  "pricingModels": {"retail_premier": 35, "one_time_autoship": 7, "starter_subscription": 1, "one_time": 1, "one_time_range": 1},
+  "labelStates": {"complete_verified": 3, "partial_verified": 1, "unavailable_or_unverified": 41},
+  "compliance": {"hardGate": "passed", "fixtures": "8/8", "reviewWarnings": 70, "strictDryRunItems": 77},
+  "tests": {"total": 26, "passed": 26, "v9Specific": 11},
+  "definitionOfDone": {"met": 96, "notMet": 0, "deferred": 0},
+  "merge": false,
+  "deployment": false
+}

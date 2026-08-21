@@ -1,0 +1,12 @@
+V9 CANDIDATE READY FOR USER REVIEW
+Baseline: 2bfabedfeaf86ec13bb479e6daa51d6df857bb46
+Branch: agent/v9-mobile-catalog
+Approved candidate SHA: 182e39a6beba1c735dfa699fb3a598d793e56b10
+Candidate validation run: 32444530137 (success on the exact approved SHA)
+Products: 45 active / 8 deferred
+Definition of Done: 96 MET / 0 NOT MET / 0 DEFERRED
+Validation: deterministic build, 26/26 tests, hard compliance gate, 8/8 fixtures
+Compliance inventory: 70 review warnings / 77 strict dry-run items
+Browser QA: 1440 / 768 / 390 / 375 passed
+Deployment: none; production remains V8
+Release authority: none; draft PR must remain unmerged pending user approval

@@ -567,38 +567,153 @@ def product_label_panel_markup(product: dict, label_record: dict | None) -> str:
     return f'''<details class="product-label-panel"><summary>View full label information</summary><div class="product-label-panel__body"><dl><div><dt>Serving size</dt><dd>{serving}</dd></div><div><dt>Servings per container</dt><dd>{servings}</dd></div></dl><ul>{"".join(rows)}</ul><p>Checked {checked} against the official manufacturer source.</p><a href="{source}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Full label source for {esc(product["name"], attribute=True)} (opens in a new tab)">View manufacturer label source ↗{external_note()}</a></div></details>'''
 
 
-def shop_intent_nav_markup(intents: list[dict], products: list[dict]) -> str:
+def shop_intent_rail_label(intent: dict) -> str:
+    return "Testing" if intent["id"] == "test-measure" else intent["shortName"]
+
+
+def shop_intent_rail_markup(intents: list[dict], products: list[dict]) -> str:
     counts = {intent["id"]: sum(1 for product in products if product["intent"] == intent["id"]) for intent in intents}
-    return "".join(
-        f'<a href="#intent-{esc(intent["id"], attribute=True)}"><span>{esc(intent["index"])}</span><strong>{esc(intent["name"])}</strong><small>{counts[intent["id"]]:02d} products</small></a>'
-        for intent in intents
+    buttons = [
+        f'<button type="button" data-shop-intent="all" aria-pressed="true"><strong>All</strong><small>{len(products)}</small></button>'
+    ]
+    for intent in intents:
+        buttons.append(
+            f'<button id="intent-{esc(intent["id"], attribute=True)}" type="button" data-shop-intent="{esc(intent["id"], attribute=True)}" aria-pressed="false">'
+            f'<strong>{esc(shop_intent_rail_label(intent))}</strong><small>{counts[intent["id"]]}</small></button>'
+        )
+    return "".join(buttons)
+
+
+def shop_price_summary_markup(product: dict) -> str:
+    price = product["price"]
+    model = price["pricing_model"]
+    if model == "starter_subscription":
+        lines = [(money(price["start_price"]), esc(price["start_label"]), "primary"), (f'{money(price["recurring_price"])}/mo', esc(price["recurring_label"]), "supporting")]
+    elif model == "retail_premier":
+        lines = [(money(price["premier_price"]), "Premier", "primary"), (money(price["retail_price"]), "retail", "reference")] if price.get("premier_price") is not None else [(money(price["retail_price"]), "retail", "primary")]
+    elif model == "one_time_autoship":
+        lines = [(f'{money(price["autoship_price"])}/mo', "Subscribe &amp; Save", "primary"), (money(price["one_time_price"]), "one-time", "reference")]
+    elif model == "one_time_range":
+        lines = [(f'{money(price["one_time_price_min"])}–{money(price["one_time_price_max"])}', "one-time range", "primary")]
+    else:
+        lines = [(money(price["one_time_price"]), "one-time", "primary")]
+    return '<div class="catalog-price" data-price-model="{}">{}</div>'.format(
+        esc(model, attribute=True),
+        "".join(f'<span class="catalog-price__{role}"><strong>{value}</strong><small>{label}</small></span>' for value, label, role in lines),
     )
 
 
-def shop_product_card_markup(product: dict, *, index: int, label_record: dict | None = None) -> str:
-    related = product.get("relatedEducation")
-    related_markup = f'<a class="shop-product__learn" href="{esc(related["href"], attribute=True)}" aria-label="{esc(related["label"], attribute=True)} for {esc(product["name"], attribute=True)}">{esc(related["label"])} →</a>' if related else ""
-    name_modifier = product_name_modifier(product["name"])
-    sku_attribute = f' data-product-sku="{esc(product["sku"], attribute=True)}"' if product.get("sku") else ""
-    eager = index <= 3
-    search_text = " ".join(str(product.get(key, "")) for key in ("name", "manufacturer", "category", "productKind", "variantLabel", "description")).lower()
-    price_value = product.get("price", {}).get("one_time_price") or product.get("price", {}).get("retail_price") or 0
-    return f'''<article id="product-{esc(product["id"], attribute=True)}" class="shop-product{name_modifier}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-manufacturer="{esc(product["manufacturer"], attribute=True)}" data-search-text="{esc(search_text, attribute=True)}" data-product-name="{esc(product["name"].lower(), attribute=True)}" data-product-price="{price_value}" data-curated-index="{index}"{sku_attribute} data-reveal>
-        <div class="shop-product__visual" data-environment="{esc(product["environment"], attribute=True)}"><span aria-hidden="true"></span><div>{shelf_product_markup(product, eager=eager)}</div><small>{product_reference(product)}</small></div>
-        <div class="shop-product__body"><p class="interface-label">{index:02d} / {esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3><p>{esc(product["description"])}</p>{price_markup(product, context="compact")}<dl><div><dt>Format</dt><dd>{esc(product["variantLabel"])}</dd></div><div><dt>Type</dt><dd>{esc(product["productKind"])}</dd></div></dl>{product_label_panel_markup(product, label_record)}{biolimitless_disclosure(product)}<div class="shop-product__links"><a class="button button-primary" href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer" aria-label="{esc(product["cta"], attribute=True)}: {esc(product["name"], attribute=True)} (opens in a new tab)">{esc(product["cta"])} ↗{external_note()}</a>{related_markup}</div></div>
+def shop_label_payload(label_record: dict | None) -> dict:
+    if not label_record:
+        return {"state": "unavailable_or_unverified", "ingredients": []}
+    approved = label_record.get("status") == "approved"
+    return {
+        "state": label_record.get("verificationStatus", "unavailable_or_unverified"),
+        "status": label_record.get("status", "pending"),
+        "servingSize": label_record.get("serving_size") if approved else None,
+        "servingsPerContainer": label_record.get("servings_per_container") if approved else None,
+        "ingredients": label_record.get("ingredients", []) if approved else [],
+        "sourceUrl": label_record.get("source_url") if approved else None,
+        "checkedDate": label_record.get("checked_date") if approved else None,
+    }
+
+
+def shop_product_payload(product: dict, *, index: int, label_record: dict | None) -> dict:
+    label = shop_label_payload(label_record)
+    return {
+        "id": product["id"],
+        "index": index,
+        "name": product["name"],
+        "manufacturer": product["manufacturer"],
+        "sku": product.get("sku"),
+        "intent": product["intent"],
+        "category": product["category"],
+        "productKind": product["productKind"],
+        "purchaseModel": product.get("purchaseModel"),
+        "variantLabel": product["variantLabel"],
+        "description": product["description"],
+        "whyItsHere": product["whyItsHere"],
+        "environment": product["environment"],
+        "destination": product["destination"],
+        "cta": product["cta"],
+        "price": {**product["price"], "affiliate_price_source": affiliate_source_url(product)},
+        "cutout": product.get("cutout"),
+        "relatedEducation": product.get("relatedEducation"),
+        "label": label,
+        "verifiedIngredients": [item["ingredient"] for item in label["ingredients"]],
+    }
+
+
+def shop_catalog_data_markup(data: dict, products: list[dict], label_records: dict[str, dict]) -> str:
+    catalog = data["catalog"]
+    payload = {
+        "activeCount": len(products),
+        "initialCount": 12,
+        "verifiedDate": catalog["verifiedDate"],
+        "intents": [
+            {
+                "id": intent["id"],
+                "name": intent["name"],
+                "shortName": shop_intent_rail_label(intent),
+                "count": sum(1 for product in products if product["intent"] == intent["id"]),
+            }
+            for intent in catalog["intents"]
+        ],
+        "products": [shop_product_payload(product, index=index, label_record=label_records.get(product["id"])) for index, product in enumerate(products, start=1)],
+    }
+    serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    return f'<script type="application/json" data-shop-catalog>{serialized}</script>'
+
+
+def shop_compact_card_markup(product: dict, *, index: int) -> str:
+    eager = index <= 2
+    loading = "eager" if eager else "lazy"
+    priority = ' fetchpriority="high"' if eager else ""
+    cutout = product.get("cutout")
+    if cutout:
+        source = esc(cutout["src"], attribute=True)
+        rendered_source = source if eager else "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+        deferred_source = "" if eager else f' data-src="{source}"'
+        image = (
+            f'<img src="{rendered_source}"{deferred_source} alt="{esc(cutout["alt"], attribute=True)}" '
+            f'width="{int(cutout["width"])}" height="{int(cutout["height"])}" loading="{loading}" decoding="async"{priority}>'
+        )
+    else:
+        image = image_markup(product, eager=eager)
+    return f'''<article id="product-{esc(product["id"], attribute=True)}" class="catalog-card{product_name_modifier(product["name"])}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-environment="{esc(product["environment"], attribute=True)}">
+        <div class="catalog-card__visual"><span class="catalog-card__node" aria-hidden="true"></span>{image}</div>
+        <div class="catalog-card__body"><p class="catalog-card__meta">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h2>{esc(product["name"])}</h2><p class="catalog-card__description">{esc(product["description"])}</p>{shop_price_summary_markup(product)}<button class="catalog-card__inspect" type="button" data-product-open="{esc(product["id"], attribute=True)}" aria-label="View details for {esc(product["name"], attribute=True)}">View details</button></div>
       </article>'''
 
 
-def shop_groups_markup(catalog: dict, label_records: dict[str, dict]) -> str:
-    groups=[]; product_index=0
-    for position,intent in enumerate(catalog["intents"]):
-        products=[product for product in active_products(catalog) if product["intent"]==intent["id"]]
-        cards=[]
-        for product in products:
-            product_index+=1; cards.append(shop_product_card_markup(product,index=product_index,label_record=label_records.get(product["id"])))
-        tone="section-dark" if position%2==0 else "section-warm"
-        groups.append(f'''<section id="intent-{esc(intent["id"], attribute=True)}" class="shop-group {tone} section-pad" aria-labelledby="intent-{esc(intent["id"], attribute=True)}-title" data-shop-group data-environment="{esc(intent["environment"], attribute=True)}"><div class="container-wide"><header class="shop-group__heading" data-reveal><div><p class="section-kicker">Intent {esc(intent["index"])}</p><h2 id="intent-{esc(intent["id"], attribute=True)}-title">{esc(intent["name"])}</h2></div><p>{esc(intent["description"])}</p><span data-shop-group-count>{len(products):02d} curated products</span></header><div class="shop-group__grid">{"".join(cards)}</div><p class="shop-group__empty" data-shop-empty hidden>No products from this manufacturer in this intent.</p></div></section>''')
-    return "".join(groups)
+def shop_initial_cards_markup(products: list[dict]) -> str:
+    return "".join(shop_compact_card_markup(product, index=index) for index, product in enumerate(products[:12], start=1))
+
+
+def shop_filter_intents_markup(intents: list[dict]) -> str:
+    options = ['<label><input type="radio" name="filter-intent" value="all" checked><span>All products</span></label>']
+    options.extend(f'<label><input type="radio" name="filter-intent" value="{esc(intent["id"], attribute=True)}"><span>{esc(intent["name"])}</span></label>' for intent in intents)
+    return "".join(options)
+
+
+def shop_filter_kinds_markup(products: list[dict]) -> str:
+    kinds = sorted({product["productKind"] for product in products}, key=str.casefold)
+    return "".join(f'<label><input type="checkbox" name="filter-kind" value="{esc(kind, attribute=True)}"><span>{esc(kind)}</span></label>' for kind in kinds)
+
+
+def shop_filter_manufacturers_markup(products: list[dict]) -> str:
+    manufacturers = sorted({product["manufacturer"] for product in products}, key=str.casefold)
+    options = ['<label><input type="radio" name="filter-manufacturer" value="all" checked><span>All manufacturers</span></label>']
+    options.extend(f'<label><input type="radio" name="filter-manufacturer" value="{esc(manufacturer, attribute=True)}"><span>{esc(manufacturer)}</span></label>' for manufacturer in manufacturers)
+    return "".join(options)
+
+
+def shop_no_script_markup(products: list[dict], data: dict) -> str:
+    links = "".join(
+        f'<li><a href="{esc(product["destination"], attribute=True)}" target="_blank" rel="sponsored noopener noreferrer">{esc(product["name"])} — official manufacturer source ↗{external_note()}</a></li>'
+        for product in products
+    )
+    return f'''<noscript><section class="shop-noscript" aria-labelledby="shop-noscript-title"><h2 id="shop-noscript-title">Complete product catalog</h2><p>JavaScript is unavailable, so this list provides every official manufacturer destination.</p><ul>{links}</ul></section></noscript>'''
 
 
 def shop_fallbacks_markup(fallbacks: list[dict]) -> str:
@@ -1165,8 +1280,15 @@ def build_shop(data: dict, product_labels: dict) -> None:
     replacements={
         "{{DOCUMENT_HEAD}}": document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Product Universe",page["path"])]),shop_collection_schema(metadata,products)]),
         "{{SHARED_HEADER}}": shared_header_markup(data,prefix="",current="shop"), "{{SHARED_FOOTER}}": shared_footer_markup(data,prefix=""),
-        "{{SHOP_COUNT}}":f'{len(products):02d}', "{{VERIFIED_DATE}}":esc(catalog["verifiedDate"]), "{{SHOP_INTENT_NAV}}":shop_intent_nav_markup(catalog["intents"],products),
-        "{{SHOP_GROUPS}}":shop_groups_markup(catalog,label_records), "{{SHOP_FALLBACKS}}":shop_fallbacks_markup(catalog["fallbackDestinations"]),
+        "{{SHOP_COUNT}}":str(len(products)), "{{VERIFIED_DATE}}":esc(catalog["verifiedDate"]),
+        "{{SHOP_INTENT_RAIL}}":shop_intent_rail_markup(catalog["intents"],products),
+        "{{SHOP_FILTER_INTENTS}}":shop_filter_intents_markup(catalog["intents"]),
+        "{{SHOP_FILTER_MANUFACTURERS}}":shop_filter_manufacturers_markup(products),
+        "{{SHOP_FILTER_KINDS}}":shop_filter_kinds_markup(products),
+        "{{SHOP_INITIAL_CARDS}}":shop_initial_cards_markup(products),
+        "{{SHOP_CATALOG_DATA}}":shop_catalog_data_markup(data,products,label_records),
+        "{{SHOP_NO_SCRIPT}}":shop_no_script_markup(products,data),
+        "{{SHOP_FALLBACKS}}":shop_fallbacks_markup(catalog["fallbackDestinations"]),
         "{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"]), "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}":esc(data["site"]["biolimitlessAffiliateDisclosure"]),
         "{{PRICING_DISCLOSURE}}":esc(data["site"]["pricingDisclosure"]), "{{FDA_DISCLAIMER}}":esc(data["site"]["fdaDisclaimer"]), "{{DISCLOSURE}}":esc(data["site"]["disclosure"]),
     }
