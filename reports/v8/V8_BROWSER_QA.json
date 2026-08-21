@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "viewports": [
+    "1440x900",
+    "768x1024",
+    "390x844",
+    "375x812"
+  ],
+  "publicPages": 22,
+  "departmentRoutes": 6,
+  "horizontalOverflow": 0,
+  "brokenRenderedImages": 0,
+  "failedLocalRequests": 0,
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "duplicateIds": 0,
+  "staleState": 0,
+  "allPagesCheckedPerViewport": 22,
+  "mobileBelow12pxVisibleText": 0,
+  "mobileTargetsBelow44px": 0,
+  "productUniverse": {
+    "productsExercised": 45,
+    "manufacturers": 2,
+    "intents": 6,
+    "categories": 18,
+    "filterStateFailures": 0,
+    "staleInspectorOnEmpty": false
+  },
+  "mobileNestedScrollTrap": false,
+  "productVisibleInMobileOpening": true,
+  "screenshotsRoot": "outputs/v8/after",
+  "screenshots": [
+    "homepage-desktop-full.png",
+    "homepage-desktop-above-fold.png",
+    "homepage-tablet.png",
+    "homepage-375-full.png",
+    "homepage-375-above-fold.png",
+    "explore-desktop-everything.png",
+    "explore-390-everything.png",
+    "explore-390-learn.png",
+    "explore-390-no-result.png",
+    "explore-375-products.png",
+    "department-testing-measurement-desktop.png",
+    "department-omega-nutrition-desktop.png",
+    "department-skin-collagen-desktop.png",
+    "know-your-number-desktop.png",
+    "library-desktop.png",
+    "start-here-desktop.png"
+  ]
+}

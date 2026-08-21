@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "contrast": {
+    "searchButton": "dark text on restrained gold; exceeds AA",
+    "placeholder": "dark neutral on white input; exceeds AA",
+    "resultSummary": "light neutral on deep-green surface; exceeds AA",
+    "typeLabel": "warm gold on deep-green surface; exceeds AA",
+    "inactiveMode": "warm ivory on deep-green surface; exceeds AA"
+  },
+  "checks": [
+    "one H1 per page",
+    "semantic landmarks",
+    "skip link",
+    "visible focus",
+    "keyboard search",
+    "Escape clear/close",
+    "mode pressed state",
+    "live result counts",
+    "44px interactive target floor across all 22 pages at 375px and 390px",
+    "12px visible non-decorative text floor across all 22 pages at 375px and 390px",
+    "mobile menu retained",
+    "decorative layers aria-hidden and pointer-events none",
+    "reduced-motion static state",
+    "motion pauses offscreen and when document hidden",
+    "no duplicate IDs",
+    "no horizontal overflow",
+    "product-specific external link names",
+    "filtered Product Universe intent controls expose only available result groups",
+    "Product Universe empty state hides the stale inspector"
+  ],
+  "releaseGateRecheck": {
+    "mobileViewports": 2,
+    "pagesPerViewport": 22,
+    "belowFloorText": 0,
+    "belowFloorTargets": 0,
+    "focusReturn": "passed",
+    "escapeClose": "passed"
+  }
+}

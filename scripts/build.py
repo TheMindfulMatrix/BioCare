@@ -239,6 +239,7 @@ def document_head_markup(
 
 def shared_header_markup(data: dict, *, prefix: str, current: str) -> str:
     home = f"{prefix}index.html"
+    explore_current = ' aria-current="page"' if current in {"explore", "department"} else ""
     start_current = ' aria-current="page"' if current == "start" else ""
     library_current = ' aria-current="page"' if current in {"library", "article"} else ""
     shop_current = ' aria-current="page"' if current == "shop" else ""
@@ -248,13 +249,13 @@ def shared_header_markup(data: dict, *, prefix: str, current: str) -> str:
     return f'''<header class="site-header section-dark">
     <nav class="nav-shell container-wide" aria-label="Primary navigation">
       <a class="brand-link" href="{home}" aria-label="The Mindful Matrix home"><img src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a>
+      <form class="header-search" role="search" action="{prefix}explore.html"><label class="visually-hidden" for="matrix-search-{current}">Search the Matrix</label><input id="matrix-search-{current}" name="q" type="search" autocomplete="off" placeholder="Search the Matrix…"><button type="submit" aria-label="Submit Matrix search">Search</button></form>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links"><span class="visually-hidden">Open navigation</span><span class="nav-toggle__lines" aria-hidden="true"></span></button>
       <ul id="primary-links" class="nav-links">
-        <li><a href="{prefix}start.html"{start_current}>Start here</a></li>
-        <li><a href="{prefix}library.html"{library_current}>The Library</a></li>
+        <li><a href="{prefix}explore.html"{explore_current}>Explore</a></li>
         <li><a href="{prefix}shop.html"{shop_current}>Products</a></li>
-        <li><a href="{home}#story">Our story</a></li>
-        <li><a class="button button-primary" href="{featured_url}" target="_blank" rel="sponsored noopener noreferrer">{esc(featured["cta"])} ↗{external_note()}</a></li>
+        <li><a href="{prefix}library.html"{library_current}>Library</a></li>
+        <li><a href="{prefix}start.html"{start_current}>Start Here</a></li>
       </ul>
     </nav>
   </header>'''
@@ -268,7 +269,7 @@ def shared_footer_markup(data: dict, *, prefix: str) -> str:
     return f'''<footer class="site-footer section-dark">
     <div class="footer-grid container-wide">
       <div><a href="{home}" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">{esc(philosophy)}</p></div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{home}#shelf">Product Universe</a><a href="{prefix}shop.html">All products</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}shop.html">All products</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
       <div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="{esc(instagram["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">Instagram{external_note()}</a></nav><p class="fine" data-fda-disclaimer>{esc(site["fdaDisclaimer"])}</p><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
     </div>
   </footer>'''
@@ -925,7 +926,59 @@ def article_replacements(
     }
 
 
-def build_home(data: dict, library: dict) -> None:
+def discovery_records(data: dict, library: dict, discovery: dict) -> list[dict]:
+    records=[]
+    labels={item["product_id"]:item for item in data["productLabels"].get("records",[]) if item.get("status")=="approved"}
+    departments={item["intentId"]:item for item in discovery["departments"]}
+    for department in discovery["departments"]:
+        product_count=sum(product.get("commercial_status")=="active" and product["intent"]==department["intentId"] for product in data["catalog"]["products"])
+        guide_count=sum(article.get("status")=="published" and article["slug"] in department["articleSlugs"] for article in library["articles"])
+        records.append({"id":department["intentId"],"type":"department","title":department["title"],"summary":department["description"],"href":f'departments/{department["slug"]}.html',"terms":[department["title"],department["description"]],"productCount":product_count,"guideCount":guide_count,"environment":next(item["environment"] for item in data["catalog"]["intents"] if item["id"]==department["intentId"])})
+    for index,product in enumerate(active_products(data["catalog"])):
+        ingredients=[item["ingredient"] for item in labels.get(product["id"],{}).get("ingredients",[])]
+        cutout=product.get("cutout") or product.get("image") or {}
+        records.append({"id":product["id"],"type":"product","title":product["name"],"summary":product["description"],"href":f'explore.html?product={product["id"]}&mode=products',"manufacturer":product["manufacturer"],"intent":product["intent"],"department":departments[product["intent"]]["title"],"category":product["category"],"productKind":product["productKind"],"variant":product["variantLabel"],"ingredients":ingredients,"image":{"src":cutout.get("src"),"alt":cutout.get("alt",product["name"])},"order":index})
+    for article in published_articles(library):
+        related=[d["intentId"] for d in discovery["departments"] if article["slug"] in d["articleSlugs"]]
+        hero=article.get("hero") or {}
+        records.append({"id":article["slug"],"type":"guide","title":article["title"],"summary":article["summary"],"href":f'library/{article["slug"]}.html',"category":category_name(library,article["category"]),"intents":related,"image":{"src":hero.get("srcSmall") or hero.get("src"),"alt":hero.get("alt","")},"evidenceReviewed":article.get("evidenceReviewed")})
+    for journey in discovery["journeys"]:
+        records.append({"id":journey["id"],"type":"journey","title":journey["title"],"summary":journey["summary"],"href":journey["href"],"keywords":journey["keywords"]})
+    return records
+
+
+def universal_search_markup(records: list[dict], *, prefix: str = "") -> str:
+    payload=json.dumps(records,ensure_ascii=False,separators=(",", ":")).replace("</","<\\/")
+    return f'''<div class="matrix-search" data-matrix-search data-prefix="{prefix}"><form role="search" action="{prefix}explore.html" data-search-form><label for="universal-search">Search products, guides, and testing journeys</label><div><input id="universal-search" name="q" type="search" autocomplete="off" placeholder="Search products, guides, ingredients…" data-search-input><button type="submit">Search</button></div></form><div class="search-modes" role="group" aria-label="Search result type"><button type="button" data-search-mode="everything" aria-pressed="true">Everything</button><button type="button" data-search-mode="products" aria-pressed="false">Products</button><button type="button" data-search-mode="learn" aria-pressed="false">Learn</button></div><p class="search-status" data-search-status aria-live="polite">Enter a term or browse the departments below.</p><div class="search-results" data-search-results hidden></div><button class="search-clear" type="button" data-search-clear hidden>Clear search</button><script type="application/json" data-search-index>{payload}</script></div>'''
+
+
+def matrix_visual_markup(*, intensity: str = "medium", environment: str = "matrix") -> str:
+    return f'''<div class="matrix-visual matrix-visual--{esc(intensity,attribute=True)}" data-matrix-visual data-environment="{esc(environment,attribute=True)}" aria-hidden="true"><span class="matrix-visual__field"></span><span class="matrix-visual__cell matrix-visual__cell--a"></span><span class="matrix-visual__cell matrix-visual__cell--b"></span><svg class="matrix-visual__path" viewBox="0 0 1200 420" preserveAspectRatio="none"><path d="M-40 315 C170 120 330 370 520 195 S850 70 1240 235"/><path d="M-20 85 C230 280 400 42 650 215 S980 355 1230 92"/><circle cx="520" cy="195" r="5"/><circle cx="850" cy="118" r="4"/><circle cx="1030" cy="272" r="5"/></svg><span class="matrix-visual__scan"></span><span class="matrix-visual__caption">BIOLOGICAL SIGNAL / DECORATIVE FIELD</span></div>'''
+
+
+def compact_product_card(product: dict, *, prefix: str = "", index: int = 1) -> str:
+    image=product.get("cutout") or product.get("image"); related=product.get("relatedEducation")
+    learn=f'<a href="{prefix}{esc(related["href"],attribute=True)}">{esc(related["label"])} →</a>' if related else ""
+    return f'''<article class="discovery-product scan-frame" data-discovery-product data-id="{esc(product["id"],attribute=True)}" data-manufacturer="{esc(product["manufacturer"],attribute=True)}" data-intent="{esc(product["intent"],attribute=True)}" data-environment="{esc(product["environment"],attribute=True)}" data-category="{esc(product["productKind"],attribute=True)}" data-name="{esc(product["name"].lower(),attribute=True)}" data-order="{index}"><div class="discovery-product__stage"><span class="signal-node" aria-hidden="true"></span><img src="{prefix}{esc(image["src"],attribute=True)}" width="{int(image["width"])}" height="{int(image["height"])}" alt="{esc(image["alt"],attribute=True)}" loading="lazy" decoding="async"></div><div><p class="interface-label">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3>{price_markup(product,context="compact")}<div class="discovery-product__links"><a class="button button-primary" href="{esc(product["destination"],attribute=True)}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Official product source for {esc(product["name"],attribute=True)} (opens in a new tab)">Official source ↗{external_note()}</a>{learn}</div></div></article>'''
+
+
+def department_cards(data: dict, library: dict, discovery: dict, *, prefix: str = "") -> str:
+    products=active_products(data["catalog"]); published={item["slug"] for item in published_articles(library)}; cards=[]
+    for position,item in enumerate(discovery["departments"],start=1):
+        product_count=sum(product["intent"]==item["intentId"] for product in products); guide_count=sum(slug in published for slug in item["articleSlugs"])
+        environment=next(intent["environment"] for intent in data["catalog"]["intents"] if intent["id"]==item["intentId"])
+        cards.append(f'''<a class="department-card department-signature" data-environment="{esc(environment,attribute=True)}" href="{prefix}departments/{item["slug"]}.html"><span class="department-card__number" aria-hidden="true">{position:02d}</span><span class="department-card__biome" aria-hidden="true"><i></i><i></i><i></i></span><p class="interface-label">{esc(item["title"])}</p><strong>{product_count} products · {guide_count} guides</strong><span>{esc(item["description"])}</span><b>Explore department →</b></a>''')
+    return "".join(cards)
+
+
+def explore_catalog_markup(products: list[dict], catalog: dict) -> str:
+    manufacturers=sorted({p["manufacturer"] for p in products}); kinds=sorted({p["productKind"] for p in products})
+    controls=f'''<div class="explore-toolbar" data-explore-toolbar><label>Manufacturer<select data-filter="manufacturer"><option value="all">All manufacturers</option>{''.join(f'<option>{esc(x)}</option>' for x in manufacturers)}</select></label><label>Department<select data-filter="intent"><option value="all">All departments</option>{''.join(f'<option value="{esc(x["id"],attribute=True)}">{esc(x["name"])}</option>' for x in catalog["intents"])}</select></label><label>Product kind<select data-filter="category"><option value="all">All kinds</option>{''.join(f'<option>{esc(x)}</option>' for x in kinds)}</select></label><label>Sort<select data-filter="sort"><option value="canonical">Featured / canonical</option><option value="name">Name A–Z</option><option value="manufacturer-sort">Manufacturer</option></select></label><p data-explore-count aria-live="polite">Showing 12 of {len(products)}</p><div data-filter-chips></div><button type="button" data-filter-reset hidden>Clear all</button></div>'''
+    cards="".join(compact_product_card(product,index=index) for index,product in enumerate(products,start=1))
+    return controls+f'<div class="discovery-card-grid" data-explore-grid>{cards}</div><p data-explore-empty hidden>No products match these filters.</p><button class="button button-secondary load-more" type="button" data-load-more>Load more products</button><noscript><p><a href="shop.html">Browse the complete Products page.</a></p></noscript>'
+
+
+def build_home(data: dict, library: dict, discovery: dict) -> None:
     catalog = data["catalog"]
     public_products = active_products(catalog)
     products = curated_products(catalog)
@@ -953,6 +1006,9 @@ def build_home(data: dict, library: dict) -> None:
         "{{HERO_COPY}}": esc(home["hero"]["copy"]),
         "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products), site["affiliateSourceDisclosure"]),
         "{{HERO_PRODUCT}}": hero_product_markup(featured),
+        "{{HERO_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high", environment="balance"),
+        "{{UNIVERSAL_SEARCH}}": universal_search_markup(discovery_records(data, library, discovery)),
+        "{{DEPARTMENT_CARDS}}": department_cards(data, library, discovery),
         "{{PROBLEM_HEADLINE}}": line_markup(home["problem"]["headline"]),
         "{{PROBLEM_COPY}}": esc(home["problem"]["copy"]),
         "{{PROBLEM_THEMES}}": "".join(f"<li>{esc(theme)}</li>" for theme in home["problem"]["themes"]),
@@ -1008,6 +1064,29 @@ def build_home(data: dict, library: dict) -> None:
         "{{FINAL_PHILOSOPHY}}": esc(home["finalCta"]["philosophy"]),
     }
     write_output(ROOT / "index.html", render_template("index.html", replacements))
+
+
+def build_explore(data: dict, library: dict, discovery: dict) -> None:
+    metadata=data["site"]["metadata"]; products=active_products(data["catalog"]); path="explore.html"
+    records=discovery_records(data,library,discovery)
+    replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title="Explore Products and Education | The Mindful Matrix",description="Search verified products, testing tools, Library guides, and public education journeys in one place.",path=path,structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Explore",path)])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="explore"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{EXPLORE_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment="discovery"),"{{WORKSPACE_MATRIX_VISUAL}}":matrix_visual_markup(intensity="medium",environment="evidence"),"{{SEARCH}}":universal_search_markup(records),"{{DEPARTMENTS}}":department_cards(data,library,discovery),"{{CATALOG}}":explore_catalog_markup(products,data["catalog"])}
+    write_output(ROOT/path,render_template("explore.html",replacements))
+    write_output(ROOT/"assets"/"data"/"search-index.json",json.dumps(records,ensure_ascii=False,indent=2)+"\n")
+
+
+def build_departments(data: dict, library: dict, discovery: dict) -> None:
+    metadata=data["site"]["metadata"]; products=active_products(data["catalog"]); articles={item["slug"]:item for item in published_articles(library)}; journeys={item["id"]:item for item in discovery["journeys"]}; expected=set()
+    for position,department in enumerate(discovery["departments"],start=1):
+        path=f'departments/{department["slug"]}.html'; expected.add(ROOT/path); matches=[p for p in products if p["intent"]==department["intentId"]]; guides=[articles[s] for s in department["articleSlugs"] if s in articles]
+        guides_markup="".join(f'<article class="learn-card"><p class="interface-label">Guide</p><h3>{esc(a["title"])}</h3><p>{esc(a["summary"])}</p><a href="../library/{esc(a["slug"],attribute=True)}.html">Read the evidence →</a></article>' for a in guides)
+        journey_markup="".join(f'<article class="journey-callout"><p class="interface-label">Testing journey</p><h3>{esc(journeys[j]["title"])}</h3><p>{esc(journeys[j]["summary"])}</p><a href="../{esc(journeys[j]["href"],attribute=True)}">Open journey →</a></article>' for j in department["journeys"] if j in journeys)
+        environment=next(intent["environment"] for intent in data["catalog"]["intents"] if intent["id"]==department["intentId"])
+        replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="../",title=f'{department["title"]} | The Mindful Matrix',description=department["description"],path=path,structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Explore","explore.html"),(department["title"],path)])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="../",current="department"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix="../"),"{{DEPARTMENT_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment=environment),"{{DEPARTMENT_ENVIRONMENT}}":esc(environment,attribute=True),"{{DEPARTMENT_INDEX}}":f'{position:02d}',"{{DEPARTMENT_ID}}":esc(department["intentId"],attribute=True),"{{DEPARTMENT_TITLE}}":esc(department["title"]),"{{DEPARTMENT_DESCRIPTION}}":esc(department["description"]),"{{PRODUCT_COUNT}}":str(len(matches)),"{{GUIDE_COUNT}}":str(len(guides)),"{{PRODUCTS}}":"".join(compact_product_card(p,prefix="../",index=i) for i,p in enumerate(matches,start=1)),"{{GUIDES}}":guides_markup,"{{JOURNEYS}}":journey_markup,"{{DISCLOSURE}}":esc(data["site"]["disclosure"])}
+        write_output(ROOT/path,render_template("department.html",replacements))
+    directory=ROOT/"departments"
+    if directory.exists():
+        for path in directory.glob("*.html"):
+            if path not in expected and GENERATOR_MARKER in path.read_text(encoding="utf-8"): path.unlink()
 
 
 def build_library(data: dict, library: dict) -> None:
@@ -1088,7 +1167,7 @@ def build_shop(data: dict, product_labels: dict) -> None:
 def build_know_your_number(data: dict) -> None:
     metadata=data["site"]["metadata"]; page=metadata["pages"]["knowYourNumber"]
     product=next(item for item in active_products(data["catalog"]) if item["id"]==data["featuredProductId"])
-    replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Know Your Number",page["path"])])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="know-your-number"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{PRODUCT_SOURCE}}":esc(product["destination"],attribute=True),"{{PRODUCT_NAME}}":esc(product["name"]),"{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"])}
+    replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Know Your Number",page["path"])])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="know-your-number"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{KYN_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment="signal"),"{{PRODUCT_SOURCE}}":esc(product["destination"],attribute=True),"{{PRODUCT_NAME}}":esc(product["name"]),"{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"])}
     write_output(ROOT / "know-your-number.html",render_template("know-your-number.html",replacements))
 
 
@@ -1112,9 +1191,10 @@ def build_articles(data: dict, library: dict) -> None:
     clean_generated_articles(expected)
 
 
-def build_crawl_files(data: dict, library: dict) -> None:
+def build_crawl_files(data: dict, library: dict, discovery: dict) -> None:
     metadata = data["site"]["metadata"]
-    paths = ["", "start.html", "library.html", "shop.html", "know-your-number.html"]
+    paths = ["", "start.html", "library.html", "shop.html", "know-your-number.html", "explore.html"]
+    paths.extend(f'departments/{item["slug"]}.html' for item in discovery["departments"])
     paths.extend(f'library/{article["slug"]}.html' for article in published_articles(library))
     urls = "\n".join(f"  <url><loc>{esc(page_url(metadata, path))}</loc></url>" for path in paths)
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
@@ -1154,19 +1234,22 @@ def main() -> None:
     catalog = load_json(ROOT / "content" / "catalog.json")
     product_labels = load_json(ROOT / "content" / "product-labels.json")
     manufacturer_documents = load_json(ROOT / "content" / "manufacturer-documents.json")
+    discovery = load_json(ROOT / "content" / "discovery.json")
     data["catalog"] = catalog
     data["productLabels"] = product_labels
     data["manufacturerDocuments"] = manufacturer_documents
     data["affiliate"] = catalog["affiliate"]
     data["products"] = catalog["products"]
     data["featuredProductId"] = catalog["featuredProductId"]
-    build_home(data, library)
+    build_home(data, library, discovery)
+    build_explore(data, library, discovery)
+    build_departments(data, library, discovery)
     build_library(data, library)
     build_start(data)
     build_shop(data, product_labels)
     build_know_your_number(data)
     build_articles(data, library)
-    build_crawl_files(data, library)
+    build_crawl_files(data, library, discovery)
     if args.preview_article:
         build_preview(data, library, args.preview_article.resolve(), args.preview_output)
 

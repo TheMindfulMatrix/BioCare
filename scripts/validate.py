@@ -507,7 +507,9 @@ def extract_universe_payload(home: str) -> list[dict]:
 
 
 def public_pages(library: dict) -> list[Path]:
-    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html"]
+    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html", ROOT / "explore.html"]
+    discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
+    pages.extend(ROOT / "departments" / f'{item["slug"]}.html' for item in discovery["departments"])
     pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
     return pages
 
@@ -839,7 +841,7 @@ def main() -> None:
     active_count = sum(1 for product in site["products"] if product.get("commercial_status") == "active")
     deferred_count = sum(1 for product in site["products"] if product.get("commercial_status") == "deferred_compliance_review")
     warning_count = len(normal_compliance["warnings"])
-    print(f"Validation passed: 5 core pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe; compliance hard gate passed with {warning_count} review warning(s)")
+    print(f"Validation passed: {len(public_pages(library))} public pages, {published_count} published articles, {len(site['products'])} inventoried products ({active_count} active, {deferred_count} deferred), /BioCare/ paths safe; compliance hard gate passed with {warning_count} review warning(s)")
     if warning_count:
         for warning in normal_compliance["warnings"][:10]:
             print(f"Compliance warning: {warning}")

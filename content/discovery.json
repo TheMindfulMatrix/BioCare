@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "departments": [
+    {"intentId":"test-measure","slug":"testing-measurement","title":"Testing & Measurement","description":"Explore verified testing tools and guides for understanding measurements, methods, and limitations.","articleSlugs":["should-you-test-your-omega-3-levels","omega-3-what-the-numbers-mean","gut-testing-biomarkers","how-to-read-a-health-study"],"journeys":["know-your-number"]},
+    {"intentId":"omega-nutrition","slug":"omega-nutrition","title":"Omega & Nutrition","description":"Browse verified omega and nutrition formats alongside evidence-aware guides to food, testing, and labels.","articleSlugs":["omega-3-what-the-numbers-mean","should-you-test-your-omega-3-levels","food-vs-omega-3-supplements","how-to-read-a-supplement-label"],"journeys":["know-your-number"]},
+    {"intentId":"gut-digestion","slug":"gut-digestion","title":"Gut & Digestion","description":"Explore the verified formats grouped in this department and learn how gut testing and biomarkers are interpreted.","articleSlugs":["gut-testing-biomarkers","how-to-read-a-supplement-label"],"journeys":[]},
+    {"intentId":"daily-wellness","slug":"daily-wellness","title":"Daily Wellness","description":"Browse verified everyday formats with practical guidance for reading evidence and supplement labels.","articleSlugs":["how-to-read-a-supplement-label","how-to-read-a-health-study","correlation-causation-relative-risk"],"journeys":[]},
+    {"intentId":"performance-recovery","slug":"active-nutrition-tools","title":"Active Nutrition & Tools","description":"Explore verified nutrition formats and practical tools with education about fueling, training, and recovery context.","articleSlugs":["performance-nutrition-basics","recovery-after-training","how-to-read-a-supplement-label"],"journeys":[]},
+    {"intentId":"healthy-aging","slug":"skin-collagen","title":"Skin & Collagen","description":"Browse verified collagen and topical formats while keeping product labels, evidence, and limitations visible.","articleSlugs":["how-to-read-a-supplement-label","how-to-read-a-health-study"],"journeys":[]}
+  ],
+  "journeys": [
+    {"id":"know-your-number","title":"Know Your Number","summary":"A public omega-testing journey built around test, measure, act, and retest—with limitations kept visible.","href":"know-your-number.html","keywords":["omega","test","measure","retest","numbers"]}
+  ]
+}

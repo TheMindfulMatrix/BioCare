@@ -1,0 +1,12 @@
+V8 FINAL RELEASE CANDIDATE READY
+Branch: agent/v8-unified-discovery
+Previous candidate: ac6c7c2e7957dc751cd975abe8d4cdcab3f0f5be
+Final candidate SHA: exact final pushed branch HEAD
+Public pages: 22
+Products: 45 active / 8 deferred
+Definition of Done: 80 MET / 0 NOT MET / 0 DEFERRED
+Visual acceptance: 20 MET / 0 NOT MET / 0 DEFERRED
+Validation: passing locally; exact-SHA permanent run recorded in PR #8
+Release gate: mobile 12px/44px floor and Product Universe filter-state corrections verified
+PR: #8 remains draft and unmerged pending exact-SHA validation
+Deployment: none

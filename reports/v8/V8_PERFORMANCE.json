@@ -1,0 +1,40 @@
+{
+  "baselineCandidateSha": "ac6c7c2e7957dc751cd975abe8d4cdcab3f0f5be",
+  "before": {
+    "homepageHtmlBytes": 172225,
+    "exploreHtmlBytes": 113286,
+    "productsHtmlBytes": 137115,
+    "cssBytes": 181719,
+    "javascriptBytes": 42898,
+    "searchIndexBytes": 31142,
+    "homepageElements": 1063,
+    "exploreElements": 908
+  },
+  "after": {
+    "homepageHtmlBytes": 183104,
+    "exploreHtmlBytes": 130822,
+    "productsHtmlBytes": 137115,
+    "cssBytes": 207204,
+    "javascriptBytes": 46562,
+    "searchIndexBytes": 41482,
+    "homepageElements": 1109,
+    "exploreElements": 1056
+  },
+  "changePercent": {
+    "homepageHtml": 6.32,
+    "exploreHtml": 15.48,
+    "css": 14.02,
+    "javascript": 8.54,
+    "searchIndex": 33.2,
+    "homepageElements": 4.33,
+    "exploreElements": 16.3
+  },
+  "activeProductImagePayloadBytes": 1103598,
+  "imagePayloadRegressionBytes": 0,
+  "initialProductCards": 12,
+  "totalActiveProducts": 45,
+  "lcpCandidate": "Homepage H1 text and featured Balance Kit cutout; no new render-blocking image",
+  "cls": "No observed layout shift during stabilized browser captures",
+  "motion": "CSS transforms/opacity only; offscreen and hidden-document pause; reduced-motion static state",
+  "justification": "Explore and search-index growth adds real typed-result imagery and derived department metadata. The final CSS/JavaScript delta also includes a mobile 12px/44px accessibility floor and authoritative Product Universe filter-state coordination; no new runtime dependency or image payload."
+}
