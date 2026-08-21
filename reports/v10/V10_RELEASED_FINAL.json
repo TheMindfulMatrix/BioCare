@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "release_status": "released_and_verified",
+  "verification_timestamp": "2026-08-21T22:21:03Z",
+  "production_url": "https://themindfulmatrix.github.io/BioCare/",
+  "release_identity": {
+    "v9_baseline_sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+    "private_source_repository": "TheMindfulMatrix/zinzino-library",
+    "private_source_visibility": "private",
+    "private_source_sha": "de8c7711a5ca4678d92dd0d0a3ebeba06f7334c7",
+    "v10_candidate_sha": "0e6df6591dbce65f88602ae3c5e48d05034ed291",
+    "v10_merge_main_sha": "7e01133b461e4f5168ca60578565d6f74afdde25",
+    "pull_request": {
+      "number": 14,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/pull/14",
+      "state": "merged",
+      "merge_method": "merge_commit",
+      "merged_at": "2026-08-21T22:15:54Z"
+    },
+    "candidate_validation": {
+      "run_id": 32528773605,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32528773605",
+      "conclusion": "success",
+      "tested_sha": "0e6df6591dbce65f88602ae3c5e48d05034ed291"
+    },
+    "post_merge_validation": {
+      "run_id": 32532235123,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32532235123",
+      "conclusion": "success",
+      "tested_sha": "7e01133b461e4f5168ca60578565d6f74afdde25"
+    },
+    "deployment": {
+      "run_id": 32532235008,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32532235008",
+      "conclusion": "success",
+      "pages_build_id": 1166610596,
+      "deployment_id": 6030155399,
+      "deployed_sha": "7e01133b461e4f5168ca60578565d6f74afdde25",
+      "completed_at": "2026-08-21T22:16:40Z"
+    }
+  },
+  "definition_of_done": {
+    "total": 104,
+    "MET": 102,
+    "NOT_MET": 0,
+    "DEFERRED": 2,
+    "deferrals": [
+      {
+        "code": "DEFERRED — WRITTEN MANUFACTURER CLARIFICATION NOT SUPPLIED",
+        "detail": "No written Zinzino approval was supplied for the current external mixed-brand platform and independent-source links; no approval is claimed or inferred."
+      },
+      {
+        "code": "DEFERRED — USER-APPROVED PUBLIC BUSINESS CONTACT NOT SUPPLIED",
+        "detail": "No approved public business contact was supplied; the configuration remains disabled and no private or inferred contact is exposed."
+      }
+    ]
+  },
+  "private_resource_classification": {
+    "total": 104,
+    "PUBLIC_WEBSITE_ELIGIBLE": 0,
+    "RESEARCH_REFERENCE_ONLY": 34,
+    "ONE_TO_ONE_ONLY": 15,
+    "INTERNAL_PARTNER_ONLY": 30,
+    "EXCLUDED": 25
+  },
+  "public_evidence": {
+    "resources_rendered": 8,
+    "private_files_rendered": 0,
+    "live_source_audit": {
+      "verified": 8,
+      "mismatched": 0,
+      "failed": 0
+    },
+    "evidence_page": "passed: metadata, sitemap, search, six filters, URL state, reset, no-result state, accessibility, public/private distinction",
+    "universal_search": "passed: distinct SOURCE results under Learn",
+    "product_inspectors": "passed: deterministic 45/45 coverage and representative live complete, partial, unavailable, Zinzino, BioLimitless, testing, disclosure, Escape, and focus checks",
+    "departments": "passed: six hubs with manifest-derived counts and filtered Evidence links",
+    "library_guides_audited": 10,
+    "library_backlog_non_public": 15
+  },
+  "privacy_and_rights": {
+    "private_repository_unchanged": true,
+    "private_repository_pages_enabled": false,
+    "private_repository_public_fork_created": false,
+    "public_submodule_or_runtime_dependency": false,
+    "public_safety_scan": {
+      "files": 46,
+      "pages": 23,
+      "findings": 0
+    },
+    "production_byte_audit": {
+      "public_pages": 23,
+      "referenced_assets": 78,
+      "targets_checked": 101,
+      "exact_git_blob_matches": 101,
+      "http_failures": 0,
+      "privacy_findings": 0
+    },
+    "private_content_leakage": 0,
+    "secret_leakage": 0,
+    "customer_or_account_data_leakage": 0
+  },
+  "validation": {
+    "deterministic_build": "passed_twice",
+    "public_pages": 23,
+    "products": {
+      "inventoried": 53,
+      "active": 45,
+      "deferred": 8
+    },
+    "tests": {
+      "passed": 38,
+      "failed": 0
+    },
+    "compliance_hard_gate": "passed",
+    "review_warnings": 70,
+    "review_warning_delta": 0,
+    "strict_dry_run_items": 77,
+    "strict_item_delta": 0,
+    "commercial_links": {
+      "records": 90,
+      "unique_urls": 56,
+      "raw_http_resolved": 53,
+      "browser_resolved_after_timeout": 3,
+      "unresolved_customer_destinations": 0,
+      "partner_id_preserved": "2021428066",
+      "sponsored_rel_and_disclosure": "passed"
+    }
+  },
+  "browser_and_accessibility": {
+    "viewports": {
+      "1440x900": "passed",
+      "768x1024": "passed",
+      "390x844": "passed",
+      "375x812": "passed"
+    },
+    "live_routes_per_viewport": 14,
+    "horizontal_overflow": 0,
+    "broken_images": 0,
+    "duplicate_ids": 0,
+    "private_identifiers": 0,
+    "nested_scroll_traps": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "candidate_accessibility": "passed: language, headings, landmarks, image alternatives, forms, controls, mobile text floor, keyboard, Escape, focus return, reduced motion, and private-data exclusion"
+  },
+  "performance": {
+    "homepage_html_bytes": 189156,
+    "library_html_bytes": 23463,
+    "evidence_html_bytes": 34393,
+    "products_html_bytes": 154457,
+    "all_public_html_bytes": 994255,
+    "css_bytes": 242413,
+    "javascript_bytes": 72413,
+    "universal_search_index_bytes": 48503,
+    "public_source_manifest_bytes": 13780,
+    "active_product_image_bytes": 1336124,
+    "active_product_image_count": 46,
+    "evidence_dom_nodes": 394,
+    "evidence_initial_request_upper_bound": 7,
+    "lazy_asset_references": 121,
+    "source_search_observed_ms": 78,
+    "resource_filter_observed_ms": 51,
+    "interaction_measurement_note": "Local static server observations include a short settle interval and are not network benchmarks.",
+    "lcp_candidate": "Evidence-page hero h1 text; no new eager content image",
+    "cls": null,
+    "cls_note": "Reliable layout-shift entries were unavailable; visual QA found no shift and generated images retain explicit dimensions.",
+    "external_runtime_or_private_api_added": false
+  },
+  "rollback": {
+    "immediate_target_sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+    "v5_1_tag_target": "b5d35772e98580e253c08f6319aa8e412fa20aea",
+    "procedure": "Create a narrow branch from current main, revert merge commit 7e01133b461e4f5168ca60578565d6f74afdde25 with mainline parent 1, validate, merge through a protected PR, monitor normal Pages, and verify V9 production. Do not move v5.1."
+  },
+  "release_record_delivery": {
+    "branch": "agent/v10-release-records",
+    "candidate_sha_reference": "HEAD (the Git commit containing this record)",
+    "scope": [
+      "reports/v10/V10_RELEASED_FINAL.md",
+      "reports/v10/V10_RELEASED_FINAL.json"
+    ],
+    "public_behavior_change": false
+  },
+  "non_blocking_observations": [
+    "The GitHub Pages workflow emitted a Node.js 20 deprecation warning while GitHub forced the affected action to Node.js 24; build and deployment succeeded.",
+    "Three raw HTTP commercial checks timed out and were independently verified in a browser as the correct BioLimitless product pages."
+  ],
+  "pending_fix_forward": false,
+  "rollback_required": false
+}
