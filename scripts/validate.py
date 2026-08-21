@@ -183,7 +183,7 @@ def validate_content(site: dict, library: dict) -> None:
 
     metadata = site.get("site", {}).get("metadata", {})
     check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrix.github.io/BioCare/", "Canonical base must preserve the verified /BioCare/ GitHub Pages URL")
-    check(set(metadata.get("pages", {})) == {"home", "library", "start", "shop", "knowYourNumber"}, "Home, Library, Start, Shop and Know Your Number metadata are required")
+    check(set(metadata.get("pages", {})) == {"home", "library", "evidence", "start", "shop", "knowYourNumber"}, "Home, Library, Evidence, Start, Shop and Know Your Number metadata are required")
     social_image = metadata.get("socialImage", {})
     social_image_path = ROOT / social_image.get("src", "missing")
     check(social_image_path.is_file(), "Default social preview image is required")
@@ -507,7 +507,7 @@ def extract_universe_payload(home: str) -> list[dict]:
 
 
 def public_pages(library: dict) -> list[Path]:
-    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html", ROOT / "explore.html"]
+    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "evidence.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html", ROOT / "explore.html"]
     discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
     pages.extend(ROOT / "departments" / f'{item["slug"]}.html' for item in discovery["departments"])
     pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
@@ -592,7 +592,73 @@ def validate_references(page: Path, parser: DocumentParser, parsers: dict[Path, 
             check(fragment in target_parser.ids, f"{label}: missing fragment target: {reference}")
 
 
-def validate_public_output(site: dict, library: dict, preview_path: Path | None) -> None:
+def validate_v10_source_output(site: dict, library: dict, manifest: dict) -> None:
+    published = [record for record in manifest.get("records", []) if record.get("status") == "published"]
+    published_ids = {record["id"] for record in published}
+    evidence = (ROOT / "evidence.html").read_text(encoding="utf-8")
+    check(evidence.count('data-public-source="') == len(published), "Evidence page must render every published public source exactly once")
+    check(f"Browse {len(published)} published resources" in evidence, "Evidence page count must derive from the public manifest")
+    check("Private files published</dt><dd>0" in evidence, "Evidence page must state that no private files are published")
+    for record in published:
+        label = record["id"]
+        check(evidence.count(f'data-public-source="{label}"') == 1, f"{label}: published source card must be unique")
+        for field in ("title", "publisher", "public_summary", "scope", "limitations", "public_url", "checked_date"):
+            check(str(record[field]) in evidence, f"{label}: evidence page missing {field}")
+    for record in manifest.get("records", []):
+        if record.get("status") != "published":
+            check(f'data-public-source="{record["id"]}"' not in evidence, f"{record['id']}: unpublished source leaked into Evidence page")
+
+    search_index = json.loads((ROOT / "assets" / "data" / "search-index.json").read_text(encoding="utf-8"))
+    source_records = [record for record in search_index if record.get("type") == "source"]
+    check({record.get("id") for record in source_records} == published_ids, "Universal search must contain exactly the published public sources")
+    for record in source_records:
+        check(bool(record.get("publisher") and record.get("resourceType") and record.get("evidenceRole")), f"{record.get('id')}: source search record requires provenance metadata")
+
+    shop = (ROOT / "shop.html").read_text(encoding="utf-8")
+    payload_match = re.search(r'<script type="application/json" data-shop-catalog>(.*?)</script>', shop, flags=re.S)
+    check(bool(payload_match), "Shop must contain the V10 documentation payload")
+    if payload_match:
+        try:
+            payload = json.loads(payload_match.group(1))
+        except json.JSONDecodeError as error:
+            check(False, f"Shop V10 documentation payload is invalid JSON: {error}")
+            payload = {"products": []}
+        active_products = [product for product in site["products"] if product.get("commercial_status") == "active"]
+        product_records = payload.get("products", [])
+        source_registry = payload.get("sources", [])
+        check({record.get("id") for record in source_registry} == published_ids, "Shop source registry must contain exactly the published public sources")
+        for source in source_registry:
+            check(str(source.get("publicUrl", "")).startswith("https://"), f"{source.get('id')}: inspector public source must use HTTPS")
+        check(len(product_records) == len(active_products), "V10 documentation payload must preserve every active product")
+        for product in product_records:
+            documentation = product.get("documentation")
+            check(isinstance(documentation, list) and bool(documentation), f"{product.get('id')}: product inspector requires independent public context")
+            for source in documentation or []:
+                check(source.get("id") in published_ids, f"{product.get('id')}: product inspector references an unpublished source")
+                check(source.get("relationship") in {"product-specific context", "department context — not product evidence"}, f"{product.get('id')}: source relationship must remain explicit")
+
+    discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
+    for department in discovery["departments"]:
+        department_sources = [record for record in published if department["intentId"] in record.get("department_ids", [])]
+        page = (ROOT / "departments" / f'{department["slug"]}.html').read_text(encoding="utf-8")
+        check(f'{len(department_sources)} public sources' in page, f"{department['intentId']}: manifest-derived public source count missing")
+        check(f'../evidence.html?department={department["intentId"]}' in page, f"{department['intentId']}: filtered Evidence link missing")
+        for source in department_sources:
+            check(source["title"] in page, f"{department['intentId']}: public source pathway missing {source['id']}")
+
+    library_page = (ROOT / "library.html").read_text(encoding="utf-8")
+    check('href="evidence.html"' in library_page and f"Inspect {len(published)} public sources" in library_page, "Library must provide a manifest-derived Evidence pathway")
+    records = json_ld_records(evidence, "evidence.html")
+    collection = next((record for record in records if record.get("@type") == "CollectionPage"), {})
+    check(collection.get("mainEntity", {}).get("numberOfItems") == len(published), "Evidence CollectionPage structured data count must match the manifest")
+
+    prohibited = re.compile(r"zinzino-library|de8c7711a5ca4678d92dd0d0a3ebeba06f7334c7|(?:href|src)=['\"][^'\"]*\.txt(?:[?#'\"])", re.IGNORECASE)
+    paths = public_pages(library) + [ROOT / "assets" / "data" / "search-index.json"]
+    for path in paths:
+        check(not prohibited.search(path.read_text(encoding="utf-8")), f"{path.relative_to(ROOT)}: private source identifier or raw document link leaked")
+
+
+def validate_public_output(site: dict, library: dict, manifest: dict, preview_path: Path | None) -> None:
     pages = public_pages(library)
     parsers: dict[Path, DocumentParser] = {}
     for page in pages:
@@ -625,6 +691,8 @@ def validate_public_output(site: dict, library: dict, preview_path: Path | None)
             check(generated.count(fda_disclaimer) == expected_fda_count, f"{page.relative_to(ROOT)}: exact FDA disclaimer count must match the approved footer/proximity pattern")
             expected_footer_disclosures = f'<p class="fine" data-fda-disclaimer>{fda_disclaimer}</p><p class="fine">{partner_disclosure}</p>'
             check(expected_footer_disclosures in generated, f"{page.relative_to(ROOT)}: FDA disclaimer must immediately precede the footer partner-identification line")
+
+    validate_v10_source_output(site, library, manifest)
 
     public_parsers = [parsers[page.resolve()] for page in pages if page.resolve() in parsers]
     titles = [parser.titles[0] for parser in public_parsers if parser.titles]
@@ -834,6 +902,7 @@ def main() -> None:
     catalog = json.loads((ROOT / "content" / "catalog.json").read_text(encoding="utf-8"))
     product_labels = json.loads((ROOT / "content" / "product-labels.json").read_text(encoding="utf-8"))
     manufacturer_documents = json.loads((ROOT / "content" / "manufacturer-documents.json").read_text(encoding="utf-8"))
+    public_source_manifest = json.loads((ROOT / "content" / "resources" / "public-sources.json").read_text(encoding="utf-8"))
     site["catalog"] = catalog
     site["productLabels"] = product_labels
     site["manufacturerDocuments"] = manufacturer_documents
@@ -851,7 +920,13 @@ def main() -> None:
         if record.get("status") == "approved": check(bool(record.get("checked_date")), f"{record.get('product_id')}: approved product-label data requires a checked date")
     check(product_labels.get("status") == "PENDING USER FACTUAL APPROVAL", "Unapproved product-label dataset must remain explicitly pending")
     check(manufacturer_documents.get("status") != "approved" or manufacturer_documents.get("records"), "Approved manufacturer-document data cannot be empty")
-    validate_public_output(site, library, args.preview)
+    from validate_public_sources import validate_manifest
+
+    try:
+        validate_manifest(public_source_manifest)
+    except ValueError as error:
+        errors.extend(f"Public source manifest: {message}" for message in str(error).splitlines())
+    validate_public_output(site, library, public_source_manifest, args.preview)
     from validate_compliance import validate_compliance
 
     normal_compliance = validate_compliance(strict=False)

@@ -618,7 +618,82 @@ def shop_label_payload(label_record: dict | None) -> dict:
     }
 
 
-def shop_product_payload(product: dict, *, index: int, label_record: dict | None) -> dict:
+def evidence_collection_schema(metadata: dict, sources: list[dict]) -> dict:
+    canonical = page_url(metadata, "evidence.html")
+    return {
+        "@type": "CollectionPage",
+        "@id": canonical + "#collection",
+        "name": "Evidence & Documentation",
+        "url": canonical,
+        "description": "A reviewed index of published public references with visible scope and limitations.",
+        "isPartOf": {"@id": page_url(metadata, "#website")},
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": len(sources),
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": index,
+                    "name": source["title"],
+                    "url": canonical + f'#source-{source["id"]}',
+                }
+                for index, source in enumerate(sources, start=1)
+            ],
+        },
+    }
+
+
+def published_sources(manifest: dict) -> list[dict]:
+    return [record for record in manifest.get("records", []) if record.get("status") == "published"]
+
+
+def source_type_label(value: str) -> str:
+    return value.replace("_", " ").title()
+
+
+def source_card_markup(source: dict, *, prefix: str = "", compact: bool = False) -> str:
+    manufacturer = source.get("manufacturer") or "Independent public source"
+    topics = " · ".join(item.replace("-", " ").title() for item in source.get("topic_ids", []))
+    attributes = {
+        "topic": ",".join(source.get("topic_ids", [])),
+        "type": source["resource_type"],
+        "manufacturer": source.get("manufacturer") or "independent",
+        "product": ",".join(source.get("product_ids", [])),
+        "department": ",".join(source.get("department_ids", [])),
+        "independence": source["independence_status"],
+        "search": " ".join(
+            [source["title"], source["publisher"], source["public_summary"], source["scope"], source["limitations"]]
+            + source.get("topic_ids", [])
+        ).lower(),
+    }
+    data_attributes = " ".join(
+        f'data-source-{name}="{esc(value, attribute=True)}"' for name, value in attributes.items()
+    )
+    if compact:
+        return f'''<article class="source-card source-card--compact" {data_attributes}><p class="interface-label">{esc(source_type_label(source["resource_type"]))}</p><h3>{esc(source["title"])}</h3><p>{esc(source["public_summary"])}</p><a href="{prefix}evidence.html?source={esc(source["id"], attribute=True)}">Inspect source context →</a></article>'''
+    date = source.get("publication_date") or "Date not stated"
+    return f'''<article id="source-{esc(source["id"], attribute=True)}" class="source-card" data-public-source="{esc(source["id"], attribute=True)}" {data_attributes}>
+      <header><p class="interface-label">{esc(source_type_label(source["resource_type"]))}</p><span>{esc(manufacturer)}</span><h3>{esc(source["title"])}</h3><p class="source-card__publisher">{esc(source["publisher"])}</p></header>
+      <dl class="source-card__meta"><div><dt>Published</dt><dd>{esc(date)}</dd></div><div><dt>Link checked</dt><dd>{esc(source["checked_date"])}</dd></div><div><dt>Topics</dt><dd>{esc(topics)}</dd></div></dl>
+      <p>{esc(source["public_summary"])}</p>
+      <details><summary>Scope and limitations</summary><h4>Scope</h4><p>{esc(source["scope"])}</p><h4>Limitations</h4><p>{esc(source["limitations"])}</p></details>
+      <a class="source-card__link" href="{esc(source["public_url"], attribute=True)}" target="_blank" rel="noopener noreferrer" aria-label="Open public source: {esc(source["title"], attribute=True)} (opens in a new tab)">Open public source ↗{external_note()}</a>
+    </article>'''
+
+
+def product_documentation(product: dict, sources: list[dict]) -> list[dict]:
+    exact = [source for source in sources if product["id"] in source.get("product_ids", [])]
+    department = [source for source in sources if product["intent"] in source.get("department_ids", []) and source not in exact]
+    return [
+        {
+            "id": source["id"],
+            "relationship": "product-specific context" if source in exact else "department context — not product evidence",
+        }
+        for source in (exact + department)[:3]
+    ]
+
+
+def shop_product_payload(product: dict, *, index: int, label_record: dict | None, sources: list[dict]) -> dict:
     label = shop_label_payload(label_record)
     return {
         "id": product["id"],
@@ -640,11 +715,12 @@ def shop_product_payload(product: dict, *, index: int, label_record: dict | None
         "cutout": product.get("cutout"),
         "relatedEducation": product.get("relatedEducation"),
         "label": label,
+        "documentation": product_documentation(product, sources),
         "verifiedIngredients": [item["ingredient"] for item in label["ingredients"]],
     }
 
 
-def shop_catalog_data_markup(data: dict, products: list[dict], label_records: dict[str, dict]) -> str:
+def shop_catalog_data_markup(data: dict, products: list[dict], label_records: dict[str, dict], sources: list[dict]) -> str:
     catalog = data["catalog"]
     payload = {
         "activeCount": len(products),
@@ -659,7 +735,15 @@ def shop_catalog_data_markup(data: dict, products: list[dict], label_records: di
             }
             for intent in catalog["intents"]
         ],
-        "products": [shop_product_payload(product, index=index, label_record=label_records.get(product["id"])) for index, product in enumerate(products, start=1)],
+        "sources": [
+            {
+                "id": source["id"], "title": source["title"], "publisher": source["publisher"],
+                "resourceType": source_type_label(source["resource_type"]), "publicUrl": source["public_url"],
+                "evidenceUrl": f'evidence.html?source={source["id"]}', "independence": source["independence_status"],
+            }
+            for source in sources
+        ],
+        "products": [shop_product_payload(product, index=index, label_record=label_records.get(product["id"]), sources=sources) for index, product in enumerate(products, start=1)],
     }
     serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return f'<script type="application/json" data-shop-catalog>{serialized}</script>'
@@ -1041,7 +1125,7 @@ def article_replacements(
     }
 
 
-def discovery_records(data: dict, library: dict, discovery: dict) -> list[dict]:
+def discovery_records(data: dict, library: dict, discovery: dict, sources: list[dict]) -> list[dict]:
     records=[]
     labels={item["product_id"]:item for item in data["productLabels"].get("records",[]) if item.get("status")=="approved"}
     departments={item["intentId"]:item for item in discovery["departments"]}
@@ -1059,12 +1143,41 @@ def discovery_records(data: dict, library: dict, discovery: dict) -> list[dict]:
         records.append({"id":article["slug"],"type":"guide","title":article["title"],"summary":article["summary"],"href":f'library/{article["slug"]}.html',"category":category_name(library,article["category"]),"intents":related,"image":{"src":hero.get("srcSmall") or hero.get("src"),"alt":hero.get("alt","")},"evidenceReviewed":article.get("evidenceReviewed")})
     for journey in discovery["journeys"]:
         records.append({"id":journey["id"],"type":"journey","title":journey["title"],"summary":journey["summary"],"href":journey["href"],"keywords":journey["keywords"]})
+    for source in sources:
+        records.append({
+            "id": source["id"], "type": "source", "title": source["title"],
+            "summary": source["public_summary"], "href": f'evidence.html?source={source["id"]}',
+            "publisher": source["publisher"], "resourceType": source_type_label(source["resource_type"]),
+            "evidenceRole": source["evidence_role"], "topics": source.get("topic_ids", []),
+            "manufacturer": source.get("manufacturer") or "Independent public source",
+            "intents": source.get("department_ids", []), "products": source.get("product_ids", []),
+            "independence": source["independence_status"], "checkedDate": source["checked_date"],
+        })
     return records
 
 
 def universal_search_markup(records: list[dict], *, prefix: str = "") -> str:
     payload=json.dumps(records,ensure_ascii=False,separators=(",", ":")).replace("</","<\\/")
-    return f'''<div class="matrix-search" data-matrix-search data-prefix="{prefix}"><form role="search" action="{prefix}explore.html" data-search-form><label for="universal-search">Search products, guides, and testing journeys</label><div><input id="universal-search" name="q" type="search" autocomplete="off" placeholder="Search products, guides, ingredients…" data-search-input><button type="submit">Search</button></div></form><div class="search-modes" role="group" aria-label="Search result type"><button type="button" data-search-mode="everything" aria-pressed="true">Everything</button><button type="button" data-search-mode="products" aria-pressed="false">Products</button><button type="button" data-search-mode="learn" aria-pressed="false">Learn</button></div><p class="search-status" data-search-status aria-live="polite">Enter a term or browse the departments below.</p><div class="search-results" data-search-results hidden></div><button class="search-clear" type="button" data-search-clear hidden>Clear search</button><script type="application/json" data-search-index>{payload}</script></div>'''
+    return f'''<div class="matrix-search" data-matrix-search data-prefix="{prefix}"><form role="search" action="{prefix}explore.html" data-search-form><label for="universal-search">Search products, guides, testing journeys, and public sources</label><div><input id="universal-search" name="q" type="search" autocomplete="off" placeholder="Search products, guides, ingredients, sources…" data-search-input><button type="submit">Search</button></div></form><div class="search-modes" role="group" aria-label="Search result type"><button type="button" data-search-mode="everything" aria-pressed="true">Everything</button><button type="button" data-search-mode="products" aria-pressed="false">Products</button><button type="button" data-search-mode="learn" aria-pressed="false">Learn</button></div><p class="search-status" data-search-status aria-live="polite">Enter a term or browse the departments below.</p><div class="search-results" data-search-results hidden></div><button class="search-clear" type="button" data-search-clear hidden>Clear search</button><script type="application/json" data-search-index>{payload}</script></div>'''
+
+
+def evidence_controls_markup(sources: list[dict], data: dict, discovery: dict) -> str:
+    product_names = {product["id"]: product["name"] for product in active_products(data["catalog"])}
+    department_names = {item["intentId"]: item["title"] for item in discovery["departments"]}
+    values = {
+        "topic": {item: item.replace("-", " ").title() for source in sources for item in source.get("topic_ids", [])},
+        "type": {item: source_type_label(item) for item in {source["resource_type"] for source in sources}},
+        "manufacturer": {"independent": "Independent public source", **{source["manufacturer"]: source["manufacturer"] for source in sources if source.get("manufacturer")}},
+        "product": {item: product_names.get(item, item.replace("-", " ").title()) for source in sources for item in source.get("product_ids", [])},
+        "department": {item: department_names.get(item, item.replace("-", " ").title()) for source in sources for item in source.get("department_ids", [])},
+        "independence": {item: item.replace("_", " ").title() for item in {source["independence_status"] for source in sources}},
+    }
+    labels = {"topic": "Topic", "type": "Resource type", "manufacturer": "Source relationship", "product": "Related product", "department": "Department", "independence": "Independence"}
+    selects = []
+    for field in ("topic", "type", "manufacturer", "product", "department", "independence"):
+        options = "".join(f'<option value="{esc(value, attribute=True)}">{esc(label)}</option>' for value, label in sorted(values[field].items(), key=lambda item: item[1]))
+        selects.append(f'<label>{labels[field]}<select data-evidence-filter="{field}"><option value="all">All {labels[field].lower()}s</option>{options}</select></label>')
+    return f'''<form class="evidence-controls" role="search" data-evidence-controls><label class="evidence-controls__search">Search sources<input type="search" autocomplete="off" placeholder="Search title, publisher, topic, scope…" data-evidence-search></label><div class="evidence-controls__filters">{"".join(selects)}</div><button class="button button-secondary" type="reset" data-evidence-reset hidden>Clear filters</button></form>'''
 
 
 def matrix_visual_markup(*, intensity: str = "medium", environment: str = "matrix") -> str:
@@ -1086,12 +1199,12 @@ def compact_product_card(product: dict, *, prefix: str = "", index: int = 1) -> 
     return f'''<article class="discovery-product scan-frame" data-discovery-product data-id="{esc(product["id"],attribute=True)}" data-manufacturer="{esc(product["manufacturer"],attribute=True)}" data-intent="{esc(product["intent"],attribute=True)}" data-environment="{esc(product["environment"],attribute=True)}" data-category="{esc(product["productKind"],attribute=True)}" data-name="{esc(product["name"].lower(),attribute=True)}" data-order="{index}"><div class="discovery-product__stage"><span class="signal-node" aria-hidden="true"></span><img src="{prefix}{esc(image["src"],attribute=True)}" width="{int(image["width"])}" height="{int(image["height"])}" alt="{esc(image["alt"],attribute=True)}" loading="lazy" decoding="async"></div><div><p class="interface-label">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3>{price_markup(product,context="compact")}<div class="discovery-product__links"><a class="button button-primary" href="{esc(product["destination"],attribute=True)}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Official product source for {esc(product["name"],attribute=True)} (opens in a new tab)">Official source ↗{external_note()}</a>{learn}</div></div></article>'''
 
 
-def department_cards(data: dict, library: dict, discovery: dict, *, prefix: str = "") -> str:
+def department_cards(data: dict, library: dict, discovery: dict, sources: list[dict], *, prefix: str = "") -> str:
     products=active_products(data["catalog"]); published={item["slug"] for item in published_articles(library)}; cards=[]
     for position,item in enumerate(discovery["departments"],start=1):
-        product_count=sum(product["intent"]==item["intentId"] for product in products); guide_count=sum(slug in published for slug in item["articleSlugs"])
+        product_count=sum(product["intent"]==item["intentId"] for product in products); guide_count=sum(slug in published for slug in item["articleSlugs"]); source_count=sum(item["intentId"] in source.get("department_ids",[]) for source in sources)
         environment=next(intent["environment"] for intent in data["catalog"]["intents"] if intent["id"]==item["intentId"])
-        cards.append(f'''<a class="department-card department-signature" data-environment="{esc(environment,attribute=True)}" href="{prefix}departments/{item["slug"]}.html"><span class="department-card__number" aria-hidden="true">{position:02d}</span><span class="department-card__biome" aria-hidden="true"><i></i><i></i><i></i></span><p class="interface-label">{esc(item["title"])}</p><strong>{product_count} products · {guide_count} guides</strong><span>{esc(item["description"])}</span><b>Explore department →</b></a>''')
+        cards.append(f'''<a class="department-card department-signature" data-environment="{esc(environment,attribute=True)}" href="{prefix}departments/{item["slug"]}.html"><span class="department-card__number" aria-hidden="true">{position:02d}</span><span class="department-card__biome" aria-hidden="true"><i></i><i></i><i></i></span><p class="interface-label">{esc(item["title"])}</p><strong>{product_count} products · {guide_count} guides · {source_count} sources</strong><span>{esc(item["description"])}</span><b>Explore department →</b></a>''')
     return "".join(cards)
 
 
@@ -1102,7 +1215,7 @@ def explore_catalog_markup(products: list[dict], catalog: dict) -> str:
     return controls+f'<div class="discovery-card-grid" data-explore-grid>{cards}</div><p data-explore-empty hidden>No products match these filters.</p><button class="button button-secondary load-more" type="button" data-load-more>Load more products</button><noscript><p><a href="shop.html">Browse the complete Products page.</a></p></noscript>'
 
 
-def build_home(data: dict, library: dict, discovery: dict) -> None:
+def build_home(data: dict, library: dict, discovery: dict, sources: list[dict]) -> None:
     catalog = data["catalog"]
     public_products = active_products(catalog)
     products = curated_products(catalog)
@@ -1131,8 +1244,8 @@ def build_home(data: dict, library: dict, discovery: dict) -> None:
         "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products), site["affiliateSourceDisclosure"]),
         "{{HERO_PRODUCT}}": hero_product_markup(featured),
         "{{HERO_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high", environment="balance"),
-        "{{UNIVERSAL_SEARCH}}": universal_search_markup(discovery_records(data, library, discovery)),
-        "{{DEPARTMENT_CARDS}}": department_cards(data, library, discovery),
+        "{{UNIVERSAL_SEARCH}}": universal_search_markup(discovery_records(data, library, discovery, sources)),
+        "{{DEPARTMENT_CARDS}}": department_cards(data, library, discovery, sources),
         "{{PROBLEM_HEADLINE}}": line_markup(home["problem"]["headline"]),
         "{{PROBLEM_COPY}}": esc(home["problem"]["copy"]),
         "{{PROBLEM_THEMES}}": "".join(f"<li>{esc(theme)}</li>" for theme in home["problem"]["themes"]),
@@ -1190,22 +1303,22 @@ def build_home(data: dict, library: dict, discovery: dict) -> None:
     write_output(ROOT / "index.html", render_template("index.html", replacements))
 
 
-def build_explore(data: dict, library: dict, discovery: dict) -> None:
+def build_explore(data: dict, library: dict, discovery: dict, sources: list[dict]) -> None:
     metadata=data["site"]["metadata"]; products=active_products(data["catalog"]); path="explore.html"
-    records=discovery_records(data,library,discovery)
-    replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title="Explore Products and Education | The Mindful Matrix",description="Search verified products, testing tools, Library guides, and public education journeys in one place.",path=path,structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Explore",path)])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="explore"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{EXPLORE_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment="discovery"),"{{WORKSPACE_MATRIX_VISUAL}}":matrix_visual_markup(intensity="medium",environment="evidence"),"{{SEARCH}}":universal_search_markup(records),"{{DEPARTMENTS}}":department_cards(data,library,discovery),"{{COMMERCIAL_DISCLOSURES}}":catalog_commercial_disclosures(data["site"],products),"{{CATALOG}}":explore_catalog_markup(products,data["catalog"])}
+    records=discovery_records(data,library,discovery,sources)
+    replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title="Explore Products and Education | The Mindful Matrix",description="Search verified products, testing tools, Library guides, public references, and education journeys in one place.",path=path,structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Explore",path)])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="explore"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{EXPLORE_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment="discovery"),"{{WORKSPACE_MATRIX_VISUAL}}":matrix_visual_markup(intensity="medium",environment="evidence"),"{{SEARCH}}":universal_search_markup(records),"{{DEPARTMENTS}}":department_cards(data,library,discovery,sources),"{{COMMERCIAL_DISCLOSURES}}":catalog_commercial_disclosures(data["site"],products),"{{CATALOG}}":explore_catalog_markup(products,data["catalog"])}
     write_output(ROOT/path,render_template("explore.html",replacements))
     write_output(ROOT/"assets"/"data"/"search-index.json",json.dumps(records,ensure_ascii=False,indent=2)+"\n")
 
 
-def build_departments(data: dict, library: dict, discovery: dict) -> None:
+def build_departments(data: dict, library: dict, discovery: dict, sources: list[dict]) -> None:
     metadata=data["site"]["metadata"]; products=active_products(data["catalog"]); articles={item["slug"]:item for item in published_articles(library)}; journeys={item["id"]:item for item in discovery["journeys"]}; expected=set()
     for position,department in enumerate(discovery["departments"],start=1):
-        path=f'departments/{department["slug"]}.html'; expected.add(ROOT/path); matches=[p for p in products if p["intent"]==department["intentId"]]; guides=[articles[s] for s in department["articleSlugs"] if s in articles]
+        path=f'departments/{department["slug"]}.html'; expected.add(ROOT/path); matches=[p for p in products if p["intent"]==department["intentId"]]; guides=[articles[s] for s in department["articleSlugs"] if s in articles]; department_sources=[source for source in sources if department["intentId"] in source.get("department_ids",[])]
         guides_markup="".join(f'<article class="learn-card"><p class="interface-label">Guide</p><h3>{esc(a["title"])}</h3><p>{esc(a["summary"])}</p><a href="../library/{esc(a["slug"],attribute=True)}.html">Read the evidence →</a></article>' for a in guides)
         journey_markup="".join(f'<article class="journey-callout"><p class="interface-label">Testing journey</p><h3>{esc(journeys[j]["title"])}</h3><p>{esc(journeys[j]["summary"])}</p><a href="../{esc(journeys[j]["href"],attribute=True)}">Open journey →</a></article>' for j in department["journeys"] if j in journeys)
         environment=next(intent["environment"] for intent in data["catalog"]["intents"] if intent["id"]==department["intentId"])
-        replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="../",title=f'{department["title"]} | The Mindful Matrix',description=department["description"],path=path,structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Explore","explore.html"),(department["title"],path)])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="../",current="department"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix="../"),"{{DEPARTMENT_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment=environment),"{{DEPARTMENT_ENVIRONMENT}}":esc(environment,attribute=True),"{{DEPARTMENT_INDEX}}":f'{position:02d}',"{{DEPARTMENT_ID}}":esc(department["intentId"],attribute=True),"{{DEPARTMENT_TITLE}}":esc(department["title"]),"{{DEPARTMENT_DESCRIPTION}}":esc(department["description"]),"{{PRODUCT_COUNT}}":str(len(matches)),"{{GUIDE_COUNT}}":str(len(guides)),"{{COMMERCIAL_DISCLOSURES}}":catalog_commercial_disclosures(data["site"],matches),"{{PRODUCTS}}":"".join(compact_product_card(p,prefix="../",index=i) for i,p in enumerate(matches,start=1)),"{{GUIDES}}":guides_markup,"{{JOURNEYS}}":journey_markup,"{{DISCLOSURE}}":esc(data["site"]["disclosure"])}
+        replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="../",title=f'{department["title"]} | The Mindful Matrix',description=department["description"],path=path,structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Explore","explore.html"),(department["title"],path)])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="../",current="department"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix="../"),"{{DEPARTMENT_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment=environment),"{{DEPARTMENT_ENVIRONMENT}}":esc(environment,attribute=True),"{{DEPARTMENT_INDEX}}":f'{position:02d}',"{{DEPARTMENT_ID}}":esc(department["intentId"],attribute=True),"{{DEPARTMENT_TITLE}}":esc(department["title"]),"{{DEPARTMENT_DESCRIPTION}}":esc(department["description"]),"{{PRODUCT_COUNT}}":str(len(matches)),"{{GUIDE_COUNT}}":str(len(guides)),"{{SOURCE_COUNT}}":str(len(department_sources)),"{{COMMERCIAL_DISCLOSURES}}":catalog_commercial_disclosures(data["site"],matches),"{{PRODUCTS}}":"".join(compact_product_card(p,prefix="../",index=i) for i,p in enumerate(matches,start=1)),"{{GUIDES}}":guides_markup,"{{JOURNEYS}}":journey_markup,"{{SOURCES}}":'<div class="source-card-grid">'+"".join(source_card_markup(source,prefix="../",compact=True) for source in department_sources)+'</div>',"{{DISCLOSURE}}":esc(data["site"]["disclosure"])}
         write_output(ROOT/path,render_template("department.html",replacements))
     directory=ROOT/"departments"
     if directory.exists():
@@ -1213,7 +1326,7 @@ def build_departments(data: dict, library: dict, discovery: dict) -> None:
             if path not in expected and GENERATOR_MARKER in path.read_text(encoding="utf-8"): path.unlink()
 
 
-def build_library(data: dict, library: dict) -> None:
+def build_library(data: dict, library: dict, sources: list[dict]) -> None:
     metadata = data["site"]["metadata"]
     page = metadata["pages"]["library"]
     counts = {category["id"]: 0 for category in library["categories"]}
@@ -1235,10 +1348,27 @@ def build_library(data: dict, library: dict) -> None:
         "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current="library"),
         "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
         "{{LIBRARY_CATEGORIES}}": "".join(library_category_markup(category, counts[category["id"]]) for category in library["categories"]),
+        "{{EVIDENCE_PATHWAY}}": f'''<section class="library-evidence-pathway section-dark section-pad" aria-labelledby="library-evidence-title"><div class="container library-evidence-pathway__grid"><div><p class="section-kicker">Evidence &amp; documentation</p><h2 id="library-evidence-title">Inspect {len(sources)} public sources.</h2><p>Browse independent references with visible publishers, scope, limitations, checked dates, and original public links.</p></div><a class="button button-primary" href="evidence.html">Open the source index →</a></div></section>''',
         "{{LIBRARY_INDEX}}": library_index_markup(library, data["homepage"]),
         "{{EDITORIAL_PRINCIPLES}}": editorial_principles_markup(data, library),
     }
     write_output(ROOT / "library.html", render_template("library.html", replacements))
+
+
+def build_evidence(data: dict, discovery: dict, manifest: dict, sources: list[dict]) -> None:
+    metadata = data["site"]["metadata"]
+    page = metadata["pages"]["evidence"]
+    replacements = {
+        "{{DOCUMENT_HEAD}}": document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("The Library","library.html"),("Evidence & Documentation",page["path"])]),evidence_collection_schema(metadata,sources)]),
+        "{{SHARED_HEADER}}": shared_header_markup(data,prefix="",current="library"),
+        "{{SHARED_FOOTER}}": shared_footer_markup(data,prefix=""),
+        "{{EVIDENCE_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high",environment="evidence"),
+        "{{SOURCE_COUNT}}": str(len(sources)),
+        "{{CHECKED_DATE}}": esc(manifest["checked_date"]),
+        "{{EVIDENCE_CONTROLS}}": evidence_controls_markup(sources,data,discovery),
+        "{{SOURCE_CARDS}}": "".join(source_card_markup(source) for source in sources),
+    }
+    write_output(ROOT / "evidence.html",render_template("evidence.html",replacements))
 
 
 def build_start(data: dict) -> None:
@@ -1274,7 +1404,7 @@ def build_start(data: dict) -> None:
     write_output(ROOT / "start.html", render_template("start.html", replacements))
 
 
-def build_shop(data: dict, product_labels: dict) -> None:
+def build_shop(data: dict, product_labels: dict, sources: list[dict]) -> None:
     metadata=data["site"]["metadata"]; page=metadata["pages"]["shop"]; catalog=data["catalog"]; products=active_products(catalog)
     label_records={record["product_id"]:record for record in product_labels.get("records",[])}
     replacements={
@@ -1286,7 +1416,7 @@ def build_shop(data: dict, product_labels: dict) -> None:
         "{{SHOP_FILTER_MANUFACTURERS}}":shop_filter_manufacturers_markup(products),
         "{{SHOP_FILTER_KINDS}}":shop_filter_kinds_markup(products),
         "{{SHOP_INITIAL_CARDS}}":shop_initial_cards_markup(products),
-        "{{SHOP_CATALOG_DATA}}":shop_catalog_data_markup(data,products,label_records),
+        "{{SHOP_CATALOG_DATA}}":shop_catalog_data_markup(data,products,label_records,sources),
         "{{SHOP_NO_SCRIPT}}":shop_no_script_markup(products,data),
         "{{SHOP_FALLBACKS}}":shop_fallbacks_markup(catalog["fallbackDestinations"]),
         "{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"]), "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}":esc(data["site"]["biolimitlessAffiliateDisclosure"]),
@@ -1324,7 +1454,7 @@ def build_articles(data: dict, library: dict) -> None:
 
 def build_crawl_files(data: dict, library: dict, discovery: dict) -> None:
     metadata = data["site"]["metadata"]
-    paths = ["", "start.html", "library.html", "shop.html", "know-your-number.html", "explore.html"]
+    paths = ["", "start.html", "library.html", "evidence.html", "shop.html", "know-your-number.html", "explore.html"]
     paths.extend(f'departments/{item["slug"]}.html' for item in discovery["departments"])
     paths.extend(f'library/{article["slug"]}.html' for article in published_articles(library))
     urls = "\n".join(f"  <url><loc>{esc(page_url(metadata, path))}</loc></url>" for path in paths)
@@ -1366,18 +1496,21 @@ def main() -> None:
     product_labels = load_json(ROOT / "content" / "product-labels.json")
     manufacturer_documents = load_json(ROOT / "content" / "manufacturer-documents.json")
     discovery = load_json(ROOT / "content" / "discovery.json")
+    public_source_manifest = load_json(ROOT / "content" / "resources" / "public-sources.json")
+    sources = published_sources(public_source_manifest)
     data["catalog"] = catalog
     data["productLabels"] = product_labels
     data["manufacturerDocuments"] = manufacturer_documents
     data["affiliate"] = catalog["affiliate"]
     data["products"] = catalog["products"]
     data["featuredProductId"] = catalog["featuredProductId"]
-    build_home(data, library, discovery)
-    build_explore(data, library, discovery)
-    build_departments(data, library, discovery)
-    build_library(data, library)
+    build_home(data, library, discovery, sources)
+    build_explore(data, library, discovery, sources)
+    build_departments(data, library, discovery, sources)
+    build_library(data, library, sources)
+    build_evidence(data, discovery, public_source_manifest, sources)
     build_start(data)
-    build_shop(data, product_labels)
+    build_shop(data, product_labels, sources)
     build_know_your_number(data)
     build_articles(data, library)
     build_crawl_files(data, library, discovery)

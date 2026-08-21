@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://themindfulmatrix.github.io/BioCare/content/resources/public-sources.schema.json",
+  "title": "The Mindful Matrix public source manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "checked_date", "records"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "checked_date": {"type": "string", "format": "date"},
+    "records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/source"}
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "title", "publisher", "manufacturer", "resource_type", "evidence_role",
+        "topic_ids", "department_ids", "product_ids", "article_ids", "public_url",
+        "final_url", "publication_date", "checked_date", "market", "language",
+        "public_use_status", "independence_status", "public_summary", "scope",
+        "limitations", "rights_evidence", "status"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "title": {"type": "string", "minLength": 3},
+        "publisher": {"type": "string", "minLength": 2},
+        "manufacturer": {"type": ["string", "null"]},
+        "resource_type": {"enum": ["government_fact_sheet", "government_guideline", "government_consumer_guide", "regulatory_guidance"]},
+        "evidence_role": {"enum": ["government_public_health", "independent_guideline"]},
+        "topic_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "department_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "product_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "article_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "public_url": {"type": "string", "pattern": "^https://"},
+        "final_url": {"type": "string", "pattern": "^https://"},
+        "publication_date": {"type": ["string", "null"]},
+        "checked_date": {"type": "string", "format": "date"},
+        "market": {"type": "string"},
+        "language": {"type": "string"},
+        "public_use_status": {"const": "link_and_original_summary"},
+        "independence_status": {"enum": ["independent_government", "independent_government_guideline"]},
+        "public_summary": {"type": "string", "minLength": 20},
+        "scope": {"type": "string", "minLength": 20},
+        "limitations": {"type": "string", "minLength": 20},
+        "rights_evidence": {"type": "string", "minLength": 20},
+        "status": {"enum": ["published", "pending_review", "pending_external_approval", "rejected"]}
+      }
+    }
+  }
+}

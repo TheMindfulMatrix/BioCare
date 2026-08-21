@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "baseline_sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+  "baseline": {
+    "hard_gate": "passed",
+    "review_warnings": 70,
+    "strict_dry_run_items": 77
+  },
+  "candidate": {
+    "hard_gate": "passed",
+    "review_warnings": 70,
+    "strict_dry_run_items": 77,
+    "new_review_warnings": 0,
+    "new_strict_dry_run_items": 0
+  },
+  "v10_resource_rules": {
+    "private_repository_identifier_leakage": "passed",
+    "raw_txt_link_leakage": "passed",
+    "private_or_signed_public_source_urls": "passed",
+    "unpublished_resource_rendering": "passed",
+    "missing_public_source_url": "passed",
+    "missing_checked_date": "passed",
+    "ambiguous_rights": "passed",
+    "manufacturer_content_mislabeled_as_independent": "passed",
+    "duplicate_public_source_records": "passed",
+    "missing_scope_or_limitations": "passed",
+    "unverified_approval_claim": "passed",
+    "unverified_public_contact_rendering": "passed"
+  },
+  "interpretation": "The existing review and strict backlogs are unchanged from the production baseline. V10 adds no new compliance warning or strict item; the normal compliance hard gate remains passing."
+}

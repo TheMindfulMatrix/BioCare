@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "baseline_sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+  "baseline": {
+    "public_pages": 22,
+    "html_bytes": 897408,
+    "dom_nodes": 8400,
+    "css_bytes": 234702,
+    "javascript_bytes": 67938,
+    "universal_search_index_bytes": 42667,
+    "public_source_manifest_bytes": 0,
+    "active_product_image_bytes": 1336124,
+    "active_product_image_count": 46,
+    "all_image_asset_bytes": 38031906,
+    "lazy_asset_references": 121
+  },
+  "candidate": {
+    "public_pages": 23,
+    "html_bytes": 994255,
+    "dom_nodes": 8976,
+    "css_bytes": 242413,
+    "javascript_bytes": 72413,
+    "universal_search_index_bytes": 48503,
+    "public_source_manifest_bytes": 13780,
+    "active_product_image_bytes": 1336124,
+    "active_product_image_count": 46,
+    "all_image_asset_bytes": 38031906,
+    "lazy_asset_references": 121,
+    "evidence_html_bytes": 34393,
+    "evidence_dom_nodes": 394,
+    "evidence_initial_request_upper_bound": 7
+  },
+  "delta": {
+    "public_pages": 1,
+    "html_bytes": 96847,
+    "dom_nodes": 576,
+    "css_bytes": 7711,
+    "javascript_bytes": 4475,
+    "universal_search_index_bytes": 5836,
+    "public_source_manifest_bytes": 13780,
+    "active_product_image_bytes": 0,
+    "all_image_asset_bytes": 0,
+    "lazy_asset_references": 0
+  },
+  "interaction_observations": {
+    "source_search_end_to_end_ms": 78,
+    "resource_filter_end_to_end_ms": 51,
+    "measurement_context": "Local static server; times include a short settle interval and are not network benchmarks.",
+    "lcp_candidate": "Evidence-page hero h1 text; no new eager content image",
+    "cls": null,
+    "cls_note": "The browser surface did not expose reliable layout-shift entries. Visual QA found no shift; generated images retain explicit dimensions."
+  },
+  "architecture": "No framework, external search service, or runtime private-source request was added. Product inspectors reference one shared eight-record public-source registry rather than duplicating source metadata per product."
+}

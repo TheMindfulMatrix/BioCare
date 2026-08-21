@@ -1,0 +1,92 @@
+{
+  "checked_date": "2026-08-21",
+  "source_count": 8,
+  "sources": [
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-omega-3-health-professional",
+      "page_title": "Omega-3 Fatty Acids - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-vitamin-d-health-professional",
+      "page_title": "Vitamin D - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.nccih.nih.gov",
+      "final_url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety",
+      "http_status": 200,
+      "id": "nccih-probiotics-usefulness-safety",
+      "page_title": "Probiotics: Usefulness and Safety | NCCIH",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "medlineplus.gov",
+      "final_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+      "http_status": 200,
+      "id": "medlineplus-hba1c-test",
+      "page_title": "Hemoglobin A1C (HbA1c) Test: MedlinePlus Medical Test",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.fda.gov",
+      "final_url": "https://www.fda.gov/food/dietary-supplements-guidance-documents-regulatory-information/dietary-supplement-labeling-guide",
+      "http_status": 200,
+      "id": "fda-dietary-supplement-labeling-guide",
+      "page_title": "Dietary Supplement Labeling Guide | FDA",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.fda.gov",
+      "final_url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-food-dietary-supplements",
+      "http_status": 200,
+      "id": "fda-label-claims-food-supplements",
+      "page_title": "Label Claims for Food & Dietary Supplements | FDA",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/dietarysupplements-Consumer/",
+      "http_status": 200,
+      "id": "nih-ods-dietary-supplements-background",
+      "page_title": "Background Information: Dietary Supplements - Consumer",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "odphp.health.gov",
+      "final_url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/about-physical-activity-guidelines",
+      "http_status": 200,
+      "id": "hhs-physical-activity-guidelines",
+      "page_title": "About the Physical Activity Guidelines | odphp.health.gov",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    }
+  ],
+  "totals": {
+    "bot_protected": 0,
+    "failed": 0,
+    "mismatch": 0,
+    "verified": 8
+  }
+}

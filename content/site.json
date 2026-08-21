@@ -5,7 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "v9-candidate-3",
+      "assetVersion": "v10-candidate-1",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -23,6 +23,11 @@
           "path": "library.html",
           "title": "The Library | The Mindful Matrix",
           "description": "Practical wellness education built around credible sources, context, and useful next steps."
+        },
+        "evidence": {
+          "path": "evidence.html",
+          "title": "Evidence & Documentation | The Mindful Matrix",
+          "description": "Inspect published independent references and public documentation with visible scope, limitations, and source links."
         },
         "start": {
           "path": "start.html",

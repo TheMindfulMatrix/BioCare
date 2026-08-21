@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "environment": "local static build served over HTTP",
+  "viewports": {
+    "1440x900": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0,
+      "private_identifiers_visible": 0
+    },
+    "768x1024": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0,
+      "below_floor_text": 0,
+      "private_identifiers_visible": 0
+    },
+    "390x844": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0,
+      "below_floor_text": 0,
+      "private_identifiers_visible": 0
+    },
+    "375x812": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0,
+      "below_floor_text": 0,
+      "private_identifiers_visible": 0
+    }
+  },
+  "routes": {
+    "library": "passed",
+    "evidence_and_documentation": "passed",
+    "universal_search_source_results": "passed",
+    "product_inspector_documentation": "passed",
+    "testing_measurement_department": "passed: 3 public sources",
+    "omega_nutrition_department": "passed: 4 public sources",
+    "gut_digestion_department": "passed: 4 public sources",
+    "daily_wellness_department": "passed: 5 public sources",
+    "active_nutrition_tools_department": "passed: 4 public sources",
+    "skin_collagen_department": "passed: 3 public sources",
+    "representative_guide": "passed: 7 source links"
+  },
+  "interactions": {
+    "source_search": "passed: vitamin query returned one exact public source and persisted q in the URL",
+    "resource_type_filter": "passed: regulatory guidance returned two FDA records and persisted filter state",
+    "independence_filter": "passed",
+    "no_result_state": "passed",
+    "reset_state": "passed: restored 8 sources and a clean URL",
+    "direct_source_link": "passed: target source received focus",
+    "universal_search_learn_mode": "passed: distinct Evidence & Documentation source group",
+    "manufacturer_filter": "passed: BioLimitless returned 9 of 9 BioLimitless products",
+    "product_documentation": "passed: progressive disclosure rendered 3 approved public records",
+    "dialog_escape": "passed",
+    "dialog_focus_return": "passed",
+    "mobile_navigation_escape": "passed"
+  },
+  "browser_console_errors": 0,
+  "browser_console_warnings": 0,
+  "failed_local_requests": 0,
+  "screenshots": [
+    "outputs/v10/evidence-1440x900.png",
+    "outputs/v10/evidence-768x1024.png",
+    "outputs/v10/evidence-390x844.png",
+    "outputs/v10/evidence-375x812.png",
+    "outputs/v10/library-1440x900.png",
+    "outputs/v10/universal-search-source-1440x900.png",
+    "outputs/v10/product-inspector-documentation-390x844.png"
+  ]
+}

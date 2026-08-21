@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>{{DOCUMENT_HEAD}}</head>
+<body class="evidence-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {{SHARED_HEADER}}
+  <main id="main-content" tabindex="-1">
+    <section class="evidence-hero section-dark" aria-labelledby="evidence-title">
+      {{EVIDENCE_MATRIX_VISUAL}}
+      <div class="container-wide evidence-hero__content">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="library.html">The Library</a></nav>
+        <p class="section-kicker">Evidence &amp; documentation</p>
+        <h1 id="evidence-title">Inspect the source, scope, and limits.</h1>
+        <p>This index publishes selected public references with original summaries. It does not expose internal partner material, private research files, or unpublished documentation.</p>
+        <dl class="evidence-hero__stats"><div><dt>Published sources</dt><dd>{{SOURCE_COUNT}}</dd></div><div><dt>Last link check</dt><dd>{{CHECKED_DATE}}</dd></div><div><dt>Private files published</dt><dd>0</dd></div></dl>
+      </div>
+    </section>
+
+    <section class="source-boundary section-light section-pad" aria-labelledby="source-boundary-title">
+      <div class="container-wide"><div class="section-heading-grid"><div><p class="section-kicker">Know the source</p><h2 id="source-boundary-title">Independent context is not manufacturer documentation.</h2></div><p class="section-copy">Independent government and guideline sources can explain a topic or regulatory context. Manufacturer records, when separately approved for public use, describe a specific product. Neither category is a personalized recommendation.</p></div></div>
+    </section>
+
+    <section class="evidence-browser section-warm section-pad" aria-labelledby="evidence-browser-title" data-evidence-browser>
+      <div class="container-wide">
+        <div class="section-heading-grid"><div><p class="section-kicker">Public source index</p><h2 id="evidence-browser-title">Browse {{SOURCE_COUNT}} published resources</h2></div><p class="section-copy">Every card names its publisher, role, scope, limitations, and checked date before linking away.</p></div>
+        {{EVIDENCE_CONTROLS}}
+        <p class="evidence-status" data-evidence-status aria-live="polite">Showing all {{SOURCE_COUNT}} published sources.</p>
+        <div class="evidence-grid" data-evidence-grid>{{SOURCE_CARDS}}</div>
+        <div class="evidence-empty" data-evidence-empty hidden><h3>No public sources match these filters.</h3><p>Try another term or clear the active filters.</p><button class="button button-secondary" type="button" data-evidence-empty-reset>Clear filters</button></div>
+      </div>
+    </section>
+
+    <section class="evidence-governance section-dark section-pad" aria-labelledby="evidence-governance-title"><div class="container-wide"><div class="section-heading-grid"><div><p class="section-kicker">Publication boundary</p><h2 id="evidence-governance-title">Private material stays private.</h2></div><p class="section-copy">A source appears here only after an explicit public-use review. A public link is not proof that a claim applies to a product, and missing documentation stays visibly missing.</p></div><div class="button-row"><a class="button button-primary" href="library.html">Return to the Library →</a><a class="button button-secondary" href="explore.html?mode=learn">Search education →</a></div></div></section>
+  </main>
+  {{SHARED_FOOTER}}
+</body>
+</html>

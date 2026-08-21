@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "baseline_sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+  "private_source_sha": "de8c7711a5ca4678d92dd0d0a3ebeba06f7334c7",
+  "branch": "agent/v10-evidence-library",
+  "classification_totals": {
+    "PUBLIC WEBSITE ELIGIBLE": 0,
+    "RESEARCH / REFERENCE ONLY": 34,
+    "ONE-TO-ONE ONLY": 15,
+    "INTERNAL / PARTNER ONLY": 30,
+    "EXCLUDED": 25
+  },
+  "public_resources": 8,
+  "public_pages": 23,
+  "active_products_with_public_context": 45,
+  "library_guides_audited": 10,
+  "public_source_live_audit": {
+    "verified": 8,
+    "bot_protected": 0,
+    "mismatch": 0,
+    "failed": 0
+  },
+  "privacy_scan_findings": 0,
+  "compliance": {
+    "hard_gate": "passed",
+    "review_warnings": 70,
+    "strict_dry_run_items": 77,
+    "new_review_warnings": 0,
+    "new_strict_items": 0
+  },
+  "tests": {
+    "passed": 38,
+    "failed": 0
+  },
+  "browser_qa": "passed at 1440x900, 768x1024, 390x844, and 375x812",
+  "definition_of_done": {
+    "MET": 102,
+    "NOT MET": 0,
+    "DEFERRED": 2
+  },
+  "deferred_approvals": [
+    "Written approval for the current external mixed-brand website and its independent-source links",
+    "User-approved public business contact plus confirmation of required public contact fields"
+  ],
+  "merge": "not performed",
+  "deployment": "not performed"
+}

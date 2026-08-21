@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "status": "passed",
+  "public_pages_validated": 23,
+  "checks": {
+    "document_language": "passed",
+    "single_h1_and_heading_order": "passed",
+    "skip_links_and_landmarks": "passed",
+    "unique_ids": "passed",
+    "image_alt_and_dimensions": "passed",
+    "external_link_rel_and_new_tab_text": "passed",
+    "form_labels": "passed",
+    "live_result_status": "passed",
+    "minimum_control_size_44px": "passed at all required viewports",
+    "text_floor": "passed at tablet and both mobile viewports",
+    "keyboard_navigation": "passed",
+    "escape_behavior": "passed for navigation and product inspector",
+    "focus_return": "passed for product inspector",
+    "progressive_disclosure": "passed",
+    "hidden_focusable_content": "none detected",
+    "private_data_in_accessibility_tree": "none detected",
+    "reduced_motion": "passed: CSS fallbacks and JavaScript preference guards remain present"
+  },
+  "notes": "The product inspector remains one native modal dialog. V10 added an explicit Escape key path in addition to the native cancel path and preserved focus return to the triggering product card."
+}

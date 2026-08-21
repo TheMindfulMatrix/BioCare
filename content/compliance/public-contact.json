@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "publicBusinessContact": {
+    "status": "pending_user_approval",
+    "name": null,
+    "email": null,
+    "phone": null,
+    "address": null,
+    "renderPublicly": false,
+    "reason": "No user-approved public business contact record exists in the repository. Private, account, Git, and back-office contact data must not be used."
+  }
+}
