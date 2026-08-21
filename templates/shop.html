@@ -7,67 +7,97 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   {{SHARED_HEADER}}
 
-  <main id="main-content" tabindex="-1">
-    <section class="shop-hero section-dark" aria-labelledby="shop-title">
+  <main id="main-content" tabindex="-1" data-shop-catalog-root>
+    <section class="catalog-intents section-dark" aria-label="Browse products by intent">
+      <div class="container-wide">
+        <div class="catalog-intents__rail" role="group" aria-label="Product intents" data-shop-intent-rail>{{SHOP_INTENT_RAIL}}</div>
+      </div>
+    </section>
+
+    <section class="shop-hero shop-hero--compact section-dark" aria-labelledby="shop-title">
       <div class="shop-hero__field" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="container-wide shop-hero__grid">
-        <div data-reveal>
+      <div class="container-wide shop-hero__compact-grid">
+        <div>
           <p class="section-kicker">The Product Universe</p>
-          <h1 id="shop-title">Every verified product.<br>One clear system.</h1>
-          <p class="shop-hero__copy">Browse by intent, compare official product presentations, and leave for the manufacturer’s site only when you choose.</p>
+          <h1 id="shop-title"><strong>{{SHOP_COUNT}}</strong> curated products</h1>
+          <p>Search, filter, compare, and learn before choosing.</p>
         </div>
-        <div class="shop-hero__status" data-reveal>
-          <strong>{{SHOP_COUNT}}</strong>
-          <span>verified individual products</span>
-          <small>Current US catalog · checked {{VERIFIED_DATE}}</small>
-        </div>
+        <span class="shop-hero__signal" aria-hidden="true">Catalog signal / {{VERIFIED_DATE}}</span>
       </div>
-      <div class="shop-hero__path" aria-hidden="true"></div>
     </section>
 
-    <section class="shop-navigation section-dark" aria-labelledby="shop-navigation-title">
+    <section class="catalog-discovery section-dark" aria-labelledby="catalog-search-label">
       <div class="container-wide">
-        <p class="interface-label" id="shop-navigation-title">Navigate by intent</p>
-        <nav class="shop-intent-nav" aria-label="Product intent categories">{{SHOP_INTENT_NAV}}</nav>
-        <div class="shop-filter-bar" data-shop-filter-root data-active-manufacturer="all">
-          <div class="shop-search"><label class="interface-label" for="product-search">Search all products</label><input id="product-search" type="search" inputmode="search" autocomplete="off" placeholder="Name, category, format…" data-shop-search></div>
-          <div><p class="interface-label">Filter by manufacturer</p><div class="shop-brand-filters" role="group" aria-label="Filter products by manufacturer">
-            <button type="button" data-shop-brand="all" aria-pressed="true">All</button>
-            <button type="button" data-shop-brand="Zinzino" aria-pressed="false">Zinzino</button>
-            <button type="button" data-shop-brand="BioLimitless" aria-pressed="false">BioLimitless</button>
-          </div></div>
-          <div class="shop-sort"><label class="interface-label" for="product-sort">Sort results</label><select id="product-sort" data-shop-sort><option value="curated">Featured / canonical</option><option value="name-asc">Name A–Z</option><option value="manufacturer">Manufacturer</option></select></div>
-          <p class="shop-filter-status" data-shop-filter-status aria-live="polite">Showing all {{SHOP_COUNT}} active products.</p>
-          <button class="shop-clear" type="button" data-shop-clear hidden>Clear search and filters</button>
+        <form class="catalog-search" role="search" data-shop-search-form>
+          <label id="catalog-search-label" for="product-search">Search all {{SHOP_COUNT}} curated products</label>
+          <div><input id="product-search" type="search" inputmode="search" autocomplete="off" placeholder="Search all {{SHOP_COUNT}} curated products" data-shop-search><button type="button" data-shop-search-clear hidden aria-label="Clear product search">Clear</button></div>
+        </form>
+
+        <div class="catalog-toolbar" data-shop-toolbar>
+          <p><strong data-shop-result-count>{{SHOP_COUNT}}</strong> results</p>
+          <button type="button" data-shop-filter-open aria-haspopup="dialog" aria-controls="catalog-filter-dialog">Filter <span data-shop-filter-count hidden>0</span></button>
+          <label><span>Sort</span><select data-shop-sort aria-label="Sort products"><option value="canonical">Featured / canonical</option><option value="name">Name A–Z</option><option value="manufacturer">Manufacturer</option></select></label>
         </div>
-        <div id="shop-affiliate-disclosure" class="commercial-notes" role="note" aria-label="Commercial relationship disclosures">
-          <p class="fine" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p>
-          <p class="fine" data-biolimitless-disclosure>{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}</p>
-          <p class="fine" data-pricing-disclosure>{{PRICING_DISCLOSURE}}</p>
-          <p class="fine" data-fda-disclaimer>{{FDA_DISCLAIMER}}</p>
-        </div>
+
+        <div class="catalog-chips" data-shop-chips hidden aria-label="Active product filters"></div>
+        <p class="catalog-status visually-hidden" data-shop-status aria-live="polite" aria-atomic="true">Showing 12 of {{SHOP_COUNT}} products.</p>
+
+        <p class="catalog-disclosure-line" id="catalog-disclosure-line">Official manufacturer links may earn The Mindful Matrix a commission. <a href="#catalog-disclosures">Pricing and disclosure details.</a></p>
+
+        <div class="catalog-grid" data-shop-grid aria-describedby="catalog-disclosure-line">{{SHOP_INITIAL_CARDS}}</div>
+        <p class="catalog-empty" data-shop-empty hidden>No verified products match the current search and filters. <button type="button" data-shop-empty-reset>Clear all</button></p>
+        <div class="catalog-load"><button class="button button-secondary" type="button" data-shop-load-more>Load 12 more products</button><span data-shop-load-status>Showing 12 of {{SHOP_COUNT}}</span></div>
+
+        {{SHOP_CATALOG_DATA}}
       </div>
     </section>
 
-    <div class="shop-catalog">
-      {{SHOP_GROUPS}}
-    </div>
+    <dialog class="catalog-filter-sheet" id="catalog-filter-dialog" aria-labelledby="catalog-filter-title" data-shop-filter-dialog>
+      <form method="dialog" data-shop-filter-form>
+        <header><div><p class="interface-label">Refine catalog</p><h2 id="catalog-filter-title">Filter products</h2></div><button type="button" data-shop-filter-close aria-label="Close product filters">Close</button></header>
+        <div class="catalog-filter-sheet__body">
+          <fieldset><legend>Intent / department</legend><div class="catalog-filter-options">{{SHOP_FILTER_INTENTS}}</div></fieldset>
+          <fieldset><legend>Manufacturer</legend><div class="catalog-filter-options">{{SHOP_FILTER_MANUFACTURERS}}</div></fieldset>
+          <fieldset><legend>Product type</legend><div class="catalog-filter-options">{{SHOP_FILTER_KINDS}}</div></fieldset>
+          <fieldset><legend>Label documentation</legend><div class="catalog-filter-options"><label><input type="checkbox" name="filter-label" value="complete_verified"><span>Verified label available</span></label><label><input type="checkbox" name="filter-label" value="partial_verified"><span>Partial verified label</span></label><label><input type="checkbox" name="filter-label" value="unavailable_or_unverified"><span>Documentation unavailable</span></label></div></fieldset>
+        </div>
+        <footer><button class="button button-primary" type="button" data-shop-filter-apply>Show {{SHOP_COUNT}} products</button><button class="button button-secondary" type="button" data-shop-filter-reset>Clear all</button></footer>
+      </form>
+    </dialog>
 
-    <section class="shop-fallbacks section-light section-pad" aria-labelledby="shop-fallbacks-title">
+    <dialog class="product-inspector" aria-labelledby="product-inspector-title" data-product-inspector>
+      <div class="product-inspector__shell">
+        <header><p class="interface-label">Product details</p><button type="button" data-product-close aria-label="Close product details">Close</button></header>
+        <div class="product-inspector__content" data-product-inspector-content></div>
+      </div>
+    </dialog>
+
+    <section class="shop-learn section-light section-pad" aria-labelledby="shop-learn-title">
       <div class="container-wide">
-        <div class="section-heading-grid" data-reveal>
-          <div><p class="section-kicker">Still looking?</p><h2 id="shop-fallbacks-title" class="section-title">Open the broader destinations.</h2></div>
-          <p class="section-copy">These verified collection and partner routes remain available as fallbacks. They do not replace the individual product records above.</p>
+        <div class="section-heading-grid">
+          <div><p class="section-kicker">Information → Education → Action</p><h2 id="shop-learn-title" class="section-title">Learn before you choose.</h2></div>
+          <p class="section-copy">Use the evidence library and measurement pathways when you want more context. Products remain optional tools, not recommendations.</p>
         </div>
-        <div class="shop-fallbacks__grid">{{SHOP_FALLBACKS}}</div>
+        <div class="shop-learn__grid">
+          <a href="library.html"><span>01</span><strong>Evidence Library</strong><small>Read the guides →</small></a>
+          <a href="know-your-number.html"><span>02</span><strong>Know Your Number</strong><small>Test. Don’t Guess. →</small></a>
+          <a href="start.html"><span>03</span><strong>Start Here</strong><small>Find the right pathway →</small></a>
+          <a href="explore.html"><span>04</span><strong>Explore</strong><small>Search products and education →</small></a>
+        </div>
       </div>
     </section>
 
-    <section class="shop-disclosure section-dark">
-      <div class="container shop-disclosure__grid">
-        <p class="interface-label">Commercial separation</p>
-        <p>{{DISCLOSURE}}</p>
-        <a class="button button-secondary" href="index.html#transparency">See how the relationship works →</a>
+    <section class="shop-disclosures section-dark section-pad" id="catalog-disclosures" aria-labelledby="catalog-disclosures-title">
+      <div class="container-wide">
+        <div class="shop-disclosures__heading"><p class="section-kicker">Commercial and evidence boundaries</p><h2 id="catalog-disclosures-title">Pricing, partners, and product sources.</h2></div>
+        <div class="shop-disclosures__grid">
+          <article><h3>Zinzino relationship</h3><p id="shop-affiliate-disclosure" data-affiliate-disclosure>{{AFFILIATE_DISCLOSURE}}</p><p>{{DISCLOSURE}}</p></article>
+          <article><h3>BioLimitless relationship</h3><p data-biolimitless-disclosure>{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}</p><p>Purchases and account activity remain on the manufacturer’s site.</p></article>
+          <article><h3>Pricing source</h3><p data-pricing-disclosure>{{PRICING_DISCLOSURE}}</p><p>The Mindful Matrix does not operate a cart or checkout.</p></article>
+          <article><h3>Evidence boundary</h3><p data-fda-disclaimer>{{FDA_DISCLAIMER}}</p><p>Unknown or unverified label information remains clearly unavailable.</p></article>
+        </div>
+        <div class="shop-fallbacks__grid" aria-label="Broader manufacturer destinations">{{SHOP_FALLBACKS}}</div>
+        {{SHOP_NO_SCRIPT}}
       </div>
     </section>
   </main>
