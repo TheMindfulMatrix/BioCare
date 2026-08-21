@@ -625,6 +625,10 @@ def validate_v10_source_output(site: dict, library: dict, manifest: dict) -> Non
             payload = {"products": []}
         active_products = [product for product in site["products"] if product.get("commercial_status") == "active"]
         product_records = payload.get("products", [])
+        source_registry = payload.get("sources", [])
+        check({record.get("id") for record in source_registry} == published_ids, "Shop source registry must contain exactly the published public sources")
+        for source in source_registry:
+            check(str(source.get("publicUrl", "")).startswith("https://"), f"{source.get('id')}: inspector public source must use HTTPS")
         check(len(product_records) == len(active_products), "V10 documentation payload must preserve every active product")
         for product in product_records:
             documentation = product.get("documentation")
@@ -632,7 +636,6 @@ def validate_v10_source_output(site: dict, library: dict, manifest: dict) -> Non
             for source in documentation or []:
                 check(source.get("id") in published_ids, f"{product.get('id')}: product inspector references an unpublished source")
                 check(source.get("relationship") in {"product-specific context", "department context — not product evidence"}, f"{product.get('id')}: source relationship must remain explicit")
-                check(str(source.get("publicUrl", "")).startswith("https://"), f"{product.get('id')}: inspector public source must use HTTPS")
 
     discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
     for department in discovery["departments"]:

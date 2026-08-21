@@ -191,6 +191,8 @@
     };
     var byId = {};
     products.forEach(function (product) { byId[product.id] = product; });
+    var sourceById = {};
+    (catalog.sources || []).forEach(function (source) { sourceById[source.id] = source; });
     var grid = root.querySelector("[data-shop-grid]");
     var search = root.querySelector("[data-shop-search]");
     var searchClear = root.querySelector("[data-shop-search-clear]");
@@ -447,8 +449,8 @@
 
     function documentationMarkup(product) {
       var records = product.documentation || [];
-      var items = records.map(function (record) {
-        return '<li><p class="interface-label">' + htmlSafe(record.resourceType) + ' / ' + htmlSafe(record.relationship) + '</p><strong>' + htmlSafe(record.title) + '</strong><small>' + htmlSafe(record.publisher) + '</small><span><a href="' + htmlSafe(record.evidenceUrl) + '">Inspect context →</a><a href="' + htmlSafe(record.publicUrl) + '" target="_blank" rel="noopener noreferrer">Public source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></span></li>';
+      var items = records.map(function (record) { var source=sourceById[record.id]; if(!source)return "";
+        return '<li><p class="interface-label">' + htmlSafe(source.resourceType) + ' / ' + htmlSafe(record.relationship) + '</p><strong>' + htmlSafe(source.title) + '</strong><small>' + htmlSafe(source.publisher) + '</small><span><a href="' + htmlSafe(source.evidenceUrl) + '">Inspect context →</a><a href="' + htmlSafe(source.publicUrl) + '" target="_blank" rel="noopener noreferrer">Public source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></span></li>';
       }).join("");
       return '<details class="inspector-documentation"><summary>Documentation &amp; independent context <span>' + records.length + '</span></summary><p>These references provide public topic or department context. They do not prove that this product produces a specific outcome.</p>' + (items ? '<ul>' + items + '</ul>' : '<p>No approved public reference is currently linked. Missing documentation stays explicit.</p>') + '</details>';
     }
@@ -528,6 +530,7 @@
     filterButton.addEventListener("click", openFilters);
     filterClose.addEventListener("click", requestFilterClose);
     filterDialog.addEventListener("cancel", function (event) { event.preventDefault(); requestFilterClose(); });
+    filterDialog.addEventListener("keydown", function (event) { if (event.key === "Escape") { event.preventDefault(); requestFilterClose(); } });
     filterDialog.addEventListener("close", function () { updateDialogLock(); filterButton.focus(); });
     filterForm.addEventListener("change", updateDraftCount);
     filterReset.addEventListener("click", function () {
@@ -546,6 +549,7 @@
     });
     inspectorClose.addEventListener("click", requestInspectorClose);
     inspector.addEventListener("cancel", function (event) { event.preventDefault(); requestInspectorClose(); });
+    inspector.addEventListener("keydown", function (event) { if (event.key === "Escape") { event.preventDefault(); requestInspectorClose(); } });
     inspector.addEventListener("close", function () {
       updateDialogLock();
       var returnTarget = lastProductTrigger && document.contains(lastProductTrigger) ? lastProductTrigger : (lastProductFocusId ? grid.querySelector('[data-product-open="' + CSS.escape(lastProductFocusId) + '"]') : null);

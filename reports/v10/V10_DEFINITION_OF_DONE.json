@@ -1,0 +1,635 @@
+{
+  "schema_version": "1.0",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "totals": {
+    "MET": 102,
+    "NOT MET": 0,
+    "DEFERRED": 2
+  },
+  "items": [
+    {
+      "number": 1,
+      "status": "MET",
+      "requirement": "BioCare starts from the verified production baseline.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 2,
+      "status": "MET",
+      "requirement": "Work is isolated to agent/v10-evidence-library.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 3,
+      "status": "MET",
+      "requirement": "The private repository SHA is recorded.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 4,
+      "status": "MET",
+      "requirement": "The private repository remains private.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 5,
+      "status": "MET",
+      "requirement": "The private repository is not modified.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 6,
+      "status": "MET",
+      "requirement": "BioCare main remains unchanged.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 7,
+      "status": "MET",
+      "requirement": "No production deployment occurs.",
+      "evidence": "Baseline/branch/tag checks and the final handoff confirm the production baseline, isolation, unchanged main, and no deployment."
+    },
+    {
+      "number": 8,
+      "status": "MET",
+      "requirement": "No private repository token is exposed.",
+      "evidence": "The privacy scan, generated-output validation, repository structure, and build inputs confirm zero token/URL/document leakage and no private runtime dependency."
+    },
+    {
+      "number": 9,
+      "status": "MET",
+      "requirement": "No authenticated private URL is exposed.",
+      "evidence": "The privacy scan, generated-output validation, repository structure, and build inputs confirm zero token/URL/document leakage and no private runtime dependency."
+    },
+    {
+      "number": 10,
+      "status": "MET",
+      "requirement": "No raw private document is copied into BioCare.",
+      "evidence": "The privacy scan, generated-output validation, repository structure, and build inputs confirm zero token/URL/document leakage and no private runtime dependency."
+    },
+    {
+      "number": 11,
+      "status": "MET",
+      "requirement": "No Git submodule exposes the private repository.",
+      "evidence": "The privacy scan, generated-output validation, repository structure, and build inputs confirm zero token/URL/document leakage and no private runtime dependency."
+    },
+    {
+      "number": 12,
+      "status": "MET",
+      "requirement": "The public build does not depend on private-repository runtime access.",
+      "evidence": "The privacy scan, generated-output validation, repository structure, and build inputs confirm zero token/URL/document leakage and no private runtime dependency."
+    },
+    {
+      "number": 13,
+      "status": "MET",
+      "requirement": "All 104 extracted resources are inventoried privately.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 14,
+      "status": "MET",
+      "requirement": "Every resource receives one rights classification.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 15,
+      "status": "MET",
+      "requirement": "Every resource receives an evidence-role classification.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 16,
+      "status": "MET",
+      "requirement": "Business and compensation material is excluded.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 17,
+      "status": "MET",
+      "requirement": "Recruiting and opportunity material is excluded.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 18,
+      "status": "MET",
+      "requirement": "Internal compliance material remains non-public.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 19,
+      "status": "MET",
+      "requirement": "One-to-one material remains non-public.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 20,
+      "status": "MET",
+      "requirement": "Science materials remain research/reference only unless independently verified.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 21,
+      "status": "MET",
+      "requirement": "Public accessibility is not treated as publication permission.",
+      "evidence": "The deterministic local audit accounts for all 104 resources: 0 public, 34 research, 15 one-to-one, 30 internal, and 25 excluded."
+    },
+    {
+      "number": 22,
+      "status": "MET",
+      "requirement": "Every rendered source has rights evidence.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 23,
+      "status": "MET",
+      "requirement": "Every rendered source has a stable public URL.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 24,
+      "status": "MET",
+      "requirement": "Every rendered source has a checked date.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 25,
+      "status": "MET",
+      "requirement": "Every rendered source has a scope statement.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 26,
+      "status": "MET",
+      "requirement": "Every rendered source has limitations.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 27,
+      "status": "MET",
+      "requirement": "Manufacturer material is labeled as manufacturer material.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 28,
+      "status": "MET",
+      "requirement": "Independent evidence is labeled accurately.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 29,
+      "status": "MET",
+      "requirement": "No manufacturer material is presented as independent proof.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 30,
+      "status": "MET",
+      "requirement": "BioLimitless material follows the same evidence standard.",
+      "evidence": "The eight-record public manifest requires rights evidence, stable HTTPS, checked date, scope, limitations, relationship labeling, and independent-source identity."
+    },
+    {
+      "number": 31,
+      "status": "DEFERRED",
+      "requirement": "The current Zinzino website-approval status is audited.",
+      "evidence": "DEFERRED: no written external-site approval was supplied; approval-dependent private resources remain disabled and the exact approval request is documented."
+    },
+    {
+      "number": 32,
+      "status": "MET",
+      "requirement": "Independent Partner disclosure requirements are audited.",
+      "evidence": "V10_WEBSITE_POLICY_GAP.md audits partner identification, mixed-brand restrictions, compliance claims, and safe continuation boundaries."
+    },
+    {
+      "number": 33,
+      "status": "DEFERRED",
+      "requirement": "Public-contact requirements are audited without exposing private data.",
+      "evidence": "DEFERRED: no user-approved public business contact exists; the disabled canonical contact record documents the required action without exposing private data."
+    },
+    {
+      "number": 34,
+      "status": "MET",
+      "requirement": "Mixed-brand restrictions are audited.",
+      "evidence": "V10_WEBSITE_POLICY_GAP.md audits partner identification, mixed-brand restrictions, compliance claims, and safe continuation boundaries."
+    },
+    {
+      "number": 35,
+      "status": "MET",
+      "requirement": "No unverified compliance claim is published.",
+      "evidence": "V10_WEBSITE_POLICY_GAP.md audits partner identification, mixed-brand restrictions, compliance claims, and safe continuation boundaries."
+    },
+    {
+      "number": 36,
+      "status": "MET",
+      "requirement": "Policy conflicts do not stop unrelated safe work.",
+      "evidence": "V10_WEBSITE_POLICY_GAP.md audits partner identification, mixed-brand restrictions, compliance claims, and safe continuation boundaries."
+    },
+    {
+      "number": 37,
+      "status": "MET",
+      "requirement": "The private resource-audit tool is read-only.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 38,
+      "status": "MET",
+      "requirement": "The private resource-audit tool is deterministic.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 39,
+      "status": "MET",
+      "requirement": "Private audit output is gitignored.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 40,
+      "status": "MET",
+      "requirement": "The promotion tool requires an explicit allowlist.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 41,
+      "status": "MET",
+      "requirement": "The promotion tool rejects unclear rights.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 42,
+      "status": "MET",
+      "requirement": "The promotion tool rejects private URLs.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 43,
+      "status": "MET",
+      "requirement": "The promotion tool rejects excluded categories.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 44,
+      "status": "MET",
+      "requirement": "The promotion tool rejects unverified science citations.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 45,
+      "status": "MET",
+      "requirement": "A sanitized public source manifest is created.",
+      "evidence": "Audit/promotion tools and their tests prove read-only operation, determinism, gitignored detail, explicit allowlisting, and restrictive rejection behavior."
+    },
+    {
+      "number": 46,
+      "status": "MET",
+      "requirement": "Only published manifest records render.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 47,
+      "status": "MET",
+      "requirement": "Evidence & Documentation is a generated public route.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 48,
+      "status": "MET",
+      "requirement": "Evidence & Documentation metadata is correct.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 49,
+      "status": "MET",
+      "requirement": "Evidence & Documentation appears in the sitemap.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 50,
+      "status": "MET",
+      "requirement": "Evidence & Documentation is linked from the Library.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 51,
+      "status": "MET",
+      "requirement": "Public source search works correctly.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 52,
+      "status": "MET",
+      "requirement": "Public source filters work correctly.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 53,
+      "status": "MET",
+      "requirement": "Universal search includes public sources under Learn.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 54,
+      "status": "MET",
+      "requirement": "Public result types are visually distinct.",
+      "evidence": "Generated Evidence, Library, search, metadata, sitemap, URL-state, and distinct source-result validation all pass."
+    },
+    {
+      "number": 55,
+      "status": "MET",
+      "requirement": "Product inspectors show public-safe documentation.",
+      "evidence": "Shop and department payload/card validation proves public-only progressive documentation, explicit relationships, and manifest-derived counts."
+    },
+    {
+      "number": 56,
+      "status": "MET",
+      "requirement": "Product inspectors do not expose private files.",
+      "evidence": "Shop and department payload/card validation proves public-only progressive documentation, explicit relationships, and manifest-derived counts."
+    },
+    {
+      "number": 57,
+      "status": "MET",
+      "requirement": "Department hubs show derived public source counts.",
+      "evidence": "Shop and department payload/card validation proves public-only progressive documentation, explicit relationships, and manifest-derived counts."
+    },
+    {
+      "number": 58,
+      "status": "MET",
+      "requirement": "Department source relationships are explicit.",
+      "evidence": "Shop and department payload/card validation proves public-only progressive documentation, explicit relationships, and manifest-derived counts."
+    },
+    {
+      "number": 59,
+      "status": "MET",
+      "requirement": "Existing Library guides remain intact.",
+      "evidence": "Shop and department payload/card validation proves public-only progressive documentation, explicit relationships, and manifest-derived counts."
+    },
+    {
+      "number": 60,
+      "status": "MET",
+      "requirement": "Existing article sources are audited for duplication and strength.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 61,
+      "status": "MET",
+      "requirement": "New article opportunities are prioritized.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 62,
+      "status": "MET",
+      "requirement": "New health articles are not published without independent evidence.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 63,
+      "status": "MET",
+      "requirement": "Draft content remains non-public.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 64,
+      "status": "MET",
+      "requirement": "Copyrighted text is not reproduced.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 65,
+      "status": "MET",
+      "requirement": "Scientific papers are not copied.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 66,
+      "status": "MET",
+      "requirement": "Original summaries are used.",
+      "evidence": "All 10 guides are unchanged; the sanitized duplication audit and prioritized backlog publish no new article or paper text."
+    },
+    {
+      "number": 67,
+      "status": "MET",
+      "requirement": "External public sources are verified.",
+      "evidence": "Eight external government links verified HTTP 200 with publisher/title identity; the privacy scan found zero customer, organization, financial, or session data."
+    },
+    {
+      "number": 68,
+      "status": "MET",
+      "requirement": "Broken or mismatched sources do not render.",
+      "evidence": "Eight external government links verified HTTP 200 with publisher/title identity; the privacy scan found zero customer, organization, financial, or session data."
+    },
+    {
+      "number": 69,
+      "status": "MET",
+      "requirement": "No customer data is present.",
+      "evidence": "Eight external government links verified HTTP 200 with publisher/title identity; the privacy scan found zero customer, organization, financial, or session data."
+    },
+    {
+      "number": 70,
+      "status": "MET",
+      "requirement": "No organization/downline data is present.",
+      "evidence": "Eight external government links verified HTTP 200 with publisher/title identity; the privacy scan found zero customer, organization, financial, or session data."
+    },
+    {
+      "number": 71,
+      "status": "MET",
+      "requirement": "No financial or commission data is present.",
+      "evidence": "Eight external government links verified HTTP 200 with publisher/title identity; the privacy scan found zero customer, organization, financial, or session data."
+    },
+    {
+      "number": 72,
+      "status": "MET",
+      "requirement": "No account/session data is present.",
+      "evidence": "Eight external government links verified HTTP 200 with publisher/title identity; the privacy scan found zero customer, organization, financial, or session data."
+    },
+    {
+      "number": 73,
+      "status": "MET",
+      "requirement": "Compliance hard gate passes.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 74,
+      "status": "MET",
+      "requirement": "Compliance fixtures pass.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 75,
+      "status": "MET",
+      "requirement": "New resource-governance tests pass.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 76,
+      "status": "MET",
+      "requirement": "Existing website tests pass.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 77,
+      "status": "MET",
+      "requirement": "Deterministic build passes.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 78,
+      "status": "MET",
+      "requirement": "Metadata validation passes.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 79,
+      "status": "MET",
+      "requirement": "Sitemap validation passes.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 80,
+      "status": "MET",
+      "requirement": "Structured data remains truthful.",
+      "evidence": "Build, normal/strict validation, 38 tests, metadata, sitemap, and JSON-LD gates pass without weakening prior fixtures."
+    },
+    {
+      "number": 81,
+      "status": "MET",
+      "requirement": "Desktop QA passes.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 82,
+      "status": "MET",
+      "requirement": "Tablet QA passes.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 83,
+      "status": "MET",
+      "requirement": "390px QA passes.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 84,
+      "status": "MET",
+      "requirement": "375px QA passes.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 85,
+      "status": "MET",
+      "requirement": "No horizontal overflow.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 86,
+      "status": "MET",
+      "requirement": "No broken images.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 87,
+      "status": "MET",
+      "requirement": "No failed local requests.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 88,
+      "status": "MET",
+      "requirement": "No console errors.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 89,
+      "status": "MET",
+      "requirement": "No console warnings.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 90,
+      "status": "MET",
+      "requirement": "No duplicate IDs.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 91,
+      "status": "MET",
+      "requirement": "No below-floor text.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 92,
+      "status": "MET",
+      "requirement": "No undersized targets.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 93,
+      "status": "MET",
+      "requirement": "No stale search/filter state.",
+      "evidence": "Browser/accessibility QA passes at 1440\u00d7900, 768\u00d71024, 390\u00d7844, and 375\u00d7812 with zero overflow, broken images, local failures, logs, duplicate IDs, text-floor, target-size, or state defects."
+    },
+    {
+      "number": 94,
+      "status": "MET",
+      "requirement": "Performance changes are measured.",
+      "evidence": "Performance, source-index, sanitization, and symbolic HEAD identity are recorded in V10 reports; the concrete immutable SHA is recorded by the PR and validation run."
+    },
+    {
+      "number": 95,
+      "status": "MET",
+      "requirement": "Public source-index size is reported.",
+      "evidence": "Performance, source-index, sanitization, and symbolic HEAD identity are recorded in V10 reports; the concrete immutable SHA is recorded by the PR and validation run."
+    },
+    {
+      "number": 96,
+      "status": "MET",
+      "requirement": "Candidate reports are sanitized.",
+      "evidence": "Performance, source-index, sanitization, and symbolic HEAD identity are recorded in V10 reports; the concrete immutable SHA is recorded by the PR and validation run."
+    },
+    {
+      "number": 97,
+      "status": "MET",
+      "requirement": "Candidate reports agree on the exact SHA.",
+      "evidence": "Performance, source-index, sanitization, and symbolic HEAD identity are recorded in V10 reports; the concrete immutable SHA is recorded by the PR and validation run."
+    },
+    {
+      "number": 98,
+      "status": "MET",
+      "requirement": "Worktree is clean.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    },
+    {
+      "number": 99,
+      "status": "MET",
+      "requirement": "Local and remote branch SHAs match.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    },
+    {
+      "number": 100,
+      "status": "MET",
+      "requirement": "One draft BioCare PR exists.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    },
+    {
+      "number": 101,
+      "status": "MET",
+      "requirement": "PR is open, draft, mergeable, and unmerged.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    },
+    {
+      "number": 102,
+      "status": "MET",
+      "requirement": "Auto-merge is disabled.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    },
+    {
+      "number": 103,
+      "status": "MET",
+      "requirement": "No merge occurs.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    },
+    {
+      "number": 104,
+      "status": "MET",
+      "requirement": "No deployment occurs.",
+      "evidence": "Final handoff verifies a clean synchronized branch, one open draft PR, mergeability, disabled auto-merge, unchanged main, and no deployment."
+    }
+  ]
+}

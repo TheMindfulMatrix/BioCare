@@ -1,0 +1,5 @@
+V10 REVIEW CANDIDATE
+Candidate: HEAD (the Git commit containing this report)
+Definition of Done: 102 MET / 0 NOT MET / 2 DEFERRED
+Merge: NOT PERFORMED
+Deployment: NOT PERFORMED

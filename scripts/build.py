@@ -687,13 +687,7 @@ def product_documentation(product: dict, sources: list[dict]) -> list[dict]:
     return [
         {
             "id": source["id"],
-            "title": source["title"],
-            "publisher": source["publisher"],
-            "resourceType": source_type_label(source["resource_type"]),
-            "publicUrl": source["public_url"],
-            "evidenceUrl": f'evidence.html?source={source["id"]}',
             "relationship": "product-specific context" if source in exact else "department context — not product evidence",
-            "independence": source["independence_status"],
         }
         for source in (exact + department)[:3]
     ]
@@ -740,6 +734,14 @@ def shop_catalog_data_markup(data: dict, products: list[dict], label_records: di
                 "count": sum(1 for product in products if product["intent"] == intent["id"]),
             }
             for intent in catalog["intents"]
+        ],
+        "sources": [
+            {
+                "id": source["id"], "title": source["title"], "publisher": source["publisher"],
+                "resourceType": source_type_label(source["resource_type"]), "publicUrl": source["public_url"],
+                "evidenceUrl": f'evidence.html?source={source["id"]}', "independence": source["independence_status"],
+            }
+            for source in sources
         ],
         "products": [shop_product_payload(product, index=index, label_record=label_records.get(product["id"]), sources=sources) for index, product in enumerate(products, start=1)],
     }
