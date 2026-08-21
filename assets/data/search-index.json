@@ -1181,5 +1181,200 @@
       "retest",
       "numbers"
     ]
+  },
+  {
+    "id": "nih-ods-omega-3-health-professional",
+    "type": "source",
+    "title": "Omega-3 Fatty Acids — Health Professional Fact Sheet",
+    "summary": "A federal reference for omega-3 forms, dietary sources, intake context, biomarker considerations, safety, and the limits of current evidence.",
+    "href": "evidence.html?source=nih-ods-omega-3-health-professional",
+    "publisher": "National Institutes of Health, Office of Dietary Supplements",
+    "resourceType": "Government Fact Sheet",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "omega-3",
+      "food-and-supplements"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "omega-nutrition",
+      "test-measure"
+    ],
+    "products": [
+      "balance-test",
+      "balanceoil-plus-300ml"
+    ],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "nih-ods-vitamin-d-health-professional",
+    "type": "source",
+    "title": "Vitamin D — Health Professional Fact Sheet",
+    "summary": "A federal reference covering vitamin D sources, intake guidance, status assessment, deficiency risk, safety, and research across health outcomes.",
+    "href": "evidence.html?source=nih-ods-vitamin-d-health-professional",
+    "publisher": "National Institutes of Health, Office of Dietary Supplements",
+    "resourceType": "Government Fact Sheet",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "vitamin-d",
+      "testing-and-biomarkers"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "daily-wellness",
+      "test-measure"
+    ],
+    "products": [
+      "vitamin-d-test",
+      "biolimitless-vitamin-d3-k2"
+    ],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "nccih-probiotics-usefulness-safety",
+    "type": "source",
+    "title": "Probiotics: Usefulness and Safety",
+    "summary": "A federal overview of probiotic terminology, studied uses, strain-specific uncertainty, safety considerations, and limits in the evidence base.",
+    "href": "evidence.html?source=nccih-probiotics-usefulness-safety",
+    "publisher": "National Center for Complementary and Integrative Health",
+    "resourceType": "Government Fact Sheet",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "gut-and-digestion",
+      "probiotics"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "gut-digestion"
+    ],
+    "products": [
+      "zinobiotic-plus",
+      "biolimitless-biozyme"
+    ],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "medlineplus-hba1c-test",
+    "type": "source",
+    "title": "Hemoglobin A1C (HbA1c) Test",
+    "summary": "A consumer-oriented federal explanation of what an HbA1c test measures, why it may be ordered, and how results are discussed in clinical care.",
+    "href": "evidence.html?source=medlineplus-hba1c-test",
+    "publisher": "MedlinePlus, U.S. National Library of Medicine",
+    "resourceType": "Government Consumer Guide",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "hba1c",
+      "testing-and-biomarkers"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "test-measure"
+    ],
+    "products": [
+      "hba1c-test"
+    ],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "fda-dietary-supplement-labeling-guide",
+    "type": "source",
+    "title": "Dietary Supplement Labeling Guide",
+    "summary": "FDA guidance organized around common questions on dietary-supplement identity, facts panels, ingredients, claims, and related labeling requirements.",
+    "href": "evidence.html?source=fda-dietary-supplement-labeling-guide",
+    "publisher": "U.S. Food and Drug Administration",
+    "resourceType": "Regulatory Guidance",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "supplement-labels",
+      "claims-and-regulation"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "daily-wellness",
+      "omega-nutrition",
+      "gut-digestion",
+      "performance-recovery",
+      "healthy-aging"
+    ],
+    "products": [],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "fda-label-claims-food-supplements",
+    "type": "source",
+    "title": "Label Claims for Food and Dietary Supplements",
+    "summary": "A federal overview of health claims, nutrient-content claims, and structure/function claims used on foods and dietary supplements.",
+    "href": "evidence.html?source=fda-label-claims-food-supplements",
+    "publisher": "U.S. Food and Drug Administration",
+    "resourceType": "Regulatory Guidance",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "supplement-labels",
+      "claims-and-regulation"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "daily-wellness",
+      "omega-nutrition",
+      "gut-digestion",
+      "performance-recovery",
+      "healthy-aging"
+    ],
+    "products": [],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "nih-ods-dietary-supplements-background",
+    "type": "source",
+    "title": "Background Information: Dietary Supplements",
+    "summary": "A federal consumer reference on what dietary supplements are, how they differ from drugs, what labels contain, and how regulation and quality questions differ.",
+    "href": "evidence.html?source=nih-ods-dietary-supplements-background",
+    "publisher": "National Institutes of Health, Office of Dietary Supplements",
+    "resourceType": "Government Consumer Guide",
+    "evidenceRole": "government_public_health",
+    "topics": [
+      "supplement-labels",
+      "claims-and-regulation",
+      "quality"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "daily-wellness",
+      "omega-nutrition",
+      "gut-digestion",
+      "performance-recovery",
+      "healthy-aging"
+    ],
+    "products": [],
+    "independence": "independent_government",
+    "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "hhs-physical-activity-guidelines",
+    "type": "source",
+    "title": "About the Physical Activity Guidelines",
+    "summary": "The federal overview of how the Physical Activity Guidelines for Americans were developed and the evidence process behind the current edition.",
+    "href": "evidence.html?source=hhs-physical-activity-guidelines",
+    "publisher": "HHS Office of Disease Prevention and Health Promotion",
+    "resourceType": "Government Guideline",
+    "evidenceRole": "independent_guideline",
+    "topics": [
+      "physical-activity",
+      "performance-and-recovery"
+    ],
+    "manufacturer": "Independent public source",
+    "intents": [
+      "performance-recovery",
+      "daily-wellness"
+    ],
+    "products": [],
+    "independence": "independent_government_guideline",
+    "checkedDate": "2026-08-21"
   }
 ]
