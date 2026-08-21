@@ -1,0 +1,746 @@
+{
+  "active_product_count": 45,
+  "boundary": "Public sources provide product-specific or department context; department context is not product evidence.",
+  "checked_date": "2026-08-21",
+  "label_state_totals": {
+    "complete_verified": 3,
+    "partial_verified": 1,
+    "unavailable_or_unverified": 41
+  },
+  "manufacturer_totals": {
+    "BioLimitless": 9,
+    "Zinzino": 36
+  },
+  "products_with_public_context": 45,
+  "products_without_public_context": 0,
+  "records": [
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balance-basic-kit",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "related_guide": "library/should-you-test-your-omega-3-levels.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balance-test",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "related_guide": "library/should-you-test-your-omega-3-levels.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "gut-health-test",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "gut-health-test-x2",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "vitamin-d-test",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "nih-ods-omega-3-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "hba1c-test",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "medlineplus-hba1c-test",
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "complete_verified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-plus-300ml",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-plus-100ml",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-plus-100ml-6pcs",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-plus-premium",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-plus-aquax",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-plus-vegan",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "balanceoil-tutti-frutti",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "essent-plus-premium",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/omega-3-what-the-numbers-mean.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "revoo",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "omega-nutrition",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "dosage-cups",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "gut-digestion",
+      "label_state": "complete_verified",
+      "manufacturer": "Zinzino",
+      "product_id": "zinobiotic-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nccih-probiotics-usefulness-safety",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "gut-digestion",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "x-gold-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nccih-probiotics-usefulness-safety",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "zinogene-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "viva-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "viva-plus-x2",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "zinoshine-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "complete_verified",
+      "manufacturer": "Zinzino",
+      "product_id": "xtend-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "xtend",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "protect-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "spirumax-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "phycosci-plus-x20",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "leanshake-chocolate",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "leanshake-strawberry",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "leanshake-vanilla",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "leanshake-berry",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "shake-bottle",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "energy-bar-nut-seed",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "performance-recovery",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "measuring-tape",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "healthy-aging",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "collagen-boozt",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "healthy-aging",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "Zinzino",
+      "product_id": "skin-serum",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "test-measure",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-dna-discovery-kit",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "related_guide": "library/how-to-read-a-health-study.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-becoming-biolimitless-book",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "partial_verified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-cell-signals",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-detox-pro-plus",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": null,
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-magnesium-glycinate",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/how-to-read-a-supplement-label.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-zinc-copper",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/how-to-read-a-supplement-label.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-vitamin-d3-k2",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/how-to-read-a-supplement-label.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "gut-digestion",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-biozyme",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nccih-probiotics-usefulness-safety",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/gut-health-101.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence",
+        "product-specific context"
+      ]
+    },
+    {
+      "department": "daily-wellness",
+      "label_state": "unavailable_or_unverified",
+      "manufacturer": "BioLimitless",
+      "product_id": "biolimitless-bio-basics-core-four",
+      "public_source_count": 3,
+      "public_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements"
+      ],
+      "related_guide": "library/how-to-read-a-supplement-label.html",
+      "relationship_states": [
+        "department context \u2014 not product evidence"
+      ]
+    }
+  ],
+  "schema_version": "1.0"
+}
