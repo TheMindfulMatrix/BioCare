@@ -1,0 +1,17 @@
+{
+  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "status": "passed",
+  "canonicalPayloadProducts": 45,
+  "intentCounts": {"all": 45, "test-measure": 7, "omega-nutrition": 10, "gut-digestion": 3, "daily-wellness": 15, "performance-recovery": 8, "healthy-aging": 2},
+  "manufacturerCounts": {"Zinzino": 36, "BioLimitless": 9},
+  "productKindCounts": {"accessory": 3, "at-home test": 1, "book": 1, "dietary supplement": 4, "individual product": 29, "kit": 1, "multipack": 3, "powder formula": 2, "stack": 1},
+  "labelFilterCounts": {"complete_verified": 3, "partial_verified": 1, "unavailable_or_unverified": 41},
+  "searchCases": {"exactBalanceKit": 1, "mixedBalanceTest": 2, "omegaFood": 5, "noMatch": 0, "clear": 45},
+  "sorts": ["canonical", "name A-Z", "manufacturer"],
+  "unsupportedPriceSort": false,
+  "progression": [12, 24, 36, 45],
+  "duplicateProducts": 0,
+  "historyState": "passed",
+  "allInspectorsExercised": 45,
+  "deferredProductsPublic": 0
+}

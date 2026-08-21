@@ -1,0 +1,13 @@
+{
+  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "measurementMethod": "Git blob byte sizes plus stabilized 375x812 browser geometry and request observation",
+  "before": {"productsHtmlBytes": 137176, "productsDomNodes": 1760, "javascriptBytes": 45977, "cssBytes": 205419, "activeProductImagePayloadBytes": 1103598, "initialProductCards": 45, "initialProductImageRequestsObserved": 14, "highPriorityProductImages": 3, "firstProductY": 2485, "medianCardHeight": 931, "product6Y": 6997, "product12Y": 13143, "pageHeight": 49722},
+  "after": {"productsHtmlBytes": 136174, "productsDomNodes": 509, "javascriptBytes": 67014, "cssBytes": 226563, "activeProductImagePayloadBytes": 1103598, "initialProductCards": 12, "initialProductImageRequestsObserved": 2, "deferredInitialProductImages": 10, "highPriorityProductImages": 2, "firstProductY": 659, "medianCardHeight": 363, "product6Y": 1436, "product12Y": 2550, "pageHeight": 8212},
+  "change": {"htmlBytes": -1002, "domNodes": -1251, "imagePayloadBytes": 0, "initialImageRequestsObserved": -12, "firstProductY": -1826, "product6Y": -5561, "product12Y": -10593, "pageHeight": -41510},
+  "searchResponseMs": {"median": 16, "max": 28, "samples": [28, 16, 14]},
+  "filterAndInspector": "Immediate synchronous catalog render; browser-control round trips include approximately 3 seconds per external automation action and are not application render time.",
+  "cls": "No layout shift observed during stabilized captures; explicit image dimensions and fixed visual aspect ratios reserve space.",
+  "failedRequests": 0,
+  "frameworkAdded": false,
+  "runtimeDependencyAdded": false
+}

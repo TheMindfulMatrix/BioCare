@@ -1,0 +1,20 @@
+{
+  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "status": "passed",
+  "semanticHeadings": true,
+  "logicalFocusOrder": true,
+  "visibleFocus": true,
+  "intentKeyboard": {"arrowNavigation": true, "pressedState": true, "accessibleNames": true},
+  "catalogSearchAccessibleName": "Search all 45 curated products",
+  "filterDialog": {"nativeDialog": true, "labelled": true, "escape": true, "focusReturn": true, "bodyScrollLock": true},
+  "productInspector": {"singleReusableDialog": true, "labelled": true, "escape": true, "focusReturn": true, "productSpecificNames": true},
+  "liveRegions": {"resultCount": true, "activeFilters": true},
+  "minimumVisibleTextPx": 12,
+  "targetsBelow44Px": 0,
+  "visibleTextBelow12Px": 0,
+  "duplicateIds": 0,
+  "pageOverflow": 0,
+  "nestedScrollTrap": false,
+  "reducedMotion": true,
+  "hoverOnlyDetail": false
+}

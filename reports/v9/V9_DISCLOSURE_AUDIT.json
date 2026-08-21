@@ -1,0 +1,21 @@
+{
+  "candidateImplementationSha": "a87231bcc197ce03c1a371f56cef7f1f78fe9814",
+  "status": "passed",
+  "compactDisclosureBeforeGrid": true,
+  "fullDisclosureAfterCatalog": true,
+  "inspectorSourceDisclosureProximate": true,
+  "zinzinoPartnerIdPreserved": true,
+  "biolimitlessRelationshipPreserved": true,
+  "pricingCheckedDate": "2026-08-17",
+  "manufacturerCheckoutRolePreserved": true,
+  "newYorkNoticePreserved": true,
+  "fdaDisclaimerPreserved": true,
+  "unknownLabelsRemainUnavailable": true,
+  "commercialLinks": {"officialManufacturerDestinations": true, "sponsoredRelationship": true, "accessibleDisclosureReference": true},
+  "prohibitedSystemsAdded": [],
+  "prohibitedClaimsAdded": [],
+  "complianceHardGate": "passed",
+  "reviewWarnings": 70,
+  "strictDryRunItems": 77,
+  "warningReconciliation": "Every item is emitted by the permanent validator. V8 recorded 91/98; V9 records 70/77 because repeated full-detail card copy was removed, not because any validator rule or advisory item was suppressed."
+}
