@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "release_status": "released_and_verified",
+  "verification_timestamp": "2026-08-22T01:11:30Z",
+  "production_url": "https://themindfulmatrix.github.io/BioCare/",
+  "release_identity": {
+    "v10_baseline_sha": "f91f15002256ec63ecd258fa5443834ce8a0244c",
+    "v11_corrected_candidate_sha": "23f83b000d16d78993e887541360b58c5ceafb05",
+    "v11_merge_main_sha": "6cbe96051e977c4d7b4a93711fc69b2280b8a3f0",
+    "pull_request": {
+      "number": 16,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/pull/16",
+      "state": "merged",
+      "merge_method": "merge_commit",
+      "merged_at": "2026-08-22T01:05:55Z"
+    },
+    "candidate_validation": {
+      "run_id": 32542069259,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32542069259",
+      "conclusion": "success",
+      "tested_sha": "23f83b000d16d78993e887541360b58c5ceafb05"
+    },
+    "post_merge_validation": {
+      "run_id": 32542419456,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32542419456",
+      "conclusion": "success",
+      "tested_sha": "6cbe96051e977c4d7b4a93711fc69b2280b8a3f0"
+    },
+    "deployment": {
+      "run_id": 32542419174,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32542419174",
+      "conclusion": "success",
+      "deployment_id": 6031732023,
+      "deployed_sha": "6cbe96051e977c4d7b4a93711fc69b2280b8a3f0",
+      "completed_at": "2026-08-22T01:06:45Z"
+    }
+  },
+  "definition_of_done": {
+    "total": 115,
+    "MET": 115,
+    "NOT_MET": 0,
+    "DEFERRED": 0,
+    "external_inputs_outside_v11_lines": [
+      "written manufacturer clarification not supplied",
+      "user-approved public business contact not supplied"
+    ]
+  },
+  "released_experience": {
+    "homepage": "passed: Balance Kit first-stage hero, immediate product-to-platform handoff, grand Matrix education entry, platform actions, metrics, and universal search",
+    "products": "passed: no redundant local search, single catalog count, compact Balance Kit feature, intent rail, Filter, Sort, disclosures, two-column mobile cards, and progressive rendering",
+    "inspector": "passed: simplified visible fields, canonical payload retained, evidence and learning context, official source, disclosures, Escape, and focus return",
+    "load_more": {
+      "status": "passed",
+      "sequence": [12, 24, 36, 45],
+      "append_only": true,
+      "duplicate_ids": 0,
+      "top_jump": false,
+      "announcements": [
+        "Added 12 products. 24 products are now visible of 45.",
+        "Added 12 products. 36 products are now visible of 45.",
+        "Added 9 products. 45 products are now visible of 45."
+      ]
+    }
+  },
+  "search": {
+    "ranking_contract": [
+      "match_tier_descending",
+      "specificity_descending",
+      "applicable_in_tier_priority_descending",
+      "canonical_order_ascending",
+      "id_ascending"
+    ],
+    "priority_boundary": "searchPriority cannot cross immutable match-class boundaries",
+    "vitamin_and_vitamin_d_first_seven": [
+      "Vitamin D Test",
+      "Vitamin D3 + K2",
+      "BalanceOil+ Vegan",
+      "ZinoShine+",
+      "Protect+",
+      "BalanceOil+, 300 ml",
+      "Xtend+"
+    ],
+    "d3_k2_queries_first_product": {
+      "queries": ["d3", "k2", "d3k2", "d3 k2", "vitamin d3 k2", "vitamin d3 + k2"],
+      "product": "Vitamin D3 + K2"
+    },
+    "zinzino_k2_product_fabricated": false,
+    "unsupported_associations": 0,
+    "duplicate_result_ids": 0,
+    "url_reload_history_keyboard": "passed"
+  },
+  "validation": {
+    "deterministic_build": "passed_twice",
+    "generated_files_unchanged": 26,
+    "public_pages": 23,
+    "products": {
+      "inventoried": 53,
+      "active": 45,
+      "deferred": 8
+    },
+    "tests": {
+      "passed": 48,
+      "failed": 0
+    },
+    "compliance_hard_gate": "passed",
+    "compliance_tests": "8/8 passed",
+    "review_warnings": 70,
+    "review_warning_delta": 0,
+    "strict_dry_run_items": 77,
+    "strict_item_delta": 0,
+    "commercial_links": {
+      "records": 90,
+      "unique_urls": 56,
+      "reachable_unique_urls": 56,
+      "failed": 0
+    },
+    "public_sources": {
+      "verified": 8,
+      "mismatched": 0,
+      "failed": 0
+    },
+    "public_safety_scan": {
+      "files": 61,
+      "pages": 23,
+      "findings": 0
+    }
+  },
+  "live_production": {
+    "viewports": {
+      "1440x900": "passed",
+      "768x1024": "passed",
+      "390x844": "passed",
+      "375x812": "passed"
+    },
+    "horizontal_overflow": 0,
+    "broken_images": 0,
+    "duplicate_ids": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "availability_crawl": {
+      "sitemap_pages": 23,
+      "same_site_assets": 66,
+      "robots_status": 200,
+      "sitemap_status": 200,
+      "http_failures": 0
+    },
+    "accessibility": "passed: language, headings, landmarks, alternatives, form labels, live status, target size, text floor, keyboard, Escape, focus return, reduced motion, and decorative-content exclusion",
+    "view_details_contrast": {
+      "normal": "10.54:1",
+      "interactive": "10.57:1",
+      "minimum_height_px": 44
+    }
+  },
+  "privacy_and_sources": {
+    "private_repository": "TheMindfulMatrix/zinzino-library",
+    "private_repository_visibility": "private",
+    "private_repository_unchanged": true,
+    "private_repository_sha": "de8c7711a5ca4678d92dd0d0a3ebeba06f7334c7",
+    "private_resource_leakage": 0,
+    "secret_leakage": 0,
+    "customer_data_leakage": 0,
+    "public_runtime_dependency_on_private_repository": false
+  },
+  "rollback": {
+    "immediate_target_sha": "f91f15002256ec63ecd258fa5443834ce8a0244c",
+    "v5_1_tag_target": "b5d35772e98580e253c08f6319aa8e412fa20aea",
+    "procedure": "Create a narrow branch from current main, revert merge commit 6cbe96051e977c4d7b4a93711fc69b2280b8a3f0 with mainline parent 1, validate, merge through a protected PR, monitor normal Pages, and verify V10 production. Do not move v5.1."
+  },
+  "release_record_delivery": {
+    "branch": "agent/v11-release-records",
+    "candidate_sha_reference": "HEAD (the Git commit containing this record)",
+    "scope": [
+      "reports/v11/V11_RELEASED_FINAL.md",
+      "reports/v11/V11_RELEASED_FINAL.json"
+    ],
+    "public_behavior_change": false
+  },
+  "non_blocking_observations": [
+    "The GitHub Pages workflow emitted its existing Node.js 20 deprecation annotation while GitHub forced the affected action to Node.js 24; build and deployment succeeded."
+  ],
+  "pending_fix_forward": false,
+  "rollback_required": false
+}
