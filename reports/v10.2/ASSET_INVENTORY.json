@@ -1,0 +1,220 @@
+{
+  "archived_source_assets": [
+    {
+      "bytes": 2085772,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/correlation-causation-risk-source.png"
+    },
+    {
+      "bytes": 2410333,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/food-vs-supplements-source.png"
+    },
+    {
+      "bytes": 2247679,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/gut-health-101-source.png"
+    },
+    {
+      "bytes": 2000743,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/gut-testing-biomarkers-source.png"
+    },
+    {
+      "bytes": 2015547,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/omega-numbers-source.png"
+    },
+    {
+      "bytes": 2293853,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/omega-testing-source.png"
+    },
+    {
+      "bytes": 2973477,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/performance-nutrition-source.png"
+    },
+    {
+      "bytes": 12723,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/provenance.json"
+    },
+    {
+      "bytes": 2145845,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/read-health-study-source.png"
+    },
+    {
+      "bytes": 2488734,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/recovery-after-training-source.png"
+    },
+    {
+      "bytes": 2180368,
+      "path": "_source-assets/source-artwork/mindful-matrix/library/supplement-label-source.png"
+    },
+    {
+      "bytes": 2446426,
+      "path": "_source-assets/source-artwork/mindful-matrix/shelf/balance-test-basic-kit-cinematic-source.png"
+    }
+  ],
+  "excluded_source_archive_bytes": 25301500,
+  "excluded_source_archive_count": 12,
+  "largest_runtime_assets": [
+    {
+      "bytes": 438730,
+      "path": "assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png"
+    },
+    {
+      "bytes": 438730,
+      "path": "assets/source-products/zinzino/catalog/energy-bar-nut-seed-302011-main.png"
+    },
+    {
+      "bytes": 375308,
+      "path": "assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png"
+    },
+    {
+      "bytes": 375308,
+      "path": "assets/source-products/zinzino/catalog/phycosci-plus-x20-302770-main.png"
+    },
+    {
+      "bytes": 341826,
+      "path": "assets/product-cutouts/zinzino/x-gold-plus-302790.png"
+    },
+    {
+      "bytes": 341826,
+      "path": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png"
+    },
+    {
+      "bytes": 253180,
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png"
+    },
+    {
+      "bytes": 253180,
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-premium-300ml-700000-main.png"
+    },
+    {
+      "bytes": 246636,
+      "path": "assets/css/site.css"
+    },
+    {
+      "bytes": 241292,
+      "path": "assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png"
+    },
+    {
+      "bytes": 241292,
+      "path": "assets/source-products/zinzino/catalog/balanceoil-tutti-frutti-300ml-301799-main.png"
+    },
+    {
+      "bytes": 232526,
+      "path": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp"
+    },
+    {
+      "bytes": 203872,
+      "path": "assets/product-cutouts/zinzino/gut-health-test-x2-309080.png"
+    },
+    {
+      "bytes": 203872,
+      "path": "assets/source-products/zinzino/catalog/gut-health-test-x2-309080-main.png"
+    },
+    {
+      "bytes": 193509,
+      "path": "assets/product-cutouts/zinzino/spirumax-plus-302699.png"
+    }
+  ],
+  "notes": [
+    "The before-boundary figure is repository asset storage, not initial page-transfer weight.",
+    "Leading-underscore _source-assets is excluded by GitHub Pages' Jekyll publishing boundary.",
+    "Orphaned assets are reported for review and are not deleted automatically."
+  ],
+  "orphaned_public_assets": [
+    {
+      "bytes": 962,
+      "path": "assets/brand/lockup-light.svg"
+    },
+    {
+      "bytes": 659,
+      "path": "assets/brand/mark-light.svg"
+    },
+    {
+      "bytes": 56757,
+      "path": "assets/data/search-index.json"
+    },
+    {
+      "bytes": 34374,
+      "path": "assets/product-cutouts/biolimitless/cellular-reset.webp"
+    },
+    {
+      "bytes": 48752,
+      "path": "assets/product-cutouts/biolimitless/cellular-stack.webp"
+    },
+    {
+      "bytes": 33984,
+      "path": "assets/product-cutouts/biolimitless/foundation-stack.webp"
+    },
+    {
+      "bytes": 47758,
+      "path": "assets/product-cutouts/biolimitless/master-microbiotics.webp"
+    },
+    {
+      "bytes": 59718,
+      "path": "assets/product-cutouts/biolimitless/master-stack.webp"
+    },
+    {
+      "bytes": 46836,
+      "path": "assets/product-cutouts/biolimitless/neuro-reboot.webp"
+    },
+    {
+      "bytes": 54120,
+      "path": "assets/product-cutouts/biolimitless/neuro-stack.webp"
+    },
+    {
+      "bytes": 41490,
+      "path": "assets/product-cutouts/biolimitless/triple-stack.webp"
+    },
+    {
+      "bytes": 245360,
+      "path": "assets/product-cutouts/zinzino/balanceoil-premium-x2-kit-with-test-910886.png"
+    },
+    {
+      "bytes": 36398,
+      "path": "assets/source-products/biolimitless/catalog/cellular-reset.webp"
+    },
+    {
+      "bytes": 50942,
+      "path": "assets/source-products/biolimitless/catalog/cellular-stack.webp"
+    },
+    {
+      "bytes": 37436,
+      "path": "assets/source-products/biolimitless/catalog/foundation-stack.webp"
+    },
+    {
+      "bytes": 50382,
+      "path": "assets/source-products/biolimitless/catalog/master-microbiotics.webp"
+    },
+    {
+      "bytes": 63936,
+      "path": "assets/source-products/biolimitless/catalog/master-stack.webp"
+    },
+    {
+      "bytes": 48520,
+      "path": "assets/source-products/biolimitless/catalog/neuro-reboot.webp"
+    },
+    {
+      "bytes": 59202,
+      "path": "assets/source-products/biolimitless/catalog/neuro-stack.webp"
+    },
+    {
+      "bytes": 44606,
+      "path": "assets/source-products/biolimitless/catalog/triple-stack.webp"
+    },
+    {
+      "bytes": 245360,
+      "path": "assets/source-products/zinzino/omega-kits/balanceoil-premium-x2-kit-with-test-910886.png"
+    },
+    {
+      "bytes": 1679,
+      "path": "assets/source-products/zinzino/omega-kits/provenance.json"
+    }
+  ],
+  "public_assets_directory_bytes": 13199639,
+  "public_assets_directory_count": 186,
+  "public_page_count": 23,
+  "published_payload_reduction_bytes": 25301500,
+  "referenced_runtime_asset_bytes": 11890408,
+  "referenced_runtime_asset_count": 164,
+  "repository_asset_bytes_before_boundary": 38501139,
+  "repository_asset_count_before_boundary": 198,
+  "schema_version": "1.0.0"
+}

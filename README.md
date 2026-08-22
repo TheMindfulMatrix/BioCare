@@ -77,5 +77,5 @@ python scripts/cutout.py assets/source-products/zinzino/balance-test-basic-kit a
 - `assets/brand/` contains replaceable SVG lockups, standalone mark variants, a single-color gold mark, and the favicon.
 - `assets/css/site.css` contains reusable navigation, button, journey, data, product, Library, pathway, and destination patterns.
 - The homepage Matrix field is progressively enhanced by `assets/js/enhancements.js` using a dependency-free projected 3D canvas. It is decorative, pointer-reactive, pauses when offscreen or hidden, and renders a static frame when reduced motion is requested.
-- `site.metadata.assetVersion` provides deterministic cache-busting for CSS and JavaScript releases on GitHub Pages.
+- The builder appends a deterministic SHA-256 content digest to each CSS and JavaScript URL, so unchanged assets keep stable URLs and changed assets invalidate caches automatically.
 - The generated root pages are the homepage, Library landing page, and Start Here orientation. Published Library records are generated as evidence-forward guides; draft records remain private to the content model and preview workflow.

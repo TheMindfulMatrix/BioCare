@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -57,6 +58,18 @@ def json_ld_markup(records: list[dict]) -> str:
         payload = {"@context": "https://schema.org", **payload}
     serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return f'  <script type="application/ld+json">{serialized}</script>'
+
+
+def asset_version(path: str) -> str:
+    """Return a deterministic short digest for a public runtime asset."""
+    asset_path = ROOT / path
+    if not asset_path.is_file():
+        raise RuntimeError(f"Missing versioned runtime asset: {path}")
+    return hashlib.sha256(asset_path.read_bytes()).hexdigest()[:12]
+
+
+def versioned_asset(prefix: str, path: str) -> str:
+    return f"{prefix}{path}?v={asset_version(path)}"
 
 
 def organization_schema(metadata: dict) -> dict:
@@ -158,9 +171,6 @@ def document_head_markup(
 ) -> str:
     canonical = page_url(metadata, path) if path is not None else ""
     social_image = image or metadata.get("socialImage")
-    asset_version = esc(metadata.get("assetVersion", "1"), attribute=True)
-    asset_suffix = f"?v={asset_version}"
-
     # Keep identity and social metadata at the start of the static document so
     # link-preview crawlers do not need to traverse presentation resources.
     tags = [
@@ -226,11 +236,11 @@ def document_head_markup(
             '  <link rel="preconnect" href="https://fonts.googleapis.com">',
             '  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
             '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@500..800&amp;display=swap" rel="stylesheet">',
-            f'  <link rel="stylesheet" href="{prefix}assets/css/tokens.css{asset_suffix}">',
-            f'  <link rel="stylesheet" href="{prefix}assets/css/base.css{asset_suffix}">',
-            f'  <link rel="stylesheet" href="{prefix}assets/css/site.css{asset_suffix}">',
-            f'  <script defer src="{prefix}assets/js/search-relevance.js{asset_suffix}"></script>',
-            f'  <script defer src="{prefix}assets/js/enhancements.js{asset_suffix}"></script>',
+            f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/tokens.css")}">',
+            f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/base.css")}">',
+            f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/site.css")}">',
+            f'  <script defer src="{versioned_asset(prefix, "assets/js/search-relevance.js")}"></script>',
+            f'  <script defer src="{versioned_asset(prefix, "assets/js/enhancements.js")}"></script>',
         ]
     )
     if structured_data and not noindex:

@@ -1,0 +1,398 @@
+{
+  "category_counts": {
+    "human review required": 7,
+    "registered wording candidate": 70
+  },
+  "items": [
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_BALANCE_BASIC_KIT_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 1
+    },
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_BALANCE_TEST_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 2
+    },
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_BIOLIMITLESS_DNA_DISCOVERY_KIT_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 3
+    },
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_GUT_HEALTH_TEST_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 4
+    },
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_GUT_HEALTH_TEST_X2_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 5
+    },
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_HBA1C_TEST_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 6
+    },
+    {
+      "category": "human review required",
+      "message": "CLAIM_PRODUCT_XTEND_PLUS_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "priority": 7
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.contentPolicy: unresolved strict-mode YELLOW claim: The Balance Test Basic Kit preserves the previously approved site summary.",
+      "priority": 8
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.fallbackDestinations[0].description: unresolved strict-mode YELLOW claim: Browse the current home health tests collection on Zinzino.",
+      "priority": 9
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.fallbackDestinations[2].description: unresolved strict-mode YELLOW claim: Browse the current gut health collection on Zinzino.",
+      "priority": 10
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.intents[1].description: unresolved strict-mode YELLOW claim: Explore verified omega and nutrition formats in the current US catalog.",
+      "priority": 11
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.intents[3].description: unresolved strict-mode YELLOW claim: Browse verified daily supplement formats from the current catalog.",
+      "priority": 12
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[0].cutout.alt: unresolved strict-mode YELLOW claim: Balance Test Basic Kit official Zinzino product packaging",
+      "priority": 13
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[0].description: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "priority": 14
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[0].whyItsHere: unresolved strict-mode YELLOW claim: Our featured test-first route, pairing the measurement with the included product format.",
+      "priority": 15
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[16].whyItsHere: unresolved strict-mode YELLOW claim: The dietary-fiber format in the gut and digestion collection.",
+      "priority": 16
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[17].whyItsHere: unresolved strict-mode YELLOW claim: The liquid turmeric-root format listed in Zinzino\u2019s gut-health collection.",
+      "priority": 17
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[19].whyItsHere: unresolved strict-mode YELLOW claim: The single-pack Viva+ option in the daily supplement group.",
+      "priority": 18
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[1].description: unresolved strict-mode YELLOW claim: Track your fatty acid profile from home",
+      "priority": 19
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[1].whyItsHere: unresolved strict-mode YELLOW claim: The individual fatty-acid test for visitors who want the test without a kit.",
+      "priority": 20
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[22].description: unresolved strict-mode YELLOW claim: Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
+      "priority": 21
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[22].whyItsHere: unresolved strict-mode YELLOW claim: The Plus variant in the Xtend daily supplement range.",
+      "priority": 22
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[23].whyItsHere: unresolved strict-mode YELLOW claim: The standard variant in the Xtend daily supplement range.",
+      "priority": 23
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[26].whyItsHere: unresolved strict-mode YELLOW claim: The liquid spirulina format in the active-nutrition group.",
+      "priority": 24
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[2].cutout.alt: unresolved strict-mode YELLOW claim: Gut Health Test official Zinzino product packaging",
+      "priority": 25
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[2].description: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "priority": 26
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[2].whyItsHere: unresolved strict-mode YELLOW claim: The single-test option in the home health testing range.",
+      "priority": 27
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[32].cutout.alt: unresolved strict-mode YELLOW claim: Energy Bar Nut & Seed official Zinzino product packaging",
+      "priority": 28
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[32].whyItsHere: unresolved strict-mode YELLOW claim: The solid-food option in the active-nutrition assortment.",
+      "priority": 29
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[36].description: unresolved strict-mode YELLOW claim: A manufacturer-described capsule formula that lists BPC-157 among its ingredients.",
+      "priority": 30
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[37].description: unresolved strict-mode YELLOW claim: An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
+      "priority": 31
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[3].cutout.alt: unresolved strict-mode YELLOW claim: Gut Health Test x2 official Zinzino product packaging",
+      "priority": 32
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[3].description: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "priority": 33
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[3].whyItsHere: unresolved strict-mode YELLOW claim: The two-test option for visitors comparing single- and two-test quantities.",
+      "priority": 34
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[40].cutout.alt: unresolved strict-mode YELLOW claim: Cellular Reset official BioLimitless product presentation",
+      "priority": 35
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[40].description: unresolved strict-mode YELLOW claim: A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients.",
+      "priority": 36
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[40].name: unresolved strict-mode YELLOW claim: Cellular Reset",
+      "priority": 37
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[40]: unresolved strict-mode YELLOW claim: Cellular Reset | Peptide formula | formula | Inventoried for catalog completeness; multiple research-compound ingredients require elevated compliance review. | A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients. | Official BioLimitless Cellular Reset",
+      "priority": 38
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[41].description: unresolved strict-mode YELLOW claim: A manufacturer-described formula that lists Tesofensine, Dihexa and BPC-157 among its ingredients.",
+      "priority": 39
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[42].whyItsHere: unresolved strict-mode YELLOW claim: A manufacturer-formulated powder included for visitors comparing ordinary non-peptide wellness formats.",
+      "priority": 40
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[43].description: unresolved strict-mode YELLOW claim: A manufacturer bundle that includes Cell Signals, Detox Pro Plus and Master Microbiotics.",
+      "priority": 41
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[44].description: unresolved strict-mode YELLOW claim: A manufacturer bundle containing formulas from the BioLimitless product line, including Master Microbiotics.",
+      "priority": 42
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[45].complianceReview.reason: unresolved strict-mode YELLOW claim: Includes Cellular Reset, which lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332; elevated owner-approved compliance review is required.",
+      "priority": 43
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[45].description: unresolved strict-mode YELLOW claim: A manufacturer bundle containing Cellular Reset and other BioLimitless formulas.",
+      "priority": 44
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[45]: unresolved strict-mode YELLOW claim: Cellular Stack | Power stack | stack | Inventoried as a manufacturer bundle; it includes deferred research-compound formulas. | A manufacturer bundle containing Cellular Reset and other BioLimitless formulas. | Official BioLimitless Cellular Stack",
+      "priority": 45
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[46].description: unresolved strict-mode YELLOW claim: A manufacturer bundle containing Neuro Reboot and other BioLimitless formulas.",
+      "priority": 46
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[47].description: unresolved strict-mode YELLOW claim: A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot.",
+      "priority": 47
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[47]: unresolved strict-mode YELLOW claim: Master Stack | Power stack | stack | Inventoried as the broad manufacturer bundle; it includes multiple deferred research-compound formulas. | A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot. | Official BioLimitless Master Stack",
+      "priority": 48
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[48].relatedEducation.label: unresolved strict-mode YELLOW claim: How to read a supplement label",
+      "priority": 49
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[49].relatedEducation.label: unresolved strict-mode YELLOW claim: How to read a supplement label",
+      "priority": 50
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[4].cutout.alt: unresolved strict-mode YELLOW claim: Vitamin D Test official Zinzino product packaging",
+      "priority": 51
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[4].whyItsHere: unresolved strict-mode YELLOW claim: The individual at-home test dedicated to vitamin D measurement.",
+      "priority": 52
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[50].relatedEducation.label: unresolved strict-mode YELLOW claim: How to read a supplement label",
+      "priority": 53
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[51].whyItsHere: unresolved strict-mode YELLOW claim: A non-peptide digestive-enzyme format grouped with other gut and digestion tools.",
+      "priority": 54
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[5].cutout.alt: unresolved strict-mode YELLOW claim: HbA1c Test official Zinzino product packaging",
+      "priority": 55
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[5].description: unresolved strict-mode YELLOW claim: Track your long-term blood sugar levels",
+      "priority": 56
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "content/catalog.json:$.products[5].whyItsHere: unresolved strict-mode YELLOW claim: The individual at-home test dedicated to HbA1c measurement.",
+      "priority": 57
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "index.html:155: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "priority": 58
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "index.html:276: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "priority": 59
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:100: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "priority": 60
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:100: unresolved strict-mode YELLOW claim: View details for Gut Health Test",
+      "priority": 61
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:102: unresolved strict-mode YELLOW claim: Gut Health Test x2 official Zinzino product packaging",
+      "priority": 62
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:103: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "priority": 63
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:103: unresolved strict-mode YELLOW claim: View details for Gut Health Test x2",
+      "priority": 64
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:105: unresolved strict-mode YELLOW claim: Vitamin D Test official Zinzino product packaging",
+      "priority": 65
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:106: unresolved strict-mode YELLOW claim: View details for Vitamin D Test",
+      "priority": 66
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:108: unresolved strict-mode YELLOW claim: HbA1c Test official Zinzino product packaging",
+      "priority": 67
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:109: unresolved strict-mode YELLOW claim: Track your long-term blood sugar levels",
+      "priority": 68
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:180: unresolved strict-mode YELLOW claim: Browse the current gut health collection on Zinzino.",
+      "priority": 69
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:180: unresolved strict-mode YELLOW claim: Browse the current home health tests collection on Zinzino.",
+      "priority": 70
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:90: unresolved strict-mode YELLOW claim: Official manufacturer links may earn The Mindful Matrix a commission.",
+      "priority": 71
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:93: unresolved strict-mode YELLOW claim: Balance Test Basic Kit official Zinzino product packaging",
+      "priority": 72
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:94: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "priority": 73
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:94: unresolved strict-mode YELLOW claim: View details for Balance Test Basic Kit",
+      "priority": 74
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:97: unresolved strict-mode YELLOW claim: Track your fatty acid profile from home",
+      "priority": 75
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "shop.html:99: unresolved strict-mode YELLOW claim: Gut Health Test official Zinzino product packaging",
+      "priority": 76
+    },
+    {
+      "category": "registered wording candidate",
+      "message": "templates/shop.html:42: unresolved strict-mode YELLOW claim: Official manufacturer links may earn The Mindful Matrix a commission.",
+      "priority": 77
+    }
+  ],
+  "normal_hard_gate_errors": 0,
+  "normal_review_warnings": 70,
+  "policy": "Triage only. No warning is approved, waived, or reclassified as compliant by this report.",
+  "schema_version": "1.0.0",
+  "strict_unresolved_items": 77
+}

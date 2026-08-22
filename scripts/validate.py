@@ -456,7 +456,7 @@ def validate_content(site: dict, library: dict) -> None:
             check((ROOT / artwork["src"]).is_file(), f"{label}: missing editorial artwork {artwork['src']}")
             check(bool(artwork.get("width") and artwork.get("height")), f"{label}: artwork dimensions required")
 
-    library_provenance_path = ROOT / "assets" / "source-artwork" / "mindful-matrix" / "library" / "provenance.json"
+    library_provenance_path = ROOT / "_source-assets" / "source-artwork" / "mindful-matrix" / "library" / "provenance.json"
     check(library_provenance_path.is_file(), "Library visual provenance is required")
     if library_provenance_path.is_file():
         try:
