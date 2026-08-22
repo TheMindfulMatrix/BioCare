@@ -1,0 +1,20 @@
+{
+  "candidateEvidenceSha": "a57aa62ff5f43503fb609c45330069ed8b9b8c64",
+  "result": "PASS",
+  "checks": {
+    "singleH1": true,
+    "uniqueIds": true,
+    "namedControls": true,
+    "keyboardNavigation": true,
+    "visibleFocus": true,
+    "reducedMotion": true,
+    "minimumTargets": true,
+    "noHorizontalDependency": true
+  },
+  "viewports": [
+    "1440x900",
+    "768x1024",
+    "390x844",
+    "375x812"
+  ]
+}

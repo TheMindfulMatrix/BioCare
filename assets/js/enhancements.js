@@ -220,7 +220,8 @@
     var inspectorContent = root.querySelector("[data-product-inspector-content]");
     var inspectorClose = root.querySelector("[data-product-close]");
     var intentButtons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-intent]"));
-    var state = { intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
+    var collectionButton = root.querySelector("[data-shop-collection]");
+    var state = { collection: "all", intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
     var limit = catalog.initialCount;
     var currentProductId = null;
     var lastProductTrigger = null;
@@ -271,19 +272,21 @@
     }
 
     function cardMarkup(product, index) {
+      var campaignBadge = product.coreFour ? '<span class="catalog-card__campaign">Core Four</span>' : '';
       return '<article id="product-' + htmlSafe(product.id) + '" class="catalog-card' + (product.name.length >= 42 ? ' product-name--very-long' : product.name.length >= 30 ? ' product-name--long' : '') + '" data-shop-product data-product-id="' + htmlSafe(product.id) + '" data-environment="' + htmlSafe(product.environment) + '">' +
-        '<div class="catalog-card__visual"><span class="catalog-card__node" aria-hidden="true"></span>' + productImage(product, index < 2) + '</div>' +
+        '<div class="catalog-card__visual">' + campaignBadge + '<span class="catalog-card__node" aria-hidden="true"></span>' + productImage(product, index < 2) + '</div>' +
         '<div class="catalog-card__body"><p class="catalog-card__meta">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2>' + htmlSafe(product.name) + '</h2><p class="catalog-card__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, false) + '<div class="catalog-card__actions"><a href="' + htmlSafe(product.detailUrl) + '">Product page →</a><button class="catalog-card__inspect" type="button" data-product-open="' + htmlSafe(product.id) + '" aria-label="Quick view for ' + htmlSafe(product.name) + '">Quick view</button></div></div></article>';
     }
 
     function filterProducts(snapshot) {
       var matches = products.filter(function (product) {
-        return (snapshot.intent === "all" || product.intent === snapshot.intent) &&
+        return (snapshot.collection === "all" || product.coreFour) && (snapshot.intent === "all" || product.intent === snapshot.intent) &&
           (snapshot.manufacturer === "all" || product.manufacturer === snapshot.manufacturer) &&
           (!snapshot.kinds.length || snapshot.kinds.indexOf(product.productKind) >= 0) &&
           (!snapshot.labels.length || snapshot.labels.indexOf(product.label.state) >= 0);
       });
       matches.sort(function (left, right) {
+        if (snapshot.collection === "core-four" && snapshot.sort === "canonical") return left.coreFourPosition - right.coreFourPosition;
         if (snapshot.sort === "name") return left.name.localeCompare(right.name);
         if (snapshot.sort === "manufacturer") return left.manufacturer.localeCompare(right.manufacturer) || left.name.localeCompare(right.name);
         return left.index - right.index;
@@ -292,11 +295,12 @@
     }
 
     function activeFilterTotal() {
-      return (state.intent === "all" ? 0 : 1) + (state.manufacturer === "all" ? 0 : 1) + state.kinds.length + state.labels.length;
+      return (state.collection === "all" ? 0 : 1) + (state.intent === "all" ? 0 : 1) + (state.manufacturer === "all" ? 0 : 1) + state.kinds.length + state.labels.length;
     }
 
     function syncControls() {
       sort.value = state.sort;
+      if (collectionButton) { collectionButton.setAttribute("aria-pressed", String(state.collection === "core-four")); collectionButton.classList.toggle("is-active", state.collection === "core-four"); }
       intentButtons.forEach(function (button) {
         var active = button.dataset.shopIntent === state.intent;
         button.setAttribute("aria-pressed", String(active));
@@ -330,7 +334,8 @@
 
     function urlForState() {
       var url = new URL(location.href);
-      ["q", "intent", "manufacturer", "kind", "label", "sort"].forEach(function (key) { url.searchParams.delete(key); });
+      ["q", "collection", "intent", "manufacturer", "kind", "label", "sort"].forEach(function (key) { url.searchParams.delete(key); });
+      if (state.collection !== "all") url.searchParams.set("collection", state.collection);
       if (state.intent !== "all") url.searchParams.set("intent", state.intent);
       if (state.manufacturer !== "all") url.searchParams.set("manufacturer", state.manufacturer);
       state.kinds.forEach(function (value) { url.searchParams.append("kind", value); });
@@ -396,7 +401,7 @@
     }
 
     function resetAll(historyMode) {
-      state = { intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
+      state = { collection: "all", intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
       limit = catalog.initialCount;
       render({ history: historyMode || "push" });
     }
@@ -423,6 +428,7 @@
       var intent = filterForm.querySelector('[name="filter-intent"]:checked');
       var manufacturer = filterForm.querySelector('[name="filter-manufacturer"]:checked');
       return {
+        collection: state.collection,
         intent: intent ? intent.value : "all",
         manufacturer: manufacturer ? manufacturer.value : "all",
         kinds: Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-kind"]:checked')).map(function (input) { return input.value; }),
@@ -528,6 +534,7 @@
 
     function restoreFromUrl() {
       var params = new URLSearchParams(location.search);
+      state.collection = params.get("collection") === "core-four" ? "core-four" : "all";
       var intent = params.get("intent") || "all";
       var manufacturer = params.get("manufacturer") || "all";
       var sortMode = params.get("sort") || "canonical";
@@ -552,6 +559,7 @@
         setIntent(intentButtons[next].dataset.shopIntent, true);
       });
     });
+    if (collectionButton) collectionButton.addEventListener("click", function () { state.collection = state.collection === "core-four" ? "all" : "core-four"; limit = catalog.initialCount; render({ history: "push" }); });
     sort.addEventListener("change", function () { state.sort = sort.value; limit = catalog.initialCount; render({ history: "push" }); });
     loadMore.addEventListener("click", appendMoreProducts);
     chips.addEventListener("click", function (event) { var button = event.target.closest("[data-shop-chip]"); if (button) removeChip(button.dataset.shopChip, button.dataset.shopChipValue); });
@@ -628,10 +636,10 @@
   var exploreRoot=document.querySelector(".explore-results");if(exploreRoot)initExplore(exploreRoot);
 
   function initEvidence(root) {
-    var cards=Array.prototype.slice.call(root.querySelectorAll("[data-public-source]")),controls=root.querySelector("[data-evidence-controls]"),search=controls.querySelector("[data-evidence-search]"),selects=Array.prototype.slice.call(controls.querySelectorAll("[data-evidence-filter]")),status=root.querySelector("[data-evidence-status]"),empty=root.querySelector("[data-evidence-empty]"),emptyReset=root.querySelector("[data-evidence-empty-reset]"),reset=controls.querySelector("[data-evidence-reset]");
+    var cards=Array.prototype.slice.call(root.querySelectorAll("[data-public-source]")),controls=root.querySelector("[data-evidence-controls]"),search=controls.querySelector("[data-evidence-search]"),selects=Array.prototype.slice.call(controls.querySelectorAll("[data-evidence-filter]")),status=root.querySelector("[data-evidence-status]"),empty=root.querySelector("[data-evidence-empty]"),emptyReset=root.querySelector("[data-evidence-empty-reset]"),reset=controls.querySelector("[data-evidence-reset]"),collection=new URLSearchParams(location.search).get("collection");
     function includesToken(value,selected){return selected==="all"||String(value||"").split(",").indexOf(selected)>=0;}
     function updateUrl(){var params=new URLSearchParams(location.search),query=normalize(search.value);if(query)params.set("q",query);else params.delete("q");selects.forEach(function(select){if(select.value!=="all")params.set(select.dataset.evidenceFilter,select.value);else params.delete(select.dataset.evidenceFilter);});params.delete("source");history.replaceState({},"",location.pathname+(params.toString()?"?"+params:""));}
-    function apply(changeUrl){var terms=normalize(search.value).split(" ").filter(Boolean),matches=cards.filter(function(card){return terms.every(function(term){return card.dataset.sourceSearch.indexOf(term)>=0;})&&selects.every(function(select){var key="source"+select.dataset.evidenceFilter.charAt(0).toUpperCase()+select.dataset.evidenceFilter.slice(1);return includesToken(card.dataset[key],select.value);});});cards.forEach(function(card){card.hidden=matches.indexOf(card)<0;});status.textContent="Showing "+matches.length+" of "+cards.length+" published sources.";empty.hidden=matches.length!==0;reset.hidden=terms.length===0&&selects.every(function(select){return select.value==="all";});if(changeUrl)updateUrl();}
+    function apply(changeUrl){var terms=normalize(search.value).split(" ").filter(Boolean),matches=cards.filter(function(card){return (collection!=="core-four"||card.dataset.sourceCollection==="core-four")&&terms.every(function(term){return card.dataset.sourceSearch.indexOf(term)>=0;})&&selects.every(function(select){var key="source"+select.dataset.evidenceFilter.charAt(0).toUpperCase()+select.dataset.evidenceFilter.slice(1);return includesToken(card.dataset[key],select.value);});});cards.forEach(function(card){card.hidden=matches.indexOf(card)<0;});status.textContent="Showing "+matches.length+" of "+cards.length+" published sources.";empty.hidden=matches.length!==0;reset.hidden=collection!=="core-four"&&terms.length===0&&selects.every(function(select){return select.value==="all";});if(changeUrl)updateUrl();}
     function clear(){search.value="";selects.forEach(function(select){select.value="all";});apply(true);search.focus();}
     function restore(){var params=new URLSearchParams(location.search);search.value=params.get("q")||"";selects.forEach(function(select){var value=params.get(select.dataset.evidenceFilter)||"all";select.value=Array.prototype.some.call(select.options,function(option){return option.value===value;})?value:"all";});apply(false);var source=params.get("source");if(source){var card=root.querySelector('[data-public-source="'+CSS.escape(source)+'"]');if(card){card.hidden=false;card.scrollIntoView({block:"start"});card.setAttribute("tabindex","-1");card.focus({preventScroll:true});}}}
     search.addEventListener("input",function(){apply(true);});selects.forEach(function(select){select.addEventListener("change",function(){apply(true);});});controls.addEventListener("reset",function(event){event.preventDefault();clear();});emptyReset.addEventListener("click",clear);window.addEventListener("popstate",restore);restore();
@@ -987,16 +995,21 @@
     var libraryCards = Array.prototype.slice.call(document.querySelectorAll("[data-library-article]"));
     var libraryGroups = Array.prototype.slice.call(document.querySelectorAll(".library-group"));
     var libraryEmpty = document.querySelector("[data-library-empty]");
+    var libraryCoreFour = libraryControls.querySelector("[data-library-core-four]");
+    var coreFourOnly = new URLSearchParams(location.search).get("collection") === "core-four";
     function filterLibrary() {
       var query = libraryControls.querySelector("[data-library-query]").value.trim().toLowerCase();
       var category = libraryControls.querySelector("[data-library-category]").value;
       var visible = 0;
-      libraryCards.forEach(function (card) { var show = (!query || card.dataset.librarySearch.indexOf(query) !== -1) && (category === "all" || card.dataset.libraryCategory === category); card.hidden = !show; if (show) visible += 1; });
+      libraryCards.forEach(function (card) { var show = (!coreFourOnly || card.dataset.libraryCoreFour === "true") && (!query || card.dataset.librarySearch.indexOf(query) !== -1) && (category === "all" || card.dataset.libraryCategory === category); card.hidden = !show; if (show) visible += 1; });
       libraryGroups.forEach(function (group) { group.hidden = !group.querySelector("[data-library-article]:not([hidden])"); });
       libraryControls.querySelector("[data-library-count]").textContent = visible + (visible === 1 ? " guide" : " guides");
       if (libraryEmpty) libraryEmpty.hidden = visible !== 0;
+      if (libraryCoreFour) libraryCoreFour.setAttribute("aria-pressed", String(coreFourOnly));
     }
+    if (libraryCoreFour) libraryCoreFour.addEventListener("click", function () { coreFourOnly = !coreFourOnly; var url = new URL(location.href); if (coreFourOnly) url.searchParams.set("collection", "core-four"); else url.searchParams.delete("collection"); history.replaceState({}, "", url); filterLibrary(); });
     libraryControls.addEventListener("input", filterLibrary);
     libraryControls.addEventListener("reset", function () { window.setTimeout(filterLibrary, 0); });
+    filterLibrary();
   }
 }());

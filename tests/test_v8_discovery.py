@@ -19,7 +19,8 @@ class V8DiscoveryTests(unittest.TestCase):
         self.assertEqual({p["id"] for p in self.active}, {r["id"] for r in self.index if r["type"] == "product"})
         self.assertEqual({a["slug"] for a in self.library["articles"] if a["status"] == "published"}, {r["id"] for r in self.index if r["type"] == "guide"})
         self.assertEqual({d["intentId"] for d in self.discovery["departments"]}, {r["id"] for r in self.index if r["type"] == "department"})
-        self.assertEqual({j["id"] for j in self.discovery["journeys"]}, {r["id"] for r in self.index if r["type"] == "journey"})
+        campaign_ids = {json.loads(path.read_text(encoding="utf-8"))["id"] for path in (ROOT / "content" / "campaigns").glob("*.json")}
+        self.assertEqual({j["id"] for j in self.discovery["journeys"]} | campaign_ids, {r["id"] for r in self.index if r["type"] == "journey"})
 
     def test_deferred_products_are_excluded(self):
         deferred = {p["id"] for p in self.catalog["products"] if p["commercial_status"] != "active"}

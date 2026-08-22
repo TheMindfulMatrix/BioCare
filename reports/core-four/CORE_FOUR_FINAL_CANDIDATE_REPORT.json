@@ -1,0 +1,29 @@
+{
+  "candidateEvidenceSha": "a57aa62ff5f43503fb609c45330069ed8b9b8c64",
+  "baselineSha": "a075c1ac3649a1088cf4d1ddb29b7c6269b2fcda",
+  "branch": "agent/core-four-campaign",
+  "status": "ready-for-draft-review",
+  "products": [
+    "balanceoil-plus-300ml",
+    "biolimitless-vitamin-d3-k2",
+    "biolimitless-zinc-copper",
+    "biolimitless-magnesium-glycinate"
+  ],
+  "validation": {
+    "pages": 69,
+    "tests": 65,
+    "hardGate": "PASS",
+    "warnings": 70,
+    "strictDryRunItems": 77,
+    "browserStates": 276,
+    "browserFailures": 0,
+    "screenshots": 38
+  },
+  "definitionOfDone": {
+    "met": 101,
+    "notMet": 0,
+    "deferred": 0
+  },
+  "merge": false,
+  "deployment": false
+}

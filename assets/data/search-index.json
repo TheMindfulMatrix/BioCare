@@ -282,7 +282,9 @@
     ],
     "searchAliases": [
       "vitamin",
-      "vitamin d"
+      "vitamin d",
+      "core four",
+      "the core four"
     ],
     "searchTerms": [
       "vitamin d"
@@ -296,7 +298,8 @@
       "src": "assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
       "alt": "BalanceOil+, 300 ml official Zinzino product packaging"
     },
-    "order": 6
+    "order": 6,
+    "collection": "core-four"
   },
   {
     "id": "balanceoil-plus-100ml",
@@ -1274,7 +1277,10 @@
     "variant": "capsules",
     "ingredients": [],
     "verifiedIngredients": [],
-    "searchAliases": [],
+    "searchAliases": [
+      "core four",
+      "the core four"
+    ],
     "searchTerms": [],
     "searchPriority": 0,
     "topicIds": [],
@@ -1283,7 +1289,8 @@
       "src": "assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
       "alt": "Magnesium Glycinate official BioLimitless product presentation"
     },
-    "order": 40
+    "order": 40,
+    "collection": "core-four"
   },
   {
     "id": "biolimitless-zinc-copper",
@@ -1299,7 +1306,10 @@
     "variant": "capsules",
     "ingredients": [],
     "verifiedIngredients": [],
-    "searchAliases": [],
+    "searchAliases": [
+      "core four",
+      "the core four"
+    ],
     "searchTerms": [],
     "searchPriority": 0,
     "topicIds": [],
@@ -1308,7 +1318,8 @@
       "src": "assets/product-cutouts/biolimitless/zinc-copper.webp",
       "alt": "Zinc + Copper official BioLimitless product presentation"
     },
-    "order": 41
+    "order": 41,
+    "collection": "core-four"
   },
   {
     "id": "biolimitless-vitamin-d3-k2",
@@ -1332,7 +1343,9 @@
       "d3 k2",
       "d3k2",
       "vitamin d3 k2",
-      "vitamin d3 + k2"
+      "vitamin d3 + k2",
+      "core four",
+      "the core four"
     ],
     "searchTerms": [
       "vitamin d3",
@@ -1348,7 +1361,8 @@
       "src": "assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
       "alt": "Vitamin D3 + K2 official BioLimitless product presentation"
     },
-    "order": 42
+    "order": 42,
+    "collection": "core-four"
   },
   {
     "id": "biolimitless-biozyme",
@@ -1775,5 +1789,24 @@
     "products": [],
     "independence": "independent_government_guideline",
     "checkedDate": "2026-08-21"
+  },
+  {
+    "id": "core-four",
+    "type": "journey",
+    "title": "The Core Four",
+    "summary": "Four supplement categories. One place to investigate what they are, what the evidence says, what the manufacturer documents, and what remains uncertain.",
+    "href": "core-four.html",
+    "keywords": [
+      "core four",
+      "the core four",
+      "omega 3",
+      "omega-3",
+      "d3 k2",
+      "d3k2",
+      "vitamin d3 k2",
+      "zinc copper",
+      "zinc + copper",
+      "magnesium glycinate"
+    ]
   }
 ]

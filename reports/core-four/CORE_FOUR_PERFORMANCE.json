@@ -1,0 +1,24 @@
+{
+  "candidateEvidenceSha": "a57aa62ff5f43503fb609c45330069ed8b9b8c64",
+  "baseline": {
+    "homepageHtmlBytes": 198859,
+    "cssBytes": 246788,
+    "jsBytes": 74105,
+    "searchIndexBytes": 54768
+  },
+  "candidate": {
+    "homepageHtmlBytes": 203214,
+    "coreFourHtmlBytes": 21018,
+    "cssBytes": 256968,
+    "jsBytes": 77637,
+    "searchIndexBytes": 57387,
+    "activeProductImagePayloadBytes": 1103598,
+    "campaignImagePayloadBytes": 111080
+  },
+  "notes": [
+    "Campaign reuses canonical optimized product images.",
+    "No new heavyweight product cutouts were added.",
+    "Initial campaign page uses existing static-site request architecture.",
+    "Mobile LCP candidate is the campaign hero/product composition; images retain deterministic optimized assets."
+  ]
+}

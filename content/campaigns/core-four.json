@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "id": "core-four",
+  "title": "The Core Four",
+  "status": "active",
+  "descriptor": "Omega-3 · D3 + K2 · Zinc + Copper · Magnesium Glycinate",
+  "summary": "Four supplement categories. One place to investigate what they are, what the evidence says, what the manufacturer documents, and what remains uncertain.",
+  "productIds": [
+    "balanceoil-plus-300ml",
+    "biolimitless-vitamin-d3-k2",
+    "biolimitless-zinc-copper",
+    "biolimitless-magnesium-glycinate"
+  ],
+  "items": [
+    {
+      "productId": "balanceoil-plus-300ml",
+      "position": 1,
+      "shortLabel": "Omega-3",
+      "campaignSummary": "Selected for deeper coverage because omega-3 intake, blood measurements, and supplementation decisions appear frequently in nutrition research and consumer questions.",
+      "educationIds": ["omega-3-what-the-numbers-mean", "food-vs-omega-3-supplements", "should-you-test-your-omega-3-levels"],
+      "evidenceIds": ["nih-ods-omega-3-health-professional"],
+      "educationGap": false
+    },
+    {
+      "productId": "biolimitless-vitamin-d3-k2",
+      "position": 2,
+      "shortLabel": "D3 + K2",
+      "campaignSummary": "Selected for deeper coverage because vitamin D status, testing, label interpretation, and combined-product questions benefit from careful evidence boundaries.",
+      "educationIds": ["how-to-read-a-supplement-label"],
+      "evidenceIds": ["nih-ods-vitamin-d-health-professional"],
+      "educationGap": true
+    },
+    {
+      "productId": "biolimitless-zinc-copper",
+      "position": 3,
+      "shortLabel": "Zinc + Copper",
+      "campaignSummary": "Selected for deeper coverage because paired-mineral products require clear label context and careful separation between manufacturer documentation and independent evidence.",
+      "educationIds": ["how-to-read-a-supplement-label"],
+      "evidenceIds": ["nih-ods-dietary-supplements-background"],
+      "educationGap": true
+    },
+    {
+      "productId": "biolimitless-magnesium-glycinate",
+      "position": 4,
+      "shortLabel": "Magnesium Glycinate",
+      "campaignSummary": "Selected for deeper coverage because magnesium forms are often discussed without enough attention to label facts, source quality, and uncertainty.",
+      "educationIds": ["how-to-read-a-supplement-label"],
+      "evidenceIds": ["nih-ods-dietary-supplements-background"],
+      "educationGap": true
+    }
+  ]
+}

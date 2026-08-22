@@ -1,0 +1,73 @@
+{
+  "candidateEvidenceSha": "a57aa62ff5f43503fb609c45330069ed8b9b8c64",
+  "products": [
+    {
+      "position": 1,
+      "id": "balanceoil-plus-300ml",
+      "name": "BalanceOil+, 300 ml",
+      "manufacturer": "Zinzino",
+      "status": "active",
+      "deferred": false,
+      "canonicalFields": [
+        "price",
+        "pricingModel",
+        "image",
+        "manufacturer",
+        "officialSource",
+        "attribution",
+        "labelStatus"
+      ]
+    },
+    {
+      "position": 2,
+      "id": "biolimitless-vitamin-d3-k2",
+      "name": "Vitamin D3 + K2",
+      "manufacturer": "BioLimitless",
+      "status": "active",
+      "deferred": false,
+      "canonicalFields": [
+        "price",
+        "pricingModel",
+        "image",
+        "manufacturer",
+        "officialSource",
+        "attribution",
+        "labelStatus"
+      ]
+    },
+    {
+      "position": 3,
+      "id": "biolimitless-zinc-copper",
+      "name": "Zinc + Copper",
+      "manufacturer": "BioLimitless",
+      "status": "active",
+      "deferred": false,
+      "canonicalFields": [
+        "price",
+        "pricingModel",
+        "image",
+        "manufacturer",
+        "officialSource",
+        "attribution",
+        "labelStatus"
+      ]
+    },
+    {
+      "position": 4,
+      "id": "biolimitless-magnesium-glycinate",
+      "name": "Magnesium Glycinate",
+      "manufacturer": "BioLimitless",
+      "status": "active",
+      "deferred": false,
+      "canonicalFields": [
+        "price",
+        "pricingModel",
+        "image",
+        "manufacturer",
+        "officialSource",
+        "attribution",
+        "labelStatus"
+      ]
+    }
+  ]
+}
