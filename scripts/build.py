@@ -65,7 +65,10 @@ def asset_version(path: str) -> str:
     asset_path = ROOT / path
     if not asset_path.is_file():
         raise RuntimeError(f"Missing versioned runtime asset: {path}")
-    return hashlib.sha256(asset_path.read_bytes()).hexdigest()[:12]
+    # Git normalizes these tracked text assets to LF. Hash the canonical text
+    # bytes so Windows and Linux builds emit identical public URLs.
+    canonical = asset_path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()[:12]
 
 
 def versioned_asset(prefix: str, path: str) -> str:

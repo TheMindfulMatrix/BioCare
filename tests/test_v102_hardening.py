@@ -22,7 +22,8 @@ class V102HardeningTests(unittest.TestCase):
             "assets/js/search-relevance.js",
             "assets/js/enhancements.js",
         ):
-            digest = hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()[:12]
+            canonical = (ROOT / relative).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+            digest = hashlib.sha256(canonical).hexdigest()[:12]
             self.assertIn(f'{relative}?v={digest}', markup)
         self.assertNotIn("v11-candidate-1", markup)
 

@@ -67,7 +67,7 @@ class V8DiscoveryTests(unittest.TestCase):
         markup = (ROOT / "index.html").read_text(encoding="utf-8")
         scripts = [part.split('"', 1)[0] for part in markup.split('<script defer src="')[1:]]
         versions = {
-            path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
+            path: hashlib.sha256((ROOT / path).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")).hexdigest()[:12]
             for path in ("assets/js/search-relevance.js", "assets/js/enhancements.js")
         }
         self.assertEqual([f"{path}?v={versions[path]}" for path in versions], scripts)
