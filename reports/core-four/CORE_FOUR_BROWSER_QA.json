@@ -1,0 +1,23 @@
+{
+  "candidateEvidenceSha": "4e3847b706637b7e476c70a5ee3636119f124ba7",
+  "viewports": [
+    "1440x900",
+    "768x1024",
+    "390x844",
+    "375x812"
+  ],
+  "pagesPerViewport": 69,
+  "totalStates": 276,
+  "summary": {
+    "overflow": 0,
+    "brokenImages": 0,
+    "failedRequests": 0,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "duplicateIds": 0,
+    "badH1Counts": 0,
+    "unnamedControls": 0,
+    "functionalFailures": 0
+  },
+  "source": "reports/core-four/screenshots/browser/browser-audit.json"
+}

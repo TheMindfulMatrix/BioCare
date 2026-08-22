@@ -1,0 +1,25 @@
+{
+  "candidateEvidenceSha": "4e3847b706637b7e476c70a5ee3636119f124ba7",
+  "queries": [
+    "core four",
+    "omega 3",
+    "d3k2",
+    "zinc copper",
+    "magnesium glycinate"
+  ],
+  "result": "PASS",
+  "campaignFirstForCampaignQuery": true,
+  "aliases": [
+    "core four",
+    "the core four",
+    "omega 3",
+    "omega-3",
+    "d3 k2",
+    "d3k2",
+    "vitamin d3 k2",
+    "zinc copper",
+    "zinc + copper",
+    "magnesium glycinate"
+  ],
+  "screenshots": "reports/core-four/screenshots/review"
+}
