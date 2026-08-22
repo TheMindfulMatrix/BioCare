@@ -8,26 +8,42 @@
   {{SHARED_HEADER}}
 
   <main id="main-content" tabindex="-1">
-    <section id="top" class="home-hero section-dark" aria-labelledby="hero-title">
+    <section id="top" class="home-hero home-hero--product section-dark" aria-labelledby="hero-title" data-home-stage="product">
       {{HERO_MATRIX_VISUAL}}
       <canvas class="matrix-field" data-matrix-field aria-hidden="true"></canvas>
       <div class="hero-biome" aria-hidden="true"><span class="hero-biome__plane hero-biome__plane--one" data-parallax-depth="0.35"></span><span class="hero-biome__plane hero-biome__plane--two" data-parallax-depth="0.7"></span><span class="hero-biome__signal hero-biome__signal--one" data-parallax-depth="1.1"></span><span class="hero-biome__signal hero-biome__signal--two" data-parallax-depth="0.55"></span></div>
       <div class="home-hero__grid container-wide">
-        <div class="home-hero__content" data-reveal>
-          <p class="section-kicker">{{PHILOSOPHY}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__support">{{HERO_SUPPORT}}</p><p class="home-hero__copy">{{HERO_COPY}}</p><div class="hero-search-instrument"><p class="interface-label">Search the living index</p>{{UNIVERSAL_SEARCH}}</div>
+        <div class="home-hero__content">
+          <p class="section-kicker">{{HERO_SUPPORT}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__copy">{{HERO_COPY}}</p>
           {{HERO_ACTIONS}}
         </div>
-        <div class="home-hero__visual" data-reveal>
+        <div class="home-hero__visual">
           <div class="matrix-volume" aria-hidden="true"><span></span><span></span><span></span></div>
           {{HERO_PRODUCT}}
           <span class="hero-data hero-data--one" aria-hidden="true">Input / Personal data</span><span class="hero-data hero-data--two" aria-hidden="true">Signal / Context</span><span class="hero-data hero-data--three" aria-hidden="true">Output / Next step</span>
         </div>
       </div>
-      <div class="hero-status" aria-hidden="true"><span>Live matrix</span><span>Pointer reactive</span><span>Information → Education → Action</span></div>
+      <div class="hero-status" aria-hidden="true"><span>Featured testing journey</span><span>Measurement → Context</span><span>One node in the Matrix</span></div>
       <div class="hero-system-bridge" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><defs><linearGradient id="hero-bridge-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".52" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="hero-system-bridge__ghost" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><path class="hero-system-bridge__live" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><circle cx="1095" cy="82" r="5"/><circle cx="1265" cy="138" r="4"/></svg></div>
     </section>
 
-    <section class="home-discovery section-dark" aria-labelledby="home-discovery-title"><div class="container-wide"><p class="section-kicker">One search. Two worlds.</p><h2 id="home-discovery-title">Products to explore. Education to understand them.</h2><p>Search products and education together from the opening above, or enter the complete Explore workspace.</p><a class="button button-secondary" href="explore.html">Open Explore →</a></div></section>
+    <section id="matrix-entry" class="grand-entry section-dark" aria-labelledby="grand-entry-title" data-home-stage="matrix">
+      {{GRAND_ENTRY_MATRIX_VISUAL}}
+      <div class="grand-entry__handoff" aria-hidden="true"><span>Balance Kit</span><i></i><span>Measurement</span><i></i><span>Information</span><i></i><span>Education</span><i></i><span>Decision</span></div>
+      <div class="container-wide grand-entry__grid">
+        <div class="grand-entry__content" data-reveal>
+          <p class="section-kicker">{{GRAND_ENTRY_EYEBROW}}</p>
+          <h2 id="grand-entry-title">{{GRAND_ENTRY_HEADLINE}}</h2>
+          <p class="grand-entry__copy">{{GRAND_ENTRY_COPY}}</p>
+          <div class="grand-entry__actions button-row"><a class="button button-primary" href="start.html">Start getting informed →</a><a class="button button-secondary" href="explore.html">Explore the Matrix →</a><a class="button button-tertiary" href="evidence.html">Inspect the evidence →</a></div>
+          <ul class="grand-entry__metrics" aria-label="The Mindful Matrix at a glance">{{PLATFORM_METRICS}}</ul>
+        </div>
+        <div class="grand-entry__workspace" data-reveal>
+          <div class="grand-entry__topology" aria-hidden="true"><span>Source</span><i></i><span>Information</span><i></i><span>Context</span><i></i><span>Education</span><i></i><span>Decision</span><b>Balance Kit / testing node</b></div>
+          {{UNIVERSAL_SEARCH}}
+        </div>
+      </div>
+    </section>
 
     <section class="department-section section-warm section-pad" aria-labelledby="home-departments-title"><div class="container-wide"><p class="section-kicker">Explore by department</p><h2 id="home-departments-title" class="section-title">Six clear places to begin.</h2><div class="department-grid">{{DEPARTMENT_CARDS}}</div></div></section>
 

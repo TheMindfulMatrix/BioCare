@@ -781,7 +781,7 @@ def validate_public_output(site: dict, library: dict, manifest: dict, preview_pa
     check(home.find('<section id="shelf"') < home.find('<section id="problem"'), "The Product Universe must follow the hero without an educational gate")
     featured_destination = featured["destination"]
     check(home.count(f'href="{featured_destination}"') >= 3, "Featured product must remain directly reachable from navigation, hero, and initial product content")
-    check(f'Browse all {len(active_products)} curated products' in home, "Hero must expose the complete curated Shop count")
+    check(f'<strong>{len(active_products):02d}</strong><span>curated products</span>' in home, "Homepage grand entry must expose the complete derived product count")
     check(f'href="{featured_destination}" target="_blank" rel="sponsored noopener noreferrer">{featured["cta"]}' in home, "Initial Product Universe card must provide a direct sponsored route")
     for product in curated_products:
         record = payload_by_id.get(product["id"], {})
@@ -811,7 +811,10 @@ def validate_public_output(site: dict, library: dict, manifest: dict, preview_pa
     check(shop_payload.get("activeCount") == len(active_products) and len(shop_products) == len(active_products), "Shop V9 payload must contain all active products exactly once")
     check(len(shop_by_id) == len(active_products), "Shop V9 payload product IDs must be unique")
     check(shop.count('data-shop-product') == len(initial_products), "Shop must server-render the first 12 compact products as its no-JavaScript-safe initial grid")
-    check(shop.count('loading="eager"') == min(2, len(initial_products)), "Shop must eagerly load only the first compact product row")
+    initial_grid_markup = shop.split('class="catalog-grid"', 1)[-1].split('data-shop-catalog', 1)[0]
+    check(initial_grid_markup.count('loading="eager"') == min(2, len(initial_products)), "Shop must eagerly load only the first compact product row")
+    featured_markup = shop.split('data-featured-testing-journey', 1)[-1].split('</article>', 1)[0]
+    check('loading="eager"' in featured_markup, "Shop featured testing journey image must load eagerly")
     check(shop.count('loading="lazy"') == max(0, len(initial_products) - 2), "Shop must lazy-load remaining initial compact-card images")
     check(shop.count('class="catalog-price__primary"') == len(initial_products), "Every initial compact product must preserve one visually primary price")
     check(all(record.get("sku") == product.get("sku") for product, record in ((product, shop_by_id.get(product["id"], {})) for product in active_products)), "Shop payload must preserve every canonical SKU without inventing BioLimitless SKUs")

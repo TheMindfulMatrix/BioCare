@@ -284,6 +284,20 @@
     {
       "id": "vitamin-d-test",
       "name": "Vitamin D Test",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d",
+        "vitamin d test"
+      ],
+      "searchTerms": [
+        "vitamin d testing"
+      ],
+      "searchPriority": 360,
+      "topicIds": [
+        "vitamin-d",
+        "testing"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "Zinzino",
       "sku": "309049",
       "intent": "test-measure",
@@ -384,6 +398,18 @@
     {
       "id": "balanceoil-plus-300ml",
       "name": "BalanceOil+, 300 ml",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d"
+      ],
+      "searchTerms": [
+        "vitamin d"
+      ],
+      "searchPriority": 280,
+      "topicIds": [
+        "vitamin-d"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "Zinzino",
       "sku": "300000",
       "intent": "omega-nutrition",
@@ -654,6 +680,21 @@
     {
       "id": "balanceoil-plus-vegan",
       "name": "BalanceOil+ Vegan",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d",
+        "d3",
+        "vitamin d3",
+        "vegan vitamin d3"
+      ],
+      "searchTerms": [
+        "vegan vitamin d3"
+      ],
+      "searchPriority": 320,
+      "topicIds": [
+        "vitamin-d"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "Zinzino",
       "sku": "400000",
       "intent": "omega-nutrition",
@@ -1165,6 +1206,18 @@
     {
       "id": "zinoshine-plus",
       "name": "ZinoShine+",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d"
+      ],
+      "searchTerms": [
+        "vitamin d"
+      ],
+      "searchPriority": 310,
+      "topicIds": [
+        "vitamin-d"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "Zinzino",
       "sku": "302600",
       "intent": "daily-wellness",
@@ -1215,6 +1268,20 @@
     {
       "id": "xtend-plus",
       "name": "Xtend+",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d",
+        "d3",
+        "vitamin d3"
+      ],
+      "searchTerms": [
+        "vitamin d3"
+      ],
+      "searchPriority": 270,
+      "topicIds": [
+        "vitamin-d"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "Zinzino",
       "sku": "302200",
       "intent": "daily-wellness",
@@ -1315,6 +1382,20 @@
     {
       "id": "protect-plus",
       "name": "Protect+",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d",
+        "d3",
+        "vitamin d3"
+      ],
+      "searchTerms": [
+        "vitamin d3"
+      ],
+      "searchPriority": 300,
+      "topicIds": [
+        "vitamin-d"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "Zinzino",
       "sku": "300600",
       "intent": "daily-wellness",
@@ -2739,6 +2820,26 @@
     {
       "id": "biolimitless-vitamin-d3-k2",
       "name": "Vitamin D3 + K2",
+      "searchAliases": [
+        "vitamin",
+        "vitamin d",
+        "d3",
+        "k2",
+        "d3 k2",
+        "d3k2",
+        "vitamin d3 k2",
+        "vitamin d3 + k2"
+      ],
+      "searchTerms": [
+        "vitamin d3",
+        "vitamin k2"
+      ],
+      "searchPriority": 90,
+      "topicIds": [
+        "vitamin-d",
+        "vitamin-k"
+      ],
+      "searchGroup": "vitamin-d",
       "manufacturer": "BioLimitless",
       "sku": null,
       "intent": "daily-wellness",

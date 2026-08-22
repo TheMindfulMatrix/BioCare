@@ -180,6 +180,13 @@
   function initShopCatalog(root) {
     var dataNode = root.querySelector("[data-shop-catalog]");
     if (!dataNode) return;
+    var legacyParams = new URLSearchParams(location.search);
+    if (legacyParams.has("q")) {
+      var exploreUrl = new URL("explore.html", location.href);
+      exploreUrl.searchParams.set("q", legacyParams.get("q") || "");
+      location.replace(exploreUrl.href);
+      return;
+    }
     var catalog = JSON.parse(dataNode.textContent);
     var products = catalog.products;
     var disclosures = {
@@ -194,8 +201,6 @@
     var sourceById = {};
     (catalog.sources || []).forEach(function (source) { sourceById[source.id] = source; });
     var grid = root.querySelector("[data-shop-grid]");
-    var search = root.querySelector("[data-shop-search]");
-    var searchClear = root.querySelector("[data-shop-search-clear]");
     var sort = root.querySelector("[data-shop-sort]");
     var resultCount = root.querySelector("[data-shop-result-count]");
     var status = root.querySelector("[data-shop-status]");
@@ -215,7 +220,7 @@
     var inspectorContent = root.querySelector("[data-product-inspector-content]");
     var inspectorClose = root.querySelector("[data-product-close]");
     var intentButtons = Array.prototype.slice.call(root.querySelectorAll("[data-shop-intent]"));
-    var state = { q: "", intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
+    var state = { intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
     var limit = catalog.initialCount;
     var currentProductId = null;
     var lastProductTrigger = null;
@@ -249,7 +254,8 @@
     function priceSummary(product, detailed) {
       var rows = priceRows(product).map(function (row) { return '<span class="catalog-price__' + row[2] + '"><strong>' + htmlSafe(row[0]) + '</strong><small>' + htmlSafe(row[1]) + '</small></span>'; }).join("");
       var source = detailed ? '<a class="product-price__source" href="' + htmlSafe(product.price.affiliate_price_source) + '" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="inspector-source-disclosure" aria-label="Official price source for ' + htmlSafe(product.name) + ' (opens in a new tab)">Official price source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>' : "";
-      return '<div class="catalog-price' + (detailed ? ' catalog-price--detail' : '') + '" data-price-model="' + htmlSafe(product.price.pricing_model) + '">' + rows + source + '</div>';
+      var checked = detailed ? '<small class="catalog-price__checked">Price checked ' + htmlSafe(product.price.price_verified_at) + '. Manufacturer checkout shows the current applicable price.</small>' : "";
+      return '<div class="catalog-price' + (detailed ? ' catalog-price--detail' : '') + '" data-price-model="' + htmlSafe(product.price.pricing_model) + '">' + rows + source + checked + '</div>';
     }
 
     function productImage(product, eager) {
@@ -270,15 +276,9 @@
         '<div class="catalog-card__body"><p class="catalog-card__meta">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2>' + htmlSafe(product.name) + '</h2><p class="catalog-card__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, false) + '<button class="catalog-card__inspect" type="button" data-product-open="' + htmlSafe(product.id) + '" aria-label="View details for ' + htmlSafe(product.name) + '">View details</button></div></article>';
     }
 
-    function searchable(product) {
-      return normalize([product.name, product.manufacturer, product.category, product.intent, product.productKind, product.variantLabel, product.description].concat(product.verifiedIngredients || []).join(" "));
-    }
-
     function filterProducts(snapshot) {
-      var terms = normalize(snapshot.q).split(" ").filter(Boolean);
       var matches = products.filter(function (product) {
-        return terms.every(function (term) { return searchable(product).indexOf(term) >= 0; }) &&
-          (snapshot.intent === "all" || product.intent === snapshot.intent) &&
+        return (snapshot.intent === "all" || product.intent === snapshot.intent) &&
           (snapshot.manufacturer === "all" || product.manufacturer === snapshot.manufacturer) &&
           (!snapshot.kinds.length || snapshot.kinds.indexOf(product.productKind) >= 0) &&
           (!snapshot.labels.length || snapshot.labels.indexOf(product.label.state) >= 0);
@@ -296,8 +296,6 @@
     }
 
     function syncControls() {
-      search.value = state.q;
-      searchClear.hidden = !state.q;
       sort.value = state.sort;
       intentButtons.forEach(function (button) {
         var active = button.dataset.shopIntent === state.intent;
@@ -333,7 +331,6 @@
     function urlForState() {
       var url = new URL(location.href);
       ["q", "intent", "manufacturer", "kind", "label", "sort"].forEach(function (key) { url.searchParams.delete(key); });
-      if (state.q) url.searchParams.set("q", normalize(state.q));
       if (state.intent !== "all") url.searchParams.set("intent", state.intent);
       if (state.manufacturer !== "all") url.searchParams.set("manufacturer", state.manufacturer);
       state.kinds.forEach(function (value) { url.searchParams.append("kind", value); });
@@ -355,26 +352,51 @@
       if (inspector.open) inspector.close();
     }
 
+    function updateResultSummary(matches, visibleCount, announcement) {
+      resultCount.textContent = String(matches.length);
+      empty.hidden = matches.length !== 0;
+      loadMore.hidden = matches.length <= visibleCount;
+      if (!loadMore.hidden) loadMore.textContent = "Load " + Math.min(catalog.initialCount, matches.length - visibleCount) + " more products";
+      loadStatus.hidden = matches.length === 0;
+      loadStatus.textContent = "Showing " + visibleCount + " of " + matches.length;
+      status.textContent = announcement || "Showing " + visibleCount + " of " + matches.length + " matching products out of " + products.length + " active products.";
+    }
+
+    function markupFragment(items, offset) {
+      var template = document.createElement("template");
+      template.innerHTML = items.map(function (product, index) { return cardMarkup(product, offset + index); }).join("");
+      return template.content;
+    }
+
     function render(options) {
       options = options || {};
       var matches = filterProducts(state);
       var visible = matches.slice(0, Math.min(limit, matches.length));
-      grid.innerHTML = visible.map(cardMarkup).join("");
+      grid.replaceChildren(markupFragment(visible, 0));
       observeDeferredImages();
-      resultCount.textContent = String(matches.length);
-      empty.hidden = matches.length !== 0;
-      loadMore.hidden = matches.length <= visible.length;
-      loadStatus.hidden = matches.length === 0;
-      loadStatus.textContent = "Showing " + visible.length + " of " + matches.length;
-      status.textContent = "Showing " + visible.length + " of " + matches.length + " matching products out of " + products.length + " active products.";
+      updateResultSummary(matches, visible.length);
       syncControls();
       renderChips();
       closeStaleInspector(matches);
       if (options.history) saveState(options.history);
     }
 
+    function appendMoreProducts() {
+      var matches = filterProducts(state);
+      var visibleBefore = Math.min(limit, matches.length);
+      var nextLimit = Math.min(limit + catalog.initialCount, matches.length);
+      var additions = matches.slice(visibleBefore, nextLimit);
+      var existingIds = {};
+      Array.prototype.slice.call(grid.querySelectorAll("[data-shop-product]")).forEach(function (card) { existingIds[card.dataset.productId] = true; });
+      additions = additions.filter(function (product) { return !existingIds[product.id]; });
+      if (additions.length) grid.appendChild(markupFragment(additions, visibleBefore));
+      limit = nextLimit;
+      observeDeferredImages();
+      updateResultSummary(matches, nextLimit, "Added " + additions.length + " products. " + nextLimit + " products are now visible of " + matches.length + ".");
+    }
+
     function resetAll(historyMode) {
-      state = { q: "", intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
+      state = { intent: "all", manufacturer: "all", kinds: [], labels: [], sort: "canonical" };
       limit = catalog.initialCount;
       render({ history: historyMode || "push" });
     }
@@ -401,7 +423,6 @@
       var intent = filterForm.querySelector('[name="filter-intent"]:checked');
       var manufacturer = filterForm.querySelector('[name="filter-manufacturer"]:checked');
       return {
-        q: state.q,
         intent: intent ? intent.value : "all",
         manufacturer: manufacturer ? manufacturer.value : "all",
         kinds: Array.prototype.slice.call(filterForm.querySelectorAll('[name="filter-kind"]:checked')).map(function (input) { return input.value; }),
@@ -452,13 +473,25 @@
       var items = records.map(function (record) { var source=sourceById[record.id]; if(!source)return "";
         return '<li><p class="interface-label">' + htmlSafe(source.resourceType) + ' / ' + htmlSafe(record.relationship) + '</p><strong>' + htmlSafe(source.title) + '</strong><small>' + htmlSafe(source.publisher) + '</small><span><a href="' + htmlSafe(source.evidenceUrl) + '">Inspect context →</a><a href="' + htmlSafe(source.publicUrl) + '" target="_blank" rel="noopener noreferrer">Public source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></span></li>';
       }).join("");
-      return '<details class="inspector-documentation"><summary>Documentation &amp; independent context <span>' + records.length + '</span></summary><p>These references provide public topic or department context. They do not prove that this product produces a specific outcome.</p>' + (items ? '<ul>' + items + '</ul>' : '<p>No approved public reference is currently linked. Missing documentation stays explicit.</p>') + '</details>';
+      return '<details class="inspector-documentation"><summary>Evidence &amp; Documentation <span>' + records.length + '</span></summary><p>These references provide public topic or department context. They do not prove that this product produces a specific outcome.</p>' + (items ? '<ul>' + items + '</ul>' : '<p>No approved public reference is currently linked. Missing documentation stays explicit.</p>') + '</details>';
+    }
+
+    function learnMoreMarkup(product) {
+      var links = [];
+      if (product.relatedEducation) links.push('<li><a href="' + htmlSafe(product.relatedEducation.href) + '"><strong>Library guide</strong><span>' + htmlSafe(product.relatedEducation.label) + ' →</span></a></li>');
+      if (product.department) links.push('<li><a href="' + htmlSafe(product.department.href) + '"><strong>Department context — not product evidence</strong><span>' + htmlSafe(product.department.title) + ' →</span></a></li>');
+      if (product.knowYourNumber) links.push('<li><a href="know-your-number.html"><strong>Know Your Number</strong><span>Understand the testing journey →</span></a></li>');
+      links.push('<li><a href="evidence.html"><strong>Evidence &amp; Documentation</strong><span>Inspect public sources and limitations →</span></a></li>');
+      return '<section class="product-inspector__learn"><h3>Learn more</h3><ul>' + links.join("") + '</ul></section>';
+    }
+
+    function manufacturerTransparencyMarkup(product) {
+      return '<section class="product-inspector__transparency"><h3>Manufacturer transparency</h3><p>Product identity, pricing, label records, and checkout are attributed to ' + htmlSafe(product.manufacturer) + '. Independent context is labeled separately and is not product evidence.</p></section>';
     }
 
     function inspectorMarkup(product) {
       var disclosure = product.manufacturer === "BioLimitless" ? disclosures.biolimitless : disclosures.zinzino;
-      var education = product.relatedEducation ? '<a class="button button-secondary" href="' + htmlSafe(product.relatedEducation.href) + '">' + htmlSafe(product.relatedEducation.label) + ' →</a>' : "";
-      return '<article data-inspector-product="' + htmlSafe(product.id) + '"><div class="product-inspector__visual" data-environment="' + htmlSafe(product.environment) + '">' + productImage(product, true) + '</div><div class="product-inspector__details"><p class="interface-label">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2 id="product-inspector-title">' + htmlSafe(product.name) + '</h2><p class="product-inspector__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, true) + '<dl class="product-inspector__facts"><div><dt>SKU</dt><dd>' + htmlSafe(product.sku || "Not assigned") + '</dd></div><div><dt>Format</dt><dd>' + htmlSafe(product.variantLabel) + '</dd></div><div><dt>Type</dt><dd>' + htmlSafe(product.productKind) + '</dd></div><div><dt>Pricing source</dt><dd>Checked ' + htmlSafe(product.price.price_verified_at) + '</dd></div></dl><section class="product-inspector__why"><h3>Why it’s here</h3><p>' + htmlSafe(product.whyItsHere) + '</p></section>' + labelMarkup(product) + documentationMarkup(product) + '<div class="product-inspector__actions"><a class="button button-primary" href="' + htmlSafe(product.destination) + '" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="inspector-source-disclosure" aria-label="Official product source for ' + htmlSafe(product.name) + ' (opens in a new tab)">Official product source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>' + education + '</div><div class="product-inspector__disclosure" id="inspector-source-disclosure" role="note"><p>' + htmlSafe(disclosure) + '</p><p>' + htmlSafe(disclosures.pricing) + '</p>' + (product.manufacturer === "Zinzino" ? '<p>' + htmlSafe(disclosures.commercial) + '</p>' : '') + '<p>' + htmlSafe(disclosures.fda) + '</p></div></div></article>';
+      return '<article data-inspector-product="' + htmlSafe(product.id) + '"><div class="product-inspector__visual" data-environment="' + htmlSafe(product.environment) + '">' + productImage(product, true) + '</div><div class="product-inspector__details"><p class="interface-label">' + htmlSafe(product.manufacturer) + '</p><h2 id="product-inspector-title">' + htmlSafe(product.name) + '</h2>' + priceSummary(product, true) + '<p class="product-inspector__description">' + htmlSafe(product.description) + '</p>' + learnMoreMarkup(product) + documentationMarkup(product) + manufacturerTransparencyMarkup(product) + labelMarkup(product) + '<div class="product-inspector__actions"><a class="button button-primary" href="' + htmlSafe(product.destination) + '" target="_blank" rel="sponsored noopener noreferrer" aria-describedby="inspector-source-disclosure" aria-label="Official product source for ' + htmlSafe(product.name) + ' (opens in a new tab)">Official product source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div><div class="product-inspector__disclosure" id="inspector-source-disclosure" role="note"><p>' + htmlSafe(disclosure) + '</p><p>' + htmlSafe(disclosures.pricing) + '</p>' + (product.manufacturer === "Zinzino" ? '<p>' + htmlSafe(disclosures.commercial) + '</p>' : '') + '<p>' + htmlSafe(disclosures.fda) + '</p></div></div></article>';
     }
 
     function openInspector(productId, updateUrl, trigger) {
@@ -498,7 +531,6 @@
       var intent = params.get("intent") || "all";
       var manufacturer = params.get("manufacturer") || "all";
       var sortMode = params.get("sort") || "canonical";
-      state.q = params.get("q") || "";
       state.intent = intentButtons.some(function (button) { return button.dataset.shopIntent === intent; }) ? intent : "all";
       state.manufacturer = products.some(function (product) { return product.manufacturer === manufacturer; }) ? manufacturer : "all";
       state.kinds = params.getAll("kind").filter(function (kind) { return products.some(function (product) { return product.productKind === kind; }); });
@@ -520,13 +552,11 @@
         setIntent(intentButtons[next].dataset.shopIntent, true);
       });
     });
-    search.addEventListener("input", function () { state.q = search.value; limit = catalog.initialCount; render({ history: "replace" }); });
-    searchClear.addEventListener("click", function () { state.q = ""; limit = catalog.initialCount; render({ history: "push" }); search.focus(); });
-    sort.addEventListener("change", function () { state.sort = sort.value; render({ history: "push" }); });
-    loadMore.addEventListener("click", function () { limit += catalog.initialCount; render(); loadStatus.focus({ preventScroll: true }); });
+    sort.addEventListener("change", function () { state.sort = sort.value; limit = catalog.initialCount; render({ history: "push" }); });
+    loadMore.addEventListener("click", appendMoreProducts);
     chips.addEventListener("click", function (event) { var button = event.target.closest("[data-shop-chip]"); if (button) removeChip(button.dataset.shopChip, button.dataset.shopChipValue); });
-    emptyReset.addEventListener("click", function () { resetAll("push"); search.focus(); });
-    grid.addEventListener("click", function (event) { var button = event.target.closest("[data-product-open]"); if (button) openInspector(button.dataset.productOpen, true, button); });
+    emptyReset.addEventListener("click", function () { resetAll("push"); filterButton.focus(); });
+    root.addEventListener("click", function (event) { var button = event.target.closest("[data-product-open]"); if (button) openInspector(button.dataset.productOpen, true, button); });
     filterButton.addEventListener("click", openFilters);
     filterClose.addEventListener("click", requestFilterClose);
     filterDialog.addEventListener("cancel", function (event) { event.preventDefault(); requestFilterClose(); });
@@ -574,18 +604,18 @@
 
   document.querySelectorAll("[data-shop-catalog-root]").forEach(initShopCatalog);
 
-  function normalize(value) { return String(value || "").trim().toLowerCase().replace(/\s+/g, " "); }
+  var searchRelevance = window.MatrixSearchRelevance;
+  function normalize(value) { return searchRelevance ? searchRelevance.normalize(value) : String(value || "").trim().toLowerCase().replace(/\s+/g, " "); }
   function htmlSafe(value) { return String(value == null ? "" : value).replace(/[&<>"']/g,function(character){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character];}); }
 
   function initMatrixSearch(root) {
     var input=root.querySelector("[data-search-input]"),results=root.querySelector("[data-search-results]"),status=root.querySelector("[data-search-status]"),clear=root.querySelector("[data-search-clear]"),form=root.querySelector("[data-search-form]");
     var modes=Array.prototype.slice.call(root.querySelectorAll("[data-search-mode]")),records=JSON.parse(root.querySelector("[data-search-index]").textContent),mode="everything",prefix=root.dataset.prefix||"";
-    function searchable(record){return normalize([record.title,record.summary,record.manufacturer,record.department,record.category,record.productKind,record.variant,record.publisher,record.resourceType,record.evidenceRole,record.independence].concat(record.ingredients||[],record.keywords||[],record.terms||[],record.topics||[],record.products||[],record.intents||[]).join(" "));}
     function allowed(record){return mode==="everything"||(mode==="products"&&record.type==="product")||(mode==="learn"&&(record.type==="guide"||record.type==="journey"||record.type==="department"||record.type==="source"));}
     function save(replace){if(!location.pathname.endsWith("explore.html"))return;var params=new URLSearchParams(location.search),q=normalize(input.value);if(q)params.set("q",q);else params.delete("q");if(mode!=="everything")params.set("mode",mode);else params.delete("mode");history[replace?"replaceState":"pushState"]({},"",location.pathname+(params.toString()?"?"+params:""));}
     function resultCard(item){var visual="";if(item.image&&item.image.src)visual='<span class="search-result__visual"><img src="'+prefix+htmlSafe(item.image.src)+'" alt="'+htmlSafe(item.image.alt||"")+'" loading="lazy" decoding="async"></span>';else visual='<span class="search-result__visual search-result__visual--signal" aria-hidden="true"><i></i><i></i><i></i></span>';var meta=item.type==="product"?htmlSafe(item.manufacturer)+" / "+htmlSafe(item.productKind):item.type==="guide"?"Evidence guide"+(item.evidenceReviewed?" / reviewed "+htmlSafe(item.evidenceReviewed):""):item.type==="department"?htmlSafe(item.productCount)+" products / "+htmlSafe(item.guideCount)+" guides":item.type==="source"?htmlSafe(item.publisher)+" / "+htmlSafe(item.resourceType):"Guided measurement pathway";return '<li class="search-result search-result--'+htmlSafe(item.type)+'" data-environment="'+htmlSafe(item.environment||item.intent||"matrix")+'"><a href="'+prefix+htmlSafe(item.href)+'">'+visual+'<span class="search-result__content"><b class="search-result__type">'+meta+'</b><strong>'+htmlSafe(item.title)+'</strong><small>'+htmlSafe(item.summary)+'</small><em>Open '+(item.type==="product"?"product details":item.type==="source"?"source context":htmlSafe(item.type))+' →</em></span></a></li>';}
-    function render(updateUrl){var query=normalize(input.value),terms=query.split(" ").filter(Boolean);modes.forEach(function(button){button.setAttribute("aria-pressed",String(button.dataset.searchMode===mode));});if(!query){results.hidden=true;results.innerHTML="";status.textContent="Enter a term or browse the departments below.";clear.hidden=true;if(updateUrl)save(true);return;}
-      var matches=records.filter(function(record){var text=searchable(record);return allowed(record)&&terms.every(function(term){return text.indexOf(term)>=0;});}).slice(0,30);var groups=[{id:"product",label:"Products"},{id:"guide",label:"Learn"},{id:"source",label:"Evidence & Documentation"},{id:"journey",label:"Journeys"},{id:"department",label:"Departments"}];var html=[];groups.forEach(function(group){var items=matches.filter(function(item){return item.type===group.id;});if(!items.length)return;html.push('<section aria-labelledby="search-group-'+group.id+'"><h3 id="search-group-'+group.id+'"><span class="signal-node" aria-hidden="true"></span>'+group.label+'</h3><ul>'+items.map(resultCard).join("")+'</ul></section>');});results.innerHTML=html.join("")||'<div class="search-empty"><span aria-hidden="true"></span><p>No verified products, education, or public sources match this search.</p><small>Try a product, department, ingredient, publisher, or guide title.</small></div>';results.hidden=false;status.textContent=matches.length+" result"+(matches.length===1?"":"s")+" for “"+query+"”.";clear.hidden=false;if(updateUrl)save(true);}
+    function render(updateUrl){var query=normalize(input.value);modes.forEach(function(button){button.setAttribute("aria-pressed",String(button.dataset.searchMode===mode));});if(!query){results.hidden=true;results.innerHTML="";status.textContent="Enter a term or browse the departments below.";clear.hidden=true;if(updateUrl)save(true);return;}
+      var eligible=records.filter(allowed);var ranked=searchRelevance?searchRelevance.rank(eligible,query):[];var matches=ranked.map(function(entry){return entry.record;});var groups=[{id:"product",label:"Products"},{id:"guide",label:"Learn"},{id:"source",label:"Sources"},{id:"journey",label:"Journeys"},{id:"department",label:"Departments"}];var html=[];groups.forEach(function(group){var items=matches.filter(function(item){return item.type===group.id;});if(!items.length)return;html.push('<section aria-labelledby="search-group-'+group.id+'"><h3 id="search-group-'+group.id+'"><span class="signal-node" aria-hidden="true"></span>'+group.label+'</h3><ul>'+items.map(resultCard).join("")+'</ul></section>');});results.innerHTML=html.join("")||'<div class="search-empty"><span aria-hidden="true"></span><p>No verified products, education, or public sources match this search.</p><small>Try a product, department, ingredient, publisher, or guide title.</small></div>';results.hidden=false;status.textContent=matches.length+" result"+(matches.length===1?"":"s")+" for “"+query+"”.";clear.hidden=false;if(updateUrl)save(true);}
     modes.forEach(function(button){button.addEventListener("click",function(){mode=button.dataset.searchMode;render(true);});});input.addEventListener("input",function(){render(true);});clear.addEventListener("click",function(){input.value="";render(true);input.focus();});form.addEventListener("submit",function(event){if(location.pathname.endsWith("explore.html")){event.preventDefault();render(false);}});root.addEventListener("keydown",function(event){if(event.key==="Escape"&&!results.hidden){input.value="";render(true);input.focus();}});
     function restore(){var params=new URLSearchParams(location.search);input.value=params.get("q")||"";mode=["everything","products","learn"].indexOf(params.get("mode"))>=0?params.get("mode"):"everything";render(false);}window.addEventListener("popstate",restore);restore();
   }
