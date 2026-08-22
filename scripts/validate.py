@@ -507,7 +507,7 @@ def extract_universe_payload(home: str) -> list[dict]:
 
 
 def public_pages(library: dict) -> list[Path]:
-    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "evidence.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html", ROOT / "explore.html"]
+    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "evidence.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html", ROOT / "explore.html", ROOT / "core-four.html"]
     discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
     pages.extend(ROOT / "departments" / f'{item["slug"]}.html' for item in discovery["departments"])
     pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
