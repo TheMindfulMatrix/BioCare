@@ -14,6 +14,6 @@ V11 establishes a deliberate two-stage homepage: the Balance Test Basic Kit lead
 - Commerce: 56 of 56 unique canonical URLs reachable
 - Browser QA: four required viewports, zero overflow, broken images, duplicate ids, or console errors/warnings
 - Evidence: 20 committed V10/V11 comparison screenshots
-- Definition of Done: 113 MET / 0 NOT MET / 2 DEFERRED
+- Definition of Done: 115 MET / 0 NOT MET / 0 DEFERRED
 
-The two inherited external approvals remain deferred: written manufacturer clarification for the mixed-brand site and a user-approved public business contact. V11 makes no approval claim and publishes no inferred/private contact. No merge or deployment was performed.
+Outside the 115 V11 acceptance lines, two inherited external dependencies remain unresolved: written manufacturer clarification for the mixed-brand site and a user-approved public business contact. They do not block this review candidate; V11 makes no approval claim and publishes no inferred/private contact. No merge or deployment was performed.

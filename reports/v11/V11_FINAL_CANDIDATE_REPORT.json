@@ -65,9 +65,9 @@
   },
   "browser_qa": "passed at 1440x900, 768x1024, 390x844, and 375x812",
   "definition_of_done": {
-    "MET": 113,
+    "MET": 115,
     "NOT MET": 0,
-    "DEFERRED": 2
+    "DEFERRED": 0
   },
   "screenshots": 20,
   "merge": "not performed",

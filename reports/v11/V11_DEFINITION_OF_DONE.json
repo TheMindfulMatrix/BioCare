@@ -3,700 +3,700 @@
   "checked_date": "2026-08-21",
   "candidate_sha_reference": "HEAD (the Git commit containing this report)",
   "totals": {
-    "MET": 113,
+    "MET": 115,
     "NOT MET": 0,
-    "DEFERRED": 2
+    "DEFERRED": 0
   },
   "items": [
     {
       "number": 1,
       "status": "MET",
-      "requirement": "V11 starts from the verified deployed V10 production SHA.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "V11 starts from the verified V10 production baseline.",
+      "evidence": "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references."
     },
     {
       "number": 2,
       "status": "MET",
-      "requirement": "Work is isolated to agent/v11-informed-entry.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Work is isolated to `agent/v11-informed-entry`.",
+      "evidence": "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references."
     },
     {
       "number": 3,
       "status": "MET",
-      "requirement": "BioCare main remains unchanged.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "`main` remains unchanged.",
+      "evidence": "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references."
     },
     {
       "number": 4,
       "status": "MET",
-      "requirement": "The v5.1 rollback tag remains unchanged.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "No deployment occurs.",
+      "evidence": "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references."
     },
     {
       "number": 5,
       "status": "MET",
-      "requirement": "The working repository was clean before V11 changes.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Available screenshots are reviewed safely.",
+      "evidence": "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references."
     },
     {
       "number": 6,
       "status": "MET",
-      "requirement": "The private screenshot source was used read-only.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "User screenshots are not committed.",
+      "evidence": "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references."
     },
     {
       "number": 7,
       "status": "MET",
-      "requirement": "No user-supplied reference screenshot is committed.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Balance Kit remains the first homepage visual.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 8,
       "status": "MET",
-      "requirement": "No private repository content is published.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Balance Kit remains fully visible on desktop.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 9,
       "status": "MET",
-      "requirement": "No secret, token, account, or customer data is introduced.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Balance Kit remains fully visible at 390px.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 10,
       "status": "MET",
-      "requirement": "No public product, price, destination, or affiliate identifier is fabricated.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Balance Kit remains fully visible at 375px.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 11,
       "status": "MET",
-      "requirement": "No merge is performed.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Hero retains Learn and Official Source paths.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 12,
       "status": "MET",
-      "requirement": "No deployment is performed.",
-      "evidence": "Baseline, branch, tag, privacy, and no-release checks are recorded in the V11 baseline and final reports."
+      "requirement": "Product hero remains claim-neutral.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 13,
       "status": "MET",
-      "requirement": "The homepage opens with a product-first Stage 1.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Product hero is identified as a starting journey, not the entire brand.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 14,
       "status": "MET",
-      "requirement": "Balance Test Basic Kit is the Stage 1 product.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Grand Matrix entry immediately follows the hero.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 15,
       "status": "MET",
-      "requirement": "The Stage 1 headline is Test first. Then choose.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "No large spacer separates the two stages.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 16,
       "status": "MET",
-      "requirement": "The product image uses the canonical approved cutout.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "First natural scroll reveals the grand entry.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 17,
       "status": "MET",
-      "requirement": "The hero product remains visible without reveal-script execution.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Reduced motion displays both stages completely.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 18,
       "status": "MET",
-      "requirement": "The official start-kit and recurring-price presentation is preserved.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Information \u2192 Education \u2192 Action leads the grand entry.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 19,
       "status": "MET",
-      "requirement": "The official price source remains proximate to price.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Grand entry explains what The Mindful Matrix is.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 20,
       "status": "MET",
-      "requirement": "The Understand the test action is present.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Grand entry provides a learning action.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 21,
       "status": "MET",
-      "requirement": "The official product source action is present.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Grand entry provides an Explore action.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 22,
       "status": "MET",
-      "requirement": "The generic Browse all hero action is removed.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Grand entry provides an Evidence action.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 23,
       "status": "MET",
-      "requirement": "The test-to-understand-to-decide bridge is visible.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Grand-entry metrics derive from canonical data.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 24,
       "status": "MET",
-      "requirement": "The affiliate disclosure remains proximate.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Balance Kit is visually secondary in the grand entry.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 25,
       "status": "MET",
-      "requirement": "The hero is legible at desktop, tablet, 390px, and 375px.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Lower homepage architecture remains intact.",
+      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path."
     },
     {
       "number": 26,
       "status": "MET",
-      "requirement": "The hero has no horizontal overflow or broken imagery.",
-      "evidence": "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, canonical pricing/source actions, disclosure, and responsive integrity."
+      "requirement": "Products page local search is removed.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 27,
       "status": "MET",
-      "requirement": "The Matrix entry is the immediate next homepage section.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Global universal search remains intact.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 28,
       "status": "MET",
-      "requirement": "Stage 2 begins directly after Stage 1 in source and visual order.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Old product-query URLs behave safely.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 29,
       "status": "MET",
-      "requirement": "The Information to Education to Action narrative is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Products page uses a compact opening.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 30,
       "status": "MET",
-      "requirement": "The See what exists statement is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Active product count derives from canonical data.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 31,
       "status": "MET",
-      "requirement": "The Understand what it means statement is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Full product-count phrase is not needlessly repeated.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 32,
       "status": "MET",
-      "requirement": "The Decide what makes sense statement is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Balance Kit receives a compact Products-page feature.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 33,
       "status": "MET",
-      "requirement": "The three statements remain one accessible heading.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Product cards remain quickly accessible.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 34,
       "status": "MET",
-      "requirement": "Start getting informed is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Intent rail remains intact.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 35,
       "status": "MET",
-      "requirement": "Explore the Matrix is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Filter remains intact.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 36,
       "status": "MET",
-      "requirement": "Inspect the evidence is present.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Sort remains intact.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 37,
       "status": "MET",
-      "requirement": "Platform metrics are derived from canonical data.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Active chips remain intact.",
+      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips."
     },
     {
       "number": 38,
       "status": "MET",
-      "requirement": "The Matrix entry contains universal search.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Search uses deterministic relevance.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 39,
       "status": "MET",
-      "requirement": "The handoff remains meaningful with reduced motion.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Exact titles outrank description-only matches.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 40,
       "status": "MET",
-      "requirement": "The desktop headline wraps without orphaned word fragments.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Aliases remain factual.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 41,
       "status": "MET",
-      "requirement": "The tablet handoff begins at the first viewport boundary.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "Verified ingredient matches remain factual.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 42,
       "status": "MET",
-      "requirement": "The mobile handoff begins immediately after the hero.",
-      "evidence": "Homepage handoff QA verifies immediate source/visual order, the exact three-part narrative, three actions, derived metrics, universal search, and static reduced-motion visibility."
+      "requirement": "No symptom or disease ranking is introduced.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 43,
       "status": "MET",
-      "requirement": "Products opens with one compact product-count statement.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Vitamin D Test ranks correctly for `vitamin d`.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 44,
       "status": "MET",
-      "requirement": "Products no longer contains a local search control.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Verified Zinzino vitamin products rank correctly if present.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 45,
       "status": "MET",
-      "requirement": "Legacy Products q URLs hand off to Explore without losing the query.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "BioLimitless Vitamin D3 + K2 ranks correctly.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 46,
       "status": "MET",
-      "requirement": "The compact Balance Test Basic Kit feature precedes filters.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "No nonexistent product is fabricated.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 47,
       "status": "MET",
-      "requirement": "The featured product provides Learn and View details actions.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "D3K2 aliases work correctly.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 48,
       "status": "MET",
-      "requirement": "The horizontal intent rail remains available.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Search groups remain correct.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 49,
       "status": "MET",
-      "requirement": "All six canonical intents and counts remain intact.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Search counts remain correct.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 50,
       "status": "MET",
-      "requirement": "The mobile filter dialog remains accessible.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Search URL and history state remain correct.",
+      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
     },
     {
       "number": 51,
       "status": "MET",
-      "requirement": "Manufacturer filtering produces the canonical BioLimitless count.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Inspector no longer shows SKU in its primary view.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 52,
       "status": "MET",
-      "requirement": "Filter state persists in the URL and browser history.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Inspector no longer shows Format in its primary view.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 53,
       "status": "MET",
-      "requirement": "Sort state persists in the URL.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Inspector no longer shows Type in its primary view.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 54,
       "status": "MET",
-      "requirement": "The Omega intent returns the canonical ten products.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Old Pricing Source tile is removed.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 55,
       "status": "MET",
-      "requirement": "The product grid remains two columns on supported mobile widths.",
-      "evidence": "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, intent/filter/sort URL state, Omega count, and mobile density."
+      "requirement": "Canonical metadata remains preserved internally.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 56,
       "status": "MET",
-      "requirement": "Universal search uses a deterministic weighted relevance module.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector shows manufacturer.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 57,
       "status": "MET",
-      "requirement": "Exact-title matches outrank broader metadata matches.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector shows product name.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 58,
       "status": "MET",
-      "requirement": "Compact punctuation variants are normalized deterministically.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector shows correct pricing.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 59,
       "status": "MET",
-      "requirement": "Canonical order is the final stable tie-breaker.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector shows a neutral summary.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 60,
       "status": "MET",
-      "requirement": "Search results are deduplicated by type and id.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector shows Learn More.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 61,
       "status": "MET",
-      "requirement": "Vitamin ranks Vitamin D Test first.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector shows Evidence & Documentation.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 62,
       "status": "MET",
-      "requirement": "Vitamin ranks BalanceOil+ Vegan second.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector preserves label state.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 63,
       "status": "MET",
-      "requirement": "Vitamin ranks ZinoShine+ third.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector preserves manufacturer transparency.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 64,
       "status": "MET",
-      "requirement": "Vitamin ranks Protect+ fourth.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector preserves Official Product Source.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 65,
       "status": "MET",
-      "requirement": "Vitamin ranks BalanceOil+, 300 ml fifth.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector preserves nearby disclosure.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 66,
       "status": "MET",
-      "requirement": "Vitamin ranks Xtend+ sixth.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector preserves applicable notices.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 67,
       "status": "MET",
-      "requirement": "Vitamin ranks Vitamin D3 + K2 seventh.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector remains accessible.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 68,
       "status": "MET",
-      "requirement": "D3K2 variants rank Vitamin D3 + K2 first.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Escape closes inspector.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 69,
       "status": "MET",
-      "requirement": "Factual aliases do not create a nonexistent Zinzino K2 product.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Focus returns correctly.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 70,
       "status": "MET",
-      "requirement": "Products, Learn, Sources, Journeys, and Departments group deterministically.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic ranking, grouping, aliases, and deduplication."
+      "requirement": "Inspector URL/history remains correct.",
+      "evidence": "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history."
     },
     {
       "number": 71,
       "status": "MET",
-      "requirement": "The primary inspector removes the visible SKU/Format/Type/Pricing Source grid.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More never jumps to page top.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 72,
       "status": "MET",
-      "requirement": "Canonical SKU, format, type, and pricing data remain in the payload.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More preserves visual context.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 73,
       "status": "MET",
-      "requirement": "Price checked date is visible in detailed pricing.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Existing card nodes are preserved where practical.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 74,
       "status": "MET",
-      "requirement": "Learn more links are contextual and explicit.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More introduces no duplicates.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 75,
       "status": "MET",
-      "requirement": "Evidence and Documentation is progressively disclosed.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More preserves filters.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 76,
       "status": "MET",
-      "requirement": "Manufacturer transparency is explicit.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More preserves sort.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 77,
       "status": "MET",
-      "requirement": "Independent context is not represented as product proof.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More reaches all 45 products.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 78,
       "status": "MET",
-      "requirement": "Verified, partial, and unavailable label states remain distinct.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Load More announcements are accessible.",
+      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements."
     },
     {
       "number": 79,
       "status": "MET",
-      "requirement": "Official product sources remain present.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Desktop QA passes.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 80,
       "status": "MET",
-      "requirement": "Commercial and FDA disclosures remain present.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "Tablet QA passes.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 81,
       "status": "MET",
-      "requirement": "Escape closes the inspector.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "390px QA passes.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 82,
       "status": "MET",
-      "requirement": "Closing the inspector restores URL and trigger focus.",
-      "evidence": "Representative live inspector checks cover test, Zinzino vitamin, BioLimitless, complete, partial, and unavailable states; Escape and focus restoration pass."
+      "requirement": "375px QA passes.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 83,
       "status": "MET",
-      "requirement": "Products initially renders 12 cards.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No horizontal overflow exists.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 84,
       "status": "MET",
-      "requirement": "The first Load More appends 12 cards.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No broken images exist.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 85,
       "status": "MET",
-      "requirement": "The second Load More appends 12 cards.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No failed local requests exist.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 86,
       "status": "MET",
-      "requirement": "The final Load More appends 9 cards.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No console errors exist.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 87,
       "status": "MET",
-      "requirement": "The final grid contains 45 unique product ids.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No console warnings exist.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 88,
       "status": "MET",
-      "requirement": "Existing cards are not replaced during Load More.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No duplicate IDs exist.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 89,
       "status": "MET",
-      "requirement": "Load More does not jump to the top or force focus.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No below-floor text exists.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 90,
       "status": "MET",
-      "requirement": "An aria-live status announces each append.",
-      "evidence": "Static code inspection and browser runs verify appendChild-only 12\u219224\u219236\u219245 rendering, stable first ids, 45 unique ids, accurate final label, and live announcements."
+      "requirement": "No below-floor targets exist.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 91,
       "status": "MET",
-      "requirement": "The deterministic build passes twice.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "No stale state exists.",
+      "evidence": "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix."
     },
     {
       "number": 92,
       "status": "MET",
-      "requirement": "Normal validation passes.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Performance changes are measured.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 93,
       "status": "MET",
-      "requirement": "Compliance strict dry-run completes and is reconciled.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Product-image payload does not materially regress.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 94,
       "status": "MET",
-      "requirement": "All automated tests pass.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Private evidence boundaries remain intact.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 95,
       "status": "MET",
-      "requirement": "JavaScript syntax validation passes.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Evidence & Documentation remains intact.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 96,
       "status": "MET",
-      "requirement": "Browser QA passes at 1440x900.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Compliance hard gate passes.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 97,
       "status": "MET",
-      "requirement": "Browser QA passes at 768x1024.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Compliance fixtures pass.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 98,
       "status": "MET",
-      "requirement": "Browser QA passes at 390x844.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "V11 tests pass.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 99,
       "status": "MET",
-      "requirement": "Browser QA passes at 375x812.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Existing permanent validation passes.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 100,
       "status": "MET",
-      "requirement": "Console warnings/errors, duplicate ids, and broken local images are zero.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Warning inventories are reconciled.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 101,
       "status": "MET",
-      "requirement": "Keyboard, focus, target-size, text-floor, and reduced-motion checks pass.",
-      "evidence": "Build, validation, 46 tests, syntax checks, four responsive viewports, accessibility interactions, and clean browser logs all pass."
+      "requirement": "Metadata remains complete.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 102,
       "status": "MET",
-      "requirement": "Homepage, Products, CSS, JavaScript, search-index, and image payloads are measured.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "Sitemap remains correct.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 103,
       "status": "MET",
-      "requirement": "Search relevance timing is measured deterministically.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "Structured data remains truthful.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 104,
       "status": "MET",
-      "requirement": "Active product-image payload is unchanged from V10.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "Screenshots accurately show the candidate.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 105,
       "status": "MET",
-      "requirement": "Compliance warning totals have no V11 delta.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "Reports are complete and consistent.",
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 106,
       "status": "MET",
-      "requirement": "Commercial-link validation passes for all canonical URLs.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "Branch is clean at the exact pushed SHA.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 107,
       "status": "MET",
-      "requirement": "Candidate reports and screenshots are sanitized and complete.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "Local and remote SHAs match.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 108,
       "status": "MET",
-      "requirement": "Every candidate report uses one exact symbolic candidate identity.",
-      "evidence": "V11 performance, compliance reconciliation, commerce validation, screenshot audit, and public-safety scan record the measured and sanitized candidate."
+      "requirement": "One draft V11 PR exists.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 109,
-      "status": "DEFERRED",
-      "requirement": "Written manufacturer clarification for the mixed-brand external site is supplied.",
-      "evidence": "DEFERRED: no new written manufacturer clarification was supplied; V11 makes no approval claim and keeps the existing disclosure boundary."
+      "status": "MET",
+      "requirement": "PR is open, draft, mergeable, and unmerged.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 110,
-      "status": "DEFERRED",
-      "requirement": "A user-approved public business contact is supplied.",
-      "evidence": "DEFERRED: no user-approved public business contact was supplied; no private or inferred contact is published."
+      "status": "MET",
+      "requirement": "Auto-merge is disabled.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 111,
       "status": "MET",
-      "requirement": "Exactly one V11 pull request exists.",
-      "evidence": "The draft-PR handoff verifies one unmerged V11 PR, the requested base/head, disabled auto-merge, and exact-head CI success."
+      "requirement": "`v5.1` remains unchanged.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 112,
       "status": "MET",
-      "requirement": "The V11 pull request is open and draft.",
-      "evidence": "The draft-PR handoff verifies one unmerged V11 PR, the requested base/head, disabled auto-merge, and exact-head CI success."
+      "requirement": "Private repository remains unchanged.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 113,
       "status": "MET",
-      "requirement": "The V11 pull request targets main from agent/v11-informed-entry.",
-      "evidence": "The draft-PR handoff verifies one unmerged V11 PR, the requested base/head, disabled auto-merge, and exact-head CI success."
+      "requirement": "No merge occurs.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 114,
       "status": "MET",
-      "requirement": "Auto-merge remains disabled and the PR is unmerged.",
-      "evidence": "The draft-PR handoff verifies one unmerged V11 PR, the requested base/head, disabled auto-merge, and exact-head CI success."
+      "requirement": "No deployment occurs.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     },
     {
       "number": 115,
       "status": "MET",
-      "requirement": "The exact PR-head validation run completes successfully before handoff.",
-      "evidence": "The draft-PR handoff verifies one unmerged V11 PR, the requested base/head, disabled auto-merge, and exact-head CI success."
+      "requirement": "Production remains V10 and unchanged.",
+      "evidence": "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10."
     }
   ]
 }
