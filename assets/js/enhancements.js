@@ -273,7 +273,7 @@
     function cardMarkup(product, index) {
       return '<article id="product-' + htmlSafe(product.id) + '" class="catalog-card' + (product.name.length >= 42 ? ' product-name--very-long' : product.name.length >= 30 ? ' product-name--long' : '') + '" data-shop-product data-product-id="' + htmlSafe(product.id) + '" data-environment="' + htmlSafe(product.environment) + '">' +
         '<div class="catalog-card__visual"><span class="catalog-card__node" aria-hidden="true"></span>' + productImage(product, index < 2) + '</div>' +
-        '<div class="catalog-card__body"><p class="catalog-card__meta">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2>' + htmlSafe(product.name) + '</h2><p class="catalog-card__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, false) + '<button class="catalog-card__inspect" type="button" data-product-open="' + htmlSafe(product.id) + '" aria-label="View details for ' + htmlSafe(product.name) + '">View details</button></div></article>';
+        '<div class="catalog-card__body"><p class="catalog-card__meta">' + htmlSafe(product.manufacturer) + ' / ' + htmlSafe(product.category) + '</p><h2>' + htmlSafe(product.name) + '</h2><p class="catalog-card__description">' + htmlSafe(product.description) + '</p>' + priceSummary(product, false) + '<div class="catalog-card__actions"><a href="' + htmlSafe(product.detailUrl) + '">Product page →</a><button class="catalog-card__inspect" type="button" data-product-open="' + htmlSafe(product.id) + '" aria-label="Quick view for ' + htmlSafe(product.name) + '">Quick view</button></div></div></article>';
     }
 
     function filterProducts(snapshot) {
@@ -974,4 +974,29 @@
   }, { rootMargin: "-20% 0px -38%", threshold: 0.2 });
 
   stages.forEach(function (stage) { matrixObserver.observe(stage); });
+  var dock = document.querySelector(".mobile-dock");
+  if (dock) {
+    var path = location.pathname.split("/").pop() || "index.html";
+    var section = path === "index.html" ? "home" : path === "explore.html" ? "explore" : path === "shop.html" || location.pathname.indexOf("/products/") !== -1 ? "shop" : path === "library.html" || location.pathname.indexOf("/library/") !== -1 ? "library" : path === "start.html" ? "start" : "";
+    var currentDock = dock.querySelector('[data-dock-page="' + section + '"]');
+    if (currentDock) currentDock.setAttribute("aria-current", "page");
+  }
+
+  var libraryControls = document.querySelector("[data-library-controls]");
+  if (libraryControls) {
+    var libraryCards = Array.prototype.slice.call(document.querySelectorAll("[data-library-article]"));
+    var libraryGroups = Array.prototype.slice.call(document.querySelectorAll(".library-group"));
+    var libraryEmpty = document.querySelector("[data-library-empty]");
+    function filterLibrary() {
+      var query = libraryControls.querySelector("[data-library-query]").value.trim().toLowerCase();
+      var category = libraryControls.querySelector("[data-library-category]").value;
+      var visible = 0;
+      libraryCards.forEach(function (card) { var show = (!query || card.dataset.librarySearch.indexOf(query) !== -1) && (category === "all" || card.dataset.libraryCategory === category); card.hidden = !show; if (show) visible += 1; });
+      libraryGroups.forEach(function (group) { group.hidden = !group.querySelector("[data-library-article]:not([hidden])"); });
+      libraryControls.querySelector("[data-library-count]").textContent = visible + (visible === 1 ? " guide" : " guides");
+      if (libraryEmpty) libraryEmpty.hidden = visible !== 0;
+    }
+    libraryControls.addEventListener("input", filterLibrary);
+    libraryControls.addEventListener("reset", function () { window.setTimeout(filterLibrary, 0); });
+  }
 }());

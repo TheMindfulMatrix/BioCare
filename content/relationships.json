@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Canonical navigation relationships. Product-to-department is defined by catalog intent; product-specific evidence is defined only by public-sources product_ids; department context remains visibly qualified.",
+  "rules": {
+    "productDepartment": "catalog.products[].intent -> discovery.departments[].intentId",
+    "departmentEducation": "discovery.departments[].articleSlugs",
+    "productEvidence": "resources/public-sources.json records[].product_ids",
+    "departmentEvidence": "resources/public-sources.json records[].department_ids",
+    "relatedProducts": "same catalog intent, canonical catalog order"
+  }
+}

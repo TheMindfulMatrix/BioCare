@@ -33,14 +33,21 @@ def main() -> None:
     paths = [urlsplit(node.text or "").path.split("/BioCare/", 1)[-1] for node in sitemap.findall("s:url/s:loc", namespace)]
     results = []
     all_console_errors: list[str] = []
-    all_failed_requests: list[str] = []
+    all_failed_requests: list[dict[str, str]] = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
         for viewport_name, viewport in VIEWPORTS.items():
             context = browser.new_context(viewport=viewport, reduced_motion="reduce")
             page = context.new_page()
             page.on("console", lambda message: all_console_errors.append(message.text) if message.type == "error" else None)
-            page.on("requestfailed", lambda request: all_failed_requests.append(request.url))
+            def record_failed_request(request) -> None:
+                error_text = request.failure or "unknown request failure"
+                # Chromium cancels deferred image requests during the next page
+                # navigation. Those browser lifecycle aborts are not network or
+                # asset failures and made the scheduled audit report false alarms.
+                if "ERR_ABORTED" not in error_text:
+                    all_failed_requests.append({"url": request.url, "error": error_text})
+            page.on("requestfailed", record_failed_request)
             for relative in paths:
                 url = args.base_url.rstrip("/") + "/" + relative
                 response = page.goto(url, wait_until="networkidle")

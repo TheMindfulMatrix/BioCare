@@ -511,6 +511,8 @@ def public_pages(library: dict) -> list[Path]:
     discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
     pages.extend(ROOT / "departments" / f'{item["slug"]}.html' for item in discovery["departments"])
     pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
+    catalog = json.loads((ROOT / "content" / "catalog.json").read_text(encoding="utf-8"))
+    pages.extend(ROOT / "products" / f'{product["id"]}.html' for product in catalog["products"] if product.get("commercial_status") == "active")
     return pages
 
 
@@ -687,7 +689,7 @@ def validate_public_output(site: dict, library: dict, manifest: dict, preview_pa
                     check(0 <= generated.find(biolimitless_disclosure) < first_product, f"{page.relative_to(ROOT)}: BioLimitless disclosure must precede its product grid")
             fda_disclaimer = site["site"]["fdaDisclaimer"]
             partner_disclosure = site["site"]["disclosure"]
-            expected_fda_count = 2 if page.name == "shop.html" else 1
+            expected_fda_count = 2 if page.name == "shop.html" or page.parent.name == "products" else 1
             check(generated.count(fda_disclaimer) == expected_fda_count, f"{page.relative_to(ROOT)}: exact FDA disclaimer count must match the approved footer/proximity pattern")
             expected_footer_disclosures = f'<p class="fine" data-fda-disclaimer>{fda_disclaimer}</p><p class="fine">{partner_disclosure}</p>'
             check(expected_footer_disclosures in generated, f"{page.relative_to(ROOT)}: FDA disclaimer must immediately precede the footer partner-identification line")
@@ -734,6 +736,15 @@ def validate_public_output(site: dict, library: dict, manifest: dict, preview_pa
     for article in library["articles"]:
         if article.get("status") != "published":
             check(not (article_dir / f'{article["slug"]}.html').exists(), f"Draft article generated publicly: {article['slug']}")
+
+    product_dir = ROOT / "products"
+    actual_product_pages = set(product_dir.glob("*.html")) if product_dir.exists() else set()
+    catalog_records = site["catalog"]["products"]
+    expected_product_pages = {product_dir / f'{product["id"]}.html' for product in catalog_records if product.get("commercial_status") == "active"}
+    check(actual_product_pages == expected_product_pages, "Product detail output must exactly match active product records")
+    for product in catalog_records:
+        if product.get("commercial_status") != "active":
+            check(not (product_dir / f'{product["id"]}.html').exists(), f"Deferred product generated publicly: {product['id']}")
 
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     affiliate_disclosure = site["site"]["affiliateDisclosure"]
