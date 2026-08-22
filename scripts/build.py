@@ -384,7 +384,7 @@ def hero_product_markup(product: dict) -> str:
               <div class="hero-product__signal hero-product__signal--three" data-parallax-depth="1.35" aria-hidden="true"><span>03</span> Choose</div>
               <span class="hero-product__tap">View the kit ↗</span>
             </a>
-            <div class="hero-product__caption" data-parallax-depth="0.9"><span>Featured testing journey</span><strong>{esc(product["name"])}</strong><small>{esc(product["productKind"])} / SKU {esc(product["sku"])}</small></div>
+            <div class="hero-product__caption" data-parallax-depth="0.9"><span>Featured testing journey</span><strong>{esc(product["name"])}</strong></div>
           </div>'''
 
 

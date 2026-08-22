@@ -2299,7 +2299,7 @@
   .home-hero--product .home-hero__grid { min-height:88svh; grid-template-columns:1fr; grid-template-rows:minmax(19rem,42svh) auto; gap:.8rem; padding-block:.5rem 4.75rem; }
   .home-hero--product .home-hero__visual { width:min(100%,26rem); height:100%; min-height:0; aspect-ratio:auto; order:-1; }
   .home-hero--product .home-hero__content { padding:0; }
-  .home-hero--product .home-hero__content>.section-kicker { margin-bottom:.65rem; }
+  .home-hero--product .home-hero__content>.section-kicker { display:none; }
   .home-hero--product h1 { max-width:11ch; font-size:clamp(2.65rem,11.6vw,3.35rem); line-height:.9; }
   .home-hero--product .home-hero__copy { display:none; }
   .home-hero--product .product-price--hero { margin:.6rem 0 .35rem; }
@@ -2314,9 +2314,13 @@
   .home-hero--product .hero-affiliate-note { margin-top:.2rem; line-height:1.4; }
   .home-hero--product .hero-product { inset:2% 0 0; }
   .home-hero--product .hero-product__background { inset:2% 4% 4%; width:92%; height:94%; opacity:.58; }
-  .home-hero--product .hero-product__cutout { inset:3% 2% 5%; }
+  .home-hero--product .hero-product__cutout { inset:22% -2% 0 9%; }
   .home-hero--product .hero-product__cutout img { transform:scale(1.02); }
-  .home-hero--product .hero-product__caption,.home-hero--product .hero-product__tap,.home-hero--product .hero-product__signal,.home-hero--product .hero-data { display:none; }
+  .home-hero--product .hero-product__caption { z-index:11; top:.4rem; right:auto; bottom:auto; left:.35rem; width:min(78%,19rem); display:grid; gap:.2rem; padding:.65rem .8rem; }
+  .home-hero--product .hero-product__caption span { font-size:12px; }
+  .home-hero--product .hero-product__caption strong { font-size:clamp(.9rem,4vw,1rem); line-height:1.05; }
+  .home-hero--product .hero-product__tap { z-index:12; top:4.55rem; right:auto; bottom:auto; left:.35rem; display:inline-flex; }
+  .home-hero--product .hero-product__signal,.home-hero--product .hero-data { display:none; }
   .grand-entry { padding:2rem 0 4.5rem; scroll-margin-top:7.25rem; }
   .grand-entry__handoff { width:calc(100% - 2 * var(--space-3)); grid-template-columns:auto .7fr auto .7fr auto; margin-bottom:2.5rem; padding:.65rem .55rem; font-size:.6rem; }
   .grand-entry__handoff span:nth-of-type(2),.grand-entry__handoff span:nth-of-type(4),.grand-entry__handoff i:nth-of-type(2),.grand-entry__handoff i:nth-of-type(4) { display:none; }
