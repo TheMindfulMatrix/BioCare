@@ -1,0 +1,321 @@
+{
+  "candidateSha": "56347ababaea5af5e088d26d52f61df807ae4f70",
+  "count": 45,
+  "records": [
+    {
+      "id": "balance-basic-kit",
+      "name": "Balance Test Basic Kit",
+      "route": "products/balance-basic-kit.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "balance-test",
+      "name": "BalanceTest",
+      "route": "products/balance-test.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "gut-health-test",
+      "name": "Gut Health Test",
+      "route": "products/gut-health-test.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "gut-health-test-x2",
+      "name": "Gut Health Test x2",
+      "route": "products/gut-health-test-x2.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "vitamin-d-test",
+      "name": "Vitamin D Test",
+      "route": "products/vitamin-d-test.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "hba1c-test",
+      "name": "HbA1c Test",
+      "route": "products/hba1c-test.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-plus-300ml",
+      "name": "BalanceOil+, 300 ml",
+      "route": "products/balanceoil-plus-300ml.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-plus-100ml",
+      "name": "BalanceOil+ Orange Lemon Mint, 100 ml",
+      "route": "products/balanceoil-plus-100ml.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-plus-100ml-6pcs",
+      "name": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs",
+      "route": "products/balanceoil-plus-100ml-6pcs.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-plus-premium",
+      "name": "BalanceOil+ Premium, 300 ml",
+      "route": "products/balanceoil-plus-premium.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-plus-aquax",
+      "name": "BalanceOil+ AquaX, 300 ml",
+      "route": "products/balanceoil-plus-aquax.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-plus-vegan",
+      "name": "BalanceOil+ Vegan",
+      "route": "products/balanceoil-plus-vegan.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "balanceoil-tutti-frutti",
+      "name": "BalanceOil Tutti Frutti, 300 ml",
+      "route": "products/balanceoil-tutti-frutti.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "essent-plus-premium",
+      "name": "Essent+ Premium",
+      "route": "products/essent-plus-premium.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "revoo",
+      "name": "R.E.V.O.O",
+      "route": "products/revoo.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "dosage-cups",
+      "name": "Dosage Cups, 10 pc",
+      "route": "products/dosage-cups.html",
+      "department": "omega-nutrition",
+      "generated": true
+    },
+    {
+      "id": "zinobiotic-plus",
+      "name": "ZinoBiotic+",
+      "route": "products/zinobiotic-plus.html",
+      "department": "gut-digestion",
+      "generated": true
+    },
+    {
+      "id": "x-gold-plus",
+      "name": "X Gold+ 250 ml",
+      "route": "products/x-gold-plus.html",
+      "department": "gut-digestion",
+      "generated": true
+    },
+    {
+      "id": "zinogene-plus",
+      "name": "ZinoGene+",
+      "route": "products/zinogene-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "viva-plus",
+      "name": "Viva+",
+      "route": "products/viva-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "viva-plus-x2",
+      "name": "Viva+ x2",
+      "route": "products/viva-plus-x2.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "zinoshine-plus",
+      "name": "ZinoShine+",
+      "route": "products/zinoshine-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "xtend-plus",
+      "name": "Xtend+",
+      "route": "products/xtend-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "xtend",
+      "name": "Xtend",
+      "route": "products/xtend.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "protect-plus",
+      "name": "Protect+",
+      "route": "products/protect-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "spirumax-plus",
+      "name": "SpiruMax+",
+      "route": "products/spirumax-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "phycosci-plus-x20",
+      "name": "PhycoSci+ X20",
+      "route": "products/phycosci-plus-x20.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "leanshake-chocolate",
+      "name": "LeanShake Chocolate, portion pack",
+      "route": "products/leanshake-chocolate.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "leanshake-strawberry",
+      "name": "LeanShake Strawberry, portion pack",
+      "route": "products/leanshake-strawberry.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "leanshake-vanilla",
+      "name": "LeanShake Vanilla, portion pack",
+      "route": "products/leanshake-vanilla.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "leanshake-berry",
+      "name": "LeanShake Berry, portion pack",
+      "route": "products/leanshake-berry.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "shake-bottle",
+      "name": "Shake Bottle",
+      "route": "products/shake-bottle.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "energy-bar-nut-seed",
+      "name": "Energy Bar Nut & Seed",
+      "route": "products/energy-bar-nut-seed.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "measuring-tape",
+      "name": "Measuring Tape",
+      "route": "products/measuring-tape.html",
+      "department": "active-nutrition-tools",
+      "generated": true
+    },
+    {
+      "id": "collagen-boozt",
+      "name": "Collagen Boozt",
+      "route": "products/collagen-boozt.html",
+      "department": "skin-collagen",
+      "generated": true
+    },
+    {
+      "id": "skin-serum",
+      "name": "Skin Serum, 50 ml",
+      "route": "products/skin-serum.html",
+      "department": "skin-collagen",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-dna-discovery-kit",
+      "name": "The DNA Discovery Kit",
+      "route": "products/biolimitless-dna-discovery-kit.html",
+      "department": "testing-measurement",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-becoming-biolimitless-book",
+      "name": "Becoming BioLimitless",
+      "route": "products/biolimitless-becoming-biolimitless-book.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-cell-signals",
+      "name": "Cell Signals",
+      "route": "products/biolimitless-cell-signals.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-detox-pro-plus",
+      "name": "Detox Pro Plus",
+      "route": "products/biolimitless-detox-pro-plus.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-magnesium-glycinate",
+      "name": "Magnesium Glycinate",
+      "route": "products/biolimitless-magnesium-glycinate.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-zinc-copper",
+      "name": "Zinc + Copper",
+      "route": "products/biolimitless-zinc-copper.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-vitamin-d3-k2",
+      "name": "Vitamin D3 + K2",
+      "route": "products/biolimitless-vitamin-d3-k2.html",
+      "department": "daily-wellness",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-biozyme",
+      "name": "BioZyme",
+      "route": "products/biolimitless-biozyme.html",
+      "department": "gut-digestion",
+      "generated": true
+    },
+    {
+      "id": "biolimitless-bio-basics-core-four",
+      "name": "The Bio Basics Core Four",
+      "route": "products/biolimitless-bio-basics-core-four.html",
+      "department": "daily-wellness",
+      "generated": true
+    }
+  ]
+}

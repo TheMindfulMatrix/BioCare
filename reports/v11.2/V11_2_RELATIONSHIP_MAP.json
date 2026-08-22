@@ -1,0 +1,797 @@
+{
+  "candidateSha": "56347ababaea5af5e088d26d52f61df807ae4f70",
+  "schemaVersion": "1.0",
+  "count": 45,
+  "records": [
+    {
+      "productId": "balance-basic-kit",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balance-test",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "gut-health-test",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "gut-health-test-x2",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "vitamin-d-test",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [
+        "nih-ods-vitamin-d-health-professional"
+      ],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "hba1c-test",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [
+        "medlineplus-hba1c-test"
+      ],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-plus-300ml",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-plus-100ml",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-plus-100ml-6pcs",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-plus-premium",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-plus-aquax",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-plus-vegan",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "balanceoil-tutti-frutti",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "essent-plus-premium",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "revoo",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "dosage-cups",
+      "departmentId": "omega-nutrition",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "zinobiotic-plus",
+      "departmentId": "gut-digestion",
+      "articleSlugs": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [
+        "nccih-probiotics-usefulness-safety"
+      ],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "x-gold-plus",
+      "departmentId": "gut-digestion",
+      "articleSlugs": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nccih-probiotics-usefulness-safety",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "zinogene-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "viva-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "viva-plus-x2",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "zinoshine-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "xtend-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "xtend",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "protect-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "spirumax-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "phycosci-plus-x20",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "leanshake-chocolate",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "leanshake-strawberry",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "leanshake-vanilla",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "leanshake-berry",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "shake-bottle",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "energy-bar-nut-seed",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "measuring-tape",
+      "departmentId": "performance-recovery",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "collagen-boozt",
+      "departmentId": "healthy-aging",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "skin-serum",
+      "departmentId": "healthy-aging",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-dna-discovery-kit",
+      "departmentId": "test-measure",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-omega-3-health-professional",
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-hba1c-test"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-becoming-biolimitless-book",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-cell-signals",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-detox-pro-plus",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-magnesium-glycinate",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-zinc-copper",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-vitamin-d3-k2",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [
+        "nih-ods-vitamin-d-health-professional"
+      ],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-biozyme",
+      "departmentId": "gut-digestion",
+      "articleSlugs": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label"
+      ],
+      "productSpecificSourceIds": [
+        "nccih-probiotics-usefulness-safety"
+      ],
+      "departmentContextSourceIds": [
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    },
+    {
+      "productId": "biolimitless-bio-basics-core-four",
+      "departmentId": "daily-wellness",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk"
+      ],
+      "productSpecificSourceIds": [],
+      "departmentContextSourceIds": [
+        "nih-ods-vitamin-d-health-professional",
+        "fda-dietary-supplement-labeling-guide",
+        "fda-label-claims-food-supplements",
+        "nih-ods-dietary-supplements-background",
+        "hhs-physical-activity-guidelines"
+      ],
+      "boundary": "department context is not product-specific evidence"
+    }
+  ]
+}
