@@ -125,6 +125,15 @@ class V11CandidateTests(unittest.TestCase):
         self.assertRegex(self.home_template, r'</section>\s*<section id="matrix-entry"')
         self.assertIn(".grand-entry [data-reveal] { opacity:1!important; transform:none!important; }", self.css)
 
+    def test_mobile_product_opening_has_one_clear_identity_layer(self):
+        self.assertIn(
+            ".home-hero--product .hero-product__caption,.home-hero--product .hero-product__tap,.home-hero--product .hero-product__signal,.home-hero--product .hero-data { display:none; }",
+            self.css,
+        )
+        self.assertIn("grid-template-rows:minmax(19rem,42svh) auto; gap:.8rem", self.css)
+        self.assertIn(".home-hero--product .home-hero__content>.section-kicker { margin-bottom:.65rem; }", self.css)
+        self.assertIn(".grand-entry { padding:2rem 0 4.5rem; scroll-margin-top:7.25rem; }", self.css)
+
     def test_grand_entry_narrative_actions_and_derived_metrics(self):
         for text in (
             "Information → Education → Action",
