@@ -229,6 +229,7 @@ def document_head_markup(
             f'  <link rel="stylesheet" href="{prefix}assets/css/tokens.css{asset_suffix}">',
             f'  <link rel="stylesheet" href="{prefix}assets/css/base.css{asset_suffix}">',
             f'  <link rel="stylesheet" href="{prefix}assets/css/site.css{asset_suffix}">',
+            f'  <script defer src="{prefix}assets/js/search-relevance.js{asset_suffix}"></script>',
             f'  <script defer src="{prefix}assets/js/enhancements.js{asset_suffix}"></script>',
         ]
     )
@@ -352,11 +353,10 @@ def hero_actions_markup(product: dict, product_count: int, affiliate_note: str) 
     url = esc(product["destination"], attribute=True)
     return f'''{price_markup(product, context="hero")}
           <div class="hero-actions button-row">
-            <a class="button button-primary" href="know-your-number.html">Learn: know your number →</a>
+            <a class="button button-primary" href="know-your-number.html">Understand the test →</a>
             <a class="button button-secondary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">Official product source ↗{external_note()}</a>
-            <a class="button button-secondary" href="shop.html">Browse all {product_count} curated products →</a>
           </div>
-          <div class="hero-context"><span>Information → Education → Action</span><span>Test → Understand → Decide</span><a href="#matrix">Just browsing? Enter the Matrix ↓</a></div>
+          <div class="hero-context"><span>Featured testing journey</span><span>Test → Understand → Decide</span><a href="#matrix-entry">Enter the Matrix ↓</a></div>
           <p id="hero-affiliate-disclosure" class="hero-affiliate-note" data-affiliate-disclosure>{esc(affiliate_note)}</p>'''
 
 
@@ -384,8 +384,22 @@ def hero_product_markup(product: dict) -> str:
               <div class="hero-product__signal hero-product__signal--three" data-parallax-depth="1.35" aria-hidden="true"><span>03</span> Choose</div>
               <span class="hero-product__tap">View the kit ↗</span>
             </a>
-            <div class="hero-product__caption" data-parallax-depth="0.9"><span>Featured starting point</span><strong>{esc(product["name"])}</strong><small>{esc(product["productKind"])} / SKU {esc(product["sku"])}</small></div>
+            <div class="hero-product__caption" data-parallax-depth="0.9"><span>Featured testing journey</span><strong>{esc(product["name"])}</strong><small>{esc(product["productKind"])} / SKU {esc(product["sku"])}</small></div>
           </div>'''
+
+
+def platform_metrics_markup(*, products: int, guides: int, departments: int, sources: int, journeys: int) -> str:
+    metrics = [
+        (products, "curated products"),
+        (guides, "practical guides"),
+        (departments, "departments"),
+        (sources, "public sources"),
+        (journeys, "testing journeys"),
+    ]
+    return "".join(
+        f'<li><strong>{int(value):02d}</strong><span>{esc(label)}</span></li>'
+        for value, label in metrics
+    )
 
 
 def universe_intents_markup(catalog: dict) -> str:
@@ -693,7 +707,7 @@ def product_documentation(product: dict, sources: list[dict]) -> list[dict]:
     ]
 
 
-def shop_product_payload(product: dict, *, index: int, label_record: dict | None, sources: list[dict]) -> dict:
+def shop_product_payload(product: dict, *, index: int, label_record: dict | None, sources: list[dict], department: dict) -> dict:
     label = shop_label_payload(label_record)
     return {
         "id": product["id"],
@@ -717,11 +731,17 @@ def shop_product_payload(product: dict, *, index: int, label_record: dict | None
         "label": label,
         "documentation": product_documentation(product, sources),
         "verifiedIngredients": [item["ingredient"] for item in label["ingredients"]],
+        "department": {
+            "title": department["title"],
+            "href": f'departments/{department["slug"]}.html',
+        },
+        "knowYourNumber": product["intent"] in {"test-measure", "omega-nutrition"},
     }
 
 
-def shop_catalog_data_markup(data: dict, products: list[dict], label_records: dict[str, dict], sources: list[dict]) -> str:
+def shop_catalog_data_markup(data: dict, products: list[dict], label_records: dict[str, dict], sources: list[dict], discovery: dict) -> str:
     catalog = data["catalog"]
+    departments = {item["intentId"]: item for item in discovery["departments"]}
     payload = {
         "activeCount": len(products),
         "initialCount": 12,
@@ -743,7 +763,7 @@ def shop_catalog_data_markup(data: dict, products: list[dict], label_records: di
             }
             for source in sources
         ],
-        "products": [shop_product_payload(product, index=index, label_record=label_records.get(product["id"]), sources=sources) for index, product in enumerate(products, start=1)],
+        "products": [shop_product_payload(product, index=index, label_record=label_records.get(product["id"]), sources=sources, department=departments[product["intent"]]) for index, product in enumerate(products, start=1)],
     }
     serialized = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     return f'<script type="application/json" data-shop-catalog>{serialized}</script>'
@@ -772,6 +792,18 @@ def shop_compact_card_markup(product: dict, *, index: int) -> str:
 
 def shop_initial_cards_markup(products: list[dict]) -> str:
     return "".join(shop_compact_card_markup(product, index=index) for index, product in enumerate(products[:12], start=1))
+
+
+def shop_featured_product_markup(product: dict) -> str:
+    image = product.get("cutout") or product.get("image")
+    related = product.get("relatedEducation")
+    learn = ""
+    if related:
+        learn = f'<a class="button button-secondary" href="{esc(related["href"], attribute=True)}" aria-label="Open the featured testing guide">Learn →</a>'
+    return f'''<article class="shop-featured" data-featured-testing-journey>
+      <div class="shop-featured__visual"><span aria-hidden="true"></span><img src="{esc(image["src"], attribute=True)}" alt="" width="{int(image["width"])}" height="{int(image["height"])}" loading="eager" decoding="async"></div>
+      <div class="shop-featured__content"><p class="interface-label">Featured testing journey</p><h2>{esc(product["name"])}</h2><p>Product details, pricing, label state, and education in one view.</p><div class="button-row">{learn}<button class="button button-tertiary" type="button" data-product-open="{esc(product["id"], attribute=True)}">View details →</button></div></div>
+    </article>'''
 
 
 def shop_filter_intents_markup(intents: list[dict]) -> str:
@@ -1136,7 +1168,7 @@ def discovery_records(data: dict, library: dict, discovery: dict, sources: list[
     for index,product in enumerate(active_products(data["catalog"])):
         ingredients=[item["ingredient"] for item in labels.get(product["id"],{}).get("ingredients",[])]
         cutout=product.get("cutout") or product.get("image") or {}
-        records.append({"id":product["id"],"type":"product","title":product["name"],"summary":product["description"],"href":f'explore.html?product={product["id"]}&mode=products',"manufacturer":product["manufacturer"],"intent":product["intent"],"department":departments[product["intent"]]["title"],"category":product["category"],"productKind":product["productKind"],"variant":product["variantLabel"],"ingredients":ingredients,"image":{"src":cutout.get("src"),"alt":cutout.get("alt",product["name"])},"order":index})
+        records.append({"id":product["id"],"type":"product","title":product["name"],"summary":product["description"],"href":f'shop.html?product={product["id"]}',"manufacturer":product["manufacturer"],"intent":product["intent"],"department":departments[product["intent"]]["title"],"category":product["category"],"productKind":product["productKind"],"variant":product["variantLabel"],"ingredients":ingredients,"verifiedIngredients":ingredients,"searchAliases":product.get("searchAliases",[]),"searchTerms":product.get("searchTerms",[]),"searchPriority":product.get("searchPriority",0),"topicIds":product.get("topicIds",[]),"searchGroup":product.get("searchGroup"),"image":{"src":cutout.get("src"),"alt":cutout.get("alt",product["name"])},"order":index})
     for article in published_articles(library):
         related=[d["intentId"] for d in discovery["departments"] if article["slug"] in d["articleSlugs"]]
         hero=article.get("hero") or {}
@@ -1156,9 +1188,17 @@ def discovery_records(data: dict, library: dict, discovery: dict, sources: list[
     return records
 
 
-def universal_search_markup(records: list[dict], *, prefix: str = "") -> str:
+def universal_search_markup(
+    records: list[dict],
+    *,
+    prefix: str = "",
+    label: str = "Search products, guides, testing journeys, and public sources",
+    placeholder: str = "Search products, guides, ingredients, sources…",
+    context: str = "workspace",
+) -> str:
     payload=json.dumps(records,ensure_ascii=False,separators=(",", ":")).replace("</","<\\/")
-    return f'''<div class="matrix-search" data-matrix-search data-prefix="{prefix}"><form role="search" action="{prefix}explore.html" data-search-form><label for="universal-search">Search products, guides, testing journeys, and public sources</label><div><input id="universal-search" name="q" type="search" autocomplete="off" placeholder="Search products, guides, ingredients, sources…" data-search-input><button type="submit">Search</button></div></form><div class="search-modes" role="group" aria-label="Search result type"><button type="button" data-search-mode="everything" aria-pressed="true">Everything</button><button type="button" data-search-mode="products" aria-pressed="false">Products</button><button type="button" data-search-mode="learn" aria-pressed="false">Learn</button></div><p class="search-status" data-search-status aria-live="polite">Enter a term or browse the departments below.</p><div class="search-results" data-search-results hidden></div><button class="search-clear" type="button" data-search-clear hidden>Clear search</button><script type="application/json" data-search-index>{payload}</script></div>'''
+    search_id = f'universal-search-{context}'
+    return f'''<div class="matrix-search matrix-search--{esc(context, attribute=True)}" data-matrix-search data-prefix="{prefix}"><form role="search" action="{prefix}explore.html" data-search-form><label for="{esc(search_id, attribute=True)}">{esc(label)}</label><div><input id="{esc(search_id, attribute=True)}" name="q" type="search" autocomplete="off" placeholder="{esc(placeholder, attribute=True)}" data-search-input><button type="submit">Search</button></div></form><div class="search-modes" role="group" aria-label="Search result type"><button type="button" data-search-mode="everything" aria-pressed="true">Everything</button><button type="button" data-search-mode="products" aria-pressed="false">Products</button><button type="button" data-search-mode="learn" aria-pressed="false">Learn</button></div><p class="search-status" data-search-status aria-live="polite">Enter a term or browse the departments below.</p><div class="search-results" data-search-results hidden></div><button class="search-clear" type="button" data-search-clear hidden>Clear search</button><script type="application/json" data-search-index>{payload}</script></div>'''
 
 
 def evidence_controls_markup(sources: list[dict], data: dict, discovery: dict) -> str:
@@ -1225,6 +1265,8 @@ def build_home(data: dict, library: dict, discovery: dict, sources: list[dict]) 
     metadata = site["metadata"]
     brand = data["brand"]
     home = data["homepage"]
+    grand_entry = home["grandEntry"]
+    records = discovery_records(data, library, discovery, sources)
     page = metadata["pages"]["home"]
     replacements = {
         "{{DOCUMENT_HEAD}}": document_head_markup(
@@ -1244,7 +1286,23 @@ def build_home(data: dict, library: dict, discovery: dict, sources: list[dict]) 
         "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products), site["affiliateSourceDisclosure"]),
         "{{HERO_PRODUCT}}": hero_product_markup(featured),
         "{{HERO_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high", environment="balance"),
-        "{{UNIVERSAL_SEARCH}}": universal_search_markup(discovery_records(data, library, discovery, sources)),
+        "{{GRAND_ENTRY_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high", environment="discovery"),
+        "{{GRAND_ENTRY_EYEBROW}}": esc(grand_entry["eyebrow"]),
+        "{{GRAND_ENTRY_HEADLINE}}": line_markup(grand_entry["headline"]),
+        "{{GRAND_ENTRY_COPY}}": esc(grand_entry["copy"]),
+        "{{UNIVERSAL_SEARCH}}": universal_search_markup(
+            records,
+            label=grand_entry["searchLabel"],
+            placeholder=grand_entry["searchPlaceholder"],
+            context="grand-entry",
+        ),
+        "{{PLATFORM_METRICS}}": platform_metrics_markup(
+            products=len(public_products),
+            guides=len(published_articles(library)),
+            departments=len(discovery["departments"]),
+            sources=len(sources),
+            journeys=len(discovery["journeys"]),
+        ),
         "{{DEPARTMENT_CARDS}}": department_cards(data, library, discovery, sources),
         "{{PROBLEM_HEADLINE}}": line_markup(home["problem"]["headline"]),
         "{{PROBLEM_COPY}}": esc(home["problem"]["copy"]),
@@ -1404,7 +1462,7 @@ def build_start(data: dict) -> None:
     write_output(ROOT / "start.html", render_template("start.html", replacements))
 
 
-def build_shop(data: dict, product_labels: dict, sources: list[dict]) -> None:
+def build_shop(data: dict, product_labels: dict, sources: list[dict], discovery: dict) -> None:
     metadata=data["site"]["metadata"]; page=metadata["pages"]["shop"]; catalog=data["catalog"]; products=active_products(catalog)
     label_records={record["product_id"]:record for record in product_labels.get("records",[])}
     replacements={
@@ -1415,8 +1473,9 @@ def build_shop(data: dict, product_labels: dict, sources: list[dict]) -> None:
         "{{SHOP_FILTER_INTENTS}}":shop_filter_intents_markup(catalog["intents"]),
         "{{SHOP_FILTER_MANUFACTURERS}}":shop_filter_manufacturers_markup(products),
         "{{SHOP_FILTER_KINDS}}":shop_filter_kinds_markup(products),
+        "{{SHOP_FEATURED_PRODUCT}}":shop_featured_product_markup(next(product for product in products if product["id"] == data["featuredProductId"])),
         "{{SHOP_INITIAL_CARDS}}":shop_initial_cards_markup(products),
-        "{{SHOP_CATALOG_DATA}}":shop_catalog_data_markup(data,products,label_records,sources),
+        "{{SHOP_CATALOG_DATA}}":shop_catalog_data_markup(data,products,label_records,sources,discovery),
         "{{SHOP_NO_SCRIPT}}":shop_no_script_markup(products,data),
         "{{SHOP_FALLBACKS}}":shop_fallbacks_markup(catalog["fallbackDestinations"]),
         "{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"]), "{{BIOLIMITLESS_AFFILIATE_DISCLOSURE}}":esc(data["site"]["biolimitlessAffiliateDisclosure"]),
@@ -1510,7 +1569,7 @@ def main() -> None:
     build_library(data, library, sources)
     build_evidence(data, discovery, public_source_manifest, sources)
     build_start(data)
-    build_shop(data, product_labels, sources)
+    build_shop(data, product_labels, sources, discovery)
     build_know_your_number(data)
     build_articles(data, library)
     build_crawl_files(data, library, discovery)

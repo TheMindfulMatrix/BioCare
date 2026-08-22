@@ -8,31 +8,28 @@
   {{SHARED_HEADER}}
 
   <main id="main-content" tabindex="-1" data-shop-catalog-root>
-    <section class="catalog-intents section-dark" aria-label="Browse products by intent">
-      <div class="container-wide">
-        <div class="catalog-intents__rail" role="group" aria-label="Product intents" data-shop-intent-rail>{{SHOP_INTENT_RAIL}}</div>
-      </div>
-    </section>
-
     <section class="shop-hero shop-hero--compact section-dark" aria-labelledby="shop-title">
       <div class="shop-hero__field" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="container-wide shop-hero__compact-grid">
         <div>
           <p class="section-kicker">The Product Universe</p>
           <h1 id="shop-title"><strong>{{SHOP_COUNT}}</strong> curated products</h1>
-          <p>Search, filter, compare, and learn before choosing.</p>
+          <p>Filter, compare, and learn before choosing.</p>
         </div>
         <span class="shop-hero__signal" aria-hidden="true">Catalog signal / {{VERIFIED_DATE}}</span>
       </div>
     </section>
 
-    <section class="catalog-discovery section-dark" aria-labelledby="catalog-search-label">
-      <div class="container-wide">
-        <form class="catalog-search" role="search" data-shop-search-form>
-          <label id="catalog-search-label" for="product-search">Search all {{SHOP_COUNT}} curated products</label>
-          <div><input id="product-search" type="search" inputmode="search" autocomplete="off" placeholder="Search all {{SHOP_COUNT}} curated products" data-shop-search><button type="button" data-shop-search-clear hidden aria-label="Clear product search">Clear</button></div>
-        </form>
+    <section class="shop-featured-section section-dark" aria-label="Featured testing journey"><div class="container-wide">{{SHOP_FEATURED_PRODUCT}}</div></section>
 
+    <section class="catalog-intents section-dark" aria-label="Browse products by intent">
+      <div class="container-wide">
+        <div class="catalog-intents__rail" role="group" aria-label="Product intents" data-shop-intent-rail>{{SHOP_INTENT_RAIL}}</div>
+      </div>
+    </section>
+
+    <section class="catalog-discovery section-dark" aria-label="Browse and refine products">
+      <div class="container-wide">
         <div class="catalog-toolbar" data-shop-toolbar>
           <p><strong data-shop-result-count>{{SHOP_COUNT}}</strong> results</p>
           <button type="button" data-shop-filter-open aria-haspopup="dialog" aria-controls="catalog-filter-dialog">Filter <span data-shop-filter-count hidden>0</span></button>
@@ -45,7 +42,7 @@
         <p class="catalog-disclosure-line" id="catalog-disclosure-line">Official manufacturer links may earn The Mindful Matrix a commission. <a href="#catalog-disclosures">Pricing and disclosure details.</a></p>
 
         <div class="catalog-grid" data-shop-grid aria-describedby="catalog-disclosure-line">{{SHOP_INITIAL_CARDS}}</div>
-        <p class="catalog-empty" data-shop-empty hidden>No verified products match the current search and filters. <button type="button" data-shop-empty-reset>Clear all</button></p>
+        <p class="catalog-empty" data-shop-empty hidden>No verified products match the current filters. <button type="button" data-shop-empty-reset>Clear all</button></p>
         <div class="catalog-load"><button class="button button-secondary" type="button" data-shop-load-more>Load 12 more products</button><span data-shop-load-status>Showing 12 of {{SHOP_COUNT}}</span></div>
 
         {{SHOP_CATALOG_DATA}}

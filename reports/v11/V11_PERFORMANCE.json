@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "baseline_sha": "f91f15002256ec63ecd258fa5443834ce8a0244c",
+  "baseline": {
+    "homepage_html_bytes": 189156,
+    "products_html_bytes": 154457,
+    "all_public_html_bytes": 994255,
+    "dom_nodes": 8976,
+    "css_bytes": 242413,
+    "javascript_bytes": 72413,
+    "universal_search_index_bytes": 48503,
+    "active_product_image_bytes": 1336124
+  },
+  "candidate": {
+    "homepage_html_bytes": 196672,
+    "homepage_dom_nodes": 1163,
+    "products_html_bytes": 159936,
+    "products_dom_nodes": 656,
+    "all_public_html_bytes": 1014804,
+    "dom_nodes": 9060,
+    "css_bytes": 251984,
+    "javascript_bytes": 79241,
+    "universal_search_index_bytes": 56757,
+    "search_relevance_module_bytes": 5587,
+    "active_product_image_bytes": 1103598,
+    "active_product_image_count": 45,
+    "hero_image_bytes": 18460,
+    "grand_entry_html_bytes": 49895,
+    "grand_entry_dom_nodes": 77
+  },
+  "delta": {
+    "homepage_html_bytes": 7516,
+    "products_html_bytes": 5479,
+    "all_public_html_bytes": 20549,
+    "dom_nodes": 84,
+    "css_bytes": 9571,
+    "javascript_bytes": 6828,
+    "universal_search_index_bytes": 8254,
+    "active_product_image_bytes": -232526
+  },
+  "search_benchmark": {
+    "operations": 10000,
+    "total_ms": 6400.453,
+    "mean_ms": 0.640045,
+    "runtime": "Node.js v24.19.0; local deterministic 70-record index"
+  },
+  "initial_eager_images": {
+    "homepage": 4,
+    "products": 3
+  },
+  "load_more": {
+    "dom_increments": [
+      12,
+      12,
+      9
+    ],
+    "resolved_image_elements_observed": [
+      2,
+      8,
+      14,
+      20
+    ],
+    "cls": null,
+    "note": "The available browser surface did not expose layout-shift entries. Visual QA found no top jump; all generated product images retain explicit dimensions."
+  },
+  "lcp_candidate": "Balance Test Basic Kit hero image with explicit dimensions, eager loading, and high fetch priority; the asset is reused from V10 and is 18,460 bytes.",
+  "architecture": "No framework, external search service, runtime API, or new product-image payload was added."
+}

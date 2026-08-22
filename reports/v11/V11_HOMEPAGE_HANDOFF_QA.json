@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "source_order": [
+    "home-hero--product",
+    "matrix-entry",
+    "departments",
+    "product-universe"
+  ],
+  "stage_1": {
+    "product": "Balance Test Basic Kit",
+    "headline": "Test first. Then choose.",
+    "generic_browse_all_cta": false,
+    "canonical_cutout": true
+  },
+  "stage_2": {
+    "narrative": "Information \u2192 Education \u2192 Action",
+    "headline": "See what exists. Understand what it means. Decide what makes sense.",
+    "actions": [
+      "Start getting informed",
+      "Explore the Matrix",
+      "Inspect the evidence"
+    ],
+    "metrics": {
+      "products": 45,
+      "guides": 10,
+      "departments": 6,
+      "public_sources": 8,
+      "testing_journeys": 1
+    }
+  },
+  "viewport_observations": {
+    "1440x900": {
+      "hero_bottom_px": 942.9,
+      "entry_top_after_anchor_px": -0.1,
+      "entry_headline_height_px": 524.9,
+      "horizontal_overflow_px": 0
+    },
+    "768x1024": {
+      "hero_bottom_px": 1038.3,
+      "handoff_offset_beyond_viewport_px": 14.3,
+      "horizontal_overflow_px": 0
+    },
+    "390x844": {
+      "hero_bottom_px": 914.8,
+      "entry_headline_top_after_anchor_px": 138.9,
+      "horizontal_overflow_px": 0
+    },
+    "375x812": {
+      "hero_bottom_px": 898.4,
+      "entry_headline_height_px": 237.6,
+      "horizontal_overflow_px": 0
+    }
+  },
+  "reduced_motion": "Stage 2 reveal elements are statically visible and transforms are disabled under prefers-reduced-motion.",
+  "status": "passed"
+}

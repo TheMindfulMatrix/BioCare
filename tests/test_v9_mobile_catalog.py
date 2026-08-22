@@ -34,9 +34,9 @@ class V9MobileCatalogTests(unittest.TestCase):
 
     def test_locked_mobile_page_order(self):
         markers = [
-            'class="catalog-intents',
             'class="shop-hero shop-hero--compact',
-            'class="catalog-search',
+            'class="shop-featured-section',
+            'class="catalog-intents',
             'class="catalog-toolbar',
             'class="catalog-disclosure-line',
             'class="catalog-grid',
@@ -59,10 +59,11 @@ class V9MobileCatalogTests(unittest.TestCase):
 
     def test_progressive_compact_grid(self):
         self.assertEqual(12, self.shop.count("data-shop-product"))
-        self.assertEqual(2, self.shop.count('loading="eager"'))
+        self.assertEqual(3, self.shop.count('loading="eager"'))
         self.assertEqual(10, self.shop.count('loading="lazy"'))
         self.assertEqual(12, self.shop.count('class="catalog-card__inspect"'))
-        self.assertIn("limit += catalog.initialCount", self.js)
+        self.assertIn("appendMoreProducts", self.js)
+        self.assertIn("grid.appendChild(markupFragment", self.js)
         self.assertIn("matches.slice(0, Math.min(limit, matches.length))", self.js)
 
     def test_two_column_mobile_density_and_safe_fallback(self):
@@ -73,7 +74,9 @@ class V9MobileCatalogTests(unittest.TestCase):
         self.assertIn("object-fit:contain", self.css)
 
     def test_search_filter_sort_and_url_state(self):
-        self.assertIn("Search all 45 curated products", self.shop)
+        self.assertNotIn("Search all 45 curated products", self.shop)
+        self.assertNotIn("data-shop-search", self.shop)
+        self.assertIn('class="header-search"', self.shop)
         self.assertIn('value="canonical"', self.shop)
         self.assertIn('value="name"', self.shop)
         self.assertIn('value="manufacturer"', self.shop)
@@ -81,7 +84,7 @@ class V9MobileCatalogTests(unittest.TestCase):
         kinds = sorted({product["productKind"] for product in self.active}, key=str.casefold)
         for kind in kinds:
             self.assertIn(f'name="filter-kind" value="{kind}"', self.shop)
-        for token in ("URLSearchParams", "popstate", "history.pushState", "history.replaceState", "verifiedIngredients"):
+        for token in ("URLSearchParams", "popstate", "history.pushState", "history.replaceState", "legacyParams.has(\"q\")"):
             self.assertIn(token, self.js)
 
     def test_accessible_filter_sheet_and_single_inspector(self):

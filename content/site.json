@@ -5,7 +5,7 @@
     "copyrightYear": 2026,
     "metadata": {
       "canonicalBaseUrl": "https://themindfulmatrix.github.io/BioCare/",
-      "assetVersion": "v10-candidate-1",
+      "assetVersion": "v11-candidate-1",
       "articleTitleSuffix": " | The Mindful Matrix",
       "socialImage": {
         "src": "assets/brand/social-preview.png",
@@ -90,8 +90,19 @@
         "Test first.",
         "Then choose."
       ],
-      "supportingLine": "A practical system for taking a more informed role in your wellness.",
-      "copy": "Get informed about your situation. Understand what the information means. Then decide what action makes sense. Start with a test, explore the evidence, or browse every curated product—without pretending every next step has to be a purchase."
+      "supportingLine": "Featured testing journey",
+      "copy": "Balance Test Basic Kit"
+    },
+    "grandEntry": {
+      "eyebrow": "Information → Education → Action",
+      "headline": [
+        "See what exists.",
+        "Understand what it means.",
+        "Decide what makes sense."
+      ],
+      "copy": "The Mindful Matrix organizes products, testing tools, public evidence, and practical guides so you can investigate before choosing.",
+      "searchLabel": "What do you want to understand?",
+      "searchPlaceholder": "Search products, guides, evidence, and testing journeys"
     },
     "problem": {
       "headline": [

@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "baseline_sha": "f91f15002256ec63ecd258fa5443834ce8a0244c",
+  "branch": "agent/v11-informed-entry",
+  "result": "review_candidate",
+  "public_pages": 23,
+  "products": {
+    "active": 45,
+    "deferred": 8
+  },
+  "homepage": {
+    "stage_1": "Balance Test Basic Kit",
+    "stage_2": "grand Matrix education and search",
+    "handoff": "passed at four viewports"
+  },
+  "products_page": {
+    "local_search": false,
+    "featured_product": "Balance Test Basic Kit",
+    "omega_count": 10,
+    "progressive_counts": [
+      12,
+      24,
+      36,
+      45
+    ]
+  },
+  "search": {
+    "module": "tiered deterministic",
+    "records": 70,
+    "vitamin_first_seven": [
+      "Vitamin D Test",
+      "Vitamin D3 + K2",
+      "BalanceOil+ Vegan",
+      "ZinoShine+",
+      "Protect+",
+      "BalanceOil+, 300 ml",
+      "Xtend+"
+    ]
+  },
+  "inspector": {
+    "visible_spec_grid": false,
+    "canonical_payload_retained": true,
+    "label_states": [
+      "complete_verified",
+      "partial_verified",
+      "unavailable_or_unverified"
+    ]
+  },
+  "validation": {
+    "deterministic_build": "passed_twice",
+    "normal_validation": "passed",
+    "strict_dry_run_items": 77,
+    "tests": {
+      "passed": 48,
+      "failed": 0
+    },
+    "javascript_syntax": "passed",
+    "commercial_unique_urls": {
+      "passed": 56,
+      "failed": 0
+    },
+    "public_safety_findings": 0
+  },
+  "browser_qa": "passed at 1440x900, 768x1024, 390x844, and 375x812",
+  "definition_of_done": {
+    "MET": 115,
+    "NOT MET": 0,
+    "DEFERRED": 0
+  },
+  "screenshots": 22,
+  "merge": "not performed",
+  "deployment": "not performed"
+}

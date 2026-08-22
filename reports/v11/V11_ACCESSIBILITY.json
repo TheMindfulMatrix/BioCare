@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "headings_and_landmarks": "passed",
+  "form_labels_and_live_status": "passed",
+  "dialog_name_escape_focus_return": "passed",
+  "keyboard_search_filter_sort": "passed",
+  "touch_targets": "passed at four viewports; zero visible controls below 44\u00d744",
+  "mobile_text_floor": "passed",
+  "reduced_motion": "passed by static CSS path and reveal independence",
+  "images": "canonical product alternatives retained; decorative Matrix imagery remains hidden from assistive technology",
+  "no_horizontal_overflow": true,
+  "status": "passed"
+}

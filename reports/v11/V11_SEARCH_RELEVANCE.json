@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "module": "assets/js/search-relevance.js",
+  "index_records": 70,
+  "ranking_contract": {
+    "match_tiers_descending": [
+      "exact normalized title",
+      "exact compact title",
+      "title prefix",
+      "all whole title terms",
+      "exact factual alias",
+      "alias prefix",
+      "alias-term match",
+      "exact verified term or ingredient",
+      "verified-term match",
+      "manufacturer + title",
+      "category / intent / product kind",
+      "neutral summary",
+      "broader metadata"
+    ],
+    "sort": [
+      "matchTier descending",
+      "specificity descending",
+      "applicable searchPriority descending",
+      "canonical order ascending",
+      "ID ascending"
+    ],
+    "priority_rule": "searchPriority is query-scoped to an exact factual alias and can break ties only after match tier and specificity; it cannot cross a match-class boundary."
+  },
+  "vitamin_order": [
+    "Vitamin D Test",
+    "Vitamin D3 + K2",
+    "BalanceOil+ Vegan",
+    "ZinoShine+",
+    "Protect+",
+    "BalanceOil+, 300 ml",
+    "Xtend+"
+  ],
+  "query_matrix": {
+    "vitamin": {
+      "count": 14,
+      "first_product": "Vitamin D Test",
+      "duplicate_hrefs": 0
+    },
+    "vitamin d": {
+      "count": 14,
+      "first_product": "Vitamin D Test",
+      "duplicate_hrefs": 0
+    },
+    "vitamin d test": {
+      "count": 2,
+      "first_product": "Vitamin D Test"
+    },
+    "d3": {
+      "count": 6,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "k2": {
+      "count": 3,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "d3k2": {
+      "count": 1,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "d3 k2": {
+      "count": 3,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "vitamin d3 k2": {
+      "count": 3,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "vitamin d3 + k2": {
+      "count": 3,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "BalanceTest": {
+      "count": 1,
+      "first_product": "BalanceTest"
+    },
+    "Balance Test": {
+      "count": 3,
+      "first_product": "BalanceTest"
+    },
+    "Gut Health Test": {
+      "count": 2,
+      "first_product": "Gut Health Test"
+    },
+    "omega": {
+      "count": 20,
+      "groups": [
+        "Products",
+        "Learn",
+        "Sources",
+        "Journeys",
+        "Departments"
+      ]
+    },
+    "magnesium": {
+      "count": 6
+    },
+    "collagen": {
+      "count": 5
+    },
+    "label": {
+      "count": 7
+    },
+    "evidence": {
+      "count": 7
+    },
+    "sources": {
+      "count": 3
+    },
+    "testing": {
+      "count": 15
+    },
+    "Zinzino": {
+      "count": 36
+    },
+    "BioLimitless": {
+      "count": 11
+    },
+    "ViTaMiN D": {
+      "count": 14,
+      "first_product": "Vitamin D Test"
+    },
+    "vitamin-d": {
+      "count": 14,
+      "first_product": "Vitamin D Test"
+    },
+    "not-a-real-matrix-term": {
+      "count": 0
+    }
+  },
+  "match_class_regressions": {
+    "title_prefix_over_exact_alias": "passed",
+    "exact_alias_over_verified_term": "passed",
+    "verified_term_over_summary": "passed",
+    "priority_cannot_cross_tier": "passed",
+    "priority_breaks_same_tier_ties": "passed",
+    "canonical_order_breaks_remaining_ties": "passed",
+    "duplicate_result_ids": 0
+  },
+  "search_priority_audit": [
+    {
+      "id": "vitamin-d-test",
+      "value": 360,
+      "purpose": "same-tier Vitamin D testing order",
+      "query_scoped": true
+    },
+    {
+      "id": "balanceoil-plus-vegan",
+      "value": 320,
+      "purpose": "same-tier verified Vitamin D alias order",
+      "query_scoped": true
+    },
+    {
+      "id": "zinoshine-plus",
+      "value": 310,
+      "purpose": "same-tier verified Vitamin D alias order",
+      "query_scoped": true
+    },
+    {
+      "id": "protect-plus",
+      "value": 300,
+      "purpose": "same-tier verified Vitamin D alias order",
+      "query_scoped": true
+    },
+    {
+      "id": "balanceoil-plus-300ml",
+      "value": 280,
+      "purpose": "same-tier verified Vitamin D alias order",
+      "query_scoped": true
+    },
+    {
+      "id": "xtend-plus",
+      "value": 270,
+      "purpose": "same-tier verified Vitamin D alias order",
+      "query_scoped": true
+    },
+    {
+      "id": "biolimitless-vitamin-d3-k2",
+      "value": 90,
+      "purpose": "same-tier Vitamin D title order and exact D3/K2 aliases",
+      "query_scoped": true
+    }
+  ],
+  "duplicate_count": 0,
+  "product_links": "Direct product results use shop.html?product=<canonical-id> and open the matching inspector.",
+  "factual_boundary": "No Zinzino K2 product or alias was fabricated. Search metadata remains backed by canonical title, approved manufacturer description, approved label ingredient, or existing grouping data; priorities encode no commission or manufacturer preference.",
+  "benchmark": {
+    "operations": 10000,
+    "total_ms": 6400.453,
+    "mean_ms": 0.640045,
+    "runtime": "Node.js v24.19.0; local deterministic 70-record index"
+  },
+  "status": "passed"
+}

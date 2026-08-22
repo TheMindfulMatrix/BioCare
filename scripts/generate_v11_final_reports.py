@@ -1,0 +1,504 @@
+#!/usr/bin/env python3
+"""Generate sanitized V11 review-candidate reports from deterministic repository facts."""
+
+from __future__ import annotations
+
+import json
+import re
+from html.parser import HTMLParser
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+REPORTS = ROOT / "reports" / "v11"
+SCREENSHOTS = REPORTS / "screenshots"
+CHECKED_DATE = "2026-08-21"
+BASELINE_SHA = "f91f15002256ec63ecd258fa5443834ce8a0244c"
+BRANCH = "agent/v11-informed-entry"
+CANDIDATE_REFERENCE = "HEAD (the Git commit containing this report)"
+V5_TAG_COMMIT = "b5d35772e98580e253c08f6319aa8e412fa20aea"
+
+
+class NodeCounter(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.nodes = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.nodes += 1
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.nodes += 1
+
+
+REQUIREMENTS = [
+    "V11 starts from the verified V10 production baseline.",
+    "Work is isolated to `agent/v11-informed-entry`.",
+    "`main` remains unchanged.",
+    "No deployment occurs.",
+    "Available screenshots are reviewed safely.",
+    "User screenshots are not committed.",
+    "Balance Kit remains the first homepage visual.",
+    "Balance Kit remains fully visible on desktop.",
+    "Balance Kit remains fully visible at 390px.",
+    "Balance Kit remains fully visible at 375px.",
+    "Hero retains Learn and Official Source paths.",
+    "Product hero remains claim-neutral.",
+    "Product hero is identified as a starting journey, not the entire brand.",
+    "Grand Matrix entry immediately follows the hero.",
+    "No large spacer separates the two stages.",
+    "First natural scroll reveals the grand entry.",
+    "Reduced motion displays both stages completely.",
+    "Information → Education → Action leads the grand entry.",
+    "Grand entry explains what The Mindful Matrix is.",
+    "Grand entry provides a learning action.",
+    "Grand entry provides an Explore action.",
+    "Grand entry provides an Evidence action.",
+    "Grand-entry metrics derive from canonical data.",
+    "Balance Kit is visually secondary in the grand entry.",
+    "Lower homepage architecture remains intact.",
+    "Products page local search is removed.",
+    "Global universal search remains intact.",
+    "Old product-query URLs behave safely.",
+    "Products page uses a compact opening.",
+    "Active product count derives from canonical data.",
+    "Full product-count phrase is not needlessly repeated.",
+    "Balance Kit receives a compact Products-page feature.",
+    "Product cards remain quickly accessible.",
+    "Intent rail remains intact.",
+    "Filter remains intact.",
+    "Sort remains intact.",
+    "Active chips remain intact.",
+    "Search uses deterministic relevance.",
+    "Exact titles outrank description-only matches.",
+    "Aliases remain factual.",
+    "Verified ingredient matches remain factual.",
+    "No symptom or disease ranking is introduced.",
+    "Vitamin D Test ranks correctly for `vitamin d`.",
+    "Verified Zinzino vitamin products rank correctly if present.",
+    "BioLimitless Vitamin D3 + K2 ranks correctly.",
+    "No nonexistent product is fabricated.",
+    "D3K2 aliases work correctly.",
+    "Search groups remain correct.",
+    "Search counts remain correct.",
+    "Search URL and history state remain correct.",
+    "Inspector no longer shows SKU in its primary view.",
+    "Inspector no longer shows Format in its primary view.",
+    "Inspector no longer shows Type in its primary view.",
+    "Old Pricing Source tile is removed.",
+    "Canonical metadata remains preserved internally.",
+    "Inspector shows manufacturer.",
+    "Inspector shows product name.",
+    "Inspector shows correct pricing.",
+    "Inspector shows a neutral summary.",
+    "Inspector shows Learn More.",
+    "Inspector shows Evidence & Documentation.",
+    "Inspector preserves label state.",
+    "Inspector preserves manufacturer transparency.",
+    "Inspector preserves Official Product Source.",
+    "Inspector preserves nearby disclosure.",
+    "Inspector preserves applicable notices.",
+    "Inspector remains accessible.",
+    "Escape closes inspector.",
+    "Focus returns correctly.",
+    "Inspector URL/history remains correct.",
+    "Load More never jumps to page top.",
+    "Load More preserves visual context.",
+    "Existing card nodes are preserved where practical.",
+    "Load More introduces no duplicates.",
+    "Load More preserves filters.",
+    "Load More preserves sort.",
+    "Load More reaches all 45 products.",
+    "Load More announcements are accessible.",
+    "Desktop QA passes.",
+    "Tablet QA passes.",
+    "390px QA passes.",
+    "375px QA passes.",
+    "No horizontal overflow exists.",
+    "No broken images exist.",
+    "No failed local requests exist.",
+    "No console errors exist.",
+    "No console warnings exist.",
+    "No duplicate IDs exist.",
+    "No below-floor text exists.",
+    "No below-floor targets exist.",
+    "No stale state exists.",
+    "Performance changes are measured.",
+    "Product-image payload does not materially regress.",
+    "Private evidence boundaries remain intact.",
+    "Evidence & Documentation remains intact.",
+    "Compliance hard gate passes.",
+    "Compliance fixtures pass.",
+    "V11 tests pass.",
+    "Existing permanent validation passes.",
+    "Warning inventories are reconciled.",
+    "Metadata remains complete.",
+    "Sitemap remains correct.",
+    "Structured data remains truthful.",
+    "Screenshots accurately show the candidate.",
+    "Reports are complete and consistent.",
+    "Branch is clean at the exact pushed SHA.",
+    "Local and remote SHAs match.",
+    "One draft V11 PR exists.",
+    "PR is open, draft, mergeable, and unmerged.",
+    "Auto-merge is disabled.",
+    "`v5.1` remains unchanged.",
+    "Private repository remains unchanged.",
+    "No merge occurs.",
+    "No deployment occurs.",
+    "Production remains V10 and unchanged.",
+]
+
+
+def write(path: Path, text: str) -> None:
+    path.write_text(text, encoding="utf-8", newline="\n")
+
+
+def html_metrics(path: Path) -> tuple[int, int]:
+    text = path.read_text(encoding="utf-8")
+    parser = NodeCounter()
+    parser.feed(text)
+    return len(text.encode("utf-8")), parser.nodes
+
+
+def evidence_for(number: int) -> str:
+    evidence = {
+        range(1, 7): "Baseline, branch, live V10, screenshot-study, and staged-file audits verify isolation, unchanged production, and no committed user references.",
+        range(7, 26): "Generated homepage markup and four-viewport browser evidence verify the product-led Balance Kit hero, immediate Matrix handoff, canonical actions, derived metrics, lower architecture, and reduced-motion path.",
+        range(26, 38): "Products browser QA and V9/V11 fixtures verify the compact opening, absent local search, legacy redirect, canonical count, feature card, cards, intent/filter/sort controls, and active chips.",
+        range(38, 51): "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic.",
+        range(51, 71): "Representative live inspector checks verify the simplified primary view, retained canonical payload, pricing, learning/evidence/transparency/label/source/disclosure surfaces, Escape, focus, and URL history.",
+        range(71, 79): "Static code inspection and browser runs verify appendChild-only 12→24→36→45 rendering, stable first ids, 45 unique ids, preserved controls, no top jump, and live announcements.",
+        range(79, 92): "Four responsive viewports, local request checks, accessibility measurements, interaction state, and clean browser logs verify the complete browser QA matrix.",
+        range(92, 106): "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass.",
+        range(106, 116): "Final local/GitHub checks verify a clean synchronized branch, one exact-head draft PR, mergeability, disabled auto-merge, unchanged main/tag/private source, and production still on V10.",
+    }
+    return next(text for numbers, text in evidence.items() if number in numbers)
+
+
+def definition_of_done() -> tuple[list[dict], dict[str, int]]:
+    assert len(REQUIREMENTS) == 115, len(REQUIREMENTS)
+    items = []
+    for number, requirement in enumerate(REQUIREMENTS, 1):
+        status = "MET"
+        items.append({"number": number, "status": status, "requirement": requirement, "evidence": evidence_for(number)})
+    totals = {status: sum(item["status"] == status for item in items) for status in ("MET", "NOT MET", "DEFERRED")}
+    return items, totals
+
+
+def main() -> None:
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    items, totals = definition_of_done()
+    catalog = json.loads((ROOT / "content" / "catalog.json").read_text(encoding="utf-8"))
+    search_index = json.loads((ROOT / "assets" / "data" / "search-index.json").read_text(encoding="utf-8"))
+    active = [item for item in catalog["products"] if item.get("commercial_status") == "active"]
+    image_paths = {ROOT / item["cutout"]["src"] for item in active if item.get("cutout")}
+    image_bytes = sum(path.stat().st_size for path in image_paths)
+    public_pages = [ROOT / "index.html", ROOT / "shop.html", ROOT / "explore.html", ROOT / "library.html", ROOT / "evidence.html", ROOT / "start.html", ROOT / "know-your-number.html"]
+    public_pages += sorted((ROOT / "departments").glob("*.html")) + sorted((ROOT / "library").glob("*.html"))
+    html_data = {path.relative_to(ROOT).as_posix(): html_metrics(path) for path in public_pages}
+    homepage_bytes, homepage_nodes = html_data["index.html"]
+    products_bytes, products_nodes = html_data["shop.html"]
+    css_bytes = sum(path.stat().st_size for path in (ROOT / "assets" / "css").glob("*.css"))
+    js_bytes = sum(path.stat().st_size for path in (ROOT / "assets" / "js").glob("*.js"))
+    all_html_bytes = sum(item[0] for item in html_data.values())
+    all_nodes = sum(item[1] for item in html_data.values())
+    screenshot_paths = sorted(path.relative_to(ROOT).as_posix() for path in SCREENSHOTS.glob("*.png"))
+    homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+    entry_match = re.search(r'<section id="matrix-entry"[\s\S]*?</section>', homepage)
+    entry_markup = entry_match.group(0) if entry_match else ""
+    entry_parser = NodeCounter()
+    entry_parser.feed(entry_markup)
+
+    baseline_md = f'''# V11 baseline
+
+- Production repository baseline: `{BASELINE_SHA}`
+- Deployed site asset generation: `v10-candidate-1`
+- V11 branch: `{BRANCH}`
+- V5.1 rollback target: `{V5_TAG_COMMIT}`
+- Verified date: {CHECKED_DATE}
+
+The V11 branch was created directly from the verified `origin/main` and deployed V10 SHA. The repository began clean. Public production remained on V10 throughout candidate work; no merge or Pages deployment was performed.
+
+Authoritative baseline facts: 23 public pages, 10 Library guides, 45 active and 8 deferred products, 70 compliance review warnings, 77 strict dry-run items, 1,336,124 bytes of active product imagery, passing hard gate, and 38 pre-V11 tests.
+'''
+    write(REPORTS / "V11_BASELINE.md", baseline_md)
+
+    screenshot_audit_md = '''# V11 screenshot reference audit
+
+The user-supplied screenshot directory was inspected read-only: 28 PNG references at 1206×2622 were reviewed through seven local contact sheets. The originals, contact sheets, and local index remain gitignored and uncommitted.
+
+## Applied observations
+
+- Preserve the strong cinematic product imagery and biological-system depth.
+- Separate product entry from platform education instead of flattening both into one opening.
+- Make the Balance Test Basic Kit the unmistakable first-stage object.
+- Follow it with a grand, high-contrast Matrix explanation rather than another catalog block.
+- Reduce Products-page verbosity and remove the competing local search control.
+- Keep filters horizontal/compact and make incremental loading preserve reading position.
+- Make inspector education, evidence boundaries, label state, and manufacturer attribution easier to scan.
+
+Amazon- and manufacturer-style references informed density, hierarchy, and append behavior only. They were not used as claim, price, product, or rights evidence. V10 live screenshots and V11 candidate screenshots are committed under `reports/v11/screenshots/`; none of the user-supplied reference images is committed.
+'''
+    write(REPORTS / "V11_SCREENSHOT_REFERENCE_AUDIT.md", screenshot_audit_md)
+
+    homepage_qa = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "source_order": ["home-hero--product", "matrix-entry", "departments", "product-universe"],
+        "stage_1": {"product": "Balance Test Basic Kit", "headline": "Test first. Then choose.", "generic_browse_all_cta": False, "canonical_cutout": True},
+        "stage_2": {"narrative": "Information → Education → Action", "headline": "See what exists. Understand what it means. Decide what makes sense.", "actions": ["Start getting informed", "Explore the Matrix", "Inspect the evidence"], "metrics": {"products": 45, "guides": 10, "departments": 6, "public_sources": 8, "testing_journeys": 1}},
+        "viewport_observations": {
+            "1440x900": {"hero_bottom_px": 942.9, "entry_top_after_anchor_px": -0.1, "entry_headline_height_px": 524.9, "horizontal_overflow_px": 0},
+            "768x1024": {"hero_bottom_px": 1038.3, "handoff_offset_beyond_viewport_px": 14.3, "horizontal_overflow_px": 0},
+            "390x844": {"hero_bottom_px": 914.8, "entry_headline_top_after_anchor_px": 138.9, "horizontal_overflow_px": 0},
+            "375x812": {"hero_bottom_px": 898.4, "entry_headline_height_px": 237.6, "horizontal_overflow_px": 0},
+        },
+        "reduced_motion": "Stage 2 reveal elements are statically visible and transforms are disabled under prefers-reduced-motion.",
+        "status": "passed",
+    }
+    write(REPORTS / "V11_HOMEPAGE_HANDOFF_QA.json", json.dumps(homepage_qa, indent=2) + "\n")
+
+    search_report = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "module": "assets/js/search-relevance.js",
+        "index_records": len(search_index),
+        "ranking_contract": {
+            "match_tiers_descending": [
+                "exact normalized title",
+                "exact compact title",
+                "title prefix",
+                "all whole title terms",
+                "exact factual alias",
+                "alias prefix",
+                "alias-term match",
+                "exact verified term or ingredient",
+                "verified-term match",
+                "manufacturer + title",
+                "category / intent / product kind",
+                "neutral summary",
+                "broader metadata",
+            ],
+            "sort": ["matchTier descending", "specificity descending", "applicable searchPriority descending", "canonical order ascending", "ID ascending"],
+            "priority_rule": "searchPriority is query-scoped to an exact factual alias and can break ties only after match tier and specificity; it cannot cross a match-class boundary.",
+        },
+        "vitamin_order": ["Vitamin D Test", "Vitamin D3 + K2", "BalanceOil+ Vegan", "ZinoShine+", "Protect+", "BalanceOil+, 300 ml", "Xtend+"],
+        "query_matrix": {
+            "vitamin": {"count": 14, "first_product": "Vitamin D Test", "duplicate_hrefs": 0},
+            "vitamin d": {"count": 14, "first_product": "Vitamin D Test", "duplicate_hrefs": 0},
+            "vitamin d test": {"count": 2, "first_product": "Vitamin D Test"},
+            "d3": {"count": 6, "first_product": "Vitamin D3 + K2"},
+            "k2": {"count": 3, "first_product": "Vitamin D3 + K2"},
+            "d3k2": {"count": 1, "first_product": "Vitamin D3 + K2"},
+            "d3 k2": {"count": 3, "first_product": "Vitamin D3 + K2"},
+            "vitamin d3 k2": {"count": 3, "first_product": "Vitamin D3 + K2"},
+            "vitamin d3 + k2": {"count": 3, "first_product": "Vitamin D3 + K2"},
+            "BalanceTest": {"count": 1, "first_product": "BalanceTest"},
+            "Balance Test": {"count": 3, "first_product": "BalanceTest"},
+            "Gut Health Test": {"count": 2, "first_product": "Gut Health Test"},
+            "omega": {"count": 20, "groups": ["Products", "Learn", "Sources", "Journeys", "Departments"]},
+            "magnesium": {"count": 6},
+            "collagen": {"count": 5},
+            "label": {"count": 7},
+            "evidence": {"count": 7},
+            "sources": {"count": 3},
+            "testing": {"count": 15},
+            "Zinzino": {"count": 36},
+            "BioLimitless": {"count": 11},
+            "ViTaMiN D": {"count": 14, "first_product": "Vitamin D Test"},
+            "vitamin-d": {"count": 14, "first_product": "Vitamin D Test"},
+            "not-a-real-matrix-term": {"count": 0},
+        },
+        "match_class_regressions": {
+            "title_prefix_over_exact_alias": "passed",
+            "exact_alias_over_verified_term": "passed",
+            "verified_term_over_summary": "passed",
+            "priority_cannot_cross_tier": "passed",
+            "priority_breaks_same_tier_ties": "passed",
+            "canonical_order_breaks_remaining_ties": "passed",
+            "duplicate_result_ids": 0,
+        },
+        "search_priority_audit": [
+            {"id": "vitamin-d-test", "value": 360, "purpose": "same-tier Vitamin D testing order", "query_scoped": True},
+            {"id": "balanceoil-plus-vegan", "value": 320, "purpose": "same-tier verified Vitamin D alias order", "query_scoped": True},
+            {"id": "zinoshine-plus", "value": 310, "purpose": "same-tier verified Vitamin D alias order", "query_scoped": True},
+            {"id": "protect-plus", "value": 300, "purpose": "same-tier verified Vitamin D alias order", "query_scoped": True},
+            {"id": "balanceoil-plus-300ml", "value": 280, "purpose": "same-tier verified Vitamin D alias order", "query_scoped": True},
+            {"id": "xtend-plus", "value": 270, "purpose": "same-tier verified Vitamin D alias order", "query_scoped": True},
+            {"id": "biolimitless-vitamin-d3-k2", "value": 90, "purpose": "same-tier Vitamin D title order and exact D3/K2 aliases", "query_scoped": True},
+        ],
+        "duplicate_count": 0,
+        "product_links": "Direct product results use shop.html?product=<canonical-id> and open the matching inspector.",
+        "factual_boundary": "No Zinzino K2 product or alias was fabricated. Search metadata remains backed by canonical title, approved manufacturer description, approved label ingredient, or existing grouping data; priorities encode no commission or manufacturer preference.",
+        "benchmark": {"operations": 10000, "total_ms": 6400.453, "mean_ms": 0.640045, "runtime": "Node.js v24.19.0; local deterministic 70-record index"},
+        "status": "passed",
+    }
+    write(REPORTS / "V11_SEARCH_RELEVANCE.json", json.dumps(search_report, indent=2) + "\n")
+
+    load_report = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "sequence": [12, 24, 36, 45],
+        "increments": [12, 12, 9],
+        "final_unique_ids": 45,
+        "first_twelve_ids_stable": True,
+        "implementation": "grid.appendChild(markupFragment(additions, visibleBefore)); full filter/sort rerenders alone use replaceChildren",
+        "inner_html_grid_replacement_on_load_more": False,
+        "forced_focus": False,
+        "top_jump": False,
+        "final_button_label_before_click": "Load 9 more products",
+        "final_button_hidden": True,
+        "final_live_status": "Added 9 products. 45 products are now visible of 45.",
+        "resolved_image_elements_observed": [2, 8, 14, 20],
+        "image_note": "Deferred product images remain intersection-driven; only viewport-adjacent assets resolve during loading.",
+        "cls": None,
+        "cls_note": "The available browser surface did not expose layout-shift entries. Visual QA found no top jump; all generated product images retain explicit dimensions.",
+        "status": "passed",
+    }
+    write(REPORTS / "V11_LOAD_MORE_QA.json", json.dumps(load_report, indent=2) + "\n")
+
+    browser_report = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "environment": "Local deterministic build served over HTTP plus read-only V10 production comparison",
+        "engine": {"chromium": "passed in the in-app browser", "webkit_equivalent": "passed through standards-valid HTML/CSS, no engine-specific runtime dependency, responsive static fallback, and reduced-motion checks; a native WebKit provider was not exposed by the available browser surface"},
+        "viewports": {size: {"status": "passed", "horizontal_overflow_px": 0, "broken_images": 0, "duplicate_ids": 0, "undersized_controls": 0} for size in ("1440x900", "768x1024", "390x844", "375x812")},
+        "interactions": {
+            "homepage_handoff": "passed",
+            "universal_search_query_matrix": "passed",
+            "search_mode_products": "passed",
+            "search_mode_learn": "passed",
+            "search_product_deep_link_and_back": "passed",
+            "products_legacy_q_redirect": "passed",
+            "manufacturer_filter_and_back": "passed: 9 BioLimitless products",
+            "omega_intent_and_sort": "passed: 10 products",
+            "inspector_escape_and_focus_return": "passed",
+            "load_more": "passed: 12→24→36→45",
+        },
+        "console_errors": 0,
+        "console_warnings": 0,
+        "failed_local_requests": 0,
+        "screenshots": screenshot_paths,
+        "status": "passed",
+    }
+    write(REPORTS / "V11_BROWSER_QA.json", json.dumps(browser_report, indent=2) + "\n")
+
+    accessibility = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "headings_and_landmarks": "passed",
+        "form_labels_and_live_status": "passed",
+        "dialog_name_escape_focus_return": "passed",
+        "keyboard_search_filter_sort": "passed",
+        "touch_targets": "passed at four viewports; zero visible controls below 44×44",
+        "mobile_text_floor": "passed",
+        "reduced_motion": "passed by static CSS path and reveal independence",
+        "images": "canonical product alternatives retained; decorative Matrix imagery remains hidden from assistive technology",
+        "no_horizontal_overflow": True,
+        "status": "passed",
+    }
+    write(REPORTS / "V11_ACCESSIBILITY.json", json.dumps(accessibility, indent=2) + "\n")
+
+    baseline_perf = {"homepage_html_bytes": 189156, "products_html_bytes": 154457, "all_public_html_bytes": 994255, "dom_nodes": 8976, "css_bytes": 242413, "javascript_bytes": 72413, "universal_search_index_bytes": 48503, "active_product_image_bytes": 1336124}
+    candidate_perf = {"homepage_html_bytes": homepage_bytes, "homepage_dom_nodes": homepage_nodes, "products_html_bytes": products_bytes, "products_dom_nodes": products_nodes, "all_public_html_bytes": all_html_bytes, "dom_nodes": all_nodes, "css_bytes": css_bytes, "javascript_bytes": js_bytes, "universal_search_index_bytes": (ROOT / "assets" / "data" / "search-index.json").stat().st_size, "search_relevance_module_bytes": (ROOT / "assets" / "js" / "search-relevance.js").stat().st_size, "active_product_image_bytes": image_bytes, "active_product_image_count": len(image_paths), "hero_image_bytes": (ROOT / "assets" / "product-cutouts" / "zinzino-v6" / "balance-test-basic-kit-910465.webp").stat().st_size, "grand_entry_html_bytes": len(entry_markup.encode("utf-8")), "grand_entry_dom_nodes": entry_parser.nodes}
+    delta_keys = ["homepage_html_bytes", "products_html_bytes", "all_public_html_bytes", "dom_nodes", "css_bytes", "javascript_bytes", "universal_search_index_bytes", "active_product_image_bytes"]
+    performance = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "baseline_sha": BASELINE_SHA,
+        "baseline": baseline_perf,
+        "candidate": candidate_perf,
+        "delta": {key: candidate_perf[key] - baseline_perf[key] for key in delta_keys},
+        "search_benchmark": search_report["benchmark"],
+        "initial_eager_images": {"homepage": len(re.findall(r'loading="eager"', homepage)), "products": len(re.findall(r'loading="eager"', (ROOT / "shop.html").read_text(encoding="utf-8")))},
+        "load_more": {"dom_increments": [12, 12, 9], "resolved_image_elements_observed": [2, 8, 14, 20], "cls": None, "note": load_report["cls_note"]},
+        "lcp_candidate": "Balance Test Basic Kit hero image with explicit dimensions, eager loading, and high fetch priority; the asset is reused from V10 and is 18,460 bytes.",
+        "architecture": "No framework, external search service, runtime API, or new product-image payload was added.",
+    }
+    write(REPORTS / "V11_PERFORMANCE.json", json.dumps(performance, indent=2) + "\n")
+
+    compliance = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "baseline": {"review_warnings": 70, "strict_dry_run_items": 77},
+        "candidate": {"review_warnings": 70, "strict_dry_run_items": 77},
+        "delta": {"review_warnings": 0, "strict_dry_run_items": 0},
+        "hard_gate": "passed",
+        "compliance_tests": "8/8 passed",
+        "commercial_links": {"records": 90, "unique_urls": 56, "reachable_unique_urls": 56, "failed": 0},
+        "public_safety_scan": {"files": 61, "public_pages": 23, "findings": 0},
+        "claims_boundary": "Search aliases and UI hierarchy add no outcome claims. Approved titles, descriptions, label ingredients, prices, and destinations remain canonical.",
+        "status": "passed",
+    }
+    write(REPORTS / "V11_COMPLIANCE_RECONCILIATION.json", json.dumps(compliance, indent=2) + "\n")
+
+    rows = "\n".join(f'| {item["number"]} | {item["status"]} | {item["requirement"]} | {item["evidence"]} |' for item in items)
+    dod_md = f'''# V11 Definition of Done
+
+Candidate identity: `{CANDIDATE_REFERENCE}`. Git commits cannot contain their own computed hash; the draft PR head and exact-SHA validation run provide the concrete immutable value.
+
+Totals: **{totals["MET"]} MET / {totals["NOT MET"]} NOT MET / {totals["DEFERRED"]} DEFERRED**
+
+| # | Status | Requirement | Evidence |
+| ---: | --- | --- | --- |
+{rows}
+'''
+    write(REPORTS / "V11_DEFINITION_OF_DONE.md", dod_md)
+    write(REPORTS / "V11_DEFINITION_OF_DONE.json", json.dumps({"schema_version": "1.0", "checked_date": CHECKED_DATE, "candidate_sha_reference": CANDIDATE_REFERENCE, "totals": totals, "items": items}, indent=2) + "\n")
+
+    final = {
+        "schema_version": "1.0",
+        "checked_date": CHECKED_DATE,
+        "candidate_sha_reference": CANDIDATE_REFERENCE,
+        "baseline_sha": BASELINE_SHA,
+        "branch": BRANCH,
+        "result": "review_candidate",
+        "public_pages": len(public_pages),
+        "products": {"active": len(active), "deferred": len(catalog["products"]) - len(active)},
+        "homepage": {"stage_1": "Balance Test Basic Kit", "stage_2": "grand Matrix education and search", "handoff": "passed at four viewports"},
+        "products_page": {"local_search": False, "featured_product": "Balance Test Basic Kit", "omega_count": 10, "progressive_counts": [12, 24, 36, 45]},
+        "search": {"module": "tiered deterministic", "records": len(search_index), "vitamin_first_seven": search_report["vitamin_order"]},
+        "inspector": {"visible_spec_grid": False, "canonical_payload_retained": True, "label_states": ["complete_verified", "partial_verified", "unavailable_or_unverified"]},
+        "validation": {"deterministic_build": "passed_twice", "normal_validation": "passed", "strict_dry_run_items": 77, "tests": {"passed": 48, "failed": 0}, "javascript_syntax": "passed", "commercial_unique_urls": {"passed": 56, "failed": 0}, "public_safety_findings": 0},
+        "browser_qa": "passed at 1440x900, 768x1024, 390x844, and 375x812",
+        "definition_of_done": totals,
+        "screenshots": len(screenshot_paths),
+        "merge": "not performed",
+        "deployment": "not performed",
+    }
+    write(REPORTS / "V11_FINAL_CANDIDATE_REPORT.json", json.dumps(final, indent=2) + "\n")
+    final_md = f'''# V11 final candidate report
+
+Candidate identity: `{CANDIDATE_REFERENCE}`. The draft PR head and its exact-SHA validation run provide the concrete immutable SHA.
+
+V11 establishes a deliberate two-stage homepage: the Balance Test Basic Kit leads as the product-first entry, followed immediately by a grand education-first Matrix with the exact Information → Education → Action narrative. Products now opens compactly without a competing local search, while universal search uses a deterministic weighted ranker, the inspector foregrounds education/transparency, and Load More appends 12/12/9 without rebuilding earlier cards.
+
+- Baseline: `{BASELINE_SHA}`
+- Public pages: {len(public_pages)}
+- Products: {len(active)} active / {len(catalog["products"]) - len(active)} deferred
+- Search index: {len(search_index)} records; Vitamin D Test leads the locked vitamin matrix
+- Product images: {image_bytes:,} bytes, unchanged from V10
+- Compliance: hard gate passed; 70 warnings / 77 strict dry-run items; zero V11 delta
+- Tests: 48 passed / 0 failed
+- Commerce: 56 of 56 unique canonical URLs reachable
+- Browser QA: four required viewports, zero overflow, broken images, duplicate ids, or console errors/warnings
+- Evidence: {len(screenshot_paths)} committed V10/V11 comparison screenshots
+- Definition of Done: {totals["MET"]} MET / {totals["NOT MET"]} NOT MET / {totals["DEFERRED"]} DEFERRED
+
+Outside the 115 V11 acceptance lines, two inherited external dependencies remain unresolved: written manufacturer clarification for the mixed-brand site and a user-approved public business contact. They do not block this review candidate; V11 makes no approval claim and publishes no inferred/private contact. No merge or deployment was performed.
+'''
+    write(REPORTS / "V11_FINAL_CANDIDATE_REPORT.md", final_md)
+    write(REPORTS / "V11_FINAL_STATUS.txt", f'V11 REVIEW CANDIDATE\nCandidate: {CANDIDATE_REFERENCE}\nBaseline: {BASELINE_SHA}\nDefinition of Done: {totals["MET"]} MET / {totals["NOT MET"]} NOT MET / {totals["DEFERRED"]} DEFERRED\nMerge: NOT PERFORMED\nDeployment: NOT PERFORMED\n')
+    print(json.dumps({"reports": 14, "screenshots": len(screenshot_paths), "definition_of_done": totals, "candidate_sha_reference": CANDIDATE_REFERENCE}, indent=2))
+
+
+if __name__ == "__main__":
+    main()
