@@ -1,0 +1,5 @@
+V11.2 CANDIDATE READY FOR USER REVIEW
+Candidate implementation SHA: 56347ababaea5af5e088d26d52f61df807ae4f70
+Baseline SHA: bb6cc6689bb68eb3b03e4387ead8cae893eac5a8
+68 public pages; 45 active product pages; 59 tests; browser QA clean at 1440, 768, 390, and 375.
+No merge. No deployment.

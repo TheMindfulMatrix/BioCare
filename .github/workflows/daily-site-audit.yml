@@ -48,7 +48,7 @@ jobs:
         if: steps.schedule.outputs.run == 'true'
         run: |
           python scripts/build.py
-          git diff --exit-code -- index.html explore.html evidence.html shop.html library.html start.html know-your-number.html departments/ library/ assets/data/search-index.json robots.txt sitemap.xml
+          git diff --exit-code -- index.html explore.html evidence.html shop.html library.html start.html know-your-number.html departments/ library/ products/ assets/data/search-index.json robots.txt sitemap.xml
           python scripts/validate.py
           python scripts/validate.py --compliance-strict --compliance-dry-run
           python -m unittest discover -s tests -v

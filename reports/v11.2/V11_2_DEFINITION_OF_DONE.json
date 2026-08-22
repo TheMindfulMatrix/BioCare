@@ -1,0 +1,761 @@
++{
+  "candidateSha": "56347ababaea5af5e088d26d52f61df807ae4f70",
+  "totals": {
+    "MET": 125,
+    "NOT_MET": 0,
+    "DEFERRED": 0
+  },
+  "items": [
+    {
+      "id": 1,
+      "status": "MET",
+      "requirement": "Starts from current production baseline",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 2,
+      "status": "MET",
+      "requirement": "Work isolated to agent/v11.2-platform-maturity",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 3,
+      "status": "MET",
+      "requirement": "main remains unchanged",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 4,
+      "status": "MET",
+      "requirement": "No deployment occurs",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 5,
+      "status": "MET",
+      "requirement": "All active products receive canonical dedicated pages",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 6,
+      "status": "MET",
+      "requirement": "Product pages derive from canonical product data",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 7,
+      "status": "MET",
+      "requirement": "Product identity included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 8,
+      "status": "MET",
+      "requirement": "Manufacturer included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 9,
+      "status": "MET",
+      "requirement": "Verified pricing included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 10,
+      "status": "MET",
+      "requirement": "Neutral summaries included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 11,
+      "status": "MET",
+      "requirement": "Learn content included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 12,
+      "status": "MET",
+      "requirement": "Evidence content included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 13,
+      "status": "MET",
+      "requirement": "Manufacturer transparency included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 14,
+      "status": "MET",
+      "requirement": "Label status included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 15,
+      "status": "MET",
+      "requirement": "Official Product Source included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 16,
+      "status": "MET",
+      "requirement": "Disclosure included",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 17,
+      "status": "MET",
+      "requirement": "Required notices preserved",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 18,
+      "status": "MET",
+      "requirement": "Raw catalog metadata not foregrounded",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 19,
+      "status": "MET",
+      "requirement": "Relationships derive from canonical mappings",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 20,
+      "status": "MET",
+      "requirement": "No symptom or disease relationships added",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 21,
+      "status": "MET",
+      "requirement": "Product cards remain compact",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 22,
+      "status": "MET",
+      "requirement": "Product badges are factual",
+      "evidence": "Verified from canonical builder output and product-page tests."
+    },
+    {
+      "id": 23,
+      "status": "MET",
+      "requirement": "Mobile bottom nav exists at 375px",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 24,
+      "status": "MET",
+      "requirement": "Mobile bottom nav exists at 390px",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 25,
+      "status": "MET",
+      "requirement": "Mobile bottom nav does not obscure content",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 26,
+      "status": "MET",
+      "requirement": "Mobile bottom nav is accessible",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 27,
+      "status": "MET",
+      "requirement": "Universal search retains all content groups",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 28,
+      "status": "MET",
+      "requirement": "Search result cards improved",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 29,
+      "status": "MET",
+      "requirement": "Search empty states useful",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 30,
+      "status": "MET",
+      "requirement": "Search deterministic",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 31,
+      "status": "MET",
+      "requirement": "Library discovery improved",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 32,
+      "status": "MET",
+      "requirement": "Library filters use canonical metadata",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 33,
+      "status": "MET",
+      "requirement": "Library articles not rewritten unnecessarily",
+      "evidence": "Verified in responsive navigation, search, card, and Library implementations."
+    },
+    {
+      "id": 34,
+      "status": "MET",
+      "requirement": "Evidence cards show source type",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 35,
+      "status": "MET",
+      "requirement": "Evidence cards show publisher",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 36,
+      "status": "MET",
+      "requirement": "Evidence cards show support scope",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 37,
+      "status": "MET",
+      "requirement": "Evidence cards show limitations",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 38,
+      "status": "MET",
+      "requirement": "Manufacturer documentation distinct from independent evidence",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 39,
+      "status": "MET",
+      "requirement": "Last-reviewed metadata standardized",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 40,
+      "status": "MET",
+      "requirement": "No review date fabricated",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 41,
+      "status": "MET",
+      "requirement": "Breadcrumbs implemented where useful",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 42,
+      "status": "MET",
+      "requirement": "Breadcrumbs accessible",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 43,
+      "status": "MET",
+      "requirement": "Breadcrumb structured data valid",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 44,
+      "status": "MET",
+      "requirement": "Matrix panel system consistent",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 45,
+      "status": "MET",
+      "requirement": "Interaction states standardized",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 46,
+      "status": "MET",
+      "requirement": "Actionable elements never look disabled",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 47,
+      "status": "MET",
+      "requirement": "Department identities subtly differentiated",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 48,
+      "status": "MET",
+      "requirement": "Department visuals remain coherent",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 49,
+      "status": "MET",
+      "requirement": "Desktop density improved",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 50,
+      "status": "MET",
+      "requirement": "Mobile readability intact",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 51,
+      "status": "MET",
+      "requirement": "Section transitions restrained",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 52,
+      "status": "MET",
+      "requirement": "Reduced motion works",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 53,
+      "status": "MET",
+      "requirement": "Loading states only where necessary",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 54,
+      "status": "MET",
+      "requirement": "Empty states useful",
+      "evidence": "Verified by generated markup, CSS states, and four-viewport browser QA."
+    },
+    {
+      "id": 55,
+      "status": "MET",
+      "requirement": "Product social metadata page-specific",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 56,
+      "status": "MET",
+      "requirement": "Library social metadata correct",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 57,
+      "status": "MET",
+      "requirement": "Department metadata correct",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 58,
+      "status": "MET",
+      "requirement": "Evidence metadata correct",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 59,
+      "status": "MET",
+      "requirement": "Structured data truthful",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 60,
+      "status": "MET",
+      "requirement": "No fake ratings",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 61,
+      "status": "MET",
+      "requirement": "No fake reviews",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 62,
+      "status": "MET",
+      "requirement": "No fake availability",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 63,
+      "status": "MET",
+      "requirement": "Product pages included in sitemap",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 64,
+      "status": "MET",
+      "requirement": "Product pages have one H1",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 65,
+      "status": "MET",
+      "requirement": "Product pages have unique titles",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 66,
+      "status": "MET",
+      "requirement": "Product pages have unique useful descriptions",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 67,
+      "status": "MET",
+      "requirement": "Product pages have canonical URLs",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 68,
+      "status": "MET",
+      "requirement": "Product pages use /BioCare/-safe links",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 69,
+      "status": "MET",
+      "requirement": "Product pages expose no private data",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 70,
+      "status": "MET",
+      "requirement": "Product pages scale from canonical generation",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 71,
+      "status": "MET",
+      "requirement": "Catalog remains 45 active products",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 72,
+      "status": "MET",
+      "requirement": "Deferred products remain excluded",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 73,
+      "status": "MET",
+      "requirement": "Search includes product-page destinations",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 74,
+      "status": "MET",
+      "requirement": "Products link to education",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 75,
+      "status": "MET",
+      "requirement": "Education links to products",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 76,
+      "status": "MET",
+      "requirement": "Products link to evidence",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 77,
+      "status": "MET",
+      "requirement": "Evidence links to relevant context",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 78,
+      "status": "MET",
+      "requirement": "Evidence relationships do not overstate proof",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 79,
+      "status": "MET",
+      "requirement": "Active product-image payload does not materially regress",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 80,
+      "status": "MET",
+      "requirement": "No framework migration",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 81,
+      "status": "MET",
+      "requirement": "No external search provider",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 82,
+      "status": "MET",
+      "requirement": "No heavy SPA",
+      "evidence": "Verified by metadata, relationship, sitemap, and schema validation."
+    },
+    {
+      "id": 83,
+      "status": "MET",
+      "requirement": "Desktop QA passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 84,
+      "status": "MET",
+      "requirement": "Tablet QA passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 85,
+      "status": "MET",
+      "requirement": "390px QA passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 86,
+      "status": "MET",
+      "requirement": "375px QA passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 87,
+      "status": "MET",
+      "requirement": "No horizontal overflow",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 88,
+      "status": "MET",
+      "requirement": "No broken images",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 89,
+      "status": "MET",
+      "requirement": "No failed local requests",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 90,
+      "status": "MET",
+      "requirement": "No console errors",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 91,
+      "status": "MET",
+      "requirement": "No console warnings",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 92,
+      "status": "MET",
+      "requirement": "No duplicate IDs",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 93,
+      "status": "MET",
+      "requirement": "No below-floor text",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 94,
+      "status": "MET",
+      "requirement": "No below-floor targets",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 95,
+      "status": "MET",
+      "requirement": "Keyboard navigation passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 96,
+      "status": "MET",
+      "requirement": "Focus behavior passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 97,
+      "status": "MET",
+      "requirement": "Escape behavior passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 98,
+      "status": "MET",
+      "requirement": "Skip link passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 99,
+      "status": "MET",
+      "requirement": "Alt text passes",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 100,
+      "status": "MET",
+      "requirement": "Private-resource leakage remains zero",
+      "evidence": "Verified by the 272-state browser audit and permanent accessibility checks."
+    },
+    {
+      "id": 101,
+      "status": "MET",
+      "requirement": "Compliance hard gate passes",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 102,
+      "status": "MET",
+      "requirement": "Compliance fixtures pass",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 103,
+      "status": "MET",
+      "requirement": "Permanent validation passes",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 104,
+      "status": "MET",
+      "requirement": "V11.2 tests pass",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 105,
+      "status": "MET",
+      "requirement": "Advisory warnings reconciled",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 106,
+      "status": "MET",
+      "requirement": "Strict dry-run reconciled",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 107,
+      "status": "MET",
+      "requirement": "Metadata validation passes",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 108,
+      "status": "MET",
+      "requirement": "Sitemap validation passes",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 109,
+      "status": "MET",
+      "requirement": "Structured-data validation passes",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 110,
+      "status": "MET",
+      "requirement": "Commercial-link audit passes",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 111,
+      "status": "MET",
+      "requirement": "Product counts derive from canonical data",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 112,
+      "status": "MET",
+      "requirement": "Evidence counts derive from canonical data",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 113,
+      "status": "MET",
+      "requirement": "Library counts derive from canonical data",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 114,
+      "status": "MET",
+      "requirement": "Screenshots represent candidate",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 115,
+      "status": "MET",
+      "requirement": "Final report complete",
+      "evidence": "Verified by validation, compliance reconciliation, tests, reports, and canonical counts."
+    },
+    {
+      "id": 116,
+      "status": "MET",
+      "requirement": "Worktree clean at final SHA",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 117,
+      "status": "MET",
+      "requirement": "Local and remote SHAs match",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 118,
+      "status": "MET",
+      "requirement": "Exactly one draft V11.2 PR exists",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 119,
+      "status": "MET",
+      "requirement": "PR open, draft, mergeable, unmerged",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 120,
+      "status": "MET",
+      "requirement": "Auto-merge disabled",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 121,
+      "status": "MET",
+      "requirement": "main remains unchanged at handoff",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 122,
+      "status": "MET",
+      "requirement": "v5.1 remains unchanged",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 123,
+      "status": "MET",
+      "requirement": "Private repository remains unchanged",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 124,
+      "status": "MET",
+      "requirement": "No merge occurs",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    },
+    {
+      "id": 125,
+      "status": "MET",
+      "requirement": "No deployment occurs at handoff",
+      "evidence": "Verified with Git/GitHub state at handoff."
+    }
+  ]
+}
+

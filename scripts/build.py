@@ -280,7 +280,7 @@ def shared_footer_markup(data: dict, *, prefix: str) -> str:
     philosophy = data["brand"]["philosophy"]
     instagram = site["instagram"]
     home = f"{prefix}index.html"
-    return f'''<footer class="site-footer section-dark">
+    return f'''<nav class="mobile-dock" aria-label="Mobile navigation"><a href="{home}" data-dock-page="home"><span aria-hidden="true">⌂</span>Home</a><a href="{prefix}explore.html" data-dock-page="explore"><span aria-hidden="true">⌕</span>Explore</a><a href="{prefix}shop.html" data-dock-page="shop"><span aria-hidden="true">◇</span>Products</a><a href="{prefix}library.html" data-dock-page="library"><span aria-hidden="true">▤</span>Library</a><a href="{prefix}start.html" data-dock-page="start"><span aria-hidden="true">→</span>Start</a></nav><footer class="site-footer section-dark">
     <div class="footer-grid container-wide">
       <div><a href="{home}" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">{esc(philosophy)}</p></div>
       <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}shop.html">All products</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
@@ -699,10 +699,13 @@ def source_card_markup(source: dict, *, prefix: str = "", compact: bool = False)
     if compact:
         return f'''<article class="source-card source-card--compact" {data_attributes}><p class="interface-label">{esc(source_type_label(source["resource_type"]))}</p><h3>{esc(source["title"])}</h3><p>{esc(source["public_summary"])}</p><a href="{prefix}evidence.html?source={esc(source["id"], attribute=True)}">Inspect source context →</a></article>'''
     date = source.get("publication_date") or "Date not stated"
+    related_products = "".join(f'<a href="{prefix}products/{esc(item, attribute=True)}.html">{esc(item.replace("-", " ").title())}</a>' for item in source.get("product_ids", []))
+    related_articles = "".join(f'<a href="{prefix}library/{esc(item, attribute=True)}.html">{esc(item.replace("-", " ").title())}</a>' for item in source.get("article_ids", []))
+    connections = f'<div class="source-card__connections"><strong>Connected records</strong>{related_products}{related_articles}</div>' if related_products or related_articles else ""
     return f'''<article id="source-{esc(source["id"], attribute=True)}" class="source-card" data-public-source="{esc(source["id"], attribute=True)}" {data_attributes}>
       <header><p class="interface-label">{esc(source_type_label(source["resource_type"]))}</p><span>{esc(manufacturer)}</span><h3>{esc(source["title"])}</h3><p class="source-card__publisher">{esc(source["publisher"])}</p></header>
       <dl class="source-card__meta"><div><dt>Published</dt><dd>{esc(date)}</dd></div><div><dt>Link checked</dt><dd>{esc(source["checked_date"])}</dd></div><div><dt>Topics</dt><dd>{esc(topics)}</dd></div></dl>
-      <p>{esc(source["public_summary"])}</p>
+      <p>{esc(source["public_summary"])}</p>{connections}
       <details><summary>Scope and limitations</summary><h4>Scope</h4><p>{esc(source["scope"])}</p><h4>Limitations</h4><p>{esc(source["limitations"])}</p></details>
       <a class="source-card__link" href="{esc(source["public_url"], attribute=True)}" target="_blank" rel="noopener noreferrer" aria-label="Open public source: {esc(source["title"], attribute=True)} (opens in a new tab)">Open public source ↗{external_note()}</a>
     </article>'''
@@ -737,6 +740,7 @@ def shop_product_payload(product: dict, *, index: int, label_record: dict | None
         "whyItsHere": product["whyItsHere"],
         "environment": product["environment"],
         "destination": product["destination"],
+        "detailUrl": f'products/{product["id"]}.html',
         "cta": product["cta"],
         "price": {**product["price"], "affiliate_price_source": affiliate_source_url(product)},
         "cutout": product.get("cutout"),
@@ -799,7 +803,7 @@ def shop_compact_card_markup(product: dict, *, index: int) -> str:
         image = image_markup(product, eager=eager)
     return f'''<article id="product-{esc(product["id"], attribute=True)}" class="catalog-card{product_name_modifier(product["name"])}" data-shop-product data-product-id="{esc(product["id"], attribute=True)}" data-environment="{esc(product["environment"], attribute=True)}">
         <div class="catalog-card__visual"><span class="catalog-card__node" aria-hidden="true"></span>{image}</div>
-        <div class="catalog-card__body"><p class="catalog-card__meta">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h2>{esc(product["name"])}</h2><p class="catalog-card__description">{esc(product["description"])}</p>{shop_price_summary_markup(product)}<button class="catalog-card__inspect" type="button" data-product-open="{esc(product["id"], attribute=True)}" aria-label="View details for {esc(product["name"], attribute=True)}">View details</button></div>
+        <div class="catalog-card__body"><p class="catalog-card__meta">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h2>{esc(product["name"])}</h2><p class="catalog-card__description">{esc(product["description"])}</p>{shop_price_summary_markup(product)}<div class="catalog-card__actions"><a href="products/{esc(product["id"], attribute=True)}.html">Product page →</a><button class="catalog-card__inspect" type="button" data-product-open="{esc(product["id"], attribute=True)}" aria-label="Quick view for {esc(product["name"], attribute=True)}">Quick view</button></div></div>
       </article>'''
 
 
@@ -885,7 +889,7 @@ def library_article_markup(article: dict, library: dict, *, index: int = 1, arch
         source_count = len(article.get("sources", []))
         evidence_status = f'Evidence reviewed {esc(article["evidenceReviewed"])}' if article.get("evidenceReviewed") else "Evidence record available"
         visual = f'''<span class="library-article__index" aria-hidden="true">{index:02d}</span><span class="library-article__signal" aria-hidden="true"></span>{visual}<div class="library-article__evidence"><span>{evidence_status}</span><strong>{source_count:02d} sources</strong></div>'''
-    return f'''<article class="library-article" data-library-article data-reveal{archive_attribute}>
+    return f'''<article class="library-article" data-library-article data-library-category="{esc(article["category"], attribute=True)}" data-library-search="{esc((article["title"] + " " + article["summary"]).lower(), attribute=True)}" data-reveal{archive_attribute}>
         <div class="library-article__visual">{visual}</div>
         <div class="library-article__content">
           <p class="interface-label">{esc(category_name(library, article["category"]))}</p><h3>{esc(article["title"])}</h3><p>{esc(article["summary"])}</p>
@@ -933,7 +937,9 @@ def library_index_markup(library: dict, home: dict) -> str:
                 continue
             cards = "".join(library_article_markup(article, library) for article in matches)
             groups.append(f'''<section id="category-{esc(category["id"], attribute=True)}" class="library-group" aria-labelledby="category-{esc(category["id"], attribute=True)}-title"><h3 id="category-{esc(category["id"], attribute=True)}-title">{esc(category["name"])}</h3><div class="library-article-grid">{cards}</div></section>''')
-        return '<div data-library-state="published">' + "".join(groups) + "</div>"
+        options = "".join(f'<option value="{esc(category["id"], attribute=True)}">{esc(category["name"])}</option>' for category in library["categories"])
+        controls = f'<form class="library-controls" data-library-controls><label>Search guides<input type="search" placeholder="Search the Library…" data-library-query></label><label>Category<select data-library-category><option value="all">All categories</option>{options}</select></label><button type="reset">Clear</button><p data-library-count aria-live="polite">{len(articles)} guides</p></form>'
+        return '<div data-library-state="published">' + controls + "".join(groups) + '<p data-library-empty hidden>No guides match. Clear filters or explore all departments.</p></div>'
     return f'''<div class="library-empty" data-library-state="empty" data-reveal>
       <div class="library-empty__signal" aria-hidden="true"><span></span><span></span><span></span></div>
       <div><p class="interface-label">Coming to the Library</p><h3>{esc(home["library"]["status"])}</h3><p>{esc(home["library"]["statusCopy"])}</p><div class="library-empty__categories">{category_badges(library)}</div></div>
@@ -1124,6 +1130,14 @@ def article_replacements(
         hero_markup = '<div class="article-hero__placeholder" aria-hidden="true"><span></span><img src="../assets/brand/mark-gold.svg" width="64" height="64" alt=""></div>'
     takeaways = article_list_section("key-takeaways", "Key takeaways", article.get("keyTakeaways", []), "article-takeaways")
     published_by_slug = {item["slug"]: item for item in published_articles(library)}
+    discovery = load_json(ROOT / "content" / "discovery.json")
+    catalog = load_json(ROOT / "content" / "catalog.json")
+    related_intents = [item["intentId"] for item in discovery["departments"] if article["slug"] in item.get("articleSlugs", [])]
+    related_products = [item for item in active_products(catalog) if item["intent"] in related_intents][:4]
+    product_context = ""
+    if related_products:
+        links = "".join(f'<li><a href="../products/{esc(item["id"], attribute=True)}.html">{esc(item["name"])} →</a></li>' for item in related_products)
+        product_context = f'<section class="article-panel article-product-context"><p class="interface-label">Related product records</p><h2>Products in this learning context</h2><p>These are navigation connections, not evidence that a product produces an outcome.</p><ul>{links}</ul></section>'
     preview_banner = '<div class="preview-banner" role="status">Non-public article template preview · fixture content only · not for publication</div>' if preview else ""
     return {
         "{{DOCUMENT_HEAD}}": document_head_markup(
@@ -1165,6 +1179,7 @@ def article_replacements(
         "{{ARTICLE_EVIDENCE_SUMMARY}}": article_evidence_summary_markup(article.get("evidenceSummary")),
         "{{ARTICLE_EVIDENCE}}": article_list_section("evidence-notes", "Evidence notes", article.get("evidenceNotes", [])),
         "{{ARTICLE_LIMITATIONS}}": article_list_section("limitations", "Limitations", article.get("limitations", [])),
+        "{{ARTICLE_PRODUCT_CONTEXT}}": product_context,
         "{{ARTICLE_SOURCES}}": article_sources_markup(article.get("sources", [])),
         "{{ARTICLE_JOURNEY}}": article_journey_markup(article, published_by_slug),
     }
@@ -1181,7 +1196,7 @@ def discovery_records(data: dict, library: dict, discovery: dict, sources: list[
     for index,product in enumerate(active_products(data["catalog"])):
         ingredients=[item["ingredient"] for item in labels.get(product["id"],{}).get("ingredients",[])]
         cutout=product.get("cutout") or product.get("image") or {}
-        records.append({"id":product["id"],"type":"product","title":product["name"],"summary":product["description"],"href":f'shop.html?product={product["id"]}',"manufacturer":product["manufacturer"],"intent":product["intent"],"department":departments[product["intent"]]["title"],"category":product["category"],"productKind":product["productKind"],"variant":product["variantLabel"],"ingredients":ingredients,"verifiedIngredients":ingredients,"searchAliases":product.get("searchAliases",[]),"searchTerms":product.get("searchTerms",[]),"searchPriority":product.get("searchPriority",0),"topicIds":product.get("topicIds",[]),"searchGroup":product.get("searchGroup"),"image":{"src":cutout.get("src"),"alt":cutout.get("alt",product["name"])},"order":index})
+        records.append({"id":product["id"],"type":"product","title":product["name"],"summary":product["description"],"href":f'products/{product["id"]}.html',"manufacturer":product["manufacturer"],"intent":product["intent"],"department":departments[product["intent"]]["title"],"category":product["category"],"productKind":product["productKind"],"variant":product["variantLabel"],"ingredients":ingredients,"verifiedIngredients":ingredients,"searchAliases":product.get("searchAliases",[]),"searchTerms":product.get("searchTerms",[]),"searchPriority":product.get("searchPriority",0),"topicIds":product.get("topicIds",[]),"searchGroup":product.get("searchGroup"),"image":{"src":cutout.get("src"),"alt":cutout.get("alt",product["name"])},"order":index})
     for article in published_articles(library):
         related=[d["intentId"] for d in discovery["departments"] if article["slug"] in d["articleSlugs"]]
         hero=article.get("hero") or {}
@@ -1249,7 +1264,7 @@ def catalog_commercial_disclosures(site: dict, products: list[dict]) -> str:
 def compact_product_card(product: dict, *, prefix: str = "", index: int = 1) -> str:
     image=product.get("cutout") or product.get("image"); related=product.get("relatedEducation")
     learn=f'<a href="{prefix}{esc(related["href"],attribute=True)}">{esc(related["label"])} →</a>' if related else ""
-    return f'''<article class="discovery-product scan-frame" data-discovery-product data-id="{esc(product["id"],attribute=True)}" data-manufacturer="{esc(product["manufacturer"],attribute=True)}" data-intent="{esc(product["intent"],attribute=True)}" data-environment="{esc(product["environment"],attribute=True)}" data-category="{esc(product["productKind"],attribute=True)}" data-name="{esc(product["name"].lower(),attribute=True)}" data-order="{index}"><div class="discovery-product__stage"><span class="signal-node" aria-hidden="true"></span><img src="{prefix}{esc(image["src"],attribute=True)}" width="{int(image["width"])}" height="{int(image["height"])}" alt="{esc(image["alt"],attribute=True)}" loading="lazy" decoding="async"></div><div><p class="interface-label">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3>{price_markup(product,context="compact")}<div class="discovery-product__links"><a class="button button-primary" href="{esc(product["destination"],attribute=True)}" target="_blank" rel="sponsored noopener noreferrer" aria-label="Official product source for {esc(product["name"],attribute=True)} (opens in a new tab)">Official source ↗{external_note()}</a>{learn}</div></div></article>'''
+    return f'''<article class="discovery-product scan-frame" data-discovery-product data-id="{esc(product["id"],attribute=True)}" data-manufacturer="{esc(product["manufacturer"],attribute=True)}" data-intent="{esc(product["intent"],attribute=True)}" data-environment="{esc(product["environment"],attribute=True)}" data-category="{esc(product["productKind"],attribute=True)}" data-name="{esc(product["name"].lower(),attribute=True)}" data-order="{index}"><div class="discovery-product__stage"><span class="signal-node" aria-hidden="true"></span><img src="{prefix}{esc(image["src"],attribute=True)}" width="{int(image["width"])}" height="{int(image["height"])}" alt="{esc(image["alt"],attribute=True)}" loading="lazy" decoding="async"></div><div><p class="interface-label">{esc(product["manufacturer"])} / {esc(product["category"])}</p><h3>{esc(product["name"])}</h3>{price_markup(product,context="compact")}<div class="discovery-product__links"><a class="button button-primary" href="{prefix}products/{esc(product["id"], attribute=True)}.html">View product →</a>{learn}</div></div></article>'''
 
 
 def department_cards(data: dict, library: dict, discovery: dict, sources: list[dict], *, prefix: str = "") -> str:
@@ -1504,6 +1519,85 @@ def build_know_your_number(data: dict) -> None:
     write_output(ROOT / "know-your-number.html",render_template("know-your-number.html",replacements))
 
 
+def product_structured_data(metadata: dict, product: dict) -> dict:
+    image = product.get("cutout") or product.get("image") or {}
+    record = {
+        "@type": "Product", "name": product["name"], "description": product["description"],
+        "url": page_url(metadata, f'products/{product["id"]}.html'),
+        "brand": {"@type": "Brand", "name": product["manufacturer"]},
+        "category": product["category"],
+    }
+    if product.get("sku"):
+        record["sku"] = product["sku"]
+    if image.get("src"):
+        record["image"] = page_url(metadata, image["src"])
+    return record
+
+
+def product_image_markup(product: dict) -> str:
+    image = product.get("cutout") or product.get("image") or {}
+    return f'<img src="../{esc(image.get("src", "assets/brand/mark-gold.svg"), attribute=True)}" alt="{esc(image.get("alt", product["name"]), attribute=True)}" width="{int(image.get("width", 560))}" height="{int(image.get("height", 560))}" decoding="async" fetchpriority="high">'
+
+
+def product_label_markup(record: dict | None) -> str:
+    if not record or record.get("status") != "approved":
+        return '<p class="status-badge status-badge--pending">Label details not yet independently verified for public display.</p><p>Use the official manufacturer source for the current label and serving information.</p>'
+    ingredients = "".join(f'<li>{esc(item["ingredient"])}{f" — {esc(item.get("amount"))} {esc(item.get("unit"))}" if item.get("amount") is not None else ""}</li>' for item in record.get("ingredients", []))
+    return f'<p class="status-badge status-badge--verified">Verified label record</p><ul>{ingredients}</ul><p>Checked {esc(record.get("checked_date") or record.get("checkedDate"))}</p>'
+
+
+def product_connections(product: dict, department: dict, library: dict, sources: list[dict]) -> tuple[str, str]:
+    articles = {item["slug"]: item for item in published_articles(library)}
+    guide_cards = []
+    for slug in department.get("articleSlugs", []):
+        article = articles.get(slug)
+        if article:
+            guide_cards.append(f'<article class="connection-card"><p class="interface-label">Education</p><h3>{esc(article["title"])}</h3><p>{esc(article["summary"])}</p><a href="../library/{esc(slug, attribute=True)}.html">Read guide →</a></article>')
+    exact = [item for item in sources if product["id"] in item.get("product_ids", [])]
+    contextual = [item for item in sources if product["intent"] in item.get("department_ids", []) and item not in exact]
+    source_cards = []
+    for source in (exact + contextual)[:4]:
+        relationship = "Product-specific documentation" if source in exact else "Department context — not product-specific evidence"
+        source_cards.append(f'<article class="connection-card"><p class="interface-label">{relationship}</p><h3>{esc(source["title"])}</h3><p>{esc(source["public_summary"])}</p><a href="../evidence.html?source={esc(source["id"], attribute=True)}">Inspect source context →</a></article>')
+    if not guide_cards:
+        guide_cards.append('<article class="connection-card"><p class="interface-label">Education</p><h3>Department orientation</h3><p>Use the department page to understand this product’s place in the wider system.</p></article>')
+    if not source_cards:
+        source_cards.append('<article class="connection-card"><p class="interface-label">Evidence boundary</p><h3>No product-specific public source mapped</h3><p>This absence is shown explicitly rather than filled with inferred evidence.</p></article>')
+    return "".join(guide_cards[:3]), "".join(source_cards)
+
+
+def build_product_pages(data: dict, library: dict, discovery: dict, sources: list[dict], product_labels: dict) -> None:
+    products = active_products(data["catalog"])
+    departments = {item["intentId"]: item for item in discovery["departments"]}
+    labels = {item["product_id"]: item for item in product_labels.get("records", [])}
+    expected: set[Path] = set()
+    for product in products:
+        department = departments[product["intent"]]
+        guides, evidence = product_connections(product, department, library, sources)
+        related = [item for item in products if item["intent"] == product["intent"] and item["id"] != product["id"]][:3]
+        related_markup = "".join(f'<article class="related-product"><h3>{esc(item["name"])}</h3><p>{esc(item["manufacturer"])} / {esc(item["category"])}</p><a href="{esc(item["id"], attribute=True)}.html">View product →</a></article>' for item in related)
+        image = product.get("cutout") or product.get("image") or {}
+        title = f'{product["name"]} | The Mindful Matrix'
+        path_string = f'products/{product["id"]}.html'
+        replacements = {
+            "{{DOCUMENT_HEAD}}": document_head_markup(data["site"]["metadata"], prefix="../", title=title, description=product["description"], path=path_string, image=image, page_type="product", structured_data=[organization_schema(data["site"]["metadata"]), website_schema(data["site"]["metadata"]), product_structured_data(data["site"]["metadata"], product), breadcrumb_schema(data["site"]["metadata"], [("Home", ""), ("Products", "shop.html"), (product["name"], path_string)])]),
+            "{{SHARED_HEADER}}": shared_header_markup(data, prefix="../", current="shop"), "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix="../"),
+            "{{BREADCRUMBS}}": f'<a href="../index.html">Home</a><span>/</span><a href="../shop.html">Products</a><span>/</span><span aria-current="page">{esc(product["name"])}</span>',
+            "{{ENVIRONMENT}}": esc(product["environment"], attribute=True), "{{MANUFACTURER}}": esc(product["manufacturer"]), "{{CATEGORY}}": esc(product["category"]), "{{PRODUCT_NAME}}": esc(product["name"]), "{{DESCRIPTION}}": esc(product["description"]), "{{WHY_HERE}}": esc(product["whyItsHere"]), "{{PRODUCT_IMAGE}}": product_image_markup(product), "{{PRICE}}": price_markup(product),
+            "{{BADGES}}": f'<span>{esc(product["productKind"])}</span><span>{esc(product["variantLabel"])}</span>', "{{OFFICIAL_URL}}": esc(product["destination"], attribute=True),
+            "{{DEPARTMENT_URL}}": f'../departments/{esc(department["slug"], attribute=True)}.html', "{{DEPARTMENT_NAME}}": esc(department["title"]), "{{LABEL_STATUS}}": product_label_markup(labels.get(product["id"])),
+            "{{RELATED_GUIDES}}": guides, "{{RELATED_SOURCES}}": evidence, "{{RELATED_PRODUCTS}}": related_markup,
+            "{{DISCLOSURE}}": esc(data["site"]["affiliateDisclosure"] if product["manufacturer"] == "Zinzino" else data["site"]["biolimitlessAffiliateDisclosure"]), "{{PRICING_DISCLOSURE}}": esc(data["site"]["pricingDisclosure"]), "{{FDA_DISCLAIMER}}": esc(data["site"]["fdaDisclaimer"]),
+        }
+        path = ROOT / path_string
+        expected.add(path)
+        write_output(path, render_template("product.html", replacements))
+    product_dir = ROOT / "products"
+    for path in product_dir.glob("*.html"):
+        if path not in expected and GENERATOR_MARKER in path.read_text(encoding="utf-8"):
+            path.unlink()
+
+
 def clean_generated_articles(expected: set[Path]) -> None:
     article_dir = ROOT / "library"
     if not article_dir.exists():
@@ -1529,6 +1623,7 @@ def build_crawl_files(data: dict, library: dict, discovery: dict) -> None:
     paths = ["", "start.html", "library.html", "evidence.html", "shop.html", "know-your-number.html", "explore.html"]
     paths.extend(f'departments/{item["slug"]}.html' for item in discovery["departments"])
     paths.extend(f'library/{article["slug"]}.html' for article in published_articles(library))
+    paths.extend(f'products/{product["id"]}.html' for product in active_products(data["catalog"]))
     urls = "\n".join(f"  <url><loc>{esc(page_url(metadata, path))}</loc></url>" for path in paths)
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1585,6 +1680,7 @@ def main() -> None:
     build_shop(data, product_labels, sources, discovery)
     build_know_your_number(data)
     build_articles(data, library)
+    build_product_pages(data, library, discovery, sources, product_labels)
     build_crawl_files(data, library, discovery)
     if args.preview_article:
         build_preview(data, library, args.preview_article.resolve(), args.preview_output)
