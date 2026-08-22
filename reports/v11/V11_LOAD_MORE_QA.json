@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "sequence": [
+    12,
+    24,
+    36,
+    45
+  ],
+  "increments": [
+    12,
+    12,
+    9
+  ],
+  "final_unique_ids": 45,
+  "first_twelve_ids_stable": true,
+  "implementation": "grid.appendChild(markupFragment(additions, visibleBefore)); full filter/sort rerenders alone use replaceChildren",
+  "inner_html_grid_replacement_on_load_more": false,
+  "forced_focus": false,
+  "top_jump": false,
+  "final_button_label_before_click": "Load 9 more products",
+  "final_button_hidden": true,
+  "final_live_status": "Added 9 products. 45 products are now visible of 45.",
+  "resolved_image_elements_observed": [
+    2,
+    8,
+    14,
+    20
+  ],
+  "image_note": "Deferred product images remain intersection-driven; only viewport-adjacent assets resolve during loading.",
+  "cls": null,
+  "cls_note": "The available browser surface did not expose layout-shift entries. Visual QA found no top jump; all generated product images retain explicit dimensions.",
+  "status": "passed"
+}

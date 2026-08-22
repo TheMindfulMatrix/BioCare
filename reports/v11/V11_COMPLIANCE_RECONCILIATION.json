@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "baseline": {
+    "review_warnings": 70,
+    "strict_dry_run_items": 77
+  },
+  "candidate": {
+    "review_warnings": 70,
+    "strict_dry_run_items": 77
+  },
+  "delta": {
+    "review_warnings": 0,
+    "strict_dry_run_items": 0
+  },
+  "hard_gate": "passed",
+  "compliance_tests": "8/8 passed",
+  "commercial_links": {
+    "records": 90,
+    "unique_urls": 56,
+    "reachable_unique_urls": 56,
+    "failed": 0
+  },
+  "public_safety_scan": {
+    "files": 61,
+    "public_pages": 23,
+    "findings": 0
+  },
+  "claims_boundary": "Search aliases and UI hierarchy add no outcome claims. Approved titles, descriptions, label ingredients, prices, and destinations remain canonical.",
+  "status": "passed"
+}

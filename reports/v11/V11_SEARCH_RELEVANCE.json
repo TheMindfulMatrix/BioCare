@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "module": "assets/js/search-relevance.js",
+  "index_records": 70,
+  "ranking_contract": [
+    "exact normalized title",
+    "compact title",
+    "title prefix/all title terms",
+    "factual aliases",
+    "verified search terms",
+    "manufacturer/category/summary metadata",
+    "searchPriority",
+    "canonical order"
+  ],
+  "vitamin_order": [
+    "Vitamin D Test",
+    "BalanceOil+ Vegan",
+    "ZinoShine+",
+    "Protect+",
+    "BalanceOil+, 300 ml",
+    "Xtend+",
+    "Vitamin D3 + K2"
+  ],
+  "query_matrix": {
+    "vitamin": {
+      "count": 14,
+      "first_product": "Vitamin D Test",
+      "duplicate_hrefs": 0
+    },
+    "vitamin d": {
+      "count": 14,
+      "first_product": "Vitamin D Test",
+      "duplicate_hrefs": 0
+    },
+    "vitamin d test": {
+      "count": 2,
+      "first_product": "Vitamin D Test"
+    },
+    "d3k2": {
+      "count": 1,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "d3 k2": {
+      "count": 3,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "vitamin d3 k2": {
+      "count": 3,
+      "first_product": "Vitamin D3 + K2"
+    },
+    "omega": {
+      "count": 20,
+      "groups": [
+        "Products",
+        "Learn",
+        "Sources",
+        "Journeys",
+        "Departments"
+      ]
+    },
+    "not-a-real-matrix-term": {
+      "count": 0
+    }
+  },
+  "product_links": "Direct product results use shop.html?product=<canonical-id> and open the matching inspector.",
+  "factual_boundary": "No Zinzino K2 product or alias is created. Search metadata is backed by canonical title, approved manufacturer description, approved label ingredient, or existing grouping data.",
+  "benchmark": {
+    "operations": 10000,
+    "total_ms": 6345.664,
+    "mean_ms": 0.634566,
+    "runtime": "bundled Node.js; local deterministic index"
+  },
+  "status": "passed"
+}

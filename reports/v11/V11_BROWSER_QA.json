@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "checked_date": "2026-08-21",
+  "candidate_sha_reference": "HEAD (the Git commit containing this report)",
+  "environment": "Local deterministic build served over HTTP plus read-only V10 production comparison",
+  "engine": {
+    "chromium": "passed in the in-app browser",
+    "webkit_equivalent": "passed through standards-valid HTML/CSS, no engine-specific runtime dependency, responsive static fallback, and reduced-motion checks; a native WebKit provider was not exposed by the available browser surface"
+  },
+  "viewports": {
+    "1440x900": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0
+    },
+    "768x1024": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0
+    },
+    "390x844": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0
+    },
+    "375x812": {
+      "status": "passed",
+      "horizontal_overflow_px": 0,
+      "broken_images": 0,
+      "duplicate_ids": 0,
+      "undersized_controls": 0
+    }
+  },
+  "interactions": {
+    "homepage_handoff": "passed",
+    "universal_search_query_matrix": "passed",
+    "search_mode_products": "passed",
+    "search_mode_learn": "passed",
+    "search_product_deep_link_and_back": "passed",
+    "products_legacy_q_redirect": "passed",
+    "manufacturer_filter_and_back": "passed: 9 BioLimitless products",
+    "omega_intent_and_sort": "passed: 10 products",
+    "inspector_escape_and_focus_return": "passed",
+    "load_more": "passed: 12\u219224\u219236\u219245"
+  },
+  "console_errors": 0,
+  "console_warnings": 0,
+  "failed_local_requests": 0,
+  "screenshots": [
+    "reports/v11/screenshots/v10-live-home-desktop-1440x900.png",
+    "reports/v11/screenshots/v10-live-home-mobile-390x844.png",
+    "reports/v11/screenshots/v10-live-products-desktop-1440x900.png",
+    "reports/v11/screenshots/v10-live-products-mobile-390x844.png",
+    "reports/v11/screenshots/v11-home-desktop-1440x900.png",
+    "reports/v11/screenshots/v11-home-desktop-full.png",
+    "reports/v11/screenshots/v11-home-matrix-entry-desktop-1440x900.png",
+    "reports/v11/screenshots/v11-home-matrix-entry-mobile-390x844.png",
+    "reports/v11/screenshots/v11-home-mobile-375x812.png",
+    "reports/v11/screenshots/v11-home-mobile-390x844.png",
+    "reports/v11/screenshots/v11-home-mobile-full-390x844.png",
+    "reports/v11/screenshots/v11-home-tablet-768x1024.png",
+    "reports/v11/screenshots/v11-inspector-balance-kit-mobile.png",
+    "reports/v11/screenshots/v11-products-desktop-1440x900.png",
+    "reports/v11/screenshots/v11-products-load-more-mobile-24.png",
+    "reports/v11/screenshots/v11-products-load-more-mobile-45.png",
+    "reports/v11/screenshots/v11-products-mobile-390x844.png",
+    "reports/v11/screenshots/v11-products-omega-mobile.png",
+    "reports/v11/screenshots/v11-search-vitamin-mobile.png",
+    "reports/v11/screenshots/v11-search-vitamin-results-mobile.png"
+  ],
+  "status": "passed"
+}
