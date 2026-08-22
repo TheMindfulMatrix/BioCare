@@ -131,7 +131,11 @@ class V11CandidateTests(unittest.TestCase):
             self.css,
         )
         self.assertIn(".home-hero--product .hero-product__tap { z-index:12; top:4.55rem;", self.css)
-        self.assertIn(".home-hero--product .hero-product__cutout { inset:22% -2% 0 9%; }", self.css)
+        self.assertIn(".home-hero--product .hero-product__cutout { inset:16% 1% 6% 4%; }", self.css)
+        self.assertIn(
+            ".home-hero--product .hero-product__cutout img { transform:translateY(-.2rem) scale(1.06); }",
+            self.css,
+        )
         self.assertIn(".home-hero--product .home-hero__content>.section-kicker { display:none; }", self.css)
         hero = self.home[self.home.index('data-home-stage="product"'):self.home.index('data-home-stage="matrix"')]
         self.assertNotIn(" / SKU ", hero)

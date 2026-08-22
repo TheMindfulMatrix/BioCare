@@ -2314,8 +2314,8 @@
   .home-hero--product .hero-affiliate-note { margin-top:.2rem; line-height:1.4; }
   .home-hero--product .hero-product { inset:2% 0 0; }
   .home-hero--product .hero-product__background { inset:2% 4% 4%; width:92%; height:94%; opacity:.58; }
-  .home-hero--product .hero-product__cutout { inset:22% -2% 0 9%; }
-  .home-hero--product .hero-product__cutout img { transform:scale(1.02); }
+  .home-hero--product .hero-product__cutout { inset:16% 1% 6% 4%; }
+  .home-hero--product .hero-product__cutout img { transform:translateY(-.2rem) scale(1.06); }
   .home-hero--product .hero-product__caption { z-index:11; top:.4rem; right:auto; bottom:auto; left:.35rem; width:min(78%,19rem); display:grid; gap:.2rem; padding:.65rem .8rem; }
   .home-hero--product .hero-product__caption span { font-size:12px; }
   .home-hero--product .hero-product__caption strong { font-size:clamp(.9rem,4vw,1rem); line-height:1.05; }
