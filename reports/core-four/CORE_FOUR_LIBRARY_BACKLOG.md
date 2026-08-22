@@ -1,6 +1,6 @@
 # Non-public Core Four Library Backlog
 
-Candidate evidence commit: `4e3847b706637b7e476c70a5ee3636119f124ba7`
+Candidate evidence commit: `a57aa62ff5f43503fb609c45330069ed8b9b8c64`
 
 1. Commission a sourced Vitamin K2 explainer distinguishing K1/K2 and avoiding unsupported outcome claims.
 2. Commission a zinc/copper relationship guide covering intake context, upper limits, and uncertainty using government guidance and reviews.

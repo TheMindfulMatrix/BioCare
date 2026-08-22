@@ -1,6 +1,6 @@
 # Core Four Definition of Done
 
-Evidence commit: `4e3847b706637b7e476c70a5ee3636119f124ba7`
+Evidence commit: `a57aa62ff5f43503fb609c45330069ed8b9b8c64`
 
 Totals: **101 MET / 0 NOT MET / 0 DEFERRED**.
 

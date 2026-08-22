@@ -1,6 +1,6 @@
 # Core Four Final Candidate Report
 
-Candidate evidence commit: `4e3847b706637b7e476c70a5ee3636119f124ba7`
+Candidate evidence commit: `a57aa62ff5f43503fb609c45330069ed8b9b8c64`
 
 The Core Four is implemented as a canonical, evidence-aware featured collection across the homepage, dedicated campaign page, Products, four product pages, Library, Evidence, sitemap, structured data, and universal search.
 
