@@ -21,9 +21,9 @@
     "all_public_html_bytes": 1014804,
     "dom_nodes": 9060,
     "css_bytes": 251984,
-    "javascript_bytes": 78390,
+    "javascript_bytes": 79241,
     "universal_search_index_bytes": 56757,
-    "search_relevance_module_bytes": 4835,
+    "search_relevance_module_bytes": 5587,
     "active_product_image_bytes": 1103598,
     "active_product_image_count": 45,
     "hero_image_bytes": 18460,
@@ -36,15 +36,15 @@
     "all_public_html_bytes": 20549,
     "dom_nodes": 84,
     "css_bytes": 9571,
-    "javascript_bytes": 5977,
+    "javascript_bytes": 6828,
     "universal_search_index_bytes": 8254,
     "active_product_image_bytes": -232526
   },
   "search_benchmark": {
     "operations": 10000,
-    "total_ms": 6345.664,
-    "mean_ms": 0.634566,
-    "runtime": "bundled Node.js; local deterministic index"
+    "total_ms": 6400.453,
+    "mean_ms": 0.640045,
+    "runtime": "Node.js v24.19.0; local deterministic 70-record index"
   },
   "initial_eager_images": {
     "homepage": 4,

@@ -10,10 +10,10 @@ V11 establishes a deliberate two-stage homepage: the Balance Test Basic Kit lead
 - Search index: 70 records; Vitamin D Test leads the locked vitamin matrix
 - Product images: 1,103,598 bytes, unchanged from V10
 - Compliance: hard gate passed; 70 warnings / 77 strict dry-run items; zero V11 delta
-- Tests: 46 passed / 0 failed
+- Tests: 48 passed / 0 failed
 - Commerce: 56 of 56 unique canonical URLs reachable
 - Browser QA: four required viewports, zero overflow, broken images, duplicate ids, or console errors/warnings
-- Evidence: 20 committed V10/V11 comparison screenshots
+- Evidence: 22 committed V10/V11 comparison screenshots
 - Definition of Done: 115 MET / 0 NOT MET / 0 DEFERRED
 
 Outside the 115 V11 acceptance lines, two inherited external dependencies remain unresolved: written manufacturer clarification for the mixed-brand site and a user-approved public business contact. They do not block this review candidate; V11 makes no approval claim and publishes no inferred/private contact. No merge or deployment was performed.

@@ -35,44 +35,48 @@ def search_score(record, raw_query):
     broader = normalize(" ".join(str(record.get(key) or "") for key in ("publisher", "resourceType", "evidenceRole", "independence")) + " " + " ".join(str(value) for key in ("keywords", "terms", "topics", "products", "intents") for value in _values(record.get(key))))
     candidates = []
 
-    def consider(value, reason):
-        candidates.append((value, reason))
+    def specificity(value):
+        return len(terms) * 1000 - abs(len(normalize(value).split()) - len(terms))
+
+    def consider(tier, reason, matched_text):
+        candidates.append((tier, specificity(matched_text), reason))
 
     all_terms = lambda text: bool(terms) and all(term in text for term in terms)
     all_whole = lambda text: bool(terms) and all(f" {term} " in f" {text} " for term in terms)
     if title == query:
-        consider(1300, "exact-title")
+        consider(13, "exact-title", title)
     if title.replace(" ", "") == compact:
-        consider(1260, "exact-title-compact")
+        consider(12, "exact-title-compact", title)
     if title.startswith(query):
-        consider(1050, "title-prefix")
+        consider(11, "title-prefix", title)
     if all_whole(title):
-        consider(920, "all-title-terms")
+        consider(10, "all-title-terms", title)
     for alias in aliases:
         if alias == query or alias.replace(" ", "") == compact:
-            consider(900, "exact-alias")
+            consider(9, "exact-alias", alias)
         elif alias.startswith(query):
-            consider(820, "alias-prefix")
+            consider(8, "alias-prefix", alias)
         elif all_terms(alias):
-            consider(780, "alias-terms")
-    if all_whole(title):
-        consider(760 + min(len(terms), 5) * 8, "whole-word-title")
-    if any(value == query or value.replace(" ", "") == compact for value in verified):
-        consider(700, "verified-term-exact")
-    if any(all_terms(value) for value in verified):
-        consider(640, "verified-term")
+            consider(7, "alias-terms", alias)
+    for value in verified:
+        if value == query or value.replace(" ", "") == compact:
+            consider(6, "verified-term-exact", value)
+        elif all_terms(value):
+            consider(5, "verified-term", value)
     if all_terms(manufacturer_title):
-        consider(520, "manufacturer-title")
+        consider(4, "manufacturer-title", manufacturer_title)
     if all_terms(category):
-        consider(360, "category-intent-kind")
+        consider(3, "category-intent-kind", category)
     if all_terms(summary):
-        consider(230, "summary")
+        consider(2, "summary", summary)
     if all_terms(broader):
-        consider(120, "broader-metadata")
+        consider(1, "broader-metadata", broader)
     if not candidates:
         return None
-    base, reason = max(candidates)
-    return base + int(record.get("searchPriority") or 0), reason
+    tier, specificity_value, reason = max(candidates)
+    priority_applies = any(alias == query or alias.replace(" ", "") == compact for alias in aliases)
+    priority = int(record.get("searchPriority") or 0) if priority_applies else 0
+    return tier, specificity_value, priority, reason
 
 
 def ranked(records, query, record_type=None):
@@ -86,8 +90,8 @@ def ranked(records, query, record_type=None):
         if result is None or key in seen:
             continue
         seen.add(key)
-        scored.append((record, result[0], int(record.get("order", position)), result[1]))
-    scored.sort(key=lambda item: (-item[1], item[2], item[0]["id"]))
+        scored.append((record, result[0], result[1], result[2], int(record.get("order", position)), result[3]))
+    scored.sort(key=lambda item: (-item[1], -item[2], -item[3], item[4], item[0]["id"]))
     return scored
 
 
@@ -168,20 +172,43 @@ class V11CandidateTests(unittest.TestCase):
         self.assertIn("canonicalOrder", self.relevance_js)
         expected_prefix = [
             "vitamin-d-test",
+            "biolimitless-vitamin-d3-k2",
             "balanceoil-plus-vegan",
             "zinoshine-plus",
             "protect-plus",
             "balanceoil-plus-300ml",
             "xtend-plus",
-            "biolimitless-vitamin-d3-k2",
         ]
         for query in ("vitamin", "vitamin d"):
             self.assertEqual(expected_prefix, [item[0]["id"] for item in ranked(self.search_index, query, "product")[:7]])
         self.assertEqual("vitamin-d-test", ranked(self.search_index, "vitamin d test", "product")[0][0]["id"])
-        for query in ("d3k2", "d3 k2", "vitamin d3 k2"):
+        for query in ("d3", "k2", "d3k2", "d3 k2", "vitamin d3 k2", "vitamin d3 + k2"):
             self.assertEqual("biolimitless-vitamin-d3-k2", ranked(self.search_index, query, "product")[0][0]["id"])
         self.assertEqual("balance-test", ranked(self.search_index, "Balance Test", "product")[0][0]["id"])
         self.assertEqual([], ranked(self.search_index, "no-such-matrix-result"))
+
+    def test_search_match_classes_are_immutable_and_ties_are_deterministic(self):
+        fixtures = [
+            {"id": "summary", "type": "product", "title": "Unrelated", "summary": "vitamin d", "searchPriority": 999999, "order": 0},
+            {"id": "verified", "type": "product", "title": "Unrelated", "searchTerms": ["vitamin d"], "searchPriority": 999999, "order": 1},
+            {"id": "alias", "type": "product", "title": "Unrelated", "searchAliases": ["vitamin d"], "searchPriority": 999999, "order": 2},
+            {"id": "title", "type": "product", "title": "Vitamin D Formula", "searchPriority": -999999, "order": 3},
+        ]
+        self.assertEqual(["title", "alias", "verified", "summary"], [item[0]["id"] for item in ranked(fixtures, "vitamin d")])
+
+        same_tier = [
+            {"id": "canonical-first", "type": "product", "title": "Unrelated", "searchAliases": ["vitamin d"], "searchPriority": 10, "order": 1},
+            {"id": "priority-first", "type": "product", "title": "Unrelated", "searchAliases": ["vitamin d"], "searchPriority": 20, "order": 2},
+            {"id": "canonical-second", "type": "product", "title": "Unrelated", "searchAliases": ["vitamin d"], "searchPriority": 10, "order": 3},
+            {"id": "priority-first", "type": "product", "title": "Duplicate", "searchAliases": ["vitamin d"], "searchPriority": 999, "order": 0},
+        ]
+        ordered = [item[0]["id"] for item in ranked(same_tier, "vitamin d")]
+        self.assertEqual(["priority-first", "canonical-first", "canonical-second"], ordered)
+        self.assertEqual(len(ordered), len(set(ordered)))
+
+        manufacturer_results = ranked(self.search_index, "Zinzino", "product")
+        self.assertTrue(manufacturer_results)
+        self.assertTrue(all(item[3] == 0 for item in manufacturer_results))
 
     def test_search_groups_are_stable_and_unique(self):
         for query in ("omega", "magnesium", "collagen", "label", "evidence", "sources", "testing", "Zinzino", "BioLimitless"):
@@ -191,6 +218,12 @@ class V11CandidateTests(unittest.TestCase):
             self.assertEqual(len(identities), len(set(identities)))
         for label in ("Products", "Learn", "Sources", "Journeys", "Departments"):
             self.assertIn(f'label:"{label}"', self.js)
+
+    def test_search_url_history_uses_restorable_submitted_states(self):
+        self.assertIn('input.addEventListener("input",function(){render(false);})', self.js)
+        self.assertIn('event.preventDefault();render(false);save(false);', self.js)
+        self.assertIn('window.addEventListener("popstate",restore)', self.js)
+        self.assertNotIn('input.addEventListener("input",function(){render(true);})', self.js)
 
     def test_search_metadata_is_factual_and_verified_ingredients_remain_locked(self):
         labels = json.loads((ROOT / "content/product-labels.json").read_text(encoding="utf-8"))

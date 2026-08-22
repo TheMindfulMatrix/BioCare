@@ -234,79 +234,79 @@
       "number": 38,
       "status": "MET",
       "requirement": "Search uses deterministic relevance.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 39,
       "status": "MET",
       "requirement": "Exact titles outrank description-only matches.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 40,
       "status": "MET",
       "requirement": "Aliases remain factual.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 41,
       "status": "MET",
       "requirement": "Verified ingredient matches remain factual.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 42,
       "status": "MET",
       "requirement": "No symptom or disease ranking is introduced.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 43,
       "status": "MET",
       "requirement": "Vitamin D Test ranks correctly for `vitamin d`.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 44,
       "status": "MET",
       "requirement": "Verified Zinzino vitamin products rank correctly if present.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 45,
       "status": "MET",
       "requirement": "BioLimitless Vitamin D3 + K2 ranks correctly.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 46,
       "status": "MET",
       "requirement": "No nonexistent product is fabricated.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 47,
       "status": "MET",
       "requirement": "D3K2 aliases work correctly.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 48,
       "status": "MET",
       "requirement": "Search groups remain correct.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 49,
       "status": "MET",
       "requirement": "Search counts remain correct.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 50,
       "status": "MET",
       "requirement": "Search URL and history state remain correct.",
-      "evidence": "The standalone relevance module, 70-record index, automated ranking fixtures, and browser query matrix prove deterministic factual ranking, grouping, counts, URL behavior, and deduplication."
+      "evidence": "The tiered relevance module, 70-record index, match-class regression fixtures, and browser matrix prove title quality cannot be crossed by priority: Vitamin D Test then Vitamin D3 + K2 lead `vitamin`/`vitamin d`, D3/K2 variants lead to the BioLimitless title, no Zinzino K2 product is fabricated, and grouping/count/URL/deduplication behavior remains deterministic."
     },
     {
       "number": 51,
@@ -558,85 +558,85 @@
       "number": 92,
       "status": "MET",
       "requirement": "Performance changes are measured.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 93,
       "status": "MET",
       "requirement": "Product-image payload does not materially regress.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 94,
       "status": "MET",
       "requirement": "Private evidence boundaries remain intact.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 95,
       "status": "MET",
       "requirement": "Evidence & Documentation remains intact.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 96,
       "status": "MET",
       "requirement": "Compliance hard gate passes.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 97,
       "status": "MET",
       "requirement": "Compliance fixtures pass.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 98,
       "status": "MET",
       "requirement": "V11 tests pass.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 99,
       "status": "MET",
       "requirement": "Existing permanent validation passes.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 100,
       "status": "MET",
       "requirement": "Warning inventories are reconciled.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 101,
       "status": "MET",
       "requirement": "Metadata remains complete.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 102,
       "status": "MET",
       "requirement": "Sitemap remains correct.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 103,
       "status": "MET",
       "requirement": "Structured data remains truthful.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 104,
       "status": "MET",
       "requirement": "Screenshots accurately show the candidate.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 105,
       "status": "MET",
       "requirement": "Reports are complete and consistent.",
-      "evidence": "Performance, image payload, privacy, evidence, compliance, 46 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
+      "evidence": "Performance, image payload, privacy, evidence, compliance, 48 tests, metadata, sitemap, JSON-LD, screenshots, reports, and warning reconciliation are recorded and pass."
     },
     {
       "number": 106,

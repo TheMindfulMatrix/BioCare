@@ -33,9 +33,14 @@
     return terms.length > 0 && terms.every(function (term) { return padded.indexOf(" " + term + " ") >= 0; });
   }
 
+  function specificityFor(text, terms) {
+    var fieldTerms = normalize(text).split(" ").filter(Boolean);
+    return terms.length * 1000 - Math.abs(fieldTerms.length - terms.length);
+  }
+
   function score(record, rawQuery) {
     var query = normalize(rawQuery);
-    if (!query) return { matched: false, score: 0, reason: "empty-query" };
+    if (!query) return { matched: false, matchTier: 0, specificity: 0, priority: 0, reason: "empty-query" };
     var queryCompact = compact(query);
     var terms = query.split(" ").filter(Boolean);
     var title = normalize(record.title);
@@ -51,34 +56,42 @@
       list(record.keywords).join(" "), list(record.terms).join(" "),
       list(record.topics).join(" "), list(record.products).join(" "), list(record.intents).join(" ")
     ].join(" "));
-    var base = 0;
-    var reason = "";
+    var matchTier = 0;
+    var specificity = 0;
+    var reason = "no-match";
 
-    function consider(value, label) {
-      if (value > base) { base = value; reason = label; }
+    function consider(tier, label, matchedText) {
+      var candidateSpecificity = specificityFor(matchedText, terms);
+      if (tier > matchTier || (tier === matchTier && candidateSpecificity > specificity)) {
+        matchTier = tier;
+        specificity = candidateSpecificity;
+        reason = label;
+      }
     }
 
-    if (title === query) consider(1300, "exact-title");
-    if (compact(title) === queryCompact) consider(1260, "exact-title-compact");
-    if (title.indexOf(query) === 0) consider(1050, "title-prefix");
-    if (allWholeTermsIn(title, terms)) consider(920, "all-title-terms");
+    if (title === query) consider(13, "exact-title", title);
+    if (compact(title) === queryCompact) consider(12, "exact-title-compact", title);
+    if (title.indexOf(query) === 0) consider(11, "title-prefix", title);
+    if (allWholeTermsIn(title, terms)) consider(10, "all-title-terms", title);
     aliases.forEach(function (alias) {
-      if (alias === query || compact(alias) === queryCompact) consider(900, "exact-alias");
-      else if (alias.indexOf(query) === 0) consider(820, "alias-prefix");
-      else if (allTermsIn(alias, terms)) consider(780, "alias-terms");
+      if (alias === query || compact(alias) === queryCompact) consider(9, "exact-alias", alias);
+      else if (alias.indexOf(query) === 0) consider(8, "alias-prefix", alias);
+      else if (allTermsIn(alias, terms)) consider(7, "alias-terms", alias);
     });
-    if (allWholeTermsIn(title, terms)) consider(760 + Math.min(terms.length, 5) * 8, "whole-word-title");
-    if (verifiedTerms.some(function (value) { return value === query || compact(value) === queryCompact; })) consider(700, "verified-term-exact");
-    if (verifiedTerms.some(function (value) { return allTermsIn(value, terms); })) consider(640, "verified-term");
-    if (allTermsIn(titleAndManufacturer, terms)) consider(520, "manufacturer-title");
-    if (allTermsIn(category, terms)) consider(360, "category-intent-kind");
-    if (allTermsIn(summary, terms)) consider(230, "summary");
-    if (allTermsIn(broader, terms)) consider(120, "broader-metadata");
+    verifiedTerms.forEach(function (value) {
+      if (value === query || compact(value) === queryCompact) consider(6, "verified-term-exact", value);
+      else if (allTermsIn(value, terms)) consider(5, "verified-term", value);
+    });
+    if (allTermsIn(titleAndManufacturer, terms)) consider(4, "manufacturer-title", titleAndManufacturer);
+    if (allTermsIn(category, terms)) consider(3, "category-intent-kind", category);
+    if (allTermsIn(summary, terms)) consider(2, "summary", summary);
+    if (allTermsIn(broader, terms)) consider(1, "broader-metadata", broader);
 
-    if (!base) return { matched: false, score: 0, reason: "no-match" };
-    var priority = Number(record.searchPriority || 0);
+    if (!matchTier) return { matched: false, matchTier: 0, specificity: 0, priority: 0, reason: "no-match" };
+    var priorityApplies = aliases.some(function (alias) { return alias === query || compact(alias) === queryCompact; });
+    var priority = priorityApplies ? Number(record.searchPriority || 0) : 0;
     if (!Number.isFinite(priority)) priority = 0;
-    return { matched: true, score: base + priority, baseScore: base, priority: priority, reason: reason };
+    return { matched: true, matchTier: matchTier, specificity: specificity, priority: priority, reason: reason };
   }
 
   function rank(records, query) {
@@ -93,7 +106,11 @@
       seen[key] = true;
       return true;
     }).sort(function (left, right) {
-      return right.result.score - left.result.score || left.canonicalOrder - right.canonicalOrder || String(left.record.id || "").localeCompare(String(right.record.id || ""));
+      return right.result.matchTier - left.result.matchTier ||
+        right.result.specificity - left.result.specificity ||
+        right.result.priority - left.result.priority ||
+        left.canonicalOrder - right.canonicalOrder ||
+        String(left.record.id || "").localeCompare(String(right.record.id || ""));
     });
   }
 
