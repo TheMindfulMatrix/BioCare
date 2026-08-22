@@ -1,0 +1,96 @@
+name: Daily site audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub cron is UTC. These cover 08:00 America/Chicago in CST and CDT;
+    # the timezone guard below suppresses the inactive UTC slot.
+    - cron: "0 13 * * *"
+    - cron: "0 14 * * *"
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check America/Chicago schedule window
+        id: schedule
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H)" = "08" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out authoritative default branch snapshot
+        if: steps.schedule.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        if: steps.schedule.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Record audited SHA
+        if: steps.schedule.outputs.run == 'true'
+        shell: bash
+        run: echo "AUDITED_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Build and validate repository snapshot
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          python scripts/build.py
+          git diff --exit-code -- index.html explore.html evidence.html shop.html library.html start.html know-your-number.html departments/ library/ assets/data/search-index.json robots.txt sitemap.xml
+          python scripts/validate.py
+          python scripts/validate.py --compliance-strict --compliance-dry-run
+          python -m unittest discover -s tests -v
+          python scripts/asset_inventory.py --output outputs/daily-audit/asset-inventory.json
+          python scripts/triage_compliance.py --json-output outputs/daily-audit/compliance-triage.json --markdown-output outputs/daily-audit/compliance-triage.md
+
+      - name: Audit live production parity
+        if: steps.schedule.outputs.run == 'true'
+        run: python scripts/daily_audit.py --root . --base-url https://themindfulmatrix.github.io/BioCare/ --audited-sha "$AUDITED_SHA" --output outputs/daily-audit/site-audit.json
+
+      - name: Install browser audit runtime
+        if: steps.schedule.outputs.run == 'true'
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.55.0
+          python -m playwright install --with-deps chromium
+
+      - name: Responsive browser audit
+        if: steps.schedule.outputs.run == 'true'
+        run: python scripts/browser_audit.py --root . --base-url https://themindfulmatrix.github.io/BioCare/ --output-dir outputs/daily-audit/browser
+
+      - name: Write next-actions summary
+        if: always() && steps.schedule.outputs.run == 'true'
+        shell: bash
+        run: |
+          {
+            echo "## Daily Mindful Matrix audit"
+            echo
+            echo "Audited repository SHA: \`${AUDITED_SHA:-unavailable}\`"
+            echo
+            echo "### Next actions"
+            echo "1. Address confirmed regressions before optional improvements."
+            echo "2. Review the current compliance triage queue."
+            echo "3. Review asset-inventory orphan candidates before removal."
+            echo
+            echo "This workflow made no website, repository, issue, pull-request, merge, or deployment changes."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload audit evidence
+        if: always() && steps.schedule.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-site-audit-${{ github.run_id }}
+          path: outputs/daily-audit/
+          if-no-files-found: warn
+          retention-days: 30

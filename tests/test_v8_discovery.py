@@ -1,4 +1,5 @@
 import json
+import hashlib
 import unittest
 from pathlib import Path
 
@@ -65,8 +66,11 @@ class V8DiscoveryTests(unittest.TestCase):
     def test_visual_pass_adds_no_runtime_dependency(self):
         markup = (ROOT / "index.html").read_text(encoding="utf-8")
         scripts = [part.split('"', 1)[0] for part in markup.split('<script defer src="')[1:]]
-        asset_version = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))["site"]["metadata"]["assetVersion"]
-        self.assertEqual([f"assets/js/search-relevance.js?v={asset_version}", f"assets/js/enhancements.js?v={asset_version}"], scripts)
+        versions = {
+            path: hashlib.sha256((ROOT / path).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")).hexdigest()[:12]
+            for path in ("assets/js/search-relevance.js", "assets/js/enhancements.js")
+        }
+        self.assertEqual([f"{path}?v={versions[path]}" for path in versions], scripts)
         enhancements = (ROOT / "assets/js/enhancements.js").read_text(encoding="utf-8")
         self.assertIn("root.dataset.universeFilterIds=ids.join", enhancements)
         self.assertIn("root.hidden=matches.length===0", enhancements)

@@ -9,7 +9,7 @@
       "prompt_summary": "Product-free intestinal microbiome ecosystem with cellular depth and distinct microbial forms.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/gut-health-101-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/gut-health-101-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "fd6aa1e8c4bc7899537e795c79f15d6d4ec39389e81ff84b69c908cb240a5f41"
@@ -38,7 +38,7 @@
       "prompt_summary": "Product-free laboratory sample pathway with biomarker bands and analytical measurement signals.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/gut-testing-biomarkers-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/gut-testing-biomarkers-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "3944550384573722618a840b529f6adb985de786f841f713ad551b593c1f9a36"
@@ -67,7 +67,7 @@
       "prompt_summary": "Product-free post-training recovery system using muscle fibers, glycogen and restorative flow.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/recovery-after-training-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/recovery-after-training-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "9f857393fcb9779297bbf6afd6b529927705aa009d1c1ed4e5859a64d0fa5333"
@@ -96,7 +96,7 @@
       "prompt_summary": "Product-free athletic physiology connecting whole-food fuel, hydration and muscle-energy pathways.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/performance-nutrition-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/performance-nutrition-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "cbc4d78d517a8f9b6df0393781cc820b82f856012d9916249ee675ff55e4a0ed"
@@ -125,7 +125,7 @@
       "prompt_summary": "Product-free research paper and evidence hierarchy under a precise reading beam.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/read-health-study-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/read-health-study-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "50b7ee4835f401386fb358d01e91c04f7045a6a398a1912fbc2131f2c4bc08ef"
@@ -154,7 +154,7 @@
       "prompt_summary": "Product-free data paths separating correlation, confounding, relative risk and absolute risk.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/correlation-causation-risk-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/correlation-causation-risk-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "07cd8d8cfeda5d51fe6ec04a40853b8169ca19480b978a2db2ee78d13e5854ce"
@@ -183,7 +183,7 @@
       "prompt_summary": "Product-free omega fatty-acid and blood-status measurement environment.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/omega-numbers-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/omega-numbers-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "c499c66fa0e30118187a333228e311ca0c116e94842c31e4a3f64970b77f7e7b"
@@ -212,7 +212,7 @@
       "prompt_summary": "Product-free at-home blood-sample and omega measurement interface.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/omega-testing-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/omega-testing-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "431162214fcefd1b8c4b4ee4febfa9a5945ee4e456a89e38a07dec6109b964f1"
@@ -241,7 +241,7 @@
       "prompt_summary": "Product-free whole-food versus supplement-format comparison without branded packaging.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/food-vs-supplements-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/food-vs-supplements-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "3a746a3cf973a7e14b3aae314d3129a16ec951c0cc278885d6e1613b654c9844"
@@ -270,7 +270,7 @@
       "prompt_summary": "Product-free supplement-label analysis with dose, ingredient and evidence fields.",
       "generated_at": "2026-08-17",
       "source": {
-        "path": "assets/source-artwork/mindful-matrix/library/supplement-label-source.png",
+        "path": "_source-assets/source-artwork/mindful-matrix/library/supplement-label-source.png",
         "width": 1536,
         "height": 1024,
         "sha256": "f229011a2286767b19e2e3ef9e0ad99bb1cb4bc7ffa215fb916c027f96ebf365"
