@@ -26,4 +26,3 @@ GitHub-hosted runners exceed the documented minimum runner version for these rel
 ## Expected operational result
 
 One audit workflow run per local day at 8:00 AM America/Chicago, plus explicit manual reruns. The prior second skipped daily run is eliminated.
-

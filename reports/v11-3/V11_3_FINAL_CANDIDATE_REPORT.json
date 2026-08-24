@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0",
+  "baselineSha": "af75af00ddb5c41b72e08d9e094c0c4f609cc0f9",
+  "candidateEvidenceSource": "2d44a2f9d334501e815da2a1f1ed4da40e5ed519",
+  "branch": "agent/v11-3-audit-maintenance",
+  "changes": {
+    "timezoneSchedule": {
+      "cron": "0 8 * * *",
+      "timezone": "America/Chicago",
+      "dailyTriggers": 1
+    },
+    "actions": {
+      "checkout": "v6",
+      "setupPython": "v6",
+      "uploadArtifact": "v6"
+    },
+    "publicWebsiteChanged": false,
+    "articlesPublished": false
+  },
+  "compliance": {
+    "hardGateErrors": 0,
+    "reviewWarnings": 70,
+    "strictAdvisoryItems": 77,
+    "priority1": 7,
+    "priority2": 34,
+    "priority3": 36
+  },
+  "validation": {
+    "publicPages": 69,
+    "publishedArticles": 10,
+    "activeProducts": 45,
+    "deferredProducts": 8,
+    "localCandidateTests": 67,
+    "defaultBranchAuditTests": 65,
+    "browserStates": 276,
+    "browserFailures": 0,
+    "node20DeprecationAnnotations": 0,
+    "githubRunId": 32749131195,
+    "githubRunConclusion": "success"
+  },
+  "merge": false,
+  "deployment": false
+}

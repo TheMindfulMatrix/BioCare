@@ -10,4 +10,3 @@
 - Pages status: built
 - Responsive audit: zero overflow, broken images, failed requests, console errors, or functional failures
 - Scope: workflow maintenance and non-public research/triage only; no public website redesign or copy change
-

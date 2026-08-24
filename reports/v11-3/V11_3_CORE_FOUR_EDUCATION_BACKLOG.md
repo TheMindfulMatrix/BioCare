@@ -25,7 +25,6 @@ Non-public planning only. Nothing in this backlog is approved for publication or
 - Manufacturer boundary: label facts do not establish efficacy, individual need, or equivalence to ingredient studies.
 - Suggested outline: roles and sources → intake/upper-limit context → interaction mechanics → label interpretation → safety/medications → uncertainty.
 - Review gate: nutrition/medical and compliance review; source freshness check within 12 months of publication.
-
 ## Magnesium and magnesium glycinate
 
 - Visitor questions: What does “glycinate” describe? How do forms differ in label identity and available evidence? What can intake guidance establish? What safety and medication questions matter?
@@ -37,4 +36,3 @@ Non-public planning only. Nothing in this backlog is approved for publication or
 - Manufacturer boundary: documentation may establish the labeled form and amount, but not ingredient-study transfer to the finished product.
 - Suggested outline: magnesium basics → intake/status limits → form terminology → evidence by question → safety/interactions → label-reading checklist → uncertainty.
 - Review gate: nutrition/medical and compliance review; source freshness check within 12 months of publication.
-
