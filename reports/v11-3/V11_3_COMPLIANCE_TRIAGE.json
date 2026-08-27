@@ -1,0 +1,1344 @@
+{
+  "category_counts": {
+    "human review required": 7,
+    "registered wording candidate": 70
+  },
+  "items": [
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "locator": "$.products[id=balance-basic-kit].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 1,
+      "raw_message": "CLAIM_PRODUCT_BALANCE_BASIC_KIT_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "Track your fatty acid profile from home",
+      "locator": "$.products[id=balance-test].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 2,
+      "raw_message": "CLAIM_PRODUCT_BALANCE_TEST_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
+      "locator": "$.products[id=biolimitless-dna-discovery-kit].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 3,
+      "raw_message": "CLAIM_PRODUCT_BIOLIMITLESS_DNA_DISCOVERY_KIT_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "Home health blood spot test to track gut and metabolic markers",
+      "locator": "$.products[id=gut-health-test].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 4,
+      "raw_message": "CLAIM_PRODUCT_GUT_HEALTH_TEST_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "Home health blood spot test to track gut and metabolic markers",
+      "locator": "$.products[id=gut-health-test-x2].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 5,
+      "raw_message": "CLAIM_PRODUCT_GUT_HEALTH_TEST_X2_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "Track your long-term blood sugar levels",
+      "locator": "$.products[id=hba1c-test].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 6,
+      "raw_message": "CLAIM_PRODUCT_HBA1C_TEST_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "human review required",
+      "evidence_relationship": "Requires product-specific manufacturer verification; ingredient evidence cannot validate the finished product.",
+      "existing_wording": "Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
+      "locator": "$.products[id=xtend-plus].description",
+      "priority": "Priority 1",
+      "public_visibility": "public commercial product description",
+      "queue_position": 7,
+      "raw_message": "CLAIM_PRODUCT_XTEND_PLUS_DESCRIPTION: unresolved YELLOW commercial claim in strict mode",
+      "reason_flagged": "unresolved YELLOW commercial claim in strict mode",
+      "recommended_next_action": "Review against the current official product source before proposing any narrow copy change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "human review required",
+        "requires evidence review",
+        "requires manufacturer verification"
+      ],
+      "wording_change_would_alter_meaning": "Likely if rewritten; manufacturer and compliance review required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "The Balance Test Basic Kit preserves the previously approved site summary.",
+      "locator": "$.contentPolicy",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 8,
+      "raw_message": "content/catalog.json:$.contentPolicy: unresolved strict-mode YELLOW claim: The Balance Test Basic Kit preserves the previously approved site summary.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "accepted or registered legacy wording",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Browse the current home health tests collection on Zinzino.",
+      "locator": "$.fallbackDestinations[0].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 9,
+      "raw_message": "content/catalog.json:$.fallbackDestinations[0].description: unresolved strict-mode YELLOW claim: Browse the current home health tests collection on Zinzino.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Browse the current gut health collection on Zinzino.",
+      "locator": "$.fallbackDestinations[2].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 10,
+      "raw_message": "content/catalog.json:$.fallbackDestinations[2].description: unresolved strict-mode YELLOW claim: Browse the current gut health collection on Zinzino.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Explore verified omega and nutrition formats in the current US catalog.",
+      "locator": "$.intents[1].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 11,
+      "raw_message": "content/catalog.json:$.intents[1].description: unresolved strict-mode YELLOW claim: Explore verified omega and nutrition formats in the current US catalog.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Browse verified daily supplement formats from the current catalog.",
+      "locator": "$.intents[3].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 12,
+      "raw_message": "content/catalog.json:$.intents[3].description: unresolved strict-mode YELLOW claim: Browse verified daily supplement formats from the current catalog.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Balance Test Basic Kit official Zinzino product packaging",
+      "locator": "$.products[0].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 13,
+      "raw_message": "content/catalog.json:$.products[0].cutout.alt: unresolved strict-mode YELLOW claim: Balance Test Basic Kit official Zinzino product packaging",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "locator": "$.products[0].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 14,
+      "raw_message": "content/catalog.json:$.products[0].description: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Our featured test-first route, pairing the measurement with the included product format.",
+      "locator": "$.products[0].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 15,
+      "raw_message": "content/catalog.json:$.products[0].whyItsHere: unresolved strict-mode YELLOW claim: Our featured test-first route, pairing the measurement with the included product format.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The dietary-fiber format in the gut and digestion collection.",
+      "locator": "$.products[16].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 16,
+      "raw_message": "content/catalog.json:$.products[16].whyItsHere: unresolved strict-mode YELLOW claim: The dietary-fiber format in the gut and digestion collection.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The liquid turmeric-root format listed in Zinzino\u2019s gut-health collection.",
+      "locator": "$.products[17].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 17,
+      "raw_message": "content/catalog.json:$.products[17].whyItsHere: unresolved strict-mode YELLOW claim: The liquid turmeric-root format listed in Zinzino\u2019s gut-health collection.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The single-pack Viva+ option in the daily supplement group.",
+      "locator": "$.products[19].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 18,
+      "raw_message": "content/catalog.json:$.products[19].whyItsHere: unresolved strict-mode YELLOW claim: The single-pack Viva+ option in the daily supplement group.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Track your fatty acid profile from home",
+      "locator": "$.products[1].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 19,
+      "raw_message": "content/catalog.json:$.products[1].description: unresolved strict-mode YELLOW claim: Track your fatty acid profile from home",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The individual fatty-acid test for visitors who want the test without a kit.",
+      "locator": "$.products[1].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 20,
+      "raw_message": "content/catalog.json:$.products[1].whyItsHere: unresolved strict-mode YELLOW claim: The individual fatty-acid test for visitors who want the test without a kit.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
+      "locator": "$.products[22].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 21,
+      "raw_message": "content/catalog.json:$.products[22].description: unresolved strict-mode YELLOW claim: Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The Plus variant in the Xtend daily supplement range.",
+      "locator": "$.products[22].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 22,
+      "raw_message": "content/catalog.json:$.products[22].whyItsHere: unresolved strict-mode YELLOW claim: The Plus variant in the Xtend daily supplement range.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The standard variant in the Xtend daily supplement range.",
+      "locator": "$.products[23].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 23,
+      "raw_message": "content/catalog.json:$.products[23].whyItsHere: unresolved strict-mode YELLOW claim: The standard variant in the Xtend daily supplement range.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The liquid spirulina format in the active-nutrition group.",
+      "locator": "$.products[26].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 24,
+      "raw_message": "content/catalog.json:$.products[26].whyItsHere: unresolved strict-mode YELLOW claim: The liquid spirulina format in the active-nutrition group.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Gut Health Test official Zinzino product packaging",
+      "locator": "$.products[2].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 25,
+      "raw_message": "content/catalog.json:$.products[2].cutout.alt: unresolved strict-mode YELLOW claim: Gut Health Test official Zinzino product packaging",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Home health blood spot test to track gut and metabolic markers",
+      "locator": "$.products[2].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 26,
+      "raw_message": "content/catalog.json:$.products[2].description: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The single-test option in the home health testing range.",
+      "locator": "$.products[2].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 27,
+      "raw_message": "content/catalog.json:$.products[2].whyItsHere: unresolved strict-mode YELLOW claim: The single-test option in the home health testing range.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Energy Bar Nut & Seed official Zinzino product packaging",
+      "locator": "$.products[32].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 28,
+      "raw_message": "content/catalog.json:$.products[32].cutout.alt: unresolved strict-mode YELLOW claim: Energy Bar Nut & Seed official Zinzino product packaging",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The solid-food option in the active-nutrition assortment.",
+      "locator": "$.products[32].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 29,
+      "raw_message": "content/catalog.json:$.products[32].whyItsHere: unresolved strict-mode YELLOW claim: The solid-food option in the active-nutrition assortment.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer-described capsule formula that lists BPC-157 among its ingredients.",
+      "locator": "$.products[36].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 30,
+      "raw_message": "content/catalog.json:$.products[36].description: unresolved strict-mode YELLOW claim: A manufacturer-described capsule formula that lists BPC-157 among its ingredients.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
+      "locator": "$.products[37].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 31,
+      "raw_message": "content/catalog.json:$.products[37].description: unresolved strict-mode YELLOW claim: An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Gut Health Test x2 official Zinzino product packaging",
+      "locator": "$.products[3].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 32,
+      "raw_message": "content/catalog.json:$.products[3].cutout.alt: unresolved strict-mode YELLOW claim: Gut Health Test x2 official Zinzino product packaging",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Home health blood spot test to track gut and metabolic markers",
+      "locator": "$.products[3].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 33,
+      "raw_message": "content/catalog.json:$.products[3].description: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The two-test option for visitors comparing single- and two-test quantities.",
+      "locator": "$.products[3].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 34,
+      "raw_message": "content/catalog.json:$.products[3].whyItsHere: unresolved strict-mode YELLOW claim: The two-test option for visitors comparing single- and two-test quantities.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Cellular Reset official BioLimitless product presentation",
+      "locator": "$.products[40].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 35,
+      "raw_message": "content/catalog.json:$.products[40].cutout.alt: unresolved strict-mode YELLOW claim: Cellular Reset official BioLimitless product presentation",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients.",
+      "locator": "$.products[40].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 36,
+      "raw_message": "content/catalog.json:$.products[40].description: unresolved strict-mode YELLOW claim: A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Cellular Reset",
+      "locator": "$.products[40].name",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 37,
+      "raw_message": "content/catalog.json:$.products[40].name: unresolved strict-mode YELLOW claim: Cellular Reset",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Cellular Reset | Peptide formula | formula | Inventoried for catalog completeness; multiple research-compound ingredients require elevated compliance review. | A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients. | Official BioLimitless Cellular Reset",
+      "locator": "$.products[40]",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 38,
+      "raw_message": "content/catalog.json:$.products[40]: unresolved strict-mode YELLOW claim: Cellular Reset | Peptide formula | formula | Inventoried for catalog completeness; multiple research-compound ingredients require elevated compliance review. | A manufacturer-described formula that lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332 among its ingredients. | Official BioLimitless Cellular Reset",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer-described formula that lists Tesofensine, Dihexa and BPC-157 among its ingredients.",
+      "locator": "$.products[41].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 39,
+      "raw_message": "content/catalog.json:$.products[41].description: unresolved strict-mode YELLOW claim: A manufacturer-described formula that lists Tesofensine, Dihexa and BPC-157 among its ingredients.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer-formulated powder included for visitors comparing ordinary non-peptide wellness formats.",
+      "locator": "$.products[42].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 40,
+      "raw_message": "content/catalog.json:$.products[42].whyItsHere: unresolved strict-mode YELLOW claim: A manufacturer-formulated powder included for visitors comparing ordinary non-peptide wellness formats.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer bundle that includes Cell Signals, Detox Pro Plus and Master Microbiotics.",
+      "locator": "$.products[43].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 41,
+      "raw_message": "content/catalog.json:$.products[43].description: unresolved strict-mode YELLOW claim: A manufacturer bundle that includes Cell Signals, Detox Pro Plus and Master Microbiotics.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer bundle containing formulas from the BioLimitless product line, including Master Microbiotics.",
+      "locator": "$.products[44].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 42,
+      "raw_message": "content/catalog.json:$.products[44].description: unresolved strict-mode YELLOW claim: A manufacturer bundle containing formulas from the BioLimitless product line, including Master Microbiotics.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Includes Cellular Reset, which lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332; elevated owner-approved compliance review is required.",
+      "locator": "$.products[45].complianceReview.reason",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 43,
+      "raw_message": "content/catalog.json:$.products[45].complianceReview.reason: unresolved strict-mode YELLOW claim: Includes Cellular Reset, which lists 5-Amino-1-MQ, BPC-157 and SLU-PP-332; elevated owner-approved compliance review is required.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer bundle containing Cellular Reset and other BioLimitless formulas.",
+      "locator": "$.products[45].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 44,
+      "raw_message": "content/catalog.json:$.products[45].description: unresolved strict-mode YELLOW claim: A manufacturer bundle containing Cellular Reset and other BioLimitless formulas.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Cellular Stack | Power stack | stack | Inventoried as a manufacturer bundle; it includes deferred research-compound formulas. | A manufacturer bundle containing Cellular Reset and other BioLimitless formulas. | Official BioLimitless Cellular Stack",
+      "locator": "$.products[45]",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 45,
+      "raw_message": "content/catalog.json:$.products[45]: unresolved strict-mode YELLOW claim: Cellular Stack | Power stack | stack | Inventoried as a manufacturer bundle; it includes deferred research-compound formulas. | A manufacturer bundle containing Cellular Reset and other BioLimitless formulas. | Official BioLimitless Cellular Stack",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer bundle containing Neuro Reboot and other BioLimitless formulas.",
+      "locator": "$.products[46].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 46,
+      "raw_message": "content/catalog.json:$.products[46].description: unresolved strict-mode YELLOW claim: A manufacturer bundle containing Neuro Reboot and other BioLimitless formulas.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot.",
+      "locator": "$.products[47].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 47,
+      "raw_message": "content/catalog.json:$.products[47].description: unresolved strict-mode YELLOW claim: A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Master Stack | Power stack | stack | Inventoried as the broad manufacturer bundle; it includes multiple deferred research-compound formulas. | A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot. | Official BioLimitless Master Stack",
+      "locator": "$.products[47]",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 48,
+      "raw_message": "content/catalog.json:$.products[47]: unresolved strict-mode YELLOW claim: Master Stack | Power stack | stack | Inventoried as the broad manufacturer bundle; it includes multiple deferred research-compound formulas. | A manufacturer bundle combining multiple BioLimitless formulas, including Cellular Reset and Neuro Reboot. | Official BioLimitless Master Stack",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "How to read a supplement label",
+      "locator": "$.products[48].relatedEducation.label",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 49,
+      "raw_message": "content/catalog.json:$.products[48].relatedEducation.label: unresolved strict-mode YELLOW claim: How to read a supplement label",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "How to read a supplement label",
+      "locator": "$.products[49].relatedEducation.label",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 50,
+      "raw_message": "content/catalog.json:$.products[49].relatedEducation.label: unresolved strict-mode YELLOW claim: How to read a supplement label",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "Vitamin D Test official Zinzino product packaging",
+      "locator": "$.products[4].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 51,
+      "raw_message": "content/catalog.json:$.products[4].cutout.alt: unresolved strict-mode YELLOW claim: Vitamin D Test official Zinzino product packaging",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The individual at-home test dedicated to vitamin D measurement.",
+      "locator": "$.products[4].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 52,
+      "raw_message": "content/catalog.json:$.products[4].whyItsHere: unresolved strict-mode YELLOW claim: The individual at-home test dedicated to vitamin D measurement.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "How to read a supplement label",
+      "locator": "$.products[50].relatedEducation.label",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 53,
+      "raw_message": "content/catalog.json:$.products[50].relatedEducation.label: unresolved strict-mode YELLOW claim: How to read a supplement label",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "A non-peptide digestive-enzyme format grouped with other gut and digestion tools.",
+      "locator": "$.products[51].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 54,
+      "raw_message": "content/catalog.json:$.products[51].whyItsHere: unresolved strict-mode YELLOW claim: A non-peptide digestive-enzyme format grouped with other gut and digestion tools.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": "HbA1c Test official Zinzino product packaging",
+      "locator": "$.products[5].cutout.alt",
+      "priority": "Priority 3",
+      "public_visibility": "public accessibility metadata",
+      "queue_position": 55,
+      "raw_message": "content/catalog.json:$.products[5].cutout.alt: unresolved strict-mode YELLOW claim: HbA1c Test official Zinzino product packaging",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "metadata or alt text",
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "Track your long-term blood sugar levels",
+      "locator": "$.products[5].description",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 56,
+      "raw_message": "content/catalog.json:$.products[5].description: unresolved strict-mode YELLOW claim: Track your long-term blood sugar levels",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Verify canonical label/manufacturer facts and independent evidence boundaries.",
+      "existing_wording": "The individual at-home test dedicated to HbA1c measurement.",
+      "locator": "$.products[5].whyItsHere",
+      "priority": "Priority 2",
+      "public_visibility": "public product, discovery, or campaign copy",
+      "queue_position": 57,
+      "raw_message": "content/catalog.json:$.products[5].whyItsHere: unresolved strict-mode YELLOW claim: The individual at-home test dedicated to HbA1c measurement.",
+      "reason_flagged": "unresolved strict-mode YELLOW claim",
+      "recommended_next_action": "Human-review the public wording and preserve meaning before any later copy-only change.",
+      "source_file": "content/catalog.json",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "Possible; editorial and compliance approval required."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 58,
+      "raw_message": "index.html:157: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "reason_flagged": "index.html:157: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 59,
+      "raw_message": "index.html:278: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "reason_flagged": "index.html:278: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 60,
+      "raw_message": "shop.html:101: unresolved strict-mode YELLOW claim: Gut Health Test official Zinzino product packaging",
+      "reason_flagged": "shop.html:101: unresolved strict-mode YELLOW claim: Gut Health Test official Zinzino product packaging",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 61,
+      "raw_message": "shop.html:102: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "reason_flagged": "shop.html:102: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 62,
+      "raw_message": "shop.html:102: unresolved strict-mode YELLOW claim: Quick view for Gut Health Test",
+      "reason_flagged": "shop.html:102: unresolved strict-mode YELLOW claim: Quick view for Gut Health Test",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 63,
+      "raw_message": "shop.html:104: unresolved strict-mode YELLOW claim: Gut Health Test x2 official Zinzino product packaging",
+      "reason_flagged": "shop.html:104: unresolved strict-mode YELLOW claim: Gut Health Test x2 official Zinzino product packaging",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 64,
+      "raw_message": "shop.html:105: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "reason_flagged": "shop.html:105: unresolved strict-mode YELLOW claim: Home health blood spot test to track gut and metabolic markers",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 65,
+      "raw_message": "shop.html:105: unresolved strict-mode YELLOW claim: Quick view for Gut Health Test x2",
+      "reason_flagged": "shop.html:105: unresolved strict-mode YELLOW claim: Quick view for Gut Health Test x2",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 66,
+      "raw_message": "shop.html:107: unresolved strict-mode YELLOW claim: Vitamin D Test official Zinzino product packaging",
+      "reason_flagged": "shop.html:107: unresolved strict-mode YELLOW claim: Vitamin D Test official Zinzino product packaging",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 67,
+      "raw_message": "shop.html:108: unresolved strict-mode YELLOW claim: Quick view for Vitamin D Test",
+      "reason_flagged": "shop.html:108: unresolved strict-mode YELLOW claim: Quick view for Vitamin D Test",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 68,
+      "raw_message": "shop.html:110: unresolved strict-mode YELLOW claim: HbA1c Test official Zinzino product packaging",
+      "reason_flagged": "shop.html:110: unresolved strict-mode YELLOW claim: HbA1c Test official Zinzino product packaging",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 69,
+      "raw_message": "shop.html:111: unresolved strict-mode YELLOW claim: Track your long-term blood sugar levels",
+      "reason_flagged": "shop.html:111: unresolved strict-mode YELLOW claim: Track your long-term blood sugar levels",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 70,
+      "raw_message": "shop.html:182: unresolved strict-mode YELLOW claim: Browse the current gut health collection on Zinzino.",
+      "reason_flagged": "shop.html:182: unresolved strict-mode YELLOW claim: Browse the current gut health collection on Zinzino.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 71,
+      "raw_message": "shop.html:182: unresolved strict-mode YELLOW claim: Browse the current home health tests collection on Zinzino.",
+      "reason_flagged": "shop.html:182: unresolved strict-mode YELLOW claim: Browse the current home health tests collection on Zinzino.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 72,
+      "raw_message": "shop.html:92: unresolved strict-mode YELLOW claim: Official manufacturer links may earn The Mindful Matrix a commission.",
+      "reason_flagged": "shop.html:92: unresolved strict-mode YELLOW claim: Official manufacturer links may earn The Mindful Matrix a commission.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 73,
+      "raw_message": "shop.html:95: unresolved strict-mode YELLOW claim: Balance Test Basic Kit official Zinzino product packaging",
+      "reason_flagged": "shop.html:95: unresolved strict-mode YELLOW claim: Balance Test Basic Kit official Zinzino product packaging",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 74,
+      "raw_message": "shop.html:96: unresolved strict-mode YELLOW claim: Quick view for Balance Test Basic Kit",
+      "reason_flagged": "shop.html:96: unresolved strict-mode YELLOW claim: Quick view for Balance Test Basic Kit",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 75,
+      "raw_message": "shop.html:96: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "reason_flagged": "shop.html:96: unresolved strict-mode YELLOW claim: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 76,
+      "raw_message": "shop.html:99: unresolved strict-mode YELLOW claim: Track your fatty acid profile from home",
+      "reason_flagged": "shop.html:99: unresolved strict-mode YELLOW claim: Track your fatty acid profile from home",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    },
+    {
+      "category": "registered wording candidate",
+      "evidence_relationship": "Confirm context before registering or revising wording.",
+      "existing_wording": null,
+      "locator": "unparsed",
+      "priority": "Priority 3",
+      "public_visibility": "internal policy or metadata review",
+      "queue_position": 77,
+      "raw_message": "templates/shop.html:44: unresolved strict-mode YELLOW claim: Official manufacturer links may earn The Mindful Matrix a commission.",
+      "reason_flagged": "templates/shop.html:44: unresolved strict-mode YELLOW claim: Official manufacturer links may earn The Mindful Matrix a commission.",
+      "recommended_next_action": "Retain in the human-review queue; do not suppress automatically.",
+      "source_file": "compliance claim registry",
+      "tags": [
+        "registered wording candidate"
+      ],
+      "wording_change_would_alter_meaning": "No automatic wording change proposed."
+    }
+  ],
+  "normal_hard_gate_errors": 0,
+  "normal_review_warnings": 70,
+  "policy": "Triage only. No warning is approved, waived, or reclassified as compliant by this report.",
+  "schema_version": "1.0.0",
+  "strict_unresolved_items": 77
+}

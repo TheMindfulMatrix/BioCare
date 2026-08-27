@@ -61,6 +61,22 @@ class V102HardeningTests(unittest.TestCase):
         self.assertNotIn("pull_request", workflow)
         self.assertNotIn("issues: write", workflow)
 
+    def test_daily_workflow_uses_one_timezone_aware_schedule(self):
+        workflow = (ROOT / ".github/workflows/daily-site-audit.yml").read_text(encoding="utf-8")
+        self.assertEqual(workflow.count('cron: "0 8 * * *"'), 1)
+        self.assertEqual(workflow.count('timezone: "America/Chicago"'), 1)
+        self.assertNotIn("TZ=America/Chicago", workflow)
+        self.assertNotIn("steps.schedule.outputs.run", workflow)
+
+    def test_workflows_use_node24_action_majors(self):
+        workflows = "\n".join(path.read_text(encoding="utf-8") for path in sorted((ROOT / ".github/workflows").glob("*.yml")))
+        self.assertNotRegex(workflows, re.compile(r"actions/checkout@v[1-5](?!\d)"))
+        self.assertNotRegex(workflows, re.compile(r"actions/setup-python@v[1-5](?!\d)"))
+        self.assertNotRegex(workflows, re.compile(r"actions/upload-artifact@v[1-5](?!\d)"))
+        self.assertIn("actions/checkout@v6", workflows)
+        self.assertIn("actions/setup-python@v6", workflows)
+        self.assertIn("actions/upload-artifact@v6", workflows)
+
 
 if __name__ == "__main__":
     unittest.main()
