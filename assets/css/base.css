@@ -1,6 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { color-scheme: light dark; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--dark-bg); color: var(--dark-text); font: 400 var(--text-body)/1.68 var(--font-body); overflow-wrap: break-word; }
+body { margin: 0; background: var(--dark-bg); color: var(--dark-text); font: 400 var(--text-body)/1.62 var(--font-body); overflow-wrap: break-word; text-rendering: optimizeLegibility; }
 body, button { font-family: var(--font-body); }
 img, svg { display: block; max-width: 100%; }
 img { height: auto; }
@@ -23,7 +23,7 @@ button { color: inherit; }
 .section-warm { --section-bg: var(--warm-bg); --section-surface: var(--warm-surface); --section-surface-raised: var(--warm-300); --section-text: var(--warm-text); --section-muted: var(--warm-text-muted); --section-border: var(--warm-border); --section-gold: var(--gold-700); --section-green: var(--bio-green-600); color-scheme: light; }
 .section-pad { padding-block: var(--space-section); }
 .section-kicker, .data-label, .interface-label { margin: 0 0 var(--space-4); color: var(--section-green); font: 600 var(--text-xs)/1.4 var(--font-data); letter-spacing: 0.12em; text-transform: uppercase; }
-.section-title { max-width: 16ch; margin: 0; color: var(--section-text); font: 700 var(--text-h2)/1.02 var(--font-display); letter-spacing: -0.045em; text-wrap: balance; }
+.section-title { max-width: 16ch; margin: 0; color: var(--section-text); font: 680 var(--text-h2)/1.04 var(--font-display); letter-spacing: -0.04em; text-wrap: balance; }
 .section-copy { max-width: 55ch; color: var(--section-muted); }
 
 @media (prefers-reduced-motion: reduce) {
