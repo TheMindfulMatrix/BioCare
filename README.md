@@ -1,6 +1,6 @@
 # The Mindful Matrix / BioCare
 
-This repository is a dependency-free static site published under the GitHub Pages project path `/BioCare/`.
+This repository is a dependency-free static site hosted by GitHub Pages at [themindfulmatrixhealth.com](https://themindfulmatrixhealth.com/). The custom domain is served from `main` at the repository root, with HTTPS enforced. The old GitHub Pages `/BioCare/` address redirects to the custom domain; it is not the canonical address.
 
 ## Content model
 
@@ -10,7 +10,7 @@ This repository is a dependency-free static site published under the GitHub Page
 - Each product's `artwork` object reserves a stable Shelf background slot. Its `environment` selects a low-cost decorative treatment, while a verified `cutout` remains a separate foreground image. Keep `artwork.src` null until approved original editorial artwork, dimensions, and crops are supplied.
 - `content/library.json` is the single source of truth for Library categories, the article schema, publication status, and article records. An empty collection renders the visitor-facing coming-soon state.
 - `templates/index.html`, `templates/shop.html`, `templates/library.html`, `templates/start.html`, and `templates/article.html` contain page structure only. Shared navigation, footer, and metadata markup are generated centrally.
-- `scripts/build.py` produces `index.html`, `shop.html`, `library.html`, `start.html`, published-only `library/<slug>.html` files, `robots.txt`, and `sitemap.xml` using only Python's standard library. Draft records are never emitted as public pages or included in the sitemap.
+- `scripts/build.py` produces the 69 canonical public pages (root pages, departments, published Library guides and active product pages), search data, `robots.txt`, and `sitemap.xml` using only Python's standard library. `scripts/site_paths.py` supplies the shared page inventory. Draft records and deferred products are never emitted as public pages or included in the sitemap.
 - `img/responsive/` contains optimized WebP derivatives; the original `img/` files remain fallbacks and source assets.
 
 Do not edit generated page content in root HTML files. Change the content model or templates, then regenerate the site.
@@ -35,20 +35,29 @@ The preview receives `noindex, nofollow`, no canonical URL, and a visible non-pu
 ```text
 python scripts/build.py
 python scripts/validate.py
-python scripts/validate.py --compliance-strict
 python scripts/validate.py --compliance-strict --compliance-dry-run
 python scripts/check_claims.py --text "Supports immune function." --context SOCIAL_COMMERCIAL
 python -m unittest discover -s tests -v
-python -m http.server 8000 --directory ..
+python -m http.server 8000
 ```
 
 Compliance Engine v1 is an internal build-time risk-control layer. Its claim, evidence, product-status, disclosure, social, and FTC/FDA source registries live in `content/compliance/`; the workflow and limitations are documented in `docs/COMPLIANCE_ENGINE.md`. Normal validation blocks configured hard-rule violations and reports review items as warnings. Strict mode also treats unresolved commercial YELLOW/unregistered claims as failures; `--compliance-dry-run` reports those failures without changing content or failing the command. The complete current-site audit is committed under `reports/`.
 
-Open `http://localhost:8000/BioCare/` to test the same subpath shape used by GitHub Pages.
+Run these commands from the repository root and open `http://localhost:8000/` to match production's root-domain layout. On macOS, use `python3` if `python` is not available. The build needs Python 3.12 or newer; JavaScript regression tests also need Node.js on PATH. No website runtime package installation is required.
+
+Relative links retain subpath compatibility. For an optional legacy-subpath check, serve the parent of a checkout named `BioCare` and open `/BioCare/`; do not change canonical metadata to the local preview URL.
 
 Pull requests run the same generator and validation checks and provide a downloadable static preview artifact. GitHub Pages remains compatible with its current branch-root configuration because the generated `index.html` is committed.
 
-Generated public pages include unique canonical URLs, Open Graph and Twitter metadata, conservative schema.org records, and the shared 1200 × 630 brand preview in `assets/brand/social-preview.png`. The canonical base remains `https://themindfulmatrix.github.io/BioCare/`; no custom domain is assumed.
+Generated public pages include unique canonical URLs, Open Graph and Twitter metadata, conservative schema.org records, and the shared 1200 × 630 brand preview in `assets/brand/social-preview.png`. The canonical base in `content/site.json` must remain `https://themindfulmatrixhealth.com/` and match `CNAME`. Build and validate all generated destinations after changes.
+
+## Continuing edits on another computer
+
+Start from a fresh clone or an up-to-date `main`, then create a feature branch. Change canonical content/templates or assets, regenerate, run the checks above, and open a pull request. Use the normal merge-commit and GitHub Pages workflow only after approval and successful checks. Do not push directly to production or republish an old local checkout over `main`.
+
+The separate V12 design draft is not part of the domain-maintenance release. Integrate current `main` before resuming it so the custom-domain metadata, reduced-motion Library fix, tablet correction and fail-closed audit are preserved. Keep the inherited 70 review warnings / 77 strict advisory items and seven P1 human-review classifications visible; a passing technical release does not approve those claims.
+
+The daily audit runs at 8 AM America/Chicago from the default branch and supports a manual Actions rerun. It checks all canonical pages and their referenced assets against the configured production domain and refuses empty or incomplete coverage. It does not edit, merge or deploy the website. Review and screenshot outputs under `outputs/` are local artifacts, not public site assets; do not commit them by accident.
 
 ## Official product cutouts
 
