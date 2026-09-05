@@ -11,6 +11,11 @@ import re
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
+if __package__:
+    from .site_paths import canonical_page_paths
+else:
+    from site_paths import canonical_page_paths
+
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR_MARKER = '<meta name="generator" content="The Mindful Matrix static builder">'
 
@@ -1688,10 +1693,7 @@ def build_articles(data: dict, library: dict) -> None:
 
 def build_crawl_files(data: dict, library: dict, discovery: dict) -> None:
     metadata = data["site"]["metadata"]
-    paths = ["", "start.html", "library.html", "evidence.html", "shop.html", "know-your-number.html", "explore.html", "core-four.html"]
-    paths.extend(f'departments/{item["slug"]}.html' for item in discovery["departments"])
-    paths.extend(f'library/{article["slug"]}.html' for article in published_articles(library))
-    paths.extend(f'products/{product["id"]}.html' for product in active_products(data["catalog"]))
+    paths = canonical_page_paths(library, discovery, data["catalog"])
     urls = "\n".join(f"  <url><loc>{esc(page_url(metadata, path))}</loc></url>" for path in paths)
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

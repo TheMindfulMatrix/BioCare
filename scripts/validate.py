@@ -14,6 +14,11 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import parse_qsl, unquote, urlencode, urlparse, urlsplit, urlunsplit
 
+if __package__:
+    from .site_paths import canonical_base_url, canonical_page_paths
+else:
+    from site_paths import canonical_base_url, canonical_page_paths
+
 ROOT = Path(__file__).resolve().parents[1]
 errors: list[str] = []
 
@@ -182,7 +187,9 @@ def validate_content(site: dict, library: dict) -> None:
     check(site.get("featuredProductId") in ids, "featuredProductId must reference a product")
 
     metadata = site.get("site", {}).get("metadata", {})
-    check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrix.github.io/BioCare/", "Canonical base must preserve the verified /BioCare/ GitHub Pages URL")
+    check(metadata.get("canonicalBaseUrl") == "https://themindfulmatrixhealth.com/", "Canonical base must use the approved HTTPS custom domain")
+    cname = ROOT / "CNAME"
+    check(cname.is_file() and metadata.get("canonicalBaseUrl") == f"https://{cname.read_text(encoding='utf-8').strip()}/", "CNAME must match the canonical domain")
     check(set(metadata.get("pages", {})) == {"home", "library", "evidence", "start", "shop", "knowYourNumber"}, "Home, Library, Evidence, Start, Shop and Know Your Number metadata are required")
     social_image = metadata.get("socialImage", {})
     social_image_path = ROOT / social_image.get("src", "missing")
@@ -507,13 +514,9 @@ def extract_universe_payload(home: str) -> list[dict]:
 
 
 def public_pages(library: dict) -> list[Path]:
-    pages = [ROOT / "index.html", ROOT / "library.html", ROOT / "evidence.html", ROOT / "start.html", ROOT / "shop.html", ROOT / "know-your-number.html", ROOT / "explore.html", ROOT / "core-four.html"]
     discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
-    pages.extend(ROOT / "departments" / f'{item["slug"]}.html' for item in discovery["departments"])
-    pages.extend(ROOT / "library" / f'{article["slug"]}.html' for article in library["articles"] if article.get("status") == "published")
     catalog = json.loads((ROOT / "content" / "catalog.json").read_text(encoding="utf-8"))
-    pages.extend(ROOT / "products" / f'{product["id"]}.html' for product in catalog["products"] if product.get("commercial_status") == "active")
-    return pages
+    return [ROOT / (path or "index.html") for path in canonical_page_paths(library, discovery, catalog)]
 
 
 def validate_page(page: Path, *, preview: bool = False) -> DocumentParser:
@@ -552,7 +555,8 @@ def validate_page(page: Path, *, preview: bool = False) -> DocumentParser:
         check('name="robots" content="index, follow"' in generated, f"{label}: public page must be indexable")
         check(len(parser.canonicals) == 1, f"{label}: one canonical URL required")
         if parser.canonicals:
-            check(parser.canonicals[0].startswith("https://themindfulmatrix.github.io/BioCare/"), f"{label}: canonical must preserve /BioCare/")
+            check(parser.canonicals[0].startswith(canonical_base_url(ROOT)), f"{label}: canonical must use the configured domain")
+        check("themindfulmatrix.github.io/BioCare" not in generated, f"{label}: legacy domain remains in public markup or structured data")
         required_meta = ("og:title", "og:description", "og:type", "og:url", "og:image", "og:image:alt", "og:image:type", "twitter:card", "twitter:title", "twitter:description", "twitter:image", "twitter:image:alt")
         for name in required_meta:
             records = parser.social_metadata.get(name, [])
@@ -711,6 +715,7 @@ def validate_public_output(site: dict, library: dict, manifest: dict, preview_pa
         parser = parsers[page.resolve()]
         if parser.canonicals:
             check(parser.canonicals[0] == expected, f"{page.relative_to(ROOT)}: canonical URL does not match output path")
+        check(parser.social_metadata.get("og:url") == [expected], f"{page.relative_to(ROOT)}: social URL does not match canonical")
 
     sitemap_path = ROOT / "sitemap.xml"
     robots_path = ROOT / "robots.txt"
@@ -727,7 +732,7 @@ def validate_public_output(site: dict, library: dict, manifest: dict, preview_pa
     if robots_path.is_file():
         robots = robots_path.read_text(encoding="utf-8")
         check("User-agent: *" in robots and "Allow: /" in robots, "robots.txt must allow public crawling")
-        check(f"Sitemap: {canonical_base}sitemap.xml" in robots, "robots.txt must reference the /BioCare/ sitemap")
+        check(f"Sitemap: {canonical_base}sitemap.xml" in robots, "robots.txt must reference the canonical sitemap")
 
     article_dir = ROOT / "library"
     actual_article_pages = set(article_dir.glob("*.html")) if article_dir.exists() else set()

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://themindfulmatrix.github.io/BioCare/sitemap.xml
+Sitemap: https://themindfulmatrixhealth.com/sitemap.xml
