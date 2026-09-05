@@ -283,13 +283,17 @@ def shared_header_markup(data: dict, *, prefix: str, current: str) -> str:
 def shared_footer_markup(data: dict, *, prefix: str) -> str:
     site = data["site"]
     philosophy = data["brand"]["philosophy"]
-    instagram = site["instagram"]
+    social_links = "".join(
+        f'<a href="{esc(item["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(item["label"])}{external_note()}</a>'
+        for item in site["socials"]
+    )
+    email = site["publicEmail"]
     home = f"{prefix}index.html"
     return f'''<nav class="mobile-dock" aria-label="Mobile navigation"><a href="{home}" data-dock-page="home"><span aria-hidden="true">⌂</span>Home</a><a href="{prefix}explore.html" data-dock-page="explore"><span aria-hidden="true">⌕</span>Explore</a><a href="{prefix}shop.html" data-dock-page="shop"><span aria-hidden="true">◇</span>Products</a><a href="{prefix}library.html" data-dock-page="library"><span aria-hidden="true">▤</span>Library</a><a href="{prefix}start.html" data-dock-page="start"><span aria-hidden="true">→</span>Start</a></nav><footer class="site-footer section-dark">
     <div class="footer-grid container-wide">
       <div><a href="{home}" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">{esc(philosophy)}</p></div>
       <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}shop.html">All products</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
-      <div class="footer-meta"><nav class="socials" aria-label="Social links"><a href="{esc(instagram["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">Instagram{external_note()}</a></nav><p class="fine" data-fda-disclaimer>{esc(site["fdaDisclaimer"])}</p><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
+      <div class="footer-meta"><nav class="socials" aria-label="Social links">{social_links}</nav><p class="fine"><a href="mailto:{esc(email, attribute=True)}">{esc(email)}</a></p><p class="fine" data-fda-disclaimer>{esc(site["fdaDisclaimer"])}</p><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
     </div>
   </footer>'''
 

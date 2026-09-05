@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0",
   "publicBusinessContact": {
-    "status": "pending_user_approval",
-    "name": null,
-    "email": null,
+    "status": "user_approved",
+    "name": "The Mindful Matrix",
+    "email": "connect@themindfulmatrixhealth.com",
     "phone": null,
     "address": null,
-    "renderPublicly": false,
-    "reason": "No user-approved public business contact record exists in the repository. Private, account, Git, and back-office contact data must not be used."
+    "renderPublicly": true,
+    "reason": "The user explicitly approved this business email for public website and social-profile use on September 5, 2026."
   }
 }
