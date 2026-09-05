@@ -7,23 +7,19 @@ import argparse
 import json
 import posixpath
 import re
-import xml.etree.ElementTree as ET
 from pathlib import Path, PurePosixPath
-from urllib.parse import urlsplit
+
+if __package__:
+    from .site_paths import audited_page_paths
+else:
+    from site_paths import audited_page_paths
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_PATTERN = re.compile(r"(?:\.\./)*assets/[A-Za-z0-9_./-]+(?:\?[A-Za-z0-9_.=&-]+)?")
 
 
 def public_pages(root: Path) -> list[Path]:
-    sitemap = ET.parse(root / "sitemap.xml").getroot()
-    namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-    pages: list[Path] = []
-    for node in sitemap.findall("s:url/s:loc", namespace):
-        path = urlsplit(node.text or "").path
-        relative = path.split("/BioCare/", 1)[-1]
-        pages.append(root / (relative or "index.html"))
-    return pages
+    return [root / (path or "index.html") for path in audited_page_paths(root)]
 
 
 def normalize_reference(page: Path, value: str, root: Path) -> str | None:

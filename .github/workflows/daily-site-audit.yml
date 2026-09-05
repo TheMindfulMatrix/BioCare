@@ -41,7 +41,7 @@ jobs:
           python scripts/triage_compliance.py --json-output outputs/daily-audit/compliance-triage.json --markdown-output outputs/daily-audit/compliance-triage.md
 
       - name: Audit live production parity
-        run: python scripts/daily_audit.py --root . --base-url https://themindfulmatrix.github.io/BioCare/ --audited-sha "$AUDITED_SHA" --output outputs/daily-audit/site-audit.json
+        run: python scripts/daily_audit.py --root . --base-url https://themindfulmatrixhealth.com/ --audited-sha "$AUDITED_SHA" --output outputs/daily-audit/site-audit.json
 
       - name: Install browser audit runtime
         run: |
@@ -49,7 +49,7 @@ jobs:
           python -m playwright install --with-deps chromium
 
       - name: Responsive browser audit
-        run: python scripts/browser_audit.py --root . --base-url https://themindfulmatrix.github.io/BioCare/ --output-dir outputs/daily-audit/browser
+        run: python scripts/browser_audit.py --root . --base-url https://themindfulmatrixhealth.com/ --output-dir outputs/daily-audit/browser
 
       - name: Write next-actions summary
         if: always()

@@ -876,112 +876,118 @@
 
   var matrixCanvas = document.querySelector("[data-matrix-field]");
   if (matrixCanvas) initMatrixField(matrixCanvas, reduceMotion);
-  if (reduceMotion || !("IntersectionObserver" in window)) return;
+  // Only decorative effects may stop for reduced motion. Wayfinding and
+  // Library controls below must initialize for every motion preference.
+  function initMotionEffects() {
+    if (reduceMotion || !("IntersectionObserver" in window)) return;
 
-  document.documentElement.classList.add("motion-ready");
-  var revealObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      entry.target.querySelectorAll(".path-draw").forEach(function (path) {
-        path.classList.add("is-visible");
+    document.documentElement.classList.add("motion-ready");
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        entry.target.querySelectorAll(".path-draw").forEach(function (path) {
+          path.classList.add("is-visible");
+        });
+        revealObserver.unobserve(entry.target);
       });
-      revealObserver.unobserve(entry.target);
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+
+    document.querySelectorAll("[data-reveal]").forEach(function (target) {
+      revealObserver.observe(target);
     });
-  }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
 
-  document.querySelectorAll("[data-reveal]").forEach(function (target) {
-    revealObserver.observe(target);
-  });
+    var depthLayers = Array.prototype.slice.call(document.querySelectorAll("[data-scroll-depth]"));
+    var depthFrame = 0;
 
-  var depthLayers = Array.prototype.slice.call(document.querySelectorAll("[data-scroll-depth]"));
-  var depthFrame = 0;
+    function updateScrollDepth() {
+      depthFrame = 0;
+      var viewportCenter = window.innerHeight * .5;
+      depthLayers.forEach(function (layer) {
+        var bounds = layer.getBoundingClientRect();
+        if (bounds.bottom < -120 || bounds.top > window.innerHeight + 120) return;
+        var depth = Number(layer.dataset.scrollDepth || .4);
+        var distance = viewportCenter - (bounds.top + bounds.height * .5);
+        var shift = Math.max(-24, Math.min(24, distance * depth * .035));
+        layer.style.setProperty("--scroll-depth-shift", shift.toFixed(2) + "px");
+      });
+    }
 
-  function updateScrollDepth() {
-    depthFrame = 0;
-    var viewportCenter = window.innerHeight * .5;
-    depthLayers.forEach(function (layer) {
-      var bounds = layer.getBoundingClientRect();
-      if (bounds.bottom < -120 || bounds.top > window.innerHeight + 120) return;
-      var depth = Number(layer.dataset.scrollDepth || .4);
-      var distance = viewportCenter - (bounds.top + bounds.height * .5);
-      var shift = Math.max(-24, Math.min(24, distance * depth * .035));
-      layer.style.setProperty("--scroll-depth-shift", shift.toFixed(2) + "px");
-    });
+    function requestScrollDepth() {
+      if (!depthFrame) depthFrame = window.requestAnimationFrame(updateScrollDepth);
+    }
+
+    if (depthLayers.length) {
+      window.addEventListener("scroll", requestScrollDepth, { passive: true });
+      window.addEventListener("resize", requestScrollDepth, { passive: true });
+      updateScrollDepth();
+    }
+
+    var testingWorkflow = document.querySelector("[data-testing-workflow]");
+    var workflowSteps = testingWorkflow ? Array.prototype.slice.call(testingWorkflow.querySelectorAll("[data-workflow-step]")) : [];
+    var workflowFrame = 0;
+
+    function updateTestingWorkflow() {
+      workflowFrame = 0;
+      if (!testingWorkflow || !workflowSteps.length) return;
+      var bounds = testingWorkflow.getBoundingClientRect();
+      var travel = Math.max(1, window.innerHeight * .62);
+      var progress = Math.max(0, Math.min(1, (window.innerHeight * .82 - bounds.top) / travel));
+      testingWorkflow.style.setProperty("--workflow-progress", (progress * 100).toFixed(1) + "%");
+      var activeCount = Math.max(1, Math.ceil(progress * workflowSteps.length));
+      workflowSteps.forEach(function (step, index) {
+        step.classList.toggle("is-active", index < activeCount);
+      });
+    }
+
+    function requestTestingWorkflow() {
+      if (!workflowFrame) workflowFrame = window.requestAnimationFrame(updateTestingWorkflow);
+    }
+
+    if (testingWorkflow) {
+      window.addEventListener("scroll", requestTestingWorkflow, { passive: true });
+      window.addEventListener("resize", requestTestingWorkflow, { passive: true });
+      updateTestingWorkflow();
+    }
+
+    var stages = Array.prototype.slice.call(document.querySelectorAll("[data-matrix-stage]"));
+    var matrixSequence = document.querySelector("[data-matrix-sequence]");
+    var matrixProgressPath = document.querySelector("[data-matrix-path-progress]");
+    var matrixProgressFrame = 0;
+
+    function updateMatrixProgress() {
+      matrixProgressFrame = 0;
+      if (!matrixSequence || !matrixProgressPath) return;
+      var bounds = matrixSequence.getBoundingClientRect();
+      var startLine = window.innerHeight * .72;
+      var travel = Math.max(1, bounds.height - window.innerHeight * .46);
+      var progress = Math.max(0, Math.min(1, (startLine - bounds.top) / travel));
+      matrixProgressPath.style.strokeDashoffset = String(1 - progress);
+    }
+
+    function requestMatrixProgress() {
+      if (!matrixProgressFrame) matrixProgressFrame = window.requestAnimationFrame(updateMatrixProgress);
+    }
+
+    if (matrixSequence && matrixProgressPath) {
+      window.addEventListener("scroll", requestMatrixProgress, { passive: true });
+      window.addEventListener("resize", requestMatrixProgress, { passive: true });
+      updateMatrixProgress();
+    }
+
+    if (stages[0]) stages[0].classList.add("is-active");
+    var matrixObserver = new IntersectionObserver(function (entries) {
+      var visibleEntries = entries.filter(function (entry) { return entry.isIntersecting; }).sort(function (left, right) { return right.intersectionRatio - left.intersectionRatio; });
+      if (!visibleEntries.length) return;
+      var activeStage = visibleEntries[0].target;
+      stages.forEach(function (stage) { stage.classList.toggle("is-active", stage === activeStage); });
+      if (matrixSequence) matrixSequence.dataset.activeStage = activeStage.dataset.matrixStage;
+    }, { rootMargin: "-20% 0px -38%", threshold: 0.2 });
+
+    stages.forEach(function (stage) { matrixObserver.observe(stage); });
   }
+  initMotionEffects();
 
-  function requestScrollDepth() {
-    if (!depthFrame) depthFrame = window.requestAnimationFrame(updateScrollDepth);
-  }
-
-  if (depthLayers.length) {
-    window.addEventListener("scroll", requestScrollDepth, { passive: true });
-    window.addEventListener("resize", requestScrollDepth, { passive: true });
-    updateScrollDepth();
-  }
-
-  var testingWorkflow = document.querySelector("[data-testing-workflow]");
-  var workflowSteps = testingWorkflow ? Array.prototype.slice.call(testingWorkflow.querySelectorAll("[data-workflow-step]")) : [];
-  var workflowFrame = 0;
-
-  function updateTestingWorkflow() {
-    workflowFrame = 0;
-    if (!testingWorkflow || !workflowSteps.length) return;
-    var bounds = testingWorkflow.getBoundingClientRect();
-    var travel = Math.max(1, window.innerHeight * .62);
-    var progress = Math.max(0, Math.min(1, (window.innerHeight * .82 - bounds.top) / travel));
-    testingWorkflow.style.setProperty("--workflow-progress", (progress * 100).toFixed(1) + "%");
-    var activeCount = Math.max(1, Math.ceil(progress * workflowSteps.length));
-    workflowSteps.forEach(function (step, index) {
-      step.classList.toggle("is-active", index < activeCount);
-    });
-  }
-
-  function requestTestingWorkflow() {
-    if (!workflowFrame) workflowFrame = window.requestAnimationFrame(updateTestingWorkflow);
-  }
-
-  if (testingWorkflow) {
-    window.addEventListener("scroll", requestTestingWorkflow, { passive: true });
-    window.addEventListener("resize", requestTestingWorkflow, { passive: true });
-    updateTestingWorkflow();
-  }
-
-  var stages = Array.prototype.slice.call(document.querySelectorAll("[data-matrix-stage]"));
-  var matrixSequence = document.querySelector("[data-matrix-sequence]");
-  var matrixProgressPath = document.querySelector("[data-matrix-path-progress]");
-  var matrixProgressFrame = 0;
-
-  function updateMatrixProgress() {
-    matrixProgressFrame = 0;
-    if (!matrixSequence || !matrixProgressPath) return;
-    var bounds = matrixSequence.getBoundingClientRect();
-    var startLine = window.innerHeight * .72;
-    var travel = Math.max(1, bounds.height - window.innerHeight * .46);
-    var progress = Math.max(0, Math.min(1, (startLine - bounds.top) / travel));
-    matrixProgressPath.style.strokeDashoffset = String(1 - progress);
-  }
-
-  function requestMatrixProgress() {
-    if (!matrixProgressFrame) matrixProgressFrame = window.requestAnimationFrame(updateMatrixProgress);
-  }
-
-  if (matrixSequence && matrixProgressPath) {
-    window.addEventListener("scroll", requestMatrixProgress, { passive: true });
-    window.addEventListener("resize", requestMatrixProgress, { passive: true });
-    updateMatrixProgress();
-  }
-
-  if (stages[0]) stages[0].classList.add("is-active");
-  var matrixObserver = new IntersectionObserver(function (entries) {
-    var visibleEntries = entries.filter(function (entry) { return entry.isIntersecting; }).sort(function (left, right) { return right.intersectionRatio - left.intersectionRatio; });
-    if (!visibleEntries.length) return;
-    var activeStage = visibleEntries[0].target;
-    stages.forEach(function (stage) { stage.classList.toggle("is-active", stage === activeStage); });
-    if (matrixSequence) matrixSequence.dataset.activeStage = activeStage.dataset.matrixStage;
-  }, { rootMargin: "-20% 0px -38%", threshold: 0.2 });
-
-  stages.forEach(function (stage) { matrixObserver.observe(stage); });
   var dock = document.querySelector(".mobile-dock");
   if (dock) {
     var path = location.pathname.split("/").pop() || "index.html";
@@ -1009,7 +1015,13 @@
     }
     if (libraryCoreFour) libraryCoreFour.addEventListener("click", function () { coreFourOnly = !coreFourOnly; var url = new URL(location.href); if (coreFourOnly) url.searchParams.set("collection", "core-four"); else url.searchParams.delete("collection"); history.replaceState({}, "", url); filterLibrary(); });
     libraryControls.addEventListener("input", filterLibrary);
-    libraryControls.addEventListener("reset", function () { window.setTimeout(filterLibrary, 0); });
+    libraryControls.addEventListener("reset", function () {
+      coreFourOnly = false;
+      var url = new URL(location.href);
+      url.searchParams.delete("collection");
+      history.replaceState({}, "", url);
+      window.setTimeout(filterLibrary, 0);
+    });
     filterLibrary();
   }
 }());
