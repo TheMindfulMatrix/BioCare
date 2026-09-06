@@ -382,6 +382,21 @@ def hero_actions_markup(product: dict, product_count: int, affiliate_note: str) 
           <p id="hero-affiliate-disclosure" class="hero-affiliate-note" data-affiliate-disclosure>{esc(affiliate_note)}</p>'''
 
 
+def hero_image_markup(product: dict) -> str:
+    fallback = shelf_product_markup(product, eager=True)
+    desktop = product.get("desktopHero")
+    if not desktop:
+        return fallback
+    # Keep the img as the layout participant in the existing grid/flex rules.
+    # Only the homepage at desktop widths opts into the native larger source;
+    # smaller screens and every catalog/product presentation retain the cutout.
+    return (
+        '<picture style="display:contents">'
+        f'<source media="(min-width: 75rem)" type="image/webp" '
+        f'srcset="{esc(desktop["src"], attribute=True)}">{fallback}</picture>'
+    )
+
+
 def hero_product_markup(product: dict) -> str:
     artwork = product.get("artwork", {})
     artwork_markup = ""
@@ -400,7 +415,7 @@ def hero_product_markup(product: dict) -> str:
             <a class="hero-product__stage" href="{url}" target="_blank" rel="sponsored noopener noreferrer" aria-label="View {esc(product["name"], attribute=True)} on Zinzino (opens in a new tab)">
               {artwork_markup}
               <span class="hero-product__pedestal" data-parallax-depth="0.5" aria-hidden="true"></span>
-              <div class="hero-product__cutout" data-parallax-depth="0.22">{shelf_product_markup(product, eager=True)}</div>
+              <div class="hero-product__cutout" data-parallax-depth="0.22">{hero_image_markup(product)}</div>
               <div class="hero-product__signal hero-product__signal--one" data-parallax-depth="1.15" aria-hidden="true"><span>01</span> Test</div>
               <div class="hero-product__signal hero-product__signal--two" data-parallax-depth="0.8" aria-hidden="true"><span>02</span> Learn</div>
               <div class="hero-product__signal hero-product__signal--three" data-parallax-depth="1.35" aria-hidden="true"><span>03</span> Choose</div>
