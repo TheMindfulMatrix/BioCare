@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-09-06",
+  "integrations": {
+    "analyticsEnabled": false,
+    "newsletterEnabled": false,
+    "activationStatus": "Separate provider, privacy, account and release approval required"
+  },
+  "about": {
+    "path": "about.html",
+    "title": "About & Contact | The Mindful Matrix",
+    "description": "Meet the person behind The Mindful Matrix, understand its editorial and affiliate relationships, and get in touch.",
+    "eyebrow": "About & contact",
+    "heading": "A person behind the platform. A purpose behind the choices.",
+    "lede": "The Mindful Matrix is operated by Gavin Reidel, a Zinzino Independent Partner. It brings learning resources, product information, and original sources together so you can investigate before deciding.",
+    "principles": [
+      {"title": "Information first", "copy": "Begin with the question you want to understand. The site connects practical guides, product records, and source material without treating them as interchangeable."},
+      {"title": "Sources with context", "copy": "Library guides show references and limitations. Manufacturer documentation describes a product; it is not the same as independent evidence about an outcome."},
+      {"title": "An optional next step", "copy": "Reading more, asking a professional, or doing nothing yet are valid choices. Visiting a product page does not commit you to a purchase."}
+    ],
+    "editorial": [
+      "Products are organized by format, stated purpose, available label information, and connections to the Library. Inclusion reflects an editorial choice. It does not establish effectiveness or suitability for an individual.",
+      "Evidence and manufacturer material are identified separately. Missing documentation stays visible; research about one ingredient does not automatically establish a benefit for a finished product.",
+      "Source checks and automated validation are not independent clinical review. The website is educational and does not provide personalized medical advice."
+    ],
+    "contactHeading": "Questions, feedback, or a correction?",
+    "contactCopy": "Email the page link and the information you would like us to look at. Please do not send medical records, test results, passwords, or payment details.",
+    "faqs": [
+      {"question": "Who handles my purchase?", "answer": "Product links take you to the named manufacturer's website. That checkout presents the seller's current price and terms. For orders, delivery, returns, or subscriptions, use the contact details on your order confirmation or the manufacturer's support page."},
+      {"question": "How does The Mindful Matrix earn money?", "answer": "Some product links are affiliate or partner links. A qualifying purchase may earn compensation for The Mindful Matrix. The relationship is disclosed alongside commercial content; it does not establish that a product is right for you."},
+      {"question": "Can you interpret my test results?", "answer": "The site explains general concepts and source limitations, not individual results. Take personal questions to a qualified healthcare professional; do not email your test report to this website."},
+      {"question": "Can I read without buying or subscribing?", "answer": "Yes. The public Library and source index can be read without an account, a purchase, or an email subscription."}
+    ]
+  },
+  "privacy": {
+    "path": "privacy.html",
+    "title": "Privacy & Website Data | The Mindful Matrix",
+    "description": "How this website handles browsing, search, email contact, and external links, with the current status of analytics and subscriptions.",
+    "eyebrow": "Privacy & website data",
+    "heading": "Know what happens when you browse.",
+    "lede": "This notice describes the current static website. Optional analytics and newsletter registration are not enabled in this version.",
+    "sections": [
+      {"heading": "Browsing and search", "paragraphs": ["The site does not ask you to create an account. Search and filters run in your browser. Search words and filter selections can appear in the page address and browser history, so do not enter sensitive personal information.", "The site does not currently send analytics events, record browsing sessions, or store advertising identifiers. Ordinary website delivery is different: GitHub Pages and the network services involved may process connection information such as your IP address and the requested address."]},
+      {"heading": "Fonts and external websites", "paragraphs": ["The site requests fonts from Google Fonts. Your browser contacts that service to obtain the files. Product and social links lead to other websites with their own data practices.", "Affiliate identifiers in product links identify the partner relationship. The manufacturer operates checkout; this website does not collect your payment details or receive the contents of your test report through a website form."]},
+      {"heading": "If you email us", "paragraphs": ["Opening an email link starts your email app; it does not subscribe you to marketing. If you send a message, your email address and message contents are handled through the email services involved, including our Microsoft 365 mailbox, to respond to your inquiry.", "Only include what is needed for your question. Please do not send health records, test results, financial details, or passwords. Contact us to ask about access, correction, deletion, or retention of correspondence. Retention can depend on the correspondence and applicable service settings; no automatic deletion period is represented here."]},
+      {"heading": "Optional services are not active", "paragraphs": ["There is no active newsletter signup on the public site. No email address is required to read the available guides. If a mailing service or analytics service is introduced, its purpose, data handling, and applicable choices must be explained before activation."]}
+    ]
+  },
+  "journey": {
+    "title": "Two purchase formats. Understand the difference.",
+    "intro": "You can explore the individual test or the featured subscription kit. Read the product record before leaving for the manufacturer's checkout.",
+    "checkedOn": "2026-09-06",
+    "productIds": ["balance-test", "balance-basic-kit"],
+    "checklist": [
+      "Confirm the selected product, quantity, and purchase format.",
+      "Review the amount due now, any recurring charges, shipping, and applicable tax in checkout.",
+      "Read the current subscription, cancellation, delivery, and return terms before agreeing.",
+      "Check your location's eligibility. BalanceTest is not available in New York.",
+      "Keep your order confirmation and use the manufacturer's support details for purchase questions."
+    ],
+    "supportLabel": "Zinzino customer service",
+    "supportUrl": "https://www.zinzino.com/site/us/en-us/about/customer-service"
+  }
+}

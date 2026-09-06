@@ -1,0 +1,2620 @@
+{
+  "cases": [
+    {
+      "path": "about.html",
+      "width": 1440,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "A person behind the platform. A purpose behind the choices.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 61.92,
+          "passes": true
+        },
+        {
+          "text": "The Mindful Matrix is operated by Gavin Reidel, a Zinzino Independent Partner. It bri",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Read Gavin's story \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "A direct line",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Questions, feedback, or a correction?",
+          "ratio": 15.08454419880451,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "Email the page link and the information you would like us to look at. Please do not s",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Email the Matrix \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "connect@themindfulmatrixhealth.com",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "How website data is handled \u2192",
+          "ratio": 15.08454419880451,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "The principles behind the pages.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 43.2,
+          "passes": true
+        },
+        {
+          "text": "01",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Information first",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Begin with the question you want to understand. The site connects practical guides, p",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "02",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Sources with context",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Library guides show references and limitations. Manufacturer documentation describes ",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "03",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "An optional next step",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Reading more, asking a professional, or doing nothing yet are valid choices. Visiting",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "What inclusion means\u2014and what it doesn't.",
+          "ratio": 11.684376491105832,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 43.2,
+          "passes": true
+        },
+        {
+          "text": "Products are organized by format, stated purpose, available label information, and co",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Evidence and manufacturer material are identified separately. Missing documentation s",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Source checks and automated validation are not independent clinical review. The websi",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Inspect the source index \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Our editorial standards \u2192",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "The relationship stays visible.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 43.2,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "BioLimitless links use the Matrix partner referral. I may earn compensation from qual",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "A product link is optional. The manufacturer presents its current checkout terms and ",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Understand the testing purchase options \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Before you get in touch.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 43.2,
+          "passes": true
+        },
+        {
+          "text": "Who handles my purchase?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "How does The Mindful Matrix earn money?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Can you interpret my test results?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Can I read without buying or subscribing?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "privacy.html",
+      "width": 1440,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Know what happens when you browse.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 61.92,
+          "passes": true
+        },
+        {
+          "text": "This notice describes the current static website. Optional analytics and newsletter r",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Notice date: 2026-09-06 \u00b7 Analytics off \u00b7 Newsletter signup off",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Browsing and search",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site does not ask you to create an account. Search and filters run in your browse",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "The site does not currently send analytics events, record browsing sessions, or store",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Fonts and external websites",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site requests fonts from Google Fonts. Your browser contacts that service to obta",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Affiliate identifiers in product links identify the partner relationship. The manufac",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "If you email us",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Opening an email link starts your email app; it does not subscribe you to marketing. ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Only include what is needed for your question. Please do not send health records, tes",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Optional services are not active",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "There is no active newsletter signup on the public site. No email address is required",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Service information",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Questions about this notice?",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Contact Gavin Reidel at connect@themindfulmatrixhealth.com. We will review the questi",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "About & contact \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "know-your-number.html",
+      "width": 1440,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Two purchase formats. Understand the difference.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 43.2,
+          "passes": true
+        },
+        {
+          "text": "Individual test",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "BalanceTest",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This is the individual product record, separate from the featured subscription kit. P",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Premier pricing may require an eligible Premier purchase or customer status. Checkout",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review BalanceTest \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Start kit + monthly subscription",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Balance Test Basic Kit",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This format has both a start price and a recurring monthly charge. Review the terms b",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review Balance Test Basic Kit \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "US purchase formats checked 2026-09-06. Prices and terms can change; the manufacturer",
+          "ratio": 5.977323291805949,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Confirm the selected product, quantity, and purchase format.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Review the amount due now, any recurring charges, shipping, and applicable tax in che",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Read the current subscription, cancellation, delivery, and return terms before agreei",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Check your location's eligibility. BalanceTest is not available in New York.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Keep your order confirmation and use the manufacturer's support details for purchase ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Zinzino customer service \u2197 (opens in a new tab)",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Who runs the Matrix? \u2192",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        },
+        {
+          "text": "Learn more before deciding.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 43.2,
+          "passes": true
+        },
+        {
+          "text": "Read the testing guide \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Ask a website question \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.28,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "about.html",
+      "width": 768,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "A person behind the platform. A purpose behind the choices.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 34.4,
+          "passes": true
+        },
+        {
+          "text": "The Mindful Matrix is operated by Gavin Reidel, a Zinzino Independent Partner. It bri",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Read Gavin's story \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "A direct line",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Questions, feedback, or a correction?",
+          "ratio": 15.08454419880451,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "Email the page link and the information you would like us to look at. Please do not s",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Email the Matrix \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "connect@themindfulmatrixhealth.com",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "How website data is handled \u2192",
+          "ratio": 15.08454419880451,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "The principles behind the pages.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "01",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Information first",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Begin with the question you want to understand. The site connects practical guides, p",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "02",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Sources with context",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Library guides show references and limitations. Manufacturer documentation describes ",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "03",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "An optional next step",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Reading more, asking a professional, or doing nothing yet are valid choices. Visiting",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "What inclusion means\u2014and what it doesn't.",
+          "ratio": 11.684376491105832,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Products are organized by format, stated purpose, available label information, and co",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Evidence and manufacturer material are identified separately. Missing documentation s",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Source checks and automated validation are not independent clinical review. The websi",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Inspect the source index \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Our editorial standards \u2192",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "The relationship stays visible.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "BioLimitless links use the Matrix partner referral. I may earn compensation from qual",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "A product link is optional. The manufacturer presents its current checkout terms and ",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Understand the testing purchase options \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Before you get in touch.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Who handles my purchase?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "How does The Mindful Matrix earn money?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Can you interpret my test results?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Can I read without buying or subscribing?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "privacy.html",
+      "width": 768,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Know what happens when you browse.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 34.4,
+          "passes": true
+        },
+        {
+          "text": "This notice describes the current static website. Optional analytics and newsletter r",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Notice date: 2026-09-06 \u00b7 Analytics off \u00b7 Newsletter signup off",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Browsing and search",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site does not ask you to create an account. Search and filters run in your browse",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "The site does not currently send analytics events, record browsing sessions, or store",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Fonts and external websites",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site requests fonts from Google Fonts. Your browser contacts that service to obta",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Affiliate identifiers in product links identify the partner relationship. The manufac",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "If you email us",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Opening an email link starts your email app; it does not subscribe you to marketing. ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Only include what is needed for your question. Please do not send health records, tes",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Optional services are not active",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "There is no active newsletter signup on the public site. No email address is required",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Service information",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Questions about this notice?",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Contact Gavin Reidel at connect@themindfulmatrixhealth.com. We will review the questi",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "About & contact \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "know-your-number.html",
+      "width": 768,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Two purchase formats. Understand the difference.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Individual test",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "BalanceTest",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This is the individual product record, separate from the featured subscription kit. P",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Premier pricing may require an eligible Premier purchase or customer status. Checkout",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review BalanceTest \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Start kit + monthly subscription",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Balance Test Basic Kit",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This format has both a start price and a recurring monthly charge. Review the terms b",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review Balance Test Basic Kit \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "US purchase formats checked 2026-09-06. Prices and terms can change; the manufacturer",
+          "ratio": 5.977323291805949,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Confirm the selected product, quantity, and purchase format.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Review the amount due now, any recurring charges, shipping, and applicable tax in che",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Read the current subscription, cancellation, delivery, and return terms before agreei",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Check your location's eligibility. BalanceTest is not available in New York.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Keep your order confirmation and use the manufacturer's support details for purchase ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Zinzino customer service \u2197 (opens in a new tab)",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Who runs the Matrix? \u2192",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        },
+        {
+          "text": "Learn more before deciding.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Read the testing guide \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Ask a website question \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16.4352,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "about.html",
+      "width": 390,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "A person behind the platform. A purpose behind the choices.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 34.4,
+          "passes": true
+        },
+        {
+          "text": "The Mindful Matrix is operated by Gavin Reidel, a Zinzino Independent Partner. It bri",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Read Gavin's story \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "A direct line",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Questions, feedback, or a correction?",
+          "ratio": 15.08454419880451,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "Email the page link and the information you would like us to look at. Please do not s",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Email the Matrix \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "connect@themindfulmatrixhealth.com",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "How website data is handled \u2192",
+          "ratio": 15.08454419880451,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "The principles behind the pages.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "01",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Information first",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Begin with the question you want to understand. The site connects practical guides, p",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "02",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Sources with context",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Library guides show references and limitations. Manufacturer documentation describes ",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "03",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "An optional next step",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Reading more, asking a professional, or doing nothing yet are valid choices. Visiting",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "What inclusion means\u2014and what it doesn't.",
+          "ratio": 11.684376491105832,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Products are organized by format, stated purpose, available label information, and co",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Evidence and manufacturer material are identified separately. Missing documentation s",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Source checks and automated validation are not independent clinical review. The websi",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Inspect the source index \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Our editorial standards \u2192",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "The relationship stays visible.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "BioLimitless links use the Matrix partner referral. I may earn compensation from qual",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "A product link is optional. The manufacturer presents its current checkout terms and ",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Understand the testing purchase options \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Before you get in touch.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Who handles my purchase?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "How does The Mindful Matrix earn money?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Can you interpret my test results?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Can I read without buying or subscribing?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "privacy.html",
+      "width": 390,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Know what happens when you browse.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 34.4,
+          "passes": true
+        },
+        {
+          "text": "This notice describes the current static website. Optional analytics and newsletter r",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Notice date: 2026-09-06 \u00b7 Analytics off \u00b7 Newsletter signup off",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Browsing and search",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site does not ask you to create an account. Search and filters run in your browse",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "The site does not currently send analytics events, record browsing sessions, or store",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Fonts and external websites",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site requests fonts from Google Fonts. Your browser contacts that service to obta",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Affiliate identifiers in product links identify the partner relationship. The manufac",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "If you email us",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Opening an email link starts your email app; it does not subscribe you to marketing. ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Only include what is needed for your question. Please do not send health records, tes",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Optional services are not active",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "There is no active newsletter signup on the public site. No email address is required",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Service information",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Questions about this notice?",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Contact Gavin Reidel at connect@themindfulmatrixhealth.com. We will review the questi",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "About & contact \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "know-your-number.html",
+      "width": 390,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Two purchase formats. Understand the difference.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Individual test",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "BalanceTest",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This is the individual product record, separate from the featured subscription kit. P",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Premier pricing may require an eligible Premier purchase or customer status. Checkout",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review BalanceTest \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Start kit + monthly subscription",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Balance Test Basic Kit",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This format has both a start price and a recurring monthly charge. Review the terms b",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review Balance Test Basic Kit \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "US purchase formats checked 2026-09-06. Prices and terms can change; the manufacturer",
+          "ratio": 5.977323291805949,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Confirm the selected product, quantity, and purchase format.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Review the amount due now, any recurring charges, shipping, and applicable tax in che",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Read the current subscription, cancellation, delivery, and return terms before agreei",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Check your location's eligibility. BalanceTest is not available in New York.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Keep your order confirmation and use the manufacturer's support details for purchase ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Zinzino customer service \u2197 (opens in a new tab)",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Who runs the Matrix? \u2192",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Learn more before deciding.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Read the testing guide \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Ask a website question \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "about.html",
+      "width": 375,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "A person behind the platform. A purpose behind the choices.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 34.4,
+          "passes": true
+        },
+        {
+          "text": "The Mindful Matrix is operated by Gavin Reidel, a Zinzino Independent Partner. It bri",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Read Gavin's story \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "A direct line",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Questions, feedback, or a correction?",
+          "ratio": 15.08454419880451,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "Email the page link and the information you would like us to look at. Please do not s",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Email the Matrix \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "connect@themindfulmatrixhealth.com",
+          "ratio": 8.708245762200159,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "How website data is handled \u2192",
+          "ratio": 15.08454419880451,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "The principles behind the pages.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "01",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Information first",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Begin with the question you want to understand. The site connects practical guides, p",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "02",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Sources with context",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Library guides show references and limitations. Manufacturer documentation describes ",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "03",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "An optional next step",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 19.2,
+          "passes": true
+        },
+        {
+          "text": "Reading more, asking a professional, or doing nothing yet are valid choices. Visiting",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "What inclusion means\u2014and what it doesn't.",
+          "ratio": 11.684376491105832,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Products are organized by format, stated purpose, available label information, and co",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Evidence and manufacturer material are identified separately. Missing documentation s",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Source checks and automated validation are not independent clinical review. The websi",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Inspect the source index \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Our editorial standards \u2192",
+          "ratio": 11.684376491105832,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "The relationship stays visible.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "BioLimitless links use the Matrix partner referral. I may earn compensation from qual",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "A product link is optional. The manufacturer presents its current checkout terms and ",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Understand the testing purchase options \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Before you get in touch.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Who handles my purchase?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "How does The Mindful Matrix earn money?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Can you interpret my test results?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Can I read without buying or subscribing?",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "privacy.html",
+      "width": 375,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Know what happens when you browse.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 34.4,
+          "passes": true
+        },
+        {
+          "text": "This notice describes the current static website. Optional analytics and newsletter r",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 17.2,
+          "passes": true
+        },
+        {
+          "text": "Notice date: 2026-09-06 \u00b7 Analytics off \u00b7 Newsletter signup off",
+          "ratio": 9.424074893349578,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Browsing and search",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site does not ask you to create an account. Search and filters run in your browse",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "The site does not currently send analytics events, record browsing sessions, or store",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Fonts and external websites",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "The site requests fonts from Google Fonts. Your browser contacts that service to obta",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Affiliate identifiers in product links identify the partner relationship. The manufac",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "If you email us",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Opening an email link starts your email app; it does not subscribe you to marketing. ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Only include what is needed for your question. Please do not send health records, tes",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Optional services are not active",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "There is no active newsletter signup on the public site. No email address is required",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Service information",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Questions about this notice?",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 23.2,
+          "passes": true
+        },
+        {
+          "text": "Contact Gavin Reidel at connect@themindfulmatrixhealth.com. We will review the questi",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "About & contact \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        }
+      ]
+    },
+    {
+      "path": "know-your-number.html",
+      "width": 375,
+      "skip_link": true,
+      "keyboard_focus": true,
+      "forced_colors_focus": true,
+      "primary_button_minimum_44px": true,
+      "contrast": [
+        {
+          "text": "Two purchase formats. Understand the difference.",
+          "ratio": 14.354743886051553,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Individual test",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "BalanceTest",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This is the individual product record, separate from the featured subscription kit. P",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Premier pricing may require an eligible Premier purchase or customer status. Checkout",
+          "ratio": 6.450313283108034,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review BalanceTest \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Start kit + monthly subscription",
+          "ratio": 5.645737135800053,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Balance Test Basic Kit",
+          "ratio": 15.490645334633868,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 24.8,
+          "passes": true
+        },
+        {
+          "text": "This format has both a start price and a recurring monthly charge. Review the terms b",
+          "ratio": 15.490645334633868,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Official price source \u2197 (opens in a new tab)",
+          "ratio": 8.730634677921403,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Review Balance Test Basic Kit \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Links below go to Zinzino's own site. I'm an independent Zinzino Partner and earn a c",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "US purchase formats checked 2026-09-06. Prices and terms can change; the manufacturer",
+          "ratio": 5.977323291805949,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Confirm the selected product, quantity, and purchase format.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Review the amount due now, any recurring charges, shipping, and applicable tax in che",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Read the current subscription, cancellation, delivery, and return terms before agreei",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Check your location's eligibility. BalanceTest is not available in New York.",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Keep your order confirmation and use the manufacturer's support details for purchase ",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Zinzino customer service \u2197 (opens in a new tab)",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Who runs the Matrix? \u2192",
+          "ratio": 14.354743886051553,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        },
+        {
+          "text": "Learn more before deciding.",
+          "ratio": 16.32451335705747,
+          "required": 3,
+          "skipped": null,
+          "fontSize": 28.8,
+          "passes": true
+        },
+        {
+          "text": "Read the testing guide \u2192",
+          "ratio": 8.552659488052965,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 14,
+          "passes": true
+        },
+        {
+          "text": "Ask a website question \u2192",
+          "ratio": 16.32451335705747,
+          "required": 4.5,
+          "skipped": null,
+          "fontSize": 16,
+          "passes": true
+        }
+      ]
+    }
+  ],
+  "no_js_static_routes": 4,
+  "journey_checks": [
+    {
+      "motion": "reduce",
+      "product": "balance-test",
+      "comparison_round_trip": true,
+      "official_destination_present": true,
+      "purchase_placed": false
+    },
+    {
+      "motion": "reduce",
+      "product": "balance-basic-kit",
+      "comparison_round_trip": true,
+      "official_destination_present": true,
+      "purchase_placed": false
+    },
+    {
+      "motion": "no-preference",
+      "product": "balance-test",
+      "comparison_round_trip": true,
+      "official_destination_present": true,
+      "purchase_placed": false
+    },
+    {
+      "motion": "no-preference",
+      "product": "balance-basic-kit",
+      "comparison_round_trip": true,
+      "official_destination_present": true,
+      "purchase_placed": false
+    }
+  ],
+  "scope": "targeted basics, not a full accessibility certification"
+}

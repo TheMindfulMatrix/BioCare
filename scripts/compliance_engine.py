@@ -453,9 +453,10 @@ class ComplianceEngine:
         return findings
 
     def audit_paths(self) -> list[Path]:
-        paths = [ROOT / "content" / name for name in ("catalog.json", "library.json", "site.json")]
+        paths = [ROOT / "content" / name for name in ("catalog.json", "library.json", "site.json", "growth.json")]
         paths.extend(sorted((ROOT / "templates").glob("**/*.html")))
         paths.extend(ROOT / name for name in ("index.html", "shop.html", "library.html", "start.html"))
+        paths.extend(ROOT / name for name in ("about.html", "privacy.html", "know-your-number.html"))
         paths.extend(sorted((ROOT / "library").glob("*.html")))
         for folder in (ROOT / "content" / "social", ROOT / "social"):
             if folder.is_dir():

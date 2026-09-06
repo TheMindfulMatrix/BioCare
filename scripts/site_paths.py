@@ -10,7 +10,7 @@ SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 def canonical_page_paths(library: dict, discovery: dict, catalog: dict) -> list[str]:
     paths = ["", "start.html", "library.html", "evidence.html", "shop.html",
-             "know-your-number.html", "explore.html", "core-four.html"]
+             "know-your-number.html", "explore.html", "core-four.html", "about.html", "privacy.html"]
     paths.extend(f'departments/{item["slug"]}.html' for item in discovery["departments"])
     paths.extend(f'library/{item["slug"]}.html' for item in library["articles"] if item.get("status") == "published")
     paths.extend(f'products/{item["id"]}.html' for item in catalog["products"] if item.get("commercial_status") == "active")

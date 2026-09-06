@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>NON-PUBLIC email signup prototype</title>
+<link rel="stylesheet" href="../../../assets/css/tokens.css"><link rel="stylesheet" href="../../../assets/css/base.css"><link rel="stylesheet" href="../../../assets/css/site.css"><link rel="stylesheet" href="../../../assets/css/growth.css">
+<style>.preview-shell{max-width:46rem;margin:3rem auto;padding:1.25rem}.preview-banner{position:static;padding:1rem;background:#efe2cc;color:#292720}.preview-form{display:grid;gap:1rem}.preview-form input[type=email]{width:100%;padding:.85rem;color:#20241f;background:#fffdf8;border:2px solid #595f58;border-radius:.35rem}.consent{display:flex;gap:.75rem;align-items:start}.consent input{width:1.3rem;height:1.3rem;flex:none}.preview-form [role=alert]{color:#ffd688}.preview-controls{margin-top:2rem;border-top:1px solid #bbbdb4;padding-top:1rem}select{font:inherit;padding:.5rem}</style></head>
+<body class="growth-page"><main class="preview-shell"><p class="preview-banner">NON-PUBLIC PROTOTYPE · Simulated states only. No address is sent or stored. Do not enter a real address.</p>
+<p class="section-kicker">The Matrix reading list</p><h1>A clearer way to read a supplement label.</h1><p>Get the label-reading checklist and a short welcome series about using the Library. Product links are optional and commercial relationships are disclosed.</p>
+<form class="preview-form" novalidate onsubmit="return false" data-signup-preview>
+<div><label for="signup-email">Email address</label><input id="signup-email" type="email" autocomplete="off" maxlength="254" required aria-describedby="email-help signup-error" disabled><small id="email-help">For this prototype, use reader@example.invalid only.</small></div>
+<label class="consent"><input id="signup-consent" type="checkbox" required disabled><span>I want the checklist and educational emails from The Mindful Matrix. I understand that I can unsubscribe at any time.</span></label>
+<p>Before a public launch, the mailing provider, privacy notice, sender details, business postal address, and working unsubscribe route must be verified.</p>
+<p id="signup-error" role="alert"></p><p id="signup-status" role="status" aria-live="polite">Signup is not available on the public website.</p>
+<button class="button button-primary" type="submit" disabled>Preview signup</button>
+</form>
+<noscript><p>The interactive prototype needs JavaScript. No signup is available.</p></noscript>
+<div class="preview-controls"><label for="preview-state">Reviewer-only simulated outcome</label> <select id="preview-state"><option value="unavailable">Service unavailable</option><option value="confirmation">Confirmation email requested</option><option value="error">Provider error</option></select><p>Confirmation still requires the provider's verified double-opt-in response. No success here creates a subscriber.</p><p><a href="../LABEL_CHECKLIST.md">Review the draft resource</a> · <a href="../../../privacy.html">Current website data notice</a></p></div>
+</main><script src="signup-preview.js"></script></body></html>

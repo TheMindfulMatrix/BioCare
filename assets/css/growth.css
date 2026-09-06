@@ -1,0 +1,57 @@
+/* Focused trust-and-journey additions. Approved header and homepage hero geometry stay untouched. */
+.growth-hero { padding-block: clamp(3rem, 7vw, 6rem); border-bottom: 1px solid var(--section-border); }
+.growth-hero__grid, .growth-split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); }
+.growth-hero h1 { max-width: 19ch; margin: 0 0 1.5rem; font: 750 clamp(2.15rem, 4.3vw, 4.4rem)/1.08 var(--font-display); letter-spacing: -.04em; text-wrap: balance; }
+.growth-lede { max-width: 57ch; font-size: 1.075rem; color: var(--section-muted); }
+.growth-contact-card { align-self: start; padding: clamp(1.25rem, 3vw, 2.25rem); border: 1px solid var(--section-border); border-top: 3px solid var(--dark-gold); border-radius: .65rem; background: var(--dark-surface); }
+.growth-contact-card h2, .growth-purchase-card h3 { margin: 0 0 1rem; font: 700 1.55rem/1.25 var(--font-display); }
+.growth-contact-card p { color: var(--section-muted); }
+.growth-email { overflow-wrap: anywhere; font-size: .875rem; }
+.growth-text-link { display: inline-flex; align-items: center; min-height: 2.75rem; text-underline-offset: .25em; font-weight: 600; }
+.growth-section { padding-block: clamp(3rem, 6vw, 5.5rem); }
+.growth-heading { margin: 0 0 2rem; font: 700 clamp(1.8rem, 3vw, 2.8rem)/1.14 var(--font-display); letter-spacing: -.035em; max-width: 25ch; text-wrap: balance; }
+.growth-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.growth-card { border: 1px solid var(--section-border); border-radius: .65rem; padding: 1.5rem; background: var(--section-surface); }
+.growth-card h3 { font: 700 1.2rem/1.3 var(--font-display); margin: .5rem 0 1rem; }
+.growth-card p { color: var(--section-muted); margin-bottom: 0; }
+.growth-card__number { color: var(--section-green); font: 600 .875rem var(--font-data); }
+.growth-prose p { max-width: 67ch; }
+.growth-prose section + section { margin-top: 2.75rem; padding-top: 1.5rem; border-top: 1px solid var(--section-border); }
+.growth-prose h2 { font: 700 1.45rem/1.3 var(--font-display); }
+.growth-prose li + li { margin-top: .75rem; }
+.growth-faq { max-width: 58rem; }
+.growth-faq details { padding: 1rem 0; border-bottom: 1px solid var(--section-border); }
+.growth-faq summary { min-height: 2.75rem; padding: .6rem .25rem; cursor: pointer; font-weight: 600; }
+.growth-faq details[open] summary { color: var(--section-green); }
+.growth-faq p { max-width: 65ch; color: var(--section-muted); }
+.growth-purchase-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-block: 2rem; }
+.growth-purchase-card { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--section-border); border-radius: .65rem; background: var(--section-surface); display: flex; flex-direction: column; align-items: start; }
+.growth-purchase-card .button { margin-top: auto; }
+.growth-purchase-card .product-price { width: 100%; margin-bottom: 1.5rem; }
+.growth-purchase-card .product-price small { color: var(--section-muted); font-size: .875rem !important; line-height: 1.6; }
+.growth-purchase-card .product-price__source { color: #20533d; font-size: .875rem !important; }
+.growth-purchase-card .product-price__item, .growth-purchase-card .product-price__item--reference strong { font-size: .875rem !important; }
+.growth-purchase-disclosure { grid-column: 1 / -1; font-size: .875rem; margin: 0; }
+.growth-purchase-card p { max-width: 50ch; }
+.growth-checklist { max-width: 65ch; padding-left: 1.4rem; }
+.growth-checklist li { margin-block: .8rem; padding-left: .25rem; }
+.growth-purchase-help { padding-block: 1rem; border-bottom: 1px solid var(--section-border); }
+.growth-status { font-size: .875rem; color: var(--section-muted); }
+.growth-page .section-kicker, .growth-section .section-kicker { font-size: .875rem; letter-spacing: .07em; }
+.growth-page .button, .growth-section .button { font-size: .875rem; letter-spacing: .035em; min-height: 2.75rem; border-radius: .5rem; }
+.growth-page .button, .growth-section .button, .growth-page .section-kicker, .growth-section .section-kicker { font-size: .875rem !important; }
+.growth-page .button:disabled { cursor: not-allowed; opacity: .65; }
+.growth-page input { font: inherit; }
+.growth-page a:hover, .growth-section a:hover { text-decoration-thickness: .14em; }
+/* V12's scoped card rounding is retained; its hero/header transformations are not. */
+.product-record, .connection-card, .related-product { border-radius: .65rem; }
+.product-page .product-transparency, .site-footer .fine { font-size: .875rem; }
+.footer-nav a, .site-footer .socials a { min-height: 2.75rem; display: inline-flex; align-items: center; }
+.footer-meta a { overflow-wrap: anywhere; }
+/* Outline remains visible in forced-colors, where box shadows may disappear. */
+:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 4px; }
+.section-light :focus-visible, .section-warm :focus-visible { outline-color: #20533d; }
+@media (max-width: 55rem) { .growth-hero__grid, .growth-split { grid-template-columns: 1fr; } }
+@media (max-width: 42rem) { .growth-card-grid, .growth-purchase-grid { grid-template-columns: 1fr; } .growth-contact-card .button { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .growth-page *, .growth-section * { scroll-behavior: auto; } }
+@media (forced-colors: active) { :focus-visible { outline: 3px solid Highlight; box-shadow: none; } }

@@ -50,7 +50,7 @@ class AuditCoverageTests(unittest.TestCase):
     def test_complete_inventory_honors_target_base_and_checks_css_assets(self):
         result = self.audit()
         self.assertEqual(result["overall_status"], "HEALTHY")
-        self.assertEqual(result["public_pages"], 8)
+        self.assertEqual(result["public_pages"], 10)
         self.assertEqual(result["referenced_live_assets"], 2)
         self.assertTrue(all(item["byte_parity"] for item in result["page_results"] + result["asset_results"]))
 
@@ -58,7 +58,7 @@ class AuditCoverageTests(unittest.TestCase):
         self.base = "https://new.example/"
         (self.root / "content/site.json").write_text(json.dumps({"site": {"metadata": {"canonicalBaseUrl": self.base}}}), encoding="utf-8")
         self.write_sitemap([self.base + path for path in self.paths])
-        self.assertEqual(self.audit()["public_pages"], 8)
+        self.assertEqual(self.audit()["public_pages"], 10)
 
     def test_lazy_json_and_social_assets_are_included_and_missing_assets_fail(self):
         for name in ("lazy.png", "social.png", "label.png"):
@@ -113,7 +113,7 @@ class AuditCoverageTests(unittest.TestCase):
                 def broken(url):
                     return {"status": status, "body": body, "final_url": url} if url.endswith("library.html") else self.fetch_fixture(url)
                 report = self.audit(broken)
-                self.assertEqual(report["public_pages"], 8)
+                self.assertEqual(report["public_pages"], 10)
                 self.assertEqual(len(report["page_regressions"]), 1)
                 self.assertEqual(report["overall_status"], "ACTION REQUIRED")
 
@@ -139,7 +139,7 @@ class ProductionContractTests(unittest.TestCase):
         self.assertEqual(site_paths.canonical_base_url(ROOT), "https://themindfulmatrixhealth.com/")
         self.assertEqual((ROOT / "CNAME").read_text().strip(), "themindfulmatrixhealth.com")
         paths = site_paths.audited_page_paths(ROOT)
-        self.assertEqual(len(paths), 69)
+        self.assertEqual(len(paths), 71)
         for relative in paths:
             markup = (ROOT / (relative or "index.html")).read_text(encoding="utf-8")
             self.assertIn(f'rel="canonical" href="https://themindfulmatrixhealth.com/{relative}"', markup)
