@@ -1,0 +1,63 @@
+{
+  "reviewed_date": "2026-09-06",
+  "status": "LOCAL_REVIEW_CANDIDATE_NOT_RELEASED",
+  "branch": "agent/editorial-hero-review",
+  "baseline_sha": "02727eaa7e47f250b91ffef115fc1bb742b60422",
+  "commands_passed": [
+    "python scripts/build.py",
+    "python scripts/validate.py",
+    "python scripts/validate.py --compliance-strict --compliance-dry-run",
+    "python -m unittest discover -s tests -v",
+    "python scripts/scan_v10_public_safety.py",
+    "python _review/editorial-hero-review/verify_candidate.py"
+  ],
+  "unit_tests": {"passed": 88, "failed": 0, "new_regression_tests": 4},
+  "public_pages": 69,
+  "published_guides": 10,
+  "active_products": 45,
+  "deferred_products": 8,
+  "compliance": {
+    "hard_gate": "PASS",
+    "review_warnings": 70,
+    "strict_advisory_items": 77,
+    "inherited_human_review_items": 7,
+    "registry_changes": false,
+    "findings_suppressed": false,
+    "xtend_review": "OPEN_HUMAN_REVIEW_REQUIRED"
+  },
+  "public_safety_scan_findings": 0,
+  "deterministic_build": true,
+  "unchanged_other_html_pages": 68,
+  "search_sitemap_robots_unchanged": true,
+  "css_javascript_unchanged": true,
+  "local_parity": {"pages": 69, "assets": 165, "page_failures": 0, "asset_failures": 0},
+  "responsive_source_cases": 32,
+  "exact_baseline_geometry_comparisons": 16,
+  "pixel_identical_frozen_screenshot_widths": [375, 390, 768],
+  "permanent_browser_audit": {
+    "page_viewport_states": 276,
+    "library_motion_cases": 8,
+    "overflow_failures": 0,
+    "broken_images": 0,
+    "bad_h1_counts": 0,
+    "duplicate_ids": 0,
+    "unnamed_controls": 0,
+    "console_errors": [],
+    "console_warnings": [],
+    "http_errors": [],
+    "bad_page_statuses": 0,
+    "coverage_failures": 0,
+    "library_motion_failures": 0,
+    "failed_requests": [],
+    "functional_failures": 0
+  },
+  "preview_runner_notes": [
+    "Source-selection checks completed successfully; the remaining parity/build/browser checks were resumed after correcting the loopback server to use Git-normalized LF text instead of Windows CRLF storage.",
+    "Baseline screenshots use the same homepage route and frozen animation state; inactive-tab screenshot capture was corrected by explicitly focusing each capture tab.",
+    "These preview-harness corrections did not change website files or weaken the permanent audit assertions."
+  ],
+  "education": {"k2": "NON_PUBLIC_DRAFT_REQUIRES_REVIEW", "zinc_copper": "QUEUED", "magnesium": "QUEUED"},
+  "deployed": false,
+  "pushed": false,
+  "pull_request_created": false
+}

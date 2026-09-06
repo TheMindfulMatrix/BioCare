@@ -101,6 +101,12 @@
           "checkedDate": "2026-08-19"
         }
       },
+      "desktopHero": {
+        "src": "assets/product-cutouts/hero/balance-test-basic-kit-650.webp",
+        "width": 650,
+        "height": 650,
+        "provenance": "_review/editorial-hero-review/HERO_SOURCE.md"
+      },
       "artwork": {
         "src": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
         "width": 1024,
