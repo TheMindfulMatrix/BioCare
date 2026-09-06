@@ -54,7 +54,11 @@ def tablet_hero_checks(page) -> dict:
     return page.evaluate("""() => {
         const img = document.querySelector('.hero-product__cutout img');
         const rect = img.getBoundingClientRect();
-        const content = document.querySelector('.home-hero__content').getBoundingClientRect();
+        // The phone layout uses display:contents to place the artwork before
+        // optional purchasing details. Measure real text boxes, never its
+        // zero-sized wrapper, so this remains an actual overlap assertion.
+        const content = [...document.querySelectorAll('.home-hero__content > *')]
+            .filter(el => el.getClientRects().length).map(el => el.getBoundingClientRect());
         const canvas = document.createElement('canvas');
         canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
         const context = canvas.getContext('2d');
@@ -75,8 +79,8 @@ def tablet_hero_checks(page) -> dict:
         const labels = ['.hero-product__caption', '.hero-product__tap', '.hero-product__signal', '.hero-data'];
         return {
             artworkMeasured: right >= left && bottom >= top,
-            imageBeforeCopy: rect.bottom <= content.top,
-            artworkBeforeCopy: artwork.bottom <= content.top,
+            imageClearOfCopy: content.every(box => !overlaps(rect, box)),
+            artworkClearOfCopy: content.every(box => !overlaps(artwork, box)),
             labelsClearOfPackaging: labels.every(selector => [...document.querySelectorAll(selector)].every(el =>
                 !el.getClientRects().length || !overlaps(el.getBoundingClientRect(), artwork)))
         };
@@ -171,6 +175,11 @@ def main() -> None:
                         "urlState": "q=omega" in page.url,
                     }
                 if relative == "shop.html":
+                    catalog_starts_at_top = page.evaluate('window.scrollY === 0')
+                    page.keyboard.press('Tab')
+                    skip_link_first = page.locator('.skip-link').evaluate('el => el === document.activeElement')
+                    page.keyboard.press('Enter')
+                    skip_enters_main = page.locator('#main-content').evaluate('el => el === document.activeElement')
                     initial_visible = page.locator("[data-shop-product]:visible").count()
                     page.locator("[data-shop-sort]").select_option("name")
                     sorted_names = page.locator("[data-shop-product]:visible h2").all_text_contents()
@@ -183,11 +192,26 @@ def main() -> None:
                     inspector_open = page.locator("[data-product-inspector]").evaluate("dialog => dialog.open")
                     page.keyboard.press("Escape")
                     result["shopChecks"] = {
+                        "startsAtTop": catalog_starts_at_top,
+                        "skipLinkFirst": skip_link_first,
+                        "skipEntersMain": skip_enters_main,
                         "sortApplied": sort_ok and "sort=name" in page.url,
                         "loadMoreAppendOnly": loaded_visible > initial_visible,
                         "inspectorOpened": inspector_open,
                     }
                 if not relative:
+                    path_buttons = page.locator('[data-path-choice]')
+                    path_checks = {}
+                    for choice in ('learn', 'measure', 'explore'):
+                        button = page.locator(f'[data-path-choice="{choice}"]')
+                        button.focus()
+                        page.keyboard.press('Enter')
+                        path_checks[choice] = (page.locator('[data-path-panel]:visible').count() == 1
+                            and page.locator(f'[data-path-panel="{choice}"]').is_visible()
+                            and button.get_attribute('aria-pressed') == 'true')
+                    path_buttons.first.click()
+                    result['pathfinderChecks'] = path_checks
+                    result['pathfinderChecks']['disclosureVisible'] = page.locator('#hero-affiliate-disclosure').is_visible()
                     if 704.16 <= viewport["width"] <= 896:
                         result["tabletHeroChecks"] = tablet_hero_checks(page)
                     result["mobileHeroChecks"] = page.evaluate(r"""() => ({
@@ -197,6 +221,7 @@ def main() -> None:
                         heroVisible: !!document.querySelector('.hero-product') && document.querySelector('.hero-product').getBoundingClientRect().height > 0
                     })""")
                     suffix = "" if motion == "reduce" else "-motion"
+                    page.evaluate('window.scrollTo(0, 0)')
                     page.screenshot(path=output / f"home-{viewport_name}{suffix}.png", full_page=False)
                 results.append(result)
             context.close()
@@ -219,7 +244,7 @@ def main() -> None:
         "functional_failures": sum(
             not value
             for item in results
-            for group in (item.get("searchChecks", {}), item.get("shopChecks", {}), item.get("mobileHeroChecks", {}), item.get("tabletHeroChecks", {}), item.get("growthChecks", {}))
+            for group in (item.get("searchChecks", {}), item.get("shopChecks", {}), item.get("mobileHeroChecks", {}), item.get("tabletHeroChecks", {}), item.get("growthChecks", {}), item.get("pathfinderChecks", {}))
             for value in group.values()
         ),
     }

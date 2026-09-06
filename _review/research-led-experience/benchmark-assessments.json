@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "strength": "Research search and topic taxonomy lead the experience.",
+    "watchout": "Membership promotion competes with the first search task.",
+    "application": "Give search a prominent, calm place."
+  },
+  {
+    "id": 2,
+    "strength": "Topic cards and a visible editorial credibility strip organize a large publication.",
+    "watchout": "Broad clinical coverage is not transferable to a small affiliate education site.",
+    "application": "Make editorial identity inspectable; do not invent credentials."
+  },
+  {
+    "id": 3,
+    "strength": "Study resources and an editorial-process route sit alongside condition education.",
+    "watchout": "A very broad taxonomy can overwhelm an early-stage reader.",
+    "application": "Keep the Matrix navigation narrower and task-led."
+  },
+  {
+    "id": 4,
+    "strength": "Fitness education has explicit editorial-process and author identity routes.",
+    "watchout": "Fitness publishing and supplement purchase decisions are different tasks.",
+    "application": "Use understandable guide categories."
+  },
+  {
+    "id": 5,
+    "strength": "Health news, explainers, and medical-myth content provide recurring entry points.",
+    "watchout": "News recency does not establish product-specific evidence.",
+    "application": "Keep dates, source scope, and product claims separate."
+  },
+  {
+    "id": 6,
+    "strength": "Articles connect wellness topics with an inspectable editorial process.",
+    "watchout": "Trend-led headlines can outrun what a study actually establishes.",
+    "application": "Retain measured headlines and review dates."
+  },
+  {
+    "id": 7,
+    "strength": "Condition information, tools, and expert content offer multiple acquisition routes.",
+    "watchout": "Clinical and sponsored material require distinctions an initial scan cannot fully assess.",
+    "application": "Do not imitate diagnosis tools or clinical authority."
+  },
+  {
+    "id": 8,
+    "strength": "Product reviews and a named expert-network route bridge education and decisions.",
+    "watchout": "The size of the publishing operation is not a conversion metric.",
+    "application": "Keep reviews distinct from commercial relationships."
+  },
+  {
+    "id": 9,
+    "strength": "Editorial stories, podcasts, and branded products create a multi-format funnel.",
+    "watchout": "Education and owned-product promotion can blur together.",
+    "application": "Separate learning from optional product exploration."
+  },
+  {
+    "id": 10,
+    "strength": "A founder-led education hub connects articles, podcasts, and recommended resources.",
+    "watchout": "Personal experience is not proof of health effectiveness.",
+    "application": "Use the genuine founder story with explicit limits."
+  },
+  {
+    "id": 11,
+    "strength": "Topic guides and an editorial-process link support approachable education.",
+    "watchout": "An accessible tone can oversimplify uncertainty if copied carelessly.",
+    "application": "Write clear navigation without simplifying the evidence."
+  },
+  {
+    "id": 12,
+    "strength": "Health articles, shopping guides, and a medical-review-board route combine trust and commerce.",
+    "watchout": "A review-board identity cannot be borrowed by a different business.",
+    "application": "Use real editorial standards rather than authority decoration."
+  },
+  {
+    "id": 13,
+    "strength": "Issue-led editorial content connects everyday concerns with expert-oriented stories.",
+    "watchout": "A magazine feed has more competing entry points than the Matrix needs.",
+    "application": "Feature a small, intentional guide selection."
+  },
+  {
+    "id": 14,
+    "strength": "Subject guides and product-review pathways support repeat visits.",
+    "watchout": "Editorial scale and commercial success were not independently verified.",
+    "application": "Connect each topic to a useful next step."
+  },
+  {
+    "id": 15,
+    "strength": "Training and body-composition guides create goal-specific acquisition routes.",
+    "watchout": "Outcome-oriented framing may overpromise when applied to supplements.",
+    "application": "Use goals for navigation, not health predictions."
+  },
+  {
+    "id": 16,
+    "strength": "Food-first coverage links nutrition guidance with expert and study context.",
+    "watchout": "Recipe publishing is an adjacent model, not a direct testing affiliate competitor.",
+    "application": "Keep food and habits visible beside optional products."
+  },
+  {
+    "id": 17,
+    "strength": "Recipe categories, author identity, and product-oriented resources support practical discovery.",
+    "watchout": "Diet labels and product inclusion are not individualized advice.",
+    "application": "Use clear categories and explicit editorial identity."
+  },
+  {
+    "id": 18,
+    "strength": "Videos, articles, and downloadable education create several learning formats.",
+    "watchout": "This is an adjacent educational reference, not an equivalent commerce model.",
+    "application": "Offer useful free education without purchase pressure."
+  },
+  {
+    "id": 19,
+    "strength": "Expert-led health explainers connect articles with paid educational products.",
+    "watchout": "Institutional authority cannot be reproduced through styling.",
+    "application": "Make the actual publisher and review process clear."
+  },
+  {
+    "id": 20,
+    "strength": "A browsable editorial health library routes readers into institutional services.",
+    "watchout": "Hospital services are not comparable to partner-product conversion.",
+    "application": "Use readable article hierarchy and explicit source roles."
+  },
+  {
+    "id": 21,
+    "strength": "A structured health library separates conditions, tests, medicines, and services.",
+    "watchout": "This is an institutional trust reference, not an affiliate peer.",
+    "application": "Give visitors clear routes without implying clinical care."
+  },
+  {
+    "id": 22,
+    "strength": "Testing-oriented reviews, search, and paid membership make the value exchange explicit.",
+    "watchout": "The homepage is conversion-dense; membership claims are self-reported.",
+    "application": "Explain what the visitor gets before asking for action."
+  },
+  {
+    "id": 23,
+    "strength": "A direct rankings CTA and category access make the research-to-purchase route obvious.",
+    "watchout": "The restrained interface is less visually distinctive; laboratory independence is not ours to claim.",
+    "application": "Make the first task unmistakable."
+  },
+  {
+    "id": 24,
+    "strength": "Buying guides, testing-related reviews, and anatomy education cover different intents.",
+    "watchout": "Large coverage breadth can make the commercial boundary harder to follow.",
+    "application": "Group results by their actual information type."
+  },
+  {
+    "id": 25,
+    "strength": "Hands-on review and equipment-guide routes lead toward buying decisions.",
+    "watchout": "Equipment evaluation methods do not prove supplement outcomes.",
+    "application": "Explain selection criteria before product links."
+  },
+  {
+    "id": 26,
+    "strength": "Exercise and training guides sit alongside individual supplement reviews.",
+    "watchout": "Performance language needs its own evidence, not borrowed confidence.",
+    "application": "Join relevant education to product context."
+  },
+  {
+    "id": 27,
+    "strength": "A recognizable coaching identity gives readers a clear service destination.",
+    "watchout": "Coaching conversion is not the same as independent product exploration.",
+    "application": "Use a clear, human brand voice."
+  },
+  {
+    "id": 28,
+    "strength": "Education courses and practical articles form a structured learning funnel.",
+    "watchout": "Professional certification is not an appropriate claim for the Matrix.",
+    "application": "Show a coherent learning sequence."
+  },
+  {
+    "id": 29,
+    "strength": "Research-oriented podcasts and a science digest create repeat learning habits.",
+    "watchout": "Presenter credentials cannot be replaced by scientific-looking graphics.",
+    "application": "Connect each guide to inspectable sources."
+  },
+  {
+    "id": 30,
+    "strength": "A membership, premium articles, and topic guides support depth over breadth.",
+    "watchout": "Clinical expertise and longevity claims should not be imitated as brand positioning.",
+    "application": "Use topic organization and transparent boundaries."
+  },
+  {
+    "id": 31,
+    "strength": "A cinematic, focused hero connects a defined health-service proposition to one primary action.",
+    "watchout": "Heavy media and personalized-health claims are poor defaults for our static site.",
+    "application": "Borrow hierarchy and restraint, not service claims."
+  },
+  {
+    "id": 32,
+    "strength": "Science and product-tour routes explain a measurement-led membership.",
+    "watchout": "Its study and membership numbers are brand statements, not comparative proof.",
+    "application": "Explain the process before offering a test."
+  },
+  {
+    "id": 33,
+    "strength": "A restrained editorial hero pairs a clear service offer with pricing and a visible action.",
+    "watchout": "A broad testing membership involves different clinical and privacy obligations.",
+    "application": "Use generous spacing and clear offer context."
+  },
+  {
+    "id": 34,
+    "strength": "A focused membership proposition makes price and testing scope prominent.",
+    "watchout": "A media snapshot does not prove loading failure; membership is not our business model.",
+    "application": "Keep the first action and limitations easy to find."
+  },
+  {
+    "id": 35,
+    "strength": "Learning and science routes support at-home-test exploration.",
+    "watchout": "Eligibility and result interpretation cannot be generalized across tests.",
+    "application": "Keep test-specific limits near the next step."
+  },
+  {
+    "id": 36,
+    "strength": "Service explanations and audience-specific pathways connect information to testing.",
+    "watchout": "Multiple consumer and professional audiences increase navigation complexity.",
+    "application": "Route by task rather than by assumed diagnosis."
+  },
+  {
+    "id": 37,
+    "strength": "A clear testing offer and explanation route help visitors understand the service.",
+    "watchout": "Ratings alone do not establish measurement usefulness or conversion.",
+    "application": "Show what a test does and does not establish."
+  },
+  {
+    "id": 38,
+    "strength": "A science explanation and plan-oriented offering connect testing to recurring products.",
+    "watchout": "Personalized recommendations introduce obligations the Matrix does not take on.",
+    "application": "Keep education distinct from recommendation."
+  },
+  {
+    "id": 39,
+    "strength": "Science and learning routes reinforce a recognizable nutrition program.",
+    "watchout": "Program-level research cannot be silently applied to unrelated products.",
+    "application": "Name the scope of evidence."
+  },
+  {
+    "id": 40,
+    "strength": "Educational content and test-related products form a focused gut-health funnel.",
+    "watchout": "Consumer microbiome interpretations need careful limitations.",
+    "application": "Preserve uncertainty in testing education."
+  },
+  {
+    "id": 41,
+    "strength": "A narrow hormone-testing proposition builds recognition around one use case.",
+    "watchout": "Biomarker interpretation is not a general-purpose design widget.",
+    "application": "Use a narrow, explainable entry point."
+  },
+  {
+    "id": 42,
+    "strength": "Foundational explainers, interpretation content, publications, and test options create a visible sequence.",
+    "watchout": "Threshold and benefit language must not be imported into another test journey.",
+    "application": "Make education precede interpretation and choice."
+  },
+  {
+    "id": 43,
+    "strength": "A disciplined black-and-white hero combines real imagery with direct shop and getting-started routes.",
+    "watchout": "Athlete endorsements and brand authority are not transferable.",
+    "application": "Use a strong image and fewer competing messages."
+  },
+  {
+    "id": 44,
+    "strength": "Distinctive color, product imagery, and a standards route create memorable product context.",
+    "watchout": "The cookie panel visibly obscured part of the first-screen image.",
+    "application": "Keep the page usable without promotional overlays."
+  },
+  {
+    "id": 45,
+    "strength": "A cohesive green product stage and a concise shop/science/learning navigation feel premium.",
+    "watchout": "The visible cookie overlay competes with product presentation.",
+    "application": "Use one strong product scene and clear paths."
+  },
+  {
+    "id": 46,
+    "strength": "A routine-led product offer connects ingredient, testing, and FAQ information with subscription terms.",
+    "watchout": "The observed UK page has locale-specific claims and pricing.",
+    "application": "Keep recurring price context visible and jurisdiction-specific."
+  },
+  {
+    "id": 47,
+    "strength": "High-impact product photography and goal/shop/learning navigation produce a clear performance brand.",
+    "watchout": "Performance claims and athlete identity cannot be adopted as evidence.",
+    "application": "Use photographic hierarchy, not borrowed endorsements."
+  },
+  {
+    "id": 48,
+    "strength": "Clinical-research and wellness-guide routes accompany lifecycle-focused products.",
+    "watchout": "Life-stage health claims need qualified review beyond a design audit.",
+    "application": "Keep audience context and limitations visible."
+  },
+  {
+    "id": 49,
+    "strength": "A science route and named experts sit alongside bundles and product promotion.",
+    "watchout": "Several promotional signals can compete with education.",
+    "application": "Limit simultaneous conversion prompts."
+  },
+  {
+    "id": 50,
+    "strength": "A branded editorial blog connects everyday wellness questions with product discovery.",
+    "watchout": "Large review totals alone do not establish efficacy or sales.",
+    "application": "Give education a stable home outside the catalog."
+  },
+  {
+    "id": 51,
+    "strength": "Science and journal routes support a focused nutrition proposition.",
+    "watchout": "Personalization messaging creates expectations the Matrix cannot meet.",
+    "application": "Make the site a navigation aid, not a health assessment."
+  },
+  {
+    "id": 52,
+    "strength": "A questionnaire-led offer connects products with editorial and review content.",
+    "watchout": "Medication questions and personalization involve sensitive data and clinical risk.",
+    "application": "Do not collect health answers for a visual interaction."
+  },
+  {
+    "id": 53,
+    "strength": "Evidence and quality-program routes explain a professional supplement platform.",
+    "watchout": "Practitioner workflows and clinical affiliations are not our authority.",
+    "application": "Preserve clear separation between documentation and advice."
+  },
+  {
+    "id": 54,
+    "strength": "Quality assurance and certificate-of-analysis routes foreground inspectable documentation.",
+    "watchout": "Manufacturer documentation is not independent effectiveness evidence.",
+    "application": "Give product records a source-and-limit section."
+  },
+  {
+    "id": 55,
+    "strength": "A practitioner education academy, webinars, and product records share one ecosystem.",
+    "watchout": "The observed professional site is not the same audience as its consumer site.",
+    "application": "Make the intended audience explicit."
+  },
+  {
+    "id": 56,
+    "strength": "A large research library, articles, lab tests, and recurring-purchase offers support many entry points.",
+    "watchout": "Rewards and savings promotions create substantial competing hierarchy.",
+    "application": "Keep the homepage focused on a few visitor tasks."
+  },
+  {
+    "id": 57,
+    "strength": "A detailed catalog exposes product details, prices, and purchasing controls.",
+    "watchout": "Long promotional product lists are unnecessary for a focused entry page.",
+    "application": "Move depth into the catalog rather than the homepage."
+  },
+  {
+    "id": 58,
+    "strength": "Category browsing and an explanatory brand route accompany omega-focused products.",
+    "watchout": "Testimonials and selling-rank claims are not proof of individual outcomes.",
+    "application": "Connect the main product category with education."
+  },
+  {
+    "id": 59,
+    "strength": "Articles, research, and an expert route reinforce recognizable product categories.",
+    "watchout": "A broad catalog can encourage undifferentiated product walls.",
+    "application": "Use intentional collections and clear category labels."
+  },
+  {
+    "id": 60,
+    "strength": "Plant-oriented product positioning connects a catalog with a blog.",
+    "watchout": "Ingredient-origin language is not evidence of a health result.",
+    "application": "Make product facts easy to distinguish from positioning."
+  },
+  {
+    "id": 61,
+    "strength": "Products are grouped by type, with retail destinations and an editorial ecosystem.",
+    "watchout": "Large account and shopping navigation adds complexity for an education-first visitor.",
+    "application": "Avoid cart-like controls when checkout is external."
+  },
+  {
+    "id": 62,
+    "strength": "An editorial blog, expert identities, and certification routes support product discovery.",
+    "watchout": "Certifications apply to specific entities or products, not every implied benefit.",
+    "application": "Display only verified, properly scoped trust signals."
+  },
+  {
+    "id": 63,
+    "strength": "Topic education and a brand story create a route from ingredient interest to products.",
+    "watchout": "Brand narrative alone cannot substantiate product suitability.",
+    "application": "Use storytelling for identity, documentation for facts."
+  },
+  {
+    "id": 64,
+    "strength": "Herbal education is connected to sourcing, farm, process, and quality information.",
+    "watchout": "Tradition and manufacturing transparency are not interchangeable with clinical evidence.",
+    "application": "Explain the role of each source."
+  },
+  {
+    "id": 65,
+    "strength": "Interest categories, articles, a store finder, and an external-destination notice connect education to retail.",
+    "watchout": "Large category breadth can make the next step less obvious.",
+    "application": "Signal clearly when a link leaves the site."
+  },
+  {
+    "id": 66,
+    "strength": "Shop-by-need navigation sits alongside education and traceability messaging.",
+    "watchout": "Extensive menus can become a reading task of their own.",
+    "application": "Keep departments small and understandable."
+  },
+  {
+    "id": 67,
+    "strength": "A focused brand explanation connects product browsing with a blog.",
+    "watchout": "The initial public surface did not establish sales or conversion quality.",
+    "application": "Keep the value proposition plain."
+  },
+  {
+    "id": 68,
+    "strength": "Science, quality, and editorial routes support a professional product catalog.",
+    "watchout": "Practitioner-led authority must remain distinct from our independent curation.",
+    "application": "Use source-backed product records."
+  },
+  {
+    "id": 69,
+    "strength": "Dedicated guides map closely to specific product and topic questions.",
+    "watchout": "The captured initial HTML was large; this is not a measured Core Web Vitals failure.",
+    "application": "Keep useful deep links while controlling payload growth."
+  },
+  {
+    "id": 70,
+    "strength": "Lifestyle editorial and product formats create repeated content-to-product routes.",
+    "watchout": "A lifestyle presentation may obscure the distinction between story and evidence.",
+    "application": "Make educational context visible beside product imagery."
+  },
+  {
+    "id": 71,
+    "strength": "A blog, mission, and transparency routes complement a recognizable product range.",
+    "watchout": "Brand promises need accessible documentation, not just a clean visual.",
+    "application": "Let visitors inspect why a product is included."
+  },
+  {
+    "id": 72,
+    "strength": "Articles and an evidence-oriented calculator create high-intent acquisition routes.",
+    "watchout": "A calculator would need appropriate validation and scope; we did not verify its methodology.",
+    "application": "Use simple navigation interactions instead of invented health calculations."
+  },
+  {
+    "id": 73,
+    "strength": "A focused learning route accompanies a compact product identity.",
+    "watchout": "A small initial HTML response is not proof of fast complete page rendering.",
+    "application": "Use concise structure with purposeful imagery."
+  },
+  {
+    "id": 74,
+    "strength": "A substantial article library supports direct product exploration.",
+    "watchout": "High review counts and forceful performance framing do not establish outcomes.",
+    "application": "Use education depth without aggressive efficacy copy."
+  },
+  {
+    "id": 75,
+    "strength": "A very broad ingredient catalog includes article entry points.",
+    "watchout": "The collector reached its 3 MB initial-HTML cap; the full transfer was not measured.",
+    "application": "Avoid putting an entire merchandising system on the opening page."
+  },
+  {
+    "id": 76,
+    "strength": "Goal guides and quality/testing routes support a broad performance catalog.",
+    "watchout": "Large catalogs require filters; they should not dictate our homepage complexity.",
+    "application": "Keep search, sorting, and filtering predictable."
+  },
+  {
+    "id": 77,
+    "strength": "Educational blogs and quality information accompany familiar product formats.",
+    "watchout": "Promotion and educational messaging need a clear boundary.",
+    "application": "Give each product an understandable next learning link."
+  },
+  {
+    "id": 78,
+    "strength": "Science, experts, certification, and blog routes accompany a distinct athlete retail handoff.",
+    "watchout": "The observed page also targets professional partners, a different visitor task.",
+    "application": "Make external purchasing destinations explicit."
+  },
+  {
+    "id": 79,
+    "strength": "Recipes, guides, and ingredient-led products create clear topic entry points.",
+    "watchout": "The initial response was large; neither full performance nor sales was measured.",
+    "application": "Keep image presentation clean and content modular."
+  },
+  {
+    "id": 80,
+    "strength": "Ingredient explanations, editorial articles, and products share a performance-oriented brand.",
+    "watchout": "Product positioning should not be mistaken for independent review.",
+    "application": "Label educational versus manufacturer material."
+  },
+  {
+    "id": 81,
+    "strength": "Blog content and transparency messaging sit beside recurring product offers.",
+    "watchout": "Subscription savings are not the relevant reason to select a supplement.",
+    "application": "Present recurring costs with context."
+  },
+  {
+    "id": 82,
+    "strength": "A journal and science route support a tightly defined product identity.",
+    "watchout": "Audience-focused positioning may still need broad claim qualifications.",
+    "application": "Use a coherent identity with inspectable source links."
+  },
+  {
+    "id": 83,
+    "strength": "Nutrition guides and science content support lifecycle-based products.",
+    "watchout": "The initial HTML was large and promotional claims were prominent; conversion was not measured.",
+    "application": "Prefer a small homepage preview linked to deeper education."
+  },
+  {
+    "id": 84,
+    "strength": "Science, blog, and review routes support a focused cognitive-wellness proposition.",
+    "watchout": "Reviews and brand-level science do not establish individual benefit.",
+    "application": "Keep confidence proportional to evidence."
+  },
+  {
+    "id": 85,
+    "strength": "The former Nutri Advanced domain now leads to Metagenics UK with articles, ingredient browsing, and practitioner resources.",
+    "watchout": "This is a regional destination of an already represented brand, not independent evidence of another business's success.",
+    "application": "Maintain redirects and explain transitions clearly."
+  },
+  {
+    "id": 86,
+    "strength": "A delivery-format proposition and absorption-science route give the brand a specific story.",
+    "watchout": "Absorption messaging is not automatically proof of meaningful clinical benefit.",
+    "application": "Explain the precise product fact being documented."
+  },
+  {
+    "id": 87,
+    "strength": "Dedicated omega and collagen guides connect category education with product exploration.",
+    "watchout": "Expert advice and review counts need appropriate source context.",
+    "application": "Use targeted guides linked to relevant records."
+  },
+  {
+    "id": 88,
+    "strength": "A journal, certification information, and founder story form a lifestyle-led funnel.",
+    "watchout": "Founder identity and product testing should not merge into unsupported health promises.",
+    "application": "Keep story and evidence separate."
+  },
+  {
+    "id": 89,
+    "strength": "A journal, learning hub, quiz, and goal-based catalog connect community with commerce.",
+    "watchout": "The observed Australian page includes locale-specific warnings and many promotions.",
+    "application": "Borrow coherent categorization, not claims or promotions."
+  },
+  {
+    "id": 90,
+    "strength": "Science, articles, a podcast, and benefit-based shopping create several acquisition routes.",
+    "watchout": "Health-benefit grouping and bundled offers can overstate what multiple products establish.",
+    "application": "Keep optional tools separate from promised outcomes."
+  },
+  {
+    "id": 91,
+    "strength": "Science, research participation, articles, and certificate lookup create evidence-oriented entry points.",
+    "watchout": "Study participation and publication do not validate every product claim.",
+    "application": "Expose documentation scope and uncertainty."
+  },
+  {
+    "id": 92,
+    "strength": "Minimal white framing and a strong red product image create a distinctive first impression.",
+    "watchout": "Highly confident comparative copy is not transferable to our products.",
+    "application": "Use disciplined color and uncluttered product staging."
+  },
+  {
+    "id": 93,
+    "strength": "Science, quality, research-program, and editorial routes support a narrow longevity category.",
+    "watchout": "Longevity positioning can exceed the outcomes a particular study measured.",
+    "application": "Make measured outcomes and limitations explicit."
+  },
+  {
+    "id": 94,
+    "strength": "A research library and blog sit alongside categorized longevity products.",
+    "watchout": "A large initial response and research-heavy framing do not establish better outcomes.",
+    "application": "Keep source provenance visible and the interface lean."
+  },
+  {
+    "id": 95,
+    "strength": "Science, research, and explanatory articles support ingredient-led longevity products.",
+    "watchout": "Ageing claims require careful scope; attractive marketing is not proof.",
+    "application": "Use clear educational routes without amplifying claims."
+  },
+  {
+    "id": 96,
+    "strength": "A microbiome-focused product proposition repeatedly links into explanatory material.",
+    "watchout": "Brand testimonials and personalization framing cannot replace product-specific evidence.",
+    "application": "Present learning as context, not a prescription."
+  },
+  {
+    "id": 97,
+    "strength": "Science and research routes reinforce a recognizable single-category brand.",
+    "watchout": "A cohesive visual identity does not substantiate broad benefit claims.",
+    "application": "Use consistency without expanding claims."
+  },
+  {
+    "id": 98,
+    "strength": "Testing-led product discovery connects a manufacturer catalog with educational and quality routes.",
+    "watchout": "It is a commercial source and partner destination, not independent corroboration.",
+    "application": "Preserve exact partner URLs and source classifications."
+  },
+  {
+    "id": 99,
+    "strength": "Products and explanatory routes sit within the manufacturer’s own brand ecosystem.",
+    "watchout": "It is a commercial source; vivid artwork is not proof of efficacy.",
+    "application": "Retain official imagery and distinguish product facts from education."
+  },
+  {
+    "id": 100,
+    "strength": "A large searchable marketplace connects health topics, brands, and educational content with purchasing.",
+    "watchout": "The observed fallback used a regional storefront; it is not a like-for-like affiliate publisher.",
+    "application": "Borrow findability, not catalog scale or promotional density."
+  }
+]

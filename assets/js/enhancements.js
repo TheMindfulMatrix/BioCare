@@ -305,7 +305,12 @@
         var active = button.dataset.shopIntent === state.intent;
         button.setAttribute("aria-pressed", String(active));
         button.setAttribute("tabindex", active ? "0" : "-1");
-        if (active) button.scrollIntoView({ block: "nearest", inline: "center" });
+        if (active) {
+          // Keep the selected intent visible within its horizontal rail without
+          // scrolling the document or moving its sequential keyboard start.
+          var rail = button.closest(".catalog-intents__rail");
+          if (rail) rail.scrollLeft += button.getBoundingClientRect().left - rail.getBoundingClientRect().left - (rail.clientWidth - button.offsetWidth) / 2;
+        }
       });
       var total = activeFilterTotal();
       filterCount.hidden = total === 0;

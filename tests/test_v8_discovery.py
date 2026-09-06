@@ -52,7 +52,11 @@ class V8DiscoveryTests(unittest.TestCase):
         self.assertEqual([], search("no-such-matrix-result"))
 
     def test_visual_layers_are_decorative_and_environment_driven(self):
-        pages = [ROOT / "index.html", ROOT / "explore.html", ROOT / "know-your-number.html"]
+        # The new homepage uses one CSS orbit instead of the legacy canvas field.
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="experience-orbit" aria-hidden="true"', home)
+        self.assertNotIn('data-matrix-field', home)
+        pages = [ROOT / "explore.html", ROOT / "know-your-number.html"]
         pages.extend((ROOT / "departments").glob("*.html"))
         for page in pages:
             markup = page.read_text(encoding="utf-8")
@@ -69,7 +73,7 @@ class V8DiscoveryTests(unittest.TestCase):
         scripts = [part.split('"', 1)[0] for part in markup.split('<script defer src="')[1:]]
         versions = {
             path: hashlib.sha256((ROOT / path).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")).hexdigest()[:12]
-            for path in ("assets/js/search-relevance.js", "assets/js/enhancements.js")
+            for path in ("assets/js/search-relevance.js", "assets/js/enhancements.js", "assets/js/experience.js")
         }
         self.assertEqual([f"{path}?v={versions[path]}" for path in versions], scripts)
         enhancements = (ROOT / "assets/js/enhancements.js").read_text(encoding="utf-8")

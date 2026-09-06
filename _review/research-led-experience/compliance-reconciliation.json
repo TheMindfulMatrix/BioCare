@@ -1,0 +1,51 @@
+{
+  "baseline": "e0a668a10ddd6cafdf3f27ee4e6261f7e9caf27e",
+  "protected_files_sha256": {
+    "content/catalog.json": "d604609890f5b44a9e689f5bdbd58d903dda1f7eafcc36fd27f730755ad64c0b",
+    "content/product-labels.json": "3d451f6489a8f7ab45e30a5bf3b72773ad5b122bad1a705e50d36477d3f64476",
+    "content/library.json": "ad20fefbf76c262bca02e0475f755081ec72a9a41def9cda5b01a845e092dd2e",
+    "content/growth.json": "802003e0428c4eb7d0e14815c60dd7bf127a70030584b6c30893b9a525598ef3",
+    "content/campaigns/core-four.json": "21070929c765aaaeb958653282cdbedff1f1ea9f6c30d8dc0600c75626614f06",
+    "content/site.json": "e980a9494890c979797d96f5031b05faebc98cee541cec01105df4e5ff04a87c",
+    "reports/v11-3/V11_3_COMPLIANCE_TRIAGE.json": "53b7a71b23d8bfa1e4400d80a95163fc9a7ec8d9e6f66f7fcf0b654d6ff8f51d",
+    "reports/v11-3/V11_3_COMPLIANCE_TRIAGE.md": "8ee9ed62d036f40783354341df4fbbbc022c87411e62ebc8d949898018fcf852",
+    "_review/domain-audit-hardening/XTEND_EDITORIAL_REVIEW.md": "618e0f7c4cfdcedaaf5957a433651659169d6dbb8ec7deaf53d444b3b36d0638",
+    "content/compliance/authoritative-sources.json": "d7528a1de7ae94ef1cbee770abaf0d14a96c799fddee3a7050bbb951fc90b36e",
+    "content/compliance/claims.json": "90f8fc56aaf78c720b10adb399383a7076f786e9cd22736028c09fbd3d237b79",
+    "content/compliance/disclosures.json": "64cca4496b35f431380fff63e90df1c6448da9cd4570bde7e297b9e8136cab56",
+    "content/compliance/evidence.json": "1a15d9dcff6a8ce0e08255be95d236727b74106c9a0ecd93283da22fdf8b02ac",
+    "content/compliance/products.json": "b30afd1c1abc1e084a706379654f876d3fed08304f8f4363a88882d7363f7f9b",
+    "content/compliance/public-contact.json": "5cae27bc2b17c03e387bc9cf64795449123d55f4c25346fc39fffdf363fd44b1",
+    "content/compliance/rules.json": "c8f6834bbb5a1c5e11acc3197929a1228e2293e50a07fbe7b7e61a80f0f059ca",
+    "content/compliance/social-policy.json": "ddaf08e0932c1c3f345ae02b1a789743b08ae7610eae2ef100e8c337c67ecc57",
+    "content/compliance/version.json": "9359fd7886b0838a486bd1342299436a704adc8fb9f5442a087c27541f46738a"
+  },
+  "protected_files_unchanged": true,
+  "before": {
+    "warnings": 70,
+    "strict_items": 77
+  },
+  "after": {
+    "warnings": 69,
+    "strict_items": 76,
+    "red": 0,
+    "hard_errors": []
+  },
+  "removed_warning_occurrences": {
+    "index.html:LINE: HUMAN_REVIEW_REQUIRED: The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.": 1
+  },
+  "added_warning_occurrences": {},
+  "human_review_text_unchanged": true,
+  "human_review_texts": [
+    "A proven performance use at an appropriate dose?",
+    "An at-home saliva collection kit used for BioLimitless's SNP-based genomic report and app experience.",
+    "Home health blood spot test to track gut and metabolic markers",
+    "If only a surrogate marker changed, ask whether changing that marker has been shown to improve outcomes people care about.",
+    "Multi-immune food supplement with 22 naturally derived micro- and phytonutrients",
+    "Phrases such as \u2018premium,\u2019 \u2018clean,\u2019 \u2018medical grade,\u2019 \u2018clinically tested\u2019 or \u2018science-backed\u2019 need definitions.",
+    "The test plus BalanceOil+, with the monthly subscription. You test at home, post it to the lab, and choose from there.",
+    "Track your fatty acid profile from home",
+    "Track your long-term blood sugar levels",
+    "What research suggests and what we personally think should not be presented as the same thing."
+  ]
+}
