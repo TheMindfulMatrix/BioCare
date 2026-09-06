@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "cohort": "education-publisher",
+    "name": "Examine",
+    "url": "https://examine.com/"
+  },
+  {
+    "id": 2,
+    "cohort": "education-publisher",
+    "name": "Healthline",
+    "url": "https://www.healthline.com/"
+  },
+  {
+    "id": 3,
+    "cohort": "education-publisher",
+    "name": "Verywell Health",
+    "url": "https://www.verywellhealth.com/"
+  },
+  {
+    "id": 4,
+    "cohort": "education-publisher",
+    "name": "Verywell Fit",
+    "url": "https://www.verywellfit.com/"
+  },
+  {
+    "id": 5,
+    "cohort": "education-publisher",
+    "name": "Medical News Today",
+    "url": "https://www.medicalnewstoday.com/"
+  },
+  {
+    "id": 6,
+    "cohort": "education-publisher",
+    "name": "Health",
+    "url": "https://www.health.com/"
+  },
+  {
+    "id": 7,
+    "cohort": "education-publisher",
+    "name": "WebMD",
+    "url": "https://www.webmd.com/"
+  },
+  {
+    "id": 8,
+    "cohort": "education-publisher",
+    "name": "Everyday Health",
+    "url": "https://www.everydayhealth.com/"
+  },
+  {
+    "id": 9,
+    "cohort": "education-publisher",
+    "name": "mindbodygreen",
+    "url": "https://www.mindbodygreen.com/"
+  },
+  {
+    "id": 10,
+    "cohort": "education-publisher",
+    "name": "Wellness Mama",
+    "url": "https://wellnessmama.com/"
+  },
+  {
+    "id": 11,
+    "cohort": "education-publisher",
+    "name": "Greatist",
+    "url": "https://greatist.com/"
+  },
+  {
+    "id": 12,
+    "cohort": "education-publisher",
+    "name": "Prevention",
+    "url": "https://www.prevention.com/"
+  },
+  {
+    "id": 13,
+    "cohort": "education-publisher",
+    "name": "SELF",
+    "url": "https://www.self.com/"
+  },
+  {
+    "id": 14,
+    "cohort": "education-publisher",
+    "name": "Women's Health",
+    "url": "https://www.womenshealthmag.com/"
+  },
+  {
+    "id": 15,
+    "cohort": "education-publisher",
+    "name": "Men's Health",
+    "url": "https://www.menshealth.com/"
+  },
+  {
+    "id": 16,
+    "cohort": "education-publisher",
+    "name": "EatingWell",
+    "url": "https://www.eatingwell.com/"
+  },
+  {
+    "id": 17,
+    "cohort": "education-publisher",
+    "name": "Clean Eating Kitchen",
+    "url": "https://www.cleaneatingkitchen.com/"
+  },
+  {
+    "id": 18,
+    "cohort": "education-publisher",
+    "name": "NutritionFacts",
+    "url": "https://nutritionfacts.org/"
+  },
+  {
+    "id": 19,
+    "cohort": "education-publisher",
+    "name": "Harvard Health",
+    "url": "https://www.health.harvard.edu/"
+  },
+  {
+    "id": 20,
+    "cohort": "education-publisher",
+    "name": "Cleveland Clinic Health Essentials",
+    "url": "https://health.clevelandclinic.org/"
+  },
+  {
+    "id": 21,
+    "cohort": "education-publisher",
+    "name": "Mayo Clinic",
+    "url": "https://www.mayoclinic.org/"
+  },
+  {
+    "id": 22,
+    "cohort": "education-publisher",
+    "name": "ConsumerLab",
+    "url": "https://www.consumerlab.com/"
+  },
+  {
+    "id": 23,
+    "cohort": "education-publisher",
+    "name": "Labdoor",
+    "url": "https://labdoor.com/"
+  },
+  {
+    "id": 24,
+    "cohort": "education-publisher",
+    "name": "Innerbody",
+    "url": "https://www.innerbody.com/"
+  },
+  {
+    "id": 25,
+    "cohort": "education-publisher",
+    "name": "Garage Gym Reviews",
+    "url": "https://www.garagegymreviews.com/"
+  },
+  {
+    "id": 26,
+    "cohort": "education-publisher",
+    "name": "BarBend",
+    "url": "https://barbend.com/"
+  },
+  {
+    "id": 27,
+    "cohort": "education-publisher",
+    "name": "Nerd Fitness",
+    "url": "https://www.nerdfitness.com/"
+  },
+  {
+    "id": 28,
+    "cohort": "education-publisher",
+    "name": "Precision Nutrition",
+    "url": "https://www.precisionnutrition.com/"
+  },
+  {
+    "id": 29,
+    "cohort": "education-publisher",
+    "name": "FoundMyFitness",
+    "url": "https://www.foundmyfitness.com/"
+  },
+  {
+    "id": 30,
+    "cohort": "education-publisher",
+    "name": "Peter Attia",
+    "url": "https://peterattiamd.com/"
+  },
+  {
+    "id": 31,
+    "cohort": "testing-platform",
+    "name": "Levels",
+    "url": "https://www.levels.com/"
+  },
+  {
+    "id": 32,
+    "cohort": "testing-platform",
+    "name": "InsideTracker",
+    "url": "https://www.insidetracker.com/"
+  },
+  {
+    "id": 33,
+    "cohort": "testing-platform",
+    "name": "Function Health",
+    "url": "https://www.functionhealth.com/"
+  },
+  {
+    "id": 34,
+    "cohort": "testing-platform",
+    "name": "Superpower",
+    "url": "https://superpower.com/"
+  },
+  {
+    "id": 35,
+    "cohort": "testing-platform",
+    "name": "Everlywell",
+    "url": "https://www.everlywell.com/"
+  },
+  {
+    "id": 36,
+    "cohort": "testing-platform",
+    "name": "LetsGetChecked",
+    "url": "https://www.letsgetchecked.com/"
+  },
+  {
+    "id": 37,
+    "cohort": "testing-platform",
+    "name": "Thriva",
+    "url": "https://thriva.co/"
+  },
+  {
+    "id": 38,
+    "cohort": "testing-platform",
+    "name": "Viome",
+    "url": "https://www.viome.com/"
+  },
+  {
+    "id": 39,
+    "cohort": "testing-platform",
+    "name": "ZOE",
+    "url": "https://zoe.com/"
+  },
+  {
+    "id": 40,
+    "cohort": "testing-platform",
+    "name": "Ombre",
+    "url": "https://www.ombrelab.com/"
+  },
+  {
+    "id": 41,
+    "cohort": "testing-platform",
+    "name": "Eli Health",
+    "url": "https://eli.health/"
+  },
+  {
+    "id": 42,
+    "cohort": "testing-platform",
+    "name": "OmegaQuant",
+    "url": "https://omegaquant.com/"
+  },
+  {
+    "id": 43,
+    "cohort": "education-led-brand",
+    "name": "Thorne",
+    "url": "https://www.thorne.com/"
+  },
+  {
+    "id": 44,
+    "cohort": "education-led-brand",
+    "name": "Ritual",
+    "url": "https://ritual.com/"
+  },
+  {
+    "id": 45,
+    "cohort": "education-led-brand",
+    "name": "Seed",
+    "url": "https://seed.com/"
+  },
+  {
+    "id": 46,
+    "cohort": "education-led-brand",
+    "name": "AG1",
+    "url": "https://drinkag1.com/"
+  },
+  {
+    "id": 47,
+    "cohort": "education-led-brand",
+    "name": "Momentous",
+    "url": "https://www.livemomentous.com/"
+  },
+  {
+    "id": 48,
+    "cohort": "education-led-brand",
+    "name": "Needed",
+    "url": "https://thisisneeded.com/"
+  },
+  {
+    "id": 49,
+    "cohort": "education-led-brand",
+    "name": "Perelel",
+    "url": "https://perelelhealth.com/"
+  },
+  {
+    "id": 50,
+    "cohort": "education-led-brand",
+    "name": "HUM Nutrition",
+    "url": "https://www.humnutrition.com/"
+  },
+  {
+    "id": 51,
+    "cohort": "education-led-brand",
+    "name": "Rootine",
+    "url": "https://rootine.co/"
+  },
+  {
+    "id": 52,
+    "cohort": "education-led-brand",
+    "name": "Persona Nutrition",
+    "url": "https://www.personanutrition.com/"
+  },
+  {
+    "id": 53,
+    "cohort": "education-led-brand",
+    "name": "Fullscript",
+    "url": "https://fullscript.com/"
+  },
+  {
+    "id": 54,
+    "cohort": "education-led-brand",
+    "name": "Designs for Health",
+    "url": "https://www.designsforhealth.com/"
+  },
+  {
+    "id": 55,
+    "cohort": "education-led-brand",
+    "name": "Pure Encapsulations",
+    "url": "https://www.pureencapsulationspro.com/"
+  },
+  {
+    "id": 56,
+    "cohort": "education-led-brand",
+    "name": "Life Extension",
+    "url": "https://www.lifeextension.com/"
+  },
+  {
+    "id": 57,
+    "cohort": "education-led-brand",
+    "name": "NOW Foods",
+    "url": "https://www.nowfoods.com/"
+  },
+  {
+    "id": 58,
+    "cohort": "education-led-brand",
+    "name": "Nordic Naturals",
+    "url": "https://www.nordic.com/"
+  },
+  {
+    "id": 59,
+    "cohort": "education-led-brand",
+    "name": "Nature Made",
+    "url": "https://www.naturemade.com/"
+  },
+  {
+    "id": 60,
+    "cohort": "education-led-brand",
+    "name": "NATURELO",
+    "url": "https://naturelo.com/"
+  },
+  {
+    "id": 61,
+    "cohort": "education-led-brand",
+    "name": "Garden of Life",
+    "url": "https://www.gardenoflife.com/"
+  },
+  {
+    "id": 62,
+    "cohort": "education-led-brand",
+    "name": "New Chapter",
+    "url": "https://www.newchapter.com/"
+  },
+  {
+    "id": 63,
+    "cohort": "education-led-brand",
+    "name": "MegaFood",
+    "url": "https://megafood.com/"
+  },
+  {
+    "id": 64,
+    "cohort": "education-led-brand",
+    "name": "Gaia Herbs",
+    "url": "https://www.gaiaherbs.com/"
+  },
+  {
+    "id": 65,
+    "cohort": "education-led-brand",
+    "name": "Solgar",
+    "url": "https://www.solgar.com/"
+  },
+  {
+    "id": 66,
+    "cohort": "education-led-brand",
+    "name": "Viridian Nutrition",
+    "url": "https://viridian-nutrition.com/"
+  },
+  {
+    "id": 67,
+    "cohort": "education-led-brand",
+    "name": "Terranova",
+    "url": "https://www.terranovahealth.com/"
+  },
+  {
+    "id": 68,
+    "cohort": "education-led-brand",
+    "name": "Metagenics",
+    "url": "https://www.metagenics.com/"
+  },
+  {
+    "id": 69,
+    "cohort": "education-led-brand",
+    "name": "Seeking Health",
+    "url": "https://www.seekinghealth.com/"
+  },
+  {
+    "id": 70,
+    "cohort": "education-led-brand",
+    "name": "Vital Proteins",
+    "url": "https://www.vitalproteins.com/"
+  },
+  {
+    "id": 71,
+    "cohort": "education-led-brand",
+    "name": "Sports Research",
+    "url": "https://www.sportsresearch.com/"
+  },
+  {
+    "id": 72,
+    "cohort": "education-led-brand",
+    "name": "Transparent Labs",
+    "url": "https://www.transparentlabs.com/"
+  },
+  {
+    "id": 73,
+    "cohort": "education-led-brand",
+    "name": "Promix",
+    "url": "https://promixnutrition.com/"
+  },
+  {
+    "id": 74,
+    "cohort": "education-led-brand",
+    "name": "Legion",
+    "url": "https://legionathletics.com/"
+  },
+  {
+    "id": 75,
+    "cohort": "education-led-brand",
+    "name": "BulkSupplements",
+    "url": "https://www.bulksupplements.com/"
+  },
+  {
+    "id": 76,
+    "cohort": "education-led-brand",
+    "name": "Myprotein",
+    "url": "https://www.myprotein.com/"
+  },
+  {
+    "id": 77,
+    "cohort": "education-led-brand",
+    "name": "Optimum Nutrition",
+    "url": "https://www.optimumnutrition.com/"
+  },
+  {
+    "id": 78,
+    "cohort": "education-led-brand",
+    "name": "Klean Athlete",
+    "url": "https://www.kleanathlete.com/"
+  },
+  {
+    "id": 79,
+    "cohort": "education-led-brand",
+    "name": "Naked Nutrition",
+    "url": "https://nakednutrition.com/"
+  },
+  {
+    "id": 80,
+    "cohort": "education-led-brand",
+    "name": "Onnit",
+    "url": "https://www.onnit.com/"
+  },
+  {
+    "id": 81,
+    "cohort": "education-led-brand",
+    "name": "Puori",
+    "url": "https://puori.com/"
+  },
+  {
+    "id": 82,
+    "cohort": "education-led-brand",
+    "name": "Equi",
+    "url": "https://equilondon.com/"
+  },
+  {
+    "id": 83,
+    "cohort": "education-led-brand",
+    "name": "Wild Nutrition",
+    "url": "https://www.wildnutrition.com/"
+  },
+  {
+    "id": 84,
+    "cohort": "education-led-brand",
+    "name": "Heights",
+    "url": "https://www.yourheights.com/"
+  },
+  {
+    "id": 85,
+    "cohort": "education-led-brand",
+    "name": "Nutri Advanced",
+    "url": "https://www.nutriadvanced.co.uk/"
+  },
+  {
+    "id": 86,
+    "cohort": "education-led-brand",
+    "name": "BetterYou",
+    "url": "https://betteryou.com/"
+  },
+  {
+    "id": 87,
+    "cohort": "education-led-brand",
+    "name": "Bare Biology",
+    "url": "https://www.barebiology.com/"
+  },
+  {
+    "id": 88,
+    "cohort": "education-led-brand",
+    "name": "WelleCo",
+    "url": "https://welleco.com/"
+  },
+  {
+    "id": 89,
+    "cohort": "education-led-brand",
+    "name": "JSHealth",
+    "url": "https://jshealthvitamins.com/"
+  },
+  {
+    "id": 90,
+    "cohort": "education-led-brand",
+    "name": "BiOptimizers",
+    "url": "https://bioptimizers.com/"
+  },
+  {
+    "id": 91,
+    "cohort": "education-led-brand",
+    "name": "Qualia",
+    "url": "https://www.qualialife.com/"
+  },
+  {
+    "id": 92,
+    "cohort": "education-led-brand",
+    "name": "Timeline",
+    "url": "https://www.timeline.com/"
+  },
+  {
+    "id": 93,
+    "cohort": "education-led-brand",
+    "name": "Tru Niagen",
+    "url": "https://www.truniagen.com/"
+  },
+  {
+    "id": 94,
+    "cohort": "education-led-brand",
+    "name": "Renue By Science",
+    "url": "https://renuebyscience.com/"
+  },
+  {
+    "id": 95,
+    "cohort": "education-led-brand",
+    "name": "DoNotAge",
+    "url": "https://donotage.org/"
+  },
+  {
+    "id": 96,
+    "cohort": "education-led-brand",
+    "name": "Pendulum",
+    "url": "https://pendulumlife.com/"
+  },
+  {
+    "id": 97,
+    "cohort": "education-led-brand",
+    "name": "ARMRA",
+    "url": "https://tryarmra.com/"
+  },
+  {
+    "id": 98,
+    "cohort": "education-led-brand",
+    "name": "Zinzino",
+    "url": "https://www.zinzino.com/"
+  },
+  {
+    "id": 99,
+    "cohort": "education-led-brand",
+    "name": "BioLimitless",
+    "url": "https://biolimitless.com/"
+  },
+  {
+    "id": 100,
+    "cohort": "education-led-brand",
+    "name": "iHerb",
+    "url": "https://www.iherb.com/"
+  }
+]

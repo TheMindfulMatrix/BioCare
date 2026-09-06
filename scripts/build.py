@@ -248,8 +248,10 @@ def document_head_markup(
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/base.css")}">',
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/site.css")}">',
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/growth.css")}">',
+            f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/experience.css")}">',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/search-relevance.js")}"></script>',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/enhancements.js")}"></script>',
+            f'  <script defer src="{versioned_asset(prefix, "assets/js/experience.js")}"></script>',
         ]
     )
     if structured_data and not noindex:
@@ -379,8 +381,7 @@ def hero_actions_markup(product: dict, product_count: int, affiliate_note: str) 
             <a class="button button-primary" href="know-your-number.html">Understand the test →</a>
             <a class="button button-secondary" href="{url}" target="_blank" rel="sponsored noopener noreferrer">Official product source ↗{external_note()}</a>
           </div>
-          <div class="hero-context"><span>Featured testing journey</span><span>Test → Understand → Decide</span><a href="#matrix-entry">Enter the Matrix ↓</a></div>
-          <p id="hero-affiliate-disclosure" class="hero-affiliate-note" data-affiliate-disclosure>{esc(affiliate_note)}</p>'''
+          <div class="hero-context"><span>Featured testing journey</span><span>Test → Understand → Decide</span><a href="#matrix-entry">Enter the Matrix ↓</a></div>'''
 
 
 def hero_image_markup(product: dict) -> str:
@@ -399,14 +400,7 @@ def hero_image_markup(product: dict) -> str:
 
 
 def hero_product_markup(product: dict) -> str:
-    artwork = product.get("artwork", {})
-    artwork_markup = ""
-    if artwork.get("src"):
-        artwork_markup = (
-            f'<img class="hero-product__background" src="{esc(artwork["src"], attribute=True)}" alt="" data-parallax-depth="0.55" '
-            f'width="{int(artwork["width"])}" height="{int(artwork["height"])}" '
-            'loading="eager" decoding="async">'
-        )
+    # Native official cutout on a CSS stage: no extra decorative hero download.
     url = esc(product["destination"], attribute=True)
     return f'''<div class="hero-product" data-product-id="{esc(product["id"], attribute=True)}">
             <span class="hero-product__orbit hero-product__orbit--outer" data-parallax-depth="0.35" aria-hidden="true"></span>
@@ -414,7 +408,6 @@ def hero_product_markup(product: dict) -> str:
             <span class="hero-product__channel hero-product__channel--gold" data-parallax-depth="1.1" aria-hidden="true"></span>
             <span class="hero-product__channel hero-product__channel--green" data-parallax-depth="0.65" aria-hidden="true"></span>
             <a class="hero-product__stage" href="{url}" target="_blank" rel="sponsored noopener noreferrer" aria-label="View {esc(product["name"], attribute=True)} on Zinzino (opens in a new tab)">
-              {artwork_markup}
               <span class="hero-product__pedestal" data-parallax-depth="0.5" aria-hidden="true"></span>
               <div class="hero-product__cutout" data-parallax-depth="0.22">{hero_image_markup(product)}</div>
               <div class="hero-product__signal hero-product__signal--one" data-parallax-depth="1.15" aria-hidden="true"><span>01</span> Test</div>
@@ -937,7 +930,8 @@ def category_badges(library: dict) -> str:
 
 
 def library_body_markup(library: dict, library_home: dict) -> str:
-    articles = published_articles(library)
+    # Homepage preview only. The Library retains every published guide.
+    articles = published_articles(library)[:3]
     if articles:
         return '<div class="library-article-grid" data-library-state="published">' + "".join(
             library_article_markup(article, library, index=index, archive=True) for index, article in enumerate(articles, start=1)
@@ -1399,6 +1393,7 @@ def build_home(data: dict, library: dict, discovery: dict, sources: list[dict]) 
         "{{HERO_SUPPORT}}": esc(home["hero"]["supportingLine"]),
         "{{HERO_COPY}}": esc(home["hero"]["copy"]),
         "{{HERO_ACTIONS}}": hero_actions_markup(featured, len(public_products), site["affiliateSourceDisclosure"]),
+        "{{HERO_AFFILIATE_DISCLOSURE}}": esc(site["affiliateSourceDisclosure"]),
         "{{HERO_PRODUCT}}": hero_product_markup(featured),
         "{{HERO_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high", environment="balance"),
         "{{GRAND_ENTRY_MATRIX_VISUAL}}": matrix_visual_markup(intensity="high", environment="discovery"),

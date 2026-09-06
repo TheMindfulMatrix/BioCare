@@ -3,33 +3,34 @@
 <head>
 {{DOCUMENT_HEAD}}
 </head>
-<body>
+<body class="home-page experience-home">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   {{SHARED_HEADER}}
 
   <main id="main-content" tabindex="-1">
     <section id="top" class="home-hero home-hero--product section-dark" aria-labelledby="hero-title" data-home-stage="product">
-      {{HERO_MATRIX_VISUAL}}
-      <canvas class="matrix-field" data-matrix-field aria-hidden="true"></canvas>
-      <div class="hero-biome" aria-hidden="true"><span class="hero-biome__plane hero-biome__plane--one" data-parallax-depth="0.35"></span><span class="hero-biome__plane hero-biome__plane--two" data-parallax-depth="0.7"></span><span class="hero-biome__signal hero-biome__signal--one" data-parallax-depth="1.1"></span><span class="hero-biome__signal hero-biome__signal--two" data-parallax-depth="0.55"></span></div>
+      <div class="experience-orbit" aria-hidden="true"></div>
+      <div class="experience-edition container-wide"><span><i aria-hidden="true"></i> THE MINDFUL MATRIX</span><span>Information / Education / Action</span></div>
       <div class="home-hero__grid container-wide">
         <div class="home-hero__content">
-          <p class="section-kicker">{{HERO_SUPPORT}}</p><h1 id="hero-title">{{HERO_HEADLINE}}</h1><p class="home-hero__copy">{{HERO_COPY}}</p>
+          <p class="section-kicker">WELLNESS, WITH CONTEXT.</p><h1 id="hero-title">Less noise.<br><em>More clarity.</em></h1><p class="home-hero__copy">Explore the evidence. Understand your options. Choose your next step.</p>
+          <div class="experience-hero-actions"><a class="button button-primary" href="#matrix-entry">Find your path <span aria-hidden="true">↗</span></a><a class="experience-text-link" href="library.html">Explore the Library <span aria-hidden="true">→</span></a></div>
+          <p class="experience-hero-note">Independent education. Optional products.<br>Your decision, always.</p>
+          <details class="experience-kit-details"><summary>Featured kit pricing &amp; purchase options</summary>
           {{HERO_ACTIONS}}
+          </details>
         </div>
         <div class="home-hero__visual">
-          <div class="matrix-volume" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="experience-object-label"><span>01 / Featured testing journey</span><span aria-hidden="true">↗</span></p>
           {{HERO_PRODUCT}}
-          <span class="hero-data hero-data--one" aria-hidden="true">Input / Personal data</span><span class="hero-data hero-data--two" aria-hidden="true">Signal / Context</span><span class="hero-data hero-data--three" aria-hidden="true">Output / Next step</span>
+          <a class="experience-object-footer" href="know-your-number.html"><span>Start with a question.<br><strong>Understand what a test can tell you.</strong></span><span aria-hidden="true">→</span></a>
+          <p id="hero-affiliate-disclosure" class="experience-object-disclosure" data-affiliate-disclosure>{{HERO_AFFILIATE_DISCLOSURE}}</p>
         </div>
       </div>
-      <div class="hero-status" aria-hidden="true"><span>Featured testing journey</span><span>Measurement → Context</span><span>One node in the Matrix</span></div>
-      <div class="hero-system-bridge" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><defs><linearGradient id="hero-bridge-gradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".52" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="hero-system-bridge__ghost" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><path class="hero-system-bridge__live" d="M760 4 C860 54 1000 32 1095 82 S1265 138 1440 116"/><circle cx="1095" cy="82" r="5"/><circle cx="1265" cy="138" r="4"/></svg></div>
+      <div class="experience-proofline container-wide"><a href="evidence.html">Sources you can inspect <span aria-hidden="true">↗</span></a><a href="about.html">A clear editorial purpose <span aria-hidden="true">↗</span></a><a href="#transparency">Partnerships, disclosed <span aria-hidden="true">↗</span></a></div>
     </section>
 
     <section id="matrix-entry" class="grand-entry section-dark" aria-labelledby="grand-entry-title" data-home-stage="matrix">
-      {{GRAND_ENTRY_MATRIX_VISUAL}}
-      <div class="grand-entry__handoff" aria-hidden="true"><span>Balance Kit</span><i></i><span>Measurement</span><i></i><span>Information</span><i></i><span>Education</span><i></i><span>Decision</span></div>
       <div class="container-wide grand-entry__grid">
         <div class="grand-entry__content" data-reveal>
           <p class="section-kicker">{{GRAND_ENTRY_EYEBROW}}</p>
@@ -39,11 +40,24 @@
           <ul class="grand-entry__metrics" aria-label="The Mindful Matrix at a glance">{{PLATFORM_METRICS}}</ul>
         </div>
         <div class="grand-entry__workspace" data-reveal>
-          <div class="grand-entry__topology" aria-hidden="true"><span>Source</span><i></i><span>Information</span><i></i><span>Context</span><i></i><span>Education</span><i></i><span>Decision</span><b>Balance Kit / testing node</b></div>
-          {{UNIVERSAL_SEARCH}}
+          <div class="experience-pathfinder" data-pathfinder>
+            <p class="interface-label">Your next question</p>
+            <h3>Where would you like to begin?</h3>
+            <div class="experience-pathfinder__controls" role="group" aria-label="Choose a learning path" data-path-controls hidden>
+              <button type="button" aria-pressed="true" aria-controls="path-learn" data-path-choice="learn">01 Learn</button>
+              <button type="button" aria-pressed="false" aria-controls="path-measure" data-path-choice="measure">02 Measure</button>
+              <button type="button" aria-pressed="false" aria-controls="path-explore" data-path-choice="explore">03 Explore</button>
+            </div>
+            <section class="experience-pathfinder__panel" id="path-learn" data-path-panel="learn" aria-labelledby="path-learn-title"><span class="experience-path-number" aria-hidden="true">01</span><p class="section-kicker">Start with understanding</p><h4 id="path-learn-title">Turn a headline into a better question.</h4><p>Learn how to read a study, inspect a label, or make sense of the evidence behind a wellness topic.</p><a href="library/how-to-read-a-health-study.html">Learn to read a health study <span aria-hidden="true">↗</span></a><a href="library.html">Browse all guides <span aria-hidden="true">→</span></a></section>
+            <section class="experience-pathfinder__panel" id="path-measure" data-path-panel="measure" aria-labelledby="path-measure-title"><span class="experience-path-number" aria-hidden="true">02</span><p class="section-kicker">Understand a measurement</p><h4 id="path-measure-title">A number needs context.</h4><p>Explore what an omega-3 blood test measures, its limits, and the questions to ask before choosing a test.</p><a href="know-your-number.html">Explore the testing journey <span aria-hidden="true">↗</span></a><a href="library/should-you-test-your-omega-3-levels.html">Read the testing guide <span aria-hidden="true">→</span></a></section>
+            <section class="experience-pathfinder__panel" id="path-explore" data-path-panel="explore" aria-labelledby="path-explore-title"><span class="experience-path-number" aria-hidden="true">03</span><p class="section-kicker">Investigate optional tools</p><h4 id="path-explore-title">Know what you are considering.</h4><p>Compare product records with their documentation, current price sources, and clearly disclosed manufacturer links.</p><a href="shop.html">Explore the product catalog <span aria-hidden="true">↗</span></a><a href="evidence.html">Inspect public sources <span aria-hidden="true">→</span></a></section>
+            <p class="experience-pathfinder__note">A navigation tool—not a health assessment. No answers are stored.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <div class="experience-search section-dark"><div class="container-wide">{{UNIVERSAL_SEARCH}}</div></div>
 
     {{CORE_FOUR_HOME}}
 
@@ -102,16 +116,8 @@
       <div class="omega-journey__actions" data-reveal><a class="button button-primary" href="library/should-you-test-your-omega-3-levels.html">Understand omega testing →</a><a class="button button-tertiary" href="library/omega-3-what-the-numbers-mean.html">Learn what the numbers mean →</a><a class="button button-tertiary" href="#shelf">Explore testing tools →</a></div></div>
     </section>
 
-    <section id="problem" class="problem section-warm section-pad" aria-labelledby="problem-title">
-      <div class="container"><div class="problem__grid"><div data-reveal><p class="section-kicker">The problem</p><h2 id="problem-title" class="problem__title">{{PROBLEM_HEADLINE}}</h2></div><div class="problem__body" data-reveal><p class="section-copy problem__copy">{{PROBLEM_COPY}}</p><ul class="problem__themes">{{PROBLEM_THEMES}}</ul></div></div><p class="problem__conclusion" data-reveal>{{PROBLEM_CONCLUSION}}</p></div>
-    </section>
-
-    <section id="matrix" class="matrix-section section-dark section-pad" aria-labelledby="matrix-title">
-      <div class="container"><div class="matrix-intro" data-reveal><p class="section-kicker">Information → Education → Action</p><h2 id="matrix-title" class="section-title">{{MATRIX_HEADING}}</h2><p class="section-copy">{{MATRIX_INTRO}}</p></div><div class="matrix-sequence" data-matrix-sequence><svg class="matrix-pathway" viewBox="0 0 260 1200" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="matrix-path-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfbb78"/><stop offset=".5" stop-color="#70aa8c"/><stop offset="1" stop-color="#dfbb78"/></linearGradient></defs><path class="matrix-pathway__base" d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/><path class="matrix-pathway__progress" data-matrix-path-progress d="M130 12 C28 166 232 255 130 405 C28 555 232 646 130 797 C34 938 222 1028 130 1188" pathLength="1"/></svg>{{MATRIX_STAGES}}</div><div class="matrix-conclusion" data-reveal><img src="assets/brand/mark-gold.svg" width="64" height="64" alt=""><div><p class="interface-label">Complete pathway</p><h3>{{MATRIX_CONCLUSION}}</h3><p>{{MATRIX_CONCLUSION_COPY}}</p></div></div></div>
-    </section>
-
-    <section id="choose-path" class="choose-path section-warm section-pad" aria-labelledby="choose-title">
-      <div class="container"><p class="section-kicker">Choose your path</p><h2 id="choose-title" class="section-title">{{CHOOSE_HEADING}}</h2><div class="journey-grid" data-reveal>{{PATH_CARDS}}</div></div>
+    <section id="matrix" class="experience-method section-dark section-pad" aria-labelledby="matrix-title">
+      <div class="container-wide"><span id="problem" class="experience-anchor"></span><span id="choose-path" class="experience-anchor"></span><div class="section-heading-grid"><div><p class="section-kicker">The Matrix method</p><h2 id="matrix-title" class="section-title">A better question.<br>A more informed next step.</h2></div><p class="section-copy">{{MATRIX_INTRO}}</p></div><ol class="experience-method__steps"><li><span>01 / Information</span><h3>See what exists.</h3><p>Start with a topic, a source, or a measurement you want to understand.</p></li><li><span>02 / Education</span><h3>Understand what it means.</h3><p>Keep evidence, interpretation, and uncertainty in view.</p></li><li><span>03 / Action</span><h3>Decide what makes sense.</h3><p>Your next step may be learning more, asking a professional, or choosing an optional tool.</p></li></ol><a class="experience-text-link" href="start.html">Find your starting point →</a></div>
     </section>
 
     <section id="story" class="founder founder--cinematic section-light section-pad" aria-labelledby="story-title">
@@ -134,10 +140,7 @@
       </div>
     </section>
 
-    <section id="testing" class="testing testing--lab section-dark section-pad" aria-labelledby="testing-title">
-      <div class="section-handoff section-handoff--light-dark" aria-hidden="true"><span></span><span></span></div>
-      <div class="container-wide"><div class="section-heading-grid testing__heading" data-reveal><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title" class="section-title">{{TESTING_HEADING}}</h2></div><p class="section-copy">{{TESTING_COPY}}</p></div>{{TESTING_WORKFLOW}}<div class="testing-lab">{{TESTING_PRODUCT}}{{TESTING_EDUCATION}}</div></div>
-    </section>
+    <section id="testing" class="experience-testing section-dark" aria-labelledby="testing-title"><div class="container-wide"><div><p class="section-kicker">{{TESTING_LABEL}}</p><h2 id="testing-title">{{TESTING_HEADING}}</h2><p>{{TESTING_COPY}}</p></div><a class="button button-primary" href="know-your-number.html">Explore the testing journey →</a></div></section>
 
     <section id="library" class="library-section library-section--terminal section-dark section-pad" aria-labelledby="library-title">
       <div class="section-handoff section-handoff--dark-green" aria-hidden="true"><span></span><span></span></div>
@@ -155,7 +158,7 @@
     </section>
 
     <section id="start" class="final-cta section-dark" aria-labelledby="final-title">
-      <div class="final-cta__path" aria-hidden="true"></div><div class="container final-cta__grid"><img src="assets/brand/mark-dark.svg" width="64" height="64" alt="" data-reveal><div data-reveal><p class="section-kicker">{{PHILOSOPHY}}</p><h2 id="final-title">{{FINAL_HEADLINE}}</h2><p class="final-cta__response">{{FINAL_RESPONSE}}</p><a class="button button-primary" href="start.html">Start your journey →</a><p class="final-cta__philosophy">{{FINAL_PHILOSOPHY}}</p></div></div>
+      <div class="container-wide experience-finale"><div><p class="section-kicker">{{PHILOSOPHY}}</p><h2 id="final-title">Your next step<br>starts with a question.</h2><p>There is no purchase required to keep learning.</p></div><a class="button button-primary" href="start.html">Start your journey <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
 

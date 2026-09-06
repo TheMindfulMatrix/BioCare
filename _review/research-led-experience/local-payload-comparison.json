@@ -1,0 +1,600 @@
+{
+  "checked_utc": "2026-09-06T22:53:32.322112+00:00",
+  "scope": "Fresh isolated Chrome contexts on loopback; default network; first viewport only. Decoded resource bytes, not production transfer size, field Core Web Vitals, or an A/B experiment.",
+  "measurements": [
+    {
+      "version": "candidate",
+      "width": 1440,
+      "documentBytes": 184130,
+      "resources": [
+        {
+          "path": "/css2",
+          "decodedBodyBytes": 7050,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/base.css",
+          "decodedBodyBytes": 3250,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/tokens.css",
+          "decodedBodyBytes": 2734,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/site.css",
+          "decodedBodyBytes": 258088,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/growth.css",
+          "decodedBodyBytes": 5500,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/experience.css",
+          "decodedBodyBytes": 37400,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/js/search-relevance.js",
+          "decodedBodyBytes": 5705,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/experience.js",
+          "decodedBodyBytes": 964,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/enhancements.js",
+          "decodedBodyBytes": 79015,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/brand/lockup-dark.svg",
+          "decodedBodyBytes": 962,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/hero/balance-test-basic-kit-650.webp",
+          "decodedBodyBytes": 28414,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+          "decodedBodyBytes": 26440,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+          "decodedBodyBytes": 18460,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+          "decodedBodyBytes": 32360,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/zinc-copper.webp",
+          "decodedBodyBytes": 28858,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+          "decodedBodyBytes": 23422,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-gold.svg",
+          "decodedBodyBytes": 544,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+          "decodedBodyBytes": 232526,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/favicon.svg",
+          "decodedBodyBytes": 408,
+          "kind": "other"
+        }
+      ],
+      "scrollY": 0,
+      "imagesLoaded": 12
+    },
+    {
+      "version": "baseline",
+      "width": 1440,
+      "documentBytes": 204049,
+      "resources": [
+        {
+          "path": "/css2",
+          "decodedBodyBytes": 7050,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/tokens.css",
+          "decodedBodyBytes": 2734,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/site.css",
+          "decodedBodyBytes": 258088,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/base.css",
+          "decodedBodyBytes": 3250,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/growth.css",
+          "decodedBodyBytes": 5443,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/js/search-relevance.js",
+          "decodedBodyBytes": 5705,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/enhancements.js",
+          "decodedBodyBytes": 78688,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+          "decodedBodyBytes": 232526,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/hero/balance-test-basic-kit-650.webp",
+          "decodedBodyBytes": 28414,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+          "decodedBodyBytes": 26440,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/lockup-dark.svg",
+          "decodedBodyBytes": 962,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+          "decodedBodyBytes": 32360,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/zinc-copper.webp",
+          "decodedBodyBytes": 28858,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+          "decodedBodyBytes": 18460,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-gold.svg",
+          "decodedBodyBytes": 544,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+          "decodedBodyBytes": 23422,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-dark.svg",
+          "decodedBodyBytes": 660,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/favicon.svg",
+          "decodedBodyBytes": 408,
+          "kind": "other"
+        }
+      ],
+      "scrollY": 0,
+      "imagesLoaded": 16
+    },
+    {
+      "version": "candidate",
+      "width": 768,
+      "documentBytes": 184130,
+      "resources": [
+        {
+          "path": "/css2",
+          "decodedBodyBytes": 7050,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/base.css",
+          "decodedBodyBytes": 3250,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/tokens.css",
+          "decodedBodyBytes": 2734,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/growth.css",
+          "decodedBodyBytes": 5500,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/site.css",
+          "decodedBodyBytes": 258088,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/experience.css",
+          "decodedBodyBytes": 37400,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/js/search-relevance.js",
+          "decodedBodyBytes": 5705,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/enhancements.js",
+          "decodedBodyBytes": 79015,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/experience.js",
+          "decodedBodyBytes": 964,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/brand/lockup-dark.svg",
+          "decodedBodyBytes": 962,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+          "decodedBodyBytes": 18460,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+          "decodedBodyBytes": 26440,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+          "decodedBodyBytes": 32360,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/zinc-copper.webp",
+          "decodedBodyBytes": 28858,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+          "decodedBodyBytes": 23422,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-gold.svg",
+          "decodedBodyBytes": 544,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+          "decodedBodyBytes": 232526,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/favicon.svg",
+          "decodedBodyBytes": 408,
+          "kind": "other"
+        }
+      ],
+      "scrollY": 0,
+      "imagesLoaded": 12
+    },
+    {
+      "version": "candidate",
+      "width": 390,
+      "documentBytes": 184130,
+      "resources": [
+        {
+          "path": "/css2",
+          "decodedBodyBytes": 7050,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/base.css",
+          "decodedBodyBytes": 3250,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/tokens.css",
+          "decodedBodyBytes": 2734,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/site.css",
+          "decodedBodyBytes": 258088,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/growth.css",
+          "decodedBodyBytes": 5500,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/experience.css",
+          "decodedBodyBytes": 37400,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/brand/lockup-dark.svg",
+          "decodedBodyBytes": 962,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+          "decodedBodyBytes": 18460,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/js/search-relevance.js",
+          "decodedBodyBytes": 5705,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/experience.js",
+          "decodedBodyBytes": 964,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/enhancements.js",
+          "decodedBodyBytes": 79015,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+          "decodedBodyBytes": 26440,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/zinc-copper.webp",
+          "decodedBodyBytes": 28858,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+          "decodedBodyBytes": 32360,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+          "decodedBodyBytes": 23422,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-gold.svg",
+          "decodedBodyBytes": 544,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+          "decodedBodyBytes": 232526,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/favicon.svg",
+          "decodedBodyBytes": 408,
+          "kind": "other"
+        }
+      ],
+      "scrollY": 0,
+      "imagesLoaded": 12
+    },
+    {
+      "version": "baseline",
+      "width": 390,
+      "documentBytes": 204049,
+      "resources": [
+        {
+          "path": "/css2",
+          "decodedBodyBytes": 7050,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/tokens.css",
+          "decodedBodyBytes": 2734,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/base.css",
+          "decodedBodyBytes": 3250,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/site.css",
+          "decodedBodyBytes": 258088,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/growth.css",
+          "decodedBodyBytes": 5443,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/brand/lockup-dark.svg",
+          "decodedBodyBytes": 962,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+          "decodedBodyBytes": 232526,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/js/search-relevance.js",
+          "decodedBodyBytes": 5705,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/enhancements.js",
+          "decodedBodyBytes": 78688,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+          "decodedBodyBytes": 18460,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+          "decodedBodyBytes": 26440,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+          "decodedBodyBytes": 32360,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/zinc-copper.webp",
+          "decodedBodyBytes": 28858,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+          "decodedBodyBytes": 23422,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-gold.svg",
+          "decodedBodyBytes": 544,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-dark.svg",
+          "decodedBodyBytes": 660,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/favicon.svg",
+          "decodedBodyBytes": 408,
+          "kind": "other"
+        }
+      ],
+      "scrollY": 0,
+      "imagesLoaded": 16
+    },
+    {
+      "version": "candidate",
+      "width": 375,
+      "documentBytes": 184130,
+      "resources": [
+        {
+          "path": "/css2",
+          "decodedBodyBytes": 7050,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/tokens.css",
+          "decodedBodyBytes": 2734,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/base.css",
+          "decodedBodyBytes": 3250,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/site.css",
+          "decodedBodyBytes": 258088,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/growth.css",
+          "decodedBodyBytes": 5500,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/css/experience.css",
+          "decodedBodyBytes": 37400,
+          "kind": "link"
+        },
+        {
+          "path": "/assets/js/search-relevance.js",
+          "decodedBodyBytes": 5705,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+          "decodedBodyBytes": 18460,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/lockup-dark.svg",
+          "decodedBodyBytes": 962,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/js/experience.js",
+          "decodedBodyBytes": 964,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/js/enhancements.js",
+          "decodedBodyBytes": 79015,
+          "kind": "script"
+        },
+        {
+          "path": "/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+          "decodedBodyBytes": 26440,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+          "decodedBodyBytes": 32360,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/zinc-copper.webp",
+          "decodedBodyBytes": 28858,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+          "decodedBodyBytes": 23422,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/mark-gold.svg",
+          "decodedBodyBytes": 544,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+          "decodedBodyBytes": 232526,
+          "kind": "img"
+        },
+        {
+          "path": "/assets/brand/favicon.svg",
+          "decodedBodyBytes": 408,
+          "kind": "other"
+        }
+      ],
+      "scrollY": 0,
+      "imagesLoaded": 12
+    }
+  ]
+}
