@@ -247,6 +247,7 @@ def document_head_markup(
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/tokens.css")}">',
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/base.css")}">',
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/site.css")}">',
+            f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/growth.css")}">',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/search-relevance.js")}"></script>',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/enhancements.js")}"></script>',
         ]
@@ -292,7 +293,7 @@ def shared_footer_markup(data: dict, *, prefix: str) -> str:
     return f'''<nav class="mobile-dock" aria-label="Mobile navigation"><a href="{home}" data-dock-page="home"><span aria-hidden="true">⌂</span>Home</a><a href="{prefix}explore.html" data-dock-page="explore"><span aria-hidden="true">⌕</span>Explore</a><a href="{prefix}shop.html" data-dock-page="shop"><span aria-hidden="true">◇</span>Products</a><a href="{prefix}library.html" data-dock-page="library"><span aria-hidden="true">▤</span>Library</a><a href="{prefix}start.html" data-dock-page="start"><span aria-hidden="true">→</span>Start</a></nav><footer class="site-footer section-dark">
     <div class="footer-grid container-wide">
       <div><a href="{home}" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">{esc(philosophy)}</p></div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}shop.html">All products</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}shop.html">All products</a><a href="{prefix}about.html">About &amp; contact</a><a href="{prefix}privacy.html">Privacy &amp; website data</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
       <div class="footer-meta"><nav class="socials" aria-label="Social links">{social_links}</nav><p class="fine"><a href="mailto:{esc(email, attribute=True)}">{esc(email)}</a></p><p class="fine" data-fda-disclaimer>{esc(site["fdaDisclaimer"])}</p><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
     </div>
   </footer>'''
@@ -1603,7 +1604,61 @@ def build_know_your_number(data: dict) -> None:
     metadata=data["site"]["metadata"]; page=metadata["pages"]["knowYourNumber"]
     product=next(item for item in active_products(data["catalog"]) if item["id"]==data["featuredProductId"])
     replacements={"{{DOCUMENT_HEAD}}":document_head_markup(metadata,prefix="",title=page["title"],description=page["description"],path=page["path"],structured_data=[organization_schema(metadata),website_schema(metadata),breadcrumb_schema(metadata,[("Home",""),("Know Your Number",page["path"])])]),"{{SHARED_HEADER}}":shared_header_markup(data,prefix="",current="know-your-number"),"{{SHARED_FOOTER}}":shared_footer_markup(data,prefix=""),"{{KYN_MATRIX_VISUAL}}":matrix_visual_markup(intensity="high",environment="signal"),"{{PRODUCT_SOURCE}}":esc(product["destination"],attribute=True),"{{PRODUCT_NAME}}":esc(product["name"]),"{{AFFILIATE_DISCLOSURE}}":esc(data["site"]["affiliateDisclosure"])}
+    replacements["{{PURCHASE_OPTIONS}}"] = growth_purchase_options(data)
     write_output(ROOT / "know-your-number.html",render_template("know-your-number.html",replacements))
+
+
+def growth_purchase_options(data: dict) -> str:
+    journey = data["growth"]["journey"]
+    products = {item["id"]: item for item in active_products(data["catalog"])}
+    cards = []
+    for product_id in journey["productIds"]:
+        product = products[product_id]
+        kit = product["price"]["pricing_model"] == "starter_subscription"
+        label = "Start kit + monthly subscription" if kit else "Individual test"
+        note = "This format has both a start price and a recurring monthly charge. Review the terms before enrolling." if kit else "This is the individual product record, separate from the featured subscription kit. Premier pricing has eligibility conditions."
+        cards.append(f'<article class="growth-purchase-card"><p class="section-kicker">{label}</p><h3>{esc(product["name"])}</h3><p>{note}</p>{price_markup(product)}<a class="button button-primary" href="products/{esc(product_id)}.html" data-growth-action="product-details">Review {esc(product["name"])} →</a></article>')
+    checks = "".join(f'<li>{esc(item)}</li>' for item in journey["checklist"])
+    cards.append(f'<p id="shelf-affiliate-disclosure" class="growth-purchase-disclosure" data-affiliate-disclosure>{esc(data["site"]["affiliateDisclosure"])}</p>')
+    return f'''<section id="purchase-options" class="section-light growth-section"><div class="container">
+<p class="section-kicker">Education → product details → official checkout</p>
+<h2 class="growth-heading">{esc(journey["title"])}</h2><p class="section-copy">{esc(journey["intro"])}</p>
+<div class="growth-purchase-grid">{"".join(cards)}</div>
+<p class="growth-status">US purchase formats checked {esc(journey["checkedOn"])}. Prices and terms can change; the manufacturer checkout controls the current amount and conditions.</p>
+<h3>Before you leave for checkout</h3><ul class="growth-checklist">{checks}</ul>
+<div class="button-row"><a class="growth-text-link" href="{esc(journey["supportUrl"],attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(journey["supportLabel"])} ↗{external_note()}</a><a class="growth-text-link" href="about.html">Who runs the Matrix? →</a></div>
+</div></section>'''
+
+
+def build_growth_pages(data: dict) -> None:
+    growth = data["growth"]
+    # Privacy copy and inert integration foundations describe OFF only. Enabling
+    # a service requires a separate reviewed implementation, not a flag flip.
+    if growth["integrations"]["analyticsEnabled"] or growth["integrations"]["newsletterEnabled"]:
+        raise ValueError("Growth services require provider, privacy and activation review before enabling")
+    metadata = data["site"]["metadata"]
+    for kind in ("about", "privacy"):
+        page = growth[kind]
+        replacements = {
+            "{{DOCUMENT_HEAD}}": document_head_markup(metadata, prefix="", title=page["title"], description=page["description"], path=page["path"], structured_data=[organization_schema(metadata), website_schema(metadata), breadcrumb_schema(metadata, [("Home", ""), (page["eyebrow"], page["path"])])]),
+            "{{SHARED_HEADER}}": shared_header_markup(data, prefix="", current=kind),
+            "{{SHARED_FOOTER}}": shared_footer_markup(data, prefix=""),
+            "{{EMAIL}}": esc(data["site"]["publicEmail"], attribute=True),
+            "{{EYEBROW}}": esc(page["eyebrow"]), "{{HEADING}}": esc(page["heading"]), "{{LEDE}}": esc(page["lede"]),
+            "{{REVIEWED_ON}}": esc(growth["reviewedOn"]),
+        }
+        if kind == "about":
+            replacements.update({
+                "{{CONTACT_HEADING}}": esc(page["contactHeading"]), "{{CONTACT_COPY}}": esc(page["contactCopy"]),
+                "{{PRINCIPLES}}": "".join(f'<article class="growth-card"><span class="growth-card__number">0{index}</span><h3>{esc(item["title"])}</h3><p>{esc(item["copy"])}</p></article>' for index, item in enumerate(page["principles"], 1)),
+                "{{EDITORIAL}}": "".join(f'<p>{esc(item)}</p>' for item in page["editorial"]),
+                "{{FAQ}}": "".join(f'<details><summary>{esc(item["question"])}</summary><p>{esc(item["answer"])}</p></details>' for item in page["faqs"]),
+                "{{AFFILIATE_DISCLOSURE}}": esc(data["site"]["affiliateDisclosure"]),
+                "{{BIOLIMITLESS_DISCLOSURE}}": esc(data["site"]["biolimitlessAffiliateDisclosure"]),
+            })
+        else:
+            replacements["{{SECTIONS}}"] = "".join('<section><h2>' + esc(item["heading"]) + '</h2>' + "".join(f'<p>{esc(text)}</p>' for text in item["paragraphs"]) + '</section>' for item in page["sections"])
+        write_output(ROOT / page["path"], render_template(kind + ".html", replacements))
 
 
 def product_structured_data(metadata: dict, product: dict) -> dict:
@@ -1677,6 +1732,7 @@ def build_product_pages(data: dict, library: dict, discovery: dict, sources: lis
             "{{ENVIRONMENT}}": esc(product["environment"], attribute=True), "{{MANUFACTURER}}": esc(product["manufacturer"]), "{{CATEGORY}}": esc(product["category"]), "{{PRODUCT_NAME}}": esc(product["name"]), "{{DESCRIPTION}}": esc(product["description"]), "{{WHY_HERE}}": esc(product["whyItsHere"]), "{{PRODUCT_IMAGE}}": product_image_markup(product), "{{PRICE}}": price_markup(product),
             "{{BADGES}}": f'<span>{esc(product["productKind"])}</span><span>{esc(product["variantLabel"])}</span>', "{{OFFICIAL_URL}}": esc(product["destination"], attribute=True),
             "{{CORE_FOUR_MARKER}}": marker, "{{CORE_FOUR_REASON}}": reason,
+            "{{GROWTH_PURCHASE_HELP}}": '<aside class="section-warm growth-purchase-help"><div class="container"><p>Individual test or subscription kit? <a class="growth-text-link" href="../know-your-number.html#purchase-options">Compare the purchase formats before deciding →</a></p></div></aside>' if product["id"] in data["growth"]["journey"]["productIds"] else "",
             "{{DEPARTMENT_URL}}": f'../departments/{esc(department["slug"], attribute=True)}.html', "{{DEPARTMENT_NAME}}": esc(department["title"]), "{{LABEL_STATUS}}": product_label_markup(labels.get(product["id"])),
             "{{RELATED_GUIDES}}": guides, "{{RELATED_SOURCES}}": evidence, "{{RELATED_PRODUCTS}}": related_markup,
             "{{DISCLOSURE}}": esc(data["site"]["affiliateDisclosure"] if product["manufacturer"] == "Zinzino" else data["site"]["biolimitlessAffiliateDisclosure"]), "{{PRICING_DISCLOSURE}}": esc(data["site"]["pricingDisclosure"]), "{{FDA_DISCLAIMER}}": esc(data["site"]["fdaDisclaimer"]),
@@ -1762,6 +1818,8 @@ def main() -> None:
     data["products"] = catalog["products"]
     data["featuredProductId"] = catalog["featuredProductId"]
     data["coreFour"] = core_four
+    data["growth"] = load_json(ROOT / "content" / "growth.json")
+    build_growth_pages(data)
     build_home(data, library, discovery, sources)
     build_explore(data, library, discovery, sources)
     build_departments(data, library, discovery, sources)

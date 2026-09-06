@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Responsive browser audit for every canonical page, with four home screenshots."""
+"""Audit every canonical page at four viewports and both motion settings."""
 
 from __future__ import annotations
 
@@ -103,8 +103,9 @@ def main() -> None:
     all_failed_requests: list[dict[str, str]] = []
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(**({"channel": args.browser_channel} if args.browser_channel else {}))
-        for viewport_name, viewport in VIEWPORTS.items():
-            context = browser.new_context(viewport=viewport, reduced_motion="reduce")
+        states = [(name, viewport, motion) for name, viewport in VIEWPORTS.items() for motion in ("reduce", "no-preference")]
+        for viewport_name, viewport, motion in states:
+            context = browser.new_context(viewport=viewport, reduced_motion=motion)
             page = context.new_page()
             page.on("console", lambda message: all_console_errors.append(message.text) if message.type == "error" else None)
             page.on("console", lambda message: all_console_warnings.append(message.text) if message.type == "warning" else None)
@@ -133,10 +134,32 @@ def main() -> None:
                       return !(el.getAttribute('aria-label') || el.textContent.trim() || el.getAttribute('title') || el.getAttribute('placeholder') || labels || imageAlt);
                     }).length
                 })""")
-                result = {"viewport": viewport_name, "path": relative or "index.html", "status": response.status if response else None, **metrics}
+                result = {"viewport": viewport_name, "motion": motion, "path": relative or "index.html", "status": response.status if response else None, **metrics}
                 if relative == "library.html":
                     result["libraryChecks"] = library_checks(page)
-                    motion_results.append({"viewport": viewport_name, "motion": "reduce", "checks": result["libraryChecks"]})
+                    motion_results.append({"viewport": viewport_name, "motion": motion, "checks": result["libraryChecks"]})
+                if relative == "about.html":
+                    summary = page.locator('.growth-faq summary').first
+                    summary.focus()
+                    page.keyboard.press('Enter')
+                    opened = page.locator('.growth-faq details').first.get_attribute('open') is not None
+                    page.keyboard.press('Enter')
+                    result['growthChecks'] = {
+                        'faqKeyboardToggle': opened and page.locator('.growth-faq details').first.get_attribute('open') is None,
+                        'businessEmail': page.locator('a[href="mailto:connect@themindfulmatrixhealth.com"]').count() >= 1,
+                        'noEmailCollection': page.locator('input[type=email]').count() == 0,
+                    }
+                if relative == "privacy.html":
+                    result['growthChecks'] = {
+                        'noActiveMeasurementScript': page.locator('script[src*="growth-measurement"]').count() == 0,
+                        'offStatusVisible': 'Analytics off' in page.locator('main').inner_text() and 'Newsletter signup off' in page.locator('main').inner_text(),
+                    }
+                if relative == "know-your-number.html":
+                    result['growthChecks'] = {
+                        'twoPurchaseFormats': page.locator('.growth-purchase-card').count() == 2,
+                        'productDetailsLinks': page.locator('#purchase-options a[data-growth-action=product-details]').count() == 2,
+                        'eligibilityAndRecurringVisible': 'New York' in page.locator('#purchase-options').inner_text() and 'recurring monthly charge' in page.locator('#purchase-options').inner_text(),
+                    }
                 if relative == "explore.html":
                     search = page.locator("[data-search-input]")
                     search.fill("omega")
@@ -173,20 +196,13 @@ def main() -> None:
                         forbiddenSkuAbsent: !/kit\s*\/\s*sku/i.test(document.body.innerText),
                         heroVisible: !!document.querySelector('.hero-product') && document.querySelector('.hero-product').getBoundingClientRect().height > 0
                     })""")
-                    page.screenshot(path=output / f"home-{viewport_name}.png", full_page=False)
+                    suffix = "" if motion == "reduce" else "-motion"
+                    page.screenshot(path=output / f"home-{viewport_name}{suffix}.png", full_page=False)
                 results.append(result)
             context.close()
-            context = browser.new_context(viewport=viewport, reduced_motion="no-preference")
-            page = context.new_page()
-            page.on("console", lambda message: all_console_errors.append(message.text) if message.type == "error" else all_console_warnings.append(message.text) if message.type == "warning" else None)
-            page.on("pageerror", lambda error: all_console_errors.append(str(error)))
-            page.on("response", lambda response: all_http_errors.append({"url": response.url, "status": response.status}) if response.status >= 400 else None)
-            page.on("requestfailed", record_failed_request)
-            page.goto(base + "library.html", wait_until="networkidle")
-            motion_results.append({"viewport": viewport_name, "motion": "no-preference", "checks": library_checks(page)})
-            context.close()
+            print(f"Completed {len(paths)} pages: {viewport_name}, motion={motion}", flush=True)
         browser.close()
-    payload = {"viewports": VIEWPORTS, "pages_per_viewport": len(paths), "results": results, "library_motion_results": motion_results}
+    payload = {"viewports": VIEWPORTS, "motion_settings": ["reduce", "no-preference"], "pages_per_viewport": len(paths), "results": results, "library_motion_results": motion_results}
     payload["summary"] = {
         "overflow_failures": sum(item["overflow"] for item in results),
         "broken_images": sum(len(item["brokenImages"]) for item in results),
@@ -197,13 +213,13 @@ def main() -> None:
         "console_warnings": all_console_warnings,
         "http_errors": all_http_errors,
         "bad_page_statuses": sum(item["status"] != 200 for item in results),
-        "coverage_failures": int(len(results) != len(paths) * len(VIEWPORTS) or not results or len(motion_results) != 2 * len(VIEWPORTS)),
+        "coverage_failures": int(len(results) != 2 * len(paths) * len(VIEWPORTS) or not results or len(motion_results) != 2 * len(VIEWPORTS)),
         "library_motion_failures": sum(not value for result in motion_results for value in result["checks"].values()),
         "failed_requests": all_failed_requests,
         "functional_failures": sum(
             not value
             for item in results
-            for group in (item.get("searchChecks", {}), item.get("shopChecks", {}), item.get("mobileHeroChecks", {}), item.get("tabletHeroChecks", {}))
+            for group in (item.get("searchChecks", {}), item.get("shopChecks", {}), item.get("mobileHeroChecks", {}), item.get("tabletHeroChecks", {}), item.get("growthChecks", {}))
             for value in group.values()
         ),
     }
