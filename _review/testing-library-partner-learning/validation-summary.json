@@ -1,0 +1,23 @@
+{
+  "pages": 88,
+  "deterministic": true,
+  "local_page_failures": 0,
+  "local_asset_failures": 0,
+  "assets": 175,
+  "compliance": {
+    "baseline_sha": "ef36a71ecc3365fa1a03db18083ac75349c54574",
+    "baseline_review_warnings": 69,
+    "baseline_strict_items": 76,
+    "candidate_review_warnings": 379,
+    "candidate_strict_items": 386,
+    "candidate_hard_errors": [],
+    "candidate_red": 0,
+    "protected_canonical_files_changed": [],
+    "new_strict_finding_locations": 310,
+    "new_strict_findings_by_file": {
+      "content/partner-learning.json": 51,
+      "partners.html": 259
+    },
+    "interpretation": "Machine advisories are not clinical or legal approval. New business/education surfaces and the source manifest are now audited. Existing registry classifications, qualifications, sources and disclosures remain unchanged."
+  }
+}

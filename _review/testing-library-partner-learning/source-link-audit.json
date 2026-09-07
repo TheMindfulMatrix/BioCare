@@ -1,0 +1,397 @@
+{
+  "checked_date": "2026-09-06",
+  "source_count": 40,
+  "sources": [
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-omega-3-health-professional",
+      "page_title": "Omega-3 Fatty Acids - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-vitamin-d-health-professional",
+      "page_title": "Vitamin D - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.nccih.nih.gov",
+      "final_url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety",
+      "http_status": 200,
+      "id": "nccih-probiotics-usefulness-safety",
+      "page_title": "Probiotics: Usefulness and Safety | NCCIH",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "medlineplus.gov",
+      "final_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+      "http_status": 200,
+      "id": "medlineplus-hba1c-test",
+      "page_title": "Hemoglobin A1C (HbA1c) Test: MedlinePlus Medical Test",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.fda.gov",
+      "final_url": "https://www.fda.gov/food/dietary-supplements-guidance-documents-regulatory-information/dietary-supplement-labeling-guide",
+      "http_status": 200,
+      "id": "fda-dietary-supplement-labeling-guide",
+      "page_title": "Dietary Supplement Labeling Guide | FDA",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.fda.gov",
+      "final_url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-food-dietary-supplements",
+      "http_status": 200,
+      "id": "fda-label-claims-food-supplements",
+      "page_title": "Label Claims for Food & Dietary Supplements | FDA",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/dietarysupplements-Consumer/",
+      "http_status": 200,
+      "id": "nih-ods-dietary-supplements-background",
+      "page_title": "Background Information: Dietary Supplements - Consumer",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "odphp.health.gov",
+      "final_url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/about-physical-activity-guidelines",
+      "http_status": 200,
+      "id": "hhs-physical-activity-guidelines",
+      "page_title": "About the Physical Activity Guidelines | odphp.health.gov",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-magnesium",
+      "page_title": "Magnesium - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-zinc",
+      "page_title": "Zinc - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-copper",
+      "page_title": "Copper - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-vitamin-k",
+      "page_title": "Vitamin K - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-vitamin-b12",
+      "page_title": "Vitamin B12 - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-vitamin-c",
+      "page_title": "Vitamin C - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-iodine",
+      "page_title": "Iodine - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-folate",
+      "page_title": "Folate - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-multivitamins",
+      "page_title": "Multivitamin/mineral Supplements - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-exercise",
+      "page_title": "Dietary Supplements for Exercise and Athletic Performance - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "ods.od.nih.gov",
+      "final_url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/",
+      "http_status": 200,
+      "id": "nih-ods-immune-function",
+      "page_title": "Dietary Supplements for Immune Function and Infectious Diseases - Health Professional Fact Sheet",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.nccih.nih.gov",
+      "final_url": "https://www.nccih.nih.gov/health/turmeric",
+      "http_status": 200,
+      "id": "nccih-turmeric",
+      "page_title": "Turmeric: Usefulness and Safety | NCCIH",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.nccih.nih.gov",
+      "final_url": "https://www.nccih.nih.gov/health/antioxidant-supplements-what-you-need-to-know",
+      "http_status": 200,
+      "id": "nccih-antioxidants",
+      "page_title": "Antioxidant Supplements: What You Need To Know | NCCIH",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.nccih.nih.gov",
+      "final_url": "https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know",
+      "http_status": 200,
+      "id": "nccih-detox",
+      "page_title": "\u201cDetoxes\u201d and \u201cCleanses\u201d: What You Need To Know | NCCIH",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.nccih.nih.gov",
+      "final_url": "https://www.nccih.nih.gov/health/using-dietary-supplements-wisely",
+      "http_status": 200,
+      "id": "nccih-supplement-safety",
+      "page_title": "Using Dietary Supplements Wisely | NCCIH",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "medlineplus.gov",
+      "final_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+      "http_status": 200,
+      "id": "medlineplus-vitamin-d-testing",
+      "page_title": "Vitamin D Test: MedlinePlus Medical Test",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "medlineplus.gov",
+      "final_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+      "http_status": 200,
+      "id": "medlineplus-lab-results",
+      "page_title": "How to Understand Your Lab Results: MedlinePlus Medical Test",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "medlineplus.gov",
+      "final_url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcrisksbenefits/",
+      "http_status": 200,
+      "id": "medlineplus-genetic-limits",
+      "page_title": "What are the pros and cons of direct-to-consumer genetic testing?: MedlinePlus Genetics",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "medlineplus.gov",
+      "final_url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcknow/",
+      "http_status": 200,
+      "id": "medlineplus-genetic-decisions",
+      "page_title": "What should I know before proceeding with direct-to-consumer genetic testing?: MedlinePlus Genetics",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.niddk.nih.gov",
+      "final_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+      "http_status": 200,
+      "id": "niddk-a1c",
+      "page_title": "The A1C Test & Diabetes - NIDDK",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.niddk.nih.gov",
+      "final_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "http_status": 200,
+      "id": "niddk-fiber",
+      "page_title": "Eating, Diet, & Nutrition for Constipation - NIDDK",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "www.who.int",
+      "final_url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+      "http_status": 200,
+      "id": "who-physical-activity",
+      "page_title": "Physical activity",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_url": "https://www.cdc.gov/sleep/about/index.html",
+      "http_status": 403,
+      "id": "cdc-sleep",
+      "status": "bot_protected",
+      "title_match": null
+    },
+    {
+      "final_host": "www.endocrine.org",
+      "final_url": "https://www.endocrine.org/clinical-practice-guidelines/vitamin-d-for-prevention-of-disease",
+      "http_status": 200,
+      "id": "endocrine-vitamin-d-guideline",
+      "page_title": "Vitamin D for the Prevention of Disease | Endocrine Society",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "error": "URLError",
+      "final_url": null,
+      "id": "aad-skin-supplements",
+      "status": "failed",
+      "title_match": null
+    },
+    {
+      "error": "URLError",
+      "final_url": null,
+      "id": "aad-beauty-evidence",
+      "status": "failed",
+      "title_match": null
+    },
+    {
+      "final_host": "www.aad.org",
+      "final_url": "https://www.aad.org/media/stats-sunscreen",
+      "http_status": 200,
+      "id": "aad-sun-protection",
+      "page_title": "Sunscreen FAQs",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fish-and-omega-3-fatty-acids",
+      "http_status": 403,
+      "id": "aha-food-omega",
+      "status": "bot_protected",
+      "title_match": null
+    },
+    {
+      "final_url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/digestive-enzymes-and-digestive-enzyme-supplements",
+      "http_status": 403,
+      "id": "hopkins-digestive-enzymes",
+      "status": "bot_protected",
+      "title_match": null
+    },
+    {
+      "final_host": "pubmed.ncbi.nlm.nih.gov",
+      "final_url": "https://pubmed.ncbi.nlm.nih.gov/30415637/",
+      "http_status": 203,
+      "id": "vital-omega-trial",
+      "page_title": "pubmed.ncbi.nlm.nih.gov",
+      "publisher_match": true,
+      "status": "mismatch",
+      "title_match": false
+    },
+    {
+      "final_host": "www.nature.com",
+      "final_url": "https://www.nature.com/articles/srep46337?error=cookies_not_supported&code=8e89f786-4ed6-498d-ad04-e2805c0dfb4d",
+      "http_status": 200,
+      "id": "ipa-observational-study",
+      "page_title": "Indolepropionic acid and novel lipid metabolites are associated with a lower risk of type 2 diabetes in the Finnish Diabetes Prevention Study | Scientific Reports",
+      "publisher_match": true,
+      "status": "verified",
+      "title_match": true
+    },
+    {
+      "final_host": "pubmed.ncbi.nlm.nih.gov",
+      "final_url": "https://pubmed.ncbi.nlm.nih.gov/39647502/",
+      "http_status": 203,
+      "id": "microbiome-consensus",
+      "page_title": "pubmed.ncbi.nlm.nih.gov",
+      "publisher_match": true,
+      "status": "mismatch",
+      "title_match": false
+    }
+  ],
+  "totals": {
+    "bot_protected": 3,
+    "failed": 2,
+    "mismatch": 2,
+    "verified": 33
+  }
+}

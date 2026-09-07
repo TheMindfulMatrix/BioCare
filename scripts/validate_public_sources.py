@@ -20,14 +20,24 @@ from promote_public_sources import REQUIRED_FIELDS, RESTRICTED_TERMS, validate_p
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "content" / "resources" / "public-sources.json"
 ALLOWED_STATUSES = {"published", "pending_review", "pending_external_approval", "rejected"}
-ALLOWED_ROLES = {"government_public_health", "independent_guideline"}
-ALLOWED_TYPES = {"government_fact_sheet", "government_guideline", "government_consumer_guide", "regulatory_guidance"}
+ALLOWED_ROLES = {"government_public_health", "independent_guideline", "professional_education", "peer_reviewed_primary_study", "expert_consensus"}
+ALLOWED_TYPES = {"government_fact_sheet", "government_guideline", "government_consumer_guide", "regulatory_guidance", "professional_education", "professional_guideline", "randomized_trial", "observational_study", "expert_consensus"}
 PUBLISHER_HOSTS = {
     "National Institutes of Health, Office of Dietary Supplements": {"ods.od.nih.gov"},
     "National Center for Complementary and Integrative Health": {"www.nccih.nih.gov", "nccih.nih.gov"},
     "MedlinePlus, U.S. National Library of Medicine": {"medlineplus.gov", "www.medlineplus.gov"},
     "U.S. Food and Drug Administration": {"www.fda.gov", "fda.gov"},
     "HHS Office of Disease Prevention and Health Promotion": {"odphp.health.gov", "health.gov"},
+    "National Institute of Diabetes and Digestive and Kidney Diseases": {"www.niddk.nih.gov"},
+    "World Health Organization": {"www.who.int"},
+    "Centers for Disease Control and Prevention": {"www.cdc.gov"},
+    "Endocrine Society": {"www.endocrine.org"},
+    "American Academy of Dermatology": {"www.aad.org"},
+    "American Heart Association": {"www.heart.org"},
+    "Johns Hopkins Medicine": {"www.hopkinsmedicine.org"},
+    "New England Journal of Medicine (PubMed record)": {"pubmed.ncbi.nlm.nih.gov"},
+    "Scientific Reports": {"www.nature.com"},
+    "The Lancet Gastroenterology & Hepatology (PubMed record)": {"pubmed.ncbi.nlm.nih.gov"},
 }
 
 
@@ -69,6 +79,13 @@ def validate_manifest(manifest: dict, *, root: Path = ROOT) -> dict:
                 validate_public_url(record[field])
             except ValueError as error:
                 errors.append(f"{label}: {field}: {error}")
+        expected_hosts = PUBLISHER_HOSTS.get(record["publisher"], set())
+        if not expected_hosts or any((urlsplit(record[field]).hostname or "").lower() not in expected_hosts for field in ("public_url", "final_url")):
+            errors.append(f"{label}: source host must match its recognized publisher")
+        if record["public_use_status"] != "link_and_original_summary":
+            errors.append(f"{label}: only public links and original summaries are permitted")
+        if record["resource_type"] in {"randomized_trial", "observational_study"} and record["independence_status"] != "research_disclosures_required":
+            errors.append(f"{label}: primary studies require explicit disclosure-aware classification")
         if record["status"] not in ALLOWED_STATUSES:
             errors.append(f"{label}: unsupported status")
         if record["status"] == "published":

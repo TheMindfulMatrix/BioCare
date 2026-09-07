@@ -118,13 +118,13 @@ def protective_negation(text: str) -> bool:
 
 def path_context(path: Path) -> str:
     relative = path.relative_to(ROOT).as_posix().casefold()
-    if "recruit" in relative or "opportunity" in relative:
+    if "recruit" in relative or "opportunity" in relative or relative in {"partners.html", "content/partner-learning.json"}:
         return "MLM_RECRUITMENT"
     if relative.startswith(("social/", "content/social/")) or "caption" in relative:
         return "SOCIAL_COMMERCIAL"
     if relative == "content/catalog.json" or relative in {"shop.html", "templates/shop.html"}:
         return "COMMERCIAL_PRODUCT"
-    if relative == "content/library.json" or relative.startswith("library/") or relative in {"library.html", "templates/library.html", "templates/article.html"}:
+    if relative in {"content/library.json", "content/resources/public-sources.json"} or relative.startswith("library/") or relative in {"library.html", "templates/library.html", "templates/article.html"}:
         return "EDITORIAL"
     return "MIXED_PUBLIC"
 
@@ -453,10 +453,10 @@ class ComplianceEngine:
         return findings
 
     def audit_paths(self) -> list[Path]:
-        paths = [ROOT / "content" / name for name in ("catalog.json", "library.json", "site.json", "growth.json")]
+        paths = [ROOT / "content" / name for name in ("catalog.json", "library.json", "site.json", "growth.json", "testing-journeys.json", "learning.json", "partner-learning.json", "resources/public-sources.json")]
         paths.extend(sorted((ROOT / "templates").glob("**/*.html")))
         paths.extend(ROOT / name for name in ("index.html", "shop.html", "library.html", "start.html"))
-        paths.extend(ROOT / name for name in ("about.html", "privacy.html", "know-your-number.html"))
+        paths.extend(ROOT / name for name in ("about.html", "privacy.html", "know-your-number.html", "testing.html", "learning.html", "partners.html"))
         paths.extend(sorted((ROOT / "library").glob("*.html")))
         for folder in (ROOT / "content" / "social", ROOT / "social"):
             if folder.is_dir():

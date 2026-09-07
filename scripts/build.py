@@ -8,13 +8,16 @@ import hashlib
 import html
 import json
 import re
+import sys
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urljoin, urlsplit, urlunsplit
 
 if __package__:
     from .site_paths import canonical_page_paths
+    from . import build_learning
 else:
     from site_paths import canonical_page_paths
+    import build_learning
 
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR_MARKER = '<meta name="generator" content="The Mindful Matrix static builder">'
@@ -249,6 +252,7 @@ def document_head_markup(
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/site.css")}">',
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/growth.css")}">',
             f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/experience.css")}">',
+            f'  <link rel="stylesheet" href="{versioned_asset(prefix, "assets/css/learning.css")}">',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/search-relevance.js")}"></script>',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/enhancements.js")}"></script>',
             f'  <script defer src="{versioned_asset(prefix, "assets/js/experience.js")}"></script>',
@@ -295,7 +299,7 @@ def shared_footer_markup(data: dict, *, prefix: str) -> str:
     return f'''<nav class="mobile-dock" aria-label="Mobile navigation"><a href="{home}" data-dock-page="home"><span aria-hidden="true">⌂</span>Home</a><a href="{prefix}explore.html" data-dock-page="explore"><span aria-hidden="true">⌕</span>Explore</a><a href="{prefix}shop.html" data-dock-page="shop"><span aria-hidden="true">◇</span>Products</a><a href="{prefix}library.html" data-dock-page="library"><span aria-hidden="true">▤</span>Library</a><a href="{prefix}start.html" data-dock-page="start"><span aria-hidden="true">→</span>Start</a></nav><footer class="site-footer section-dark">
     <div class="footer-grid container-wide">
       <div><a href="{home}" aria-label="The Mindful Matrix home"><img class="footer-lockup" src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a><p class="footer-philosophy">{esc(philosophy)}</p></div>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}shop.html">All products</a><a href="{prefix}about.html">About &amp; contact</a><a href="{prefix}privacy.html">Privacy &amp; website data</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="{prefix}explore.html">Explore</a><a href="{prefix}start.html">Start here</a><a href="{prefix}library.html">The Library</a><a href="{prefix}testing.html">Testing journeys</a><a href="{prefix}learning.html">Learning paths</a><a href="{prefix}partners.html">Partner learning</a><a href="{prefix}shop.html">All products</a><a href="{prefix}about.html">About &amp; contact</a><a href="{prefix}privacy.html">Privacy &amp; website data</a><a href="{home}#story">Our story</a><a href="{home}#transparency">Transparency</a></nav>
       <div class="footer-meta"><nav class="socials" aria-label="Social links">{social_links}</nav><p class="fine"><a href="mailto:{esc(email, attribute=True)}">{esc(email)}</a></p><p class="fine" data-fda-disclaimer>{esc(site["fdaDisclaimer"])}</p><p class="fine">{esc(site["disclosure"])}</p><p class="copyright">© {int(site["copyrightYear"])} The Mindful Matrix</p></div>
     </div>
   </footer>'''
@@ -697,7 +701,7 @@ def source_type_label(value: str) -> str:
 
 
 def source_card_markup(source: dict, *, prefix: str = "", compact: bool = False) -> str:
-    manufacturer = source.get("manufacturer") or "Independent public source"
+    manufacturer = source.get("manufacturer") or source_type_label(source["independence_status"])
     topics = " · ".join(item.replace("-", " ").title() for item in source.get("topic_ids", []))
     attributes = {
         "topic": ",".join(source.get("topic_ids", [])),
@@ -714,7 +718,7 @@ def source_card_markup(source: dict, *, prefix: str = "", compact: bool = False)
     data_attributes = " ".join(
         f'data-source-{name}="{esc(value, attribute=True)}"' for name, value in attributes.items()
     )
-    if source["id"] in {"nih-ods-omega-3-health-professional", "nih-ods-vitamin-d-health-professional", "nih-ods-dietary-supplements-background"}:
+    if source["id"] in {"nih-ods-omega-3-health-professional", "nih-ods-vitamin-d-health-professional", "nih-ods-dietary-supplements-background", "nih-ods-magnesium", "nih-ods-zinc", "nih-ods-copper", "nih-ods-vitamin-k"}:
         data_attributes += ' data-source-collection="core-four"'
     if compact:
         return f'''<article class="source-card source-card--compact" {data_attributes}><p class="interface-label">{esc(source_type_label(source["resource_type"]))}</p><h3>{esc(source["title"])}</h3><p>{esc(source["public_summary"])}</p><a href="{prefix}evidence.html?source={esc(source["id"], attribute=True)}">Inspect source context →</a></article>'''
@@ -737,7 +741,7 @@ def product_documentation(product: dict, sources: list[dict]) -> list[dict]:
     return [
         {
             "id": source["id"],
-            "relationship": "product-specific context" if source in exact else "department context — not product evidence",
+            "relationship": "ingredient/topic context — not finished-product evidence" if source in exact else "department context — not product evidence",
         }
         for source in (exact + department)[:3]
     ]
@@ -903,14 +907,16 @@ def library_article_markup(article: dict, library: dict, *, index: int = 1, arch
         datetime = article.get("publishedIso") or article["published"]
         metadata.append(f'<time datetime="{esc(datetime, attribute=True)}">Published {esc(article["published"])}</time>')
     metadata.append(f'<span>{esc(article["readingTime"])}</span>')
-    if article.get("evidenceReviewed"):
+    if article.get("sourceCheckedDate"):
+        metadata.append(f'<span>Sources checked {esc(article["sourceCheckedDate"])}</span>')
+    elif article.get("evidenceReviewed"):
         metadata.append(f'<span>Evidence reviewed {esc(article["evidenceReviewed"])}</span>')
     if article.get("updated"):
         metadata.append(f'<span>Updated {esc(article["updated"])}</span>')
     archive_attribute = f' data-archive-index="{index:02d}"' if archive else ""
     if archive:
         source_count = len(article.get("sources", []))
-        evidence_status = f'Evidence reviewed {esc(article["evidenceReviewed"])}' if article.get("evidenceReviewed") else "Evidence record available"
+        evidence_status = f'Sources checked {esc(article["sourceCheckedDate"])}' if article.get("sourceCheckedDate") else (f'Evidence reviewed {esc(article["evidenceReviewed"])}' if article.get("evidenceReviewed") else "Evidence record available")
         visual = f'''<span class="library-article__index" aria-hidden="true">{index:02d}</span><span class="library-article__signal" aria-hidden="true"></span>{visual}<div class="library-article__evidence"><span>{evidence_status}</span><strong>{source_count:02d} sources</strong></div>'''
     campaign = load_json(ROOT / "content" / "campaigns" / "core-four.json")
     core_four_education = {slug for item in campaign["items"] for slug in item["educationIds"]}
@@ -1031,7 +1037,9 @@ def article_body_markup(article: dict) -> str:
     sections = []
     for section in article["bodySections"]:
         blocks = "".join(article_block_markup(block) for block in section["blocks"])
-        sections.append(f'''<section id="{esc(section["id"], attribute=True)}" class="article-section"><h2>{esc(section["heading"])}</h2>{blocks}</section>''')
+        citations = "".join(f'<a href="../evidence.html?source={esc(source_id, attribute=True)}">{esc(source_id.replace("-", " ").title())} →</a>' for source_id in section.get("sourceIds", []))
+        citation_markup = f'<nav class="source-links" aria-label="Sources for {esc(section["heading"], attribute=True)}">{citations}</nav>' if citations else ""
+        sections.append(f'''<section id="{esc(section["id"], attribute=True)}" class="article-section"><h2>{esc(section["heading"])}</h2>{blocks}{citation_markup}</section>''')
     return "".join(sections)
 
 
@@ -1137,12 +1145,16 @@ def article_replacements(
     canonical_path = None if preview else f'library/{article["slug"]}.html'
     category = category_name(library, article["category"])
     byline = [f'By {esc(article["author"])}', f'<span>{esc(article["readingTime"])}</span>']
+    if article.get("reviewStatus"):
+        byline.append(f'<span>{esc(article["reviewStatus"])}</span>')
     if article.get("reviewer"):
         byline.append(f'<span>Reviewed by {esc(article["reviewer"])}</span>')
     if article.get("published"):
         datetime = article.get("publishedIso") or article["published"]
         byline.append(f'<time datetime="{esc(datetime, attribute=True)}">Published {esc(article["published"])}</time>')
-    if article.get("evidenceReviewed"):
+    if article.get("sourceCheckedDate"):
+        byline.append(f'<span>Sources checked {esc(article["sourceCheckedDate"])}</span>')
+    elif article.get("evidenceReviewed"):
         byline.append(f'<span>Evidence reviewed {esc(article["evidenceReviewed"])}</span>')
     if article.get("updated"):
         if article.get("updatedIso"):
@@ -1160,7 +1172,8 @@ def article_replacements(
     discovery = load_json(ROOT / "content" / "discovery.json")
     catalog = load_json(ROOT / "content" / "catalog.json")
     related_intents = [item["intentId"] for item in discovery["departments"] if article["slug"] in item.get("articleSlugs", [])]
-    related_products = [item for item in active_products(catalog) if item["intent"] in related_intents][:4]
+    related_products = ([item for item in active_products(catalog) if item["id"] in article["relatedProducts"]]
+                        if "relatedProducts" in article else [item for item in active_products(catalog) if item["intent"] in related_intents])[:4]
     product_context = ""
     if related_products:
         links = "".join(f'<li><a href="../products/{esc(item["id"], attribute=True)}.html">{esc(item["name"])} →</a></li>' for item in related_products)
@@ -1197,7 +1210,7 @@ def article_replacements(
         "{{ARTICLE_DEK}}": esc(display_dek),
         "{{ARTICLE_BYLINE}}": " · ".join(byline),
         "{{ARTICLE_DISCLOSURE}}": f'<p class="article-disclosure" role="note">{esc(article["educationDisclosure"])}</p>' if article.get("educationDisclosure") else "",
-        "{{ARTICLE_AFFILIATE_DISCLOSURE}}": "" if preview else f'<p class="article-affiliate-disclosure" role="note" data-affiliate-disclosure>{esc(data["site"]["affiliateDisclosure"])}</p>',
+        "{{ARTICLE_AFFILIATE_DISCLOSURE}}": "" if preview else f'<p class="article-affiliate-disclosure" role="note" data-affiliate-disclosure>{esc(data["site"]["affiliateDisclosure"])} {esc(data["site"]["biolimitlessAffiliateDisclosure"]) if any(p["manufacturer"] == "BioLimitless" for p in related_products) else ""}</p>',
         "{{ARTICLE_HERO}}": hero_markup,
         "{{ARTICLE_TOC}}": article_toc_markup(article),
         "{{ARTICLE_TAKEAWAYS}}": takeaways,
@@ -1236,7 +1249,7 @@ def discovery_records(data: dict, library: dict, discovery: dict, sources: list[
             "summary": source["public_summary"], "href": f'evidence.html?source={source["id"]}',
             "publisher": source["publisher"], "resourceType": source_type_label(source["resource_type"]),
             "evidenceRole": source["evidence_role"], "topics": source.get("topic_ids", []),
-            "manufacturer": source.get("manufacturer") or "Independent public source",
+            "manufacturer": source.get("manufacturer") or source_type_label(source["independence_status"]),
             "intents": source.get("department_ids", []), "products": source.get("product_ids", []),
             "independence": source["independence_status"], "checkedDate": source["checked_date"],
         })
@@ -1270,7 +1283,7 @@ def evidence_controls_markup(sources: list[dict], data: dict, discovery: dict) -
     values = {
         "topic": {item: item.replace("-", " ").title() for source in sources for item in source.get("topic_ids", [])},
         "type": {item: source_type_label(item) for item in {source["resource_type"] for source in sources}},
-        "manufacturer": {"independent": "Independent public source", **{source["manufacturer"]: source["manufacturer"] for source in sources if source.get("manufacturer")}},
+        "manufacturer": {"independent": "Public non-manufacturer source", **{source["manufacturer"]: source["manufacturer"] for source in sources if source.get("manufacturer")}},
         "product": {item: product_names.get(item, item.replace("-", " ").title()) for source in sources for item in source.get("product_ids", [])},
         "department": {item: department_names.get(item, item.replace("-", " ").title()) for source in sources for item in source.get("department_ids", [])},
         "independence": {item: item.replace("_", " ").title() for item in {source["independence_status"] for source in sources}},
@@ -1686,7 +1699,8 @@ def product_label_markup(record: dict | None) -> str:
 def product_connections(product: dict, department: dict, library: dict, sources: list[dict]) -> tuple[str, str]:
     articles = {item["slug"]: item for item in published_articles(library)}
     guide_cards = []
-    for slug in department.get("articleSlugs", []):
+    relevant = [slug for slug, article in articles.items() if product["id"] in article.get("relatedProducts", [])]
+    for slug in dict.fromkeys(relevant + department.get("articleSlugs", [])):
         article = articles.get(slug)
         if article:
             guide_cards.append(f'<article class="connection-card"><p class="interface-label">Education</p><h3>{esc(article["title"])}</h3><p>{esc(article["summary"])}</p><a href="../library/{esc(slug, attribute=True)}.html">Read guide →</a></article>')
@@ -1694,7 +1708,7 @@ def product_connections(product: dict, department: dict, library: dict, sources:
     contextual = [item for item in sources if product["intent"] in item.get("department_ids", []) and item not in exact]
     source_cards = []
     for source in (exact + contextual)[:4]:
-        relationship = "Product-specific documentation" if source in exact else "Department context — not product-specific evidence"
+        relationship = "Ingredient/topic context — not finished-product evidence" if source in exact else "Department context — not product-specific evidence"
         source_cards.append(f'<article class="connection-card"><p class="interface-label">{relationship}</p><h3>{esc(source["title"])}</h3><p>{esc(source["public_summary"])}</p><a href="../evidence.html?source={esc(source["id"], attribute=True)}">Inspect source context →</a></article>')
     if not guide_cards:
         guide_cards.append('<article class="connection-card"><p class="interface-label">Education</p><h3>Department orientation</h3><p>Use the department page to understand this product’s place in the wider system.</p></article>')
@@ -1826,6 +1840,8 @@ def main() -> None:
     build_core_four(data, library, sources, core_four)
     build_articles(data, library)
     build_product_pages(data, library, discovery, sources, product_labels)
+    build_learning.build_testing(data, library, sys.modules[__name__])
+    build_learning.build_learning_paths(data, sys.modules[__name__])
     build_crawl_files(data, library, discovery)
     if args.preview_article:
         build_preview(data, library, args.preview_article.resolve(), args.preview_output)

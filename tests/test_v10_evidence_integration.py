@@ -34,7 +34,7 @@ class EvidenceIntegrationTests(unittest.TestCase):
 
     def test_every_active_product_has_public_context_with_explicit_relationship(self) -> None:
         self.assertEqual(len(self.shop_payload["products"]), 45)
-        allowed = {"product-specific context", "department context — not product evidence"}
+        allowed = {"ingredient/topic context — not finished-product evidence", "department context — not product evidence"}
         public_ids = {record["id"] for record in self.published}
         for product in self.shop_payload["products"]:
             with self.subTest(product=product["id"]):

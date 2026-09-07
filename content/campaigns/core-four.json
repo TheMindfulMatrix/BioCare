@@ -17,8 +17,14 @@
       "position": 1,
       "shortLabel": "Omega-3",
       "campaignSummary": "Selected for deeper coverage because omega-3 intake, blood measurements, and supplementation decisions appear frequently in nutrition research and consumer questions.",
-      "educationIds": ["omega-3-what-the-numbers-mean", "food-vs-omega-3-supplements", "should-you-test-your-omega-3-levels"],
-      "evidenceIds": ["nih-ods-omega-3-health-professional"],
+      "educationIds": [
+        "omega-3-what-the-numbers-mean",
+        "food-vs-omega-3-supplements",
+        "should-you-test-your-omega-3-levels"
+      ],
+      "evidenceIds": [
+        "nih-ods-omega-3-health-professional"
+      ],
       "educationGap": false
     },
     {
@@ -26,27 +32,48 @@
       "position": 2,
       "shortLabel": "D3 + K2",
       "campaignSummary": "Selected for deeper coverage because vitamin D status, testing, label interpretation, and combined-product questions benefit from careful evidence boundaries.",
-      "educationIds": ["how-to-read-a-supplement-label"],
-      "evidenceIds": ["nih-ods-vitamin-d-health-professional"],
-      "educationGap": true
+      "educationIds": [
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "how-to-read-a-supplement-label"
+      ],
+      "evidenceIds": [
+        "nih-ods-vitamin-k",
+        "endocrine-vitamin-d-guideline",
+        "nih-ods-vitamin-d-health-professional"
+      ],
+      "educationGap": false
     },
     {
       "productId": "biolimitless-zinc-copper",
       "position": 3,
       "shortLabel": "Zinc + Copper",
       "campaignSummary": "Selected for deeper coverage because paired-mineral products require clear label context and careful separation between manufacturer documentation and independent evidence.",
-      "educationIds": ["how-to-read-a-supplement-label"],
-      "evidenceIds": ["nih-ods-dietary-supplements-background"],
-      "educationGap": true
+      "educationIds": [
+        "zinc-copper-balance",
+        "how-to-read-a-supplement-label"
+      ],
+      "evidenceIds": [
+        "nih-ods-zinc",
+        "nih-ods-copper",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "educationGap": false
     },
     {
       "productId": "biolimitless-magnesium-glycinate",
       "position": 4,
       "shortLabel": "Magnesium Glycinate",
       "campaignSummary": "Selected for deeper coverage because magnesium forms are often discussed without enough attention to label facts, source quality, and uncertainty.",
-      "educationIds": ["how-to-read-a-supplement-label"],
-      "evidenceIds": ["nih-ods-dietary-supplements-background"],
-      "educationGap": true
+      "educationIds": [
+        "magnesium-forms-and-safety",
+        "how-to-read-a-supplement-label"
+      ],
+      "evidenceIds": [
+        "nih-ods-magnesium",
+        "nih-ods-dietary-supplements-background"
+      ],
+      "educationGap": false
     }
   ]
 }

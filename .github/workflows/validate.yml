@@ -20,13 +20,13 @@ jobs:
         run: python scripts/build.py
       - name: Verify committed output and site structure
         run: |
-          git diff --exit-code -- index.html core-four.html explore.html evidence.html shop.html library.html start.html know-your-number.html about.html privacy.html departments/ library/ products/ assets/data/search-index.json robots.txt sitemap.xml
+          git diff --exit-code -- testing.html learning.html partners.html index.html core-four.html explore.html evidence.html shop.html library.html start.html know-your-number.html about.html privacy.html departments/ library/ products/ assets/data/search-index.json robots.txt sitemap.xml
           python scripts/validate.py
           python scripts/scan_v10_public_safety.py
       - name: Run compliance fixtures
         run: python -m unittest discover -s tests -v
-      - name: Verify inert measurement contract
-        run: node --test tests/measurement.test.cjs
+      - name: Verify measurement and interactive learning contracts
+        run: node --test tests/measurement.test.cjs tests/academy.test.cjs
       - name: Report strict compliance backlog
         run: python scripts/validate.py --compliance-strict --compliance-dry-run
       - name: Upload preview artifact
@@ -44,6 +44,9 @@ jobs:
             about.html
             privacy.html
             core-four.html
+            testing.html
+            learning.html
+            partners.html
             products/
             robots.txt
             sitemap.xml

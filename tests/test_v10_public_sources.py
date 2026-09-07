@@ -29,7 +29,7 @@ class PublicSourceManifestTests(unittest.TestCase):
 
     def test_committed_manifest_is_public_safe(self) -> None:
         result = self.validate.validate_manifest(self.manifest)
-        self.assertEqual(result, {"record_count": 8, "published_count": 8, "valid": True})
+        self.assertEqual(result, {"record_count": 40, "published_count": 40, "valid": True})
 
     def test_private_and_signed_urls_are_rejected(self) -> None:
         for url in (
@@ -44,7 +44,7 @@ class PublicSourceManifestTests(unittest.TestCase):
     def test_only_published_records_are_render_eligible(self) -> None:
         records = self.manifest["records"] + [{**self.manifest["records"][0], "id": "pending-example", "public_url": "https://example.gov/pending", "final_url": "https://example.gov/pending", "status": "pending_review"}]
         rendered = [record for record in records if record["status"] == "published"]
-        self.assertEqual(len(rendered), 8)
+        self.assertEqual(len(rendered), 40)
 
     def test_promotion_rejects_unclear_rights(self) -> None:
         base = self.manifest["records"][0]

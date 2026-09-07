@@ -1,0 +1,76 @@
+{
+  "checkedDate": "2026-09-06",
+  "market": "US",
+  "catalogSource": "https://www.zinzino.com/shop/site/US/en-US/products/home-health-tests/",
+  "resultsUrl": "https://www.zinzinotest.com/",
+  "journeys": [
+    {
+      "id": "fatty-acids",
+      "title": "Your fatty-acid picture",
+      "testName": "BalanceTest",
+      "productIds": ["balance-test"],
+      "measures": "11 fatty acids in a dried blood spot, with calculated ratios and indices.",
+      "boundary": "A fatty-acid profile is not a diagnosis and does not establish a health benefit from supplementation.",
+      "availability": "Zinzino states that BalanceTest is not available in New York. Confirm current availability before ordering.",
+      "guide": "should-you-test-your-omega-3-levels",
+      "sourceUrl": "https://www.zinzino.com/shop/site/us/en-us/products/shop/home-health-tests/309000",
+      "steps": [
+        ["Frame the question", "Decide what you want to learn about dietary fatty-acid exposure. You do not have to buy a test to start learning."],
+        ["Understand the method", "Read the manufacturer's current instructions. A dried-blood-spot profile and a red-blood-cell Omega-3 Index are not automatically interchangeable."],
+        ["Read in context", "Keep the sample date, method and units with the result. Take questions about interpretation to a qualified clinician."],
+        ["Choose a follow-up", "Discuss food, habits and whether another measurement would change a decision. A before-and-after result does not prove which change caused it."]
+      ]
+    },
+    {
+      "id": "gut-markers",
+      "title": "Gut markers, with context",
+      "testName": "Gut Health Test",
+      "productIds": ["gut-health-test", "gut-health-test-x2"],
+      "measures": "Tryptophan, kynurenine and indole-3-propionic acid in a dried blood spot, plus calculated ratios and a manufacturer-defined index.",
+      "boundary": "This is not a stool microbiome inventory, an allergy test, or a diagnosis of a digestive condition. An association between a marker and health is not proof that changing it improves health.",
+      "availability": "The x2 listing contains two Gut Health Tests; it is not a fifth kind of test. Confirm location eligibility and current stock with Zinzino.",
+      "guide": "gut-testing-biomarkers",
+      "sourceUrl": "https://www.zinzino.com/shop/site/us/en-us/products/shop/home-health-tests/309070",
+      "steps": [
+        ["Separate the questions", "Distinguish curiosity about a biomarker from a symptom needing clinical assessment. Do not postpone care while waiting for a home test."],
+        ["Know what is sampled", "The manufacturer describes a blood-spot test, not stool sequencing. Follow the supplied collection and shipping instructions."],
+        ["Keep uncertainty visible", "A composite score does not map every organism or explain every symptom. Ask what evidence supports an action based on this particular report."],
+        ["Review before repeating", "Keep any repeat measurement comparable. Discuss whether repeat testing is useful, rather than assuming that every change requires another kit."]
+      ]
+    },
+    {
+      "id": "vitamin-d",
+      "title": "Vitamin D, without guesswork",
+      "testName": "Vitamin D Test",
+      "productIds": ["vitamin-d-test"],
+      "measures": "25-hydroxyvitamin D, a blood marker used to assess vitamin D status.",
+      "boundary": "Routine vitamin D screening is not recommended for every healthy adult. A result is not an automatic instruction to start or increase a supplement.",
+      "availability": "Zinzino states that Vitamin D Test is not available in New York. Confirm current availability before ordering.",
+      "guide": "vitamin-d-testing-context",
+      "sourceUrl": "https://www.zinzino.com/shop/site/us/en-us/products/shop/home-health-tests/309049",
+      "steps": [
+        ["Ask whether testing helps", "The 2024 Endocrine Society guideline advises against routine screening in generally healthy adults without an established indication. Ask whether a result would change your care."],
+        ["Check the details", "Read the current collection instructions and keep the report's units. Nanograms per milliliter and nanomoles per liter are different units."],
+        ["Discuss the whole picture", "Bring your medicine and supplement list to the clinician interpreting the result. This website does not calculate a dose."],
+        ["Agree on a plan", "Follow-up timing depends on the clinical reason for testing. A manufacturer's retest interval is not a universal medical recommendation."]
+      ]
+    },
+    {
+      "id": "hba1c",
+      "title": "A longer view of blood sugar",
+      "testName": "HbA1c Test",
+      "productIds": ["hba1c-test"],
+      "measures": "Glycated hemoglobin, which reflects average blood glucose over roughly the previous three months.",
+      "boundary": "A home wellness result is not a standalone diagnosis. It does not show real-time glucose or every high and low, and several conditions can affect its interpretation.",
+      "availability": "Zinzino states that HbA1c Test is not available in New York. Stock can change; check the official listing rather than relying on this guide.",
+      "guide": "hba1c-understanding-results",
+      "sourceUrl": "https://www.zinzino.com/shop/site/us/en-us/products/shop/home-health-tests/309060",
+      "steps": [
+        ["Start with your clinician", "If you have symptoms, an existing diagnosis or questions about screening, use clinical care rather than a website pathway to choose a test."],
+        ["Understand the timeframe", "HbA1c is a longer-term marker. It cannot tell you your glucose level right now or show the effect of yesterday's meal."],
+        ["Check interpretation limits", "Anemia, hemoglobin variants and changes in red-cell lifespan can affect results. Tell your clinician about relevant conditions and medicines."],
+        ["Follow up appropriately", "Unexpected results need professional interpretation and sometimes confirmatory testing. Do not change prescribed medicines based on this page or a home report."]
+      ]
+    }
+  ]
+}

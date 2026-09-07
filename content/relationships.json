@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "description": "Canonical navigation relationships. Product-to-department is defined by catalog intent; product-specific evidence is defined only by public-sources product_ids; department context remains visibly qualified.",
+  "description": "Canonical navigation relationships. Source product_ids indicate ingredient/topic context only, never proof of a finished product's safety or effectiveness. Evidence type and limitations remain visible.",
   "rules": {
     "productDepartment": "catalog.products[].intent -> discovery.departments[].intentId",
     "departmentEducation": "discovery.departments[].articleSlugs",
