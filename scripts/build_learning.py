@@ -1,6 +1,11 @@
 """Testing and learning surfaces; no checkout, sign-in, or health-data collection."""
 from __future__ import annotations
 
+if __package__:
+    from . import build_academy
+else:
+    import build_academy
+
 
 def section(body: str, *, tone: str = "light") -> str:
     return f'<section class="section-{tone} section-pad"><div class="container">{body}</div></section>'
@@ -44,22 +49,7 @@ def build_learning_paths(data: dict, api) -> None:
     partner = api.load_json(api.ROOT / "content/partner-learning.json")
     if wellness.get("salesEnabled") is not False or partner.get("salesEnabled") is not False:
         raise ValueError("Course sales require a separately reviewed implementation")
-    esc = api.esc
-    status = '<p class="learning-review-status">In development · Not available for purchase. Course outlines and a free sample are available here; enrollment and checkout are not open.</p>'
-    modules = "".join(f'<li><strong>{esc(item["title"])}</strong><p>{esc(item["outcome"])} <a href="library/{esc(item["guide"], attribute=True)}.html">Read the free guide →</a></p></li>' for item in wellness["modules"])
-    body = section(f'<div class="learning-grid"><article class="learning-card" id="everyday"><p class="learning-card__number">PATH 01 / EVERYDAY LIFE</p><h2>{esc(wellness["title"])}</h2><p>{esc(wellness["audience"])}</p><p>{esc(wellness["description"])}</p>{status}<a class="button button-primary" href="#sample">Try a free planning lesson →</a></article><article class="learning-card"><p class="learning-card__number">PATH 02 / INDEPENDENT BUSINESS</p><h2>{esc(partner["title"])}</h2><p>{esc(partner["audience"])}</p><p>{esc(partner["description"])}</p>{status}<a class="button button-secondary" href="partners.html">Explore partner learning →</a></article></div>', tone="warm")
-    body += section(f'<div class="learning-reading"><h2>Everyday Matrix: the proposed curriculum</h2><p>Food, movement, rest, and informed decisions. No product purchase or testing is required. This is general adult education, not personal medical advice or clinician-reviewed training.</p><ol>{modules}</ol></div>')
-    sample = wellness["sample"]
-    body += section(f'<div class="learning-reading" id="sample"><p class="section-kicker">A free sample · Original planning exercise</p><h2>{esc(sample["title"])}</h2><p>{esc(sample["text"])}</p><h3>Try it on paper</h3><p>{esc(sample["practice"])}</p><details class="learning-course-module"><summary>{esc(sample["question"])}</summary><p>{esc(sample["answer"])}</p></details><p class="learning-note">Keep notes privately. This website does not collect your habit records, medical history, test results, or course answers.</p></div>', tone="warm")
-    body += section('<div class="learning-reading"><h2>Learn at your own pace.</h2><p>Use the free Library now. The courses are being prepared separately, and their scope and terms will be reviewed before any enrollment opens. Neither course is required to use the site or explore optional products.</p><a class="button button-secondary" href="library.html">Return to the free Library →</a></div>')
-    page(api, data, "learning.html", "Learning paths", "Small steps.\nA clearer direction.", "Two separate learning paths: everyday habits and responsible business skills. Explore the outlines, try a free lesson, and take what is useful.", body, [("#everyday", "Choose a path"), ("#sample", "Try a lesson")])
-    business_modules = "".join(f'<li><strong>{esc(item["title"])}</strong><p>{esc(item["outcome"])}</p></li>' for item in partner["modules"])
-    source_links = "".join(f'<li><a href="{esc(item["url"], attribute=True)}" target="_blank" rel="noopener noreferrer">{esc(item["title"])} ↗{api.external_note()}</a></li>' for item in partner["sources"])
-    body = section(f'<div class="learning-reading"><h2>Curious is enough.</h2><p>You can learn about the work before deciding whether it fits. There is no application, enrollment fee, or obligation on this page.</p><p class="learning-note">The Mindful Matrix is an independent partner, not Zinzino corporate. A commercial relationship may benefit us if you purchase or join through our partner connections. This is not an official Zinzino course.</p><h3>Make the business decision separately.</h3><p>Participation involves costs and uncertain results. The FTC cautions that many participants in legitimate multilevel marketing businesses earn little or nothing, and some lose money. Review current local agreements, costs, cancellation terms, and any official disclosures before deciding.</p><a href="https://consumer.ftc.gov/articles/multi-level-marketing-businesses-and-pyramid-schemes" target="_blank" rel="noopener noreferrer">Read the FTC consumer guide ↗{api.external_note()}</a></div>', tone="warm")
-    body += section(f'<div class="learning-reading" id="curriculum"><p class="section-kicker">Original course in development</p><h2>{esc(partner["title"])}</h2>{status}<p>The curriculum focuses on skills and informed decisions, with no earnings or lifestyle promises. It is separate from the everyday-habits course.</p><ol>{business_modules}</ol></div>')
-    body += section('<div class="learning-reading"><h2>Start with a few honest questions.</h2><ul><li>What are my actual obligations, recurring costs, and exit options?</li><li>Can I explain the product facts and their limits without making medical claims?</li><li>Do I have a realistic time and spending limit?</li><li>Can people say no without pressure or repeated messages?</li></ul><p>Keep financial, customer, and health records private. This website does not collect applications or host team meetings.</p><p>Questions about the learning plan? Use the contact details on our About page. There is no automatic enrollment or marketing signup.</p><a class="button button-secondary" href="about.html">About &amp; contact →</a></div>', tone="warm")
-    body += section(f'<div class="learning-reading"><h2>Inspect the sources.</h2><p>Public guidance and official help pages, checked September 6, 2026. The Zinzino link is a commercial company source. Links do not imply endorsement or permission to resell the source material.</p><ul class="learning-source-links">{source_links}</ul></div>')
-    page(api, data, "partners.html", "Partner learning", "Learn the work.\nChoose your direction.", "A calm introduction to independent partner work, with responsibilities, practical skills, and room to decide whether it fits.", body, [("#curriculum", "Explore the curriculum"), ("learning.html", "Everyday habits instead")])
+    build_academy.render(data, wellness, partner, api)
 
 
 def page(api, data: dict, path: str, eyebrow: str, title: str, intro: str, body: str, links=()) -> None:

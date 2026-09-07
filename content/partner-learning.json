@@ -111,5 +111,18 @@
       "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-food-dietary-supplements",
       "checkedDate": "2026-09-06"
     }
-  ]
+  ],
+  "practice": {
+    "topics": {
+      "products": "understanding the Zinzino products and their limits",
+      "business": "understanding the costs and responsibilities of independent Zinzino partner work",
+      "event": "a small product-learning event"
+    },
+    "formats": {
+      "guide": "a short guide",
+      "chat": "a short conversation",
+      "questions": "a few questions by email"
+    },
+    "template": "Would {format} about {topic} be useful to you? I am an independent Zinzino partner and may benefit commercially if you purchase or join through me. No pressure if it is not for you."
+  }
 }

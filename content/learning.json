@@ -60,5 +60,27 @@
     "practice": "Write: after ___, I will ___. On a difficult day I will ___. Review after seven days and change one element.",
     "question": "You miss three days. What comes next?",
     "answer": "Resume with a smaller, realistic action; do not punish yourself or double the workload."
+  },
+  "practice": {
+    "cues": {
+      "breakfast": "finish breakfast",
+      "home": "arrive home",
+      "evening": "begin my evening routine"
+    },
+    "actions": {
+      "plan": [
+        "write down one priority for tomorrow",
+        "think of one priority without writing it down"
+      ],
+      "pause": [
+        "pause for a quiet minute",
+        "take a brief quiet pause"
+      ],
+      "prepare": [
+        "set out one item for tomorrow",
+        "choose the item without setting it out"
+      ]
+    },
+    "template": "After I {cue}, I will {action}. On a difficult day, I will {fallback}. I will review what fits after seven days and adjust one thing."
   }
 }

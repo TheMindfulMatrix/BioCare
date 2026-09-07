@@ -13,16 +13,35 @@ Prepared September 6, 2026.
 - 24 Library guides: ten existing guides retained, 14 new short educational guides.
 - 40 health references from 15 publisher labels, including government agencies, medical organizations, primary studies, and expert consensus.
 - All 45 active products have at least one mapped topic reference and department reading. Eight deferred products remain excluded.
-- Testing, learning, and partner orientation pages; a free planning sample; two clearly separated course outlines.
+- Testing journeys plus image-led Matrix Academy and Partner Practice pages; two working free samples and two clearly separated course outlines.
 - Existing approved home design, product records, prices, purchase destinations, label-approval states, and compliance registries preserved.
 
 ## What is not ready for sale
 
-Everyday Matrix has eight original lesson manuscripts; Partner Practice has ten. Full lessons include practice worksheets, knowledge checks, answer rationales, and contextual reading. They are stored locally outside this public repository and are not delivered in Pages or preview artifacts. The public candidate contains outlines and one free sample only.
+Everyday Matrix has eight original lesson manuscripts; Partner Practice has ten. Full lessons include practice worksheets, knowledge checks, answer rationales, and contextual reading. They are stored locally outside this public repository and are not delivered in Pages or preview artifacts. The public candidate contains outlines and two interactive free samples only.
 
 The manuscripts are first editorial drafts, not clinically reviewed, company-approved, pilot-tested, video-produced, or enrolled-student courses. No payment processor, LMS, accounts, certificates, subscription, data-collection form, or price has been added. Paid launch requires approval of course quality, audience/market, seller identity, pricing/currency, taxes, refunds, support, accessibility, delivery, and checkout. No earnings or health-outcome promises are made.
 
 No private back-office documents or training videos were accessed or copied. Public partner-training availability does not establish a license for public redistribution or resale in a paid course. Specific asset/use permission remains a gate before incorporating proprietary material. Original lesson-writing has continued independently.
+
+## Academy visual and interactive revision
+
+The plain-text candidate at `d4dc7dd91fc61c40fd04797271f70524b3cb7d92` was revised in response to the owner's request for visual branding and engagement.
+
+- Sites' design workflow informed the image-first layouts, compact course maps, visual hierarchy and progressive-enhancement approach; existing Python generation and GitHub Pages hosting remain in place.
+- The imagegen skill produced exactly two original illustrative course covers. People are fictional, not students, instructors, testimonials or real company events. Both pages disclose this.
+- Four responsive WebP exports total **246,560 bytes**; each is under 96 KB. The asset manifest records exact final prompts, generate mode and output paths/dimensions.
+- Forest/citron Everyday Matrix and warm-copper Partner Practice use shared Academy CSS and JavaScript, loaded only on these two pages.
+- The Everyday free sample teaches cue/action/fallback planning, generates a fixed-choice practice plan, checks understanding and supports retry/reset.
+- The Partner sample teaches a permission-based invitation, retains commercial disclosure in all nine draft combinations, checks respect for a refusal, and never sends a message.
+- Progress and choices are memory-only and reset on reload. No accounts, tracking, storage, payments or enrollment were introduced.
+- Native controls, live feedback, focus handling, reduced-motion-safe initialization and no-JavaScript reading/answer fallbacks are tested as code/markup contracts, not as browser or screen-reader certification.
+- Canonical practice copy remains in the two audited course JSON files. The expanded partner content adds **104 net review locations** compared with the previous 225/232 candidate. All remain reviewable; none were suppressed.
+- A question containing the word “guarantee” triggered the hard claim detector during development. The question was rewritten as “What should I expect from the course?” while preserving the explicit no-earnings-promise answer. No rule or classification was weakened.
+
+Supporting records: `academy-image-provenance.json`, `academy-redesign.json`, and the updated compliance/parity reports.
+
+Paid-course delivery has NOT been built. Stripe prohibits certain commission- or recruitment-based MLM services; a separately sold course needs an honest provider eligibility review. A course platform that relies on Stripe is not automatically a workaround. Pricing, provider acceptance, rights, actual teaching quality, student privacy and owner identity/banking remain prerequisites. The local course-launch plan describes private delivery and secure checkout separately from this public repository.
 
 ## Evidence method and boundaries
 
@@ -41,10 +60,10 @@ Named clinicians appear only as authors/speakers within their actual public sour
 ## Validation
 
 - Canonical build: **88 public pages**, 24 published-candidate guides, 45 active / 8 deferred products.
-- Python tests: **128 passed**, including 16 new learning/evidence/privacy regression tests.
-- Existing measurement JavaScript tests: **9 passed**.
+- Python tests: **137 passed**, including nine new Academy static/accessibility/privacy contracts and the 16 learning/evidence/privacy regression tests.
+- JavaScript tests: **24 passed** — nine existing measurement tests and 15 new Academy state/event-binding tests. The event fixtures are not real-browser tests.
 - Deterministic rebuild: all 88 generated-page hashes unchanged.
-- Local HTTP coverage: **88 pages / 169 assets**, zero failed requests or content mismatches after text-only CRLF/LF normalization for the Windows preview. Production audit comparison is unchanged.
+- Local HTTP coverage: **88 pages / 175 assets**, zero failed requests or content mismatches after text-only CRLF/LF normalization for the Windows preview. Production audit comparison is unchanged.
 - Static validation: links, fragments, images and dimensions, duplicate IDs, headings, canonical/social metadata, sitemap, product gating, and disclosures pass.
 - Public safety scan: **88 pages**, zero findings.
 - No interactive browser/responsive, console, or screenshot QA was performed for this expansion. Do not interpret the static and HTTP checks as that coverage.
@@ -58,11 +77,11 @@ A separate web-content check read the two AAD pages, CDC sleep page, AHA omega p
 
 ## Compliance reconciliation
 
-Fresh execution of the baseline's own validator gives **69 review warnings / 76 strict advisory items**. The candidate gives **225 / 232**, with **zero RED findings and no hard-rule violations detected by Compliance Engine v1**.
+Fresh execution of the baseline's own validator gives **69 review warnings / 76 strict advisory items**. The candidate gives **329 / 336**, with **zero RED findings and no hard-rule violations detected by Compliance Engine v1**.
 
-The entire increase of **156** strict finding locations is explained by the newly covered partner surfaces:
-- `content/partner-learning.json`: 42
-- `partners.html`: 114
+The entire increase of **260** strict finding locations is explained by the newly covered partner surfaces:
+- `content/partner-learning.json`: 51
+- `partners.html`: 209
 
 The engine deliberately sends partner/recruitment-context text to human review. That includes ordinary headings, educational business text, navigation, and protective statements. The new health guides and source manifest added no net strict-advisory increase. The exact records are retained in `new-review-advisories.json`; passing a hard gate does not approve these statements for release.
 
@@ -70,7 +89,7 @@ The seven inherited Priority 1 findings remain inherited human-review items. Reg
 
 ## Review decision
 
-1. Review Testing, the new Library guides, Evidence classifications, and the quiet partner section.
+1. Review Testing, the new Library guides, Evidence classifications, and both redesigned Academy experiences.
 2. Resolve/approve the new partner human-review findings before merging; do not suppress them.
 3. Review the two local course manuscripts separately. Establish permissions for any proposed proprietary teaching asset.
 4. Perform a requested visual/responsive review and any needed expert editorial review.
@@ -83,7 +102,7 @@ python scripts/build.py
 python scripts/validate.py
 python scripts/validate.py --compliance-strict --compliance-dry-run
 python -m unittest discover -s tests -v
-node --test tests/measurement.test.cjs
+node --test tests/measurement.test.cjs tests/academy.test.cjs
 python scripts/scan_v10_public_safety.py
 python scripts/validate_public_sources.py --check-urls --timeout 12 --report _review/testing-library-partner-learning/source-link-audit.json
 python scripts/audit_learning_candidate.py --local-url http://127.0.0.1:8775/

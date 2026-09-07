@@ -3,7 +3,7 @@
   "audited_repository_sha": "unreleased-candidate",
   "base_url": "http://127.0.0.1:8775/",
   "public_pages": 88,
-  "referenced_live_assets": 169,
+  "referenced_live_assets": 175,
   "coverage_errors": [],
   "page_results": [
     {
@@ -921,6 +921,14 @@
       "byte_parity": true
     },
     {
+      "path": "assets/css/academy.css",
+      "url": "http://127.0.0.1:8775/assets/css/academy.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/academy.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
       "path": "assets/css/base.css",
       "url": "http://127.0.0.1:8775/assets/css/base.css",
       "status": 200,
@@ -965,6 +973,46 @@
       "url": "http://127.0.0.1:8775/assets/css/tokens.css",
       "status": 200,
       "final_url": "http://127.0.0.1:8775/assets/css/tokens.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/images/academy/everyday-matrix-1280.webp",
+      "url": "http://127.0.0.1:8775/assets/images/academy/everyday-matrix-1280.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/images/academy/everyday-matrix-1280.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/images/academy/everyday-matrix-640.webp",
+      "url": "http://127.0.0.1:8775/assets/images/academy/everyday-matrix-640.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/images/academy/everyday-matrix-640.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/images/academy/partner-practice-1280.webp",
+      "url": "http://127.0.0.1:8775/assets/images/academy/partner-practice-1280.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/images/academy/partner-practice-1280.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/images/academy/partner-practice-640.webp",
+      "url": "http://127.0.0.1:8775/assets/images/academy/partner-practice-640.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/images/academy/partner-practice-640.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/js/academy.js",
+      "url": "http://127.0.0.1:8775/assets/js/academy.js",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/js/academy.js",
       "error": null,
       "byte_parity": true
     },

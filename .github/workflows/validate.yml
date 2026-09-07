@@ -25,8 +25,8 @@ jobs:
           python scripts/scan_v10_public_safety.py
       - name: Run compliance fixtures
         run: python -m unittest discover -s tests -v
-      - name: Verify inert measurement contract
-        run: node --test tests/measurement.test.cjs
+      - name: Verify measurement and interactive learning contracts
+        run: node --test tests/measurement.test.cjs tests/academy.test.cjs
       - name: Report strict compliance backlog
         run: python scripts/validate.py --compliance-strict --compliance-dry-run
       - name: Upload preview artifact

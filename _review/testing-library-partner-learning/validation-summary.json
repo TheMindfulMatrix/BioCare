@@ -3,20 +3,20 @@
   "deterministic": true,
   "local_page_failures": 0,
   "local_asset_failures": 0,
-  "assets": 169,
+  "assets": 175,
   "compliance": {
     "baseline_sha": "ef36a71ecc3365fa1a03db18083ac75349c54574",
     "baseline_review_warnings": 69,
     "baseline_strict_items": 76,
-    "candidate_review_warnings": 225,
-    "candidate_strict_items": 232,
+    "candidate_review_warnings": 329,
+    "candidate_strict_items": 336,
     "candidate_hard_errors": [],
     "candidate_red": 0,
     "protected_canonical_files_changed": [],
-    "new_strict_finding_locations": 156,
+    "new_strict_finding_locations": 260,
     "new_strict_findings_by_file": {
-      "content/partner-learning.json": 42,
-      "partners.html": 114
+      "content/partner-learning.json": 51,
+      "partners.html": 209
     },
     "interpretation": "Machine advisories are not clinical or legal approval. New business/education surfaces and the source manifest are now audited. Existing registry classifications, qualifications, sources and disclosures remain unchanged."
   }

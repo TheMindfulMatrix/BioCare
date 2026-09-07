@@ -1,0 +1,54 @@
+{
+  "status": "DRAFT_NOT_DEPLOYED",
+  "date": "2026-09-06",
+  "prior_candidate_sha": "d4dc7dd91fc61c40fd04797271f70524b3cb7d92",
+  "scope": [
+    "learning.html",
+    "partners.html",
+    "Academy generator, stylesheet, runtime, original illustrative assets and tests"
+  ],
+  "python_tests_passed": 137,
+  "javascript_tests_passed": 24,
+  "javascript_test_breakdown": {
+    "academy": 15,
+    "measurement": 9
+  },
+  "public_pages": 88,
+  "referenced_assets": 175,
+  "local_http_page_failures": 0,
+  "local_http_asset_failures": 0,
+  "browser_qa_performed": false,
+  "screenshots_captured": false,
+  "screen_reader_qa_performed": false,
+  "coverage_note": "Static contracts and a minimal event fixture; not browser layout, console, or assistive-technology verification.",
+  "public_image_bytes": 246560,
+  "rendered_hard_compliance_errors": 0,
+  "red_findings": 0,
+  "review_warnings": 329,
+  "strict_advisory_items": 336,
+  "inherited_registry_files_changed": false,
+  "course_sales_enabled": false,
+  "member_area_built": false,
+  "payment_provider_configured": false,
+  "proprietary_training_accessed": false,
+  "full_manuscripts_in_public_repository": false,
+  "privacy": {
+    "network_submission": false,
+    "storage": false,
+    "tracking": false,
+    "choice_lifetime": "page memory only"
+  },
+  "skills": {
+    "sites": "Used design workflow, preserved existing Python/static site; no hosting migration or publication",
+    "imagegen": "Two generated illustrative photos; prompt/output provenance in academy-image-provenance.json"
+  },
+  "remaining_gates": [
+    "User visual review",
+    "Requested browser/responsive and screen-reader QA",
+    "Review/approve new partner advisory items",
+    "Editorial and proprietary-rights review",
+    "Provider eligibility and commercial terms",
+    "Private delivery and checkout implementation",
+    "Separate release authorization"
+  ]
+}
