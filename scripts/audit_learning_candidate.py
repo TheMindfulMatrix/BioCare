@@ -29,11 +29,21 @@ def git(*args):
     return subprocess.check_output(["git", "-c", "safe.directory=" + ROOT.as_posix(), *args], cwd=ROOT)
 
 
+def baseline_paths(tracked):
+    """Include each existing baseline public-copy surface, never private/media trees."""
+    return sorted(name for name in tracked if (
+        name.startswith(("content/", "templates/", "library/", "social/"))
+        and Path(name).suffix.lower() in {".txt", ".md", ".json", ".html"}
+    ) or ("/" not in name and name.endswith(".html"))
+        or name in {"scripts/compliance_engine.py", "scripts/validate_compliance.py"})
+
+
 def baseline_checks():
-    # Export only public text inputs needed by the baseline's own validator.
-    paths = ["content", "templates", "library", "index.html", "shop.html", "library.html",
-             "start.html", "about.html", "privacy.html", "know-your-number.html",
-             "scripts/compliance_engine.py", "scripts/validate_compliance.py"]
+    # Discover the actual baseline, including Academy pages when they exist.
+    # The old fixed export list omitted partners.html and undercounted that baseline.
+    paths = baseline_paths(git("ls-tree", "-r", "--name-only", BASELINE).decode().splitlines())
+    if not paths or "content/compliance/claims.json" not in paths:
+        raise ValueError("Baseline compliance coverage is empty or incomplete")
     archive = git("archive", "--format=tar", BASELINE, *paths)
     with tempfile.TemporaryDirectory(prefix="matrix-baseline-") as directory:
         target_root = Path(directory).resolve()

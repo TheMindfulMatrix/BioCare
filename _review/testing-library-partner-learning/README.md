@@ -1,5 +1,20 @@
 # Testing, Library, and learning — review candidate
 
+## Latest review — September 7 Academy experience integration
+
+This section supersedes the historical validation and private-course production status below. The candidate remains DRAFT: no merge, deployment, enrollment or sale.
+
+- Both public Academy introductions now explain fit, actual private-candidate materials, optionality, independent status and pending access/support. Existing free samples remain the only interactive course content delivered here. Full paid-course manuscripts, videos, answer keys, merchant records and learner data are not in this repository or its preview artifacts.
+- Product discovery, testing, Library and Evidence remain easy to reach. Only learning.html and partners.html have changed public HTML in this pass; the approved homepage, product data, pricing, purchase destinations and compliance registries are unchanged.
+- Native mobile navigation on those two pages removes a confirmed deferred-JavaScript collapse that shifted the hero. It also works without JavaScript. A 375px lab sample's CLS fell from approximately 0.34 to 0.017; this is not real-user Core Web Vitals.
+- 143 Python tests and 24 JavaScript tests pass; deterministic build, 88 canonical pages and 175 referenced local assets, zero parity failures. Public safety scan passes with zero findings. Browser QA covers seven public routes at four widths and both motion settings (56 states), plus both samples, native menus and no-JavaScript fallback. No captured console errors/warnings or failed requests. This is not a real-device or screen-reader certification.
+- Current compliance: 379 review warnings / 386 strict advisory items; zero RED or hard errors. The full previous PR head at 960a0c14dd084008a2bd36a173e2cfa0b3b0f9f0 remeasures as 329/336. The net count increase is 50; 47 added text/context findings are identified by the comparison helper, while location-based totals also count repeated navigation text. All remain human-review items. Main at ef36a71ecc3365fa1a03db18083ac75349c54574 remains 69/76; the whole PR adds 310 locations. Seven inherited P1 classifications and current Xtend+ wording are unchanged.
+- Historical compliance export now discovers every tracked public-copy surface present at the selected SHA, including Academy HTML. Two regression tests prevent missing-baseline and private/media-scope errors. No advisory rule or disclosure was weakened.
+
+The separate private Academy now has complete written/core-video coverage and expanded practice in review; it is not an active school. Qualified content review, a consenting learner pilot, real managed authentication, protected media, saved server progress, transactional email, actual provider acceptance, final terms and genuine payment/refund testing remain launch prerequisites. No private review images or course package are attached to this PR.
+
+## Historical September 6 review record
+
 Status: **DRAFT — not merged, deployed, enrolled, or sold.**
 
 Baseline: `ef36a71ecc3365fa1a03db18083ac75349c54574` (main, PR #32).
