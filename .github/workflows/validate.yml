@@ -20,7 +20,7 @@ jobs:
         run: python scripts/build.py
       - name: Verify committed output and site structure
         run: |
-          git diff --exit-code -- index.html core-four.html explore.html evidence.html shop.html library.html start.html know-your-number.html about.html privacy.html departments/ library/ products/ assets/data/search-index.json robots.txt sitemap.xml
+          git diff --exit-code -- testing.html learning.html partners.html index.html core-four.html explore.html evidence.html shop.html library.html start.html know-your-number.html about.html privacy.html departments/ library/ products/ assets/data/search-index.json robots.txt sitemap.xml
           python scripts/validate.py
           python scripts/scan_v10_public_safety.py
       - name: Run compliance fixtures
@@ -44,6 +44,9 @@ jobs:
             about.html
             privacy.html
             core-four.html
+            testing.html
+            learning.html
+            partners.html
             products/
             robots.txt
             sitemap.xml

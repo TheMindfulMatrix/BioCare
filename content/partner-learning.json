@@ -1,0 +1,115 @@
+{
+  "status": "in_development",
+  "salesEnabled": false,
+  "title": "Partner Practice",
+  "audience": "Adults considering or already building an independent partner business.",
+  "description": "Original lessons in product literacy, responsible marketing, networking, events, speaking, online meetings, team support, and business records.",
+  "modules": [
+    {
+      "number": 1,
+      "title": "Understand the independent business",
+      "outcome": "Describe responsibilities and risks before deciding to participate."
+    },
+    {
+      "number": 2,
+      "title": "Budget and records before ambition",
+      "outcome": "Distinguish revenue, expenses, and a spending limit."
+    },
+    {
+      "number": 3,
+      "title": "Learn products without practising medicine",
+      "outcome": "Explain catalog facts while respecting evidence boundaries."
+    },
+    {
+      "number": 4,
+      "title": "Marketing people can evaluate",
+      "outcome": "Plan helpful messages with clear commercial context."
+    },
+    {
+      "number": 5,
+      "title": "Networking through permission",
+      "outcome": "Have useful conversations without pressure."
+    },
+    {
+      "number": 6,
+      "title": "Events with a clear purpose",
+      "outcome": "Prepare a small, accessible learning event."
+    },
+    {
+      "number": 7,
+      "title": "Speaking with evidence and humility",
+      "outcome": "Deliver a concise talk without exaggeration."
+    },
+    {
+      "number": 8,
+      "title": "Teams and Zoom meetings",
+      "outcome": "Host a useful meeting with basic privacy and accessibility."
+    },
+    {
+      "number": 9,
+      "title": "Support a team without pressure",
+      "outcome": "Create a fair, repeatable support routine."
+    },
+    {
+      "number": 10,
+      "title": "A measured 30-day business experiment",
+      "outcome": "Decide whether to continue using actual evidence."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ftc-consumer-mlm",
+      "title": "FTC: Multilevel marketing businesses and pyramid schemes",
+      "url": "https://consumer.ftc.gov/articles/multi-level-marketing-businesses-and-pyramid-schemes",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "ftc-mlm-guidance",
+      "title": "FTC: Business guidance concerning multilevel marketing",
+      "url": "https://www.ftc.gov/business-guidance/resources/business-guidance-concerning-multi-level-marketing",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "ftc-disclosures",
+      "title": "FTC: Disclosures 101 for social media influencers",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "zinzino-partner",
+      "title": "Zinzino: Official US partner information (commercial source)",
+      "url": "https://www.zinzino.com/site/us/en-us/partnerweb",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "sba-manage",
+      "title": "SBA: Manage your business",
+      "url": "https://www.sba.gov/counseling/manage-your-business/",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "irs-self-employed",
+      "title": "IRS: Self-employed individuals tax center",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "zoom-security",
+      "title": "Zoom: Meeting security guide",
+      "url": "https://www.zoom.com/en/products/virtual-meetings/resources/securing-your-meetings/",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "teams-captions",
+      "title": "Microsoft: Use live captions in Teams meetings",
+      "url": "https://support.microsoft.com/en-us/teams/meetings/use-live-captions-in-microsoft-teams-meetings",
+      "checkedDate": "2026-09-06"
+    },
+    {
+      "id": "fda-label-claims",
+      "title": "FDA: Label claims for food and dietary supplements",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-food-dietary-supplements",
+      "checkedDate": "2026-09-06"
+    }
+  ]
+}

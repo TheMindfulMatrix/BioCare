@@ -1,0 +1,64 @@
+{
+  "status": "in_development",
+  "salesEnabled": false,
+  "title": "Everyday Matrix",
+  "audience": "Adults 18+ through older adulthood who want practical, adaptable routines.",
+  "description": "An original course in planning everyday habits: food, movement, rest, supplement literacy, and knowing when to ask for help.",
+  "modules": [
+    {
+      "number": 1,
+      "title": "Start with one repeatable action",
+      "outcome": "Create a small routine that fits your actual day.",
+      "guide": "movement-across-adulthood"
+    },
+    {
+      "number": 2,
+      "title": "Food before a shopping list",
+      "outcome": "Plan a realistic meal routine without prescribing a diet.",
+      "guide": "how-to-read-a-supplement-label"
+    },
+    {
+      "number": 3,
+      "title": "Movement for your current capacity",
+      "outcome": "Build a flexible plan across adult life stages.",
+      "guide": "movement-across-adulthood"
+    },
+    {
+      "number": 4,
+      "title": "Sleep and recovery without perfection",
+      "outcome": "Create a steadier opportunity to rest.",
+      "guide": "sleep-habits-across-adulthood"
+    },
+    {
+      "number": 5,
+      "title": "Read a supplement label with care",
+      "outcome": "Separate label facts, claims, and unanswered questions.",
+      "guide": "how-to-read-a-supplement-label"
+    },
+    {
+      "number": 6,
+      "title": "Testing as a question, not a scorecard",
+      "outcome": "Decide what a measurement can and cannot tell you.",
+      "guide": "vitamin-d-testing-context"
+    },
+    {
+      "number": 7,
+      "title": "Build a week that survives real life",
+      "outcome": "Combine habits without an all-or-nothing schedule.",
+      "guide": "how-to-read-a-supplement-label"
+    },
+    {
+      "number": 8,
+      "title": "Your next month, on your terms",
+      "outcome": "Finish with a sustainable personal planning document.",
+      "guide": "how-to-read-a-health-study"
+    }
+  ],
+  "sample": {
+    "title": "Start with one repeatable action",
+    "text": "Choose one ordinary situation: breakfast, arriving home, or preparing for bed. Attach a small action to it and write a fallback for difficult days. This is an exercise in planning, not a promise that a habit will form in a fixed number of days. Track whether the action fit your schedule, not whether you were a good or bad person. If the plan repeatedly fails, shorten it or change the cue. Do not add several supplements, a strict diet, and a new training plan at once; that makes the experience harder to understand.",
+    "practice": "Write: after ___, I will ___. On a difficult day I will ___. Review after seven days and change one element.",
+    "question": "You miss three days. What comes next?",
+    "answer": "Resume with a smaller, realistic action; do not punish yourself or double the workload."
+  }
+}

@@ -1,0 +1,2077 @@
+{
+  "overall_status": "HEALTHY",
+  "audited_repository_sha": "unreleased-candidate",
+  "base_url": "http://127.0.0.1:8775/",
+  "public_pages": 88,
+  "referenced_live_assets": 169,
+  "coverage_errors": [],
+  "page_results": [
+    {
+      "path": "index.html",
+      "url": "http://127.0.0.1:8775/",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "start.html",
+      "url": "http://127.0.0.1:8775/start.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/start.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library.html",
+      "url": "http://127.0.0.1:8775/library.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "evidence.html",
+      "url": "http://127.0.0.1:8775/evidence.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/evidence.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "shop.html",
+      "url": "http://127.0.0.1:8775/shop.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/shop.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "know-your-number.html",
+      "url": "http://127.0.0.1:8775/know-your-number.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/know-your-number.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "explore.html",
+      "url": "http://127.0.0.1:8775/explore.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/explore.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "core-four.html",
+      "url": "http://127.0.0.1:8775/core-four.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/core-four.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "about.html",
+      "url": "http://127.0.0.1:8775/about.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/about.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "privacy.html",
+      "url": "http://127.0.0.1:8775/privacy.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/privacy.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "testing.html",
+      "url": "http://127.0.0.1:8775/testing.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/testing.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "learning.html",
+      "url": "http://127.0.0.1:8775/learning.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/learning.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "partners.html",
+      "url": "http://127.0.0.1:8775/partners.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/partners.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "departments/testing-measurement.html",
+      "url": "http://127.0.0.1:8775/departments/testing-measurement.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/departments/testing-measurement.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "departments/omega-nutrition.html",
+      "url": "http://127.0.0.1:8775/departments/omega-nutrition.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/departments/omega-nutrition.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "departments/gut-digestion.html",
+      "url": "http://127.0.0.1:8775/departments/gut-digestion.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/departments/gut-digestion.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "departments/daily-wellness.html",
+      "url": "http://127.0.0.1:8775/departments/daily-wellness.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/departments/daily-wellness.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "departments/active-nutrition-tools.html",
+      "url": "http://127.0.0.1:8775/departments/active-nutrition-tools.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/departments/active-nutrition-tools.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "departments/skin-collagen.html",
+      "url": "http://127.0.0.1:8775/departments/skin-collagen.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/departments/skin-collagen.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/omega-3-what-the-numbers-mean.html",
+      "url": "http://127.0.0.1:8775/library/omega-3-what-the-numbers-mean.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/omega-3-what-the-numbers-mean.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/should-you-test-your-omega-3-levels.html",
+      "url": "http://127.0.0.1:8775/library/should-you-test-your-omega-3-levels.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/should-you-test-your-omega-3-levels.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/food-vs-omega-3-supplements.html",
+      "url": "http://127.0.0.1:8775/library/food-vs-omega-3-supplements.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/food-vs-omega-3-supplements.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/how-to-read-a-supplement-label.html",
+      "url": "http://127.0.0.1:8775/library/how-to-read-a-supplement-label.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/how-to-read-a-supplement-label.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/gut-health-101.html",
+      "url": "http://127.0.0.1:8775/library/gut-health-101.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/gut-health-101.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/gut-testing-biomarkers.html",
+      "url": "http://127.0.0.1:8775/library/gut-testing-biomarkers.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/gut-testing-biomarkers.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/recovery-after-training.html",
+      "url": "http://127.0.0.1:8775/library/recovery-after-training.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/recovery-after-training.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/performance-nutrition-basics.html",
+      "url": "http://127.0.0.1:8775/library/performance-nutrition-basics.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/performance-nutrition-basics.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/how-to-read-a-health-study.html",
+      "url": "http://127.0.0.1:8775/library/how-to-read-a-health-study.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/how-to-read-a-health-study.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/correlation-causation-relative-risk.html",
+      "url": "http://127.0.0.1:8775/library/correlation-causation-relative-risk.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/correlation-causation-relative-risk.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/vitamin-d-testing-context.html",
+      "url": "http://127.0.0.1:8775/library/vitamin-d-testing-context.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/vitamin-d-testing-context.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/hba1c-understanding-results.html",
+      "url": "http://127.0.0.1:8775/library/hba1c-understanding-results.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/hba1c-understanding-results.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/vitamin-k2-context.html",
+      "url": "http://127.0.0.1:8775/library/vitamin-k2-context.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/vitamin-k2-context.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/magnesium-forms-and-safety.html",
+      "url": "http://127.0.0.1:8775/library/magnesium-forms-and-safety.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/magnesium-forms-and-safety.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/zinc-copper-balance.html",
+      "url": "http://127.0.0.1:8775/library/zinc-copper-balance.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/zinc-copper-balance.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/digestive-enzymes-context.html",
+      "url": "http://127.0.0.1:8775/library/digestive-enzymes-context.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/digestive-enzymes-context.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/fiber-prebiotics-probiotics.html",
+      "url": "http://127.0.0.1:8775/library/fiber-prebiotics-probiotics.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/fiber-prebiotics-probiotics.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/botanicals-extracts-evidence.html",
+      "url": "http://127.0.0.1:8775/library/botanicals-extracts-evidence.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/botanicals-extracts-evidence.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/detox-claims-and-evidence.html",
+      "url": "http://127.0.0.1:8775/library/detox-claims-and-evidence.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/detox-claims-and-evidence.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/skin-collagen-evidence.html",
+      "url": "http://127.0.0.1:8775/library/skin-collagen-evidence.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/skin-collagen-evidence.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/consumer-genetic-testing.html",
+      "url": "http://127.0.0.1:8775/library/consumer-genetic-testing.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/consumer-genetic-testing.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/immune-nutrition-context.html",
+      "url": "http://127.0.0.1:8775/library/immune-nutrition-context.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/immune-nutrition-context.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/movement-across-adulthood.html",
+      "url": "http://127.0.0.1:8775/library/movement-across-adulthood.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/movement-across-adulthood.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "library/sleep-habits-across-adulthood.html",
+      "url": "http://127.0.0.1:8775/library/sleep-habits-across-adulthood.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/library/sleep-habits-across-adulthood.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balance-basic-kit.html",
+      "url": "http://127.0.0.1:8775/products/balance-basic-kit.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balance-basic-kit.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balance-test.html",
+      "url": "http://127.0.0.1:8775/products/balance-test.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balance-test.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/gut-health-test.html",
+      "url": "http://127.0.0.1:8775/products/gut-health-test.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/gut-health-test.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/gut-health-test-x2.html",
+      "url": "http://127.0.0.1:8775/products/gut-health-test-x2.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/gut-health-test-x2.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/vitamin-d-test.html",
+      "url": "http://127.0.0.1:8775/products/vitamin-d-test.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/vitamin-d-test.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/hba1c-test.html",
+      "url": "http://127.0.0.1:8775/products/hba1c-test.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/hba1c-test.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-plus-300ml.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-plus-300ml.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-plus-300ml.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-plus-100ml.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-plus-100ml.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-plus-100ml.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-plus-100ml-6pcs.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-plus-100ml-6pcs.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-plus-100ml-6pcs.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-plus-premium.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-plus-premium.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-plus-premium.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-plus-aquax.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-plus-aquax.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-plus-aquax.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-plus-vegan.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-plus-vegan.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-plus-vegan.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/balanceoil-tutti-frutti.html",
+      "url": "http://127.0.0.1:8775/products/balanceoil-tutti-frutti.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/balanceoil-tutti-frutti.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/essent-plus-premium.html",
+      "url": "http://127.0.0.1:8775/products/essent-plus-premium.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/essent-plus-premium.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/revoo.html",
+      "url": "http://127.0.0.1:8775/products/revoo.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/revoo.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/dosage-cups.html",
+      "url": "http://127.0.0.1:8775/products/dosage-cups.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/dosage-cups.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/zinobiotic-plus.html",
+      "url": "http://127.0.0.1:8775/products/zinobiotic-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/zinobiotic-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/x-gold-plus.html",
+      "url": "http://127.0.0.1:8775/products/x-gold-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/x-gold-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/zinogene-plus.html",
+      "url": "http://127.0.0.1:8775/products/zinogene-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/zinogene-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/viva-plus.html",
+      "url": "http://127.0.0.1:8775/products/viva-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/viva-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/viva-plus-x2.html",
+      "url": "http://127.0.0.1:8775/products/viva-plus-x2.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/viva-plus-x2.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/zinoshine-plus.html",
+      "url": "http://127.0.0.1:8775/products/zinoshine-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/zinoshine-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/xtend-plus.html",
+      "url": "http://127.0.0.1:8775/products/xtend-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/xtend-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/xtend.html",
+      "url": "http://127.0.0.1:8775/products/xtend.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/xtend.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/protect-plus.html",
+      "url": "http://127.0.0.1:8775/products/protect-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/protect-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/spirumax-plus.html",
+      "url": "http://127.0.0.1:8775/products/spirumax-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/spirumax-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/phycosci-plus-x20.html",
+      "url": "http://127.0.0.1:8775/products/phycosci-plus-x20.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/phycosci-plus-x20.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/leanshake-chocolate.html",
+      "url": "http://127.0.0.1:8775/products/leanshake-chocolate.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/leanshake-chocolate.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/leanshake-strawberry.html",
+      "url": "http://127.0.0.1:8775/products/leanshake-strawberry.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/leanshake-strawberry.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/leanshake-vanilla.html",
+      "url": "http://127.0.0.1:8775/products/leanshake-vanilla.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/leanshake-vanilla.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/leanshake-berry.html",
+      "url": "http://127.0.0.1:8775/products/leanshake-berry.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/leanshake-berry.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/shake-bottle.html",
+      "url": "http://127.0.0.1:8775/products/shake-bottle.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/shake-bottle.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/energy-bar-nut-seed.html",
+      "url": "http://127.0.0.1:8775/products/energy-bar-nut-seed.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/energy-bar-nut-seed.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/measuring-tape.html",
+      "url": "http://127.0.0.1:8775/products/measuring-tape.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/measuring-tape.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/collagen-boozt.html",
+      "url": "http://127.0.0.1:8775/products/collagen-boozt.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/collagen-boozt.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/skin-serum.html",
+      "url": "http://127.0.0.1:8775/products/skin-serum.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/skin-serum.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-dna-discovery-kit.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-dna-discovery-kit.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-dna-discovery-kit.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-becoming-biolimitless-book.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-becoming-biolimitless-book.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-becoming-biolimitless-book.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-cell-signals.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-cell-signals.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-cell-signals.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-detox-pro-plus.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-detox-pro-plus.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-detox-pro-plus.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-magnesium-glycinate.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-magnesium-glycinate.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-magnesium-glycinate.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-zinc-copper.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-zinc-copper.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-zinc-copper.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-vitamin-d3-k2.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-vitamin-d3-k2.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-vitamin-d3-k2.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-biozyme.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-biozyme.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-biozyme.html",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "products/biolimitless-bio-basics-core-four.html",
+      "url": "http://127.0.0.1:8775/products/biolimitless-bio-basics-core-four.html",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/products/biolimitless-bio-basics-core-four.html",
+      "error": null,
+      "byte_parity": true
+    }
+  ],
+  "asset_results": [
+    {
+      "path": "assets/artwork/library/correlation-causation-risk-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/correlation-causation-risk-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/correlation-causation-risk-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/correlation-causation-risk-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/correlation-causation-risk-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/correlation-causation-risk-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/food-vs-supplements-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/food-vs-supplements-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/food-vs-supplements-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/food-vs-supplements-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/food-vs-supplements-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/food-vs-supplements-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/gut-health-101-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/gut-health-101-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/gut-health-101-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/gut-health-101-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/gut-health-101-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/gut-health-101-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/gut-testing-biomarkers-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/gut-testing-biomarkers-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/gut-testing-biomarkers-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/gut-testing-biomarkers-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/gut-testing-biomarkers-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/gut-testing-biomarkers-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/omega-numbers-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/omega-numbers-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/omega-numbers-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/omega-numbers-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/omega-numbers-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/omega-numbers-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/omega-testing-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/omega-testing-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/omega-testing-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/omega-testing-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/omega-testing-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/omega-testing-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/performance-nutrition-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/performance-nutrition-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/performance-nutrition-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/performance-nutrition-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/performance-nutrition-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/performance-nutrition-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/read-health-study-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/read-health-study-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/read-health-study-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/read-health-study-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/read-health-study-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/read-health-study-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/recovery-after-training-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/recovery-after-training-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/recovery-after-training-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/recovery-after-training-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/recovery-after-training-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/recovery-after-training-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/supplement-label-560.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/supplement-label-560.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/supplement-label-560.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/library/supplement-label-960.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/library/supplement-label-960.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/library/supplement-label-960.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+      "url": "http://127.0.0.1:8775/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/artwork/shelf/balance-test-basic-kit-cinematic.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/brand/favicon.svg",
+      "url": "http://127.0.0.1:8775/assets/brand/favicon.svg",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/brand/favicon.svg",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/brand/lockup-dark.svg",
+      "url": "http://127.0.0.1:8775/assets/brand/lockup-dark.svg",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/brand/lockup-dark.svg",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/brand/mark-dark.svg",
+      "url": "http://127.0.0.1:8775/assets/brand/mark-dark.svg",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/brand/mark-dark.svg",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/brand/mark-gold.svg",
+      "url": "http://127.0.0.1:8775/assets/brand/mark-gold.svg",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/brand/mark-gold.svg",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/brand/social-preview.png",
+      "url": "http://127.0.0.1:8775/assets/brand/social-preview.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/brand/social-preview.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/css/base.css",
+      "url": "http://127.0.0.1:8775/assets/css/base.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/base.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/css/experience.css",
+      "url": "http://127.0.0.1:8775/assets/css/experience.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/experience.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/css/growth.css",
+      "url": "http://127.0.0.1:8775/assets/css/growth.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/growth.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/css/learning.css",
+      "url": "http://127.0.0.1:8775/assets/css/learning.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/learning.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/css/site.css",
+      "url": "http://127.0.0.1:8775/assets/css/site.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/site.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/css/tokens.css",
+      "url": "http://127.0.0.1:8775/assets/css/tokens.css",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/css/tokens.css",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/js/enhancements.js",
+      "url": "http://127.0.0.1:8775/assets/js/enhancements.js",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/js/enhancements.js",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/js/experience.js",
+      "url": "http://127.0.0.1:8775/assets/js/experience.js",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/js/experience.js",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/js/search-relevance.js",
+      "url": "http://127.0.0.1:8775/assets/js/search-relevance.js",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/js/search-relevance.js",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/becoming-biolimitless-book.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/becoming-biolimitless-book.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/becoming-biolimitless-book.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/bio-basics-core-four.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/biozyme.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/biozyme.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/biozyme.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/cell-signals.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/cell-signals.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/cell-signals.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/detox-pro-plus.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/dna-discovery-kit.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/magnesium-glycinate.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/vitamin-d3-k2.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/biolimitless/zinc-copper.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/zinc-copper.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/biolimitless/zinc-copper.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/hero/balance-test-basic-kit-650.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/hero/balance-test-basic-kit-650.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/hero/balance-test-basic-kit-650.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balance-test-309000.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balance-test-309000.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balance-test-309000.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balance-test-basic-kit-910465.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-300430.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-300430.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-300430.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-6pcs-300481.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-6pcs-300481.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-100ml-6pcs-300481.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-300ml-300000.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-plus-aquax-300ml-300700.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-aquax-300ml-300700.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-aquax-300ml-300700.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-plus-premium-300ml-700000.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-premium-300ml-700000.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-premium-300ml-700000.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-plus-vegan-400000.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-vegan-400000.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-plus-vegan-400000.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/balanceoil-tutti-frutti-300ml-301799.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-tutti-frutti-300ml-301799.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/balanceoil-tutti-frutti-300ml-301799.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/collagen-boozt-302800.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/collagen-boozt-302800.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/collagen-boozt-302800.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/dosage-cups-10pc-600508.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/dosage-cups-10pc-600508.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/dosage-cups-10pc-600508.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/energy-bar-nut-seed-302011.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/energy-bar-nut-seed-302011.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/energy-bar-nut-seed-302011.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/essent-plus-premium-300310.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/essent-plus-premium-300310.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/essent-plus-premium-300310.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/gut-health-test-309070.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/gut-health-test-309070.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/gut-health-test-309070.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/gut-health-test-x2-309080.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/gut-health-test-x2-309080.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/gut-health-test-x2-309080.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/hba1c-test-309060.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/hba1c-test-309060.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/hba1c-test-309060.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/leanshake-berry-301381.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-berry-301381.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-berry-301381.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/leanshake-chocolate-301331.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-chocolate-301331.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-chocolate-301331.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/leanshake-strawberry-301531.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-strawberry-301531.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-strawberry-301531.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/leanshake-vanilla-301581.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-vanilla-301581.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/leanshake-vanilla-301581.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/measuring-tape-600211.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/measuring-tape-600211.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/measuring-tape-600211.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/phycosci-plus-x20-302770.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/phycosci-plus-x20-302770.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/phycosci-plus-x20-302770.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/protect-plus-300600.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/protect-plus-300600.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/protect-plus-300600.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/revoo-302401.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/revoo-302401.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/revoo-302401.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/shake-bottle-600509.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/shake-bottle-600509.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/shake-bottle-600509.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/skin-serum-50ml-800150.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/skin-serum-50ml-800150.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/skin-serum-50ml-800150.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/spirumax-plus-302699.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/spirumax-plus-302699.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/spirumax-plus-302699.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/vitamin-d-test-309049.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/vitamin-d-test-309049.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/vitamin-d-test-309049.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/viva-plus-300800.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/viva-plus-300800.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/viva-plus-300800.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/viva-plus-x2-300811.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/viva-plus-x2-300811.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/viva-plus-x2-300811.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/x-gold-plus-302790.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/x-gold-plus-302790.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/x-gold-plus-302790.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/xtend-300520.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/xtend-300520.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/xtend-300520.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/xtend-plus-302200.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/xtend-plus-302200.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/xtend-plus-302200.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/zinobiotic-plus-301390.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/zinobiotic-plus-301390.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/zinobiotic-plus-301390.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/zinogene-plus-302500.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/zinogene-plus-302500.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/zinogene-plus-302500.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino-v6/zinoshine-plus-302600.webp",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/zinoshine-plus-302600.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino-v6/zinoshine-plus-302600.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balance-test-309000.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balance-test-309000.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balance-test-309000.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balance-test-basic-kit-910465.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-100ml-300430.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-100ml-6pcs-300481.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-300ml-300000.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-aquax-300ml-300700.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-premium-300ml-700000.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-plus-vegan-400000.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/balanceoil-tutti-frutti-300ml-301799.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/collagen-boozt-302800.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/dosage-cups-10pc-600508.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/energy-bar-nut-seed-302011.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/essent-plus-premium-300310.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/gut-health-test-309070.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/gut-health-test-309070.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/gut-health-test-309070.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/gut-health-test-x2-309080.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/hba1c-test-309060.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/hba1c-test-309060.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/hba1c-test-309060.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-berry-301381.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-chocolate-301331.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-strawberry-301531.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/leanshake-vanilla-301581.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/measuring-tape-600211.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/measuring-tape-600211.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/measuring-tape-600211.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/phycosci-plus-x20-302770.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/protect-plus-300600.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/protect-plus-300600.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/protect-plus-300600.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/revoo-302401.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/revoo-302401.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/revoo-302401.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/shake-bottle-600509.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/shake-bottle-600509.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/shake-bottle-600509.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/skin-serum-50ml-800150.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/spirumax-plus-302699.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/vitamin-d-test-309049.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/viva-plus-300800.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/viva-plus-300800.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/viva-plus-300800.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/viva-plus-x2-300811.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/x-gold-plus-302790.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/xtend-300520.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/xtend-300520.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/xtend-300520.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/xtend-plus-302200.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/xtend-plus-302200.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/xtend-plus-302200.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/zinobiotic-plus-301390.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/zinogene-plus-302500.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+      "url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/product-cutouts/zinzino/zinoshine-plus-302600.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/becoming-biolimitless-book.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/becoming-biolimitless-book.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/becoming-biolimitless-book.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/bio-basics-core-four.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/bio-basics-core-four.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/bio-basics-core-four.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/biozyme.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/biozyme.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/biozyme.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/cell-signals.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/cell-signals.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/cell-signals.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/detox-pro-plus.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/detox-pro-plus.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/detox-pro-plus.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/dna-discovery-kit.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/dna-discovery-kit.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/dna-discovery-kit.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/magnesium-glycinate.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/magnesium-glycinate.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/magnesium-glycinate.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/vitamin-d3-k2.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/vitamin-d3-k2.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/vitamin-d3-k2.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/biolimitless/catalog/zinc-copper.webp",
+      "url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/zinc-copper.webp",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/biolimitless/catalog/zinc-copper.webp",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test-basic-kit/balance-test-basic-kit-910465-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/balance-test-basic-kit/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test-basic-kit/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test-basic-kit/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/balance-test/balance-test-309000-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test/balance-test-309000-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test/balance-test-309000-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/balance-test/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/balance-test/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-100ml-300430-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-100ml-300430-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-100ml-300430-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-100ml-6pcs-300481-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-100ml-6pcs-300481-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-100ml-6pcs-300481-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-300ml-300000-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-300ml-300000-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-300ml-300000-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-aquax-300ml-300700-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-aquax-300ml-300700-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-aquax-300ml-300700-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-premium-300ml-700000-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-premium-300ml-700000-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-premium-300ml-700000-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-plus-vegan-400000-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-vegan-400000-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-plus-vegan-400000-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/balanceoil-tutti-frutti-300ml-301799-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-tutti-frutti-300ml-301799-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/balanceoil-tutti-frutti-300ml-301799-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/collagen-boozt-302800-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/collagen-boozt-302800-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/collagen-boozt-302800-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/dosage-cups-10pc-600508-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/dosage-cups-10pc-600508-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/dosage-cups-10pc-600508-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/energy-bar-nut-seed-302011-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/energy-bar-nut-seed-302011-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/energy-bar-nut-seed-302011-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/essent-plus-premium-300310-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/essent-plus-premium-300310-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/essent-plus-premium-300310-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/gut-health-test-309070-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/gut-health-test-309070-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/gut-health-test-309070-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/gut-health-test-x2-309080-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/gut-health-test-x2-309080-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/gut-health-test-x2-309080-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/hba1c-test-309060-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/hba1c-test-309060-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/hba1c-test-309060-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/leanshake-berry-301381-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-berry-301381-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-berry-301381-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/leanshake-chocolate-301331-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-chocolate-301331-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-chocolate-301331-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/leanshake-strawberry-301531-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-strawberry-301531-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-strawberry-301531-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/leanshake-vanilla-301581-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-vanilla-301581-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/leanshake-vanilla-301581-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/measuring-tape-600211-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/measuring-tape-600211-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/measuring-tape-600211-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/phycosci-plus-x20-302770-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/phycosci-plus-x20-302770-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/phycosci-plus-x20-302770-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/protect-plus-300600-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/protect-plus-300600-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/protect-plus-300600-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/shake-bottle-600509-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/shake-bottle-600509-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/shake-bottle-600509-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/skin-serum-50ml-800150-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/skin-serum-50ml-800150-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/skin-serum-50ml-800150-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/spirumax-plus-302699-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/spirumax-plus-302699-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/spirumax-plus-302699-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/vitamin-d-test-309049-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/vitamin-d-test-309049-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/vitamin-d-test-309049-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/viva-plus-300800-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/viva-plus-300800-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/viva-plus-300800-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/viva-plus-x2-300811-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/viva-plus-x2-300811-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/viva-plus-x2-300811-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/xtend-300520-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/xtend-300520-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/xtend-300520-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/xtend-plus-302200-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/xtend-plus-302200-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/xtend-plus-302200-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/zinogene-plus-302500-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/zinogene-plus-302500-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/zinogene-plus-302500-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/catalog/zinoshine-plus-302600-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/zinoshine-plus-302600-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/catalog/zinoshine-plus-302600-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/full-shop/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/full-shop/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/full-shop/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/full-shop/revoo-302401-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/full-shop/revoo-302401-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/full-shop/revoo-302401-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/gut-health/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/gut-health/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/gut-health/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/gut-health/zinobiotic-plus-301390-main.png",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/x-gold/provenance.json",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/x-gold/provenance.json",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/x-gold/provenance.json",
+      "error": null,
+      "byte_parity": true
+    },
+    {
+      "path": "assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png",
+      "url": "http://127.0.0.1:8775/assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png",
+      "status": 200,
+      "final_url": "http://127.0.0.1:8775/assets/source-products/zinzino/x-gold/x-gold-plus-302790-main.png",
+      "error": null,
+      "byte_parity": true
+    }
+  ],
+  "page_regressions": [],
+  "broken_live_assets": [],
+  "changes_made": false,
+  "next_actions": [
+    "Address confirmed coverage, page, or asset failures before optional improvements.",
+    "Preserve and review the inherited compliance advisory queue."
+  ],
+  "expected_public_pages": 88,
+  "comparison_note": "Loopback only; CRLF normalized to LF for text. Not a live-production or browser QA result."
+}

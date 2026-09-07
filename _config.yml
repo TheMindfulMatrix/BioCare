@@ -1,0 +1,5 @@
+# Keep internal review manuscripts and private research outside GitHub Pages.
+exclude:
+  - _review
+  - _private
+  - _preview

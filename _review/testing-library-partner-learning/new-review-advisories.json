@@ -1,0 +1,3131 @@
+{
+  "findings": [
+    {
+      "location": "content/partner-learning.json:$.audience",
+      "exact_text": "Adults considering or already building an independent partner business.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.description",
+      "exact_text": "Original lessons in product literacy, responsible marketing, networking, events, speaking, online meetings, team support, and business records.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[0].outcome",
+      "exact_text": "Describe responsibilities and risks before deciding to participate.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[0].title",
+      "exact_text": "Understand the independent business",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[1].outcome",
+      "exact_text": "Distinguish revenue, expenses, and a spending limit.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[1].title",
+      "exact_text": "Budget and records before ambition",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[2].outcome",
+      "exact_text": "Explain catalog facts while respecting evidence boundaries.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[2].title",
+      "exact_text": "Learn products without practising medicine",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[3].outcome",
+      "exact_text": "Plan helpful messages with clear commercial context.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[3].title",
+      "exact_text": "Marketing people can evaluate",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[4].outcome",
+      "exact_text": "Have useful conversations without pressure.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[4].title",
+      "exact_text": "Networking through permission",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[5].outcome",
+      "exact_text": "Prepare a small, accessible learning event.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[5].title",
+      "exact_text": "Events with a clear purpose",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[6].outcome",
+      "exact_text": "Deliver a concise talk without exaggeration.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[6].title",
+      "exact_text": "Speaking with evidence and humility",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[7].outcome",
+      "exact_text": "Host a useful meeting with basic privacy and accessibility.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[7].title",
+      "exact_text": "Teams and Zoom meetings",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[8].outcome",
+      "exact_text": "Create a fair, repeatable support routine.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[8].title",
+      "exact_text": "Support a team without pressure",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[9].outcome",
+      "exact_text": "Decide whether to continue using actual evidence.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.modules[9].title",
+      "exact_text": "A measured 30-day business experiment",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[0].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[0].title",
+      "exact_text": "FTC: Multilevel marketing businesses and pyramid schemes",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[1].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[1].title",
+      "exact_text": "FTC: Business guidance concerning multilevel marketing",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[2].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[2].title",
+      "exact_text": "FTC: Disclosures 101 for social media influencers",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[3].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[3].title",
+      "exact_text": "Zinzino: Official US partner information (commercial source)",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[4].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[4].title",
+      "exact_text": "SBA: Manage your business",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[5].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[5].title",
+      "exact_text": "IRS: Self-employed individuals tax center",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[6].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[6].title",
+      "exact_text": "Zoom: Meeting security guide",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[7].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[7].title",
+      "exact_text": "Microsoft: Use live captions in Teams meetings",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[8].checkedDate",
+      "exact_text": "2026-09-06",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.sources[8].title",
+      "exact_text": "FDA: Label claims for food and dietary supplements",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.status",
+      "exact_text": "in_development",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "content/partner-learning.json:$.title",
+      "exact_text": "Partner Practice",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:42",
+      "exact_text": "Skip to main content",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:44",
+      "exact_text": "Primary navigation",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:45",
+      "exact_text": "The Mindful Matrix",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:45",
+      "exact_text": "The Mindful Matrix home",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:46",
+      "exact_text": "Search",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:46",
+      "exact_text": "Search the Matrix",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:46",
+      "exact_text": "Submit Matrix search",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:47",
+      "exact_text": "Open navigation",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:49",
+      "exact_text": "Explore",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:5",
+      "exact_text": "Partner learning | The Mindful Matrix",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:50",
+      "exact_text": "Products",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:51",
+      "exact_text": "Library",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:52",
+      "exact_text": "Start Here",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:59",
+      "exact_text": "Partner learning",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:60",
+      "exact_text": "Choose your direction.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:60",
+      "exact_text": "Learn the work.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:61",
+      "exact_text": "A calm introduction to independent partner work, with responsibilities, practical skills, and room to decide whether it fits.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:62",
+      "exact_text": "Everyday habits instead →",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:62",
+      "exact_text": "Explore the curriculum →",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:62",
+      "exact_text": "On this page",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "(opens in a new tab)",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "A commercial relationship may benefit us if you purchase or join through our partner connections.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "A measured 30-day business experiment",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "About & contact →",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Budget and records before ambition",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Can I explain the product facts and their limits without making medical claims?",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Can people say no without pressure or repeated messages?",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Course outlines and a free sample are available here; enrollment and checkout are not open.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Create a fair, repeatable support routine.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Curious is enough.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Decide whether to continue using actual evidence.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Deliver a concise talk without exaggeration.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Describe responsibilities and risks before deciding to participate.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Distinguish revenue, expenses, and a spending limit.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Do I have a realistic time and spending limit?",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Events with a clear purpose",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Explain catalog facts while respecting evidence boundaries.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "FDA: Label claims for food and dietary supplements ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "FTC: Business guidance concerning multilevel marketing ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "FTC: Disclosures 101 for social media influencers ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "FTC: Multilevel marketing businesses and pyramid schemes ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Have useful conversations without pressure.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Host a useful meeting with basic privacy and accessibility.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "IRS: Self-employed individuals tax center ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "In development · Not available for purchase.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Inspect the sources.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "It is separate from the everyday-habits course.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Keep financial, customer, and health records private.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Learn products without practising medicine",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Links do not imply endorsement or permission to resell the source material.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Make the business decision separately.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Marketing people can evaluate",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Microsoft: Use live captions in Teams meetings ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Networking through permission",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Original course in development",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Participation involves costs and uncertain results.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Partner Practice",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Plan helpful messages with clear commercial context.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Prepare a small, accessible learning event.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Public guidance and official help pages, checked September 6, 2026.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Questions about the learning plan?",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Read the FTC consumer guide ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Review current local agreements, costs, cancellation terms, and any official disclosures before deciding.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "SBA: Manage your business ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Speaking with evidence and humility",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Start with a few honest questions.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Support a team without pressure",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Teams and Zoom meetings",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "The FTC cautions that many participants in legitimate multilevel marketing businesses earn little or nothing, and some lose money.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "The Mindful Matrix is an independent partner, not Zinzino corporate.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "The Zinzino link is a commercial company source.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "The curriculum focuses on skills and informed decisions, with no earnings or lifestyle promises.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "There is no application, enrollment fee, or obligation on this page.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "There is no automatic enrollment or marketing signup.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "This is not an official Zinzino course.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "This website does not collect applications or host team meetings.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Understand the independent business",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Use the contact details on our About page.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "What are my actual obligations, recurring costs, and exit options?",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "You can learn about the work before deciding whether it fits.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Zinzino: Official US partner information (commercial source) ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:65",
+      "exact_text": "Zoom: Meeting security guide ↗",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:67",
+      "exact_text": "Explore",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:67",
+      "exact_text": "Home",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:67",
+      "exact_text": "Library",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:67",
+      "exact_text": "Mobile navigation",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:67",
+      "exact_text": "Products",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:67",
+      "exact_text": "Start",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:69",
+      "exact_text": "Information → Education → Action",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:69",
+      "exact_text": "The Mindful Matrix",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:69",
+      "exact_text": "The Mindful Matrix home",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "About & contact",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "All products",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Explore",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Footer navigation",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Learning paths",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Our story",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Partner learning",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Privacy & website data",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Start here",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Testing journeys",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "The Library",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:70",
+      "exact_text": "Transparency",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "(opens in a new tab)",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "BalanceTest is not available in New York.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "Gavin Reidel — Zinzino Independent Partner.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "Instagram",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "Purchases are completed on Zinzino's own site at their listed retail price.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "Social links",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "FACTUAL_PRODUCT_FACT",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Exact registered wording is not approved for the MLM_RECRUITMENT context.",
+      "matched_rules": [
+        "CLAIM_REGISTRY_EXACT_MATCH"
+      ],
+      "registry_claim_id": "CLAIM_DISCLOSURE_FDA_DSHEA",
+      "registry_claim_ids": [
+        "CLAIM_DISCLOSURE_FDA_DSHEA"
+      ],
+      "evidence_status": "REGISTERED",
+      "supporting_evidence": [
+        "EVIDENCE_FDA_DSHEA_PLACEMENT_2025",
+        "EVIDENCE_FDA_SUPPLEMENT_LABELING_CLAIMS"
+      ],
+      "required_disclosure": [
+        "DISCLOSURE_FDA_DSHEA_PLURAL"
+      ],
+      "required_action": "HUMAN_REVIEW_REQUIRED_CONTEXT_MISMATCH",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "Threads",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "TikTok",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "connect@themindfulmatrixhealth.com",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    },
+    {
+      "location": "partners.html:71",
+      "exact_text": "© 2026 The Mindful Matrix",
+      "context": "MLM_RECRUITMENT",
+      "claim_type": "MLM_RECRUITMENT_CLAIM",
+      "risk": "YELLOW",
+      "classification": "HIGH_PRIORITY_REVIEW",
+      "reason": "Recruitment is separated from product/customer marketing and has no automatic approval path in v1.",
+      "matched_rules": [
+        "CE_YELLOW_MLM_RECRUITMENT"
+      ],
+      "registry_claim_id": null,
+      "registry_claim_ids": [],
+      "evidence_status": "UNREGISTERED",
+      "supporting_evidence": [],
+      "required_disclosure": [],
+      "required_action": "HUMAN_REVIEW_REQUIRED",
+      "implied_claim_review": false,
+      "strict_failure": true
+    }
+  ]
+}
