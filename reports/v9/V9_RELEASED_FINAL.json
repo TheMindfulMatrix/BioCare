@@ -1,0 +1,200 @@
+{
+  "release": "V9",
+  "status": "released_and_verified",
+  "productionUrl": "https://themindfulmatrix.github.io/BioCare/",
+  "v8BaselineSha": "2bfabedfeaf86ec13bb479e6daa51d6df857bb46",
+  "approvedFunctionalCandidateSha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
+  "finalPrHeadSha": "2e8503bcf4b69545ab29822dda48a18120ce26e5",
+  "finalPublicOutputSha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+  "releaseRecordPublication": {
+    "branch": "agent/v9-release-records",
+    "scope": [
+      "reports/v9/V9_RELEASED_FINAL.md",
+      "reports/v9/V9_RELEASED_FINAL.json"
+    ],
+    "publicOutputChanged": false,
+    "note": "The report-only merge occurs after this record is authored; f205890e remains the authoritative verified V9 public-output tree."
+  },
+  "pullRequest": {
+    "number": 11,
+    "url": "https://github.com/TheMindfulMatrix/BioCare/pull/11",
+    "state": "MERGED",
+    "method": "merge commit",
+    "headSha": "2e8503bcf4b69545ab29822dda48a18120ce26e5",
+    "mergeSha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+    "mergedAt": "2026-08-21T04:52:56Z"
+  },
+  "validation": {
+    "approvedCandidate": {
+      "runId": 32444530137,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32444530137",
+      "sha": "182e39a6beba1c735dfa699fb3a598d793e56b10",
+      "conclusion": "success"
+    },
+    "finalPrHead": {
+      "runId": 32448078439,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32448078439",
+      "sha": "2e8503bcf4b69545ab29822dda48a18120ce26e5",
+      "conclusion": "success",
+      "completedAt": "2026-08-21T04:46:00Z"
+    },
+    "finalMain": {
+      "runId": 32448506939,
+      "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32448506939",
+      "sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+      "conclusion": "success",
+      "completedAt": "2026-08-21T04:53:12Z"
+    },
+    "deterministicGeneration": "passed",
+    "tests": "26/26",
+    "v9SpecificTests": "11/11",
+    "complianceFixtures": "8/8",
+    "javascriptSyntax": "passed",
+    "diffCheck": "passed",
+    "credentialScan": "passed",
+    "basePathValidation": "passed"
+  },
+  "deployment": {
+    "runId": 32448506546,
+    "url": "https://github.com/TheMindfulMatrix/BioCare/actions/runs/32448506546",
+    "deploymentId": 6015686873,
+    "sha": "f205890e5e5635d87d6ff77da97eedc96d365041",
+    "conclusion": "success",
+    "completedAt": "2026-08-21T04:53:48Z",
+    "verifiedAt": "2026-08-21T04:59:41Z",
+    "publicPagesHttpSuccess": 22,
+    "publicPagesByteExact": 22
+  },
+  "definitionOfDone": {
+    "met": 96,
+    "notMet": 0,
+    "deferred": 0
+  },
+  "inventory": {
+    "publicPages": 22,
+    "activeProducts": 45,
+    "deferredProducts": 8,
+    "manufacturers": 2,
+    "intents": 6,
+    "activeProductImagePayloadBytes": 1103598
+  },
+  "discovery": {
+    "intentCounts": {
+      "all": 45,
+      "testMeasure": 7,
+      "omegaNutrition": 10,
+      "gutDigestion": 3,
+      "dailyWellness": 15,
+      "performanceRecovery": 8,
+      "healthyAging": 2
+    },
+    "manufacturerCounts": {
+      "Zinzino": 36,
+      "BioLimitless": 9
+    },
+    "gridColumns": {
+      "375": 2,
+      "390": 2,
+      "768": 3,
+      "1440": 4
+    },
+    "progressiveCards": [12, 24, 36, 45],
+    "searchOmegaFood": 5,
+    "searchBalanceTest": 2,
+    "combinedBioLimitlessDietarySupplement": 4,
+    "allInspectorsExercised": 45,
+    "deferredProductsPublic": 0
+  },
+  "performance": {
+    "before": {
+      "productsHtmlBytes": 137176,
+      "productsDomElements": 1760,
+      "firstProductY": 2485,
+      "product6Y": 6997,
+      "product12Y": 13143,
+      "medianCardHeight": 931,
+      "pageHeight": 49722,
+      "initialProductImageRequestsObserved": 14
+    },
+    "after": {
+      "productsHtmlBytes": 136174,
+      "productsDomElements": 509,
+      "firstProductY": 659,
+      "product6Y": 1436,
+      "product12Y": 2550,
+      "medianCardHeight": 363,
+      "pageHeight": 8212,
+      "initialProductImageRequestsObserved": 2,
+      "deferredInitialProductImages": 10
+    },
+    "javascriptBytes": 67014,
+    "cssBytes": 226563,
+    "activeProductImagePayloadBytes": 1103598,
+    "frameworkAdded": false,
+    "runtimeDependencyAdded": false
+  },
+  "browserQa": {
+    "viewports": ["1440x1000", "768x900", "390x844", "375x812"],
+    "columns": [4, 3, 2, 2],
+    "horizontalOverflow": 0,
+    "brokenProductImages": 0,
+    "duplicateIds": 0,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "mobileTargetsBelow44px": 0,
+    "mobileVisibleTextBelow12px": 0,
+    "focusReturn": "passed",
+    "urlReloadState": "passed"
+  },
+  "accessibility": {
+    "semanticHeadings": "passed",
+    "logicalFocusOrder": "passed",
+    "visibleFocus": "passed",
+    "intentKeyboard": "passed",
+    "filterDialog": "passed",
+    "productInspector": "passed",
+    "escapeClose": "passed",
+    "focusReturn": "passed",
+    "liveRegions": "passed",
+    "reducedMotion": "passed"
+  },
+  "compliance": {
+    "hardGate": "passed",
+    "reviewWarnings": 70,
+    "strictDryRunAdvisoryItems": 77,
+    "newUnsupportedClaims": 0,
+    "partnerId": "2021428066",
+    "zinzinoCommissionDisclosure": "present",
+    "biolimitlessCompensationDisclosure": "present",
+    "pricingSourceDate": "2026-08-17",
+    "newYorkNotice": "present",
+    "fdaDisclaimer": "present where applicable",
+    "truthfulStructuredData": "passed"
+  },
+  "externalLinks": {
+    "activeProductDestinations": 45,
+    "activeProductDestinationsReachable": 45,
+    "zinzinoPartnerUrls": 36,
+    "biolimitlessReferralUrls": 9,
+    "publicExternalUnique": 98,
+    "publicExternalDirectlyReachable": 95,
+    "publicExternalBrowserVerifiedProtected": 3,
+    "customerFacingBroken": 0
+  },
+  "rollback": {
+    "v5_1TagCommit": "b5d35772e98580e253c08f6319aa8e412fa20aea",
+    "v5_1Unchanged": true,
+    "v8Target": "2bfabedfeaf86ec13bb479e6daa51d6df857bb46",
+    "process": "Create agent/v9-rollback from current main; revert f205890e as a merge commit with mainline parent 1; regenerate, validate, open and merge a normal PR; monitor Pages; verify V8. Never rewrite history or move v5.1.",
+    "required": false
+  },
+  "fixForward": {
+    "performed": false,
+    "pending": false
+  },
+  "observations": [
+    "GitHub warns that a Node 20-targeted action is being forced onto Node 24; validation and Pages succeeded.",
+    "The final report-only publication changes no public output."
+  ],
+  "releaseDecision": "V9 RELEASED AND VERIFIED"
+}
