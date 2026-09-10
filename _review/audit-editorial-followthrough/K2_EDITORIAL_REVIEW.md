@@ -1,0 +1,50 @@
+# K2: completed editorial review and evidence update
+
+NON-PUBLIC — September 10, 2026. Coding-assistant editorial review completed after the Xtend+ research review and before either subsequent full guide. **Clinical, company/compliance and publication approval remain pending.** Completion here means the existing manuscript was evaluated and a concrete revision prepared, not that the scientific publication gate has been cleared.
+
+Preserved inputs: [September 6 original manuscript](../editorial-hero-review/VITAMIN_K2_DRAFT.md), [September 6 evidence addendum](../growth-trust-conversion/K2_REVIEW_ADDENDUM.md), [Core Four backlog](../../reports/v11-3/V11_3_CORE_FOUR_EDUCATION_BACKLOG.md). They were read and remain unchanged. The revised manuscript is [VITAMIN_K2_DRAFT_REFINED.md](VITAMIN_K2_DRAFT_REFINED.md).
+
+## Decisions applied to the manuscript
+
+| Existing element / gap | Editorial decision and rationale |
+| --- | --- |
+| K1/K2 and MK terminology | Retain, with food context. Different molecular forms cannot be treated as interchangeable interventions. |
+| Nutrient physiology versus disease prevention | Retain. Describe study outcomes before suggesting any consequence for the reader. |
+| Original 2022 valve-calcification example | Retain, but pair with the newer coronary trial so one null study is not the entire evidence story. |
+| September 6 addendum separate from reader draft | Integrate the 2026 result with explicit imaging-versus-clinical-event language. The addendum must not be lost when someone reviews the manuscript alone. |
+| Bone outcomes missing | Add one positive site-specific trial and a later contrasting three-year trial. Both address bone measures; neither supports a general promise of fracture prevention in this guide. |
+| 2023 related coronary analysis | Keep in the evidence notes, identifying its parent trial and subgroup status. Avoid double-counting as replication. |
+| Intake and safety | Clarify that no separate K2 supplement target is established by the general vitamin-K intake guidance and that an absent upper limit is not a guarantee of unlimited safety. Retain warfarin/vitamin-K-antagonist caution. |
+| Product-label paragraph | Retain the practical label-reading exercise; omit branded examples because BioLimitless label ingredients/amounts remain unverified in the repository. |
+| Closing language | Replace the formulaic closing with a concrete question about form, outcome and applicability. No purchase recommendation or diagnostic quiz. |
+
+## Source ledger and evidence fit
+
+All sources below retrieved September 10, 2026. Primary trial records and abstracts were inspected; complete papers/supplements and a formal risk-of-bias assessment are **not** claimed. Doses describe trials only.
+
+| Source and publication date | Population/intervention/comparison/outcome | Interpretation and remaining checks |
+| --- | --- | --- |
+| [NIH ODS Vitamin K](https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/), page update March 29, 2021 | Government reference on vitamin-K biology, food sources, intake framework, safety and interactions. | Terminology and medication support; not a 2026 literature review or proof for any product. The retrieval date does not refresh its publication date. |
+| [Diederichsen et al., Circulation 2022; PMID 35465686](https://pubmed.ncbi.nlm.nih.gov/35465686/), DOI 10.1161/CIRCULATIONAHA.121.057008 | Randomized double-blind placebo trial, 365 men with aortic valve calcification; MK-7 720 mcg plus vitamin D 25 mcg daily, two years. Primary valve-calcification progression did not differ significantly, P=.64. | Selected older male population, combined intervention, imaging outcome. It cannot isolate K2 or establish universal ineffectiveness. Full text and supplement check remain pending; the PMC link again presented a browser challenge. |
+| [Vossen et al., JAMA Cardiology 2026; PMID 42268593](https://pubmed.ncbi.nlm.nih.gov/42268593/), issue date August 1, 2026; DOI 10.1001/jamacardio.2026.1279 | Symptomatic coronary disease with baseline CAC 50–400 AU; 180 randomized, abstract reports 85 receiving MK-7 and 82 placebo; 360 mcg/day, two years. CAC medians rose from 135 to 184 AU with MK-7 and 145 to 214 AU with placebo; adjusted between-group difference P=.02. | Both groups progressed. Imaging results do not demonstrate fewer heart attacks. Do not calculate a clinical risk reduction from these medians. Resolve the randomized/receiving/analysis counts and missingness. The primary publication leaves plaque-stability significance uncertain. PubMed discloses Schurgers' outside-work Gnosis grants and Coagulation Profile shares; full funding/sponsor-role assessment pending. |
+| [Publisher's 2026 primary article abstract](https://jamanetwork.com/journals/jamacardiology/article-abstract/2850256) | Publisher abstract corroborates the direction and endpoint of the newer CAC result. | The full-article link redirected to an abstract with access options; complete methods and supplements were unavailable in this pass. PubMed lists PMC availability on June 10, 2027. Reader comments on the page were not used as scientific evidence. |
+| [Hasific et al., JACC Advances 2023; PMID 38938724](https://pubmed.ncbi.nlm.nih.gov/38938724/), November 24, 2023; DOI 10.1016/j.jacadv.2023.100643 | Coronary analysis of 304 men from K2+D work. Mean CAC change 203 versus 254 AU, P=.089 overall; baseline CAC ≥400 subgroup 288 versus 380 AU, P=.047. | Same research cohort as the earlier valve study, different analysis; not independent replication. The subgroup cannot replace the overall result. Check prespecification and multiplicity. PMC full-text route returned a browser challenge; complete disclosures remain pending. |
+| [Haroon et al., Trevasc-HDK 2023; PMID 37705910](https://pubmed.ncbi.nlm.nih.gov/37705910/) | Single-center randomized hemodialysis study, MK-7 360 mcg three times weekly versus control for 18 months. 178 randomized, 138 completed. CAC relative mean difference 0.85 (95% CI 0.55–1.31); composite MACE/mortality HR 0.98 (0.50–1.94). | Null/inconclusive estimates, attrition, dialysis population, and a different schedule. Do not call the groups equivalent or infer effectiveness in ordinary consumers. A direct open returned no body; the indexed PubMed abstract was available. Full paper/disclosures pending. |
+| [Knapen et al., Osteoporosis International 2013; PMID 23525894](https://pubmed.ncbi.nlm.nih.gov/23525894/) | 244 healthy postmenopausal women; MK-7 180 mcg/day versus placebo for three years. Less decline in bone mineral content/density at lumbar spine and femoral neck, but not total hip; vertebral-height measures also assessed. | Positive but site-specific findings. Do not restate vertebral-height change as a proven reduction in clinical fractures. Full effect estimates, missingness, trial multiplicity and industry/funding disclosures need full-paper review. |
+| [Rønn et al., Osteoporosis International 2021; PMID 33030563](https://pubmed.ncbi.nlm.nih.gov/33030563/), online October 8, 2020; DOI 10.1007/s00198-020-05638-z | 142 postmenopausal women with osteopenia; MK-7 375 mcg/day versus placebo, three years; both groups received D3 38 mcg and calcium 800 mg/day. Osteocalcin carboxylation improved, but bone density and microarchitecture did not differ at three years. | Biomarker improvement did not deliver the measured bone outcomes. The earlier one-year report must not be treated as independent replication; its favorable microarchitecture result did not persist as a between-group difference at three years. Full disclosures and analysis review pending. |
+
+## Wider search and remaining synthesis work
+
+Searches included web-indexed PubMed queries for MK-7 bone-density randomized trials, vitamin K2/fracture reviews, and 2025–2026 trials. This is a bounded update, not an exhaustive systematic review. A recent [2025 biomarker-review record, PMID 41268154](https://pubmed.ncbi.nlm.nih.gov/41268154/) and [2025 dietary-intake/fracture-review record, PMID 40947710](https://pubmed.ncbi.nlm.nih.gov/40947710/) were identified as leads for the qualified reviewer. They are secondary evidence, not used as proof of a supplement benefit in the manuscript. The latter concerns dietary associations; it cannot establish K2 supplement causality. The reviewer should reconcile inclusion criteria, retractions, forms, bias and clinical versus surrogate outcomes before adding any pooled effect.
+
+An older [2019 systematic-review record, PMID 31076817](https://pubmed.ncbi.nlm.nih.gov/31076817/) specifically flags integrity concerns in earlier evidence; this makes assessment of included trials and retractions a required review task, not a reason to discard every K2 result. This packet makes no pooled efficacy claim from that review. Current primary evidence, not a review headline, supports the reader examples above.
+
+## Publication gates left open
+
+1. Qualified nutrition/medical review of exact text, safety and balance; record the real person's name, date and scope only after it happens.
+2. Full-paper/supplement and registration review, with effect-size/uncertainty checks, analysis-population reconciliation, sponsor role, conflicts and bias. Abstracts do not clear these requirements.
+3. Update the bounded search through the eventual publication date and assess bone/fracture and cardiovascular clinical outcomes, including contradictory and corrected/retracted evidence.
+4. Company/compliance review of commercial context and disclosures. Any product connection requires its separately verified and approved current label plus a distinct claims review.
+5. Separate authorization for a public article, then canonical integration, nonpublic preview, validation and release review. No route, sitemap, search record, public count or metadata is created here.
+
+The present editorial pass is finished, permitting the next **nonpublic drafting** step requested by the owner. It is not clinical clearance and does not silently mark any unchecked publication gate as complete.
