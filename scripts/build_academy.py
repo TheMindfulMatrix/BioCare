@@ -1,20 +1,5 @@
 """Branded previews and genuinely interactive free samples; never a paywall."""
 import json
-import re
-
-
-def academy_header(header):
-    """Native mobile disclosure avoids the late JS-expanded-to-collapsed shift."""
-    match = re.search(r'<ul id="primary-links" class="nav-links">.*?</ul>', header, re.S)
-    if not match:
-        raise ValueError('Academy navigation source changed; inspect before building')
-    mobile = match.group().replace('class="nav-links"', 'class="academy-mobile-links"')
-    header = header.replace(match.group(), match.group().replace('id="primary-links"', 'id="academy-desktop-links"').replace('class="nav-links"', 'class="nav-links academy-desktop-links"'))
-    menu = '<details class="academy-native-menu"><summary aria-controls="primary-links">Menu<span class="visually-hidden">: primary navigation</span></summary>' + mobile + '</details>'
-    header, count = re.subn(r'<button class="nav-toggle".*?</button>', lambda _: menu, header, count=1, flags=re.S)
-    if count != 1:
-        raise ValueError('Academy navigation toggle missing')
-    return header
 
 def photo(name, alt, *, hero=False):
     return f'<img src="assets/images/academy/{name}-1280.webp" srcset="assets/images/academy/{name}-640.webp 640w, assets/images/academy/{name}-1280.webp 1280w" sizes="(max-width: 44rem) 100vw, 50vw" width="1280" height="853" alt="{alt}" decoding="async" {"fetchpriority=high" if hero else "loading=lazy"}>'
@@ -28,7 +13,7 @@ def track_card(partner=False):
     name, label, title, description, href, link = (
         ("partner-practice", "02 / Independent business", "Partner Practice", "Real skills. Thoughtful conversations. Your own direction.", "partners.html", "Explore partner learning")
         if partner else
-        ("everyday-matrix", "01 / Everyday life", "Everyday Matrix", "Food, movement, rest. Make room for what matters.", "#sample", "Try a free lesson")
+        ("everyday-matrix", "01 / Everyday life", "Everyday Matrix", "Food, movement, rest. Make room for what matters.", "#course-overview", "Explore everyday learning")
     )
     return f'<a class="academy-choice {"academy-choice--partner" if partner else ""}" href="{href}"><div class="academy-choice__visual">{photo(name, "", hero=not partner)}<span class="academy-cover-index" aria-hidden="true">{"02" if partner else "01"}</span></div><div class="academy-choice__copy"><span class="academy-label">{label}</span><h2>{title}</h2><p>{description}</p><span class="academy-choice__link">{link} <b aria-hidden="true">↗</b></span></div></a>'
 
@@ -88,20 +73,34 @@ def experience_summary(partner=False):
     return f'''<section class="academy-section academy-section--brief" id="course-experience"><div class="container academy-experience"><div><p class="academy-label">OPTIONAL DEEPER LEARNING</p><h2>{title}</h2><p>{fit}</p><a class="academy-text-link" href="explore.html">Keep exploring products →</a></div><div class="academy-experience__steps"><article><span>01 / UNDERSTAND</span><h3>Teaching with context.</h3><p>The private course candidate includes written lessons, captioned core videos, worked examples and source notes. Content and learner review remain pending.</p></article><article><span>02 / PRACTISE</span><h3>Three connected labs.</h3><p>{tools} The interactive sample below is free; full course labs are not publicly available.</p></article><article><span>03 / MAKE</span><h3>A capstone you can explain.</h3><p>{artifact} Practice is not a professional credential or evidence of health or business results.</p></article></div></div></section>'''
 
 
+def course_overview(course, *, partner=False):
+    """Help visitors find the sample, curriculum and access limits before scrolling."""
+    name = "Partner Practice" if partner else "Everyday Matrix"
+    focus = "Explore costs, product literacy and permission-based communication before deciding whether independent partner work fits." if partner else "Build an adaptable daily plan and practise asking clearer questions about evidence, optional products and testing."
+    return f'''<section class="academy-section academy-section--white academy-course-overview" id="course-overview" aria-labelledby="course-overview-title"><div class="container"><div class="academy-course-heading"><div><p class="academy-label">COURSE PREVIEW / {len(course["modules"]):02d} MODULES</p><h2 id="course-overview-title">{name}</h2><p>{focus}</p></div><p class="academy-enrollment-status"><span aria-hidden="true"></span>Enrollment closed<span>Try the free sample today.</span></p></div><dl class="academy-course-facts"><div><dt>Starting point</dt><dd>Adults 18+ · no prior course required</dd></div><div><dt>Course format in review</dt><dd>Written lessons, captioned videos and practice</dd></div><div><dt>Available on this page</dt><dd>One free sample and the course outline</dd></div></dl><nav class="academy-course-nav" aria-label="{name} sections"><a href="#sample">01 / Try the free sample <span aria-hidden="true">↗</span></a><a href="#curriculum">02 / Explore the course map <span aria-hidden="true">↓</span></a><a href="#access-questions">03 / Access and saving <span aria-hidden="true">↓</span></a></nav></div></section>'''
+
+
 def access_faq():
-    return '''<section class="academy-section academy-section--white" id="access-questions"><div class="container academy-faq"><div><p class="academy-label">CLEAR BEFORE YOU COMMIT</p><h2>Your questions,<br>without the pressure.</h2></div><div><details><summary>What can I use today?</summary><p>The free interactive sample on this page and the main website’s free education. Full courses are in private review and are not open for enrollment.</p></details><details><summary>Will I need to buy products or become a partner?</summary><p>No. The learning paths are optional. Product purchases, course enrollment and business participation are separate decisions. A reasoned decision not to buy or join belongs in the learning.</p></details><details><summary>How will access, progress and support work?</summary><p>Managed accounts, protected lessons and saved progress are being evaluated; they are not active here. Access duration, support capacity, pricing and refund terms will be clearly reviewed before a course can be purchased. This page creates no student account.</p></details><details><summary>Does a source link mean the course is endorsed?</summary><p>No. Sources support specific teaching points. General health guidance is not personal advice, and ingredient research does not automatically establish a finished-product result. This is independent education, not an official Zinzino course.</p></details><details><summary>Can I stay with the free website?</summary><p>Absolutely. Continue through <a href="testing.html">testing journeys</a>, the <a href="library.html">Library</a>, <a href="evidence.html">Evidence</a> and <a href="explore.html">products</a>. You do not need a course to use them.</p></details></div></div></section>'''
+    return '''<section class="academy-section academy-section--white" id="access-questions"><div class="container academy-faq"><div><p class="academy-label">CLEAR BEFORE YOU COMMIT</p><h2>Your questions,<br>without the pressure.</h2></div><div>
+      <details><summary>What can I use today?</summary><p>The free interactive sample on this page and the main website’s free education. Full courses are in private review and are not open for enrollment.</p></details>
+      <details><summary>Will I need to buy products or become a partner?</summary><p>No. The learning paths are optional. Product purchases, course enrollment and business participation are separate decisions. A reasoned decision not to buy or join belongs in the learning.</p></details>
+      <details><summary>How will access, progress and support work?</summary><p>Managed accounts, protected lessons and saved progress are being evaluated; they are not active here. Access duration, support capacity, pricing and refund terms will be clearly reviewed before a course can be purchased. This page creates no student account.</p><p>Public account sign-in will be linked here when enrollment opens. For questions before then, <a href="about.html#contact-title">contact The Mindful Matrix</a>.</p></details>
+      <details><summary>What gets saved, and where?</summary><p>The free sample keeps choices only for this visit. Nothing is saved or sent by the sample.</p><p>In the full course experience being reviewed, four self-review marks per module can sync to an account. Written responses remain in the current page until downloaded; download before reloading or closing the page, because signing in does not restore written work. A self-review mark records your own activity, not demonstrated mastery.</p></details>
+      <details><summary>Does a source link mean the course is endorsed?</summary><p>No. Sources support specific teaching points. General health guidance is not personal advice, and ingredient research does not automatically establish a finished-product result. This is independent education, not an official Zinzino course.</p></details>
+      <details><summary>Can I stay with the free website?</summary><p>Absolutely. Continue through <a href="testing.html">testing journeys</a>, the <a href="library.html">Library</a>, <a href="evidence.html">Evidence</a> and <a href="explore.html">products</a>. You do not need a course to use them.</p></details>
+    </div></div></section>'''
 
 
 def render(data, wellness, partner, api):
     hero = f'<section class="academy-hero"><div class="container">{masthead("#curriculum", "See the course map")}<div class="academy-intro"><h1>Learn it.<br><em>Live it.</em></h1><div class="academy-intro__copy"><p>Ideas are only the beginning. Turn what you learn into something you can actually practise.</p><p>Two paths. One thoughtful next step.</p></div></div><div class="academy-choices">{track_card()}{track_card(True)}</div><p class="academy-preview-note">Course previews · Not available for purchase. Original illustrative imagery.</p></div></section>'
-    body = experience_summary() + sample_player(wellness["practice"]) + curriculum(wellness, api)
+    body = course_overview(wellness) + experience_summary() + sample_player(wellness["practice"]) + curriculum(wellness, api)
     body += '<section class="academy-section"><div class="container academy-approach"><div><p class="academy-label">LESS INFORMATION OVERLOAD</p><h2>Notice.<br>Try.<br><em>Make it yours.</em></h2></div><div><article><span>01</span><div><h3>One useful idea</h3><p>Clear explanations with context and limitations. Explore the evidence without treating a product as a promise.</p></div></article><article><span>02</span><div><h3>A practice you can adapt</h3><p>Small exercises and flexible routines. General education, not a personal prescription or clinician-reviewed training.</p></div></article><article><span>03</span><div><h3>Space to reflect</h3><p>Bring your questions to a qualified healthcare professional when personal circumstances or treatment decisions are involved.</p></div></article></div></div></section>' + closing()
     body = body.replace(closing(), access_faq() + closing())
     page(data, api, "learning.html", "Matrix Academy", "Two original learning paths: everyday habits and independent network-marketing skills. Try an interactive free sample.", hero, body)
 
     hero = f'<section class="academy-hero academy-hero--partner"><div class="container">{masthead("learning.html", "Everyday learning")}<div class="academy-partner-intro"><div><p class="academy-label">02 / PARTNER PRACTICE</p><h1>Build skills.<br><em>Not pressure.</em></h1><p class="academy-partner-lead">A thoughtful introduction to independent business, the Zinzino products, and conversations people actually want to have.</p><a class="academy-button" href="#sample">Try the conversation exercise <span aria-hidden="true">↗</span></a><a class="academy-text-link" href="#curriculum">Explore the course map →</a><p class="academy-preview-note">Original course in development · Not available for purchase.</p></div><figure class="academy-partner-photo">{photo("partner-practice", "Illustrative scene of adults collaborating around a notebook and laptop.", hero=True)}<figcaption><span>Partner Practice</span><span>INDEPENDENT LEARNING</span></figcaption></figure></div></div></section>'
     body = '<section class="academy-section academy-section--brief"><div class="container academy-trust-strip"><h2>Clear expectations.<br>Room to decide.</h2><div><p>The Mindful Matrix is an independent partner, not Zinzino corporate. A commercial relationship may benefit us if you purchase or join through our partner connections. This is not an official Zinzino course.</p><p>Participation involves costs and uncertain results. The FTC cautions that many participants in legitimate multilevel marketing businesses earn little or nothing, and some lose money. Review current local agreements, costs, cancellation terms and official disclosures before deciding.</p><a href="https://consumer.ftc.gov/articles/multi-level-marketing-businesses-and-pyramid-schemes" target="_blank" rel="noopener noreferrer">Read the FTC consumer guide ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div></div></section>'
-    body += experience_summary(True) + sample_player(partner["practice"], True) + curriculum(partner, api, partner=True)
+    body += course_overview(partner, partner=True) + experience_summary(True) + sample_player(partner["practice"], True) + curriculum(partner, api, partner=True)
     products = {p["id"]: p for p in api.active_products(data["catalog"])}
     product_cards = []
     for pid in ("balance-test", "balanceoil-plus-300ml"):
@@ -120,6 +119,6 @@ def page(data, api, path, title, description, hero, body, track=""):
         structured_data=[api.organization_schema(data["site"]["metadata"]), api.website_schema(data["site"]["metadata"]), api.breadcrumb_schema(data["site"]["metadata"], [("Home", ""), (title, path)])])
     head += f'\n<link rel="stylesheet" href="{api.versioned_asset("", "assets/css/academy.css")}">\n<script src="{api.versioned_asset("", "assets/js/academy.js")}" defer></script>'
     api.write_output(api.ROOT / path, api.render_template("academy.html", {
-        "{{DOCUMENT_HEAD}}": head, "{{SHARED_HEADER}}": academy_header(api.shared_header_markup(data, prefix="", current=path.removesuffix(".html"))),
+        "{{DOCUMENT_HEAD}}": head, "{{SHARED_HEADER}}": api.shared_header_markup(data, prefix="", current=path.removesuffix(".html")),
         "{{SHARED_FOOTER}}": api.shared_footer_markup(data, prefix=""), "{{TRACK_CLASS}}": api.esc(track, attribute=True),
         "{{ACADEMY_HERO}}": hero, "{{ACADEMY_BODY}}": body}))

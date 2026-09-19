@@ -269,6 +269,11 @@ def shared_header_markup(data: dict, *, prefix: str, current: str) -> str:
     start_current = ' aria-current="page"' if current == "start" else ""
     library_current = ' aria-current="page"' if current in {"library", "article"} else ""
     shop_current = ' aria-current="page"' if current == "shop" else ""
+    academy_current = ' aria-current="page"' if current in {"learning", "partners"} else ""
+    links = f'''<li><a href="{prefix}explore.html"{explore_current}>Explore</a></li>
+        <li><a href="{prefix}shop.html"{shop_current}>Products</a></li>
+        <li><a href="{prefix}library.html"{library_current}>Library</a></li>
+        <li><a href="{prefix}start.html"{start_current}>Start Here</a></li>'''
     products_by_id = {product["id"]: product for product in data["products"]}
     featured = products_by_id[data["featuredProductId"]]
     featured_url = esc(featured["destination"], attribute=True)
@@ -276,13 +281,8 @@ def shared_header_markup(data: dict, *, prefix: str, current: str) -> str:
     <nav class="nav-shell container-wide" aria-label="Primary navigation">
       <a class="brand-link" href="{home}" aria-label="The Mindful Matrix home"><img src="{prefix}assets/brand/lockup-dark.svg" width="430" height="72" alt="The Mindful Matrix"></a>
       <form class="header-search" role="search" action="{prefix}explore.html"><label class="visually-hidden" for="matrix-search-{current}">Search the Matrix</label><input id="matrix-search-{current}" name="q" type="search" autocomplete="off" placeholder="Search the Matrix…"><button type="submit" aria-label="Submit Matrix search">Search</button></form>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links"><span class="visually-hidden">Open navigation</span><span class="nav-toggle__lines" aria-hidden="true"></span></button>
-      <ul id="primary-links" class="nav-links">
-        <li><a href="{prefix}explore.html"{explore_current}>Explore</a></li>
-        <li><a href="{prefix}shop.html"{shop_current}>Products</a></li>
-        <li><a href="{prefix}library.html"{library_current}>Library</a></li>
-        <li><a href="{prefix}start.html"{start_current}>Start Here</a></li>
-      </ul>
+      <details class="site-native-menu"><summary aria-controls="primary-links">Menu<span class="visually-hidden">: primary navigation</span></summary><ul id="primary-links" class="site-mobile-links">{links}<li><a href="{prefix}testing.html">Testing journeys</a></li><li><a href="{prefix}learning.html"{academy_current}>Academy · free previews</a></li></ul></details>
+      <ul class="nav-links site-desktop-links">{links}</ul>
     </nav>
   </header>'''
 
@@ -971,8 +971,8 @@ def library_index_markup(library: dict, home: dict) -> str:
             cards = "".join(library_article_markup(article, library) for article in matches)
             groups.append(f'''<section id="category-{esc(category["id"], attribute=True)}" class="library-group" aria-labelledby="category-{esc(category["id"], attribute=True)}-title"><h3 id="category-{esc(category["id"], attribute=True)}-title">{esc(category["name"])}</h3><div class="library-article-grid">{cards}</div></section>''')
         options = "".join(f'<option value="{esc(category["id"], attribute=True)}">{esc(category["name"])}</option>' for category in library["categories"])
-        controls = f'<form class="library-controls" data-library-controls><label>Search guides<input type="search" placeholder="Search the Library…" data-library-query></label><label>Category<select data-library-category><option value="all">All categories</option>{options}</select></label><button type="button" data-library-core-four aria-pressed="false">Core Four</button><button type="reset">Clear</button><p data-library-count aria-live="polite">{len(articles)} guides</p></form>'
-        return '<div data-library-state="published">' + controls + "".join(groups) + '<p data-library-empty hidden>No guides match. Clear filters or explore all departments.</p></div>'
+        controls = f'<form class="library-controls" data-library-controls hidden><label>Search guides<input type="search" placeholder="Search the Library…" data-library-query></label><label>Category<select data-library-category><option value="all">All categories</option>{options}</select></label><button type="button" data-library-core-four aria-pressed="false">Core Four</button><button type="reset" data-library-reset hidden>Clear all</button><p data-library-count role="status" aria-live="polite">{len(articles)} guides</p></form>'
+        return '<div data-library-state="published">' + controls + "".join(groups) + '<div class="library-no-results" data-library-empty hidden><h3>No guides match these filters.</h3><p>Try a broader term or return to the full collection.</p><button class="button button-secondary" type="button" data-library-empty-reset>Show all guides</button></div></div>'
     return f'''<div class="library-empty" data-library-state="empty" data-reveal>
       <div class="library-empty__signal" aria-hidden="true"><span></span><span></span><span></span></div>
       <div><p class="interface-label">Coming to the Library</p><h3>{esc(home["library"]["status"])}</h3><p>{esc(home["library"]["statusCopy"])}</p><div class="library-empty__categories">{category_badges(library)}</div></div>

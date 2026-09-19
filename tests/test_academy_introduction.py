@@ -8,8 +8,8 @@ class AcademyIntroductionTests(unittest.TestCase):
     def test_native_mobile_menu_does_not_depend_on_deferred_javascript(self):
         for name in ('learning.html','partners.html'):
             source=(ROOT/name).read_text(encoding='utf-8')
-            self.assertIn('<details class="academy-native-menu">',source)
-            self.assertIn('class="nav-links academy-desktop-links"',source)
+            self.assertIn('<details class="site-native-menu">',source)
+            self.assertIn('class="nav-links site-desktop-links"',source)
             self.assertNotIn('class="nav-toggle"',source)
             self.assertEqual(source.count('id="primary-links"'),1)
     def test_both_introductions_include_fit_materials_and_honest_status(self):
