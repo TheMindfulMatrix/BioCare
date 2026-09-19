@@ -1,0 +1,1011 @@
+{
+  "active_products": 45,
+  "covered_with_topic_context": 45,
+  "products": [
+    {
+      "product_id": "balance-basic-kit",
+      "name": "Balance Test Basic Kit",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balance-test",
+      "name": "BalanceTest",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "medlineplus-lab-results"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "gut-health-test",
+      "name": "Gut Health Test",
+      "topic_source_ids": [
+        "medlineplus-lab-results",
+        "ipa-observational-study"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "gut-health-test-x2",
+      "name": "Gut Health Test x2",
+      "topic_source_ids": [
+        "medlineplus-lab-results",
+        "ipa-observational-study"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "vitamin-d-test",
+      "name": "Vitamin D Test",
+      "topic_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "medlineplus-vitamin-d-testing",
+        "medlineplus-lab-results",
+        "endocrine-vitamin-d-guideline"
+      ],
+      "specific_navigation_guides": [
+        "vitamin-d-testing-context"
+      ],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "hba1c-test",
+      "name": "HbA1c Test",
+      "topic_source_ids": [
+        "medlineplus-hba1c-test",
+        "medlineplus-lab-results",
+        "niddk-a1c"
+      ],
+      "specific_navigation_guides": [
+        "hba1c-understanding-results"
+      ],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-plus-300ml",
+      "name": "BalanceOil+, 300 ml",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-plus-100ml",
+      "name": "BalanceOil+ Orange Lemon Mint, 100 ml",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-plus-100ml-6pcs",
+      "name": "BalanceOil+ Orange Lemon Mint, 100 ml, 6 pcs",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-plus-premium",
+      "name": "BalanceOil+ Premium, 300 ml",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-plus-aquax",
+      "name": "BalanceOil+ AquaX, 300 ml",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-plus-vegan",
+      "name": "BalanceOil+ Vegan",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "balanceoil-tutti-frutti",
+      "name": "BalanceOil Tutti Frutti, 300 ml",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "essent-plus-premium",
+      "name": "Essent+ Premium",
+      "topic_source_ids": [
+        "nih-ods-omega-3-health-professional",
+        "nccih-antioxidants"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "revoo",
+      "name": "R.E.V.O.O",
+      "topic_source_ids": [
+        "nccih-antioxidants"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "dosage-cups",
+      "name": "Dosage Cups, 10 pc",
+      "topic_source_ids": [
+        "nih-ods-dietary-supplements-background"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "zinobiotic-plus",
+      "name": "ZinoBiotic+",
+      "topic_source_ids": [
+        "nccih-probiotics-usefulness-safety",
+        "niddk-fiber"
+      ],
+      "specific_navigation_guides": [
+        "fiber-prebiotics-probiotics"
+      ],
+      "department_guides": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label",
+        "digestive-enzymes-context",
+        "fiber-prebiotics-probiotics",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "x-gold-plus",
+      "name": "X Gold+ 250 ml",
+      "topic_source_ids": [
+        "nccih-turmeric"
+      ],
+      "specific_navigation_guides": [
+        "botanicals-extracts-evidence"
+      ],
+      "department_guides": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label",
+        "digestive-enzymes-context",
+        "fiber-prebiotics-probiotics",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "zinogene-plus",
+      "name": "ZinoGene+",
+      "topic_source_ids": [
+        "nih-ods-zinc",
+        "nih-ods-vitamin-c",
+        "nih-ods-immune-function",
+        "nccih-turmeric"
+      ],
+      "specific_navigation_guides": [
+        "botanicals-extracts-evidence",
+        "immune-nutrition-context"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "viva-plus",
+      "name": "Viva+",
+      "topic_source_ids": [
+        "nih-ods-magnesium",
+        "nih-ods-vitamin-c",
+        "nih-ods-iodine"
+      ],
+      "specific_navigation_guides": [
+        "magnesium-forms-and-safety"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "viva-plus-x2",
+      "name": "Viva+ x2",
+      "topic_source_ids": [
+        "nih-ods-magnesium",
+        "nih-ods-vitamin-c",
+        "nih-ods-iodine"
+      ],
+      "specific_navigation_guides": [
+        "magnesium-forms-and-safety"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "zinoshine-plus",
+      "name": "ZinoShine+",
+      "topic_source_ids": [
+        "nih-ods-magnesium",
+        "endocrine-vitamin-d-guideline"
+      ],
+      "specific_navigation_guides": [
+        "vitamin-d-testing-context",
+        "magnesium-forms-and-safety"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "xtend-plus",
+      "name": "Xtend+",
+      "topic_source_ids": [
+        "nih-ods-zinc",
+        "nih-ods-vitamin-b12",
+        "nih-ods-vitamin-c",
+        "nih-ods-folate",
+        "nih-ods-multivitamins",
+        "nih-ods-immune-function"
+      ],
+      "specific_navigation_guides": [
+        "immune-nutrition-context"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "xtend",
+      "name": "Xtend",
+      "topic_source_ids": [
+        "nih-ods-zinc",
+        "nih-ods-vitamin-b12",
+        "nih-ods-vitamin-c",
+        "nih-ods-folate",
+        "nih-ods-multivitamins",
+        "nih-ods-immune-function"
+      ],
+      "specific_navigation_guides": [
+        "immune-nutrition-context"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "protect-plus",
+      "name": "Protect+",
+      "topic_source_ids": [
+        "nih-ods-vitamin-c",
+        "nih-ods-immune-function"
+      ],
+      "specific_navigation_guides": [
+        "immune-nutrition-context"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "spirumax-plus",
+      "name": "SpiruMax+",
+      "topic_source_ids": [
+        "nccih-antioxidants"
+      ],
+      "specific_navigation_guides": [
+        "botanicals-extracts-evidence"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "phycosci-plus-x20",
+      "name": "PhycoSci+ X20",
+      "topic_source_ids": [
+        "nccih-antioxidants"
+      ],
+      "specific_navigation_guides": [
+        "botanicals-extracts-evidence"
+      ],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "leanshake-chocolate",
+      "name": "LeanShake Chocolate, portion pack",
+      "topic_source_ids": [
+        "nih-ods-exercise"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "leanshake-strawberry",
+      "name": "LeanShake Strawberry, portion pack",
+      "topic_source_ids": [
+        "nih-ods-exercise"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "leanshake-vanilla",
+      "name": "LeanShake Vanilla, portion pack",
+      "topic_source_ids": [
+        "nih-ods-exercise"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "leanshake-berry",
+      "name": "LeanShake Berry, portion pack",
+      "topic_source_ids": [
+        "nih-ods-exercise"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "shake-bottle",
+      "name": "Shake Bottle",
+      "topic_source_ids": [
+        "who-physical-activity"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "energy-bar-nut-seed",
+      "name": "Energy Bar Nut & Seed",
+      "topic_source_ids": [
+        "nih-ods-exercise",
+        "niddk-fiber"
+      ],
+      "specific_navigation_guides": [
+        "fiber-prebiotics-probiotics"
+      ],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "measuring-tape",
+      "name": "Measuring Tape",
+      "topic_source_ids": [
+        "who-physical-activity"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "collagen-boozt",
+      "name": "Collagen Boozt",
+      "topic_source_ids": [
+        "aad-skin-supplements",
+        "aad-beauty-evidence"
+      ],
+      "specific_navigation_guides": [
+        "skin-collagen-evidence"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "skin-collagen-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "skin-serum",
+      "name": "Skin Serum, 50 ml",
+      "topic_source_ids": [
+        "aad-skin-supplements",
+        "aad-sun-protection"
+      ],
+      "specific_navigation_guides": [
+        "skin-collagen-evidence"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "skin-collagen-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-dna-discovery-kit",
+      "name": "The DNA Discovery Kit",
+      "topic_source_ids": [
+        "medlineplus-genetic-limits",
+        "medlineplus-genetic-decisions"
+      ],
+      "specific_navigation_guides": [
+        "consumer-genetic-testing"
+      ],
+      "department_guides": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-becoming-biolimitless-book",
+      "name": "Becoming BioLimitless",
+      "topic_source_ids": [
+        "nih-ods-dietary-supplements-background"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-cell-signals",
+      "name": "Cell Signals",
+      "topic_source_ids": [
+        "nih-ods-vitamin-b12",
+        "nih-ods-folate"
+      ],
+      "specific_navigation_guides": [],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-detox-pro-plus",
+      "name": "Detox Pro Plus",
+      "topic_source_ids": [
+        "nccih-detox"
+      ],
+      "specific_navigation_guides": [
+        "detox-claims-and-evidence"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-magnesium-glycinate",
+      "name": "Magnesium Glycinate",
+      "topic_source_ids": [
+        "nih-ods-magnesium"
+      ],
+      "specific_navigation_guides": [
+        "magnesium-forms-and-safety"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-zinc-copper",
+      "name": "Zinc + Copper",
+      "topic_source_ids": [
+        "nih-ods-zinc",
+        "nih-ods-copper"
+      ],
+      "specific_navigation_guides": [
+        "zinc-copper-balance"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-vitamin-d3-k2",
+      "name": "Vitamin D3 + K2",
+      "topic_source_ids": [
+        "nih-ods-vitamin-d-health-professional",
+        "nih-ods-vitamin-k",
+        "endocrine-vitamin-d-guideline"
+      ],
+      "specific_navigation_guides": [
+        "vitamin-d-testing-context",
+        "vitamin-k2-context"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-biozyme",
+      "name": "BioZyme",
+      "topic_source_ids": [
+        "nccih-probiotics-usefulness-safety",
+        "hopkins-digestive-enzymes"
+      ],
+      "specific_navigation_guides": [
+        "digestive-enzymes-context",
+        "fiber-prebiotics-probiotics"
+      ],
+      "department_guides": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label",
+        "digestive-enzymes-context",
+        "fiber-prebiotics-probiotics",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    },
+    {
+      "product_id": "biolimitless-bio-basics-core-four",
+      "name": "The Bio Basics Core Four",
+      "topic_source_ids": [
+        "nih-ods-magnesium",
+        "nih-ods-zinc",
+        "nih-ods-copper",
+        "nih-ods-vitamin-k",
+        "nih-ods-multivitamins",
+        "hopkins-digestive-enzymes"
+      ],
+      "specific_navigation_guides": [
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "digestive-enzymes-context"
+      ],
+      "department_guides": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "finished_product_effectiveness_established_here": false,
+      "remaining_gap": "No finished-product efficacy claim established. Topic sources and catalog connections are educational navigation only."
+    }
+  ]
+}

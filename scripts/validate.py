@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 import re
 import struct
@@ -226,7 +227,9 @@ def validate_content(site: dict, library: dict) -> None:
     titles = [article.get("title") for article in library.get("articles", [])]
     check(len(titles) == len(set(titles)), "Library article titles must be unique")
     published_slugs = {article.get("slug") for article in library.get("articles", []) if article.get("status") == "published"}
-    check(len(published_slugs) == 10, "V3.1 requires ten published Library guides")
+    legacy_slugs = {"correlation-causation-relative-risk", "food-vs-omega-3-supplements", "gut-health-101", "gut-testing-biomarkers", "how-to-read-a-health-study", "how-to-read-a-supplement-label", "omega-3-what-the-numbers-mean", "performance-nutrition-basics", "recovery-after-training", "should-you-test-your-omega-3-levels"}
+    check(legacy_slugs <= published_slugs, "Preserve the ten approved Library guides")
+    public_sources = {item["id"]: item for item in json.loads((ROOT / "content/resources/public-sources.json").read_text(encoding="utf-8"))["records"]}
     for completed_category in ("gut-health", "performance", "research"):
         check(sum(1 for article in library.get("articles", []) if article.get("status") == "published" and article.get("category") == completed_category) >= 2, f"{completed_category}: V3.1 requires at least two published guides")
     for article in library.get("articles", []):
@@ -299,8 +302,17 @@ def validate_content(site: dict, library: dict) -> None:
         for product_term in ("balanceoil", "balancetest"):
             check(product_term not in educational_content, f"{label}: direct product promotion appears inside educational content")
         hero = article.get("hero")
-        if article.get("status") == "published":
-            check(bool(hero), f"{label}: published V3.1 guide requires topic-specific hero artwork")
+        if article.get("status") == "published" and label in legacy_slugs:
+            check(bool(hero), f"{label}: approved legacy guide requires its topic-specific hero artwork")
+        if article.get("status") == "published" and label not in legacy_slugs:
+            check(bool(article.get("sourceCheckedDate") and article.get("reviewStatus") and article.get("sourceIds")), f"{label}: new guides require source-check date, honest review status, and traceable sources")
+            for source_id in article.get("sourceIds", []):
+                source = public_sources.get(source_id)
+                check(bool(source and source["status"] == "published"), f"{label}: unknown or unpublished evidence source {source_id}")
+                if source:
+                    check(source["public_url"] in {item["url"] for item in article_sources}, f"{label}: source ID must match a visible citation")
+            for section in body_sections:
+                check(set(section.get("sourceIds", [])) <= set(article.get("sourceIds", [])), f"{label}: section citations must reference this guide's sources")
         if hero:
             hero_path = ROOT / hero.get("src", "missing")
             check(hero_path.is_file(), f"{label}: missing hero image")
@@ -487,7 +499,7 @@ def validate_content(site: dict, library: dict) -> None:
                 if derivative_path.is_file():
                     check(derivative.get("sha256") == sha256(derivative_path), f"{record.get('id', 'unknown visual')}: derivative SHA-256 mismatch")
                     check(image_dimensions(derivative_path) == (derivative.get("width"), derivative.get("height")), f"{record.get('id', 'unknown visual')}: derivative dimensions mismatch")
-        for article in (item for item in library["articles"] if item.get("status") == "published"):
+        for article in (item for item in library["articles"] if item.get("status") == "published" and item.get("hero")):
             check(article.get("hero", {}).get("src") in derivative_paths and article.get("hero", {}).get("srcSmall") in derivative_paths, f"{article['slug']}: responsive hero files must be covered by provenance")
 
 
@@ -609,7 +621,7 @@ def validate_v10_source_output(site: dict, library: dict, manifest: dict) -> Non
         label = record["id"]
         check(evidence.count(f'data-public-source="{label}"') == 1, f"{label}: published source card must be unique")
         for field in ("title", "publisher", "public_summary", "scope", "limitations", "public_url", "checked_date"):
-            check(str(record[field]) in evidence, f"{label}: evidence page missing {field}")
+            check(html.escape(str(record[field]), quote=False) in evidence, f"{label}: evidence page missing {field}")
     for record in manifest.get("records", []):
         if record.get("status") != "published":
             check(f'data-public-source="{record["id"]}"' not in evidence, f"{record['id']}: unpublished source leaked into Evidence page")
@@ -641,7 +653,7 @@ def validate_v10_source_output(site: dict, library: dict, manifest: dict) -> Non
             check(isinstance(documentation, list) and bool(documentation), f"{product.get('id')}: product inspector requires independent public context")
             for source in documentation or []:
                 check(source.get("id") in published_ids, f"{product.get('id')}: product inspector references an unpublished source")
-                check(source.get("relationship") in {"product-specific context", "department context — not product evidence"}, f"{product.get('id')}: source relationship must remain explicit")
+                check(source.get("relationship") in {"ingredient/topic context — not finished-product evidence", "department context — not product evidence"}, f"{product.get('id')}: source relationship must remain explicit")
 
     discovery = json.loads((ROOT / "content" / "discovery.json").read_text(encoding="utf-8"))
     for department in discovery["departments"]:
@@ -650,7 +662,7 @@ def validate_v10_source_output(site: dict, library: dict, manifest: dict) -> Non
         check(f'{len(department_sources)} public sources' in page, f"{department['intentId']}: manifest-derived public source count missing")
         check(f'../evidence.html?department={department["intentId"]}' in page, f"{department['intentId']}: filtered Evidence link missing")
         for source in department_sources:
-            check(source["title"] in page, f"{department['intentId']}: public source pathway missing {source['id']}")
+            check(html.escape(source["title"], quote=False) in page, f"{department['intentId']}: public source pathway missing {source['id']}")
 
     library_page = (ROOT / "library.html").read_text(encoding="utf-8")
     check('href="evidence.html"' in library_page and f"Inspect {len(published)} public sources" in library_page, "Library must provide a manifest-derived Evidence pathway")

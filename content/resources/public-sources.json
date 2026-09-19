@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "checked_date": "2026-08-21",
+  "checked_date": "2026-09-06",
   "records": [
     {
       "id": "nih-ods-omega-3-health-professional",
@@ -9,10 +9,31 @@
       "manufacturer": null,
       "resource_type": "government_fact_sheet",
       "evidence_role": "government_public_health",
-      "topic_ids": ["omega-3", "food-and-supplements"],
-      "department_ids": ["omega-nutrition", "test-measure"],
-      "product_ids": ["balance-test", "balanceoil-plus-300ml"],
-      "article_ids": ["food-vs-omega-3-supplements", "omega-3-what-the-numbers-mean", "should-you-test-your-omega-3-levels"],
+      "topic_ids": [
+        "omega-3",
+        "food-and-supplements"
+      ],
+      "department_ids": [
+        "omega-nutrition",
+        "test-measure"
+      ],
+      "product_ids": [
+        "balance-test",
+        "balanceoil-plus-300ml",
+        "balanceoil-plus-100ml",
+        "balanceoil-plus-100ml-6pcs",
+        "balanceoil-plus-premium",
+        "balanceoil-plus-aquax",
+        "balanceoil-plus-vegan",
+        "balanceoil-tutti-frutti",
+        "essent-plus-premium",
+        "balance-basic-kit"
+      ],
+      "article_ids": [
+        "food-vs-omega-3-supplements",
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels"
+      ],
       "public_url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/",
       "final_url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/",
       "publication_date": null,
@@ -34,10 +55,23 @@
       "manufacturer": null,
       "resource_type": "government_fact_sheet",
       "evidence_role": "government_public_health",
-      "topic_ids": ["vitamin-d", "testing-and-biomarkers"],
-      "department_ids": ["daily-wellness", "test-measure"],
-      "product_ids": ["vitamin-d-test", "biolimitless-vitamin-d3-k2"],
-      "article_ids": ["how-to-read-a-health-study", "how-to-read-a-supplement-label"],
+      "topic_ids": [
+        "vitamin-d",
+        "testing-and-biomarkers"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "test-measure"
+      ],
+      "product_ids": [
+        "vitamin-d-test",
+        "biolimitless-vitamin-d3-k2"
+      ],
+      "article_ids": [
+        "how-to-read-a-health-study",
+        "how-to-read-a-supplement-label",
+        "vitamin-d-testing-context"
+      ],
       "public_url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
       "final_url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
       "publication_date": null,
@@ -59,10 +93,22 @@
       "manufacturer": null,
       "resource_type": "government_fact_sheet",
       "evidence_role": "government_public_health",
-      "topic_ids": ["gut-and-digestion", "probiotics"],
-      "department_ids": ["gut-digestion"],
-      "product_ids": ["zinobiotic-plus", "biolimitless-biozyme"],
-      "article_ids": ["gut-health-101", "gut-testing-biomarkers"],
+      "topic_ids": [
+        "gut-and-digestion",
+        "probiotics"
+      ],
+      "department_ids": [
+        "gut-digestion"
+      ],
+      "product_ids": [
+        "zinobiotic-plus",
+        "biolimitless-biozyme"
+      ],
+      "article_ids": [
+        "gut-health-101",
+        "gut-testing-biomarkers",
+        "fiber-prebiotics-probiotics"
+      ],
       "public_url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety",
       "final_url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety",
       "publication_date": "2019-08",
@@ -84,10 +130,19 @@
       "manufacturer": null,
       "resource_type": "government_consumer_guide",
       "evidence_role": "government_public_health",
-      "topic_ids": ["hba1c", "testing-and-biomarkers"],
-      "department_ids": ["test-measure"],
-      "product_ids": ["hba1c-test"],
-      "article_ids": ["how-to-read-a-health-study"],
+      "topic_ids": [
+        "hba1c",
+        "testing-and-biomarkers"
+      ],
+      "department_ids": [
+        "test-measure"
+      ],
+      "product_ids": [
+        "hba1c-test"
+      ],
+      "article_ids": [
+        "how-to-read-a-health-study"
+      ],
       "public_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
       "final_url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
       "publication_date": null,
@@ -109,10 +164,21 @@
       "manufacturer": null,
       "resource_type": "regulatory_guidance",
       "evidence_role": "government_public_health",
-      "topic_ids": ["supplement-labels", "claims-and-regulation"],
-      "department_ids": ["daily-wellness", "omega-nutrition", "gut-digestion", "performance-recovery", "healthy-aging"],
+      "topic_ids": [
+        "supplement-labels",
+        "claims-and-regulation"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "omega-nutrition",
+        "gut-digestion",
+        "performance-recovery",
+        "healthy-aging"
+      ],
       "product_ids": [],
-      "article_ids": ["how-to-read-a-supplement-label"],
+      "article_ids": [
+        "how-to-read-a-supplement-label"
+      ],
       "public_url": "https://www.fda.gov/food/dietary-supplements-guidance-documents-regulatory-information/dietary-supplement-labeling-guide",
       "final_url": "https://www.fda.gov/food/dietary-supplements-guidance-documents-regulatory-information/dietary-supplement-labeling-guide",
       "publication_date": "2005-04",
@@ -134,10 +200,22 @@
       "manufacturer": null,
       "resource_type": "regulatory_guidance",
       "evidence_role": "government_public_health",
-      "topic_ids": ["supplement-labels", "claims-and-regulation"],
-      "department_ids": ["daily-wellness", "omega-nutrition", "gut-digestion", "performance-recovery", "healthy-aging"],
+      "topic_ids": [
+        "supplement-labels",
+        "claims-and-regulation"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "omega-nutrition",
+        "gut-digestion",
+        "performance-recovery",
+        "healthy-aging"
+      ],
       "product_ids": [],
-      "article_ids": ["how-to-read-a-supplement-label", "how-to-read-a-health-study"],
+      "article_ids": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study"
+      ],
       "public_url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-food-dietary-supplements",
       "final_url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/label-claims-food-dietary-supplements",
       "publication_date": null,
@@ -159,10 +237,25 @@
       "manufacturer": null,
       "resource_type": "government_consumer_guide",
       "evidence_role": "government_public_health",
-      "topic_ids": ["supplement-labels", "claims-and-regulation", "quality"],
-      "department_ids": ["daily-wellness", "omega-nutrition", "gut-digestion", "performance-recovery", "healthy-aging"],
-      "product_ids": [],
-      "article_ids": ["how-to-read-a-supplement-label"],
+      "topic_ids": [
+        "supplement-labels",
+        "claims-and-regulation",
+        "quality"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "omega-nutrition",
+        "gut-digestion",
+        "performance-recovery",
+        "healthy-aging"
+      ],
+      "product_ids": [
+        "dosage-cups",
+        "biolimitless-becoming-biolimitless-book"
+      ],
+      "article_ids": [
+        "how-to-read-a-supplement-label"
+      ],
       "public_url": "https://ods.od.nih.gov/factsheets/dietarysupplements-Consumer/",
       "final_url": "https://ods.od.nih.gov/factsheets/dietarysupplements-Consumer/",
       "publication_date": null,
@@ -184,10 +277,20 @@
       "manufacturer": null,
       "resource_type": "government_guideline",
       "evidence_role": "independent_guideline",
-      "topic_ids": ["physical-activity", "performance-and-recovery"],
-      "department_ids": ["performance-recovery", "daily-wellness"],
+      "topic_ids": [
+        "physical-activity",
+        "performance-and-recovery"
+      ],
+      "department_ids": [
+        "performance-recovery",
+        "daily-wellness"
+      ],
       "product_ids": [],
-      "article_ids": ["performance-nutrition-basics", "recovery-after-training"],
+      "article_ids": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "movement-across-adulthood"
+      ],
       "public_url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/about-physical-activity-guidelines",
       "final_url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/about-physical-activity-guidelines",
       "publication_date": "2018",
@@ -200,6 +303,1090 @@
       "scope": "Population-level physical-activity guidance and evidence context; it does not prescribe an individual training, nutrition, or recovery plan.",
       "limitations": "The current public edition dates to 2018, individual abilities and health conditions vary, and the source does not evaluate supplements or branded tools.",
       "rights_evidence": "Stable public HHS HTTPS page; this manifest links to the source and uses an original summary without reproducing source text.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-magnesium",
+      "title": "Magnesium — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "magnesium"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-magnesium-glycinate",
+        "biolimitless-bio-basics-core-four",
+        "zinoshine-plus",
+        "viva-plus",
+        "viva-plus-x2"
+      ],
+      "article_ids": [
+        "magnesium-forms-and-safety"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Magnesium intake, forms, absorption, excess intake and medicine interactions.",
+      "scope": "General nutrient context, including the difference between elemental magnesium and compound weight.",
+      "limitations": "Does not establish that glycinate is best for everyone or validate any catalog formulation.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-zinc",
+      "title": "Zinc — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "zinc"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-zinc-copper",
+        "biolimitless-bio-basics-core-four",
+        "zinogene-plus",
+        "xtend",
+        "xtend-plus"
+      ],
+      "article_ids": [
+        "zinc-copper-balance"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Zinc requirements, food sources, excess-intake risks and interaction with copper.",
+      "scope": "General zinc physiology and safety context.",
+      "limitations": "Does not prescribe a zinc-to-copper ratio or substantiate a branded immune claim.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-copper",
+      "title": "Copper — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "copper"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-zinc-copper",
+        "biolimitless-bio-basics-core-four"
+      ],
+      "article_ids": [
+        "zinc-copper-balance"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/Copper-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Copper nutrition and the relationship between high zinc intake and copper status.",
+      "scope": "Nutrient adequacy, sources and excess-intake considerations.",
+      "limitations": "A paired supplement is not automatically needed; individual health conditions matter.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-vitamin-k",
+      "title": "Vitamin K — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "vitamin-k"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-vitamin-d3-k2",
+        "biolimitless-bio-basics-core-four"
+      ],
+      "article_ids": [
+        "vitamin-k2-context"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Vitamin K forms, food sources, evidence limitations and anticoagulant interactions.",
+      "scope": "Vitamin K1 and menaquinones, including K2, in general nutrition.",
+      "limitations": "Does not establish that everyone taking vitamin D needs K2 or that a product prevents vascular calcification.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-vitamin-b12",
+      "title": "Vitamin B12 — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "vitamin-b12"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-cell-signals",
+        "xtend",
+        "xtend-plus"
+      ],
+      "article_ids": [],
+      "public_url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Vitamin B12 sources, absorption, deficiency considerations and supplement forms.",
+      "scope": "General B12 education, not a review of a multi-ingredient formula.",
+      "limitations": "Does not establish energy or cognitive benefits in a person whose B12 status is adequate.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-vitamin-c",
+      "title": "Vitamin C — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "vitamin-c"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "protect-plus",
+        "zinogene-plus",
+        "viva-plus",
+        "viva-plus-x2",
+        "xtend",
+        "xtend-plus"
+      ],
+      "article_ids": [
+        "immune-nutrition-context"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Vitamin C physiology, dietary sources, intake and safety evidence.",
+      "scope": "Ingredient-level reference for interpreting nutrition labels.",
+      "limitations": "Nutrient function is not proof that an immune-marketed product prevents infection.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-iodine",
+      "title": "Iodine — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "iodine"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "viva-plus",
+        "viva-plus-x2"
+      ],
+      "article_ids": [],
+      "public_url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Iodine intake, thyroid physiology, food sources and excess-intake risks.",
+      "scope": "General nutrient and thyroid-context education.",
+      "limitations": "Does not establish that more iodine improves thyroid function or validate a mood claim.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-folate",
+      "title": "Folate — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "folate"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-cell-signals",
+        "xtend",
+        "xtend-plus"
+      ],
+      "article_ids": [],
+      "public_url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Folate forms, dietary sources, intake guidance and interactions.",
+      "scope": "General vitamin education, including differing label units and forms.",
+      "limitations": "Not evidence for a genetic-personalization promise or a whole-formula outcome.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-multivitamins",
+      "title": "Multivitamin/mineral Supplements — Health Professional Fact Sheet",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "multivitamins"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "xtend",
+        "xtend-plus",
+        "biolimitless-bio-basics-core-four"
+      ],
+      "article_ids": [
+        "immune-nutrition-context"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Multivitamin definitions, overlapping intake, safety and mixed evidence across outcomes.",
+      "scope": "General multivitamin education; formulations vary substantially.",
+      "limitations": "Does not establish disease prevention or an outcome for a particular multi-nutrient product.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-exercise",
+      "title": "Dietary Supplements for Exercise and Athletic Performance",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "exercise"
+      ],
+      "department_ids": [
+        "performance-recovery"
+      ],
+      "product_ids": [
+        "leanshake-chocolate",
+        "leanshake-strawberry",
+        "leanshake-vanilla",
+        "leanshake-berry",
+        "energy-bar-nut-seed"
+      ],
+      "article_ids": [],
+      "public_url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "A review of performance ingredients, study limitations and the importance of adequate food and hydration.",
+      "scope": "Ingredient-level exercise-nutrition context.",
+      "limitations": "Single-ingredient research cannot establish the performance or safety of a multi-ingredient product.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nih-ods-immune-function",
+      "title": "Dietary Supplements for Immune Function and Infectious Diseases",
+      "publisher": "National Institutes of Health, Office of Dietary Supplements",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "immune-function"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "xtend-plus",
+        "xtend",
+        "protect-plus",
+        "zinogene-plus"
+      ],
+      "article_ids": [
+        "immune-nutrition-context"
+      ],
+      "public_url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/",
+      "final_url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Nutrient adequacy, immune physiology and variable evidence for supplementation.",
+      "scope": "Background for interpreting immune-related language.",
+      "limitations": "This is not product substantiation; it does not resolve inherited commercial wording that still needs human review.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nccih-turmeric",
+      "title": "Turmeric: Usefulness and Safety",
+      "publisher": "National Center for Complementary and Integrative Health",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "turmeric"
+      ],
+      "department_ids": [
+        "gut-digestion",
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "x-gold-plus",
+        "zinogene-plus"
+      ],
+      "article_ids": [
+        "botanicals-extracts-evidence"
+      ],
+      "public_url": "https://www.nccih.nih.gov/health/turmeric",
+      "final_url": "https://www.nccih.nih.gov/health/turmeric",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "An overview of turmeric research, formulation differences and reported safety concerns.",
+      "scope": "General turmeric and curcumin education.",
+      "limitations": "Enhanced absorption is not the same as improved clinical outcomes; evidence cannot be transferred between formulations.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nccih-antioxidants",
+      "title": "Antioxidant Supplements: What You Need To Know",
+      "publisher": "National Center for Complementary and Integrative Health",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "antioxidants"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "omega-nutrition",
+        "performance-recovery"
+      ],
+      "product_ids": [
+        "revoo",
+        "essent-plus-premium",
+        "spirumax-plus",
+        "phycosci-plus-x20"
+      ],
+      "article_ids": [
+        "botanicals-extracts-evidence"
+      ],
+      "public_url": "https://www.nccih.nih.gov/health/antioxidant-supplements-what-you-need-to-know",
+      "final_url": "https://www.nccih.nih.gov/health/antioxidant-supplements-what-you-need-to-know",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Explains why antioxidant activity and health outcomes are different questions.",
+      "scope": "General oxidative-stress and supplement research context.",
+      "limitations": "Does not validate a particular extract, establish a benefit from a laboratory antioxidant score, or confirm product purity.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nccih-detox",
+      "title": "Detoxes and Cleanses: What You Need To Know",
+      "publisher": "National Center for Complementary and Integrative Health",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "detox"
+      ],
+      "department_ids": [
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "biolimitless-detox-pro-plus"
+      ],
+      "article_ids": [
+        "detox-claims-and-evidence"
+      ],
+      "public_url": "https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know",
+      "final_url": "https://www.nccih.nih.gov/health/detoxes-and-cleanses-what-you-need-to-know",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Examines the limited evidence and potential harms of marketed detox and cleanse approaches.",
+      "scope": "Critical background for evaluating detox language.",
+      "limitations": "Not an endorsement of cleansing, binders or any catalog product; persistent symptoms need clinical assessment.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "nccih-supplement-safety",
+      "title": "Using Dietary Supplements Wisely",
+      "publisher": "National Center for Complementary and Integrative Health",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "supplement-safety"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "gut-digestion",
+        "performance-recovery",
+        "omega-nutrition"
+      ],
+      "product_ids": [],
+      "article_ids": [
+        "detox-claims-and-evidence"
+      ],
+      "public_url": "https://www.nccih.nih.gov/health/using-dietary-supplements-wisely",
+      "final_url": "https://www.nccih.nih.gov/health/using-dietary-supplements-wisely",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Questions about supplement evidence, safety, interactions and communication with healthcare professionals.",
+      "scope": "General consumer safety context across supplement categories.",
+      "limitations": "Does not verify ingredient amounts, quality or effectiveness of individual catalog products.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "medlineplus-vitamin-d-testing",
+      "title": "Vitamin D Test",
+      "publisher": "MedlinePlus, U.S. National Library of Medicine",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "vitamin-d-testing"
+      ],
+      "department_ids": [
+        "test-measure"
+      ],
+      "product_ids": [
+        "vitamin-d-test"
+      ],
+      "article_ids": [
+        "vitamin-d-testing-context"
+      ],
+      "public_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+      "final_url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Explains 25-hydroxyvitamin D measurement and why testing is not routine for everyone.",
+      "scope": "Clinical testing context, distinct from a home-kit sales description.",
+      "limitations": "Does not endorse a home collection method, prescribe a dose or interpret a person's result.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "medlineplus-lab-results",
+      "title": "How to Understand Your Lab Results",
+      "publisher": "MedlinePlus, U.S. National Library of Medicine",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "lab-results"
+      ],
+      "department_ids": [
+        "test-measure"
+      ],
+      "product_ids": [
+        "balance-test",
+        "gut-health-test",
+        "gut-health-test-x2",
+        "vitamin-d-test",
+        "hba1c-test"
+      ],
+      "article_ids": [
+        "hba1c-understanding-results"
+      ],
+      "public_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+      "final_url": "https://medlineplus.gov/lab-tests/how-to-understand-your-lab-results/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "A guide to reference ranges, testing limits and interpreting results with a healthcare professional.",
+      "scope": "General laboratory literacy.",
+      "limitations": "An in-range result is not a complete health assessment; methods and ranges can differ between laboratories.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "medlineplus-genetic-limits",
+      "title": "Pros and Cons of Direct-to-Consumer Genetic Testing",
+      "publisher": "MedlinePlus, U.S. National Library of Medicine",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "genetic-limits"
+      ],
+      "department_ids": [
+        "test-measure"
+      ],
+      "product_ids": [
+        "biolimitless-dna-discovery-kit"
+      ],
+      "article_ids": [
+        "consumer-genetic-testing"
+      ],
+      "public_url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcrisksbenefits/",
+      "final_url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcrisksbenefits/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Introduces the benefits, limits and potential consequences of consumer genetic testing.",
+      "scope": "General consumer-genetics context.",
+      "limitations": "Does not validate a specific report, supplement recommendation or prediction from a genetic variant.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "medlineplus-genetic-decisions",
+      "title": "Before Direct-to-Consumer Genetic Testing",
+      "publisher": "MedlinePlus, U.S. National Library of Medicine",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "genetic-decisions"
+      ],
+      "department_ids": [
+        "test-measure"
+      ],
+      "product_ids": [
+        "biolimitless-dna-discovery-kit"
+      ],
+      "article_ids": [
+        "consumer-genetic-testing"
+      ],
+      "public_url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcknow/",
+      "final_url": "https://medlineplus.gov/genetics/understanding/dtcgenetictesting/dtcknow/",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Questions about test scope, support and handling of genetic information before purchase.",
+      "scope": "Consumer decision-making and privacy considerations.",
+      "limitations": "Provider policies require separate current review; this source does not certify any vendor's privacy practices.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "niddk-a1c",
+      "title": "The A1C Test & Diabetes",
+      "publisher": "National Institute of Diabetes and Digestive and Kidney Diseases",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "a1c"
+      ],
+      "department_ids": [
+        "test-measure"
+      ],
+      "product_ids": [
+        "hba1c-test"
+      ],
+      "article_ids": [
+        "hba1c-understanding-results"
+      ],
+      "public_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+      "final_url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Explains the longer-term glucose marker, diagnostic confirmation and factors that affect interpretation.",
+      "scope": "Clinical A1C education, not validation of a retail home kit.",
+      "limitations": "Not real-time glucose monitoring. A clinician must choose and interpret appropriate diagnostic testing.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "niddk-fiber",
+      "title": "Eating, Diet, & Nutrition for Constipation",
+      "publisher": "National Institute of Diabetes and Digestive and Kidney Diseases",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "fiber"
+      ],
+      "department_ids": [
+        "gut-digestion"
+      ],
+      "product_ids": [
+        "zinobiotic-plus",
+        "energy-bar-nut-seed"
+      ],
+      "article_ids": [
+        "fiber-prebiotics-probiotics"
+      ],
+      "public_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "final_url": "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Food, fiber and fluid considerations in constipation care.",
+      "scope": "General food-first digestive-health context.",
+      "limitations": "This condition-specific guidance does not mean a catalog fiber product treats constipation or is appropriate for everyone.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "who-physical-activity",
+      "title": "Physical Activity",
+      "publisher": "World Health Organization",
+      "manufacturer": null,
+      "resource_type": "government_guideline",
+      "evidence_role": "independent_guideline",
+      "topic_ids": [
+        "who-physical-activity"
+      ],
+      "department_ids": [
+        "performance-recovery"
+      ],
+      "product_ids": [
+        "shake-bottle",
+        "measuring-tape"
+      ],
+      "article_ids": [
+        "movement-across-adulthood"
+      ],
+      "public_url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+      "final_url": "https://www.who.int/news-room/fact-sheets/detail/physical-activity",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "Global",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "intergovernmental_guideline",
+      "public_summary": "Physical-activity guidance for adults and older adults, including strength and balance.",
+      "scope": "Population guidance with adaptations for ability and health status.",
+      "limitations": "Does not prescribe an individual exercise program or endorse accessories.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "cdc-sleep",
+      "title": "About Sleep",
+      "publisher": "Centers for Disease Control and Prevention",
+      "manufacturer": null,
+      "resource_type": "government_fact_sheet",
+      "evidence_role": "government_public_health",
+      "topic_ids": [
+        "cdc-sleep"
+      ],
+      "department_ids": [
+        "daily-wellness",
+        "performance-recovery"
+      ],
+      "product_ids": [],
+      "article_ids": [
+        "sleep-habits-across-adulthood"
+      ],
+      "public_url": "https://www.cdc.gov/sleep/about/index.html",
+      "final_url": "https://www.cdc.gov/sleep/about/index.html",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "independent_government",
+      "public_summary": "Age-related sleep recommendations and everyday sleep habits.",
+      "scope": "General sleep-health education for adults and older people.",
+      "limitations": "Sleep difficulties can have medical causes; this page is not evidence for a sleep supplement.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "endocrine-vitamin-d-guideline",
+      "title": "Vitamin D for the Prevention of Disease",
+      "publisher": "Endocrine Society",
+      "manufacturer": null,
+      "resource_type": "professional_guideline",
+      "evidence_role": "independent_guideline",
+      "topic_ids": [
+        "endocrine-vitamin-d-guideline"
+      ],
+      "department_ids": [
+        "test-measure",
+        "daily-wellness"
+      ],
+      "product_ids": [
+        "vitamin-d-test",
+        "biolimitless-vitamin-d3-k2",
+        "zinoshine-plus"
+      ],
+      "article_ids": [
+        "vitamin-d-testing-context"
+      ],
+      "public_url": "https://www.endocrine.org/clinical-practice-guidelines/vitamin-d-for-prevention-of-disease",
+      "final_url": "https://www.endocrine.org/clinical-practice-guidelines/vitamin-d-for-prevention-of-disease",
+      "publication_date": "2024",
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "professional_organization",
+      "public_summary": "The 2024 guideline advises against routine vitamin D screening in generally healthy adults without established indications.",
+      "scope": "Prevention guidance for specified populations; recommendations have stated certainty and boundaries.",
+      "limitations": "Not guidance for every patient or existing clinical indication. It does not support indiscriminate testing.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "aad-skin-supplements",
+      "title": "Should I Take Vitamins or Supplements for My Skin?",
+      "publisher": "American Academy of Dermatology",
+      "manufacturer": null,
+      "resource_type": "professional_education",
+      "evidence_role": "professional_education",
+      "topic_ids": [
+        "aad-skin-supplements"
+      ],
+      "department_ids": [
+        "healthy-aging"
+      ],
+      "product_ids": [
+        "collagen-boozt",
+        "skin-serum"
+      ],
+      "article_ids": [
+        "skin-collagen-evidence"
+      ],
+      "public_url": "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/supplements-for-your-skin",
+      "final_url": "https://www.aad.org/public/everyday-care/skin-care-secrets/routine/supplements-for-your-skin",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "professional_organization",
+      "public_summary": "Dermatology guidance on food-first nutrition, supplement risks and questions to ask.",
+      "scope": "General skin, hair and nail supplement education.",
+      "limitations": "Does not test the catalog collagen drink or topical serum; nutrient roles are not proof of a cosmetic outcome.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "aad-beauty-evidence",
+      "title": "Supplement Secrets Unveiled: Debunking Common Myths About Beauty Boosters",
+      "publisher": "American Academy of Dermatology",
+      "manufacturer": null,
+      "resource_type": "professional_education",
+      "evidence_role": "professional_education",
+      "topic_ids": [
+        "aad-beauty-evidence"
+      ],
+      "department_ids": [
+        "healthy-aging"
+      ],
+      "product_ids": [
+        "collagen-boozt"
+      ],
+      "article_ids": [
+        "skin-collagen-evidence"
+      ],
+      "public_url": "https://www.aad.org/news/supplements-debunking-common-myths",
+      "final_url": "https://www.aad.org/news/supplements-debunking-common-myths",
+      "publication_date": "2024-09-17",
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "professional_organization",
+      "public_summary": "Dermatologist Lauren N. Taglia discusses uncertainty and risks around common beauty supplements.",
+      "scope": "Professional commentary, not a randomized trial or product endorsement.",
+      "limitations": "Reported possibilities should not be read as guaranteed improvements; more research is needed.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "aad-sun-protection",
+      "title": "Sunscreen FAQs",
+      "publisher": "American Academy of Dermatology",
+      "manufacturer": null,
+      "resource_type": "professional_education",
+      "evidence_role": "professional_education",
+      "topic_ids": [
+        "aad-sun-protection"
+      ],
+      "department_ids": [
+        "healthy-aging"
+      ],
+      "product_ids": [
+        "skin-serum"
+      ],
+      "article_ids": [
+        "skin-collagen-evidence"
+      ],
+      "public_url": "https://www.aad.org/media/stats-sunscreen",
+      "final_url": "https://www.aad.org/media/stats-sunscreen",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "professional_organization",
+      "public_summary": "Dermatologist guidance on sunscreen, sun exposure and protective habits.",
+      "scope": "Skin-protection education.",
+      "limitations": "Not evidence that an ordinary serum or an oral supplement offers sunscreen protection.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "aha-food-omega",
+      "title": "Fish and Omega-3 Fatty Acids",
+      "publisher": "American Heart Association",
+      "manufacturer": null,
+      "resource_type": "professional_education",
+      "evidence_role": "professional_education",
+      "topic_ids": [
+        "aha-food-omega"
+      ],
+      "department_ids": [
+        "omega-nutrition"
+      ],
+      "product_ids": [],
+      "article_ids": [],
+      "public_url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fish-and-omega-3-fatty-acids",
+      "final_url": "https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/fats/fish-and-omega-3-fatty-acids",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "professional_organization",
+      "public_summary": "Food-based omega-3 guidance and the role of fish in a heart-healthy dietary pattern.",
+      "scope": "General dietary guidance.",
+      "limitations": "Does not mean a fish-oil product reproduces the effects of a dietary pattern.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "hopkins-digestive-enzymes",
+      "title": "Digestive Enzymes and Digestive Enzyme Supplements",
+      "publisher": "Johns Hopkins Medicine",
+      "manufacturer": null,
+      "resource_type": "professional_education",
+      "evidence_role": "professional_education",
+      "topic_ids": [
+        "hopkins-digestive-enzymes"
+      ],
+      "department_ids": [
+        "gut-digestion"
+      ],
+      "product_ids": [
+        "biolimitless-biozyme",
+        "biolimitless-bio-basics-core-four"
+      ],
+      "article_ids": [
+        "digestive-enzymes-context"
+      ],
+      "public_url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/digestive-enzymes-and-digestive-enzyme-supplements",
+      "final_url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/digestive-enzymes-and-digestive-enzyme-supplements",
+      "publication_date": null,
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "medical_institution",
+      "public_summary": "Explains digestive enzymes and the distinction between clinical enzyme replacement and over-the-counter supplements.",
+      "scope": "Medical-institution education about digestive-enzyme function and appropriate clinical evaluation.",
+      "limitations": "Does not validate the 17-enzyme formula or justify treating persistent symptoms without assessment.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "vital-omega-trial",
+      "title": "Marine n-3 Fatty Acids and Prevention of Cardiovascular Disease and Cancer",
+      "publisher": "New England Journal of Medicine (PubMed record)",
+      "manufacturer": null,
+      "resource_type": "randomized_trial",
+      "evidence_role": "peer_reviewed_primary_study",
+      "topic_ids": [
+        "vital-omega-trial"
+      ],
+      "department_ids": [
+        "omega-nutrition"
+      ],
+      "product_ids": [],
+      "article_ids": [],
+      "public_url": "https://pubmed.ncbi.nlm.nih.gov/30415637/",
+      "final_url": "https://pubmed.ncbi.nlm.nih.gov/30415637/",
+      "publication_date": "2019-01-03",
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "research_disclosures_required",
+      "public_summary": "Manson and colleagues' randomized VITAL trial did not find a significant reduction in its primary major cardiovascular-event or cancer outcomes with marine omega-3 supplementation.",
+      "scope": "25,871 older US adults; approximately 5.3 years of follow-up. PMID 30415637; DOI 10.1056/NEJMoa1811403.",
+      "limitations": "Primary and secondary outcomes must be distinguished. Not a trial of catalog products; author and funding disclosures remain relevant.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "ipa-observational-study",
+      "title": "Indolepropionic Acid and Novel Lipid Metabolites in the Finnish Diabetes Prevention Study",
+      "publisher": "Scientific Reports",
+      "manufacturer": null,
+      "resource_type": "observational_study",
+      "evidence_role": "peer_reviewed_primary_study",
+      "topic_ids": [
+        "ipa-observational-study"
+      ],
+      "department_ids": [
+        "gut-digestion",
+        "test-measure"
+      ],
+      "product_ids": [
+        "gut-health-test",
+        "gut-health-test-x2"
+      ],
+      "article_ids": [],
+      "public_url": "https://www.nature.com/articles/srep46337",
+      "final_url": "https://www.nature.com/articles/srep46337",
+      "publication_date": "2017-04-11",
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "research_disclosures_required",
+      "public_summary": "De Mello and colleagues examined associations between serum metabolites and later diabetes in a selected study population.",
+      "scope": "Observational biomarker analysis within a prevention-study population; DOI 10.1038/srep46337.",
+      "limitations": "An association does not prove causation, validate a commercial index, or show that raising a marker with a supplement improves outcomes.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
+      "status": "published"
+    },
+    {
+      "id": "microbiome-consensus",
+      "title": "International Consensus Statement on Microbiome Testing in Clinical Practice",
+      "publisher": "The Lancet Gastroenterology & Hepatology (PubMed record)",
+      "manufacturer": null,
+      "resource_type": "expert_consensus",
+      "evidence_role": "expert_consensus",
+      "topic_ids": [
+        "microbiome-consensus"
+      ],
+      "department_ids": [
+        "gut-digestion",
+        "test-measure"
+      ],
+      "product_ids": [],
+      "article_ids": [],
+      "public_url": "https://pubmed.ncbi.nlm.nih.gov/39647502/",
+      "final_url": "https://pubmed.ncbi.nlm.nih.gov/39647502/",
+      "publication_date": "2025-02",
+      "checked_date": "2026-09-06",
+      "market": "US",
+      "language": "en",
+      "public_use_status": "link_and_original_summary",
+      "independence_status": "research_disclosures_required",
+      "public_summary": "Porcari and colleagues describe limited clinical utility evidence and propose a framework for microbiome testing.",
+      "scope": "Expert consensus; PMID 39647502; DOI 10.1016/S2468-1253(24)00311-X.",
+      "limitations": "Microbiome profiling is not the same method as a blood-metabolite test. This consensus does not validate or directly evaluate Zinzino's test.",
+      "rights_evidence": "Public publisher page inspected on 2026-09-06. Link and original short summary only; no copied figures, video, full text, or implied endorsement.",
       "status": "published"
     }
   ]

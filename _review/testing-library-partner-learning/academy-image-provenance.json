@@ -1,0 +1,50 @@
+{
+  "tool_mode": "built-in image_gen, generate, one call per asset, two calls run in parallel, no variants or retries",
+  "content_status": "Fictional illustrative course-cover scenes; not actual students, testimonials, instructors, company events, or documentary evidence.",
+  "assets": [
+    {
+      "name": "Everyday Matrix",
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Use case: photorealistic-natural\nAsset type: illustrative wellness course cover for Everyday Matrix, website course tile and hero crop.\nPrimary request: an original fictional scene of three adults representing young adulthood, middle age, and older age enjoying a relaxed outdoor morning walk.\nScene/backdrop: forest-edge path with luminous green surroundings and sculptural sunlight.\nSubject: three naturally diverse adults, candid side and three-quarter views, walking together comfortably with grounded aspirational energy. Ordinary healthy-looking people with natural body types.\nStyle/medium: photorealistic editorial wellness photography with documentary authenticity; this is fictional illustrative imagery, not a photograph of actual students, testimonials, instructors, or company events.\nComposition/framing: wide landscape 3:2, eye-level camera, people grouped centrally/right with environmental breathing room, a crop suitable for both a website tile and wider hero.\nLighting/mood: natural morning light, premium high contrast with sculptural sunlight, relaxed and authentic.\nColor palette: luminous forest greens, muted forest and charcoal wardrobe, one citrus green accent.\nMaterials/textures: natural skin pores and wrinkles, subtle fabric texture, realistic foliage.\nConstraints: exactly three adults; no text, watermark, logos, branded products, or medical gear; no fitness transformation imagery or extreme athletic bodies.",
+      "source_file": "everyday-matrix-editorial.png",
+      "public_outputs": [
+        {
+          "path": "assets/images/academy/everyday-matrix-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 37486
+        },
+        {
+          "path": "assets/images/academy/everyday-matrix-1280.webp",
+          "width": 1280,
+          "height": 853,
+          "bytes": 95902
+        }
+      ]
+    },
+    {
+      "name": "Partner Practice",
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Use case: photorealistic-natural\nAsset type: illustrative Partner Practice course cover, website course tile and hero crop.\nPrimary request: an original fictional small-business learning workshop scene with three adults collaborating around a charcoal table.\nScene/backdrop: architect-designed bright studio.\nSubject: three adults with focused friendly energy; one stands casually discussing a notebook while two sit at the table. A laptop is seen from the back with no visible screen content.\nStyle/medium: photorealistic natural editorial photography with premium realistic texture; this is fictional illustrative imagery, not documentary evidence of actual students, testimonials, instructors, or company events.\nComposition/framing: wide landscape 3:2, subjects centered so responsive crop retains all three adults; candid working interaction.\nLighting/mood: natural side light with cinematic shadows, collaborative and grounded.\nColor palette: dark forest fabrics, charcoal table, warm copper and amber accent.\nMaterials/textures: realistic skin pores, fabric weave, notebook paper, matte table.\nConstraints: exactly three adults; no staged handshake; no text, company logos, charts of profits, money, luxury-status props, banners, watermarks, or Zinzino event branding. No readable writing on notebook; laptop back is plain and unbranded.",
+      "source_file": "partner-practice-editorial.png",
+      "public_outputs": [
+        {
+          "path": "assets/images/academy/partner-practice-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 32522
+        },
+        {
+          "path": "assets/images/academy/partner-practice-1280.webp",
+          "width": 1280,
+          "height": 853,
+          "bytes": 80650
+        }
+      ]
+    }
+  ],
+  "processing": "Pillow RGB resize from generated original, Lanczos resampling; WebP quality 82, method 6. No creative or compositing edits.",
+  "total_public_image_bytes": 246560
+}

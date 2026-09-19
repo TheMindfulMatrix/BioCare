@@ -1,28 +1,18 @@
 (function () {
   document.documentElement.classList.add("js");
 
-  var toggle = document.querySelector(".nav-toggle");
-  var menu = document.getElementById("primary-links");
-
-  function setMenu(open) {
-    if (!toggle || !menu) return;
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.querySelector(".visually-hidden").textContent = open ? "Close navigation" : "Open navigation";
-    menu.dataset.open = String(open);
-  }
-
-  if (toggle && menu) {
-    setMenu(false);
-    toggle.addEventListener("click", function () {
-      setMenu(toggle.getAttribute("aria-expanded") !== "true");
-    });
+  var menu = document.querySelector(".site-native-menu");
+  if (menu) {
     menu.addEventListener("click", function (event) {
-      if (event.target.closest("a")) setMenu(false);
+      if (event.target.closest("a")) menu.open = false;
+    });
+    document.addEventListener("click", function (event) {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
     });
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
-        setMenu(false);
-        toggle.focus();
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false;
+        menu.querySelector("summary").focus();
       }
     });
   }
@@ -643,10 +633,10 @@
   function initEvidence(root) {
     var cards=Array.prototype.slice.call(root.querySelectorAll("[data-public-source]")),controls=root.querySelector("[data-evidence-controls]"),search=controls.querySelector("[data-evidence-search]"),selects=Array.prototype.slice.call(controls.querySelectorAll("[data-evidence-filter]")),status=root.querySelector("[data-evidence-status]"),empty=root.querySelector("[data-evidence-empty]"),emptyReset=root.querySelector("[data-evidence-empty-reset]"),reset=controls.querySelector("[data-evidence-reset]"),collection=new URLSearchParams(location.search).get("collection");
     function includesToken(value,selected){return selected==="all"||String(value||"").split(",").indexOf(selected)>=0;}
-    function updateUrl(){var params=new URLSearchParams(location.search),query=normalize(search.value);if(query)params.set("q",query);else params.delete("q");selects.forEach(function(select){if(select.value!=="all")params.set(select.dataset.evidenceFilter,select.value);else params.delete(select.dataset.evidenceFilter);});params.delete("source");history.replaceState({},"",location.pathname+(params.toString()?"?"+params:""));}
-    function apply(changeUrl){var terms=normalize(search.value).split(" ").filter(Boolean),matches=cards.filter(function(card){return (collection!=="core-four"||card.dataset.sourceCollection==="core-four")&&terms.every(function(term){return card.dataset.sourceSearch.indexOf(term)>=0;})&&selects.every(function(select){var key="source"+select.dataset.evidenceFilter.charAt(0).toUpperCase()+select.dataset.evidenceFilter.slice(1);return includesToken(card.dataset[key],select.value);});});cards.forEach(function(card){card.hidden=matches.indexOf(card)<0;});status.textContent="Showing "+matches.length+" of "+cards.length+" published sources.";empty.hidden=matches.length!==0;reset.hidden=collection!=="core-four"&&terms.length===0&&selects.every(function(select){return select.value==="all";});if(changeUrl)updateUrl();}
-    function clear(){search.value="";selects.forEach(function(select){select.value="all";});apply(true);search.focus();}
-    function restore(){var params=new URLSearchParams(location.search);search.value=params.get("q")||"";selects.forEach(function(select){var value=params.get(select.dataset.evidenceFilter)||"all";select.value=Array.prototype.some.call(select.options,function(option){return option.value===value;})?value:"all";});apply(false);var source=params.get("source");if(source){var card=root.querySelector('[data-public-source="'+CSS.escape(source)+'"]');if(card){card.hidden=false;card.scrollIntoView({block:"start"});card.setAttribute("tabindex","-1");card.focus({preventScroll:true});}}}
+    function updateUrl(){var params=new URLSearchParams(location.search),query=normalize(search.value);if(query)params.set("q",query);else params.delete("q");if(collection==="core-four")params.set("collection",collection);else params.delete("collection");selects.forEach(function(select){if(select.value!=="all")params.set(select.dataset.evidenceFilter,select.value);else params.delete(select.dataset.evidenceFilter);});params.delete("source");history.replaceState({},"",location.pathname+(params.toString()?"?"+params:""));}
+    function apply(changeUrl){var terms=normalize(search.value).split(" ").filter(Boolean),matches=cards.filter(function(card){return (collection!=="core-four"||card.dataset.sourceCollection==="core-four")&&terms.every(function(term){return card.dataset.sourceSearch.indexOf(term)>=0;})&&selects.every(function(select){var key="source"+select.dataset.evidenceFilter.charAt(0).toUpperCase()+select.dataset.evidenceFilter.slice(1);return includesToken(card.dataset[key],select.value);});});cards.forEach(function(card){card.hidden=matches.indexOf(card)<0;});status.textContent="Showing "+matches.length+" of "+cards.length+" published sources"+(collection==="core-four"?" · Core Four collection.":".");empty.hidden=matches.length!==0;reset.hidden=collection!=="core-four"&&terms.length===0&&selects.every(function(select){return select.value==="all";});if(changeUrl)updateUrl();}
+    function clear(){collection=null;search.value="";selects.forEach(function(select){select.value="all";});apply(true);search.focus();}
+    function restore(){var params=new URLSearchParams(location.search);collection=params.get("collection");search.value=params.get("q")||"";selects.forEach(function(select){var value=params.get(select.dataset.evidenceFilter)||"all";select.value=Array.prototype.some.call(select.options,function(option){return option.value===value;})?value:"all";});apply(false);var source=params.get("source");if(source){var card=root.querySelector('[data-public-source="'+CSS.escape(source)+'"]');if(card){card.hidden=false;card.scrollIntoView({block:"start"});card.setAttribute("tabindex","-1");card.focus({preventScroll:true});}}}
     search.addEventListener("input",function(){apply(true);});selects.forEach(function(select){select.addEventListener("change",function(){apply(true);});});controls.addEventListener("reset",function(event){event.preventDefault();clear();});emptyReset.addEventListener("click",clear);window.addEventListener("popstate",restore);restore();
   }
   document.querySelectorAll("[data-evidence-browser]").forEach(initEvidence);
@@ -1006,6 +996,8 @@
     var libraryCards = Array.prototype.slice.call(document.querySelectorAll("[data-library-article]"));
     var libraryGroups = Array.prototype.slice.call(document.querySelectorAll(".library-group"));
     var libraryEmpty = document.querySelector("[data-library-empty]");
+    var libraryReset = libraryControls.querySelector("[data-library-reset]");
+    var libraryEmptyReset = document.querySelector("[data-library-empty-reset]");
     var libraryCoreFour = libraryControls.querySelector("[data-library-core-four]");
     var coreFourOnly = new URLSearchParams(location.search).get("collection") === "core-four";
     function filterLibrary() {
@@ -1014,12 +1006,19 @@
       var visible = 0;
       libraryCards.forEach(function (card) { var show = (!coreFourOnly || card.dataset.libraryCoreFour === "true") && (!query || card.dataset.librarySearch.indexOf(query) !== -1) && (category === "all" || card.dataset.libraryCategory === category); card.hidden = !show; if (show) visible += 1; });
       libraryGroups.forEach(function (group) { group.hidden = !group.querySelector("[data-library-article]:not([hidden])"); });
-      libraryControls.querySelector("[data-library-count]").textContent = visible + (visible === 1 ? " guide" : " guides");
+      libraryControls.querySelector("[data-library-count]").textContent = "Showing " + visible + " of " + libraryCards.length + " guides" + (coreFourOnly ? " · Core Four collection." : ".");
+      if (libraryReset) libraryReset.hidden = !query && category === "all" && !coreFourOnly;
       if (libraryEmpty) libraryEmpty.hidden = visible !== 0;
       if (libraryCoreFour) libraryCoreFour.setAttribute("aria-pressed", String(coreFourOnly));
     }
     if (libraryCoreFour) libraryCoreFour.addEventListener("click", function () { coreFourOnly = !coreFourOnly; var url = new URL(location.href); if (coreFourOnly) url.searchParams.set("collection", "core-four"); else url.searchParams.delete("collection"); history.replaceState({}, "", url); filterLibrary(); });
     libraryControls.addEventListener("input", filterLibrary);
+    libraryControls.addEventListener("change", filterLibrary);
+    libraryControls.addEventListener("submit", function (event) { event.preventDefault(); filterLibrary(); });
+    if (libraryEmptyReset) libraryEmptyReset.addEventListener("click", function () {
+      libraryControls.reset();
+      libraryControls.querySelector("[data-library-query]").focus();
+    });
     libraryControls.addEventListener("reset", function () {
       coreFourOnly = false;
       var url = new URL(location.href);
@@ -1028,5 +1027,6 @@
       window.setTimeout(filterLibrary, 0);
     });
     filterLibrary();
+    libraryControls.hidden = false;
   }
 }());

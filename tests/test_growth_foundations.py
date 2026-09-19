@@ -21,7 +21,7 @@ class GrowthFoundationsTests(unittest.TestCase):
         paths = site_paths.audited_page_paths(ROOT)
         self.assertIn('about.html', paths)
         self.assertIn('privacy.html', paths)
-        self.assertEqual(len(paths), 71)
+        self.assertEqual(len(paths), 88)
 
     def test_footer_reaches_contact_and_privacy_from_nested_pages(self):
         html = build.shared_footer_markup(self.data, prefix='../')
@@ -107,7 +107,11 @@ class GrowthFoundationsTests(unittest.TestCase):
         # The current Pages source is a Jekyll branch build. An alternate
         # publication pipeline needs explicit review, not a quiet bypass.
         self.assertFalse((ROOT/'.nojekyll').exists())
-        self.assertFalse((ROOT/'_config.yml').exists())
+        config = (ROOT/'_config.yml').read_text(encoding='utf-8')
+        self.assertIn('exclude:', config)
+        for folder in ('_review', '_private', '_preview'):
+            self.assertIn('  - ' + folder, config)
+        self.assertNotIn('include:', config)
         self.assertFalse((ROOT/'_config.toml').exists())
         self.assertTrue((ROOT/'_review/growth-trust-conversion').is_dir())
 

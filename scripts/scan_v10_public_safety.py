@@ -46,7 +46,7 @@ def scan(root: Path = ROOT) -> dict:
     public_paths += list((root / "assets" / "js").glob("*.js"))
     public_paths += list((root / "assets").rglob("*.map"))
     review_paths = []
-    for report_dir in (root / "reports" / "v10", root / "reports" / "v11"):
+    for report_dir in (root / "reports" / "v10", root / "reports" / "v11", root / "_review" / "testing-library-partner-learning"):
         review_paths += [path for path in report_dir.glob("*") if path.suffix.lower() in {".json", ".md", ".txt"}]
     review_paths += list((root / ".github" / "workflows").glob("*.yml"))
     review_paths += list((root / ".github" / "workflows").glob("*.yaml"))

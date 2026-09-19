@@ -1,14 +1,133 @@
 {
   "schemaVersion": "1.0",
   "departments": [
-    {"intentId":"test-measure","slug":"testing-measurement","title":"Testing & Measurement","description":"Explore verified testing tools and guides for understanding measurements, methods, and limitations.","articleSlugs":["should-you-test-your-omega-3-levels","omega-3-what-the-numbers-mean","gut-testing-biomarkers","how-to-read-a-health-study"],"journeys":["know-your-number"]},
-    {"intentId":"omega-nutrition","slug":"omega-nutrition","title":"Omega & Nutrition","description":"Browse verified omega and nutrition formats alongside evidence-aware guides to food, testing, and labels.","articleSlugs":["omega-3-what-the-numbers-mean","should-you-test-your-omega-3-levels","food-vs-omega-3-supplements","how-to-read-a-supplement-label"],"journeys":["know-your-number"]},
-    {"intentId":"gut-digestion","slug":"gut-digestion","title":"Gut & Digestion","description":"Explore the verified formats grouped in this department and learn how gut testing and biomarkers are interpreted.","articleSlugs":["gut-testing-biomarkers","how-to-read-a-supplement-label"],"journeys":[]},
-    {"intentId":"daily-wellness","slug":"daily-wellness","title":"Daily Wellness","description":"Browse verified everyday formats with practical guidance for reading evidence and supplement labels.","articleSlugs":["how-to-read-a-supplement-label","how-to-read-a-health-study","correlation-causation-relative-risk"],"journeys":[]},
-    {"intentId":"performance-recovery","slug":"active-nutrition-tools","title":"Active Nutrition & Tools","description":"Explore verified nutrition formats and practical tools with education about fueling, training, and recovery context.","articleSlugs":["performance-nutrition-basics","recovery-after-training","how-to-read-a-supplement-label"],"journeys":[]},
-    {"intentId":"healthy-aging","slug":"skin-collagen","title":"Skin & Collagen","description":"Browse verified collagen and topical formats while keeping product labels, evidence, and limitations visible.","articleSlugs":["how-to-read-a-supplement-label","how-to-read-a-health-study"],"journeys":[]}
+    {
+      "intentId": "test-measure",
+      "slug": "testing-measurement",
+      "title": "Testing & Measurement",
+      "description": "Explore verified testing tools and guides for understanding measurements, methods, and limitations.",
+      "articleSlugs": [
+        "should-you-test-your-omega-3-levels",
+        "omega-3-what-the-numbers-mean",
+        "gut-testing-biomarkers",
+        "how-to-read-a-health-study",
+        "vitamin-d-testing-context",
+        "hba1c-understanding-results",
+        "consumer-genetic-testing"
+      ],
+      "journeys": [
+        "know-your-number",
+        "testing"
+      ]
+    },
+    {
+      "intentId": "omega-nutrition",
+      "slug": "omega-nutrition",
+      "title": "Omega & Nutrition",
+      "description": "Browse verified omega and nutrition formats alongside evidence-aware guides to food, testing, and labels.",
+      "articleSlugs": [
+        "omega-3-what-the-numbers-mean",
+        "should-you-test-your-omega-3-levels",
+        "food-vs-omega-3-supplements",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "journeys": [
+        "know-your-number"
+      ]
+    },
+    {
+      "intentId": "gut-digestion",
+      "slug": "gut-digestion",
+      "title": "Gut & Digestion",
+      "description": "Explore the verified formats grouped in this department and learn how gut testing and biomarkers are interpreted.",
+      "articleSlugs": [
+        "gut-testing-biomarkers",
+        "how-to-read-a-supplement-label",
+        "digestive-enzymes-context",
+        "fiber-prebiotics-probiotics",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence"
+      ],
+      "journeys": []
+    },
+    {
+      "intentId": "daily-wellness",
+      "slug": "daily-wellness",
+      "title": "Daily Wellness",
+      "description": "Browse verified everyday formats with practical guidance for reading evidence and supplement labels.",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "correlation-causation-relative-risk",
+        "vitamin-d-testing-context",
+        "vitamin-k2-context",
+        "magnesium-forms-and-safety",
+        "zinc-copper-balance",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "immune-nutrition-context",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "journeys": []
+    },
+    {
+      "intentId": "performance-recovery",
+      "slug": "active-nutrition-tools",
+      "title": "Active Nutrition & Tools",
+      "description": "Explore verified nutrition formats and practical tools with education about fueling, training, and recovery context.",
+      "articleSlugs": [
+        "performance-nutrition-basics",
+        "recovery-after-training",
+        "how-to-read-a-supplement-label",
+        "botanicals-extracts-evidence",
+        "detox-claims-and-evidence",
+        "movement-across-adulthood",
+        "sleep-habits-across-adulthood"
+      ],
+      "journeys": []
+    },
+    {
+      "intentId": "healthy-aging",
+      "slug": "skin-collagen",
+      "title": "Skin & Collagen",
+      "description": "Browse verified collagen and topical formats while keeping product labels, evidence, and limitations visible.",
+      "articleSlugs": [
+        "how-to-read-a-supplement-label",
+        "how-to-read-a-health-study",
+        "skin-collagen-evidence"
+      ],
+      "journeys": []
+    }
   ],
   "journeys": [
-    {"id":"know-your-number","title":"Know Your Number","summary":"A public omega-testing journey built around test, measure, act, and retest—with limitations kept visible.","href":"know-your-number.html","keywords":["omega","test","measure","retest","numbers"]}
+    {
+      "id": "know-your-number",
+      "title": "Know Your Number",
+      "summary": "A public omega-testing journey built around test, measure, act, and retest—with limitations kept visible.",
+      "href": "know-your-number.html",
+      "keywords": [
+        "omega",
+        "test",
+        "measure",
+        "retest",
+        "numbers"
+      ]
+    },
+    {
+      "id": "testing",
+      "title": "All testing journeys",
+      "summary": "Four distinct Zinzino test types: measurements, boundaries, official instructions, and independent context.",
+      "href": "testing.html",
+      "keywords": [
+        "testing",
+        "gut",
+        "vitamin d",
+        "hba1c",
+        "fatty acids"
+      ]
+    }
   ]
 }

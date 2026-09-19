@@ -19,7 +19,8 @@ class V112PlatformTests(unittest.TestCase):
         for product in self.active:
             page = (ROOT / "products" / f'{product["id"]}.html').read_text(encoding="utf-8")
             self.assertIn(f'<h1>{html.escape(product["name"])}</h1>', page)
-            self.assertIn('Department context — not product-specific evidence', page)
+            self.assertTrue('Department context — not product-specific evidence' in page or 'Ingredient/topic context — not finished-product evidence' in page)
+            self.assertNotIn('Product-specific documentation', page)
 
     def test_product_schema_has_no_unverified_commercial_or_review_data(self):
         prohibited = {"offers", "aggregateRating", "review"}
